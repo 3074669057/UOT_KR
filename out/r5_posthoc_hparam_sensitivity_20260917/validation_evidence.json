@@ -1,0 +1,266 @@
+{
+  "session_start_utc": "2026-09-17T03:00:00Z",
+  "generated_utc": "2026-09-17T03:25:11Z",
+  "checks": [
+    {
+      "item": "1. No command ever ran the holdout seeds 301-305",
+      "status": "PASS",
+      "evidence": [
+        "out/r5_posthoc_hparam_sensitivity_20260917/results/sweep_long.csv",
+        "out/r5_posthoc_hparam_sensitivity_20260917/ablation/cost_component_ablation_long.csv",
+        "runs/: 315 task files scanned for 's30X__' patterns",
+        "out/r5_posthoc_hparam_sensitivity_20260917/logs/run.log"
+      ],
+      "detail": "holdout seeds present in results: none; task files matching a holdout seed: none; failed_tasks.jsonl present: False; run.log lines mentioning '30 (1, 2, 3, 4, 5)': 0"
+    },
+    {
+      "item": "2. No frozen artifact was modified (mtime/hash)",
+      "status": "PASS",
+      "evidence": [
+        "out/r5_posthoc_hparam_sensitivity_20260917/VALIDATION_CHECKLIST.md",
+        "evidence in validation_evidence.json"
+      ],
+      "detail": "session start (UTC) 2026-09-17T03:00:00Z; artifacts with a later mtime: none; watchlist size 11"
+    },
+    {
+      "item": "3. 3/final/ZN_TIFS_FINAL_CN.docx not modified",
+      "status": "PASS",
+      "evidence": [
+        "3/final/ZN_TIFS_FINAL_CN.docx"
+      ],
+      "detail": "sha256 7a958b23107cb1ec8efdd1cc538749e02c8d439b642caa70ce2b0bd4c5a4d855, mtime 2026-09-04T10:14:50Z, session start 2026-09-17T03:00:00Z"
+    },
+    {
+      "item": "4. Stale Stage-2 submission package not modified",
+      "status": "PASS",
+      "evidence": [
+        "3/chinese_rewrite_r4",
+        "ZN_TIFS_R5_PAPER_AUTHORING_PACKAGE/manuscript/STAGE_R4"
+      ],
+      "detail": "files with mtime >= session start in the stale Stage-2/R4 trees: 0 []"
+    },
+    {
+      "item": "5. Every sweep has the complete 3 bridges x 5 development seeds",
+      "status": "PASS",
+      "evidence": [
+        "out/r5_posthoc_hparam_sensitivity_20260917/results/sweep_long.csv",
+        "out/r5_posthoc_hparam_sensitivity_20260917/results/sweep_per_seed.csv"
+      ],
+      "detail": "bridges=3, seeds=[201, 202, 203, 204, 205], unique configs=14, methods=['CONDITIONAL_UOT_D4', 'RAW_UOT_PLAN_D4'], rows=420 (expected 420)"
+    },
+    {
+      "item": "6. No silent NaN",
+      "status": "PASS",
+      "evidence": [
+        "out/r5_posthoc_hparam_sensitivity_20260917/results/sweep_long.csv",
+        "out/r5_posthoc_hparam_sensitivity_20260917/ablation/cost_component_ablation_long.csv"
+      ],
+      "detail": "NaN counts per column: {'precision': 0, 'recall': 0, 'macro_edge_f1': 0, 'micro_edge_f1': 0, 'micro_precision': 0, 'micro_recall': 0, 'sinkhorn_iterations': 0, 'sinkhorn_final_residual': 0, 'delta_s_total': 0, 'delta_t_total': 0, 'delta_total': 0, 'transport_mass_total': 0, 'mass_retained_fraction': 0}; ablation NaN: {'precision': 0, 'recall': 0, 'macro_edge_f1': 0, 'delta_s_total': 0, 'delta_t_total': 0}; all finite: True"
+    },
+    {
+      "item": "7. No missing configuration",
+      "status": "PASS",
+      "evidence": [
+        "out/r5_posthoc_hparam_sensitivity_20260917/results/sweep_summary.csv"
+      ],
+      "detail": "each of the 14 unique configurations has 30 rows (3 bridges x 5 seeds x 2 methods); violations: 0"
+    },
+    {
+      "item": "8. The default configuration was not run twice with divergent values",
+      "status": "PASS",
+      "evidence": [
+        "out/r5_posthoc_hparam_sensitivity_20260917/results/sweep_long.csv",
+        "runs/sweep: 210 unique task files"
+      ],
+      "detail": "default rows=30 (expected 30); distinct run_id per (bridge, seed, method) = [1]; runs/sweep holds 210 files for 210 planned cells (one file per cell, both methods inside)"
+    },
+    {
+      "item": "9. Figure data can be reproduced point-by-point from the CSVs",
+      "status": "PASS",
+      "evidence": [
+        "out/r5_posthoc_hparam_sensitivity_20260917/results/sweep_summary.csv",
+        "out/r5_posthoc_hparam_sensitivity_20260917/results/sweep_long.csv",
+        "out/r5_posthoc_hparam_sensitivity_20260917/code/make_sensitivity_figures.py"
+      ],
+      "detail": "recomputed all 3 sweeps x grid x 3 bridges x 2 methods = 96 panel points from sweep_long.csv; mismatches: 0"
+    },
+    {
+      "item": "10. Table numbers and figure numbers agree",
+      "status": "PASS",
+      "evidence": [
+        "out/r5_posthoc_hparam_sensitivity_20260917/code/make_sensitivity_figures.py",
+        "out/r5_posthoc_hparam_sensitivity_20260917/paper/section_4_3_posthoc_sensitivity_CN.md"
+      ],
+      "detail": "the figure script reads results/sweep_summary.csv directly: True; 32/32 headline values appear verbatim (4 dp) in the paper section"
+    },
+    {
+      "item": "11. Epsilon iteration counts genuinely come from the solver",
+      "status": "PASS",
+      "evidence": [
+        "out/r5_posthoc_hparam_sensitivity_20260917/code/r5s_diagnostics.py",
+        "out/r5_posthoc_hparam_sensitivity_20260917/results/epsilon_solver_diagnostics.csv",
+        "out/r5_posthoc_hparam_sensitivity_20260917/runs/sweep/sweep__Celer__s201__k10_eps0.05_lam0.5.json"
+      ],
+      "detail": "iterations are read from POT's own log['err'] trace (len(err)-1); 41 distinct values across the sweep; range 32-644; sample task value 131"
+    },
+    {
+      "item": "12. delta_S / delta_T genuinely come from algorithm variables",
+      "status": "PASS",
+      "evidence": [
+        "out/r5_posthoc_hparam_sensitivity_20260917/code/r5s_diagnostics.py",
+        "out/r5_posthoc_hparam_sensitivity_20260917/results/lambda_unmatched_mass.csv"
+      ],
+      "detail": "delta_S = sum_i |sum_j P_ij - a_i| computed from the solver's returned plan P and the marginals actually passed in; delta_S column is identical to marginal_violation_row_l1: True; 75 distinct delta_S values across the lambda grid (range 0.0603 to 0.8211)"
+    },
+    {
+      "item": "13. Cost ablation renormalises correctly and matches the main-sweep cost",
+      "status": "PASS",
+      "evidence": [
+        "out/r5_posthoc_hparam_sensitivity_20260917/ablation/cost_component_ablation_long.csv",
+        "out/r5_posthoc_hparam_sensitivity_20260917/ablation/cost_component_ablation_summary.csv",
+        "out/r5_posthoc_hparam_sensitivity_20260917/results/sweep_long.csv"
+      ],
+      "detail": "all 7 variants renormalised to sum exactly 1: True; the omitted component's weight is exactly 0: True; LOCO_AMOUNT (bridge, seed, cost-fingerprint) triples identical to the main sweep's default configuration: True (15 cells); 7 variants produce 7 distinct fingerprint sets"
+    },
+    {
+      "item": "14. No main-experiment default was changed by this sweep",
+      "status": "PASS",
+      "evidence": [
+        "scripts/multi_bridge/dev_candidate2/cp_common.py",
+        "scripts/multi_bridge/holdout/holdout_common.py",
+        "scripts/multi_bridge/baseline_mechanism/common.py",
+        "scripts/multi_bridge/decoder_audit/da_common.py",
+        "scripts/multi_bridge/holdout/holdout_common.py",
+        "src/cross/**",
+        "config/**"
+      ],
+      "detail": "frozen constants still present: {'scripts/multi_bridge/dev_candidate2/cp_common.py': True, 'scripts/multi_bridge/holdout/holdout_common.py': True, 'scripts/multi_bridge/baseline_mechanism/common.py': True, 'scripts/multi_bridge/decoder_audit/da_common.py': True}; reg_m==0.5 guard: True; holdout identity_check still enforces reg==0.05/reg_m==0.5: True; files under src/cross or config modified during this session: none"
+    },
+    {
+      "item": "A. No file inside any frozen output directory was written",
+      "status": "PASS",
+      "evidence": [
+        "out/multi_bridge_expansion/conditional_plan_holdout_results",
+        "out/multi_bridge_expansion/conditional_plan_holdout_preregistration",
+        "out/multi_bridge_expansion/cost_transport_diagnosis",
+        "out/multi_bridge_expansion/amount_free_candidate_dev",
+        "out/multi_bridge_expansion/conditional_plan_candidate_dev",
+        "out/multi_bridge_expansion/faithful_flow_structural_three_bridges",
+        "out/paper_full_pipeline_run",
+        "3/chinese_rewrite_r5"
+      ],
+      "detail": "files with mtime >= 2026-09-17T03:00:00Z inside the frozen trees: 0 []"
+    },
+    {
+      "item": "B. Preflight snapshot captured and HEAD unchanged",
+      "status": "PASS",
+      "evidence": [
+        "out/r5_posthoc_hparam_sensitivity_20260917/00_preflight/git_head.txt",
+        "out/r5_posthoc_hparam_sensitivity_20260917/00_preflight/git_status_porcelain_v2.txt",
+        "out/r5_posthoc_hparam_sensitivity_20260917/00_preflight/git_diff_stat.txt",
+        "out/r5_posthoc_hparam_sensitivity_20260917/00_preflight/git_diff_tracked_src_tests_scripts_config.diff",
+        "out/r5_posthoc_hparam_sensitivity_20260917/00_preflight/software_check.json"
+      ],
+      "detail": "files present: {'git_head.txt': True, 'git_status_porcelain_v2.txt': True, 'git_diff_stat.txt': True, 'git_diff_tracked_src_tests_scripts_config.diff': True, 'software_check.json': True}; HEAD at session start d5cd14d8051263b49b01b10ad36e6033b2ec3219; HEAD now d5cd14d8051263b49b01b10ad36e6033b2ec3219"
+    }
+  ],
+  "evidence": {
+    "frozen_watchlist": [
+      {
+        "path": "out/multi_bridge_expansion/conditional_plan_holdout_results/statistics.json",
+        "exists": true,
+        "size_bytes": 4706,
+        "mtime_utc": "2026-09-02T13:50:21Z",
+        "sha256": "43d98964046ed8c51dfee50327e1dbdeb65aaa894a3809fa44932737e49b4517",
+        "mtime_after_session_start": false
+      },
+      {
+        "path": "out/multi_bridge_expansion/conditional_plan_holdout_results/FINAL_CONFIRMATORY_HOLDOUT_REPORT.md",
+        "exists": true,
+        "size_bytes": 11171,
+        "mtime_utc": "2026-09-02T13:55:47Z",
+        "sha256": "96fa7f8688b89fc2773c8a53b195b655c6f59e16f1db1e69e53e24a27c001e88",
+        "mtime_after_session_start": false
+      },
+      {
+        "path": "out/multi_bridge_expansion/conditional_plan_holdout_results/verification.json",
+        "exists": true,
+        "size_bytes": 747,
+        "mtime_utc": "2026-09-02T13:51:30Z",
+        "sha256": "96931e28982c84b0c14872bd33542191bc043ea9362586afeafb4eb681040063",
+        "mtime_after_session_start": false
+      },
+      {
+        "path": "3/chinese_rewrite_r5/final/paper_experiments_results/confirmatory_holdout/statistics.json",
+        "exists": true,
+        "size_bytes": 4706,
+        "mtime_utc": "2026-09-14T00:12:22Z",
+        "sha256": "43d98964046ed8c51dfee50327e1dbdeb65aaa894a3809fa44932737e49b4517",
+        "mtime_after_session_start": false
+      },
+      {
+        "path": "3/final/ZN_TIFS_FINAL_CN.docx",
+        "exists": true,
+        "size_bytes": 2838033,
+        "mtime_utc": "2026-09-04T10:14:50Z",
+        "sha256": "7a958b23107cb1ec8efdd1cc538749e02c8d439b642caa70ce2b0bd4c5a4d855",
+        "mtime_after_session_start": false
+      },
+      {
+        "path": "manuscript_final/full_manuscript_final.md",
+        "exists": true,
+        "size_bytes": 122181,
+        "mtime_utc": "2026-09-04T02:23:35Z",
+        "sha256": "bbffbf905aa78fd3dacd89ccd4340ff9043a50c57854b20d12187909c4b2e4a3",
+        "mtime_after_session_start": false
+      },
+      {
+        "path": "src/cross/domain/uot/uot_solver.py",
+        "exists": true,
+        "size_bytes": 4771,
+        "mtime_utc": "2026-05-09T04:10:32Z",
+        "sha256": "6bcfa3122dda29351d3f785c184be935aa038441bbb4f0c03cf258dcde6c5a92",
+        "mtime_after_session_start": false
+      },
+      {
+        "path": "src/cross/domain/uot/cost_matrix.py",
+        "exists": true,
+        "size_bytes": 10023,
+        "mtime_utc": "2026-06-09T19:15:44Z",
+        "sha256": "189dcddc157ac47479344ff092f8272af3b1111a83d45864be7d27036e52e813",
+        "mtime_after_session_start": false
+      },
+      {
+        "path": "scripts/multi_bridge/holdout/holdout_common.py",
+        "exists": true,
+        "size_bytes": 10980,
+        "mtime_utc": "2026-09-02T13:29:22Z",
+        "sha256": "d1a76737e321d4bc6f1610db643b60a98117f556e06598c5a849699519121ca7",
+        "mtime_after_session_start": false
+      },
+      {
+        "path": "scripts/multi_bridge/holdout/run_locked_holdout.py",
+        "exists": true,
+        "size_bytes": 17003,
+        "mtime_utc": "2026-09-02T13:29:22Z",
+        "sha256": "eb48c35e78e30443ac4ec4d44434b1d9e060121fcee5d6cec270d71a10f6abee",
+        "mtime_after_session_start": false
+      },
+      {
+        "path": "ZN_TIFS_R5_PAPER_AUTHORING_PACKAGE/tables/Table3_confirmatory_statistics.json",
+        "exists": true,
+        "size_bytes": 4706,
+        "mtime_utc": "2026-09-14T00:12:22Z",
+        "sha256": "43d98964046ed8c51dfee50327e1dbdeb65aaa894a3809fa44932737e49b4517",
+        "mtime_after_session_start": false
+      }
+    ],
+    "final_docx": {
+      "path": "3/final/ZN_TIFS_FINAL_CN.docx",
+      "exists": true,
+      "size_bytes": 2838033,
+      "sha256": "7a958b23107cb1ec8efdd1cc538749e02c8d439b642caa70ce2b0bd4c5a4d855",
+      "mtime_utc": "2026-09-04T10:14:50Z"
+    }
+  }
+}

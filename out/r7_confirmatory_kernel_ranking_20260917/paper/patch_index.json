@@ -1,0 +1,56 @@
+{
+  "generated_at_utc": "2026-09-17T08:12:03Z",
+  "branch": "success",
+  "classification": "CONFIRMATORY_METHOD_SUPPORT",
+  "frozen_manuscript_overwritten": false,
+  "files": {
+    "ABSTRACT_PATCH_CN.md": {
+      "bytes": 1468,
+      "sha256": "e5575e00f1c9c8af6795e7207439341be4b19d5c05c6e547b9e72fa32342df0b"
+    },
+    "ABSTRACT_PATCH_EN.tex": {
+      "bytes": 1550,
+      "sha256": "0f1668fdabad26a435cadf6b599a4d90c6bef0dbd9d95c5041ddf523c20eafac"
+    },
+    "CONTRIBUTIONS_PATCH_CN.md": {
+      "bytes": 1425,
+      "sha256": "89ac706c3bdbf7a9a81aa12783a0c9f6e1bb46e917843b39aa86c7244132e2f8"
+    },
+    "CONTRIBUTIONS_PATCH_EN.tex": {
+      "bytes": 1603,
+      "sha256": "9bcfb8935bdecef87e5737e9500a9b53032cbd03d921723e7db95a08b5e963b2"
+    },
+    "SECTION_3_UOT_KR_CN.md": {
+      "bytes": 2661,
+      "sha256": "837ef1a930eb866b551cd5f0b82a59722065409716599eaf85164d399221e862"
+    },
+    "SECTION_3_UOT_KR_EN.tex": {
+      "bytes": 1966,
+      "sha256": "8cd4acc49bfaf996cf87adbc526192e94460176db49cb682564e9952bcf89e47"
+    },
+    "SECTION_4_R7_CONFIRMATORY_CN.md": {
+      "bytes": 5142,
+      "sha256": "fd0e636c44655216e3fc1ebc419b3e2b32a1e5768716321d483be68f1a445127"
+    },
+    "SECTION_4_R7_CONFIRMATORY_EN.tex": {
+      "bytes": 2493,
+      "sha256": "e257b56ad2bfa9934f96aeefc4a702519a73d6472c1517d0b84906f11f3f10ef"
+    },
+    "DISCUSSION_LIMITATIONS_PATCH_CN.md": {
+      "bytes": 2865,
+      "sha256": "880a847d49975397e5ac929bca53720f1227910f6fa468dc0985e7737e84e694"
+    },
+    "DISCUSSION_LIMITATIONS_PATCH_EN.tex": {
+      "bytes": 2527,
+      "sha256": "e4d72e564e836a7706c4cfb4b7d3e86eab89d4c296a622d84cf70e2ede02fc2a"
+    },
+    "CONCLUSION_PATCH_CN.md": {
+      "bytes": 998,
+      "sha256": "b8887f3220a2f28860e4044e08c3f4f342bb87fe29266ea13a427e5f2be82348"
+    },
+    "CONCLUSION_PATCH_EN.tex": {
+      "bytes": 1016,
+      "sha256": "689dba3ec54e28036b9799a36d9027a8339eff4e1aed8a69f933c96f141aa881"
+    }
+  }
+}

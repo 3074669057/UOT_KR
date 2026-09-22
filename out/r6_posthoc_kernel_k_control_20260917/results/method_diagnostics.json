@@ -1,0 +1,86 @@
+{
+  "2": {
+    "means": {
+      "AMOUNT_FREE_COST_D4": 0.3861111111111112,
+      "SUPPORT_PLUS_K_D4": 0.3786111111111112,
+      "CONDITIONAL_UOT_D4": 0.3503835978835979,
+      "RAW_UOT_PLAN_D4": 0.0008333333333333334
+    },
+    "conditional_minus_raw": 0.34955026455026456,
+    "conditional_minus_amount_free": -0.035727513227513275,
+    "conditional_minus_support_plus_k": -0.028227513227513268,
+    "support_plus_k_minus_raw": 0.3777777777777778,
+    "support_plus_k_minus_amount_free": -0.007500000000000007,
+    "amount_free_minus_raw": 0.38527777777777783
+  },
+  "3": {
+    "means": {
+      "AMOUNT_FREE_COST_D4": 0.5168518518518518,
+      "SUPPORT_PLUS_K_D4": 0.5066597867217061,
+      "CONDITIONAL_UOT_D4": 0.47971768336964415,
+      "RAW_UOT_PLAN_D4": 0.1236111111111111
+    },
+    "conditional_minus_raw": 0.35610657225853304,
+    "conditional_minus_amount_free": -0.03713416848220763,
+    "conditional_minus_support_plus_k": -0.02694210335206193,
+    "support_plus_k_minus_raw": 0.38304867561059497,
+    "support_plus_k_minus_amount_free": -0.0101920651301457,
+    "amount_free_minus_raw": 0.39324074074074067
+  },
+  "5": {
+    "means": {
+      "AMOUNT_FREE_COST_D4": 0.3171931003584229,
+      "SUPPORT_PLUS_K_D4": 0.3111732241772564,
+      "CONDITIONAL_UOT_D4": 0.3129093352883675,
+      "RAW_UOT_PLAN_D4": 0.23742822838252942
+    },
+    "conditional_minus_raw": 0.07548110690583809,
+    "conditional_minus_amount_free": -0.004283765070055401,
+    "conditional_minus_support_plus_k": 0.001736111111111105,
+    "support_plus_k_minus_raw": 0.07374499579472699,
+    "support_plus_k_minus_amount_free": -0.006019876181166506,
+    "amount_free_minus_raw": 0.07976487197589349
+  },
+  "7": {
+    "means": {
+      "AMOUNT_FREE_COST_D4": 0.2827618298553797,
+      "SUPPORT_PLUS_K_D4": 0.2775192857094665,
+      "CONDITIONAL_UOT_D4": 0.28199198061679315,
+      "RAW_UOT_PLAN_D4": 0.2622826775277342
+    },
+    "conditional_minus_raw": 0.019709303089058938,
+    "conditional_minus_amount_free": -0.0007698492385865285,
+    "conditional_minus_support_plus_k": 0.0044726949073266575,
+    "support_plus_k_minus_raw": 0.01523660818173228,
+    "support_plus_k_minus_amount_free": -0.005242544145913186,
+    "amount_free_minus_raw": 0.020479152327645467
+  },
+  "10": {
+    "means": {
+      "AMOUNT_FREE_COST_D4": 0.2620984723687539,
+      "SUPPORT_PLUS_K_D4": 0.25714953397743395,
+      "CONDITIONAL_UOT_D4": 0.2720039666084634,
+      "RAW_UOT_PLAN_D4": 0.25941497278241404
+    },
+    "conditional_minus_raw": 0.012588993826049333,
+    "conditional_minus_amount_free": 0.00990549423970949,
+    "conditional_minus_support_plus_k": 0.014854432631029424,
+    "support_plus_k_minus_raw": -0.002265438804980091,
+    "support_plus_k_minus_amount_free": -0.004948938391319935,
+    "amount_free_minus_raw": 0.0026834995863398436
+  },
+  "15": {
+    "means": {
+      "AMOUNT_FREE_COST_D4": 0.23294380039591125,
+      "SUPPORT_PLUS_K_D4": 0.23034555343120602,
+      "CONDITIONAL_UOT_D4": 0.2588960185618657,
+      "RAW_UOT_PLAN_D4": 0.25167249751236
+    },
+    "conditional_minus_raw": 0.007223521049505743,
+    "conditional_minus_amount_free": 0.02595221816595447,
+    "conditional_minus_support_plus_k": 0.028550465130659702,
+    "support_plus_k_minus_raw": -0.02132694408115396,
+    "support_plus_k_minus_amount_free": -0.002598246964705231,
+    "amount_free_minus_raw": -0.018728697116448728
+  }
+}

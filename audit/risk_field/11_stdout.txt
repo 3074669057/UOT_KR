@@ -1,0 +1,71 @@
+﻿### out\multi_bridge_expansion\faithful_flow_structural_three_bridges\feature_stats\Celer\flow_segments_eth.csv   [3155867 B]  rows=5735
+    all columns: ['chain', 'flow_id', 'tx_hashes', 'address_set', 'primary_address', 'token_contracts', 'token_symbols', 'asset_group', 'route_id', 'start_time', 'end_time', 'tx_count', 'raw_amount_sum', 'human_amount_sum', 'usd_amount_sum', 'aml_score_mean', 'aml_score_max', 'evidence_quality_mean', 'flow_construction_rule', 'bridge']
+    aml_score_mean: n=5735 nonnull=5735 missing=0 (0.00%) min=0.000000 max=27.906977 mean=3.586370 median=0.000000 std=6.068736 ndistinct=41 constant=False
+        q05=0.000000  q25=0.000000  q50=0.000000  q75=4.651163  q95=16.279070  q99=20.930233
+    aml_score_max: n=5735 nonnull=5735 missing=0 (0.00%) min=0.000000 max=27.906977 mean=3.742828 median=0.000000 std=6.133802 ndistinct=8 constant=False
+        q05=0.000000  q25=0.000000  q50=0.000000  q75=4.651163  q95=16.279070  q99=20.930233
+        value_counts: {0.0: 3727, 4.651163: 861, 9.302326: 12, 11.627907: 395, 13.953488: 6, 16.27907: 586, 20.930233: 143, 27.906977: 5}
+    evidence_quality_mean: n=5735 nonnull=5735 missing=0 (0.00%) min=0.750000 max=0.800000 mean=0.783793 median=0.775000 std=0.015652 ndistinct=3 constant=False
+        q05=0.750000  q25=0.775000  q50=0.775000  q75=0.800000  q95=0.800000  q99=0.800000
+        value_counts: {0.75: 470, 0.775: 2778, 0.8: 2487}
+
+### out\multi_bridge_expansion\faithful_flow_structural_three_bridges\feature_stats\Celer\flow_segments_bnb.csv   [4050832 B]  rows=7122
+    all columns: ['chain', 'flow_id', 'tx_hashes', 'address_set', 'primary_address', 'token_contracts', 'token_symbols', 'asset_group', 'route_id', 'start_time', 'end_time', 'tx_count', 'raw_amount_sum', 'human_amount_sum', 'usd_amount_sum', 'aml_score_mean', 'aml_score_max', 'evidence_quality_mean', 'flow_construction_rule', 'bridge']
+    aml_score_mean: n=7122 nonnull=7122 missing=0 (0.00%) min=0.000000 max=0.000000 mean=0.000000 median=0.000000 std=0.000000 ndistinct=1 constant=True
+        q05=0.000000  q25=0.000000  q50=0.000000  q75=0.000000  q95=0.000000  q99=0.000000
+        value_counts: {0.0: 7122}
+    aml_score_max: n=7122 nonnull=7122 missing=0 (0.00%) min=0.000000 max=0.000000 mean=0.000000 median=0.000000 std=0.000000 ndistinct=1 constant=True
+        q05=0.000000  q25=0.000000  q50=0.000000  q75=0.000000  q95=0.000000  q99=0.000000
+        value_counts: {0.0: 7122}
+    evidence_quality_mean: n=7122 nonnull=7122 missing=0 (0.00%) min=0.750000 max=0.800000 mean=0.789016 median=0.800000 std=0.012430 ndistinct=3 constant=False
+        q05=0.775000  q25=0.775000  q50=0.800000  q75=0.800000  q95=0.800000  q99=0.800000
+        value_counts: {0.75: 3, 0.775: 3123, 0.8: 3996}
+
+### out\multi_bridge_expansion\faithful_flow_structural_three_bridges\feature_stats\Multi\flow_segments_eth.csv   [2155209 B]  rows=4597
+    all columns: ['chain', 'bridge', 'flow_id', 'tx_hashes', 'address_set', 'primary_address', 'token_contracts', 'token_symbols', 'asset_group', 'route_id', 'start_time', 'end_time', 'tx_count', 'raw_amount_sum', 'human_amount_sum', 'usd_amount_sum', 'aml_score_mean', 'aml_score_max', 'evidence_quality_mean', 'flow_construction_rule']
+    aml_score_mean: n=4597 nonnull=4597 missing=0 (0.00%) min=0.000000 max=20.930233 mean=1.805525 median=0.000000 std=4.440992 ndistinct=8 constant=False
+        q05=0.000000  q25=0.000000  q50=0.000000  q75=0.000000  q95=16.279070  q99=16.279070
+        value_counts: {0.0: 3722, 4.651163: 481, 9.302326: 21, 11.627907: 49, 13.953488: 4, 16.27907: 312, 18.604651: 2, 20.930233: 6}
+    aml_score_max: n=4597 nonnull=4597 missing=0 (0.00%) min=0.000000 max=20.930233 mean=1.805525 median=0.000000 std=4.440992 ndistinct=8 constant=False
+        q05=0.000000  q25=0.000000  q50=0.000000  q75=0.000000  q95=16.279070  q99=16.279070
+        value_counts: {0.0: 3722, 4.651163: 481, 9.302326: 21, 11.627907: 49, 13.953488: 4, 16.27907: 312, 18.604651: 2, 20.930233: 6}
+    evidence_quality_mean: n=4597 nonnull=4597 missing=0 (0.00%) min=0.750000 max=0.800000 mean=0.776147 median=0.775000 std=0.012282 ndistinct=3 constant=False
+        q05=0.750000  q25=0.775000  q50=0.775000  q75=0.775000  q95=0.800000  q99=0.800000
+        value_counts: {0.75: 454, 0.775: 3478, 0.8: 665}
+
+### out\multi_bridge_expansion\faithful_flow_structural_three_bridges\feature_stats\Multi\flow_segments_bnb.csv   [2325547 B]  rows=4597
+    all columns: ['chain', 'bridge', 'flow_id', 'tx_hashes', 'address_set', 'primary_address', 'token_contracts', 'token_symbols', 'asset_group', 'route_id', 'start_time', 'end_time', 'tx_count', 'raw_amount_sum', 'human_amount_sum', 'usd_amount_sum', 'aml_score_mean', 'aml_score_max', 'evidence_quality_mean', 'flow_construction_rule', 'bridge_contract_hit']
+    aml_score_mean: n=4597 nonnull=4597 missing=0 (0.00%) min=0.000000 max=0.000000 mean=0.000000 median=0.000000 std=0.000000 ndistinct=1 constant=True
+        q05=0.000000  q25=0.000000  q50=0.000000  q75=0.000000  q95=0.000000  q99=0.000000
+        value_counts: {0: 4597}
+    aml_score_max: n=4597 nonnull=4597 missing=0 (0.00%) min=0.000000 max=0.000000 mean=0.000000 median=0.000000 std=0.000000 ndistinct=1 constant=True
+        q05=0.000000  q25=0.000000  q50=0.000000  q75=0.000000  q95=0.000000  q99=0.000000
+        value_counts: {0: 4597}
+    evidence_quality_mean: n=4597 nonnull=4597 missing=0 (0.00%) min=0.750000 max=0.825000 mean=0.795764 median=0.800000 std=0.016967 ndistinct=4 constant=False
+        q05=0.775000  q25=0.775000  q50=0.800000  q75=0.800000  q95=0.825000  q99=0.825000
+        value_counts: {0.75: 100, 0.775: 1214, 0.8: 2648, 0.825: 635}
+
+### out\multi_bridge_expansion\faithful_flow_structural_three_bridges\feature_stats\Poly\flow_segments_eth.csv   [930608 B]  rows=1760
+    all columns: ['chain', 'bridge', 'flow_id', 'tx_hashes', 'address_set', 'primary_address', 'token_contracts', 'token_symbols', 'asset_group', 'route_id', 'start_time', 'end_time', 'tx_count', 'raw_amount_sum', 'human_amount_sum', 'usd_amount_sum', 'aml_score_mean', 'aml_score_max', 'evidence_quality_mean', 'flow_construction_rule']
+    aml_score_mean: n=1760 nonnull=1760 missing=0 (0.00%) min=0.000000 max=20.930233 mean=15.062104 median=16.279070 std=4.012747 ndistinct=4 constant=False
+        q05=0.000000  q25=16.279070  q50=16.279070  q75=16.279070  q95=16.279070  q99=20.930233
+        value_counts: {0.0: 103, 11.627907: 134, 16.27907: 1489, 20.930233: 34}
+    aml_score_max: n=1760 nonnull=1760 missing=0 (0.00%) min=0.000000 max=20.930233 mean=15.062104 median=16.279070 std=4.012747 ndistinct=4 constant=False
+        q05=0.000000  q25=16.279070  q50=16.279070  q75=16.279070  q95=16.279070  q99=20.930233
+        value_counts: {0.0: 103, 11.627907: 134, 16.27907: 1489, 20.930233: 34}
+    evidence_quality_mean: n=1760 nonnull=1760 missing=0 (0.00%) min=0.775000 max=0.800000 mean=0.790781 median=0.800000 std=0.012065 ndistinct=2 constant=False
+        q05=0.775000  q25=0.775000  q50=0.800000  q75=0.800000  q95=0.800000  q99=0.800000
+        value_counts: {0.775: 649, 0.8: 1111}
+
+### out\multi_bridge_expansion\faithful_flow_structural_three_bridges\feature_stats\Poly\flow_segments_bnb.csv   [914994 B]  rows=1760
+    all columns: ['chain', 'bridge', 'flow_id', 'tx_hashes', 'address_set', 'primary_address', 'token_contracts', 'token_symbols', 'asset_group', 'route_id', 'start_time', 'end_time', 'tx_count', 'raw_amount_sum', 'human_amount_sum', 'usd_amount_sum', 'aml_score_mean', 'aml_score_max', 'evidence_quality_mean', 'flow_construction_rule', 'bridge_contract_hit']
+    aml_score_mean: n=1760 nonnull=1760 missing=0 (0.00%) min=0.000000 max=0.000000 mean=0.000000 median=0.000000 std=0.000000 ndistinct=1 constant=True
+        q05=0.000000  q25=0.000000  q50=0.000000  q75=0.000000  q95=0.000000  q99=0.000000
+        value_counts: {0: 1760}
+    aml_score_max: n=1760 nonnull=1760 missing=0 (0.00%) min=0.000000 max=0.000000 mean=0.000000 median=0.000000 std=0.000000 ndistinct=1 constant=True
+        q05=0.000000  q25=0.000000  q50=0.000000  q75=0.000000  q95=0.000000  q99=0.000000
+        value_counts: {0: 1760}
+    evidence_quality_mean: n=1760 nonnull=1760 missing=0 (0.00%) min=0.775000 max=0.825000 mean=0.815767 median=0.825000 std=0.012098 ndistinct=3 constant=False
+        q05=0.800000  q25=0.800000  q50=0.825000  q75=0.825000  q95=0.825000  q99=0.825000
+        value_counts: {0.775: 1, 0.8: 648, 0.825: 1111}
+

@@ -1,0 +1,2408 @@
+﻿[
+    {
+        "package_path":  "manuscript\\CURRENT_R5C\\ZN_TIFS_CN_R5_DRAFT.docx",
+        "archive_path":  "manuscript_versions\\R5_chinese_rewrite\\draft\\ZN_TIFS_CN_R5_DRAFT.docx",
+        "size_bytes":  1753518,
+        "ext":  ".docx"
+    },
+    {
+        "package_path":  "manuscript\\CURRENT_R5C\\full_manuscript_final.md",
+        "archive_path":  "manuscript_versions\\R5_chinese_rewrite\\draft\\en\\full_manuscript_final.md",
+        "size_bytes":  123166,
+        "ext":  ".md"
+    },
+    {
+        "package_path":  "manuscript\\CURRENT_R5C\\04_experiments.md",
+        "archive_path":  "manuscript_versions\\R5_chinese_rewrite\\draft\\en\\04_experiments.md",
+        "size_bytes":  57741,
+        "ext":  ".md"
+    },
+    {
+        "package_path":  "manuscript\\CURRENT_R5C\\supplement_CN_S1_covered_quotient.md",
+        "archive_path":  "manuscript_versions\\R5_chinese_rewrite\\draft\\CN_补充S1_覆盖商空间一致性核对.md",
+        "size_bytes":  1039,
+        "ext":  ".md"
+    },
+    {
+        "package_path":  "manuscript\\CURRENT_R5C\\supplement_EN_S1_covered_quotient.md",
+        "archive_path":  "manuscript_versions\\R5_chinese_rewrite\\draft\\en\\supplement_S1_covered_quotient.md",
+        "size_bytes":  1219,
+        "ext":  ".md"
+    },
+    {
+        "package_path":  "manuscript\\CURRENT_R5C\\supplement_EN_S2_ci_sensitivity.md",
+        "archive_path":  "manuscript_versions\\R5_chinese_rewrite\\draft\\en\\supplement_S2_ci_sensitivity.md",
+        "size_bytes":  1327,
+        "ext":  ".md"
+    },
+    {
+        "package_path":  "manuscript\\CURRENT_R5C\\supplement_EN_S3_provenance_adequacy.md",
+        "archive_path":  "manuscript_versions\\R5_chinese_rewrite\\draft\\en\\supplement_S3_provenance_adequacy.md",
+        "size_bytes":  6629,
+        "ext":  ".md"
+    },
+    {
+        "package_path":  "manuscript\\CURRENT_R5C\\supplement_EN_S4_scalability.md",
+        "archive_path":  "manuscript_versions\\R5_chinese_rewrite\\draft\\en\\supplement_S4_scalability.md",
+        "size_bytes":  2855,
+        "ext":  ".md"
+    },
+    {
+        "package_path":  "manuscript\\CURRENT_R5C\\R5C_FINAL_RETURN.md",
+        "archive_path":  "manuscript_versions\\R5_chinese_rewrite\\final\\R5C_FINAL_RETURN.md",
+        "size_bytes":  8992,
+        "ext":  ".md"
+    },
+    {
+        "package_path":  "manuscript\\CURRENT_R5C\\R5C_AUTHOR_VISUAL_QA_CHECKLIST.md",
+        "archive_path":  "manuscript_versions\\R5_chinese_rewrite\\final\\R5C_AUTHOR_VISUAL_QA_CHECKLIST.md",
+        "size_bytes":  2991,
+        "ext":  ".md"
+    },
+    {
+        "package_path":  "manuscript\\STAGE_R4\\ZN_TIFS_CN_R4_PHASE3_REVIEW.docx",
+        "archive_path":  "manuscript_versions\\R4_chinese_rewrite\\phase3\\draft\\ZN_TIFS_CN_R4_PHASE3_REVIEW.docx",
+        "size_bytes":  1852436,
+        "ext":  ".docx"
+    },
+    {
+        "package_path":  "manuscript\\STAGE_R4\\ZN_TIFS_CN_R4_PHASE3_TEXT.md",
+        "archive_path":  "manuscript_versions\\R4_chinese_rewrite\\phase3\\draft\\ZN_TIFS_CN_R4_PHASE3_TEXT.md",
+        "size_bytes":  36165,
+        "ext":  ".md"
+    },
+    {
+        "package_path":  "manuscript\\STAGE_R4\\R4_CN_SUPPLEMENT_CONSOLIDATED.md",
+        "archive_path":  "manuscript_versions\\R4_chinese_rewrite\\phase3\\supplement\\R4_CN_SUPPLEMENT_CONSOLIDATED.md",
+        "size_bytes":  9429,
+        "ext":  ".md"
+    },
+    {
+        "package_path":  "manuscript\\STAGE_R3\\ZN_TIFS_CN_R3_TIFS_STYLE.docx",
+        "archive_path":  "manuscript_versions\\R3_tifs_reference_rebuild\\chinese\\ZN_TIFS_CN_R3_TIFS_STYLE.docx",
+        "size_bytes":  2201922,
+        "ext":  ".docx"
+    },
+    {
+        "package_path":  "manuscript\\STAGE_R3\\ZN_TIFS_CN_R3.md",
+        "archive_path":  "manuscript_versions\\R3_tifs_reference_rebuild\\chinese\\ZN_TIFS_CN_R3.md",
+        "size_bytes":  32242,
+        "ext":  ".md"
+    },
+    {
+        "package_path":  "manuscript\\STAGE_R3\\latex_main.tex",
+        "archive_path":  "manuscript_versions\\R3_tifs_reference_rebuild\\latex\\main.tex",
+        "size_bytes":  3975,
+        "ext":  ".tex"
+    },
+    {
+        "package_path":  "manuscript\\STAGE_R3\\latex_supplementary_r3.tex",
+        "archive_path":  "manuscript_versions\\R3_tifs_reference_rebuild\\latex\\supplementary_r3.tex",
+        "size_bytes":  25691,
+        "ext":  ".tex"
+    },
+    {
+        "package_path":  "core_results\\A_structural\\structural_three_bridges.json",
+        "archive_path":  "experiment_results\\R5_paper_experiments_results\\structural_recovery\\structural_three_bridges.json",
+        "size_bytes":  1018,
+        "ext":  ".json"
+    },
+    {
+        "package_path":  "core_results\\A_structural\\structural_recovery_README.md",
+        "archive_path":  "experiment_results\\R5_paper_experiments_results\\structural_recovery\\README.md",
+        "size_bytes":  1643,
+        "ext":  ".md"
+    },
+    {
+        "package_path":  "core_results\\A_structural\\structural_aggregated.json",
+        "archive_path":  "experiment_results\\R5_paper_experiments_results\\structural_benchmark\\aggregated\\structural_aggregated.json",
+        "size_bytes":  444,
+        "ext":  ".json"
+    },
+    {
+        "package_path":  "core_results\\A_structural\\structural_aggregated.csv",
+        "archive_path":  "experiment_results\\R5_paper_experiments_results\\structural_benchmark\\aggregated\\structural_aggregated.csv",
+        "size_bytes":  306,
+        "ext":  ".csv"
+    },
+    {
+        "package_path":  "core_results\\A_structural\\structural_per_seed.csv",
+        "archive_path":  "experiment_results\\R5_paper_experiments_results\\structural_benchmark\\aggregated\\structural_per_seed.csv",
+        "size_bytes":  1067,
+        "ext":  ".csv"
+    },
+    {
+        "package_path":  "core_results\\A_structural\\structural_verification_report.json",
+        "archive_path":  "experiment_results\\R5_paper_experiments_results\\structural_benchmark\\aggregated\\verification_report.json",
+        "size_bytes":  9797,
+        "ext":  ".json"
+    },
+    {
+        "package_path":  "core_results\\A_structural\\structural_verification_report.md",
+        "archive_path":  "experiment_results\\R5_paper_experiments_results\\structural_benchmark\\aggregated\\verification_report.md",
+        "size_bytes":  2071,
+        "ext":  ".md"
+    },
+    {
+        "package_path":  "core_results\\A_structural\\structural_per_seed_frozen.csv",
+        "archive_path":  "experiment_results\\R5_paper_experiments_results\\structural_benchmark\\per_seed\\structural_per_seed.csv",
+        "size_bytes":  1059,
+        "ext":  ".csv"
+    },
+    {
+        "package_path":  "core_results\\A_structural\\RUN_MANIFEST_structural_benchmark.md",
+        "archive_path":  "experiment_results\\R5_paper_experiments_results\\structural_benchmark\\RUN_MANIFEST.md",
+        "size_bytes":  6768,
+        "ext":  ".md"
+    },
+    {
+        "package_path":  "core_results\\A_structural\\main_structural_comparison.csv",
+        "archive_path":  "experiment_results\\R5_paper_experiments_results\\structural_baseline_study\\aggregated\\main_structural_comparison.csv",
+        "size_bytes":  7702,
+        "ext":  ".csv"
+    },
+    {
+        "package_path":  "core_results\\A_structural\\main_structural_comparison.md",
+        "archive_path":  "experiment_results\\R5_paper_experiments_results\\structural_baseline_study\\aggregated\\main_structural_comparison.md",
+        "size_bytes":  3103,
+        "ext":  ".md"
+    },
+    {
+        "package_path":  "core_results\\A_structural\\baseline_per_seed_metrics.csv",
+        "archive_path":  "experiment_results\\R5_paper_experiments_results\\structural_baseline_study\\aggregated\\per_seed_metrics.csv",
+        "size_bytes":  9407,
+        "ext":  ".csv"
+    },
+    {
+        "package_path":  "core_results\\A_structural\\selected_threshold.json",
+        "archive_path":  "experiment_results\\R5_paper_experiments_results\\structural_baseline_study\\calibration\\selected_threshold.json",
+        "size_bytes":  1564,
+        "ext":  ".json"
+    },
+    {
+        "package_path":  "core_results\\A_structural\\RUN_MANIFEST_structural_baseline_study.md",
+        "archive_path":  "experiment_results\\R5_paper_experiments_results\\structural_baseline_study\\RUN_MANIFEST.md",
+        "size_bytes":  7448,
+        "ext":  ".md"
+    },
+    {
+        "package_path":  "core_results\\B_conditional_decoding\\statistics.json",
+        "archive_path":  "experiment_results\\R5_paper_experiments_results\\confirmatory_holdout\\statistics.json",
+        "size_bytes":  4706,
+        "ext":  ".json"
+    },
+    {
+        "package_path":  "core_results\\B_conditional_decoding\\verification.json",
+        "archive_path":  "experiment_results\\R5_paper_experiments_results\\confirmatory_holdout\\verification.json",
+        "size_bytes":  747,
+        "ext":  ".json"
+    },
+    {
+        "package_path":  "core_results\\B_conditional_decoding\\FINAL_CONFIRMATORY_HOLDOUT_REPORT.md",
+        "archive_path":  "experiment_results\\R5_paper_experiments_results\\confirmatory_holdout\\FINAL_CONFIRMATORY_HOLDOUT_REPORT.md",
+        "size_bytes":  11171,
+        "ext":  ".md"
+    },
+    {
+        "package_path":  "core_results\\B_conditional_decoding\\dual_scaling\\FINAL_TRANSPORT_DIAGNOSIS.md",
+        "archive_path":  "experiment_results\\R5_paper_experiments_results\\dual_scaling_diag\\FINAL_TRANSPORT_DIAGNOSIS.md",
+        "size_bytes":  6575,
+        "ext":  ".md"
+    },
+    {
+        "package_path":  "core_results\\B_conditional_decoding\\dual_scaling\\HASH_MANIFEST.json",
+        "archive_path":  "experiment_results\\R5_paper_experiments_results\\dual_scaling_diag\\HASH_MANIFEST.json",
+        "size_bytes":  1407,
+        "ext":  ".json"
+    },
+    {
+        "package_path":  "core_results\\B_conditional_decoding\\dual_scaling\\RUN_MANIFEST.md",
+        "archive_path":  "experiment_results\\R5_paper_experiments_results\\dual_scaling_diag\\RUN_MANIFEST.md",
+        "size_bytes":  3154,
+        "ext":  ".md"
+    },
+    {
+        "package_path":  "core_results\\B_conditional_decoding\\dual_scaling\\NEXT_TRANSPORT_CANDIDATE_OPTIONS.md",
+        "archive_path":  "experiment_results\\R5_paper_experiments_results\\dual_scaling_diag\\NEXT_TRANSPORT_CANDIDATE_OPTIONS.md",
+        "size_bytes":  6243,
+        "ext":  ".md"
+    },
+    {
+        "package_path":  "core_results\\B_conditional_decoding\\dual_scaling\\mechanism_summary.json",
+        "archive_path":  "experiment_results\\R5_paper_experiments_results\\dual_scaling_diag\\verification\\mechanism_summary.json",
+        "size_bytes":  6648,
+        "ext":  ".json"
+    },
+    {
+        "package_path":  "core_results\\B_conditional_decoding\\dual_scaling\\verification_report.json",
+        "archive_path":  "experiment_results\\R5_paper_experiments_results\\dual_scaling_diag\\verification\\verification_report.json",
+        "size_bytes":  672,
+        "ext":  ".json"
+    },
+    {
+        "package_path":  "core_results\\B_conditional_decoding\\dual_scaling\\verification_report.md",
+        "archive_path":  "experiment_results\\R5_paper_experiments_results\\dual_scaling_diag\\verification\\verification_report.md",
+        "size_bytes":  740,
+        "ext":  ".md"
+    },
+    {
+        "package_path":  "core_results\\B_conditional_decoding\\cost_diag\\FINAL_COST_TRANSPORT_DIAGNOSIS.md",
+        "archive_path":  "experiment_results\\R5_paper_experiments_results\\cost_diag\\FINAL_COST_TRANSPORT_DIAGNOSIS.md",
+        "size_bytes":  8237,
+        "ext":  ".md"
+    },
+    {
+        "package_path":  "core_results\\B_conditional_decoding\\cost_diag\\RUN_MANIFEST.md",
+        "archive_path":  "experiment_results\\R5_paper_experiments_results\\cost_diag\\RUN_MANIFEST.md",
+        "size_bytes":  4272,
+        "ext":  ".md"
+    },
+    {
+        "package_path":  "core_results\\B_conditional_decoding\\cost_diag\\NEXT_CANDIDATE_SPEC.md",
+        "archive_path":  "experiment_results\\R5_paper_experiments_results\\cost_diag\\NEXT_CANDIDATE_SPEC.md",
+        "size_bytes":  7200,
+        "ext":  ".md"
+    },
+    {
+        "package_path":  "core_results\\B_conditional_decoding\\cost_diag\\verification_report.json",
+        "archive_path":  "experiment_results\\R5_paper_experiments_results\\cost_diag\\verification\\verification_report.json",
+        "size_bytes":  684,
+        "ext":  ".json"
+    },
+    {
+        "package_path":  "core_results\\B_conditional_decoding\\cost_diag\\verification_report.md",
+        "archive_path":  "experiment_results\\R5_paper_experiments_results\\cost_diag\\verification\\verification_report.md",
+        "size_bytes":  817,
+        "ext":  ".md"
+    },
+    {
+        "package_path":  "core_results\\B_conditional_decoding\\cost_diag\\preaudit_hashes.json",
+        "archive_path":  "experiment_results\\R5_paper_experiments_results\\cost_diag\\verification\\preaudit_hashes.json",
+        "size_bytes":  29471,
+        "ext":  ".json"
+    },
+    {
+        "package_path":  "core_results\\B_conditional_decoding\\cost_diag\\next_candidate_spec_lock.json",
+        "archive_path":  "experiment_results\\R5_paper_experiments_results\\cost_diag\\verification\\next_candidate_spec_lock.json",
+        "size_bytes":  927,
+        "ext":  ".json"
+    },
+    {
+        "package_path":  "core_results\\B_conditional_decoding\\ci_sensitivity_resampling_audit_results.json",
+        "archive_path":  "experiment_results\\R5_paper_experiments_results\\ci_sensitivity\\resampling_audit_results.json",
+        "size_bytes":  4076,
+        "ext":  ".json"
+    },
+    {
+        "package_path":  "core_results\\B_conditional_decoding\\dependence_reaudit_results.json",
+        "archive_path":  "experiment_results\\R5_paper_experiments_results\\dependence_reaudit\\dependence_reaudit_results.json",
+        "size_bytes":  1288,
+        "ext":  ".json"
+    },
+    {
+        "package_path":  "core_results\\B_conditional_decoding\\anchor_overlap.json",
+        "archive_path":  "experiment_results\\R5_paper_experiments_results\\dependence_reaudit\\anchor_overlap.json",
+        "size_bytes":  1959,
+        "ext":  ".json"
+    },
+    {
+        "package_path":  "core_results\\B_conditional_decoding\\decoder_comparison\\admissible_decoding_summary.json",
+        "archive_path":  "experiment_results\\R5_paper_experiments_results\\admissible_decoding\\admissible_decoding_summary.json",
+        "size_bytes":  13037,
+        "ext":  ".json"
+    },
+    {
+        "package_path":  "core_results\\B_conditional_decoding\\decoder_comparison\\admissible_decoding_tradeoff.csv",
+        "archive_path":  "experiment_results\\R5_paper_experiments_results\\admissible_decoding\\admissible_decoding_tradeoff.csv",
+        "size_bytes":  2372,
+        "ext":  ".csv"
+    },
+    {
+        "package_path":  "core_results\\B_conditional_decoding\\decoder_comparison\\paper_admissible_decoding_main_table_clean.json",
+        "archive_path":  "experiment_results\\R5_paper_experiments_results\\admissible_decoding\\paper_admissible_decoding_main_table_clean.json",
+        "size_bytes":  5637,
+        "ext":  ".json"
+    },
+    {
+        "package_path":  "core_results\\B_conditional_decoding\\decoder_comparison\\paper_admissible_decoding_main_table_clean.md",
+        "archive_path":  "experiment_results\\R5_paper_experiments_results\\admissible_decoding\\paper_admissible_decoding_main_table_clean.md",
+        "size_bytes":  1597,
+        "ext":  ".md"
+    },
+    {
+        "package_path":  "core_results\\B_conditional_decoding\\decoder_comparison\\paper_admissible_decoding_table.md",
+        "archive_path":  "experiment_results\\R5_paper_experiments_results\\admissible_decoding\\paper_admissible_decoding_table.md",
+        "size_bytes":  1962,
+        "ext":  ".md"
+    },
+    {
+        "package_path":  "core_results\\B_conditional_decoding\\decoder_comparison\\admissible_decoding_manifest.json",
+        "archive_path":  "experiment_results\\R5_paper_experiments_results\\admissible_decoding\\admissible_decoding_manifest.json",
+        "size_bytes":  1293,
+        "ext":  ".json"
+    },
+    {
+        "package_path":  "core_results\\C_baseline_table4\\dev_selection_summary.json",
+        "archive_path":  "experiment_results\\R5_paper_experiments_results\\baseline_table4\\dev_selection_summary.json",
+        "size_bytes":  6518,
+        "ext":  ".json"
+    },
+    {
+        "package_path":  "core_results\\C_baseline_table4\\precision_f1_pareto_gate.json",
+        "archive_path":  "experiment_results\\R5_paper_experiments_results\\baseline_table4\\precision_f1_pareto_gate.json",
+        "size_bytes":  868,
+        "ext":  ".json"
+    },
+    {
+        "package_path":  "core_results\\C_baseline_table4\\audit_phase29.json",
+        "archive_path":  "experiment_results\\R5_paper_experiments_results\\baseline_table4\\audit_phase29_robust_rcuot_superiority.json",
+        "size_bytes":  11235,
+        "ext":  ".json"
+    },
+    {
+        "package_path":  "core_results\\C_baseline_table4\\dev_baseline_table.csv",
+        "archive_path":  "experiment_results\\R5_paper_experiments_results\\baseline_table4\\dev_baseline_table.csv",
+        "size_bytes":  491,
+        "ext":  ".csv"
+    },
+    {
+        "package_path":  "core_results\\C_baseline_table4\\dev_candidate_table.csv",
+        "archive_path":  "experiment_results\\R5_paper_experiments_results\\baseline_table4\\dev_candidate_table.csv",
+        "size_bytes":  1787,
+        "ext":  ".csv"
+    },
+    {
+        "package_path":  "core_results\\C_baseline_table4\\fresh_holdout_baseline_table.csv",
+        "archive_path":  "experiment_results\\R5_paper_experiments_results\\baseline_table4\\fresh_holdout_baseline_table.csv",
+        "size_bytes":  438,
+        "ext":  ".csv"
+    },
+    {
+        "package_path":  "core_results\\C_baseline_table4\\fresh_holdout_candidate_table.csv",
+        "archive_path":  "experiment_results\\R5_paper_experiments_results\\baseline_table4\\fresh_holdout_candidate_table.csv",
+        "size_bytes":  421,
+        "ext":  ".csv"
+    },
+    {
+        "package_path":  "core_results\\C_baseline_table4\\normalized_metric_table.csv",
+        "archive_path":  "experiment_results\\R5_paper_experiments_results\\baseline_table4\\normalized_metric_table.csv",
+        "size_bytes":  2183,
+        "ext":  ".csv"
+    },
+    {
+        "package_path":  "core_results\\C_baseline_table4\\metric_win_loss_table.csv",
+        "archive_path":  "experiment_results\\R5_paper_experiments_results\\baseline_table4\\metric_win_loss_table.csv",
+        "size_bytes":  133,
+        "ext":  ".csv"
+    },
+    {
+        "package_path":  "core_results\\C_baseline_table4\\pareto_frontier_table.csv",
+        "archive_path":  "experiment_results\\R5_paper_experiments_results\\baseline_table4\\pareto_frontier_table.csv",
+        "size_bytes":  382,
+        "ext":  ".csv"
+    },
+    {
+        "package_path":  "core_results\\C_baseline_table4\\coverage_qualified_summary.json",
+        "archive_path":  "experiment_results\\R5_paper_experiments_results\\baseline_table4\\coverage_qualified_summary.json",
+        "size_bytes":  426,
+        "ext":  ".json"
+    },
+    {
+        "package_path":  "core_results\\C_baseline_table4\\coverage_tier_report.csv",
+        "archive_path":  "experiment_results\\R5_paper_experiments_results\\baseline_table4\\coverage_tier_report.csv",
+        "size_bytes":  134,
+        "ext":  ".csv"
+    },
+    {
+        "package_path":  "core_results\\C_baseline_table4\\balanced_relative_gate.json",
+        "archive_path":  "experiment_results\\R5_paper_experiments_results\\baseline_table4\\balanced_relative_gate.json",
+        "size_bytes":  1269,
+        "ext":  ".json"
+    },
+    {
+        "package_path":  "core_results\\C_baseline_table4\\full_scope_claim_gate.json",
+        "archive_path":  "experiment_results\\R5_paper_experiments_results\\baseline_table4\\full_scope_claim_gate.json",
+        "size_bytes":  96,
+        "ext":  ".json"
+    },
+    {
+        "package_path":  "core_results\\C_baseline_table4\\key_metric_superiority_gate.json",
+        "archive_path":  "experiment_results\\R5_paper_experiments_results\\baseline_table4\\key_metric_superiority_gate.json",
+        "size_bytes":  99,
+        "ext":  ".json"
+    },
+    {
+        "package_path":  "core_results\\C_baseline_table4\\strict_superiority_gate.json",
+        "archive_path":  "experiment_results\\R5_paper_experiments_results\\baseline_table4\\strict_superiority_gate.json",
+        "size_bytes":  99,
+        "ext":  ".json"
+    },
+    {
+        "package_path":  "core_results\\C_baseline_table4\\phase29_config.json",
+        "archive_path":  "experiment_results\\R5_paper_experiments_results\\baseline_table4\\phase29_config.json",
+        "size_bytes":  1439,
+        "ext":  ".json"
+    },
+    {
+        "package_path":  "core_results\\C_baseline_table4\\claim_boundary_update.md",
+        "archive_path":  "experiment_results\\R5_paper_experiments_results\\baseline_table4\\claim_boundary_update.md",
+        "size_bytes":  856,
+        "ext":  ".md"
+    },
+    {
+        "package_path":  "core_results\\C_baseline_table4\\failure_bottleneck_report.md",
+        "archive_path":  "experiment_results\\R5_paper_experiments_results\\baseline_table4\\failure_bottleneck_report.md",
+        "size_bytes":  815,
+        "ext":  ".md"
+    },
+    {
+        "package_path":  "core_results\\C_baseline_connector\\degradation_curve_v2.json",
+        "archive_path":  "experiment_results\\R5_paper_experiments_results\\connector_native\\degradation_curve_v2.json",
+        "size_bytes":  2154,
+        "ext":  ".json"
+    },
+    {
+        "package_path":  "core_results\\C_baseline_connector\\degradation_curve_v2.md",
+        "archive_path":  "experiment_results\\R5_paper_experiments_results\\connector_native\\degradation_curve_v2.md",
+        "size_bytes":  687,
+        "ext":  ".md"
+    },
+    {
+        "package_path":  "core_results\\C_baseline_connector\\symmetric_masking_spec_v2.json",
+        "archive_path":  "experiment_results\\R5_paper_experiments_results\\connector_native\\symmetric_masking_spec_v2.json",
+        "size_bytes":  1180,
+        "ext":  ".json"
+    },
+    {
+        "package_path":  "core_results\\C_baseline_connector\\symmetric_masking_protocol_v2.md",
+        "archive_path":  "experiment_results\\R5_paper_experiments_results\\connector_native\\symmetric_masking_protocol_v2.md",
+        "size_bytes":  516,
+        "ext":  ".md"
+    },
+    {
+        "package_path":  "core_results\\C_baseline_connector\\routeA_v2_consistency_audit.md",
+        "archive_path":  "experiment_results\\R5_paper_experiments_results\\connector_native\\routeA_v2_consistency_audit.md",
+        "size_bytes":  7322,
+        "ext":  ".md"
+    },
+    {
+        "package_path":  "core_results\\C_baseline_connector\\routeA_v2_manifest.json",
+        "archive_path":  "experiment_results\\R5_paper_experiments_results\\connector_native\\routeA_v2_manifest.json",
+        "size_bytes":  10100,
+        "ext":  ".json"
+    },
+    {
+        "package_path":  "core_results\\C_baseline_connector\\routeA_v2_run_report.md",
+        "archive_path":  "experiment_results\\R5_paper_experiments_results\\connector_native\\routeA_v2_run_report.md",
+        "size_bytes":  984,
+        "ext":  ".md"
+    },
+    {
+        "package_path":  "core_results\\C_baseline_connector\\candidate_pool_audit.json",
+        "archive_path":  "experiment_results\\R5_paper_experiments_results\\connector_native\\candidate_pool_audit.json",
+        "size_bytes":  320,
+        "ext":  ".json"
+    },
+    {
+        "package_path":  "core_results\\C_baseline_connector\\decimals_bootstrap_audit.json",
+        "archive_path":  "experiment_results\\R5_paper_experiments_results\\connector_native\\decimals_bootstrap_audit.json",
+        "size_bytes":  5721,
+        "ext":  ".json"
+    },
+    {
+        "package_path":  "core_results\\C_baseline_connector\\connector_id_anchor_vs_full_native_diff.json",
+        "archive_path":  "experiment_results\\R5_paper_experiments_results\\connector_native\\connector_id_anchor_vs_full_native_diff.json",
+        "size_bytes":  162,
+        "ext":  ".json"
+    },
+    {
+        "package_path":  "core_results\\C_baseline_connector\\phase1_vs_v2_prediction_equality_audit.json",
+        "archive_path":  "experiment_results\\R5_paper_experiments_results\\connector_native\\phase1_vs_v2_prediction_equality_audit.json",
+        "size_bytes":  690,
+        "ext":  ".json"
+    },
+    {
+        "package_path":  "core_results\\C_baseline_connector\\rejected_v1_vs_v2_full_native_diff.json",
+        "archive_path":  "experiment_results\\R5_paper_experiments_results\\connector_native\\rejected_v1_vs_v2_full_native_diff.json",
+        "size_bytes":  165,
+        "ext":  ".json"
+    },
+    {
+        "package_path":  "core_results\\D_multi_bridge\\summary.csv",
+        "archive_path":  "experiment_results\\out_multi_bridge_expansion\\summary.csv",
+        "size_bytes":  1376,
+        "ext":  ".csv"
+    },
+    {
+        "package_path":  "core_results\\D_multi_bridge\\paper_comparison.csv",
+        "archive_path":  "experiment_results\\out_multi_bridge_expansion\\paper_comparison.csv",
+        "size_bytes":  1386,
+        "ext":  ".csv"
+    },
+    {
+        "package_path":  "core_results\\D_multi_bridge\\paper_comparison.md",
+        "archive_path":  "experiment_results\\out_multi_bridge_expansion\\paper_comparison.md",
+        "size_bytes":  1245,
+        "ext":  ".md"
+    },
+    {
+        "package_path":  "core_results\\D_multi_bridge\\HONEST_SUMMARY.md",
+        "archive_path":  "experiment_results\\out_multi_bridge_expansion\\HONEST_SUMMARY.md",
+        "size_bytes":  3419,
+        "ext":  ".md"
+    },
+    {
+        "package_path":  "core_results\\D_multi_bridge\\coverage_precision.json",
+        "archive_path":  "experiment_results\\R5_paper_experiments_results\\coverage_precision\\coverage_precision.json",
+        "size_bytes":  5629,
+        "ext":  ".json"
+    },
+    {
+        "package_path":  "core_results\\D_multi_bridge\\coverage_precision.csv",
+        "archive_path":  "experiment_results\\R5_paper_experiments_results\\coverage_precision\\coverage_precision.csv",
+        "size_bytes":  1414,
+        "ext":  ".csv"
+    },
+    {
+        "package_path":  "core_results\\E_audit_v4\\v4_final_report.json",
+        "archive_path":  "experiment_results\\R5_paper_experiments_results\\audit_v4\\v4_final_report.json",
+        "size_bytes":  1399,
+        "ext":  ".json"
+    },
+    {
+        "package_path":  "core_results\\E_audit_v4\\cumulative_adequacy.json",
+        "archive_path":  "experiment_results\\R5_paper_experiments_results\\audit_v4\\cumulative_adequacy.json",
+        "size_bytes":  6062,
+        "ext":  ".json"
+    },
+    {
+        "package_path":  "core_results\\E_audit_v4\\primary_source_unit_list_v4.json",
+        "archive_path":  "experiment_results\\R5_paper_experiments_results\\audit_v4\\primary_source_unit_list_v4.json",
+        "size_bytes":  621712,
+        "ext":  ".json"
+    },
+    {
+        "package_path":  "core_results\\E_audit_v5\\V5_DATA_MANIFEST.json",
+        "archive_path":  "experiment_results\\R5_paper_experiments_results\\audit_v5\\V5_DATA_MANIFEST.json",
+        "size_bytes":  661,
+        "ext":  ".json"
+    },
+    {
+        "package_path":  "core_results\\E_audit_v5\\V5_DATA_ADEQUACY_REPORT.md",
+        "archive_path":  "experiment_results\\R5_paper_experiments_results\\audit_v5\\V5_DATA_ADEQUACY_REPORT.md",
+        "size_bytes":  732,
+        "ext":  ".md"
+    },
+    {
+        "package_path":  "core_results\\E_audit_v5\\V5_DISJOINTNESS_REPORT.md",
+        "archive_path":  "experiment_results\\R5_paper_experiments_results\\audit_v5\\V5_DISJOINTNESS_REPORT.md",
+        "size_bytes":  10767,
+        "ext":  ".md"
+    },
+    {
+        "package_path":  "core_results\\E_audit_v5\\V5_CLUSTER_SUMMARY.csv",
+        "archive_path":  "experiment_results\\R5_paper_experiments_results\\audit_v5\\V5_CLUSTER_SUMMARY.csv",
+        "size_bytes":  468,
+        "ext":  ".csv"
+    },
+    {
+        "package_path":  "core_results\\E_audit_v5\\V5_COLLECTION_LOG.md",
+        "archive_path":  "experiment_results\\R5_paper_experiments_results\\audit_v5\\V5_COLLECTION_LOG.md",
+        "size_bytes":  7353,
+        "ext":  ".md"
+    },
+    {
+        "package_path":  "core_results\\E_audit_v5\\cumulative_adequacy.json",
+        "archive_path":  "experiment_results\\R5_paper_experiments_results\\audit_v5\\cumulative_adequacy.json",
+        "size_bytes":  10402,
+        "ext":  ".json"
+    },
+    {
+        "package_path":  "core_results\\E_audit_v5\\v5_preregistration\\V5_HASH_MANIFEST.json",
+        "archive_path":  "experiment_results\\R5_paper_experiments_results\\v5_preregistration\\V5_HASH_MANIFEST.json",
+        "size_bytes":  2747,
+        "ext":  ".json"
+    },
+    {
+        "package_path":  "core_results\\E_audit_v5\\v5_preregistration\\V5_DESIGN_OVERVIEW.md",
+        "archive_path":  "experiment_results\\R5_paper_experiments_results\\v5_preregistration\\V5_DESIGN_OVERVIEW.md",
+        "size_bytes":  8394,
+        "ext":  ".md"
+    },
+    {
+        "package_path":  "core_results\\E_audit_v5\\v5_preregistration\\V5_DATA_ADEQUACY_DESIGN.md",
+        "archive_path":  "experiment_results\\R5_paper_experiments_results\\v5_preregistration\\V5_DATA_ADEQUACY_DESIGN.md",
+        "size_bytes":  3994,
+        "ext":  ".md"
+    },
+    {
+        "package_path":  "core_results\\E_audit_v5\\v5_preregistration\\V5_COUNTING_DEFINITIONS.md",
+        "archive_path":  "experiment_results\\R5_paper_experiments_results\\v5_preregistration\\V5_COUNTING_DEFINITIONS.md",
+        "size_bytes":  3012,
+        "ext":  ".md"
+    },
+    {
+        "package_path":  "core_results\\E_audit_v5\\v5_preregistration\\V5_DISJOINTNESS_PROTOCOL.md",
+        "archive_path":  "experiment_results\\R5_paper_experiments_results\\v5_preregistration\\V5_DISJOINTNESS_PROTOCOL.md",
+        "size_bytes":  3725,
+        "ext":  ".md"
+    },
+    {
+        "package_path":  "core_results\\E_audit_v5\\v5_preregistration\\V5_CORPUS_SPEC.md",
+        "archive_path":  "experiment_results\\R5_paper_experiments_results\\v5_preregistration\\V5_CORPUS_SPEC.md",
+        "size_bytes":  6503,
+        "ext":  ".md"
+    },
+    {
+        "package_path":  "core_results\\E_audit_v5\\v5_preregistration\\V5_DATA_ACCRUAL_PREREGISTRATION.md",
+        "archive_path":  "experiment_results\\R5_paper_experiments_results\\v5_preregistration\\V5_DATA_ACCRUAL_PREREGISTRATION.md",
+        "size_bytes":  5001,
+        "ext":  ".md"
+    },
+    {
+        "package_path":  "core_results\\E_audit_v5\\v5_preregistration\\V5_EXECUTION_MACHINERY.md",
+        "archive_path":  "experiment_results\\R5_paper_experiments_results\\v5_preregistration\\V5_EXECUTION_MACHINERY.md",
+        "size_bytes":  4712,
+        "ext":  ".md"
+    },
+    {
+        "package_path":  "core_results\\F_fixed_delay_main_table\\main_table_rc_uot_q_fixed_delay.json",
+        "archive_path":  "experiment_results\\R5_paper_experiments_results\\paper_tables_fixed_delay\\main_table_rc_uot_q_fixed_delay.json",
+        "size_bytes":  3220,
+        "ext":  ".json"
+    },
+    {
+        "package_path":  "core_results\\F_fixed_delay_main_table\\main_table_rc_uot_q_fixed_delay.md",
+        "archive_path":  "experiment_results\\R5_paper_experiments_results\\paper_tables_fixed_delay\\main_table_rc_uot_q_fixed_delay.md",
+        "size_bytes":  604,
+        "ext":  ".md"
+    },
+    {
+        "package_path":  "core_results\\F_fixed_delay_main_table\\appendix_table_fixed_delay_anchor_audit.md",
+        "archive_path":  "experiment_results\\R5_paper_experiments_results\\paper_tables_fixed_delay\\appendix_table_fixed_delay_anchor_audit.md",
+        "size_bytes":  3418,
+        "ext":  ".md"
+    },
+    {
+        "package_path":  "core_results\\F_fixed_delay_main_table\\final_paper_readiness_manifest.json",
+        "archive_path":  "experiment_results\\R5_paper_experiments_results\\paper_tables_fixed_delay\\final_paper_readiness_manifest.json",
+        "size_bytes":  2149,
+        "ext":  ".json"
+    },
+    {
+        "package_path":  "core_results\\F_fixed_delay_main_table\\final_paper_readiness_manifest.md",
+        "archive_path":  "experiment_results\\R5_paper_experiments_results\\paper_tables_fixed_delay\\final_paper_readiness_manifest.md",
+        "size_bytes":  671,
+        "ext":  ".md"
+    },
+    {
+        "package_path":  "core_results\\F_fixed_delay_main_table\\paper_main_results_paragraph.md",
+        "archive_path":  "experiment_results\\R5_paper_experiments_results\\paper_tables_fixed_delay\\paper_main_results_paragraph.md",
+        "size_bytes":  1132,
+        "ext":  ".md"
+    },
+    {
+        "package_path":  "core_results\\F_fixed_delay_main_table\\paper_leakage_audit_paragraph.md",
+        "archive_path":  "experiment_results\\R5_paper_experiments_results\\paper_tables_fixed_delay\\paper_leakage_audit_fixed_delay_paragraph.md",
+        "size_bytes":  746,
+        "ext":  ".md"
+    },
+    {
+        "package_path":  "core_results\\F_fixed_delay_main_table\\fixed_delay_anchor_audit_summary.json",
+        "archive_path":  "experiment_results\\R5_paper_experiments_results\\fixed_delay_anchor_audit\\fixed_delay_anchor_audit_summary.json",
+        "size_bytes":  30553,
+        "ext":  ".json"
+    },
+    {
+        "package_path":  "core_results\\F_fixed_delay_main_table\\fixed_delay_anchor_audit_table_clean.json",
+        "archive_path":  "experiment_results\\R5_paper_experiments_results\\fixed_delay_anchor_audit\\fixed_delay_anchor_audit_table_clean.json",
+        "size_bytes":  7783,
+        "ext":  ".json"
+    },
+    {
+        "package_path":  "core_results\\F_fixed_delay_main_table\\fixed_delay_anchor_audit_table_clean.md",
+        "archive_path":  "experiment_results\\R5_paper_experiments_results\\fixed_delay_anchor_audit\\fixed_delay_anchor_audit_table_clean.md",
+        "size_bytes":  2425,
+        "ext":  ".md"
+    },
+    {
+        "package_path":  "core_results\\F_fixed_delay_main_table\\fixed_delay_permuted_gt_control.json",
+        "archive_path":  "experiment_results\\R5_paper_experiments_results\\fixed_delay_anchor_audit\\fixed_delay_permuted_gt_control.json",
+        "size_bytes":  3734,
+        "ext":  ".json"
+    },
+    {
+        "package_path":  "core_results\\F_fixed_delay_main_table\\fixed_delay_anchor_mask_report.json",
+        "archive_path":  "experiment_results\\R5_paper_experiments_results\\fixed_delay_anchor_audit\\fixed_delay_anchor_mask_report.json",
+        "size_bytes":  4025,
+        "ext":  ".json"
+    },
+    {
+        "package_path":  "core_results\\F_fixed_delay_main_table\\paper_fixed_delay_anchor_audit_paragraph.md",
+        "archive_path":  "experiment_results\\R5_paper_experiments_results\\fixed_delay_anchor_audit\\paper_fixed_delay_anchor_audit_paragraph.md",
+        "size_bytes":  708,
+        "ext":  ".md"
+    },
+    {
+        "package_path":  "core_results\\F_fixed_delay_main_table\\fixed_delay_leakage_sanity_check.json",
+        "archive_path":  "experiment_results\\R5_paper_experiments_results\\fixed_delay_anchor_audit\\fixed_delay_leakage_sanity_check.json",
+        "size_bytes":  191,
+        "ext":  ".json"
+    },
+    {
+        "package_path":  "core_results\\G_supplement_S1_S4\\quotient_122\\quotient_holdout_claim_gate.json",
+        "archive_path":  "experiment_results\\R5_paper_experiments_results\\quotient_122\\holdout\\quotient_holdout_claim_gate.json",
+        "size_bytes":  1074,
+        "ext":  ".json"
+    },
+    {
+        "package_path":  "core_results\\G_supplement_S1_S4\\quotient_122\\table_q_rcuot_q_covered.csv",
+        "archive_path":  "experiment_results\\R5_paper_experiments_results\\quotient_122\\holdout\\table_q_rcuot_q_covered.csv",
+        "size_bytes":  250,
+        "ext":  ".csv"
+    },
+    {
+        "package_path":  "core_results\\G_supplement_S1_S4\\quotient_122\\table_q_rcuot_q_covered.md",
+        "archive_path":  "experiment_results\\R5_paper_experiments_results\\quotient_122\\holdout\\table_q_rcuot_q_covered.md",
+        "size_bytes":  77,
+        "ext":  ".md"
+    },
+    {
+        "package_path":  "core_results\\G_supplement_S1_S4\\quotient_122\\abstention_metrics.csv",
+        "archive_path":  "experiment_results\\R5_paper_experiments_results\\quotient_122\\holdout\\abstention_metrics.csv",
+        "size_bytes":  79,
+        "ext":  ".csv"
+    },
+    {
+        "package_path":  "core_results\\G_supplement_S1_S4\\quotient_122\\coverage_adjusted_metrics.csv",
+        "archive_path":  "experiment_results\\R5_paper_experiments_results\\quotient_122\\holdout\\coverage_adjusted_metrics.csv",
+        "size_bytes":  242,
+        "ext":  ".csv"
+    },
+    {
+        "package_path":  "core_results\\G_supplement_S1_S4\\quotient_122\\covered_holdout_metrics_by_method.csv",
+        "archive_path":  "experiment_results\\R5_paper_experiments_results\\quotient_122\\holdout\\covered_holdout_metrics_by_method.csv",
+        "size_bytes":  251,
+        "ext":  ".csv"
+    },
+    {
+        "package_path":  "core_results\\G_supplement_S1_S4\\quotient_122\\covered_holdout_metrics_by_pattern.csv",
+        "archive_path":  "experiment_results\\R5_paper_experiments_results\\quotient_122\\holdout\\covered_holdout_metrics_by_pattern.csv",
+        "size_bytes":  238,
+        "ext":  ".csv"
+    },
+    {
+        "package_path":  "core_results\\G_supplement_S1_S4\\quotient_122\\covered_holdout_metrics_by_seed.csv",
+        "archive_path":  "experiment_results\\R5_paper_experiments_results\\quotient_122\\holdout\\covered_holdout_metrics_by_seed.csv",
+        "size_bytes":  1172,
+        "ext":  ".csv"
+    },
+    {
+        "package_path":  "core_results\\G_supplement_S1_S4\\quotient_122\\covered_holdout_pairs.csv",
+        "archive_path":  "experiment_results\\R5_paper_experiments_results\\quotient_122\\data\\covered_holdout_pairs.csv",
+        "size_bytes":  13874,
+        "ext":  ".csv"
+    },
+    {
+        "package_path":  "core_results\\G_supplement_S1_S4\\quotient_122\\audit_phase25.json",
+        "archive_path":  "experiment_results\\R5_paper_experiments_results\\quotient_122\\audit\\audit_phase25.json",
+        "size_bytes":  9617,
+        "ext":  ".json"
+    },
+    {
+        "package_path":  "core_results\\G_supplement_S1_S4\\quotient_122\\audit_phase25.md",
+        "archive_path":  "experiment_results\\R5_paper_experiments_results\\quotient_122\\audit\\audit_phase25.md",
+        "size_bytes":  3200,
+        "ext":  ".md"
+    },
+    {
+        "package_path":  "core_results\\G_supplement_S1_S4\\quotient_122\\ablation_report.md",
+        "archive_path":  "experiment_results\\R5_paper_experiments_results\\quotient_122\\ablation\\ablation_report.md",
+        "size_bytes":  5422,
+        "ext":  ".md"
+    },
+    {
+        "package_path":  "core_results\\G_supplement_S1_S4\\quotient_122\\covered_ablation_holdout.csv",
+        "archive_path":  "experiment_results\\R5_paper_experiments_results\\quotient_122\\ablation\\covered_ablation_holdout.csv",
+        "size_bytes":  979,
+        "ext":  ".csv"
+    },
+    {
+        "package_path":  "core_results\\G_supplement_S1_S4\\scalability\\R5_SCALABILITY_RESULTS.csv",
+        "archive_path":  "experiment_results\\R5_paper_experiments_results\\scalability\\R5_SCALABILITY_RESULTS.csv",
+        "size_bytes":  13033,
+        "ext":  ".csv"
+    },
+    {
+        "package_path":  "core_results\\G_supplement_S1_S4\\scalability\\R5_SCALABILITY_REPORT.md",
+        "archive_path":  "experiment_results\\R5_paper_experiments_results\\scalability\\R5_SCALABILITY_REPORT.md",
+        "size_bytes":  3632,
+        "ext":  ".md"
+    },
+    {
+        "package_path":  "figures\\Fig1\\Fig1_R5C_embedded.png",
+        "archive_path":  "figures\\R5_render\\figures\\docx_media\\image1.png",
+        "size_bytes":  198622,
+        "ext":  ".png"
+    },
+    {
+        "package_path":  "figures\\Fig2\\Fig2_R5C_embedded.png",
+        "archive_path":  "figures\\R5_render\\figures\\docx_media\\image2.png",
+        "size_bytes":  270059,
+        "ext":  ".png"
+    },
+    {
+        "package_path":  "figures\\Fig3\\Fig3_R5C_embedded.png",
+        "archive_path":  "figures\\R5_render\\figures\\docx_media\\image3.png",
+        "size_bytes":  258497,
+        "ext":  ".png"
+    },
+    {
+        "package_path":  "figures\\Fig4\\Fig4_R5C_embedded.png",
+        "archive_path":  "figures\\R5_render\\figures\\docx_media\\image4.png",
+        "size_bytes":  282760,
+        "ext":  ".png"
+    },
+    {
+        "package_path":  "figures\\Fig5\\Fig5_R5C_embedded.png",
+        "archive_path":  "figures\\R5_render\\figures\\docx_media\\image5.png",
+        "size_bytes":  489817,
+        "ext":  ".png"
+    },
+    {
+        "package_path":  "figures\\Fig6\\Fig6_R5C_embedded.png",
+        "archive_path":  "figures\\R5_render\\figures\\docx_media\\image6.png",
+        "size_bytes":  392588,
+        "ext":  ".png"
+    },
+    {
+        "package_path":  "figures\\Fig1\\Fig1_R5C_r5c.png",
+        "archive_path":  "figures\\R5_render\\figures\\fig1_r5c.png",
+        "size_bytes":  198622,
+        "ext":  ".png"
+    },
+    {
+        "package_path":  "figures\\Fig2\\Fig2_R5C_r5c.png",
+        "archive_path":  "figures\\R5_render\\figures\\fig2_r5c.png",
+        "size_bytes":  270059,
+        "ext":  ".png"
+    },
+    {
+        "package_path":  "figures\\Fig4\\Fig4_R5C_r5c.png",
+        "archive_path":  "figures\\R5_render\\figures\\fig4_r5c.png",
+        "size_bytes":  282760,
+        "ext":  ".png"
+    },
+    {
+        "package_path":  "figures\\Fig1\\Fig1_vector.pdf",
+        "archive_path":  "figures\\R4_phase3_figures\\vector\\fig1_problem_reformulation.pdf",
+        "size_bytes":  27572,
+        "ext":  ".pdf"
+    },
+    {
+        "package_path":  "figures\\Fig1\\Fig1_vector.svg",
+        "archive_path":  "figures\\R4_phase3_figures\\vector\\fig1_problem_reformulation.svg",
+        "size_bytes":  57864,
+        "ext":  ".svg"
+    },
+    {
+        "package_path":  "figures\\Fig2\\Fig2_vector.pdf",
+        "archive_path":  "figures\\R4_phase3_figures\\vector\\fig2_method_overview.pdf",
+        "size_bytes":  32303,
+        "ext":  ".pdf"
+    },
+    {
+        "package_path":  "figures\\Fig2\\Fig2_vector.svg",
+        "archive_path":  "figures\\R4_phase3_figures\\vector\\fig2_method_overview.svg",
+        "size_bytes":  81695,
+        "ext":  ".svg"
+    },
+    {
+        "package_path":  "figures\\Fig3\\Fig3_vector.pdf",
+        "archive_path":  "figures\\R4_phase3_figures\\vector\\fig3_distortion_mechanism.pdf",
+        "size_bytes":  28682,
+        "ext":  ".pdf"
+    },
+    {
+        "package_path":  "figures\\Fig3\\Fig3_vector.svg",
+        "archive_path":  "figures\\R4_phase3_figures\\vector\\fig3_distortion_mechanism.svg",
+        "size_bytes":  73051,
+        "ext":  ".svg"
+    },
+    {
+        "package_path":  "figures\\Fig4\\Fig4_vector.pdf",
+        "archive_path":  "figures\\R4_phase3_figures\\vector\\fig4_structural_representation.pdf",
+        "size_bytes":  30683,
+        "ext":  ".pdf"
+    },
+    {
+        "package_path":  "figures\\Fig4\\Fig4_vector.svg",
+        "archive_path":  "figures\\R4_phase3_figures\\vector\\fig4_structural_representation.svg",
+        "size_bytes":  65541,
+        "ext":  ".svg"
+    },
+    {
+        "package_path":  "figures\\Fig5\\Fig5_vector.pdf",
+        "archive_path":  "figures\\R4_phase3_figures\\vector\\fig5_principal_confirmatory.pdf",
+        "size_bytes":  40558,
+        "ext":  ".pdf"
+    },
+    {
+        "package_path":  "figures\\Fig5\\Fig5_vector.svg",
+        "archive_path":  "figures\\R4_phase3_figures\\vector\\fig5_principal_confirmatory.svg",
+        "size_bytes":  113802,
+        "ext":  ".svg"
+    },
+    {
+        "package_path":  "figures\\Fig6\\Fig6_vector.pdf",
+        "archive_path":  "figures\\R4_phase3_figures\\vector\\fig6_independent_real_data.pdf",
+        "size_bytes":  35606,
+        "ext":  ".pdf"
+    },
+    {
+        "package_path":  "figures\\Fig6\\Fig6_vector.svg",
+        "archive_path":  "figures\\R4_phase3_figures\\vector\\fig6_independent_real_data.svg",
+        "size_bytes":  93125,
+        "ext":  ".svg"
+    },
+    {
+        "package_path":  "figures\\_master_source\\make_figures_r5c.py",
+        "archive_path":  "figures\\R5_render\\figures\\make_figures_r5c.py",
+        "size_bytes":  9509,
+        "ext":  ".py"
+    },
+    {
+        "package_path":  "figures\\_master_source\\make_fig4_r5_annotations.py",
+        "archive_path":  "figures\\R5_render\\figures\\make_fig4_r5_annotations.py",
+        "size_bytes":  3694,
+        "ext":  ".py"
+    },
+    {
+        "package_path":  "figures\\_master_source\\make_figures_phase3.py",
+        "archive_path":  "figures\\R4_phase3_figures\\source\\make_figures_phase3.py",
+        "size_bytes":  19637,
+        "ext":  ".py"
+    },
+    {
+        "package_path":  "figures\\_master_source\\final_size_readability_check.py",
+        "archive_path":  "figures\\R4_phase3_figures\\final_size_readability_check.py",
+        "size_bytes":  1492,
+        "ext":  ".py"
+    },
+    {
+        "package_path":  "figures\\_value_audit\\fig1_value_audit.md",
+        "archive_path":  "manuscript_versions\\R4_chinese_rewrite\\phase3\\figures_sivia_full_rebuild\\fig1_value_audit.md",
+        "size_bytes":  1361,
+        "ext":  ".md"
+    },
+    {
+        "package_path":  "figures\\_value_audit\\fig2_value_audit.md",
+        "archive_path":  "manuscript_versions\\R4_chinese_rewrite\\phase3\\figures_sivia_full_rebuild\\fig2_value_audit.md",
+        "size_bytes":  1254,
+        "ext":  ".md"
+    },
+    {
+        "package_path":  "figures\\_value_audit\\fig3_value_audit.md",
+        "archive_path":  "manuscript_versions\\R4_chinese_rewrite\\phase3\\figures_sivia_full_rebuild\\fig3_value_audit.md",
+        "size_bytes":  1362,
+        "ext":  ".md"
+    },
+    {
+        "package_path":  "figures\\_value_audit\\fig4_value_audit.md",
+        "archive_path":  "manuscript_versions\\R4_chinese_rewrite\\phase3\\figures_sivia_full_rebuild\\fig4_value_audit.md",
+        "size_bytes":  1256,
+        "ext":  ".md"
+    },
+    {
+        "package_path":  "figures\\_value_audit\\fig5_value_audit.md",
+        "archive_path":  "manuscript_versions\\R4_chinese_rewrite\\phase3\\figures_sivia_full_rebuild\\fig5_value_audit.md",
+        "size_bytes":  1585,
+        "ext":  ".md"
+    },
+    {
+        "package_path":  "figures\\_value_audit\\fig6_value_audit.md",
+        "archive_path":  "manuscript_versions\\R4_chinese_rewrite\\phase3\\figures_sivia_full_rebuild\\fig6_value_audit.md",
+        "size_bytes":  1471,
+        "ext":  ".md"
+    },
+    {
+        "package_path":  "figures\\_value_audit\\fig1_design_note.md",
+        "archive_path":  "manuscript_versions\\R4_chinese_rewrite\\phase3\\figures_sivia_full_rebuild\\fig1_design_note.md",
+        "size_bytes":  6799,
+        "ext":  ".md"
+    },
+    {
+        "package_path":  "figures\\_value_audit\\fig2_design_note.md",
+        "archive_path":  "manuscript_versions\\R4_chinese_rewrite\\phase3\\figures_sivia_full_rebuild\\fig2_design_note.md",
+        "size_bytes":  7099,
+        "ext":  ".md"
+    },
+    {
+        "package_path":  "figures\\_value_audit\\fig3_design_note.md",
+        "archive_path":  "manuscript_versions\\R4_chinese_rewrite\\phase3\\figures_sivia_full_rebuild\\fig3_design_note.md",
+        "size_bytes":  4533,
+        "ext":  ".md"
+    },
+    {
+        "package_path":  "figures\\_value_audit\\fig4_design_note.md",
+        "archive_path":  "manuscript_versions\\R4_chinese_rewrite\\phase3\\figures_sivia_full_rebuild\\fig4_design_note.md",
+        "size_bytes":  3790,
+        "ext":  ".md"
+    },
+    {
+        "package_path":  "figures\\_value_audit\\fig5_design_note.md",
+        "archive_path":  "manuscript_versions\\R4_chinese_rewrite\\phase3\\figures_sivia_full_rebuild\\fig5_design_note.md",
+        "size_bytes":  4407,
+        "ext":  ".md"
+    },
+    {
+        "package_path":  "figures\\_value_audit\\fig6_design_note.md",
+        "archive_path":  "manuscript_versions\\R4_chinese_rewrite\\phase3\\figures_sivia_full_rebuild\\fig6_design_note.md",
+        "size_bytes":  3551,
+        "ext":  ".md"
+    },
+    {
+        "package_path":  "figures\\_value_audit\\FINAL_SIZE_QA.md",
+        "archive_path":  "manuscript_versions\\R4_chinese_rewrite\\phase3\\figures_sivia_full_rebuild\\FINAL_SIZE_QA.md",
+        "size_bytes":  5869,
+        "ext":  ".md"
+    },
+    {
+        "package_path":  "figures\\_value_audit\\R4_FIGURE_DATA_PROVENANCE.md",
+        "archive_path":  "manuscript_versions\\R4_chinese_rewrite\\phase3\\figures\\R4_FIGURE_DATA_PROVENANCE.md",
+        "size_bytes":  2610,
+        "ext":  ".md"
+    },
+    {
+        "package_path":  "figures\\_value_audit\\R4_FIGURE_STYLE_GUIDE.md",
+        "archive_path":  "manuscript_versions\\R4_chinese_rewrite\\phase3\\figures\\R4_FIGURE_STYLE_GUIDE.md",
+        "size_bytes":  2371,
+        "ext":  ".md"
+    },
+    {
+        "package_path":  "figures\\_value_audit\\R4_FIGURE_AUDIT.md",
+        "archive_path":  "manuscript_versions\\R4_chinese_rewrite\\phase3\\review\\R4_FIGURE_AUDIT.md",
+        "size_bytes":  2900,
+        "ext":  ".md"
+    },
+    {
+        "package_path":  "tables\\Table2_structural_aggregated.csv",
+        "archive_path":  "experiment_results\\R5_paper_experiments_results\\structural_benchmark\\aggregated\\structural_aggregated.csv",
+        "size_bytes":  306,
+        "ext":  ".csv"
+    },
+    {
+        "package_path":  "tables\\Table2_per_seed.csv",
+        "archive_path":  "experiment_results\\R5_paper_experiments_results\\structural_benchmark\\aggregated\\structural_per_seed.csv",
+        "size_bytes":  1067,
+        "ext":  ".csv"
+    },
+    {
+        "package_path":  "tables\\Table2_baseline_comparison.csv",
+        "archive_path":  "experiment_results\\R5_paper_experiments_results\\structural_baseline_study\\aggregated\\main_structural_comparison.csv",
+        "size_bytes":  7702,
+        "ext":  ".csv"
+    },
+    {
+        "package_path":  "tables\\Table3_confirmatory_statistics.json",
+        "archive_path":  "experiment_results\\R5_paper_experiments_results\\confirmatory_holdout\\statistics.json",
+        "size_bytes":  4706,
+        "ext":  ".json"
+    },
+    {
+        "package_path":  "tables\\Table8_audit_v4_final_report.json",
+        "archive_path":  "experiment_results\\R5_paper_experiments_results\\audit_v4\\v4_final_report.json",
+        "size_bytes":  1399,
+        "ext":  ".json"
+    },
+    {
+        "package_path":  "tables\\Table8_audit_v5_data_manifest.json",
+        "archive_path":  "experiment_results\\R5_paper_experiments_results\\audit_v5\\V5_DATA_MANIFEST.json",
+        "size_bytes":  661,
+        "ext":  ".json"
+    },
+    {
+        "package_path":  "tables\\Table8_audit_v5_cluster_summary.csv",
+        "archive_path":  "experiment_results\\R5_paper_experiments_results\\audit_v5\\V5_CLUSTER_SUMMARY.csv",
+        "size_bytes":  468,
+        "ext":  ".csv"
+    },
+    {
+        "package_path":  "tables\\Table8_v4_cumulative_adequacy.json",
+        "archive_path":  "experiment_results\\R5_paper_experiments_results\\audit_v4\\cumulative_adequacy.json",
+        "size_bytes":  6062,
+        "ext":  ".json"
+    },
+    {
+        "package_path":  "tables\\Table8_v5_cumulative_adequacy.json",
+        "archive_path":  "experiment_results\\R5_paper_experiments_results\\audit_v5\\cumulative_adequacy.json",
+        "size_bytes":  10402,
+        "ext":  ".json"
+    },
+    {
+        "package_path":  "tables\\Table5_main_table_fixed_delay.json",
+        "archive_path":  "experiment_results\\R5_paper_experiments_results\\paper_tables_fixed_delay\\main_table_rc_uot_q_fixed_delay.json",
+        "size_bytes":  3220,
+        "ext":  ".json"
+    },
+    {
+        "package_path":  "tables\\Table5_main_table_fixed_delay.md",
+        "archive_path":  "experiment_results\\R5_paper_experiments_results\\paper_tables_fixed_delay\\main_table_rc_uot_q_fixed_delay.md",
+        "size_bytes":  604,
+        "ext":  ".md"
+    },
+    {
+        "package_path":  "tables\\Table4_baseline_normalized_metric_table.csv",
+        "archive_path":  "experiment_results\\R5_paper_experiments_results\\baseline_table4\\normalized_metric_table.csv",
+        "size_bytes":  2183,
+        "ext":  ".csv"
+    },
+    {
+        "package_path":  "tables\\Table4_baseline_fresh_holdout.csv",
+        "archive_path":  "experiment_results\\R5_paper_experiments_results\\baseline_table4\\fresh_holdout_baseline_table.csv",
+        "size_bytes":  438,
+        "ext":  ".csv"
+    },
+    {
+        "package_path":  "tables\\Table4_candidate_fresh_holdout.csv",
+        "archive_path":  "experiment_results\\R5_paper_experiments_results\\baseline_table4\\fresh_holdout_candidate_table.csv",
+        "size_bytes":  421,
+        "ext":  ".csv"
+    },
+    {
+        "package_path":  "tables\\Table4_baseline_dev.csv",
+        "archive_path":  "experiment_results\\R5_paper_experiments_results\\baseline_table4\\dev_baseline_table.csv",
+        "size_bytes":  491,
+        "ext":  ".csv"
+    },
+    {
+        "package_path":  "tables\\Table4_candidate_dev.csv",
+        "archive_path":  "experiment_results\\R5_paper_experiments_results\\baseline_table4\\dev_candidate_table.csv",
+        "size_bytes":  1787,
+        "ext":  ".csv"
+    },
+    {
+        "package_path":  "tables\\Table4_metric_win_loss.csv",
+        "archive_path":  "experiment_results\\R5_paper_experiments_results\\baseline_table4\\metric_win_loss_table.csv",
+        "size_bytes":  133,
+        "ext":  ".csv"
+    },
+    {
+        "package_path":  "tables\\Table5_coverage_tier_report.csv",
+        "archive_path":  "experiment_results\\R5_paper_experiments_results\\baseline_table4\\coverage_tier_report.csv",
+        "size_bytes":  134,
+        "ext":  ".csv"
+    },
+    {
+        "package_path":  "tables\\Table6_connector_degradation_curve.json",
+        "archive_path":  "experiment_results\\R5_paper_experiments_results\\connector_native\\degradation_curve_v2.json",
+        "size_bytes":  2154,
+        "ext":  ".json"
+    },
+    {
+        "package_path":  "tables\\Table7_multi_bridge_paper_comparison.csv",
+        "archive_path":  "experiment_results\\out_multi_bridge_expansion\\paper_comparison.csv",
+        "size_bytes":  1386,
+        "ext":  ".csv"
+    },
+    {
+        "package_path":  "tables\\Table7_multi_bridge_summary.csv",
+        "archive_path":  "experiment_results\\out_multi_bridge_expansion\\summary.csv",
+        "size_bytes":  1376,
+        "ext":  ".csv"
+    },
+    {
+        "package_path":  "tables\\TableS1_quotient_122.csv",
+        "archive_path":  "experiment_results\\R5_paper_experiments_results\\quotient_122\\holdout\\table_q_rcuot_q_covered.csv",
+        "size_bytes":  250,
+        "ext":  ".csv"
+    },
+    {
+        "package_path":  "tables\\TableS4_scalability_results.csv",
+        "archive_path":  "experiment_results\\R5_paper_experiments_results\\scalability\\R5_SCALABILITY_RESULTS.csv",
+        "size_bytes":  13033,
+        "ext":  ".csv"
+    },
+    {
+        "package_path":  "tables\\Decoder_comparison_main_table.json",
+        "archive_path":  "experiment_results\\R5_paper_experiments_results\\admissible_decoding\\paper_admissible_decoding_main_table_clean.json",
+        "size_bytes":  5637,
+        "ext":  ".json"
+    },
+    {
+        "package_path":  "tables\\Decoder_comparison_tradeoff.csv",
+        "archive_path":  "experiment_results\\R5_paper_experiments_results\\admissible_decoding\\admissible_decoding_tradeoff.csv",
+        "size_bytes":  2372,
+        "ext":  ".csv"
+    },
+    {
+        "package_path":  "tables\\Decoder_comparison_table.md",
+        "archive_path":  "experiment_results\\R5_paper_experiments_results\\admissible_decoding\\paper_admissible_decoding_table.md",
+        "size_bytes":  1962,
+        "ext":  ".md"
+    },
+    {
+        "package_path":  "tables\\Coverage_precision_curve.csv",
+        "archive_path":  "experiment_results\\R5_paper_experiments_results\\coverage_precision\\coverage_precision.csv",
+        "size_bytes":  1414,
+        "ext":  ".csv"
+    },
+    {
+        "package_path":  "provenance\\ARCHIVE_INDEX.csv",
+        "archive_path":  "ARCHIVE_INDEX.csv",
+        "size_bytes":  7683067,
+        "ext":  ".csv"
+    },
+    {
+        "package_path":  "provenance\\EXCLUDED_LARGE_RAW_DATA.csv",
+        "archive_path":  "EXCLUDED_LARGE_RAW_DATA.csv",
+        "size_bytes":  6974873,
+        "ext":  ".csv"
+    },
+    {
+        "package_path":  "provenance\\PAPER_EXPERIMENTS_RESULTS_MANIFEST.json",
+        "archive_path":  "experiment_results\\R5_paper_experiments_results\\PAPER_EXPERIMENTS_RESULTS_MANIFEST.json",
+        "size_bytes":  2203691,
+        "ext":  ".json"
+    },
+    {
+        "package_path":  "provenance\\TABLE_FIGURE_PROVENANCE_audit.md",
+        "archive_path":  "tables\\TABLE_FIGURE_PROVENANCE_audit.md",
+        "size_bytes":  32428,
+        "ext":  ".md"
+    },
+    {
+        "package_path":  "provenance\\论文实验部分结果与数据表格汇总.md",
+        "archive_path":  "tables\\R5_final_returns\\论文实验部分结果与数据表格汇总.md",
+        "size_bytes":  10474,
+        "ext":  ".md"
+    },
+    {
+        "package_path":  "provenance\\FIGURE_PROVENANCE_AUDIT.md",
+        "archive_path":  "manuscript_versions\\VERSION_AUDIT\\FIGURE_PROVENANCE_AUDIT.md",
+        "size_bytes":  4201,
+        "ext":  ".md"
+    },
+    {
+        "package_path":  "provenance\\TABLE_PROVENANCE_AUDIT.md",
+        "archive_path":  "manuscript_versions\\VERSION_AUDIT\\TABLE_PROVENANCE_AUDIT.md",
+        "size_bytes":  6423,
+        "ext":  ".md"
+    },
+    {
+        "package_path":  "provenance\\HASH_MANIFEST_dual_scaling.json",
+        "archive_path":  "experiment_results\\R5_paper_experiments_results\\dual_scaling_diag\\HASH_MANIFEST.json",
+        "size_bytes":  1407,
+        "ext":  ".json"
+    },
+    {
+        "package_path":  "provenance\\V5_HASH_MANIFEST.json",
+        "archive_path":  "experiment_results\\R5_paper_experiments_results\\v5_preregistration\\V5_HASH_MANIFEST.json",
+        "size_bytes":  2747,
+        "ext":  ".json"
+    },
+    {
+        "package_path":  "provenance\\PRIOR_ART_CONTROL_HASHES.json",
+        "archive_path":  "experiment_results\\R5_paper_experiments_results\\v5_preregistration\\PRIOR_ART_CONTROL_HASHES.json",
+        "size_bytes":  626,
+        "ext":  ".json"
+    },
+    {
+        "package_path":  "provenance\\preaudit_hashes_cost_diag.json",
+        "archive_path":  "experiment_results\\R5_paper_experiments_results\\cost_diag\\verification\\preaudit_hashes.json",
+        "size_bytes":  29471,
+        "ext":  ".json"
+    },
+    {
+        "package_path":  "provenance\\RUN_MANIFEST_cost_diag.md",
+        "archive_path":  "experiment_results\\R5_paper_experiments_results\\cost_diag\\RUN_MANIFEST.md",
+        "size_bytes":  4272,
+        "ext":  ".md"
+    },
+    {
+        "package_path":  "provenance\\RUN_MANIFEST_dual_scaling_diag.md",
+        "archive_path":  "experiment_results\\R5_paper_experiments_results\\dual_scaling_diag\\RUN_MANIFEST.md",
+        "size_bytes":  3154,
+        "ext":  ".md"
+    },
+    {
+        "package_path":  "provenance\\RUN_MANIFEST_structural_benchmark.md",
+        "archive_path":  "experiment_results\\R5_paper_experiments_results\\structural_benchmark\\RUN_MANIFEST.md",
+        "size_bytes":  6768,
+        "ext":  ".md"
+    },
+    {
+        "package_path":  "provenance\\RUN_MANIFEST_structural_baseline_study.md",
+        "archive_path":  "experiment_results\\R5_paper_experiments_results\\structural_baseline_study\\RUN_MANIFEST.md",
+        "size_bytes":  7448,
+        "ext":  ".md"
+    },
+    {
+        "package_path":  "reviews\\TIFS_EXPERIMENT_REVIEW_R5.md",
+        "archive_path":  "reviews\\ROOT_review\\TIFS_EXPERIMENT_REVIEW_R5.md",
+        "size_bytes":  62947,
+        "ext":  ".md"
+    },
+    {
+        "package_path":  "reviews\\CHAPTER5_REVISION_R5.md",
+        "archive_path":  "reviews\\ROOT_review\\CHAPTER5_REVISION_R5.md",
+        "size_bytes":  70127,
+        "ext":  ".md"
+    },
+    {
+        "package_path":  "reviews\\PRE_SUBMISSION_AUTHOR_DECISION_AUDIT.md",
+        "archive_path":  "reviews\\ROOT_review\\PRE_SUBMISSION_AUTHOR_DECISION_AUDIT.md",
+        "size_bytes":  32423,
+        "ext":  ".md"
+    },
+    {
+        "package_path":  "reviews\\RISK_REGISTER_consolidated.md",
+        "archive_path":  "reviews\\RISK_REGISTER_consolidated.md",
+        "size_bytes":  64174,
+        "ext":  ".md"
+    },
+    {
+        "package_path":  "reviews\\R5_TIFS_PRE_REVIEW_GAP_MATRIX.md",
+        "archive_path":  "reviews\\R5_audit\\R5_TIFS_PRE_REVIEW_GAP_MATRIX.md",
+        "size_bytes":  23474,
+        "ext":  ".md"
+    },
+    {
+        "package_path":  "reviews\\R5_HOSTILE_REVIEW_SYNTHESIS.md",
+        "archive_path":  "reviews\\R5_audit\\R5_HOSTILE_REVIEW_SYNTHESIS.md",
+        "size_bytes":  9732,
+        "ext":  ".md"
+    },
+    {
+        "package_path":  "reviews\\R5C_FINAL_SUBMISSION_HOSTILE_REVIEW.md",
+        "archive_path":  "reviews\\R5_audit\\R5C_FINAL_SUBMISSION_HOSTILE_REVIEW.md",
+        "size_bytes":  7864,
+        "ext":  ".md"
+    },
+    {
+        "package_path":  "reviews\\R5C_V5_ADEQUACY_FORMULA_AUDIT.md",
+        "archive_path":  "reviews\\R5_audit\\R5C_V5_ADEQUACY_FORMULA_AUDIT.md",
+        "size_bytes":  4226,
+        "ext":  ".md"
+    },
+    {
+        "package_path":  "reviews\\R5_STRUCTURAL_CLAIM_AUDIT.md",
+        "archive_path":  "reviews\\R5_audit\\R5_STRUCTURAL_CLAIM_AUDIT.md",
+        "size_bytes":  6590,
+        "ext":  ".md"
+    },
+    {
+        "package_path":  "reviews\\R5_BASELINE_FAIRNESS_PROTOCOL.md",
+        "archive_path":  "reviews\\R5_audit\\R5_BASELINE_FAIRNESS_PROTOCOL.md",
+        "size_bytes":  7974,
+        "ext":  ".md"
+    },
+    {
+        "package_path":  "reviews\\FINAL_HOSTILE_REVIEW.md",
+        "archive_path":  "reviews\\out_tifs_final_consolidation\\FINAL_HOSTILE_REVIEW.md",
+        "size_bytes":  13443,
+        "ext":  ".md"
+    },
+    {
+        "package_path":  "reviews\\FINAL_AUTHOR_DECISION_REPORT.md",
+        "archive_path":  "reviews\\3_final\\FINAL_AUTHOR_DECISION_REPORT.md",
+        "size_bytes":  8400,
+        "ext":  ".md"
+    },
+    {
+        "package_path":  "reviews\\FINAL_AUTHOR_BLOCKERS_V2.md",
+        "archive_path":  "reviews\\3_final\\FINAL_AUTHOR_BLOCKERS_V2.md",
+        "size_bytes":  2558,
+        "ext":  ".md"
+    },
+    {
+        "package_path":  "reviews\\R5_FIRST_ROUND_RETURN.md",
+        "archive_path":  "reviews\\R5_final_returns\\R5_FIRST_ROUND_RETURN.md",
+        "size_bytes":  12145,
+        "ext":  ".md"
+    },
+    {
+        "package_path":  "reviews\\R5B_FINAL_RETURN.md",
+        "archive_path":  "reviews\\R5_final_returns\\R5B_FINAL_RETURN.md",
+        "size_bytes":  9166,
+        "ext":  ".md"
+    },
+    {
+        "package_path":  "reviews\\R5C_FINAL_RETURN.md",
+        "archive_path":  "reviews\\R5_final_returns\\R5C_FINAL_RETURN.md",
+        "size_bytes":  8992,
+        "ext":  ".md"
+    },
+    {
+        "package_path":  "reviews\\R5C_AUTHOR_VISUAL_QA_CHECKLIST.md",
+        "archive_path":  "reviews\\R5_final_returns\\R5C_AUTHOR_VISUAL_QA_CHECKLIST.md",
+        "size_bytes":  2991,
+        "ext":  ".md"
+    },
+    {
+        "package_path":  "reviews\\TIFS_SUPPLEMENT_CHECKLIST.md",
+        "archive_path":  "reviews\\out_tifs_final_consolidation\\TIFS_SUPPLEMENT_CHECKLIST.md",
+        "size_bytes":  5901,
+        "ext":  ".md"
+    },
+    {
+        "package_path":  "reviews\\FINAL_BASELINE_CONSTANT_PROVENANCE.md",
+        "archive_path":  "manuscript_versions\\SCIENTIFIC_SYNC\\FINAL_BASELINE_CONSTANT_PROVENANCE.md",
+        "size_bytes":  4952,
+        "ext":  ".md"
+    },
+    {
+        "package_path":  "reproducibility\\R5C_REPRODUCIBILITY_BUNDLE_MANIFEST.md",
+        "archive_path":  "reproducibility\\R5C_repro_bundle\\R5C_REPRODUCIBILITY_BUNDLE_MANIFEST.md",
+        "size_bytes":  20196,
+        "ext":  ".md"
+    },
+    {
+        "package_path":  "reproducibility\\V3_EXECUTION_FAILURE_ADJUDICATION.md",
+        "archive_path":  "reproducibility\\R5C_repro_bundle\\v3_record\\V3_EXECUTION_FAILURE_ADJUDICATION.md",
+        "size_bytes":  1664,
+        "ext":  ".md"
+    },
+    {
+        "package_path":  "reproducibility\\code\\run.py",
+        "archive_path":  "experiment_code\\run.py",
+        "size_bytes":  950,
+        "ext":  ".py"
+    },
+    {
+        "package_path":  "reproducibility\\code\\pyproject.toml",
+        "archive_path":  "experiment_code\\pyproject.toml",
+        "size_bytes":  850,
+        "ext":  ".toml"
+    },
+    {
+        "package_path":  "reproducibility\\code\\requirements.txt",
+        "archive_path":  "experiment_code\\requirements.txt",
+        "size_bytes":  71,
+        "ext":  ".txt"
+    },
+    {
+        "package_path":  "reproducibility\\code\\INDEX.md",
+        "archive_path":  "experiment_code\\index.md",
+        "size_bytes":  14029,
+        "ext":  ".md"
+    },
+    {
+        "package_path":  "reproducibility\\ARCHIVE_REPRODUCIBILITY_INDEX.md",
+        "archive_path":  "reproducibility\\index.md",
+        "size_bytes":  3210,
+        "ext":  ".md"
+    },
+    {
+        "package_path":  "reproducibility\\code\\run_locked_holdout.py",
+        "archive_path":  "experiment_code\\scripts\\multi_bridge\\holdout\\run_locked_holdout.py",
+        "size_bytes":  17003,
+        "ext":  ".py"
+    },
+    {
+        "package_path":  "reproducibility\\code\\verify_locked_holdout.py",
+        "archive_path":  "experiment_code\\scripts\\multi_bridge\\holdout\\verify_locked_holdout.py",
+        "size_bytes":  12914,
+        "ext":  ".py"
+    },
+    {
+        "package_path":  "reproducibility\\code\\holdout_common.py",
+        "archive_path":  "experiment_code\\scripts\\multi_bridge\\holdout\\holdout_common.py",
+        "size_bytes":  10980,
+        "ext":  ".py"
+    },
+    {
+        "package_path":  "reproducibility\\code\\run_flow_structural_three_bridges.py",
+        "archive_path":  "experiment_code\\scripts\\multi_bridge\\run_flow_structural_three_bridges.py",
+        "size_bytes":  9313,
+        "ext":  ".py"
+    },
+    {
+        "package_path":  "reproducibility\\code\\run_faithful_flow_structural.py",
+        "archive_path":  "experiment_code\\scripts\\multi_bridge\\run_faithful_flow_structural.py",
+        "size_bytes":  9458,
+        "ext":  ".py"
+    },
+    {
+        "package_path":  "reproducibility\\code\\run_structural_baselines.py",
+        "archive_path":  "experiment_code\\scripts\\multi_bridge\\run_structural_baselines.py",
+        "size_bytes":  6348,
+        "ext":  ".py"
+    },
+    {
+        "package_path":  "reproducibility\\code\\verify_structural_results.py",
+        "archive_path":  "experiment_code\\scripts\\multi_bridge\\verify_structural_results.py",
+        "size_bytes":  9568,
+        "ext":  ".py"
+    },
+    {
+        "package_path":  "reproducibility\\code\\run_coverage_precision_curve.py",
+        "archive_path":  "experiment_code\\scripts\\multi_bridge\\run_coverage_precision_curve.py",
+        "size_bytes":  2803,
+        "ext":  ".py"
+    },
+    {
+        "package_path":  "reproducibility\\code\\run_dual_scaling_decomposition.py",
+        "archive_path":  "experiment_code\\scripts\\multi_bridge\\run_dual_scaling_decomposition.py",
+        "size_bytes":  10741,
+        "ext":  ".py"
+    },
+    {
+        "package_path":  "reproducibility\\code\\run_cost_forensic_audit.py",
+        "archive_path":  "experiment_code\\scripts\\multi_bridge\\run_cost_forensic_audit.py",
+        "size_bytes":  14600,
+        "ext":  ".py"
+    },
+    {
+        "package_path":  "reproducibility\\code\\run_plan_quality_audit.py",
+        "archive_path":  "experiment_code\\scripts\\multi_bridge\\run_plan_quality_audit.py",
+        "size_bytes":  21685,
+        "ext":  ".py"
+    },
+    {
+        "package_path":  "reproducibility\\code\\run_attribution_audit.py",
+        "archive_path":  "experiment_code\\scripts\\multi_bridge\\run_attribution_audit.py",
+        "size_bytes":  24614,
+        "ext":  ".py"
+    },
+    {
+        "package_path":  "reproducibility\\code\\run_amount_free_dev.py",
+        "archive_path":  "experiment_code\\scripts\\multi_bridge\\run_amount_free_dev.py",
+        "size_bytes":  10250,
+        "ext":  ".py"
+    },
+    {
+        "package_path":  "reproducibility\\code\\run_multi_bridge_masking.py",
+        "archive_path":  "experiment_code\\scripts\\multi_bridge\\run_multi_bridge_masking.py",
+        "size_bytes":  6795,
+        "ext":  ".py"
+    },
+    {
+        "package_path":  "reproducibility\\code\\run_one_to_one_flow_baselines.py",
+        "archive_path":  "experiment_code\\scripts\\multi_bridge\\run_one_to_one_flow_baselines.py",
+        "size_bytes":  5775,
+        "ext":  ".py"
+    },
+    {
+        "package_path":  "reproducibility\\code\\build_comparison_table.py",
+        "archive_path":  "experiment_code\\scripts\\multi_bridge\\build_comparison_table.py",
+        "size_bytes":  2338,
+        "ext":  ".py"
+    },
+    {
+        "package_path":  "reproducibility\\code\\verify_decoder_plan_quality_audit.py",
+        "archive_path":  "experiment_code\\scripts\\multi_bridge\\verify_decoder_plan_quality_audit.py",
+        "size_bytes":  10903,
+        "ext":  ".py"
+    },
+    {
+        "package_path":  "reproducibility\\code\\tifs_external_v4_preflight.py",
+        "archive_path":  "experiment_code\\scripts\\multi_bridge\\tifs_external\\v4_preflight.py",
+        "size_bytes":  19988,
+        "ext":  ".py"
+    },
+    {
+        "package_path":  "reproducibility\\code\\tifs_external_v4_finalize.py",
+        "archive_path":  "experiment_code\\scripts\\multi_bridge\\tifs_external\\v4_finalize.py",
+        "size_bytes":  5775,
+        "ext":  ".py"
+    },
+    {
+        "package_path":  "reproducibility\\code\\tifs_external_v5_preflight.py",
+        "archive_path":  "experiment_code\\scripts\\multi_bridge\\tifs_external\\v5_preflight.py",
+        "size_bytes":  25603,
+        "ext":  ".py"
+    },
+    {
+        "package_path":  "reproducibility\\code\\run_locked_temporal_external_validation.py",
+        "archive_path":  "experiment_code\\scripts\\multi_bridge\\tifs_external\\run_locked_temporal_external_validation.py",
+        "size_bytes":  10365,
+        "ext":  ".py"
+    },
+    {
+        "package_path":  "reproducibility\\code\\verify_temporal_external_gt.py",
+        "archive_path":  "experiment_code\\scripts\\multi_bridge\\tifs_external\\verify_temporal_external_gt.py",
+        "size_bytes":  9544,
+        "ext":  ".py"
+    },
+    {
+        "package_path":  "reproducibility\\code\\run_ec_uot_q_final.py",
+        "archive_path":  "experiment_code\\scripts\\run_ec_uot_q_final.py",
+        "size_bytes":  30961,
+        "ext":  ".py"
+    },
+    {
+        "package_path":  "reproducibility\\code\\run_phase29_robust_rcuot_superiority.py",
+        "archive_path":  "experiment_code\\scripts\\run_phase29_robust_rcuot_superiority.py",
+        "size_bytes":  48632,
+        "ext":  ".py"
+    },
+    {
+        "package_path":  "reproducibility\\code\\run_baseline_compare_phase1_connector.py",
+        "archive_path":  "experiment_code\\scripts\\run_baseline_compare_phase1_connector.py",
+        "size_bytes":  21279,
+        "ext":  ".py"
+    },
+    {
+        "package_path":  "reproducibility\\code\\run_baseline_compare_phase1_7_qa.py",
+        "archive_path":  "experiment_code\\scripts\\run_baseline_compare_phase1_7_qa.py",
+        "size_bytes":  13485,
+        "ext":  ".py"
+    },
+    {
+        "package_path":  "reproducibility\\code\\run_routeA_symmetric_masking_v2.py",
+        "archive_path":  "experiment_code\\scripts\\run_routeA_symmetric_masking_v2.py",
+        "size_bytes":  35172,
+        "ext":  ".py"
+    },
+    {
+        "package_path":  "reproducibility\\code\\build_flow_aggregation.py",
+        "archive_path":  "experiment_code\\scripts\\build_flow_aggregation.py",
+        "size_bytes":  15279,
+        "ext":  ".py"
+    },
+    {
+        "package_path":  "reproducibility\\code\\verify_flow_aggregation_gt.py",
+        "archive_path":  "experiment_code\\scripts\\verify_flow_aggregation_gt.py",
+        "size_bytes":  7710,
+        "ext":  ".py"
+    },
+    {
+        "package_path":  "reproducibility\\code\\compute_ece.py",
+        "archive_path":  "experiment_code\\scripts\\compute_ece.py",
+        "size_bytes":  12753,
+        "ext":  ".py"
+    },
+    {
+        "package_path":  "reproducibility\\code\\run_m1_matched_recall_precision.py",
+        "archive_path":  "experiment_code\\scripts\\run_m1_matched_recall_precision.py",
+        "size_bytes":  47881,
+        "ext":  ".py"
+    },
+    {
+        "package_path":  "reproducibility\\code\\run_m1_solver_ablation.py",
+        "archive_path":  "experiment_code\\scripts\\run_m1_solver_ablation.py",
+        "size_bytes":  21197,
+        "ext":  ".py"
+    },
+    {
+        "package_path":  "reproducibility\\code\\run_m1_factorial.py",
+        "archive_path":  "experiment_code\\scripts\\run_m1_factorial.py",
+        "size_bytes":  11631,
+        "ext":  ".py"
+    },
+    {
+        "package_path":  "reproducibility\\code\\cross_aml\\rcuotq_matcher.py",
+        "archive_path":  "reproducibility\\R5C_repro_bundle\\cross_aml\\rcuotq_matcher.py",
+        "size_bytes":  3199,
+        "ext":  ".py"
+    },
+    {
+        "package_path":  "reproducibility\\code\\cross_aml\\quotient_builder.py",
+        "archive_path":  "reproducibility\\R5C_repro_bundle\\cross_aml\\quotient_builder.py",
+        "size_bytes":  1875,
+        "ext":  ".py"
+    },
+    {
+        "package_path":  "reproducibility\\code\\cross_aml\\flow_builder.py",
+        "archive_path":  "reproducibility\\R5C_repro_bundle\\cross_aml\\flow_builder.py",
+        "size_bytes":  4861,
+        "ext":  ".py"
+    },
+    {
+        "package_path":  "reproducibility\\code\\cross_aml\\feature_builder.py",
+        "archive_path":  "reproducibility\\R5C_repro_bundle\\cross_aml\\feature_builder.py",
+        "size_bytes":  3470,
+        "ext":  ".py"
+    },
+    {
+        "package_path":  "reproducibility\\code\\cross_aml\\coverage.py",
+        "archive_path":  "reproducibility\\R5C_repro_bundle\\cross_aml\\coverage.py",
+        "size_bytes":  2531,
+        "ext":  ".py"
+    },
+    {
+        "package_path":  "reproducibility\\code\\cross_aml\\abstention.py",
+        "archive_path":  "reproducibility\\R5C_repro_bundle\\cross_aml\\abstention.py",
+        "size_bytes":  1691,
+        "ext":  ".py"
+    },
+    {
+        "package_path":  "reproducibility\\code\\confirmatory_artifacts\\run_locked_holdout.py",
+        "archive_path":  "reproducibility\\R5C_repro_bundle\\confirmatory_artifacts\\run_locked_holdout.py",
+        "size_bytes":  17003,
+        "ext":  ".py"
+    },
+    {
+        "package_path":  "reproducibility\\code\\confirmatory_artifacts\\verify_locked_temporal_external_validation.py",
+        "archive_path":  "reproducibility\\R5C_repro_bundle\\confirmatory_artifacts\\verify_locked_temporal_external_validation.py",
+        "size_bytes":  2047,
+        "ext":  ".py"
+    },
+    {
+        "package_path":  "reproducibility\\code\\cross_aml\\test_abstention.py",
+        "archive_path":  "reproducibility\\R5C_repro_bundle\\cross_aml\\test_abstention.py",
+        "size_bytes":  1222,
+        "ext":  ".py"
+    },
+    {
+        "package_path":  "reproducibility\\code\\cross_aml\\test_coverage.py",
+        "archive_path":  "reproducibility\\R5C_repro_bundle\\cross_aml\\test_coverage.py",
+        "size_bytes":  1407,
+        "ext":  ".py"
+    },
+    {
+        "package_path":  "core_results\\A_structural\\per_seed\\Celer\\seed_42\\uot_evaluation_metrics.json",
+        "archive_path":  "experiment_results\\R5_paper_experiments_results\\structural_benchmark\\per_seed\\Celer\\seed_42\\eval\\uot_evaluation_metrics.json",
+        "size_bytes":  3050,
+        "ext":  ".json"
+    },
+    {
+        "package_path":  "core_results\\A_structural\\per_seed\\Celer\\seed_42\\ablation_metrics.csv",
+        "archive_path":  "experiment_results\\R5_paper_experiments_results\\structural_benchmark\\per_seed\\Celer\\seed_42\\eval\\ablation_metrics.csv",
+        "size_bytes":  720,
+        "ext":  ".csv"
+    },
+    {
+        "package_path":  "core_results\\A_structural\\per_seed\\Celer\\seed_42\\synthetic_eval_by_scenario.csv",
+        "archive_path":  "experiment_results\\R5_paper_experiments_results\\structural_benchmark\\per_seed\\Celer\\seed_42\\eval\\synthetic_eval_by_scenario.csv",
+        "size_bytes":  255,
+        "ext":  ".csv"
+    },
+    {
+        "package_path":  "core_results\\A_structural\\per_seed\\Celer\\seed_42\\uot_eval_by_pattern.csv",
+        "archive_path":  "experiment_results\\R5_paper_experiments_results\\structural_benchmark\\per_seed\\Celer\\seed_42\\eval\\uot_eval_by_pattern.csv",
+        "size_bytes":  179,
+        "ext":  ".csv"
+    },
+    {
+        "package_path":  "core_results\\A_structural\\per_seed\\Celer\\seed_43\\uot_evaluation_metrics.json",
+        "archive_path":  "experiment_results\\R5_paper_experiments_results\\structural_benchmark\\per_seed\\Celer\\seed_43\\eval\\uot_evaluation_metrics.json",
+        "size_bytes":  3047,
+        "ext":  ".json"
+    },
+    {
+        "package_path":  "core_results\\A_structural\\per_seed\\Celer\\seed_43\\ablation_metrics.csv",
+        "archive_path":  "experiment_results\\R5_paper_experiments_results\\structural_benchmark\\per_seed\\Celer\\seed_43\\eval\\ablation_metrics.csv",
+        "size_bytes":  719,
+        "ext":  ".csv"
+    },
+    {
+        "package_path":  "core_results\\A_structural\\per_seed\\Celer\\seed_43\\synthetic_eval_by_scenario.csv",
+        "archive_path":  "experiment_results\\R5_paper_experiments_results\\structural_benchmark\\per_seed\\Celer\\seed_43\\eval\\synthetic_eval_by_scenario.csv",
+        "size_bytes":  255,
+        "ext":  ".csv"
+    },
+    {
+        "package_path":  "core_results\\A_structural\\per_seed\\Celer\\seed_43\\uot_eval_by_pattern.csv",
+        "archive_path":  "experiment_results\\R5_paper_experiments_results\\structural_benchmark\\per_seed\\Celer\\seed_43\\eval\\uot_eval_by_pattern.csv",
+        "size_bytes":  180,
+        "ext":  ".csv"
+    },
+    {
+        "package_path":  "core_results\\A_structural\\per_seed\\Celer\\seed_44\\uot_evaluation_metrics.json",
+        "archive_path":  "experiment_results\\R5_paper_experiments_results\\structural_benchmark\\per_seed\\Celer\\seed_44\\eval\\uot_evaluation_metrics.json",
+        "size_bytes":  2986,
+        "ext":  ".json"
+    },
+    {
+        "package_path":  "core_results\\A_structural\\per_seed\\Celer\\seed_44\\ablation_metrics.csv",
+        "archive_path":  "experiment_results\\R5_paper_experiments_results\\structural_benchmark\\per_seed\\Celer\\seed_44\\eval\\ablation_metrics.csv",
+        "size_bytes":  704,
+        "ext":  ".csv"
+    },
+    {
+        "package_path":  "core_results\\A_structural\\per_seed\\Celer\\seed_44\\synthetic_eval_by_scenario.csv",
+        "archive_path":  "experiment_results\\R5_paper_experiments_results\\structural_benchmark\\per_seed\\Celer\\seed_44\\eval\\synthetic_eval_by_scenario.csv",
+        "size_bytes":  225,
+        "ext":  ".csv"
+    },
+    {
+        "package_path":  "core_results\\A_structural\\per_seed\\Celer\\seed_44\\uot_eval_by_pattern.csv",
+        "archive_path":  "experiment_results\\R5_paper_experiments_results\\structural_benchmark\\per_seed\\Celer\\seed_44\\eval\\uot_eval_by_pattern.csv",
+        "size_bytes":  181,
+        "ext":  ".csv"
+    },
+    {
+        "package_path":  "core_results\\A_structural\\per_seed\\Celer\\seed_45\\uot_evaluation_metrics.json",
+        "archive_path":  "experiment_results\\R5_paper_experiments_results\\structural_benchmark\\per_seed\\Celer\\seed_45\\eval\\uot_evaluation_metrics.json",
+        "size_bytes":  3013,
+        "ext":  ".json"
+    },
+    {
+        "package_path":  "core_results\\A_structural\\per_seed\\Celer\\seed_45\\ablation_metrics.csv",
+        "archive_path":  "experiment_results\\R5_paper_experiments_results\\structural_benchmark\\per_seed\\Celer\\seed_45\\eval\\ablation_metrics.csv",
+        "size_bytes":  701,
+        "ext":  ".csv"
+    },
+    {
+        "package_path":  "core_results\\A_structural\\per_seed\\Celer\\seed_45\\synthetic_eval_by_scenario.csv",
+        "archive_path":  "experiment_results\\R5_paper_experiments_results\\structural_benchmark\\per_seed\\Celer\\seed_45\\eval\\synthetic_eval_by_scenario.csv",
+        "size_bytes":  240,
+        "ext":  ".csv"
+    },
+    {
+        "package_path":  "core_results\\A_structural\\per_seed\\Celer\\seed_45\\uot_eval_by_pattern.csv",
+        "archive_path":  "experiment_results\\R5_paper_experiments_results\\structural_benchmark\\per_seed\\Celer\\seed_45\\eval\\uot_eval_by_pattern.csv",
+        "size_bytes":  180,
+        "ext":  ".csv"
+    },
+    {
+        "package_path":  "core_results\\A_structural\\per_seed\\Celer\\seed_46\\uot_evaluation_metrics.json",
+        "archive_path":  "experiment_results\\R5_paper_experiments_results\\structural_benchmark\\per_seed\\Celer\\seed_46\\eval\\uot_evaluation_metrics.json",
+        "size_bytes":  3050,
+        "ext":  ".json"
+    },
+    {
+        "package_path":  "core_results\\A_structural\\per_seed\\Celer\\seed_46\\ablation_metrics.csv",
+        "archive_path":  "experiment_results\\R5_paper_experiments_results\\structural_benchmark\\per_seed\\Celer\\seed_46\\eval\\ablation_metrics.csv",
+        "size_bytes":  721,
+        "ext":  ".csv"
+    },
+    {
+        "package_path":  "core_results\\A_structural\\per_seed\\Celer\\seed_46\\synthetic_eval_by_scenario.csv",
+        "archive_path":  "experiment_results\\R5_paper_experiments_results\\structural_benchmark\\per_seed\\Celer\\seed_46\\eval\\synthetic_eval_by_scenario.csv",
+        "size_bytes":  244,
+        "ext":  ".csv"
+    },
+    {
+        "package_path":  "core_results\\A_structural\\per_seed\\Celer\\seed_46\\uot_eval_by_pattern.csv",
+        "archive_path":  "experiment_results\\R5_paper_experiments_results\\structural_benchmark\\per_seed\\Celer\\seed_46\\eval\\uot_eval_by_pattern.csv",
+        "size_bytes":  179,
+        "ext":  ".csv"
+    },
+    {
+        "package_path":  "core_results\\A_structural\\per_seed\\Multi\\seed_42\\uot_evaluation_metrics.json",
+        "archive_path":  "experiment_results\\R5_paper_experiments_results\\structural_benchmark\\per_seed\\Multi\\seed_42\\eval\\uot_evaluation_metrics.json",
+        "size_bytes":  2993,
+        "ext":  ".json"
+    },
+    {
+        "package_path":  "core_results\\A_structural\\per_seed\\Multi\\seed_42\\ablation_metrics.csv",
+        "archive_path":  "experiment_results\\R5_paper_experiments_results\\structural_benchmark\\per_seed\\Multi\\seed_42\\eval\\ablation_metrics.csv",
+        "size_bytes":  706,
+        "ext":  ".csv"
+    },
+    {
+        "package_path":  "core_results\\A_structural\\per_seed\\Multi\\seed_42\\synthetic_eval_by_scenario.csv",
+        "archive_path":  "experiment_results\\R5_paper_experiments_results\\structural_benchmark\\per_seed\\Multi\\seed_42\\eval\\synthetic_eval_by_scenario.csv",
+        "size_bytes":  228,
+        "ext":  ".csv"
+    },
+    {
+        "package_path":  "core_results\\A_structural\\per_seed\\Multi\\seed_42\\uot_eval_by_pattern.csv",
+        "archive_path":  "experiment_results\\R5_paper_experiments_results\\structural_benchmark\\per_seed\\Multi\\seed_42\\eval\\uot_eval_by_pattern.csv",
+        "size_bytes":  180,
+        "ext":  ".csv"
+    },
+    {
+        "package_path":  "core_results\\A_structural\\per_seed\\Multi\\seed_43\\uot_evaluation_metrics.json",
+        "archive_path":  "experiment_results\\R5_paper_experiments_results\\structural_benchmark\\per_seed\\Multi\\seed_43\\eval\\uot_evaluation_metrics.json",
+        "size_bytes":  3019,
+        "ext":  ".json"
+    },
+    {
+        "package_path":  "core_results\\A_structural\\per_seed\\Multi\\seed_43\\ablation_metrics.csv",
+        "archive_path":  "experiment_results\\R5_paper_experiments_results\\structural_benchmark\\per_seed\\Multi\\seed_43\\eval\\ablation_metrics.csv",
+        "size_bytes":  720,
+        "ext":  ".csv"
+    },
+    {
+        "package_path":  "core_results\\A_structural\\per_seed\\Multi\\seed_43\\synthetic_eval_by_scenario.csv",
+        "archive_path":  "experiment_results\\R5_paper_experiments_results\\structural_benchmark\\per_seed\\Multi\\seed_43\\eval\\synthetic_eval_by_scenario.csv",
+        "size_bytes":  229,
+        "ext":  ".csv"
+    },
+    {
+        "package_path":  "core_results\\A_structural\\per_seed\\Multi\\seed_43\\uot_eval_by_pattern.csv",
+        "archive_path":  "experiment_results\\R5_paper_experiments_results\\structural_benchmark\\per_seed\\Multi\\seed_43\\eval\\uot_eval_by_pattern.csv",
+        "size_bytes":  180,
+        "ext":  ".csv"
+    },
+    {
+        "package_path":  "core_results\\A_structural\\per_seed\\Multi\\seed_44\\uot_evaluation_metrics.json",
+        "archive_path":  "experiment_results\\R5_paper_experiments_results\\structural_benchmark\\per_seed\\Multi\\seed_44\\eval\\uot_evaluation_metrics.json",
+        "size_bytes":  3015,
+        "ext":  ".json"
+    },
+    {
+        "package_path":  "core_results\\A_structural\\per_seed\\Multi\\seed_44\\ablation_metrics.csv",
+        "archive_path":  "experiment_results\\R5_paper_experiments_results\\structural_benchmark\\per_seed\\Multi\\seed_44\\eval\\ablation_metrics.csv",
+        "size_bytes":  718,
+        "ext":  ".csv"
+    },
+    {
+        "package_path":  "core_results\\A_structural\\per_seed\\Multi\\seed_44\\synthetic_eval_by_scenario.csv",
+        "archive_path":  "experiment_results\\R5_paper_experiments_results\\structural_benchmark\\per_seed\\Multi\\seed_44\\eval\\synthetic_eval_by_scenario.csv",
+        "size_bytes":  240,
+        "ext":  ".csv"
+    },
+    {
+        "package_path":  "core_results\\A_structural\\per_seed\\Multi\\seed_44\\uot_eval_by_pattern.csv",
+        "archive_path":  "experiment_results\\R5_paper_experiments_results\\structural_benchmark\\per_seed\\Multi\\seed_44\\eval\\uot_eval_by_pattern.csv",
+        "size_bytes":  180,
+        "ext":  ".csv"
+    },
+    {
+        "package_path":  "core_results\\A_structural\\per_seed\\Multi\\seed_45\\uot_evaluation_metrics.json",
+        "archive_path":  "experiment_results\\R5_paper_experiments_results\\structural_benchmark\\per_seed\\Multi\\seed_45\\eval\\uot_evaluation_metrics.json",
+        "size_bytes":  2940,
+        "ext":  ".json"
+    },
+    {
+        "package_path":  "core_results\\A_structural\\per_seed\\Multi\\seed_45\\ablation_metrics.csv",
+        "archive_path":  "experiment_results\\R5_paper_experiments_results\\structural_benchmark\\per_seed\\Multi\\seed_45\\eval\\ablation_metrics.csv",
+        "size_bytes":  688,
+        "ext":  ".csv"
+    },
+    {
+        "package_path":  "core_results\\A_structural\\per_seed\\Multi\\seed_45\\synthetic_eval_by_scenario.csv",
+        "archive_path":  "experiment_results\\R5_paper_experiments_results\\structural_benchmark\\per_seed\\Multi\\seed_45\\eval\\synthetic_eval_by_scenario.csv",
+        "size_bytes":  195,
+        "ext":  ".csv"
+    },
+    {
+        "package_path":  "core_results\\A_structural\\per_seed\\Multi\\seed_45\\uot_eval_by_pattern.csv",
+        "archive_path":  "experiment_results\\R5_paper_experiments_results\\structural_benchmark\\per_seed\\Multi\\seed_45\\eval\\uot_eval_by_pattern.csv",
+        "size_bytes":  181,
+        "ext":  ".csv"
+    },
+    {
+        "package_path":  "core_results\\A_structural\\per_seed\\Multi\\seed_46\\uot_evaluation_metrics.json",
+        "archive_path":  "experiment_results\\R5_paper_experiments_results\\structural_benchmark\\per_seed\\Multi\\seed_46\\eval\\uot_evaluation_metrics.json",
+        "size_bytes":  2905,
+        "ext":  ".json"
+    },
+    {
+        "package_path":  "core_results\\A_structural\\per_seed\\Multi\\seed_46\\ablation_metrics.csv",
+        "archive_path":  "experiment_results\\R5_paper_experiments_results\\structural_benchmark\\per_seed\\Multi\\seed_46\\eval\\ablation_metrics.csv",
+        "size_bytes":  676,
+        "ext":  ".csv"
+    },
+    {
+        "package_path":  "core_results\\A_structural\\per_seed\\Multi\\seed_46\\synthetic_eval_by_scenario.csv",
+        "archive_path":  "experiment_results\\R5_paper_experiments_results\\structural_benchmark\\per_seed\\Multi\\seed_46\\eval\\synthetic_eval_by_scenario.csv",
+        "size_bytes":  195,
+        "ext":  ".csv"
+    },
+    {
+        "package_path":  "core_results\\A_structural\\per_seed\\Multi\\seed_46\\uot_eval_by_pattern.csv",
+        "archive_path":  "experiment_results\\R5_paper_experiments_results\\structural_benchmark\\per_seed\\Multi\\seed_46\\eval\\uot_eval_by_pattern.csv",
+        "size_bytes":  181,
+        "ext":  ".csv"
+    },
+    {
+        "package_path":  "core_results\\A_structural\\per_seed\\Poly\\seed_42\\uot_evaluation_metrics.json",
+        "archive_path":  "experiment_results\\R5_paper_experiments_results\\structural_benchmark\\per_seed\\Poly\\seed_42\\eval\\uot_evaluation_metrics.json",
+        "size_bytes":  2893,
+        "ext":  ".json"
+    },
+    {
+        "package_path":  "core_results\\A_structural\\per_seed\\Poly\\seed_42\\ablation_metrics.csv",
+        "archive_path":  "experiment_results\\R5_paper_experiments_results\\structural_benchmark\\per_seed\\Poly\\seed_42\\eval\\ablation_metrics.csv",
+        "size_bytes":  673,
+        "ext":  ".csv"
+    },
+    {
+        "package_path":  "core_results\\A_structural\\per_seed\\Poly\\seed_42\\synthetic_eval_by_scenario.csv",
+        "archive_path":  "experiment_results\\R5_paper_experiments_results\\structural_benchmark\\per_seed\\Poly\\seed_42\\eval\\synthetic_eval_by_scenario.csv",
+        "size_bytes":  195,
+        "ext":  ".csv"
+    },
+    {
+        "package_path":  "core_results\\A_structural\\per_seed\\Poly\\seed_42\\uot_eval_by_pattern.csv",
+        "archive_path":  "experiment_results\\R5_paper_experiments_results\\structural_benchmark\\per_seed\\Poly\\seed_42\\eval\\uot_eval_by_pattern.csv",
+        "size_bytes":  181,
+        "ext":  ".csv"
+    },
+    {
+        "package_path":  "core_results\\A_structural\\per_seed\\Poly\\seed_43\\uot_evaluation_metrics.json",
+        "archive_path":  "experiment_results\\R5_paper_experiments_results\\structural_benchmark\\per_seed\\Poly\\seed_43\\eval\\uot_evaluation_metrics.json",
+        "size_bytes":  2879,
+        "ext":  ".json"
+    },
+    {
+        "package_path":  "core_results\\A_structural\\per_seed\\Poly\\seed_43\\ablation_metrics.csv",
+        "archive_path":  "experiment_results\\R5_paper_experiments_results\\structural_benchmark\\per_seed\\Poly\\seed_43\\eval\\ablation_metrics.csv",
+        "size_bytes":  659,
+        "ext":  ".csv"
+    },
+    {
+        "package_path":  "core_results\\A_structural\\per_seed\\Poly\\seed_43\\synthetic_eval_by_scenario.csv",
+        "archive_path":  "experiment_results\\R5_paper_experiments_results\\structural_benchmark\\per_seed\\Poly\\seed_43\\eval\\synthetic_eval_by_scenario.csv",
+        "size_bytes":  195,
+        "ext":  ".csv"
+    },
+    {
+        "package_path":  "core_results\\A_structural\\per_seed\\Poly\\seed_43\\uot_eval_by_pattern.csv",
+        "archive_path":  "experiment_results\\R5_paper_experiments_results\\structural_benchmark\\per_seed\\Poly\\seed_43\\eval\\uot_eval_by_pattern.csv",
+        "size_bytes":  181,
+        "ext":  ".csv"
+    },
+    {
+        "package_path":  "core_results\\A_structural\\per_seed\\Poly\\seed_44\\uot_evaluation_metrics.json",
+        "archive_path":  "experiment_results\\R5_paper_experiments_results\\structural_benchmark\\per_seed\\Poly\\seed_44\\eval\\uot_evaluation_metrics.json",
+        "size_bytes":  2889,
+        "ext":  ".json"
+    },
+    {
+        "package_path":  "core_results\\A_structural\\per_seed\\Poly\\seed_44\\ablation_metrics.csv",
+        "archive_path":  "experiment_results\\R5_paper_experiments_results\\structural_benchmark\\per_seed\\Poly\\seed_44\\eval\\ablation_metrics.csv",
+        "size_bytes":  671,
+        "ext":  ".csv"
+    },
+    {
+        "package_path":  "core_results\\A_structural\\per_seed\\Poly\\seed_44\\synthetic_eval_by_scenario.csv",
+        "archive_path":  "experiment_results\\R5_paper_experiments_results\\structural_benchmark\\per_seed\\Poly\\seed_44\\eval\\synthetic_eval_by_scenario.csv",
+        "size_bytes":  195,
+        "ext":  ".csv"
+    },
+    {
+        "package_path":  "core_results\\A_structural\\per_seed\\Poly\\seed_44\\uot_eval_by_pattern.csv",
+        "archive_path":  "experiment_results\\R5_paper_experiments_results\\structural_benchmark\\per_seed\\Poly\\seed_44\\eval\\uot_eval_by_pattern.csv",
+        "size_bytes":  179,
+        "ext":  ".csv"
+    },
+    {
+        "package_path":  "core_results\\A_structural\\per_seed\\Poly\\seed_45\\uot_evaluation_metrics.json",
+        "archive_path":  "experiment_results\\R5_paper_experiments_results\\structural_benchmark\\per_seed\\Poly\\seed_45\\eval\\uot_evaluation_metrics.json",
+        "size_bytes":  2868,
+        "ext":  ".json"
+    },
+    {
+        "package_path":  "core_results\\A_structural\\per_seed\\Poly\\seed_45\\ablation_metrics.csv",
+        "archive_path":  "experiment_results\\R5_paper_experiments_results\\structural_benchmark\\per_seed\\Poly\\seed_45\\eval\\ablation_metrics.csv",
+        "size_bytes":  659,
+        "ext":  ".csv"
+    },
+    {
+        "package_path":  "core_results\\A_structural\\per_seed\\Poly\\seed_45\\synthetic_eval_by_scenario.csv",
+        "archive_path":  "experiment_results\\R5_paper_experiments_results\\structural_benchmark\\per_seed\\Poly\\seed_45\\eval\\synthetic_eval_by_scenario.csv",
+        "size_bytes":  195,
+        "ext":  ".csv"
+    },
+    {
+        "package_path":  "core_results\\A_structural\\per_seed\\Poly\\seed_45\\uot_eval_by_pattern.csv",
+        "archive_path":  "experiment_results\\R5_paper_experiments_results\\structural_benchmark\\per_seed\\Poly\\seed_45\\eval\\uot_eval_by_pattern.csv",
+        "size_bytes":  181,
+        "ext":  ".csv"
+    },
+    {
+        "package_path":  "core_results\\A_structural\\per_seed\\Poly\\seed_46\\uot_evaluation_metrics.json",
+        "archive_path":  "experiment_results\\R5_paper_experiments_results\\structural_benchmark\\per_seed\\Poly\\seed_46\\eval\\uot_evaluation_metrics.json",
+        "size_bytes":  2893,
+        "ext":  ".json"
+    },
+    {
+        "package_path":  "core_results\\A_structural\\per_seed\\Poly\\seed_46\\ablation_metrics.csv",
+        "archive_path":  "experiment_results\\R5_paper_experiments_results\\structural_benchmark\\per_seed\\Poly\\seed_46\\eval\\ablation_metrics.csv",
+        "size_bytes":  673,
+        "ext":  ".csv"
+    },
+    {
+        "package_path":  "core_results\\A_structural\\per_seed\\Poly\\seed_46\\synthetic_eval_by_scenario.csv",
+        "archive_path":  "experiment_results\\R5_paper_experiments_results\\structural_benchmark\\per_seed\\Poly\\seed_46\\eval\\synthetic_eval_by_scenario.csv",
+        "size_bytes":  195,
+        "ext":  ".csv"
+    },
+    {
+        "package_path":  "core_results\\A_structural\\per_seed\\Poly\\seed_46\\uot_eval_by_pattern.csv",
+        "archive_path":  "experiment_results\\R5_paper_experiments_results\\structural_benchmark\\per_seed\\Poly\\seed_46\\eval\\uot_eval_by_pattern.csv",
+        "size_bytes":  181,
+        "ext":  ".csv"
+    },
+    {
+        "package_path":  "core_results\\E_audit_v4\\blocks\\b01\\stageA.json",
+        "archive_path":  "experiment_results\\R5_paper_experiments_results\\audit_v4\\blocks\\b01\\stageA.json",
+        "size_bytes":  611,
+        "ext":  ".json"
+    },
+    {
+        "package_path":  "core_results\\E_audit_v5\\blocks\\b01\\stageA.json",
+        "archive_path":  "experiment_results\\R5_paper_experiments_results\\audit_v5\\blocks\\b01\\stageA.json",
+        "size_bytes":  611,
+        "ext":  ".json"
+    },
+    {
+        "package_path":  "core_results\\E_audit_v4\\blocks\\b02\\stageA.json",
+        "archive_path":  "experiment_results\\R5_paper_experiments_results\\audit_v4\\blocks\\b02\\stageA.json",
+        "size_bytes":  611,
+        "ext":  ".json"
+    },
+    {
+        "package_path":  "core_results\\E_audit_v5\\blocks\\b02\\stageA.json",
+        "archive_path":  "experiment_results\\R5_paper_experiments_results\\audit_v5\\blocks\\b02\\stageA.json",
+        "size_bytes":  611,
+        "ext":  ".json"
+    },
+    {
+        "package_path":  "core_results\\E_audit_v4\\blocks\\b03\\stageA.json",
+        "archive_path":  "experiment_results\\R5_paper_experiments_results\\audit_v4\\blocks\\b03\\stageA.json",
+        "size_bytes":  611,
+        "ext":  ".json"
+    },
+    {
+        "package_path":  "core_results\\E_audit_v5\\blocks\\b03\\stageA.json",
+        "archive_path":  "experiment_results\\R5_paper_experiments_results\\audit_v5\\blocks\\b03\\stageA.json",
+        "size_bytes":  611,
+        "ext":  ".json"
+    },
+    {
+        "package_path":  "core_results\\E_audit_v4\\blocks\\b04\\stageA.json",
+        "archive_path":  "experiment_results\\R5_paper_experiments_results\\audit_v4\\blocks\\b04\\stageA.json",
+        "size_bytes":  611,
+        "ext":  ".json"
+    },
+    {
+        "package_path":  "core_results\\E_audit_v5\\blocks\\b04\\stageA.json",
+        "archive_path":  "experiment_results\\R5_paper_experiments_results\\audit_v5\\blocks\\b04\\stageA.json",
+        "size_bytes":  611,
+        "ext":  ".json"
+    },
+    {
+        "package_path":  "core_results\\E_audit_v4\\blocks\\b05\\stageA.json",
+        "archive_path":  "experiment_results\\R5_paper_experiments_results\\audit_v4\\blocks\\b05\\stageA.json",
+        "size_bytes":  611,
+        "ext":  ".json"
+    },
+    {
+        "package_path":  "core_results\\E_audit_v5\\blocks\\b05\\stageA.json",
+        "archive_path":  "experiment_results\\R5_paper_experiments_results\\audit_v5\\blocks\\b05\\stageA.json",
+        "size_bytes":  611,
+        "ext":  ".json"
+    },
+    {
+        "package_path":  "core_results\\E_audit_v4\\blocks\\b06\\stageA.json",
+        "archive_path":  "experiment_results\\R5_paper_experiments_results\\audit_v4\\blocks\\b06\\stageA.json",
+        "size_bytes":  611,
+        "ext":  ".json"
+    },
+    {
+        "package_path":  "core_results\\E_audit_v5\\blocks\\b06\\stageA.json",
+        "archive_path":  "experiment_results\\R5_paper_experiments_results\\audit_v5\\blocks\\b06\\stageA.json",
+        "size_bytes":  611,
+        "ext":  ".json"
+    },
+    {
+        "package_path":  "core_results\\E_audit_v4\\blocks\\b07\\stageA.json",
+        "archive_path":  "experiment_results\\R5_paper_experiments_results\\audit_v4\\blocks\\b07\\stageA.json",
+        "size_bytes":  611,
+        "ext":  ".json"
+    },
+    {
+        "package_path":  "core_results\\E_audit_v5\\blocks\\b07\\stageA.json",
+        "archive_path":  "experiment_results\\R5_paper_experiments_results\\audit_v5\\blocks\\b07\\stageA.json",
+        "size_bytes":  611,
+        "ext":  ".json"
+    },
+    {
+        "package_path":  "core_results\\E_audit_v4\\blocks\\b08\\stageA.json",
+        "archive_path":  "experiment_results\\R5_paper_experiments_results\\audit_v4\\blocks\\b08\\stageA.json",
+        "size_bytes":  611,
+        "ext":  ".json"
+    },
+    {
+        "package_path":  "core_results\\E_audit_v5\\blocks\\b08\\stageA.json",
+        "archive_path":  "experiment_results\\R5_paper_experiments_results\\audit_v5\\blocks\\b08\\stageA.json",
+        "size_bytes":  611,
+        "ext":  ".json"
+    },
+    {
+        "package_path":  "core_results\\E_audit_v4\\blocks\\b09\\stageA.json",
+        "archive_path":  "experiment_results\\R5_paper_experiments_results\\audit_v4\\blocks\\b09\\stageA.json",
+        "size_bytes":  611,
+        "ext":  ".json"
+    },
+    {
+        "package_path":  "core_results\\E_audit_v5\\blocks\\b09\\stageA.json",
+        "archive_path":  "experiment_results\\R5_paper_experiments_results\\audit_v5\\blocks\\b09\\stageA.json",
+        "size_bytes":  611,
+        "ext":  ".json"
+    },
+    {
+        "package_path":  "core_results\\E_audit_v4\\blocks\\b10\\stageA.json",
+        "archive_path":  "experiment_results\\R5_paper_experiments_results\\audit_v4\\blocks\\b10\\stageA.json",
+        "size_bytes":  611,
+        "ext":  ".json"
+    },
+    {
+        "package_path":  "core_results\\E_audit_v5\\blocks\\b10\\stageA.json",
+        "archive_path":  "experiment_results\\R5_paper_experiments_results\\audit_v5\\blocks\\b10\\stageA.json",
+        "size_bytes":  611,
+        "ext":  ".json"
+    },
+    {
+        "package_path":  "core_results\\E_audit_v4\\blocks\\b11\\stageA.json",
+        "archive_path":  "experiment_results\\R5_paper_experiments_results\\audit_v4\\blocks\\b11\\stageA.json",
+        "size_bytes":  611,
+        "ext":  ".json"
+    },
+    {
+        "package_path":  "core_results\\E_audit_v5\\blocks\\b11\\stageA.json",
+        "archive_path":  "experiment_results\\R5_paper_experiments_results\\audit_v5\\blocks\\b11\\stageA.json",
+        "size_bytes":  611,
+        "ext":  ".json"
+    },
+    {
+        "package_path":  "core_results\\E_audit_v4\\blocks\\b12\\stageA.json",
+        "archive_path":  "experiment_results\\R5_paper_experiments_results\\audit_v4\\blocks\\b12\\stageA.json",
+        "size_bytes":  611,
+        "ext":  ".json"
+    },
+    {
+        "package_path":  "core_results\\E_audit_v5\\blocks\\b12\\stageA.json",
+        "archive_path":  "experiment_results\\R5_paper_experiments_results\\audit_v5\\blocks\\b12\\stageA.json",
+        "size_bytes":  611,
+        "ext":  ".json"
+    },
+    {
+        "package_path":  "core_results\\D_multi_bridge\\Celer\\rc_uot_q_test_metrics.json",
+        "archive_path":  "experiment_results\\out_multi_bridge_expansion\\Celer\\rc_uot_q_test_metrics.json",
+        "size_bytes":  1227,
+        "ext":  ".json"
+    },
+    {
+        "package_path":  "core_results\\D_multi_bridge\\Celer\\connector_test_metrics.json",
+        "archive_path":  "experiment_results\\out_multi_bridge_expansion\\Celer\\connector_test_metrics.json",
+        "size_bytes":  835,
+        "ext":  ".json"
+    },
+    {
+        "package_path":  "core_results\\D_multi_bridge\\Celer\\abctracer_test_metrics.json",
+        "archive_path":  "experiment_results\\out_multi_bridge_expansion\\Celer\\abctracer_test_metrics.json",
+        "size_bytes":  731,
+        "ext":  ".json"
+    },
+    {
+        "package_path":  "core_results\\D_multi_bridge\\Multi\\rc_uot_q_test_metrics.json",
+        "archive_path":  "experiment_results\\out_multi_bridge_expansion\\Multi\\rc_uot_q_test_metrics.json",
+        "size_bytes":  1245,
+        "ext":  ".json"
+    },
+    {
+        "package_path":  "core_results\\D_multi_bridge\\Multi\\connector_test_metrics.json",
+        "archive_path":  "experiment_results\\out_multi_bridge_expansion\\Multi\\connector_test_metrics.json",
+        "size_bytes":  835,
+        "ext":  ".json"
+    },
+    {
+        "package_path":  "core_results\\D_multi_bridge\\Multi\\abctracer_test_metrics.json",
+        "archive_path":  "experiment_results\\out_multi_bridge_expansion\\Multi\\abctracer_test_metrics.json",
+        "size_bytes":  750,
+        "ext":  ".json"
+    },
+    {
+        "package_path":  "core_results\\D_multi_bridge\\Poly\\rc_uot_q_test_metrics.json",
+        "archive_path":  "experiment_results\\out_multi_bridge_expansion\\Poly\\rc_uot_q_test_metrics.json",
+        "size_bytes":  1240,
+        "ext":  ".json"
+    },
+    {
+        "package_path":  "core_results\\D_multi_bridge\\Poly\\connector_test_metrics.json",
+        "archive_path":  "experiment_results\\out_multi_bridge_expansion\\Poly\\connector_test_metrics.json",
+        "size_bytes":  835,
+        "ext":  ".json"
+    },
+    {
+        "package_path":  "core_results\\D_multi_bridge\\Poly\\abctracer_test_metrics.json",
+        "archive_path":  "experiment_results\\out_multi_bridge_expansion\\Poly\\abctracer_test_metrics.json",
+        "size_bytes":  714,
+        "ext":  ".json"
+    },
+    {
+        "package_path":  "core_results\\D_multi_bridge\\Multi\\test_metrics.json",
+        "archive_path":  "experiment_results\\out_multi_bridge_expansion\\Multi\\test_metrics.json",
+        "size_bytes":  1423,
+        "ext":  ".json"
+    },
+    {
+        "package_path":  "core_results\\D_multi_bridge\\Poly\\test_metrics.json",
+        "archive_path":  "experiment_results\\out_multi_bridge_expansion\\Poly\\test_metrics.json",
+        "size_bytes":  1420,
+        "ext":  ".json"
+    },
+    {
+        "package_path":  "tables\\Table_CN3_threebridge_edgeinclusion.csv",
+        "archive_path":  "experiment_results\\out_multi_bridge_expansion\\faithful_flow_structural_three_bridges\\manuscript\\table2b_structural_aggregated.csv",
+        "size_bytes":  306,
+        "ext":  ".csv"
+    },
+    {
+        "package_path":  "tables\\Table_CN6_EN2e_confirmatory_methods.md",
+        "archive_path":  "experiment_results\\out_multi_bridge_expansion\\conditional_plan_holdout_results\\publication\\table2e_confirmatory_methods.md",
+        "size_bytes":  1457,
+        "ext":  ".md"
+    },
+    {
+        "package_path":  "tables\\Decoder_comparison_locked_test.md",
+        "archive_path":  "experiment_results\\out_multi_bridge_expansion\\decoder_plan_quality_audit\\locked_test\\decoder_comparison.md",
+        "size_bytes":  3368,
+        "ext":  ".md"
+    },
+    {
+        "package_path":  "tables\\Table_CN8_EN4_statistical_tests.csv",
+        "archive_path":  "experiment_results\\out_chapter4_data_package\\frozen_outputs\\baseline_compare\\table4_holdout\\ch4_table4_statistical_tests.csv",
+        "size_bytes":  1139,
+        "ext":  ".csv"
+    },
+    {
+        "package_path":  "tables\\Table_CN8_EN4_statistical_tests.json",
+        "archive_path":  "experiment_results\\out_chapter4_data_package\\frozen_outputs\\baseline_compare\\table4_holdout\\ch4_table4_statistical_tests.json",
+        "size_bytes":  3170,
+        "ext":  ".json"
+    },
+    {
+        "package_path":  "tables\\FINAL_TABLE4_BASELINE_FAIRNESS_AUDIT.md",
+        "archive_path":  "reviews\\out_tifs_final_consolidation\\FINAL_TABLE4_BASELINE_FAIRNESS_AUDIT.md",
+        "size_bytes":  7064,
+        "ext":  ".md"
+    },
+    {
+        "package_path":  "tables\\Table_CN9_EN5_fixed_delay_main_table.txt",
+        "archive_path":  "manuscript_versions\\R4_phase3_extract\\main_table5.txt",
+        "size_bytes":  1205,
+        "ext":  ".txt"
+    },
+    {
+        "package_path":  "tables\\Table_CN9_EN5_fixed_delay_main_table_rows.txt",
+        "archive_path":  "manuscript_versions\\R4_phase3_extract\\main_table5_rows.txt",
+        "size_bytes":  542,
+        "ext":  ".txt"
+    },
+    {
+        "package_path":  "provenance\\CLAIM_BOUNDARY.md",
+        "archive_path":  "experiment_code\\tools\\cross_aml\\CLAIM_BOUNDARY.md",
+        "size_bytes":  2912,
+        "ext":  ".md"
+    },
+    {
+        "package_path":  "provenance\\claim_boundary_summary.md",
+        "archive_path":  "experiment_code\\tools\\paper_artifact\\artifacts\\final_docs\\claim_boundary_summary.md",
+        "size_bytes":  25993,
+        "ext":  ".md"
+    },
+    {
+        "package_path":  "provenance\\check_claim_boundaries.py",
+        "archive_path":  "experiment_code\\tools\\paper_artifact\\scripts\\check_claim_boundaries.py",
+        "size_bytes":  5562,
+        "ext":  ".py"
+    },
+    {
+        "package_path":  "manuscript\\STAGE2_english_latex\\04_experiments.tex",
+        "archive_path":  "manuscript_versions\\STAGE2_english_tifs\\submission\\TIFS_SUBMISSION_PACKAGE\\sections\\04_experiments.tex",
+        "size_bytes":  61841,
+        "ext":  ".tex"
+    },
+    {
+        "package_path":  "manuscript\\STAGE2_english_latex\\supplementary.tex",
+        "archive_path":  "manuscript_versions\\STAGE2_english_tifs\\submission\\TIFS_SUBMISSION_PACKAGE\\supplementary\\supplementary.tex",
+        "size_bytes":  14006,
+        "ext":  ".tex"
+    },
+    {
+        "package_path":  "manuscript\\STAGE2_english_latex\\main_compiled.pdf",
+        "archive_path":  "manuscript_versions\\STAGE2_english_tifs\\final\\main.pdf",
+        "size_bytes":  2253196,
+        "ext":  ".pdf"
+    }
+]

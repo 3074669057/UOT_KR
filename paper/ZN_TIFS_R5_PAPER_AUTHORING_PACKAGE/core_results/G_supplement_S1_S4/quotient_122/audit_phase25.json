@@ -1,0 +1,251 @@
+{
+  "audit_pass": true,
+  "fail_reasons": [],
+  "checks": {
+    "exists_train_pairs": {
+      "pass": true,
+      "observed": true,
+      "expected": true,
+      "source_file": "D:\\trae\\tool\\a\\cross\\out\\paper_full_pipeline_run\\phase25_coverage_qualified_training\\data\\covered_train_pairs.csv"
+    },
+    "exists_dev_pairs": {
+      "pass": true,
+      "observed": true,
+      "expected": true,
+      "source_file": "D:\\trae\\tool\\a\\cross\\out\\paper_full_pipeline_run\\phase25_coverage_qualified_training\\data\\covered_dev_pairs.csv"
+    },
+    "exists_holdout_pairs": {
+      "pass": true,
+      "observed": true,
+      "expected": true,
+      "source_file": "D:\\trae\\tool\\a\\cross\\out\\paper_full_pipeline_run\\phase25_coverage_qualified_training\\data\\covered_holdout_pairs.csv"
+    },
+    "exists_abstention": {
+      "pass": true,
+      "observed": true,
+      "expected": true,
+      "source_file": "D:\\trae\\tool\\a\\cross\\out\\paper_full_pipeline_run\\phase25_coverage_qualified_training\\data\\coverage_abstention_manifest.csv"
+    },
+    "exists_selected": {
+      "pass": true,
+      "observed": true,
+      "expected": true,
+      "source_file": "D:\\trae\\tool\\a\\cross\\out\\paper_full_pipeline_run\\phase25_coverage_qualified_training\\selection\\selected_rcuot_q_covered.json"
+    },
+    "exists_holdout_gate": {
+      "pass": true,
+      "observed": true,
+      "expected": true,
+      "source_file": "D:\\trae\\tool\\a\\cross\\out\\paper_full_pipeline_run\\phase25_coverage_qualified_training\\holdout\\quotient_holdout_claim_gate.json"
+    },
+    "exists_run_summary": {
+      "pass": true,
+      "observed": true,
+      "expected": true,
+      "source_file": "D:\\trae\\tool\\a\\cross\\out\\paper_full_pipeline_run\\diagnosis\\phase25_run_summary.json"
+    },
+    "coverage_qualified_training_gate_pass": {
+      "pass": true,
+      "observed": true,
+      "expected": true,
+      "source_file": "D:\\trae\\tool\\a\\cross\\out\\paper_full_pipeline_run\\phase24_coverage_qualified_training_gate\\diagnosis\\phase24_coverage_qualified_training_gate.json"
+    },
+    "full_scope_claim_gate_fail": {
+      "pass": true,
+      "observed": {
+        "p24": false,
+        "summary": false
+      },
+      "expected": false,
+      "source_file": "D:\\trae\\tool\\a\\cross\\out\\paper_full_pipeline_run\\phase24_coverage_qualified_training_gate\\diagnosis\\phase24_full_scope_claim_gate.json"
+    },
+    "holdout_evaluated_once": {
+      "pass": true,
+      "observed": true,
+      "expected": true,
+      "source_file": "D:\\trae\\tool\\a\\cross\\out\\paper_full_pipeline_run\\phase25_coverage_qualified_training\\holdout\\quotient_holdout_claim_gate.json"
+    },
+    "high_pr_covered_scope_gate_pass": {
+      "pass": true,
+      "observed": true,
+      "expected": true,
+      "source_file": "D:\\trae\\tool\\a\\cross\\out\\paper_full_pipeline_run\\phase25_coverage_qualified_training\\holdout\\quotient_holdout_claim_gate.json"
+    },
+    "covered_holdout_prf1": {
+      "pass": true,
+      "observed": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "expected": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "source_file": "D:\\trae\\tool\\a\\cross\\out\\paper_full_pipeline_run\\phase25_coverage_qualified_training\\holdout\\quotient_holdout_claim_gate.json"
+    },
+    "holdout_pair_counts": {
+      "pass": true,
+      "observed": {
+        "total": 122,
+        "pos": 44,
+        "neg": 78
+      },
+      "expected": {
+        "total": 122,
+        "pos": 44,
+        "neg": 78
+      },
+      "source_file": "D:\\trae\\tool\\a\\cross\\out\\paper_full_pipeline_run\\phase25_coverage_qualified_training\\data\\covered_holdout_pairs.csv"
+    },
+    "summary_holdout_not_skipped": {
+      "pass": true,
+      "observed": {
+        "holdout_skipped": false,
+        "holdout.skipped": null,
+        "holdout_evaluated_once": true
+      },
+      "expected": {
+        "holdout_skipped": false,
+        "holdout_evaluated_once": true
+      },
+      "source_file": "D:\\trae\\tool\\a\\cross\\out\\paper_full_pipeline_run\\diagnosis\\phase25_run_summary.json"
+    },
+    "coverage_adjusted_metrics": {
+      "pass": true,
+      "observed": {
+        "projection": 0.792,
+        "upper": 0.792,
+        "effective": 0.792
+      },
+      "expected": "~0.792 with effective <= upper <= projection",
+      "source_file": "D:\\trae\\tool\\a\\cross\\out\\paper_full_pipeline_run\\phase25_coverage_qualified_training\\holdout\\coverage_adjusted_metrics.csv"
+    },
+    "uncovered_abstention_manifest": {
+      "pass": true,
+      "observed": {
+        "manifest_count": 14595,
+        "summary_flag": true
+      },
+      "expected": {
+        "manifest_count": 14595,
+        "uncovered_edges_abstained": true
+      },
+      "source_file": "D:\\trae\\tool\\a\\cross\\out\\paper_full_pipeline_run\\phase25_coverage_qualified_training\\data\\coverage_abstention_manifest.csv"
+    },
+    "selected_model_dev_frozen": {
+      "pass": true,
+      "observed": {
+        "model": "Q-rule-bridge-key",
+        "threshold": 1.0,
+        "holdout_not_used_for_selection": true
+      },
+      "expected": {
+        "model": "Q-rule-bridge-key",
+        "threshold": 1.0,
+        "source": "dev"
+      },
+      "source_file": "D:\\trae\\tool\\a\\cross\\out\\paper_full_pipeline_run\\phase25_coverage_qualified_training\\selection\\selected_rcuot_q_covered.json"
+    },
+    "ablation_dev_frozen_holdout": {
+      "pass": true,
+      "observed": true,
+      "expected": true,
+      "source_file": "D:\\trae\\tool\\a\\cross\\out\\paper_full_pipeline_run\\phase25_coverage_qualified_training\\ablation\\dev_frozen_holdout_ablation.csv"
+    },
+    "ablation_oracle_diagnostic_separate": {
+      "pass": true,
+      "observed": true,
+      "expected": true,
+      "source_file": "D:\\trae\\tool\\a\\cross\\out\\paper_full_pipeline_run\\phase25_coverage_qualified_training\\ablation\\oracle_holdout_diagnostic_ablation.csv"
+    },
+    "no_gt_leakage_features": {
+      "pass": true,
+      "observed": {
+        "inference_feature_cols": [
+          "amount_bucket_match",
+          "bridge_transfer_key_exact_match",
+          "calibrated_bridge_key_score",
+          "chain_direction_consistency",
+          "corrected_quotient_decision_score",
+          "event_role_compatible",
+          "receiver_match",
+          "token_normalized_match",
+          "transfer_id_exact_match",
+          "two_stage_bridge_key_score"
+        ],
+        "quotient_label_in_pair_csv": "supervised label column only (excluded from FEATURE_COLS)"
+      },
+      "expected": "no forbidden columns as inference features",
+      "source_file": "D:\\trae\\tool\\a\\cross\\out\\paper_full_pipeline_run\\phase25_coverage_qualified_training\\data"
+    },
+    "no_training_on_holdout": {
+      "pass": true,
+      "observed": [],
+      "expected": [],
+      "source_file": "D:\\trae\\tool\\a\\cross\\out\\paper_full_pipeline_run\\phase25_coverage_qualified_training\\data\\covered_holdout_pairs.csv"
+    },
+    "documentation_claim_boundary": {
+      "pass": true,
+      "observed": {
+        "missing_required_limitations": [],
+        "unqualified_forbidden_phrases": []
+      },
+      "expected": "required limitations present; no unqualified forbidden claims",
+      "source_file": "D:\\trae\\tool\\a\\cross\\out\\diagnosis_report.md,D:\\trae\\tool\\a\\cross\\out\\paper_full_pipeline_run\\manuscript\\05_experiments_results.md,D:\\trae\\tool\\a\\cross\\out\\paper_full_pipeline_run\\submission\\claim_boundary_summary.md"
+    },
+    "no_secrets_in_phase25_artifacts": {
+      "pass": true,
+      "observed": "none",
+      "expected": "no RPC URLs / API keys",
+      "source_file": "phase25 touched files"
+    },
+    "env_not_committed": {
+      "pass": true,
+      "observed": false,
+      "expected": false,
+      "source_file": ".env"
+    },
+    "canonical_rebuilt": {
+      "pass": true,
+      "observed": false,
+      "expected": false,
+      "source_file": "D:\\trae\\tool\\a\\cross\\out\\paper_full_pipeline_run\\diagnosis\\phase25_run_summary.json"
+    },
+    "label_layer_refrozen": {
+      "pass": true,
+      "observed": false,
+      "expected": false,
+      "source_file": "D:\\trae\\tool\\a\\cross\\out\\paper_full_pipeline_run\\diagnosis\\phase25_run_summary.json"
+    },
+    "label_layer_v1_preserved": {
+      "pass": true,
+      "observed": true,
+      "expected": true,
+      "source_file": "D:\\trae\\tool\\a\\cross\\out\\paper_full_pipeline_run\\diagnosis\\phase25_run_summary.json"
+    },
+    "label_layer_v2_quotient_is_overlay": {
+      "pass": true,
+      "observed": true,
+      "expected": true,
+      "source_file": "D:\\trae\\tool\\a\\cross\\out\\paper_full_pipeline_run\\diagnosis\\phase25_run_summary.json"
+    },
+    "credentials_committed": {
+      "pass": true,
+      "observed": false,
+      "expected": false,
+      "source_file": "D:\\trae\\tool\\a\\cross\\out\\paper_full_pipeline_run\\diagnosis\\phase25_run_summary.json"
+    },
+    "full_rpc_url_logged": {
+      "pass": true,
+      "observed": false,
+      "expected": false,
+      "source_file": "D:\\trae\\tool\\a\\cross\\out\\paper_full_pipeline_run\\diagnosis\\phase25_run_summary.json"
+    }
+  },
+  "coverage_qualified_training_gate_pass": true,
+  "full_scope_claim_gate_pass": false,
+  "high_pr_covered_scope_gate_pass": true,
+  "selected_model": "Q-rule-bridge-key"
+}

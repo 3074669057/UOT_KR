@@ -1,0 +1,26 @@
+{
+  "file": "NEXT_CANDIDATE_SPEC.md",
+  "sha256": "979e5931ced5e070c1d071a9c0199de85fc41d9e22cdbd54b4e00347119b72ec",
+  "holdout_not_run": true,
+  "holdout_seeds_reserved": [
+    301,
+    302,
+    303,
+    304,
+    305
+  ],
+  "test_seeds_42_46_not_used_for_selection": true,
+  "dev_seeds_used": [
+    201,
+    202,
+    203,
+    204,
+    205
+  ],
+  "timestamp_utc": "2026-09-02T11:56:44.082936+00:00",
+  "correction_record": {
+    "note": "The ONLY change vs the first lock was correcting the self-referential SHA-256 line inside the spec (it carried the hash of an intermediate version). The candidate DEFINITION (weights, protocol, prohibitions) is byte-identical apart from that one line.",
+    "previous_file_sha256": "35fdd2651d4c45f7fb58d79fcc4c69409aa0d8fb8008cd29997ee38188b41e6c",
+    "previous_stale_line_sha_reference": "22ef752e896132bf2dec9385e8e765602d085abb0e6fa07d6c354e3230c5ff26"
+  }
+}

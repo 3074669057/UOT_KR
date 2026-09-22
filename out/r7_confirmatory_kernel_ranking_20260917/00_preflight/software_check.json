@@ -1,0 +1,21 @@
+{
+  "python": "3.11.11 (main, Mar 17 2025, 21:01:29) [MSC v.1943 64 bit (AMD64)]",
+  "python_executable": "C:\\Users\\30746\\python-sdk\\python3.11.11\\python.exe",
+  "platform": "Windows-10-10.0.26200-SP0",
+  "machine": "AMD64",
+  "packages": {
+    "numpy": "1.26.4",
+    "pandas": "2.3.3",
+    "scipy": "1.17.1",
+    "matplotlib": "3.10.9",
+    "ot": "0.9.6.post1",
+    "sklearn": "1.8.0",
+    "statsmodels": "NOT INSTALLED (ModuleNotFoundError)",
+    "pytest": "9.0.3",
+    "pyarrow": "25.0.0",
+    "networkx": "3.1"
+  },
+  "cwd": "D:\\trae\\tool\\a\\cross",
+  "repo": "D:\\trae\\tool\\a\\cross",
+  "checked_at_utc": "2026-09-17T07:03:41Z"
+}

@@ -1,0 +1,317 @@
+% supplementary_r3.tex — Supplementary Material (R3 TIFS-style rebuild; <=13-page main)
+% Scientific authority: frozen artifacts + audited Chinese mother manuscript (R3).
+% No scientific content was changed by the move.
+
+\documentclass[journal]{IEEEtran}
+
+\usepackage{amsmath,amssymb}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{cite}
+\usepackage[hidelinks]{hyperref}
+\usepackage{url}
+\usepackage{xurl}
+
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
+
+\begin{document}
+
+\title{Supplementary Material (R3):\\ Non-One-to-One Cross-Chain Forensic Fund-Flow Correspondence: Transport Representation and Conditional Decoding}
+
+\author{Author~Names~\IEEEmembership{Member,~IEEE}}
+
+\maketitle
+
+\section*{Supplement S1: Coverage-Qualified Quotient Diagnostic}
+
+\begin{table}[!t]
+\caption{Coverage-qualified quotient inference on the event-backed subset (Table S1).}
+\label{tab:S1}
+\centering
+\begin{tabular}{L{0.62\columnwidth}c}
+\toprule
+Metric & Value \\
+\midrule
+Covered holdout pairs & \textbf{122} (44 positive / 78 negative) \\
+Covered precision / recall / F1 & \textbf{1.000 / 1.000 / 1.000} \\
+Covered AUROC / AUPRC & 1.000 / 1.000 \\
+ECE & 0.000 \\
+Event-backed projection coverage & \textbf{$\approx$0.792} \\
+Uncovered edges & Withheld under coverage protocol \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\emph{This result is based on the same protocol-native transferId association rule: the covered-pair label and the frozen bridge-transfer-key rule are both keyed on the bridge-event transferId incidence, so P/R/F1 $=$ 1.000 is a definitional consistency check on the covered quotient projection---not independent-accuracy and not external-performance evidence. Projection coverage $\approx$ 0.792 is computed on gate-reference seeds 52--57.}
+
+\section*{Supplement S2: Three-Bridge Edge-Inclusion Recall}
+
+\begin{table}[!t]
+\caption{Edge-inclusion fan-out/merge recall across three bridges (frozen faithful run, 48 templates $\times$ 5 seeds, mean $\pm$ s.d.).}
+\label{tab:S2}
+\centering
+\begin{tabular}{lcc}
+\toprule
+Bridge / Method & Fan-out edge-inclusion recall & Merge edge-inclusion recall \\
+\midrule
+Celer / RC-UOT-Q & 0.950 $\pm$ 0.032 & 0.967 $\pm$ 0.043 \\
+Multichain / RC-UOT-Q & 0.971 $\pm$ 0.035 & 0.979 $\pm$ 0.026 \\
+PolyNetwork / RC-UOT-Q & 1.000 $\pm$ 0.000 & 1.000 $\pm$ 0.000 \\
+All / Connector-style & 0.000 (all seeds) & 0.000 (all seeds) \\
+All / ABCTracer-style & 0.000 (all seeds) & 0.000 (all seeds) \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\emph{Source: \url{out/multi_bridge_expansion/faithful_flow_structural_three_bridges/} (frozen; not re-run). Edge inclusion over the dense decoded plan, not exact topology recovery. Multi/Poly amounts use a current external price snapshot; PolyNetwork inherits its lock==unlock amount structure (no fee asymmetry).}
+
+\section*{Supplement S3: Symmetric Masking Ladder}
+
+\begin{table}[!t]
+\caption{Symmetric masking degradation and baseline applicability.}
+\label{tab:S3}
+\centering
+\footnotesize
+\setlength{\tabcolsep}{2.5pt}
+\begin{tabular}{p{0.16\columnwidth}p{0.18\columnwidth}cp{0.15\columnwidth}ccp{0.16\columnwidth}}
+\toprule
+Mask level & Masked fields / retained evidence & Conn. F1 & Conn. status & RQ F1 & tx-CVR & Interpretation \\
+\midrule
+full\_native & none masked; receiver, amount, asset, chains, timestamp retained & 0.9736 & accepted & 0.7085 & 0 & Closed-set upper-bound native diagnostic; RC-UOT-Q ranked flow correspondence \\
+id\_anchor\_masked & event, bridge, sender masked; WL fields retained & 0.9736 & accepted & 0.7086 & 0 & Non-WL ID fields masked; Connector unchanged; RC-UOT-Q re-solved \\
+no\_receiver & receiver cleared; amount, asset, chains, timestamp retained & N/A & blocked (receiver required) & 0.7001 & 0 & Connector blocked; RC-UOT-Q evaluable \\
+no\_amount & amount zeroed; receiver, asset, chains, timestamp retained & 0.0000 & zero predictions after amount mask & 0.3714 & 0 & Connector zero predictions; RC-UOT-Q degrades \\
+no\_receiver\_no\_amount & receiver cleared and amount zeroed; asset, chains, timestamp retained & N/A & blocked (receiver required) & 0.3752 & 0 & Connector blocked; RC-UOT-Q evaluable at reduced F1 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\emph{7{,}296 Celer anchor tx pairs; original \texttt{WithdrawLocator} raw top-1 only; Connector candidate pool closed-set (7{,}296 candidate BNB tx hashes equal the GT destination hash set)---the full\_native score is an upper-bound native-feature diagnostic, not open-world retrieval. Blocked rows are applicability outcomes (N/A), not F1 $=$ 0. RC-UOT-Q tx-CVR is 0 at every level. Source: \url{out/baseline_compare/routeA_symmetric_masking_v2/degradation_curve_v2.json}.}
+
+\section*{Supplement S4: ETH-BNB Protocol Generalization}
+
+\begin{table}[!t]
+\caption{ETH-BNB protocol generalization, held-out raw transaction-pair full-set.}
+\label{tab:S4}
+\centering
+\footnotesize
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{p{0.16\columnwidth}p{0.20\columnwidth}cccccc}
+\toprule
+Protocol & Method & Pairs & Cand. recall & Prec. & Rec. & F1 & Abst. \\
+\midrule
+Multichain & RC-UOT-Q & 2444 & 1.000 & 0.316 & 0.005 & 0.010 & 0.984 \\
+Multichain & Connector-style adapted & 2444 & 1.000 & 0.993 & 0.964 & 0.978 & 0.029 \\
+Multichain & ABCTracer-style adapted & 2444 & 1.000 & 0.959 & 0.959 & 0.959 & 0.000 \\
+PolyNetwork & RC-UOT-Q & 1630 & 1.000 & 0.889 & 0.783 & 0.833 & 0.119 \\
+PolyNetwork & Connector-style adapted & 1630 & 1.000 & 0.999 & 0.998 & 0.998 & 0.001 \\
+PolyNetwork & ABCTracer-style adapted & 1630 & 1.000 & 0.998 & 0.998 & 0.998 & 0.000 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\emph{Source: \texttt{out/multi\_bridge\_expansion/summary.csv} and per-protocol metric files; cached BNB logs, no live RPC. RC-UOT-Q coverage: Multichain 0.016, PolyNetwork 0.881. ABCTracer original checkpoint unavailable (style-adapted diagnostic reported).}
+
+\section*{Supplement S5: Consolidated Seed Map}
+
+\begin{table}[!t]
+\caption{Consolidated seed map.}
+\label{tab:S5}
+\centering
+\begin{tabular}{lL{0.44\columnwidth}L{0.26\columnwidth}}
+\toprule
+Seed range & Role & Sealing level \\
+\midrule
+42--46 & Three-bridge structural evaluation (Tables~\ref{tab:S2}, main Table V) & Frozen artifact (not re-run) \\
+101--103 & Threshold calibration / mechanism ladders & Frozen calibration \\
+201--205 & Decoder development diagnosis & Development \\
+52--71 & Reranker training / threshold selection (dev) & Development \\
+212--231 & Covered-quotient holdout (Table~\ref{tab:S1}) & Development-frozen \\
+232--291 & Burned seeds (excluded from main Table VII holdout) & Excluded \\
+292--311 & Flow-stress holdout (main Table VII) & Development-sealed \\
+301--305 & Confirmatory decoder-repair holdout (main Table VI) & Hash-locked one-shot + independent verification \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section*{Supplement S6: Mechanism Ladder Numbers}
+
+\begin{table}[!t]
+\caption{Mechanism stress ladders (seeds 101--103; identical cost matrices; no re-tuning).}
+\label{tab:S6}
+\centering
+\footnotesize
+\begin{tabular}{L{0.62\columnwidth}L{0.30\columnwidth}}
+\toprule
+Ladder / quantity & Key values (edge-level) \\
+\midrule
+Clean (0\% mismatch) edge F1: Celer / Multichain / PolyNetwork (Balanced-OT vs.\ RC-UOT-Q) & 0.070 vs.\ 0.110; 0.032 vs.\ 0.047; 0.033 vs.\ 0.045 \\
+Mass mismatch (Celer precision, Balanced-OT vs.\ RC-UOT-Q) & 0.043$\to$0.024; 0.068$\to$0.037; F1 0.070$\to$0.044 vs.\ 0.110$\to$0.064 \\
+Mass mismatch (Threshold-MM) & F1 flat/improving 0.142$\to$0.155 \\
+Unmatched ratio 40\% (Celer precision: Threshold / Balanced / RC-UOT-Q) & 0.142$\to$0.086; 0.043$\to$0.029; 0.068$\to$0.035 \\
+Decoy density $k{=}1{\to}8$ (Celer FP per template) & Threshold 26.3$\to$223.6 ($+$750\%); Balanced 266$\to$1006 ($+$278\%); RC-UOT-Q 211$\to$714 ($+$239\%) \\
+Decoy precision (Threshold) & 0.182$\to$0.061 \\
+Timestamp noise 1--4$\times$ (Celer F1: Threshold / Balanced / RC-UOT-Q) & 0.242$\to$0.241; 0.070$\to$0.065; 0.110$\to$0.101 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\emph{Exact recovery is 0.000 at every level for every method. Calibrated global $\tau$ sits at the lower boundary of the pre-registered grid; per-bridge $\tau$ values available in the package. The tested perturbations ($\le$180-s) barely move costs against the 21{,}600-s window at time weight 0.25.}
+
+\section*{Supplement S7: Fixed-Delay Anchor Audit}
+
+\begin{table*}[!t]
+\caption{Fixed-delay anchor audit (all experiments $\times$ decodings).}
+\label{tab:S7}
+\centering
+\footnotesize
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{p{0.13\columnwidth}p{0.13\columnwidth}cccccccccccc}
+\toprule
+Experiment & Decoding & Pair prec. & Pair rec. & Pair F1 & Top-3 rec. & tx-CVR & Cov. & Abst. & Med. delay (s) & TP & FP & Abstained & Forb. rem. \\
+\midrule
+baseline & raw\_argmax & 0.589 & 0.589 & 0.589 & 0.658 & 0.338 & 1.000 & 0.000 & 166.000 & 4295 & 3001 & 0 & 0 \\
+baseline & top3\_rescue & 0.590 & 0.589 & 0.590 & 0.658 & 0.005 & 0.996 & 0.002 & 227.000 & 4297 & 2985 & 14 & 0 \\
+baseline & joint\_filter & 0.889 & 0.589 & 0.708 & 0.658 & 0.000 & 0.845 & 0.338 & 196.000 & 4295 & 534 & 2467 & 0 \\
+leave\_key\_out & raw\_argmax & 0.589 & 0.589 & 0.589 & 0.658 & 0.338 & 1.000 & 0.000 & 166.000 & 4295 & 3001 & 0 & 0 \\
+leave\_key\_out & top3\_rescue & 0.590 & 0.589 & 0.590 & 0.658 & 0.005 & 0.996 & 0.002 & 227.000 & 4297 & 2985 & 14 & 0 \\
+leave\_key\_out & joint\_filter & 0.889 & 0.589 & 0.708 & 0.658 & 0.000 & 0.845 & 0.338 & 196.000 & 4295 & 534 & 2467 & 0 \\
+leave\_anchor\_out\_strict & raw\_argmax & 0.589 & 0.589 & 0.589 & 0.658 & 0.338 & 1.000 & 0.000 & 166.000 & 4295 & 3001 & 0 & 0 \\
+leave\_anchor\_out\_strict & top3\_rescue & 0.590 & 0.589 & 0.590 & 0.658 & 0.005 & 0.996 & 0.002 & 227.000 & 4297 & 2985 & 14 & 0 \\
+leave\_anchor\_out\_strict & joint\_filter & 0.889 & 0.589 & 0.708 & 0.658 & 0.000 & 0.845 & 0.338 & 196.000 & 4295 & 534 & 2467 & 0 \\
+fake\_anchor\_probe & raw\_argmax & 0.589 & 0.589 & 0.589 & 0.658 & 0.338 & 1.000 & 0.000 & 166.000 & 4295 & 3001 & 0 & 0 \\
+fake\_anchor\_probe & top3\_rescue & 0.590 & 0.589 & 0.590 & 0.658 & 0.005 & 0.996 & 0.002 & 227.000 & 4297 & 2985 & 14 & 0 \\
+fake\_anchor\_probe & joint\_filter & 0.889 & 0.589 & 0.708 & 0.658 & 0.000 & 0.845 & 0.338 & 196.000 & 4295 & 534 & 2467 & 0 \\
+permuted\_gt & raw\_argmax & 0.000 & 0.000 & 0.000 & 0.002 & 0.338 & 1.000 & 0.000 & 166.000 & 1 & 7295 & 0 & 0 \\
+permuted\_gt & top3\_rescue & 0.000 & 0.000 & 0.000 & 0.002 & 0.338 & 1.000 & 0.000 & 166.000 & 1 & 7295 & 0 & 0 \\
+permuted\_gt & joint\_filter & 0.000 & 0.000 & 0.000 & 0.002 & 0.338 & 1.000 & 0.000 & 166.000 & 1 & 7295 & 0 & 0 \\
+\bottomrule
+\end{tabular}
+\end{table*}
+
+\emph{Permuted-label control rows: CVR/delay/coverage/abstention reflect the unchanged decoded output under label permutation and are not method performance. \texttt{forbidden\_features\_remaining} $= 0$ under strict masking; fake-anchor injection fully neutralized.}
+
+\section*{Supplement Figures}
+
+\begin{figure}[!t]
+\centering
+\includegraphics[width=\columnwidth]{figures/fig5c_capability_ladder.png}
+\caption{Method capability ladder from the constructed unit tests (TEST A--F).}
+\label{fig:S1}
+\end{figure}
+
+\begin{figure}[!t]
+\centering
+\includegraphics[width=\columnwidth]{figures/fig5d_three_bridge_structural.png}
+\caption{Strict structural evaluation on three bridges (48 templates $\times$ 5 seeds, mean $\pm$ 95\% CI). Top: exact fan-out recovery---0.000 for all five methods. Bottom: per-template edge precision, recall, and F1; the calibrated threshold heuristic attains the highest edge F1, and RC-UOT-Q sits above strictly balanced OT on every bridge.}
+\label{fig:S2}
+\end{figure}
+
+\begin{figure}[!t]
+\centering
+\includegraphics[width=\columnwidth]{figures/fig5e_mechanism_stress.png}
+\caption{Mechanism stress ladders pooled over Celer / Multichain / PolyNetwork (mean $\pm$ 95\% CI). Exact recovery is 0.000 at every level for every method. Mass mismatch: Threshold-MM flat/improving, both transport methods degrade, RC-UOT-Q above Balanced-OT at every level. Unmatched ratio: all methods lose precision, RC-UOT-Q retains its level offset. Decoy density: Threshold-MM precision falls fastest. Timestamp noise: no method discriminates at the tested scales.}
+\label{fig:S3}
+\end{figure}
+
+\begin{figure}[!t]
+\centering
+\includegraphics[width=\columnwidth]{figures/fig6_coverage_scope.png}
+\caption{Coverage-qualified inference scope: event-backed projection coverage $\approx$ 0.792; uncovered edges are abstained. Covered P/R/F1 is reported only on the 122 covered quotient holdout pairs (Table~\ref{tab:S1}) as a definitional consistency check.}
+\label{fig:S4}
+\end{figure}
+
+\begin{figure}[!t]
+\centering
+\includegraphics[width=\columnwidth]{figures/fig7_baseline_grouped_metrics.png}
+\caption{Flow-stress comparison on the independent held-out test set: RC-UOT-Q improves precision and F1 over style-adapted diagnostic baselines; the recall-oriented baseline retains higher recall. Not original-system runs; calibration asymmetry disclosed in the main text.}
+\label{fig:S5}
+\end{figure}
+
+\section*{Appendix A: Connector Native Closed-Set Diagnostic and Route A Consistency Audit}\begin{table}[!t]
+\caption{Phase 1 canonical native diagnostic and Route A v2 consistency.}
+\label{tab:A1}
+\centering
+\begin{tabular}{L{0.55\columnwidth}L{0.37\columnwidth}}
+\toprule
+Item & Value \\
+\midrule
+Designation & Connector closed-set native-feature diagnostic (Phase 1 canonical) \\
+Native tx-pair F1 & \textbf{0.9736} \\
+Pair precision / recall & \textbf{0.9976 / 0.9508} \\
+Predicted pairs & \textbf{6{,}954} \\
+Correct pairs & \textbf{6{,}937} \\
+No-match source txs & \textbf{342} \\
+Evaluation unit & tx-pair exact match on \textbf{7{,}296} Celer anchor pairs \\
+Matcher & Original \texttt{WithdrawLocator} core (unmodified); raw top-1 only \\
+Route A v2 vs.\ Phase 1 full\_native prediction diff & \textbf{0} (6{,}954 / 6{,}954 identical) \\
+Route A v1 & \textbf{Rejected} (decimal bootstrap inconsistency; inflated F1 $=$ 0.9953) \\
+ABCTracer status & Blocked (no official checkpoint) \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\emph{The candidate BNB destination hash set equals the labeled GT destination hash set (7{,}296 $=$ 7{,}296), so the full\_native score is an upper-bound native-feature diagnostic, not open-world retrieval. \texttt{WithdrawLocator.search\_withdraw()} exposes raw top-1 only. Source: Route A v2 package (\texttt{routeA\_v2\_manifest.json}, \texttt{routeA\_v2\_consistency\_audit.md}); Phase 1 package (\texttt{connector\_phase1/}).}
+
+\section*{Appendix H: Baseline Parameter Provenance Summary}
+
+Source types: A $=$ original paper/public implementation; B $=$ pre-evaluation frozen adapter defaults; C $=$ author-defined fixed constants or author-defined calibration protocol; D $=$ unknown.
+
+\begin{itemize}
+\item \textbf{Connector-style} (main Table VII): C---weights $0.35\cdot$amount $+ 0.30\cdot$time $+ 0.25\cdot$route $+ 0.10\cdot$address\_overlap, fee\_ratio $= 0.03$, hard-coded in \url{scripts/run_phase10s_same_scope_baseline_superiority.py}; config catalog \texttt{calibration="none"}, threshold 0.0, top-k $=$ 50. No author statement that the constants were never implicitly adjusted exists in the repository; the manuscript states this at its most conservative level.
+\item \textbf{ABCTracer-style} (main Table VII): C---weights $0.30\cdot$asset $+ 0.30\cdot$amount $+ 0.20\cdot$time $+ 0.10\cdot$address\_overlap $+ 0.10\cdot$risk, same file and catalog.
+\item \textbf{Threshold-MM} (structural study): C (author-defined calibration protocol)---$\tau$ grid $\{0.05,\dots,0.95\}$, cutoff $=$ $\tau$-quantile of the cost ECDF, selected on disjoint calibration seeds 101--103 by edge F1, frozen at 0.478; never re-tuned on test seeds.
+\item \textbf{BOT} (structural study / holdout controls): B---reg $= 0.05$ (equal to the frozen UOT reg), unit-normalized marginals, same 1e-9 decode; no labels, no calibration.
+\item \textbf{RC-UOT-Q Table VII operating point} (proposed): C (author-defined calibration protocol)---logistic reranker trained on dev seeds 52--71, threshold $\tau = 0.7796$ selected on dev, decoder selected on dev; frozen before holdout 292--311.
+\end{itemize}
+
+\section*{Appendix B: The Adequacy Criterion (Long-Form Rationale)}
+
+The gate $G \ge 8$ is not a universal statistical threshold. $G$ counts independent primary-address clusters---a proxy for behavioral-source diversity, not sample count: 2{,}451 source-level fan-out units concentrated in seven clusters cannot be treated as 2{,}451 independent external actors. The complete frozen rule has four jointly prespecified criteria ($G \ge 8$; maximum single-cluster share $< 0.5$; Tier-A source-level fan-out units $\ge 30$; temporal spread $\ge 2$ calendar months); one failed criterion fails the gate. Its scientific value comes from pre-specification plus conservative diversity control, not from any property of the number eight. After observing $G = 7$, relaxing the criterion to seven would have been a post-data change to a confirmatory adequacy rule, and no method prediction existed at the time adequacy failed, so the failure decision cannot have been influenced by any method outcome. The dataset itself is a fully verified, disjoint, prediction-blind artifact: DATA / GT / PROVENANCE / DISJOINTNESS all PASS; only the preregistered external-performance inference is not evaluable. The external-validation experiment line is closed for this submission (no v5).
+
+\section*{Appendix C: Metric Definitions}
+
+\begin{itemize}
+\item \textbf{Edge-inclusion recall.} A ground-truth edge counts as recovered iff the decoded plan assigns it positive mass ($\ge$1e-9)---inclusion over the dense decoded plan, not exact topology recovery.
+\item \textbf{Per-source Recall@3.} Macro-averaged fraction of source flows---with at least one GT destination and one decoded edge $>$1e-9---whose GT destination appears among the top-3 destinations by descending decoded mass, averaged over seeds 42--46. Rank-based inclusion; tie-break implementation-dependent (unstable sort).
+\item \textbf{Strict exact recovery.} The predicted edge set must equal the structural ground truth exactly; one extra edge forfeits the template.
+\item \textbf{tx-CVR.} Fraction of accepted decoded pairs with negative per-transaction delay.
+\item \textbf{Coverage / abstention.} Coverage: source flows with a non-abstained tx projection (denominator: source flows in the plan). Abstention: labeled anchor pairs with abstained decoding (denominator: 7{,}296). Denominators differ by design.
+\item \textbf{Paired hierarchical CI.} Within-bridge template-level paired resample ($B=4{,}000$, \texttt{RandomState(20240101)}); replicate statistic $=$ unweighted mean of per-bridge paired means; the seed level enters the point estimate but not the resampling.
+\end{itemize}
+
+\section*{Appendix D: Confirmatory Protocol (Frozen)}
+
+The confirmatory holdout (seeds 301--305; three bridges; 48 templates per seed; 720 paired template instances) was executed once by a hash-locked one-shot runner over the frozen candidate (sha256 \texttt{0f360add\-c1f2a220\-299d75b4\-aa9cad1e\-1ee1e504\-e8097ae5\-bacfc0da\-40542cc401}), frozen decoder ($k=5$), frozen reg $=0.05$ / reg\_m $=0.5$, frozen cost weights and marginals, frozen $\tau = 0.478$ (structural protocol), and the preregistered five-gate decision tree. An independently maintained verifier recomputes every statistic from raw per-cell artifacts and matches the runner within 1e-9. Integrity: FP/template 1.0511, FN/template 0.4945 (within the 3$\times$ bound); UOT max final error 9.9e-12; BOT max residual 4.4e-12; zero convergence failures; zero missing/duplicate templates; zero NaNs.
+
+\section*{Appendix E: External-Validation History}
+
+\textbf{v3 (permanent execution failure).} A preregistered Level-I external execution entered the prediction path and failed before valid performance: (a) missing \texttt{import itertools}; (b) zero-marginal solver-domain defect (unpriceable tokens $\to$ zero USD marginals $\to$ POT divide-by-zero $\to$ NaN plans). Execution count $= 1$, permanently closed: no rerun, no valid performance. The support-aware solver-interface repair (reduce to the positive-marginal support; all-zero side $\to$ all-zero plan) is mathematically equivalent (the KL-unbalanced objective is $+\infty$ for positive mass on a zero-reference row/column) and was validated only on non-test data (15/15 dev cells, 0.0 plan diff, 0 decoder discrepancies; 8/8 zero-support tests). It was never applied to the v3 corpus and never needed on v4.
+
+\textbf{v4 (data adequacy fail; data-only).} A new disjoint, prediction-blind Level-I corpus (window 2024-05-20T00:00:00Z--2025-05-19T00:00:00Z; protocol-native linkage \texttt{Send.transferId == Relay.srcTransferId}, \texttt{Send.dstChainId == 56}, \texttt{Relay.srcChainId == 1}; disjointness verified against 359{,}256 historical transaction identities, zero intersections) was assembled data-only: 32{,}905 anchors; 25{,}621 unique GT edges (0 duplicates); 2{,}451 Tier-A fan-out units; 85 merge units; $G = 7$ [910, 587, 452, 432, 60, 8, 2]; max cluster share 0.371277; span 359.98 days. DATA ADEQUACY FAIL ($G = 7 < 8$); statistical branch NOT\_EVALUABLE; no method executed; no external-performance claim. The corpus is archived for provenance only. The long-form rationale of the adequacy criterion is in Appendix~B.
+
+\section*{Appendix F: Reproducibility Hashes (Frozen)}
+
+\begin{itemize}
+\item Frozen candidate: sha256 \texttt{0f360add\-c1f2a220\-299d75b4\-aa9cad1e\-1ee1e504\-e8097ae5\-bacfc0da\-40542cc401}
+\item Confirmatory statistics/verification artifacts: hashes in the preregistration package hash manifest (all entries LOCKED; timestamps 2026-09-02, read-only)
+\item v4 dataset hash manifest: included in the v4 preregistration package
+\item Seeds 301--305: untouched; not accessed, not rerun
+\end{itemize}
+
+\section*{Appendix G: Full Derivation of Proposition 1 and Zero-Support Repair}
+
+\textbf{Full proof of Proposition 1.} Let $P=\mathrm{diag}(u)K\mathrm{diag}(v)$ with $u_i>0$, $v_j>0$, $K_{ij}>0$. Then $c_j=\sum_l P_{lj}=\sum_l u_l K_{lj} v_j=v_j\sum_l u_l K_{lj}$, and $c_j>0$ implies $v_j\sum_l u_l K_{lj}>0$; hence $S^{\mathrm{row}}_{ij}=P_{ij}/c_j=u_i K_{ij}v_j/(v_j\sum_l u_l K_{lj})=u_i K_{ij}/\sum_l u_l K_{lj}$, which is independent of $v$. Symmetrically, $r_i=\sum_l P_{il}=u_i\sum_l K_{il}v_l$, so $S^{\mathrm{col}}_{ij}=P_{ij}/r_i=u_i K_{ij}v_j/(u_i\sum_l K_{il}v_l)=K_{ij}v_j/\sum_l K_{il}v_l$, which is independent of $u$. Gauge invariance: for any positive rescaling $\tilde v=\alpha v$, $\tilde c_j=\alpha c_j$ and $\tilde P_{ij}=\alpha P_{ij}$, so $S^{\mathrm{row}}$ is unchanged (symmetrically for $u$ and $S^{\mathrm{col}}$); $P$-based ranking is not invariant under such rescalings of the ranked-against side. The identity uses only the factorization, nonnegativity, and division at positive-mass endpoints; it holds for balanced entropic OT ($P=\mathrm{diag}(a)K\mathrm{diag}(b)$) and entropic unbalanced OT with KL penalties alike, and says nothing about which solver family produces a better plan. Interpreting the conditional score as a kernel ranking requires the decoder to read the plan at the solver's $\varepsilon$ (both frozen at 0.05); the frozen plans satisfy the factorization to solver tolerance (final residuals $\le 10^{-11}$, verified per cell).
+
+\textbf{Zero-support repair (mathematical basis and tests).} The KL-unbalanced objective assigns $+\infty$ cost to placing positive mass on a zero-reference row or column, so restricting the problem to the positive-marginal support ($I_+\times J_+$) cannot change the optimum; an all-zero side maps to an all-zero plan. Empirical equivalence (non-test data only): POSITIVE\_SUPPORT\_EQUIVALENCE 15/15 development cells PASS (0.0 plan difference, 0 decoder discrepancies); ZERO\_SUPPORT\_TESTS 8/8 PASS.
+
+\section*{Appendix I: Audited Causes of the All-Zero Strict-Exact Column}
+
+(i) The frozen 1e-9 decode threshold is a ``positive mass'' rule and both entropic plans are dense (18{,}776 edges on the Celer seed-42 grid; balanced plan $\sim$30{,}000), so strict equality with a 6-edge truth is unattainable. (ii) The true structural edges are not the locally cheapest cells (per-source cost rank $\approx$3--4; Top-$k$-MM edge F1 rises from 0.019 at Top-2 to 0.248 at Top-3) because the fan-out source's cheapest target is the full-amount merge destination and vice versa, so any local threshold that keeps the truth edges also keeps cheaper confusers, and the transport methods include the truth edges only through global mass allocation. (iii) The legacy metric counts inclusion, not exactness. These are audited causes, not evaluator artifacts (see the structural-mechanism diagnostics in the package).
+
+\section*{Appendix J: Positioning Summary}
+
+Relative to transaction-level tracers (diagnostic adaptations), CSFFC/RC-UOT-Q operate on AML flows rather than transaction hashes, express fan-out/merge as soft transport mass rather than implicit/post-hoc mapping, represent unmatched observation explicitly rather than forcing assignment, surface evidence gaps via coverage tiers and abstention rather than remaining silent, and claim flow correspondence plus conditional-decoding repair and covered-quotient precision/F1 frontier improvement rather than strong tx retrieval on the Celer mapping alone.
+
+\end{document}

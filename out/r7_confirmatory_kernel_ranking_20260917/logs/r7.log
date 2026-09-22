@@ -1,0 +1,281 @@
+[2026-09-17T07:11:20Z] [0A] provenance locked: v4 edges=25621 v5 edges=39595
+[2026-09-17T07:11:20Z] [0A] duplicate anchored units: shared anchors=0 v4 dups=0 v5 dups=0
+[2026-09-17T07:11:20Z] [0A] fanout P(d>8)=0.045940 fanin P(d>8)=0.000000 HIGH_TAIL=False
+[2026-09-17T07:14:13Z] [0B-QA] Celer seed 206: 48 templates / 24 families / 48 unique anchors
+[2026-09-17T07:14:18Z] [0B-QA] Celer seed 207: 48 templates / 24 families / 48 unique anchors
+[2026-09-17T07:14:20Z] [0B-QA] Celer seed 208: 48 templates / 24 families / 48 unique anchors
+[2026-09-17T07:14:21Z] [0B-QA] Celer seed 209: 48 templates / 24 families / 48 unique anchors
+[2026-09-17T07:14:23Z] [0B-QA] Celer seed 210: 48 templates / 24 families / 48 unique anchors
+[2026-09-17T07:14:24Z] [0B-QA] Celer seed 211: 48 templates / 24 families / 48 unique anchors
+[2026-09-17T07:14:24Z] [0B-QA] Celer seed 112: 48 templates / 24 families / 48 unique anchors
+[2026-09-17T07:14:26Z] [0B-QA] Celer seed 113: 48 templates / 24 families / 48 unique anchors
+[2026-09-17T07:14:27Z] [0B-QA] Celer seed 114: 48 templates / 24 families / 48 unique anchors
+[2026-09-17T07:14:28Z] [0B-QA] Celer seed 115: 48 templates / 24 families / 48 unique anchors
+[2026-09-17T07:14:30Z] [0B-QA] Multi seed 206: 48 templates / 24 families / 48 unique anchors
+[2026-09-17T07:14:31Z] [0B-QA] Multi seed 207: 48 templates / 24 families / 48 unique anchors
+[2026-09-17T07:14:32Z] [0B-QA] Multi seed 208: 48 templates / 24 families / 48 unique anchors
+[2026-09-17T07:14:34Z] [0B-QA] Multi seed 209: 48 templates / 24 families / 48 unique anchors
+[2026-09-17T07:14:35Z] [0B-QA] Multi seed 210: 48 templates / 24 families / 48 unique anchors
+[2026-09-17T07:14:36Z] [0B-QA] Multi seed 211: 48 templates / 24 families / 48 unique anchors
+[2026-09-17T07:14:38Z] [0B-QA] Multi seed 112: 48 templates / 24 families / 48 unique anchors
+[2026-09-17T07:14:38Z] [0B-QA] Multi seed 113: 48 templates / 24 families / 48 unique anchors
+[2026-09-17T07:14:39Z] [0B-QA] Multi seed 114: 48 templates / 24 families / 48 unique anchors
+[2026-09-17T07:14:41Z] [0B-QA] Multi seed 115: 48 templates / 24 families / 48 unique anchors
+[2026-09-17T07:14:42Z] [0B-QA] Poly seed 206: 48 templates / 24 families / 48 unique anchors
+[2026-09-17T07:14:43Z] [0B-QA] Poly seed 207: 48 templates / 24 families / 48 unique anchors
+[2026-09-17T07:14:44Z] [0B-QA] Poly seed 208: 48 templates / 24 families / 48 unique anchors
+[2026-09-17T07:14:46Z] [0B-QA] Poly seed 209: 48 templates / 24 families / 48 unique anchors
+[2026-09-17T07:14:47Z] [0B-QA] Poly seed 210: 48 templates / 24 families / 48 unique anchors
+[2026-09-17T07:14:48Z] [0B-QA] Poly seed 211: 48 templates / 24 families / 48 unique anchors
+[2026-09-17T07:14:50Z] [0B-QA] Poly seed 112: 48 templates / 24 families / 48 unique anchors
+[2026-09-17T07:14:51Z] [0B-QA] Poly seed 113: 48 templates / 24 families / 48 unique anchors
+[2026-09-17T07:14:51Z] [0B-QA] Poly seed 114: 48 templates / 24 families / 48 unique anchors
+[2026-09-17T07:14:53Z] [0B-QA] Poly seed 115: 48 templates / 24 families / 48 unique anchors
+[2026-09-17T07:15:35Z] [0B-QA] Celer seed 206: 48 templates / 24 families / 48 unique anchors
+[2026-09-17T07:15:37Z] [0B-QA] Celer seed 207: 48 templates / 24 families / 48 unique anchors
+[2026-09-17T07:15:38Z] [0B-QA] Celer seed 208: 48 templates / 24 families / 48 unique anchors
+[2026-09-17T07:15:40Z] [0B-QA] Celer seed 209: 48 templates / 24 families / 48 unique anchors
+[2026-09-17T07:15:42Z] [0B-QA] Celer seed 210: 48 templates / 24 families / 48 unique anchors
+[2026-09-17T07:15:43Z] [0B-QA] Celer seed 211: 48 templates / 24 families / 48 unique anchors
+[2026-09-17T07:15:45Z] [0B-QA] Celer seed 112: 48 templates / 24 families / 48 unique anchors
+[2026-09-17T07:15:46Z] [0B-QA] Celer seed 113: 48 templates / 24 families / 48 unique anchors
+[2026-09-17T07:15:48Z] [0B-QA] Celer seed 114: 48 templates / 24 families / 48 unique anchors
+[2026-09-17T07:15:49Z] [0B-QA] Celer seed 115: 48 templates / 24 families / 48 unique anchors
+[2026-09-17T07:15:51Z] [0B-QA] Multi seed 206: 48 templates / 24 families / 48 unique anchors
+[2026-09-17T07:15:52Z] [0B-QA] Multi seed 207: 48 templates / 24 families / 48 unique anchors
+[2026-09-17T07:15:54Z] [0B-QA] Multi seed 208: 48 templates / 24 families / 48 unique anchors
+[2026-09-17T07:15:55Z] [0B-QA] Multi seed 209: 48 templates / 24 families / 48 unique anchors
+[2026-09-17T07:15:57Z] [0B-QA] Multi seed 210: 48 templates / 24 families / 48 unique anchors
+[2026-09-17T07:15:58Z] [0B-QA] Multi seed 211: 48 templates / 24 families / 48 unique anchors
+[2026-09-17T07:16:00Z] [0B-QA] Multi seed 112: 48 templates / 24 families / 48 unique anchors
+[2026-09-17T07:16:01Z] [0B-QA] Multi seed 113: 48 templates / 24 families / 48 unique anchors
+[2026-09-17T07:16:03Z] [0B-QA] Multi seed 114: 48 templates / 24 families / 48 unique anchors
+[2026-09-17T07:16:04Z] [0B-QA] Multi seed 115: 48 templates / 24 families / 48 unique anchors
+[2026-09-17T07:16:06Z] [0B-QA] Poly seed 206: 48 templates / 24 families / 48 unique anchors
+[2026-09-17T07:16:07Z] [0B-QA] Poly seed 207: 48 templates / 24 families / 48 unique anchors
+[2026-09-17T07:16:09Z] [0B-QA] Poly seed 208: 48 templates / 24 families / 48 unique anchors
+[2026-09-17T07:16:10Z] [0B-QA] Poly seed 209: 48 templates / 24 families / 48 unique anchors
+[2026-09-17T07:16:11Z] [0B-QA] Poly seed 210: 48 templates / 24 families / 48 unique anchors
+[2026-09-17T07:16:13Z] [0B-QA] Poly seed 211: 48 templates / 24 families / 48 unique anchors
+[2026-09-17T07:16:14Z] [0B-QA] Poly seed 112: 48 templates / 24 families / 48 unique anchors
+[2026-09-17T07:16:16Z] [0B-QA] Poly seed 113: 48 templates / 24 families / 48 unique anchors
+[2026-09-17T07:16:17Z] [0B-QA] Poly seed 114: 48 templates / 24 families / 48 unique anchors
+[2026-09-17T07:16:19Z] [0B-QA] Poly seed 115: 48 templates / 24 families / 48 unique anchors
+[2026-09-17T07:19:41Z] [lock] operational protocol -> operational_protocol_preselection.json
+[2026-09-17T07:19:41Z] [lock] candidate space -> candidate_space.json
+[2026-09-17T07:20:43Z] [preflight] forbidden_seeds_rejected: PASS
+[2026-09-17T07:20:43Z] [preflight] confirmatory_seed_rejected_by_selection_runner: PASS
+[2026-09-17T07:20:43Z] [preflight] frozen_reproduction_anchors: PASS
+[2026-09-17T07:20:43Z] [preflight] logK_equals_negative_cost_ranking: PASS
+[2026-09-17T07:20:43Z] [preflight] single_cost_hash_per_cell: PASS
+[2026-09-17T07:20:43Z] [preflight] support_hard_filter_zero_violations: PASS
+[2026-09-17T07:20:43Z] [preflight] decoder_determinism: PASS
+[2026-09-17T07:20:43Z] [preflight] generator_structural_qa_before_f1: PASS
+[2026-09-17T07:20:48Z] [selection] Celer seed 206: 22 candidates done (1s)
+[2026-09-17T07:20:54Z] [selection] Celer seed 207: 22 candidates done (7s)
+[2026-09-17T07:20:56Z] [selection] Celer seed 208: 22 candidates done (9s)
+[2026-09-17T07:20:58Z] [selection] Celer seed 209: 22 candidates done (11s)
+[2026-09-17T07:21:00Z] [selection] Celer seed 210: 22 candidates done (13s)
+[2026-09-17T07:21:03Z] [selection] Celer seed 211: 22 candidates done (16s)
+[2026-09-17T07:21:05Z] [selection] Celer seed 112: 22 candidates done (18s)
+[2026-09-17T07:21:08Z] [selection] Celer seed 113: 22 candidates done (21s)
+[2026-09-17T07:21:11Z] [selection] Celer seed 114: 22 candidates done (24s)
+[2026-09-17T07:21:14Z] [selection] Celer seed 115: 22 candidates done (26s)
+[2026-09-17T07:21:15Z] [selection] Multi seed 206: 22 candidates done (28s)
+[2026-09-17T07:21:18Z] [selection] Multi seed 207: 22 candidates done (31s)
+[2026-09-17T07:21:20Z] [selection] Multi seed 208: 22 candidates done (33s)
+[2026-09-17T07:21:23Z] [selection] Multi seed 209: 22 candidates done (36s)
+[2026-09-17T07:21:26Z] [selection] Multi seed 210: 22 candidates done (39s)
+[2026-09-17T07:21:29Z] [selection] Multi seed 211: 22 candidates done (42s)
+[2026-09-17T07:21:32Z] [selection] Multi seed 112: 22 candidates done (45s)
+[2026-09-17T07:21:35Z] [selection] Multi seed 113: 22 candidates done (48s)
+[2026-09-17T07:21:38Z] [selection] Multi seed 114: 22 candidates done (51s)
+[2026-09-17T07:21:40Z] [selection] Multi seed 115: 22 candidates done (53s)
+[2026-09-17T07:21:41Z] [selection] Poly seed 206: 22 candidates done (54s)
+[2026-09-17T07:21:43Z] [selection] Poly seed 207: 22 candidates done (56s)
+[2026-09-17T07:21:46Z] [selection] Poly seed 208: 22 candidates done (59s)
+[2026-09-17T07:21:48Z] [selection] Poly seed 209: 22 candidates done (61s)
+[2026-09-17T07:21:50Z] [selection] Poly seed 210: 22 candidates done (63s)
+[2026-09-17T07:21:53Z] [selection] Poly seed 211: 22 candidates done (66s)
+[2026-09-17T07:21:55Z] [selection] Poly seed 112: 22 candidates done (68s)
+[2026-09-17T07:21:58Z] [selection] Poly seed 113: 22 candidates done (71s)
+[2026-09-17T07:22:00Z] [selection] Poly seed 114: 22 candidates done (73s)
+[2026-09-17T07:22:03Z] [selection] Poly seed 115: 22 candidates done (76s)
+[2026-09-17T07:22:03Z] [selection] complete: 660 candidate-cell rows in 76s
+[2026-09-17T07:22:08Z] [select] winner R-const@k3 score=0.432151 (tied=2) TRUNCATION_BOUNDARY_DEPENDENCE=False
+[2026-09-17T07:23:15Z] [calibrate] THRESHOLD_MM cutoff=0.344676 (q=0.02) target_budget=17.4250
+[2026-09-17T07:23:20Z] [calibrate] DUAL_SOFTMAX tau=0.0 score=0.248250
+[2026-09-17T07:25:48Z] [calibrate] THRESHOLD_MM cutoff=0.230150 (q=0.004) target_budget=17.4250 diff=1.2556 [coarse grid had diff=63.1597]
+[2026-09-17T07:25:52Z] [calibrate] DUAL_SOFTMAX tau=0.0 score=0.248250 monotone=True
+[2026-09-17T07:27:04Z] [probe] validator self-test on selection raw package rc=1
+[2026-09-17T07:27:24Z] [probe] validator self-test on selection raw package rc=1
+[2026-09-17T07:27:45Z] [probe] validator self-test on selection raw package rc=0
+[2026-09-17T07:28:35Z] [report] SELECTION_REPORT.md written
+[2026-09-17T07:29:34Z] [0A] provenance locked: v4 edges=25621 v5 edges=39595
+[2026-09-17T07:29:35Z] [0A] duplicate anchored units: shared anchors=0 v4 dups=0 v5 dups=0
+[2026-09-17T07:29:35Z] [0A] fanout P(d>8)=0.045940 fanin P(d>8)=0.000000 HIGH_TAIL=False
+[2026-09-17T07:29:46Z] [report] SELECTION_REPORT.md written
+[2026-09-17T07:32:19Z] [freeze] locked_spec sha256=46b76dd23f0759fa3cfd3b9aba79d6d83ad1f780309c09a40735fe29289cb691
+[2026-09-17T07:32:19Z] [freeze] manifest: 38 frozen files
+[2026-09-17T07:32:31Z] [freeze] locked_spec sha256=392f88f654d8bc97c1f3d42d77ae506991940f798d266854ff54ee26a89b0bd6
+[2026-09-17T07:32:31Z] [freeze] manifest: 38 frozen files
+[2026-09-17T07:32:36Z] [verify] locked_spec_sha256: PASS
+[2026-09-17T07:32:36Z] [verify] locked_spec_matches_manifest: PASS
+[2026-09-17T07:32:36Z] [verify] frozen_artifact_hashes: PASS
+[2026-09-17T07:32:36Z] [verify] executor_self_sha256: PASS
+[2026-09-17T07:32:36Z] [verify] confirmatory_seed_block_only: PASS
+[2026-09-17T07:32:36Z] [verify] non_confirmatory_seeds_rejected: PASS
+[2026-09-17T07:32:36Z] [verify] one_shot_ledger_absent: PASS
+[2026-09-17T07:32:36Z] [verify] confirmatory_raw_absent: PASS
+[2026-09-17T07:32:40Z] [one-shot] touch ledger written -> CONFIRMATORY_TOUCH_ONCE.json; HOLDOUT_TOUCHED=YES
+[2026-09-17T07:44:52Z] [dryrun] Celer/206 built ok
+[2026-09-17T07:44:54Z] [dryrun] Multi/207 built ok
+[2026-09-17T07:44:57Z] [dryrun] Poly/208 built ok
+[2026-09-17T07:45:36Z] [dryrun] Celer/206 built ok
+[2026-09-17T07:45:38Z] [dryrun] Multi/207 built ok
+[2026-09-17T07:45:40Z] [dryrun] Poly/208 built ok
+[2026-09-17T07:45:53Z] [dryrun] Celer/206 built ok
+[2026-09-17T07:45:55Z] [dryrun] Multi/207 built ok
+[2026-09-17T07:45:57Z] [dryrun] Poly/208 built ok
+[2026-09-17T07:47:48Z] [preflight] forbidden_seeds_rejected: PASS
+[2026-09-17T07:47:48Z] [preflight] confirmatory_seed_rejected_by_selection_runner: PASS
+[2026-09-17T07:47:48Z] [preflight] frozen_reproduction_anchors: PASS
+[2026-09-17T07:47:48Z] [preflight] logK_equals_negative_cost_ranking: PASS
+[2026-09-17T07:47:48Z] [preflight] single_cost_hash_per_cell: PASS
+[2026-09-17T07:47:48Z] [preflight] support_hard_filter_zero_violations: PASS
+[2026-09-17T07:47:48Z] [preflight] decoder_determinism: PASS
+[2026-09-17T07:47:48Z] [preflight] generator_structural_qa_before_f1: PASS
+[2026-09-17T07:47:49Z] [selection] Celer seed 206: 22 candidates done (1s)
+[2026-09-17T07:47:51Z] [selection] Celer seed 207: 22 candidates done (3s)
+[2026-09-17T07:47:53Z] [selection] Celer seed 208: 22 candidates done (5s)
+[2026-09-17T07:47:55Z] [selection] Celer seed 209: 22 candidates done (7s)
+[2026-09-17T07:47:57Z] [selection] Celer seed 210: 22 candidates done (9s)
+[2026-09-17T07:47:59Z] [selection] Celer seed 211: 22 candidates done (11s)
+[2026-09-17T07:48:01Z] [selection] Celer seed 112: 22 candidates done (13s)
+[2026-09-17T07:48:04Z] [selection] Celer seed 113: 22 candidates done (16s)
+[2026-09-17T07:48:06Z] [selection] Celer seed 114: 22 candidates done (18s)
+[2026-09-17T07:48:08Z] [selection] Celer seed 115: 22 candidates done (20s)
+[2026-09-17T07:48:09Z] [selection] Multi seed 206: 22 candidates done (21s)
+[2026-09-17T07:48:11Z] [selection] Multi seed 207: 22 candidates done (23s)
+[2026-09-17T07:48:14Z] [selection] Multi seed 208: 22 candidates done (25s)
+[2026-09-17T07:48:16Z] [selection] Multi seed 209: 22 candidates done (28s)
+[2026-09-17T07:48:18Z] [selection] Multi seed 210: 22 candidates done (30s)
+[2026-09-17T07:48:21Z] [selection] Multi seed 211: 22 candidates done (33s)
+[2026-09-17T07:48:24Z] [selection] Multi seed 112: 22 candidates done (36s)
+[2026-09-17T07:48:26Z] [selection] Multi seed 113: 22 candidates done (38s)
+[2026-09-17T07:48:29Z] [selection] Multi seed 114: 22 candidates done (40s)
+[2026-09-17T07:48:31Z] [selection] Multi seed 115: 22 candidates done (43s)
+[2026-09-17T07:48:32Z] [selection] Poly seed 206: 22 candidates done (43s)
+[2026-09-17T07:48:33Z] [selection] Poly seed 207: 22 candidates done (45s)
+[2026-09-17T07:48:36Z] [selection] Poly seed 208: 22 candidates done (47s)
+[2026-09-17T07:48:38Z] [selection] Poly seed 209: 22 candidates done (50s)
+[2026-09-17T07:48:40Z] [selection] Poly seed 210: 22 candidates done (52s)
+[2026-09-17T07:48:42Z] [selection] Poly seed 211: 22 candidates done (54s)
+[2026-09-17T07:48:44Z] [selection] Poly seed 112: 22 candidates done (56s)
+[2026-09-17T07:48:46Z] [selection] Poly seed 113: 22 candidates done (58s)
+[2026-09-17T07:48:48Z] [selection] Poly seed 114: 22 candidates done (60s)
+[2026-09-17T07:48:50Z] [selection] Poly seed 115: 22 candidates done (62s)
+[2026-09-17T07:48:50Z] [selection] complete: 660 candidate-cell rows in 62s
+[2026-09-17T07:48:50Z] [select] winner R-const@k3 score=0.432151 (tied=2) TRUNCATION_BOUNDARY_DEPENDENCE=False
+[2026-09-17T07:50:52Z] [calibrate] THRESHOLD_MM cutoff=0.230150 (q=0.004) target_budget=17.4250 diff=1.2556 [coarse grid had diff=63.1597]
+[2026-09-17T07:50:57Z] [calibrate] DUAL_SOFTMAX tau=0.0 score=0.248250 monotone=True
+[2026-09-17T07:51:08Z] [report] SELECTION_REPORT.md written
+[2026-09-17T07:51:22Z] [probe] validator self-test on selection raw package rc=0
+[2026-09-17T07:51:28Z] [dryrun] Celer/206 built ok
+[2026-09-17T07:51:30Z] [dryrun] Multi/206 built ok
+[2026-09-17T07:51:31Z] [dryrun] Poly/206 built ok
+[2026-09-17T07:51:46Z] [freeze] locked_spec sha256=9775479b742833d02beeffb469569b0d885002749b84e996844dcce9b845e11d
+[2026-09-17T07:51:46Z] [freeze] manifest: 42 frozen files
+[2026-09-17T07:51:52Z] [verify] locked_spec_sha256: PASS
+[2026-09-17T07:51:52Z] [verify] locked_spec_matches_manifest: PASS
+[2026-09-17T07:51:52Z] [verify] frozen_artifact_hashes: PASS
+[2026-09-17T07:51:52Z] [verify] executor_self_sha256: PASS
+[2026-09-17T07:51:52Z] [verify] confirmatory_seed_block_only: PASS
+[2026-09-17T07:51:52Z] [verify] non_confirmatory_seeds_rejected: PASS
+[2026-09-17T07:51:52Z] [verify] one_shot_ledger_absent: PASS
+[2026-09-17T07:51:52Z] [verify] confirmatory_raw_absent: PASS
+[2026-09-17T07:51:52Z] [verify] retired_block_ledger_preserved: PASS
+[2026-09-17T07:51:56Z] [one-shot] touch ledger written -> CONFIRMATORY_TOUCH_ONCE__411_420.json; HOLDOUT_TOUCHED=YES
+[2026-09-17T07:51:57Z] [unit] Celer/411 done in 1.7s f1(UOT_KR)=0.4560
+[2026-09-17T07:51:59Z] [unit] Celer/412 done in 1.9s f1(UOT_KR)=0.4383
+[2026-09-17T07:52:01Z] [unit] Celer/413 done in 1.7s f1(UOT_KR)=0.4540
+[2026-09-17T07:52:02Z] [unit] Celer/414 done in 1.6s f1(UOT_KR)=0.4522
+[2026-09-17T07:52:04Z] [unit] Celer/415 done in 1.7s f1(UOT_KR)=0.4274
+[2026-09-17T07:52:06Z] [unit] Celer/416 done in 1.5s f1(UOT_KR)=0.4517
+[2026-09-17T07:52:07Z] [unit] Celer/417 done in 1.6s f1(UOT_KR)=0.4296
+[2026-09-17T07:52:09Z] [unit] Celer/418 done in 1.7s f1(UOT_KR)=0.4411
+[2026-09-17T07:52:11Z] [unit] Celer/419 done in 1.7s f1(UOT_KR)=0.4565
+[2026-09-17T07:52:12Z] [unit] Celer/420 done in 1.7s f1(UOT_KR)=0.4344
+[2026-09-17T07:52:14Z] [unit] Multi/411 done in 1.5s f1(UOT_KR)=0.4076
+[2026-09-17T07:52:15Z] [unit] Multi/412 done in 1.7s f1(UOT_KR)=0.3416
+[2026-09-17T07:52:17Z] [unit] Multi/413 done in 1.5s f1(UOT_KR)=0.3759
+[2026-09-17T07:52:19Z] [unit] Multi/414 done in 1.7s f1(UOT_KR)=0.4396
+[2026-09-17T07:52:20Z] [unit] Multi/415 done in 1.7s f1(UOT_KR)=0.3864
+[2026-09-17T07:52:22Z] [unit] Multi/416 done in 1.8s f1(UOT_KR)=0.3692
+[2026-09-17T07:52:24Z] [unit] Multi/417 done in 1.6s f1(UOT_KR)=0.4138
+[2026-09-17T07:52:25Z] [unit] Multi/418 done in 1.7s f1(UOT_KR)=0.3845
+[2026-09-17T07:52:27Z] [unit] Multi/419 done in 1.7s f1(UOT_KR)=0.3757
+[2026-09-17T07:52:29Z] [unit] Multi/420 done in 1.9s f1(UOT_KR)=0.4110
+[2026-09-17T07:52:31Z] [unit] Poly/411 done in 1.5s f1(UOT_KR)=0.4678
+[2026-09-17T07:52:32Z] [unit] Poly/412 done in 1.6s f1(UOT_KR)=0.4695
+[2026-09-17T07:52:34Z] [unit] Poly/413 done in 1.6s f1(UOT_KR)=0.4492
+[2026-09-17T07:52:35Z] [unit] Poly/414 done in 1.5s f1(UOT_KR)=0.4440
+[2026-09-17T07:52:37Z] [unit] Poly/415 done in 1.5s f1(UOT_KR)=0.4774
+[2026-09-17T07:52:38Z] [unit] Poly/416 done in 1.6s f1(UOT_KR)=0.4546
+[2026-09-17T07:52:40Z] [unit] Poly/417 done in 1.6s f1(UOT_KR)=0.4337
+[2026-09-17T07:52:41Z] [unit] Poly/418 done in 1.5s f1(UOT_KR)=0.4488
+[2026-09-17T07:52:43Z] [unit] Poly/419 done in 1.4s f1(UOT_KR)=0.4516
+[2026-09-17T07:52:44Z] [unit] Poly/420 done in 1.5s f1(UOT_KR)=0.4333
+[2026-09-17T07:52:45Z] [gate D] PASS
+[2026-09-17T08:08:46Z] [final] running confirmatory analysis
+[2026-09-17T08:08:48Z] [final] DECISION.json
+[2026-09-17T08:08:48Z] [final] classification = CONFIRMATORY_METHOD_SUPPORT
+[2026-09-17T08:08:48Z] [final] manuscript patches
+[2026-09-17T08:08:48Z] [final] figures
+[2026-09-17T08:08:53Z] [final] manifest (pre-report pass)
+[2026-09-17T08:08:54Z] [final] validation checklist
+[2026-09-17T08:08:54Z] [final] final experiment report
+[2026-09-17T08:08:59Z] [final] manifest (final pass, includes the report)
+[2026-09-17T08:09:40Z] [final] running confirmatory analysis
+[2026-09-17T08:09:42Z] [final] DECISION.json
+[2026-09-17T08:09:42Z] [final] classification = CONFIRMATORY_METHOD_SUPPORT
+[2026-09-17T08:09:42Z] [final] selection + confirmatory data manifest
+[2026-09-17T08:09:43Z] [final] data_manifest: selection 30 cells, confirmatory 30 cells
+[2026-09-17T08:09:43Z] [final] manuscript patches
+[2026-09-17T08:09:43Z] [final] figures
+[2026-09-17T08:09:47Z] [final] manifest (pre-report pass)
+[2026-09-17T08:09:48Z] [final] validation checklist
+[2026-09-17T08:09:48Z] [final] final experiment report
+[2026-09-17T08:09:53Z] [final] manifest (final pass, includes the report)
+[2026-09-17T08:10:15Z] [final] running confirmatory analysis
+[2026-09-17T08:10:17Z] [final] DECISION.json
+[2026-09-17T08:10:17Z] [final] classification = CONFIRMATORY_METHOD_SUPPORT
+[2026-09-17T08:10:17Z] [final] selection + confirmatory data manifest
+[2026-09-17T08:10:18Z] [final] data_manifest: selection 30 cells, confirmatory 30 cells
+[2026-09-17T08:10:18Z] [final] manuscript patches
+[2026-09-17T08:10:18Z] [final] figures
+[2026-09-17T08:10:22Z] [final] manifest (pre-report pass)
+[2026-09-17T08:10:23Z] [final] validation checklist
+[2026-09-17T08:10:23Z] [final] final experiment report
+[2026-09-17T08:10:28Z] [final] manifest (final pass, includes the report)
+[2026-09-17T08:11:59Z] [final] running confirmatory analysis
+[2026-09-17T08:12:02Z] [final] DECISION.json
+[2026-09-17T08:12:02Z] [final] classification = CONFIRMATORY_METHOD_SUPPORT
+[2026-09-17T08:12:02Z] [final] selection + confirmatory data manifest
+[2026-09-17T08:12:03Z] [final] data_manifest: selection 30 cells, confirmatory 30 cells
+[2026-09-17T08:12:03Z] [final] manuscript patches
+[2026-09-17T08:12:03Z] [final] figures
+[2026-09-17T08:12:07Z] [final] manifest (pre-report pass)
+[2026-09-17T08:12:08Z] [final] validation checklist
+[2026-09-17T08:12:08Z] [final] final experiment report
+[2026-09-17T08:12:12Z] [final] manifest (final pass, includes the report)
+[2026-09-17T08:12:19Z] [verify] locked_spec_sha256: PASS
+[2026-09-17T08:12:19Z] [verify] locked_spec_matches_manifest: PASS
+[2026-09-17T08:12:19Z] [verify] frozen_artifact_hashes: FAIL
+[2026-09-17T08:12:19Z] [verify] executor_self_sha256: PASS
+[2026-09-17T08:12:19Z] [verify] confirmatory_seed_block_only: PASS
+[2026-09-17T08:12:19Z] [verify] non_confirmatory_seeds_rejected: PASS
+[2026-09-17T08:12:19Z] [verify] one_shot_ledger_absent: FAIL
+[2026-09-17T08:12:19Z] [verify] confirmatory_raw_absent: FAIL
+[2026-09-17T08:12:19Z] [verify] retired_block_ledger_preserved: PASS
+[2026-09-17T08:12:19Z] [verify] FAILED -> refusing to execute; holdout untouched

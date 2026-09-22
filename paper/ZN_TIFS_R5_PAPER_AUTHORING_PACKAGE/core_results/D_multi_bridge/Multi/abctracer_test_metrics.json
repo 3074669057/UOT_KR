@@ -1,0 +1,32 @@
+{
+  "abstention": 0.0,
+  "candidate_pool_recall": 1.0,
+  "coverage": 1.0,
+  "development_selection": {
+    "abstention": 0.001368925393566034,
+    "coverage": 0.998631074606434,
+    "fn": 565.0,
+    "fp": 557.0,
+    "full_set_f1": 0.9039383561643836,
+    "n_abstained": 8.0,
+    "n_predicted": 5836.0,
+    "n_total": 5844.0,
+    "precision": 0.904557916381083,
+    "recall": 0.9033196440793977,
+    "tp": 5279.0,
+    "window_h": 1.0
+  },
+  "fn": 100,
+  "fp": 100,
+  "full_set_f1": 0.9590834697217676,
+  "n_abstained": 0,
+  "n_predicted": 2444,
+  "n_total": 2444,
+  "precision": 0.9590834697217676,
+  "recall": 0.9590834697217676,
+  "selected_config": {
+    "before_sec": 900.0,
+    "window_h": 1.0
+  },
+  "tp": 2344
+}

@@ -1,0 +1,237 @@
+{
+  "purpose": "re-run the ORIGINAL R7 aggregation path on the archived per-template data and confirm it reproduces the frozen confirmatory values",
+  "aggregation_path": "template -> family mean -> 24-family macro -> seed -> bridge -> bridge-balanced overall",
+  "recomputed": {
+    "UOT_KR": 0.4292104171878746,
+    "HUNGARIAN": 0.40367874250839936,
+    "H1_effect": 0.025531674679475258
+  },
+  "frozen_reference": {
+    "UOT_KR": 0.4292104171878746,
+    "HUNGARIAN": 0.4036787425083993,
+    "H1_effect_full_precision": 0.025531674679475275,
+    "H2_effect_full_precision": 0.36703971518526995
+  },
+  "abs_diff": {
+    "UOT_KR": 0.0,
+    "HUNGARIAN": 5.551115123125783e-17,
+    "H1_effect": 1.734723475976807e-17
+  },
+  "tolerance": 1e-09,
+  "UOT_KR_reproduced": true,
+  "HUNGARIAN_reproduced": true,
+  "H1_reproduced": true,
+  "per_cell": [
+    {
+      "bridge": "Celer",
+      "seed": 411,
+      "UOT_KR_f1": 0.4560383802643864,
+      "HUNGARIAN_f1": 0.47105471462089105,
+      "delta_H1": -0.015016334356504624
+    },
+    {
+      "bridge": "Celer",
+      "seed": 412,
+      "UOT_KR_f1": 0.43830378642685147,
+      "HUNGARIAN_f1": 0.39298949280566925,
+      "delta_H1": 0.04531429362118222
+    },
+    {
+      "bridge": "Celer",
+      "seed": 413,
+      "UOT_KR_f1": 0.4539929787704555,
+      "HUNGARIAN_f1": 0.43544472276089924,
+      "delta_H1": 0.018548256009556285
+    },
+    {
+      "bridge": "Celer",
+      "seed": 414,
+      "UOT_KR_f1": 0.4522292250233427,
+      "HUNGARIAN_f1": 0.42749287749287745,
+      "delta_H1": 0.02473634753046522
+    },
+    {
+      "bridge": "Celer",
+      "seed": 415,
+      "UOT_KR_f1": 0.4273677453437515,
+      "HUNGARIAN_f1": 0.3630481786731787,
+      "delta_H1": 0.06431956667057281
+    },
+    {
+      "bridge": "Celer",
+      "seed": 416,
+      "UOT_KR_f1": 0.4516602474323062,
+      "HUNGARIAN_f1": 0.4362879767291532,
+      "delta_H1": 0.015372270703153001
+    },
+    {
+      "bridge": "Celer",
+      "seed": 417,
+      "UOT_KR_f1": 0.4296334712114511,
+      "HUNGARIAN_f1": 0.36637222730972724,
+      "delta_H1": 0.06326124390172388
+    },
+    {
+      "bridge": "Celer",
+      "seed": 418,
+      "UOT_KR_f1": 0.4410750374711288,
+      "HUNGARIAN_f1": 0.38572771523139165,
+      "delta_H1": 0.05534732223973715
+    },
+    {
+      "bridge": "Celer",
+      "seed": 419,
+      "UOT_KR_f1": 0.4564964801710158,
+      "HUNGARIAN_f1": 0.44010353072853076,
+      "delta_H1": 0.01639294944248504
+    },
+    {
+      "bridge": "Celer",
+      "seed": 420,
+      "UOT_KR_f1": 0.4344099372205022,
+      "HUNGARIAN_f1": 0.40885996492614135,
+      "delta_H1": 0.025549972294360845
+    },
+    {
+      "bridge": "Multi",
+      "seed": 411,
+      "UOT_KR_f1": 0.407563025210084,
+      "HUNGARIAN_f1": 0.486523199023199,
+      "delta_H1": -0.07896017381311504
+    },
+    {
+      "bridge": "Multi",
+      "seed": 412,
+      "UOT_KR_f1": 0.34156953351516045,
+      "HUNGARIAN_f1": 0.3114271723646724,
+      "delta_H1": 0.030142361150488073
+    },
+    {
+      "bridge": "Multi",
+      "seed": 413,
+      "UOT_KR_f1": 0.37588702147525677,
+      "HUNGARIAN_f1": 0.3387311762311762,
+      "delta_H1": 0.037155845244080554
+    },
+    {
+      "bridge": "Multi",
+      "seed": 414,
+      "UOT_KR_f1": 0.4395687441643324,
+      "HUNGARIAN_f1": 0.45481667025784667,
+      "delta_H1": -0.015247926093514275
+    },
+    {
+      "bridge": "Multi",
+      "seed": 415,
+      "UOT_KR_f1": 0.38638607855422874,
+      "HUNGARIAN_f1": 0.34309711598314535,
+      "delta_H1": 0.04328896257108339
+    },
+    {
+      "bridge": "Multi",
+      "seed": 416,
+      "UOT_KR_f1": 0.3691905929038282,
+      "HUNGARIAN_f1": 0.36711317005434657,
+      "delta_H1": 0.002077422849481647
+    },
+    {
+      "bridge": "Multi",
+      "seed": 417,
+      "UOT_KR_f1": 0.41382469654528475,
+      "HUNGARIAN_f1": 0.38448310948310943,
+      "delta_H1": 0.029341587062175323
+    },
+    {
+      "bridge": "Multi",
+      "seed": 418,
+      "UOT_KR_f1": 0.38448295985060693,
+      "HUNGARIAN_f1": 0.33744658119658116,
+      "delta_H1": 0.04703637865402577
+    },
+    {
+      "bridge": "Multi",
+      "seed": 419,
+      "UOT_KR_f1": 0.37570458007764507,
+      "HUNGARIAN_f1": 0.37590643629246573,
+      "delta_H1": -0.00020185621482066152
+    },
+    {
+      "bridge": "Multi",
+      "seed": 420,
+      "UOT_KR_f1": 0.41098564425770306,
+      "HUNGARIAN_f1": 0.4759477722713017,
+      "delta_H1": -0.06496212801359863
+    },
+    {
+      "bridge": "Poly",
+      "seed": 411,
+      "UOT_KR_f1": 0.46781629318394025,
+      "HUNGARIAN_f1": 0.4376068376068376,
+      "delta_H1": 0.03020945557710264
+    },
+    {
+      "bridge": "Poly",
+      "seed": 412,
+      "UOT_KR_f1": 0.46953704727505036,
+      "HUNGARIAN_f1": 0.4766299094424094,
+      "delta_H1": -0.007092862167359049
+    },
+    {
+      "bridge": "Poly",
+      "seed": 413,
+      "UOT_KR_f1": 0.449187383286648,
+      "HUNGARIAN_f1": 0.4014295889295889,
+      "delta_H1": 0.04775779435705907
+    },
+    {
+      "bridge": "Poly",
+      "seed": 414,
+      "UOT_KR_f1": 0.44403011204481796,
+      "HUNGARIAN_f1": 0.35163697957815604,
+      "delta_H1": 0.09239313246666192
+    },
+    {
+      "bridge": "Poly",
+      "seed": 415,
+      "UOT_KR_f1": 0.4774276377217554,
+      "HUNGARIAN_f1": 0.468030118030118,
+      "delta_H1": 0.00939751969163738
+    },
+    {
+      "bridge": "Poly",
+      "seed": 416,
+      "UOT_KR_f1": 0.454593361467394,
+      "HUNGARIAN_f1": 0.4396800707462472,
+      "delta_H1": 0.014913290721146777
+    },
+    {
+      "bridge": "Poly",
+      "seed": 417,
+      "UOT_KR_f1": 0.43366727173325464,
+      "HUNGARIAN_f1": 0.3499352091263856,
+      "delta_H1": 0.08373206260686905
+    },
+    {
+      "bridge": "Poly",
+      "seed": 418,
+      "UOT_KR_f1": 0.4487920168067227,
+      "HUNGARIAN_f1": 0.4028133903133903,
+      "delta_H1": 0.0459786264933324
+    },
+    {
+      "bridge": "Poly",
+      "seed": 419,
+      "UOT_KR_f1": 0.45159881935230234,
+      "HUNGARIAN_f1": 0.42236601905719556,
+      "delta_H1": 0.029232800295106776
+    },
+    {
+      "bridge": "Poly",
+      "seed": 420,
+      "UOT_KR_f1": 0.43329240687503073,
+      "HUNGARIAN_f1": 0.357360347985348,
+      "delta_H1": 0.07593205888968274
+    }
+  ],
+  "ALL_REPRODUCED": true
+}

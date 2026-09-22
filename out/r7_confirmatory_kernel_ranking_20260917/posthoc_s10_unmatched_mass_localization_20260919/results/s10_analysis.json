@@ -1,0 +1,231 @@
+{
+  "locked_spec_sha256": "b65ce71527534d811fce2dbd84878d6c2cb0407365577ef1ca7cd7f94bfdb6b9",
+  "provenance_mode": "A_ARCHIVED_CONFIRMATORY_REPRESENTATION_ANALYSIS",
+  "tier": "A",
+  "n_templates": 1440,
+  "n_units": 30,
+  "source_side": {
+    "top1_hit": 0.06805555555555555,
+    "chance_baseline": 0.1662202380952381,
+    "top1_ci_seed_cluster": {
+      "effect": 0.06805555555555555,
+      "ci_lower": 0.044444444444444446,
+      "ci_upper": 0.09236111111111112,
+      "B": 4000,
+      "rng_seed": 20240105,
+      "resampling_unit": "seed cluster",
+      "distribution_sha256": "20980d772e6f3e7f1c1f5b7d789a6b706688cf340bfaaaf4f421ad2efbae9662"
+    },
+    "permutation_p": 1.0,
+    "n_perm": 20000,
+    "rng_seed": 20240104,
+    "permutation_null_mean": 0.16624236111111113,
+    "tie_aware_top1": 0.9194444444444444,
+    "templates_with_top_score_ties": 1335,
+    "unmatched_source_delta_share": {
+      "n": 1440,
+      "mean": 0.2,
+      "median": 0.2,
+      "q25": 0.19999999999999998,
+      "q75": 0.2,
+      "iqr": 2.7755575615628914e-17,
+      "std": 3.3393695019195697e-17
+    },
+    "matched_source_delta_share": {
+      "n": 7227,
+      "mean": 0.15940224159402241,
+      "median": 0.19999999999999998,
+      "q25": 0.1,
+      "q75": 0.2,
+      "iqr": 0.1,
+      "std": 0.04961604262826669
+    },
+    "template_stratified_auc": {
+      "effect": 0.7041898148148148,
+      "ci_lower": 0.7007523148148147,
+      "ci_upper": 0.7077086226851851,
+      "B": 4000,
+      "rng_seed": 20240105,
+      "resampling_unit": "seed cluster",
+      "distribution_sha256": "51294a7edee1899cec20b2ce63eb59e16ce7cd0f49456b1706b4dd204befbdc5"
+    },
+    "template_stratified_auc_naive_template_bootstrap": {
+      "effect": 0.7041898148148148,
+      "ci_lower": 0.7007520254629629,
+      "ci_upper": 0.7076168981481481,
+      "B": 4000
+    },
+    "pooled_source_auc_DIAGNOSTIC_ONLY": 0.5327099476500161
+  },
+  "target_side": {
+    "decoy_combined_delta_share": {
+      "n": 1439,
+      "mean": 0.39909743639454226,
+      "median": 0.4009274801255517,
+      "q25": 0.4006874831512678,
+      "q75": 0.40120971671956873,
+      "iqr": 0.0005222335683009449,
+      "std": 0.01767035902661261
+    },
+    "chance_baseline": 0.2957425235722035,
+    "seed_cluster_bootstrap": {
+      "effect": 0.39909873134875307,
+      "ci_lower": 0.39837189972632153,
+      "ci_upper": 0.39981045055533576,
+      "B": 4000,
+      "rng_seed": 20240105,
+      "resampling_unit": "seed cluster",
+      "distribution_sha256": "75c4a2565af4186e241cec1faeec87feacbbe56e962aa4c2597decda3106badb"
+    },
+    "permutation_p": 4.999750012499375e-05,
+    "n_perm": 20000,
+    "rng_seed": 20240106,
+    "permutation_null_mean": 0.2957405856369818,
+    "top2_both_hit": 0.9416666666666668,
+    "top2_any_hit": 0.9430555555555555,
+    "nondecoy_target_delta_share": {
+      "n": 7255,
+      "mean": 0.11918660083091023,
+      "median": 0.09984992143348037,
+      "q25": 0.049988550414410256,
+      "q75": 0.19964312046939386,
+      "iqr": 0.14965457005498362,
+      "std": 0.06972890272723671
+    }
+  },
+  "zero_totals": {
+    "zero_delta_s_templates": 0,
+    "zero_delta_t_templates": 1,
+    "tau": 1e-15,
+    "rate_s": 0.0,
+    "rate_t": 0.0006944444444444445
+  },
+  "marginal_null_diagnostic": {
+    "role": "ADDITIONAL POST-HOC NULL DIAGNOSTIC (not a locked metric, does not redefine anything): tests whether the observed discrimination could have been produced by the frozen marginals alone",
+    "delta_S_is_function_of_a_only_templates": 1440,
+    "delta_T_is_function_of_b_only_templates": 64,
+    "n_templates": 1440,
+    "distinct_delta_S_per_template": {
+      "2": 1440
+    },
+    "distinct_delta_T_per_template": {
+      "4": 1372,
+      "2": 63,
+      "3": 4,
+      "1": 1
+    },
+    "source_auc_observed_bridge_balanced": 0.7041898148148148,
+    "source_auc_amount_only_null_bridge_balanced": 0.7009374999999999,
+    "source_auc_bridge_balanced_gap": 0.003252314814814916,
+    "templates_with_identical_auc_under_the_null": 1178,
+    "templates_compared": 1440,
+    "mean_abs_per_template_auc_gap": 0.025497685185185193,
+    "max_abs_per_template_auc_gap": 0.30000000000000004,
+    "source_auc_is_essentially_reproduced_by_the_marginal": true,
+    "decoy_share_amount_only_null": 0.4000000000000001,
+    "decoy_share_observed": 0.39909873134875307,
+    "decoy_share_gap_vs_amount_only_null": -0.0009012686512470114,
+    "target_side_is_fully_explained_by_the_marginal": false,
+    "interpretation": "on the SOURCE side the frozen delta^S vector is, in every template, a deterministic function of the source marginal a_i alone (2 distinct values per template), and replacing delta^S by a_i reproduces the source AUC almost exactly -- so the source-side discrimination reflects the generator's amount allocation, not transport geometry. On the TARGET side delta^T is NOT determined by b_j and the observed decoy concentration is NOT reproduced by the marginal."
+  },
+  "per_bridge": {
+    "Celer": {
+      "n_templates": 480,
+      "source_top1_hit": 0.06875,
+      "chance_top1": 0.1662202380952381,
+      "source_tie_aware_top1": 0.9208333333333333,
+      "unmatched_source_delta_share": {
+        "n": 480,
+        "mean": 0.2,
+        "median": 0.2,
+        "q25": 0.19999999999999998,
+        "q75": 0.2,
+        "iqr": 2.7755575615628914e-17,
+        "std": 3.048922610429953e-17
+      },
+      "source_auc": 0.7061805555555555,
+      "decoy_combined_delta_share": {
+        "n": 479,
+        "mean": 0.40096217045810245,
+        "median": 0.4009369478510604,
+        "q25": 0.400753886544623,
+        "q75": 0.4011689936890508,
+        "iqr": 0.0004151071444277732,
+        "std": 0.00045730975243825714
+      },
+      "chance_decoy_share": 0.2924794071669072,
+      "decoy_top2_both_hit": 0.9958333333333333,
+      "decoy_top2_any_hit": 0.9958333333333333,
+      "zero_delta_s": 0,
+      "zero_delta_t": 1
+    },
+    "Multi": {
+      "n_templates": 480,
+      "source_top1_hit": 0.07291666666666667,
+      "chance_top1": 0.1662202380952381,
+      "source_tie_aware_top1": 0.9166666666666666,
+      "unmatched_source_delta_share": {
+        "n": 480,
+        "mean": 0.20000000000000007,
+        "median": 0.2,
+        "q25": 0.19999999999999998,
+        "q75": 0.2,
+        "iqr": 2.7755575615628914e-17,
+        "std": 7.24198933940391e-17
+      },
+      "source_auc": 0.7063194444444444,
+      "decoy_combined_delta_share": {
+        "n": 480,
+        "mean": 0.3952399745184033,
+        "median": 0.40080698541230075,
+        "q25": 0.40042889994267045,
+        "q75": 0.40106119251997674,
+        "iqr": 0.0006322925773062926,
+        "std": 0.030242926902951044
+      },
+      "chance_decoy_share": 0.29699059042809045,
+      "decoy_top2_both_hit": 0.8291666666666667,
+      "decoy_top2_any_hit": 0.8333333333333334,
+      "zero_delta_s": 0,
+      "zero_delta_t": 0
+    },
+    "Poly": {
+      "n_templates": 480,
+      "source_top1_hit": 0.0625,
+      "chance_top1": 0.1662202380952381,
+      "source_tie_aware_top1": 0.9208333333333333,
+      "unmatched_source_delta_share": {
+        "n": 480,
+        "mean": 0.20000000000000007,
+        "median": 0.2,
+        "q25": 0.19999999999999998,
+        "q75": 0.2,
+        "iqr": 2.7755575615628914e-17,
+        "std": 7.412102437716079e-17
+      },
+      "source_auc": 0.7000694444444444,
+      "decoy_combined_delta_share": {
+        "n": 480,
+        "mean": 0.4010940490697533,
+        "median": 0.4010947750958498,
+        "q25": 0.4007341553550471,
+        "q75": 0.40137630222304277,
+        "iqr": 0.0006421468679956854,
+        "std": 0.00038756655695364867
+      },
+      "chance_decoy_share": 0.2978428631553632,
+      "decoy_top2_both_hit": 1.0,
+      "decoy_top2_any_hit": 1.0,
+      "zero_delta_s": 0,
+      "zero_delta_t": 0
+    }
+  },
+  "outcome": "L3_weak_or_no_separation",
+  "outcome_conditions": {
+    "source_top1_above_chance_and_p_lt_05": false,
+    "source_auc_ci_lower_gt_0.5": true,
+    "target_decoy_above_chance_and_p_lt_05": true,
+    "auc_ci_upper_lt_0.5": false
+  },
+  "post_hoc_label": "POST-HOC mechanism evidence; not pre-registered; not in any Holm family; does not modify R7 Gate A-E or DECISION"
+}

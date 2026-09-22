@@ -1,0 +1,76 @@
+- 2026-09-11 10:13:54 v5 data-only preflight start; V5_START=1747180800; horizon=12 blocks
+- 2026-09-11 10:13:58 reference sets: hist_tx=319142 v4_tx=65810 ext_tx=384952 dev_addrs=905283 v4_addrs=14766 v4_tids=32905
+- 2026-09-11 10:14:00 chain heads: eth=25951097 bsc=121180157
+- 2026-09-11 10:14:09 block 1: stage A continuity=True
+- 2026-09-11 10:15:39 block 1: raw logs s=2614 r=6405
+- 2026-09-11 10:16:41 block 1: anchors=1882
+- 2026-09-11 10:19:25 block 1: verifier anchor-set=True tx-identity=True
+- 2026-09-11 10:19:25 block 1: hash_inter=0 tid_inter=0 addr_dev_inter=21 addr_v4_inter=198 ts_ok=True
+- 2026-09-11 10:19:25 block 1: G_full=7 G_cons=1 n_fan=214 share_full=0.35514018691588783 share_cons=0.004672897196261682 spread=29.99d gates_cons={'G_ge_8': False, 'max_share_lt_0.5': True, 'n_fanout_ge_30': True, 'spread_ge_2_months': False}
+- 2026-09-11 10:19:34 block 2: stage A continuity=True
+- 2026-09-11 10:21:52 block 2: raw logs s=3950 r=14739
+- 2026-09-11 10:23:58 block 2: anchors=3181
+- 2026-09-11 10:28:00 block 2: verifier anchor-set=True tx-identity=True
+- 2026-09-11 10:28:00 block 2: hash_inter=0 tid_inter=0 addr_dev_inter=20 addr_v4_inter=218 ts_ok=True
+- 2026-09-11 10:28:00 block 2: G_full=7 G_cons=1 n_fan=674 share_full=0.37388724035608306 share_cons=0.001483679525222552 spread=59.99d gates_cons={'G_ge_8': False, 'max_share_lt_0.5': True, 'n_fanout_ge_30': True, 'spread_ge_2_months': False}
+- 2026-09-11 10:28:09 block 3: stage A continuity=True
+- 2026-09-11 10:31:13 block 3: raw logs s=4876 r=18227
+- 2026-09-11 10:33:57 block 3: anchors=3872
+- 2026-09-11 10:39:37 block 3: verifier anchor-set=True tx-identity=True
+- 2026-09-11 10:39:37 block 3: hash_inter=0 tid_inter=0 addr_dev_inter=23 addr_v4_inter=199 ts_ok=True
+- 2026-09-11 10:39:37 block 3: G_full=7 G_cons=1 n_fan=1260 share_full=0.3968253968253968 share_cons=0.0007936507936507937 spread=89.98d gates_cons={'G_ge_8': False, 'max_share_lt_0.5': True, 'n_fanout_ge_30': True, 'spread_ge_2_months': True}
+- 2026-09-11 10:39:48 block 4: stage A continuity=True
+- 2026-09-11 10:42:57 block 4: raw logs s=4208 r=16226
+- 2026-09-11 10:45:20 block 4: anchors=3378
+- 2026-09-11 10:50:34 block 4: verifier anchor-set=True tx-identity=True
+- 2026-09-11 10:50:34 block 4: hash_inter=0 tid_inter=0 addr_dev_inter=15 addr_v4_inter=125 ts_ok=True
+- 2026-09-11 10:50:35 block 4: G_full=7 G_cons=1 n_fan=1772 share_full=0.4288939051918736 share_cons=0.000564334085778781 spread=119.97d gates_cons={'G_ge_8': False, 'max_share_lt_0.5': True, 'n_fanout_ge_30': True, 'spread_ge_2_months': True}
+- 2026-09-11 10:50:43 block 5: stage A continuity=True
+- 2026-09-11 10:53:54 block 5: raw logs s=10360 r=19560
+- 2026-09-11 10:57:13 block 5: anchors=9527
+- 2026-09-11 11:02:37 block 5: verifier anchor-set=True tx-identity=True
+- 2026-09-11 11:02:37 block 5: hash_inter=0 tid_inter=0 addr_dev_inter=39 addr_v4_inter=166 ts_ok=True
+- 2026-09-11 11:02:38 block 5: G_full=8 G_cons=2 n_fan=2664 share_full=0.43993993993993996 share_cons=0.00037537537537537537 spread=149.98d gates_cons={'G_ge_8': False, 'max_share_lt_0.5': True, 'n_fanout_ge_30': True, 'spread_ge_2_months': True}
+- 2026-09-11 11:02:46 block 6: stage A continuity=True
+- 2026-09-11 11:05:39 block 6: raw logs s=6049 r=11077
+- 2026-09-11 11:07:39 block 6: anchors=5517
+- 2026-09-11 11:12:54 block 6: verifier anchor-set=True tx-identity=True
+- 2026-09-11 11:12:54 block 6: hash_inter=0 tid_inter=0 addr_dev_inter=29 addr_v4_inter=148 ts_ok=True
+- 2026-09-11 11:12:55 block 6: G_full=8 G_cons=2 n_fan=3386 share_full=0.4598346131128175 share_cons=0.0014766686355581807 spread=179.96d gates_cons={'G_ge_8': False, 'max_share_lt_0.5': True, 'n_fanout_ge_30': True, 'spread_ge_2_months': True}
+- 2026-09-11 11:13:04 block 7: stage A continuity=True
+- 2026-09-11 11:15:56 block 7: raw logs s=3366 r=8525
+- 2026-09-11 11:17:19 block 7: anchors=3069
+- 2026-09-11 11:22:28 block 7: verifier anchor-set=True tx-identity=True
+- 2026-09-11 11:22:28 block 7: hash_inter=0 tid_inter=0 addr_dev_inter=14 addr_v4_inter=82 ts_ok=True
+- 2026-09-11 11:22:29 block 7: G_full=8 G_cons=2 n_fan=3867 share_full=0.499870700801655 share_cons=0.0012929919834497026 spread=209.97d gates_cons={'G_ge_8': False, 'max_share_lt_0.5': True, 'n_fanout_ge_30': True, 'spread_ge_2_months': True}
+- 2026-09-11 11:22:38 block 8: stage A continuity=True
+- 2026-09-11 11:25:22 block 8: raw logs s=2450 r=7997
+- 2026-09-11 11:26:33 block 8: anchors=2236
+- 2026-09-11 11:31:29 block 8: verifier anchor-set=True tx-identity=True
+- 2026-09-11 11:31:29 block 8: hash_inter=0 tid_inter=0 addr_dev_inter=8 addr_v4_inter=50 ts_ok=True
+- 2026-09-11 11:31:31 block 8: G_full=8 G_cons=2 n_fan=4177 share_full=0.5298060809193201 share_cons=0.0011970313622216902 spread=239.98d gates_cons={'G_ge_8': False, 'max_share_lt_0.5': True, 'n_fanout_ge_30': True, 'spread_ge_2_months': True}
+- 2026-09-11 11:31:39 block 9: stage A continuity=True
+- 2026-09-11 11:35:43 block 9: raw logs s=3046 r=13183
+- 2026-09-11 11:37:35 block 9: anchors=2617
+- 2026-09-11 11:45:07 block 9: verifier anchor-set=True tx-identity=True
+- 2026-09-11 11:45:07 block 9: hash_inter=0 tid_inter=0 addr_dev_inter=11 addr_v4_inter=42 ts_ok=True
+- 2026-09-11 11:45:08 block 9: G_full=8 G_cons=2 n_fan=4551 share_full=0.5543836519446276 share_cons=0.001098659635245001 spread=269.9d gates_cons={'G_ge_8': False, 'max_share_lt_0.5': True, 'n_fanout_ge_30': True, 'spread_ge_2_months': True}
+- 2026-09-11 11:45:16 block 10: stage A continuity=True
+- 2026-09-11 11:49:31 block 10: raw logs s=2883 r=10768
+- 2026-09-11 11:51:06 block 10: anchors=2508
+- 2026-09-11 11:59:08 block 10: verifier anchor-set=True tx-identity=True
+- 2026-09-11 11:59:08 block 10: hash_inter=0 tid_inter=0 addr_dev_inter=13 addr_v4_inter=47 ts_ok=True
+- 2026-09-11 11:59:10 block 10: G_full=8 G_cons=2 n_fan=4910 share_full=0.5784114052953157 share_cons=0.0010183299389002036 spread=299.95d gates_cons={'G_ge_8': False, 'max_share_lt_0.5': True, 'n_fanout_ge_30': True, 'spread_ge_2_months': True}
+- 2026-09-11 11:59:18 block 11: stage A continuity=True
+- 2026-09-11 12:03:28 block 11: raw logs s=2759 r=9889
+- 2026-09-11 12:05:03 block 11: anchors=2413
+- 2026-09-11 12:13:16 block 11: verifier anchor-set=True tx-identity=True
+- 2026-09-11 12:13:16 block 11: hash_inter=0 tid_inter=0 addr_dev_inter=11 addr_v4_inter=33 ts_ok=True
+- 2026-09-11 12:13:17 block 11: G_full=8 G_cons=2 n_fan=5229 share_full=0.6003059858481545 share_cons=0.0009562057754828839 spread=329.98d gates_cons={'G_ge_8': False, 'max_share_lt_0.5': True, 'n_fanout_ge_30': True, 'spread_ge_2_months': True}
+- 2026-09-11 12:13:28 block 12: stage A continuity=True
+- 2026-09-11 12:17:46 block 12: raw logs s=2275 r=9105
+- 2026-09-11 12:19:03 block 12: anchors=1914
+- 2026-09-11 12:26:57 block 12: verifier anchor-set=True tx-identity=True
+- 2026-09-11 12:26:57 block 12: hash_inter=0 tid_inter=0 addr_dev_inter=9 addr_v4_inter=26 ts_ok=True
+- 2026-09-11 12:26:59 block 12: G_full=8 G_cons=2 n_fan=5516 share_full=0.6200145032632343 share_cons=0.0009064539521392314 spread=359.97d gates_cons={'G_ge_8': False, 'max_share_lt_0.5': True, 'n_fanout_ge_30': True, 'spread_ge_2_months': True}
+- 2026-09-11 12:26:59 preflight complete: blocks=12 stop_block=None G_full=8 G_cons=2 status=FAIL

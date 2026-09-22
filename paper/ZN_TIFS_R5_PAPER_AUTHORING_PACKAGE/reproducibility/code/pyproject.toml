@@ -1,0 +1,39 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "celer-cross"
+version = "0.1.0"
+description = "Celer ETH↔BNB cross-chain flow correspondence (UOT) and label evaluation"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "pandas>=2.0,<3",
+    "numpy>=1.26,<3",
+    "scipy>=1.11,<2",
+    "torch>=2.0,<3",
+    "POT>=0.9,<1",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0",
+    "jsonschema>=4.0,<5",
+]
+
+[project.scripts]
+celer-cross = "cross.interfaces.cli:main"
+
+[tool.setuptools.package-dir]
+"" = "src"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+include = ["cross*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+# Site-packages pytest plugins can load broken deps (e.g. old web3 → parsimonious/getargspec).
+addopts = "-p no:web3"

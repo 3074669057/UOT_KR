@@ -1,0 +1,171 @@
+{
+  "spec_name": "R5 post-hoc hyper-parameter sensitivity + cost-component ablation",
+  "spec_version": "1.0.0",
+  "created_utc": "2026-09-17T00:00:00Z",
+  "experiment_dir": "out/r5_posthoc_hparam_sensitivity_20260917",
+  "status": "POST-HOC SUPPLEMENTARY ANALYSIS (not preregistered)",
+
+  "holdout_protection": {
+    "holdout_seeds_FORBIDDEN": [301, 302, 303, 304, 305],
+    "enforcement": "runner asserts requested seeds are a subset of allowed_data_seeds; any intersection with holdout_seeds_FORBIDDEN raises SystemExit before any data access",
+    "policy": "301-305 were executed exactly once (frozen confirmatory holdout). This experiment NEVER re-runs them. Only pre-existing frozen CSV/JSON artifacts may be READ to place independent markers on figures.",
+    "pre_existing_frozen_dev_anchors": {
+      "RAW_UOT_PLAN_D4": 0.2374,
+      "CONDITIONAL_UOT_D4": 0.3129
+    }
+  },
+
+  "population": {
+    "bridges": ["Celer", "Multi", "Poly"],
+    "bridge_paper_names": {
+      "Celer": "Celer cBridge",
+      "Multi": "Multichain",
+      "Poly": "PolyNetwork"
+    },
+    "development_seeds": [201, 202, 203, 204, 205],
+    "n_templates_per_cell": 48,
+    "feature_pipeline": "frozen faithful generator (cost_transport_diagnosis dev plans)",
+    "data_source": {
+      "cost_and_components": "out/multi_bridge_expansion/cost_transport_diagnosis/plans/dev/<bridge>/seed_<seed>/cost.npz",
+      "flow_ids": "out/multi_bridge_expansion/cost_transport_diagnosis/plans/dev/<bridge>/seed_<seed>/ids.npz",
+      "labels": "out/multi_bridge_expansion/cost_transport_diagnosis/plans/dev/<bridge>/seed_<seed>/labels.csv",
+      "flows_for_marginals": "out/multi_bridge_expansion/cost_transport_diagnosis/plans/dev/<bridge>/seed_<seed>/flows.json",
+      "reproduction_check": "marginals recomputed from flows.json equal the frozen transport_uot.npz marginals to 0.0 absolute error (see 00_preflight/reproduction_check.json)"
+    }
+  },
+
+  "defaults_paper": {
+    "k": 5,
+    "epsilon": 0.05,
+    "lambda": 0.5,
+    "provenance": {
+      "k": "D4 mutual-rank decoder k=5, frozen in the preregistration (scripts/multi_bridge/decoder_audit/da_common.py DECODE_K=5, holdout_common.K5=5)",
+      "epsilon": "UOT entropic regularisation reg=0.05 (baseline_mechanism/common.py FROZEN_PARAMS['uot_reg']; holdout identity_check reg==0.05)",
+      "lambda": "UOT marginal relaxation reg_m=0.5 (FROZEN_PARAMS['uot_reg_m']; holdout identity_check reg_m==0.5)",
+      "note": "All three were fixed BEFORE this post-hoc grid and are NOT modified by it."
+    }
+  },
+
+  "methods": [
+    {
+      "name": "RAW_UOT_PLAN_D4",
+      "decoder": "mutual top-k on the UOT transport plan P (row-rank <= k AND col-rank <= k)",
+      "reference": "holdout_common.mutual_top5"
+    },
+    {
+      "name": "CONDITIONAL_UOT_D4",
+      "decoder": "mutual top-k on the dual-cancelled conditional scores S_row = P_ij / c_j, S_col = P_ij / r_i",
+      "reference": "holdout_common.conditional_edges"
+    }
+  ],
+
+  "solver": {
+    "uot": "ot.unbalanced.sinkhorn_unbalanced(a, b, C, reg=epsilon, reg_m=lambda, numItermax=20000, stopThr=1e-11, log=True)",
+    "convergence_criterion": "final POT error < 1e-7 (diag.ctd_common.solve_uot_log convention, reused unchanged)",
+    "num_iter_max": 20000,
+    "stop_thr": 1e-11,
+    "note": "numItermax/stopThr are NOT tuned. The iteration-count instrumentation does not change the update, the stopping rule or the numerics; it only attaches POT's own log['err'] trace which the solver already computes internally."
+  },
+
+  "decoder_score_construction": {
+    "a_rw": "risk-lifted source marginal: a0 * (1 + lambda_risk * aml_risk_score_raw / 100), normalised (uot_solver._risk_weighted_source_mass)",
+    "b_ev": "evidence-weighted target marginal: b0 * evidence_quality_score, normalised (uot_solver._evidence_weighted_target_mass)",
+    "note": "lambda in this experiment is the UOT MARGINAL RELAXATION reg_m, not lambda_risk. lambda_risk stays at its frozen value 0.25."
+  },
+
+  "sweeps": {
+    "k": {
+      "grid": [2, 3, 5, 7, 10, 15],
+      "fixed": {"epsilon": 0.05, "lambda": 0.5},
+      "x_axis": "k (discrete, log2-spaced ticks)"
+    },
+    "epsilon": {
+      "grid": [0.01, 0.02, 0.05, 0.1, 0.2],
+      "fixed": {"k": 5, "lambda": 0.5},
+      "extra_diagnostics": ["sinkhorn_iterations", "sinkhorn_converged", "sinkhorn_final_residual",
+                            "sinkhorn_hit_max_iter", "marginal_violation_row_l1",
+                            "marginal_violation_col_l1", "transport_mass_total"]
+    },
+    "lambda": {
+      "grid": [0.1, 0.25, 0.5, 1.0, 2.0],
+      "fixed": {"k": 5, "epsilon": 0.05},
+      "extra_diagnostics": ["delta_s_total", "delta_t_total", "delta_total"]
+    }
+  },
+
+  "unique_configurations": {
+    "count": 14,
+    "rationale": "(k=5, eps=0.05, lambda=0.5) appears in all three sweeps and is computed EXACTLY ONCE; the shared row is referenced by the other two sweeps in the summary.",
+    "list": [
+      {"k": 2, "epsilon": 0.05, "lambda": 0.5, "in_sweep": "k"},
+      {"k": 3, "epsilon": 0.05, "lambda": 0.5, "in_sweep": "k"},
+      {"k": 5, "epsilon": 0.05, "lambda": 0.5, "in_sweep": "k,epsilon,lambda (DEFAULT, computed once)"},
+      {"k": 7, "epsilon": 0.05, "lambda": 0.5, "in_sweep": "k"},
+      {"k": 10, "epsilon": 0.05, "lambda": 0.5, "in_sweep": "k"},
+      {"k": 15, "epsilon": 0.05, "lambda": 0.5, "in_sweep": "k"},
+      {"k": 5, "epsilon": 0.01, "lambda": 0.5, "in_sweep": "epsilon"},
+      {"k": 5, "epsilon": 0.02, "lambda": 0.5, "in_sweep": "epsilon"},
+      {"k": 5, "epsilon": 0.1, "lambda": 0.5, "in_sweep": "epsilon"},
+      {"k": 5, "epsilon": 0.2, "lambda": 0.5, "in_sweep": "epsilon"},
+      {"k": 5, "epsilon": 0.05, "lambda": 0.1, "in_sweep": "lambda"},
+      {"k": 5, "epsilon": 0.05, "lambda": 0.25, "in_sweep": "lambda"},
+      {"k": 5, "epsilon": 0.05, "lambda": 1.0, "in_sweep": "lambda"},
+      {"k": 5, "epsilon": 0.05, "lambda": 2.0, "in_sweep": "lambda"}
+    ],
+    "total_tasks": "3 bridges x 5 seeds x 14 configurations = 210 cells; 2 methods per cell; 1 UOT solve per cell (the plan is shared by both decoders)"
+  },
+
+  "metrics": {
+    "definition_source": "baseline_mechanism.common.evaluate_template / evaluate_method + decoder_audit.da_common.evaluate_edges (reused, NOT redefined)",
+    "edge_precision": "tp / (tp + fp) over predicted vs ground-truth (split u merge u decoy) edges of the cell",
+    "edge_recall": "tp / (tp + fn)",
+    "macro_edge_f1": "unweighted mean over the 48 templates of the per-template edge F1 = 2*P*R/(P+R)",
+    "aggregation_to_seed": "mean over the 48 templates of that (bridge, seed, configuration, method) cell",
+    "aggregation_to_bridge": "mean over the 5 development seeds; std = sample std (ddof=1) over the 5 seed values"
+  },
+
+  "unmatched_mass_definition": {
+    "source_mass_reference": "a_rw (risk-weighted source marginal actually passed to the solver)",
+    "target_mass_reference": "b_ev (evidence-weighted target marginal actually passed to the solver)",
+    "delta_s_total": "sum_i |sum_j P_ij - a_rw_i|  (L1 marginal violation of the SOURCE marginal)",
+    "delta_t_total": "sum_j |sum_i P_ij - b_ev_j|  (L1 marginal violation of the TARGET marginal)",
+    "delta_total": "delta_s_total + delta_t_total (derived; delta_S and delta_T are always reported separately)",
+    "note": "These are the genuine RC-UOT unbalanced-OT marginal deviations produced by the solver under reg_m=lambda, read directly from the returned plan. No surrogate 'unmatched count' is invented."
+  },
+
+  "cost_component_ablation": {
+    "condition": "leave-one-cost-component-out on CONDITIONAL_UOT_D4 only, k=5, epsilon=0.05, lambda=0.5 (defaults never re-tuned)",
+    "frozen_absolute_weights": {"amount": 0.40, "time": 0.25, "route": 0.15, "risk": 0.15,
+                                "evidence": 0.05, "novelty": 0.05},
+    "renormalisation": "after setting the omitted component's weight to 0, the remaining weights are rescaled so they sum to 1 (scale-preserving, so that epsilon keeps its meaning)",
+    "variants": [
+      {"name": "FULL_D6", "omitted": "none", "weights": {"amount": 0.4, "time": 0.25, "route": 0.15, "risk": 0.15, "evidence": 0.05, "novelty": 0.05}},
+      {"name": "LOO_AMOUNT", "omitted": "amount", "weights": {"time": 0.3846153846153846, "route": 0.2307692307692308, "risk": 0.2307692307692308, "evidence": 0.07692307692307693, "novelty": 0.07692307692307693}},
+      {"name": "LOO_TIME", "omitted": "time", "weights": {"amount": 0.5333333333333333, "route": 0.2, "risk": 0.2, "evidence": 0.06666666666666667, "novelty": 0.06666666666666667}},
+      {"name": "LOO_ROUTE", "omitted": "route", "weights": {"amount": 0.47058823529411764, "time": 0.29411764705882354, "risk": 0.17647058823529413, "evidence": 0.058823529411764705, "novelty": 0.058823529411764705}},
+      {"name": "LOO_RISK", "omitted": "risk", "weights": {"amount": 0.47058823529411764, "time": 0.29411764705882354, "route": 0.17647058823529413, "evidence": 0.058823529411764705, "novelty": 0.058823529411764705}},
+      {"name": "LOO_EVIDENCE", "omitted": "evidence", "weights": {"amount": 0.42105263157894735, "time": 0.2631578947368421, "route": 0.15789473684210525, "risk": 0.15789473684210525, "novelty": 0.05263157894736842}},
+      {"name": "LOO_NOVELTY", "omitted": "address_novelty", "weights": {"amount": 0.42105263157894735, "time": 0.2631578947368421, "route": 0.15789473684210525, "risk": 0.15789473684210525, "evidence": 0.05263157894736842}}
+    ],
+    "existing_amount_free_artifact_check": "out/multi_bridge_expansion/amount_free_candidate_dev holds an AMOUNT_FREE_COST_D4 arm. It is compared against LOO_AMOUNT; if it differs in scale or spec, the freshly computed LOO_AMOUNT is used and the discrepancy is recorded.",
+    "scope": "3 bridges x 5 dev seeds x 7 cost variants = 105 cells, CONDITIONAL_UOT_D4 only (plus the frozen RAW_UOT_PLAN_D4 reference row)"
+  },
+
+  "figure_spec": {
+    "figures": ["k_sensitivity", "epsilon_sensitivity", "lambda_sensitivity"],
+    "layout": "1 figure with 3 bridge panels (Celer / Multichain / PolyNetwork), shared y-axis (Macro edge F1)",
+    "series": ["RAW_UOT_PLAN_D4 (dev, seeds 201-205 mean +/- 1 SD)", "CONDITIONAL_UOT_D4 (dev, seeds 201-205 mean +/- 1 SD)"],
+    "default_marker": "vertical dashed line at the paper default value",
+    "holdout_marker": "independent marker at the default x position, copied read-only from pre-existing frozen holdout results; NOT connected to the dev curves",
+    "caption_disclaimer": "Development sensitivity uses seeds 201-205 only. Frozen holdout markers at the default setting are copied from pre-existing results; seeds 301-305 were not re-run.",
+    "formats": ["pdf", "png (>=300 dpi)"],
+    "language": "English"
+  },
+
+  "interpretation_rules": [
+    "The defaults were fixed before this grid; the grid is NOT used for hyper-parameter selection.",
+    "Whether the default is also the grid optimum is decided by the data, never assumed.",
+    "No main-experiment default may be changed as a result of this experiment.",
+    "No holdout result may be recomputed, re-derived or optimised against."
+  ]
+}

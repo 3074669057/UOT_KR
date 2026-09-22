@@ -1,0 +1,31 @@
+{
+  "artifact": "FINAL_CHINESE_MOTHER_MANUSCRIPT_LOCK",
+  "status": "CHINESE_MOTHER_MANUSCRIPT_READY_FOR_EXPLICIT_STAGE2_APPROVAL",
+  "note": "本状态不是 Stage 2 批准；必须等待作者明确批准语句",
+  "timestamp_utc": "2026-09-04T10:15:46.329629+00:00",
+  "git_head": "d5cd14d8051263b49b01b10ad36e6033b2ec3219",
+  "final_chinese_docx": "3\\final\\ZN_TIFS_FINAL_CN.docx",
+  "final_chinese_docx_hash": "7a958b23107cb1ec8efdd1cc538749e02c8d439b642caa70ce2b0bd4c5a4d855",
+  "author_review_docx_hash": "7a958b23107cb1ec8efdd1cc538749e02c8d439b642caa70ce2b0bd4c5a4d855",
+  "figure2_corrected_png_hash": "3989eb9ca3126c2e54036e062fbca108527779c94db818409a71186ac23a1096",
+  "figure2_original_backup_hash": "ceeb8555aa1512fb3ecadebf53b1d3f473188c72c0691d278afeec67d787b52c",
+  "figure2_fixed_pptx_hash": "30f90221befad84e438712b60a832d4b60ef97567c2c5678cc6a623585936617",
+  "freeze_conditions": {
+    "method_naming_finalized": true,
+    "figure2_old_label_removed": true,
+    "internal_labels_zero": true,
+    "references_resolved": true,
+    "reference_count": 41,
+    "no_scientific_contradiction": true,
+    "baseline_provenance_honestly_described": true,
+    "no_unresolved_blocking_author_fact": true
+  },
+  "frozen_results_untouched": true,
+  "new_experiments": false,
+  "new_statistics": false,
+  "new_scientific_numbers": false,
+  "seeds_301_305_accessed": false,
+  "naming_freeze_doc": "3\\scientific_sync\\FINAL_NAMING_FREEZE.md",
+  "baseline_provenance_doc": "3\\scientific_sync\\FINAL_BASELINE_CONSTANT_PROVENANCE.md",
+  "blockers_v2_doc": "3\\final\\FINAL_AUTHOR_BLOCKERS_V2.md"
+}

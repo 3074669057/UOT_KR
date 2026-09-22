@@ -1,0 +1,45 @@
+{
+  "timestamp_utc": "2026-09-17T03:15:16Z",
+  "source_commit": "d5cd14d8051263b49b01b10ad36e6033b2ec3219",
+  "n_sweep_run_files_ok": 210,
+  "n_ablation_run_files_ok": 105,
+  "n_sweep_rows_long": 420,
+  "n_sweep_summary_rows": 32,
+  "bridges": [
+    "Celer",
+    "Multi",
+    "Poly"
+  ],
+  "seeds": [
+    201,
+    202,
+    203,
+    204,
+    205
+  ],
+  "methods": [
+    "CONDITIONAL_UOT_D4",
+    "RAW_UOT_PLAN_D4"
+  ],
+  "configs": [
+    "k10_eps0.05_lam0.5",
+    "k15_eps0.05_lam0.5",
+    "k2_eps0.05_lam0.5",
+    "k3_eps0.05_lam0.5",
+    "k5_eps0.01_lam0.5",
+    "k5_eps0.02_lam0.5",
+    "k5_eps0.05_lam0.1",
+    "k5_eps0.05_lam0.25",
+    "k5_eps0.05_lam0.5",
+    "k5_eps0.05_lam1",
+    "k5_eps0.05_lam2",
+    "k5_eps0.1_lam0.5",
+    "k5_eps0.2_lam0.5",
+    "k7_eps0.05_lam0.5"
+  ],
+  "n_unique_configs": 14,
+  "holdout_seeds_executed": [],
+  "holdout_guard": "active; 301-305 refused at argument validation",
+  "expected_n_sweep_cells": 210,
+  "failed_tasks_file": null
+}

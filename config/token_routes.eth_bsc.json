@@ -1,0 +1,46 @@
+{
+  "readme": "Manually curated ETH→BSC token routes. Decimals are resolved at runtime from data/Token ERC20.csv / BERC20.csv via DecimalsRegistry. dynamic_price routes require price_snapshot_usd in priors for both src and dst contract keys.",
+  "routes": [
+    {
+      "route_id": "eth_usdt_to_bsc_usdt",
+      "src_chain": "eth",
+      "src": "0xdac17f958d2ee523a2206206994597c13d831ec7",
+      "dst_chain": "bsc",
+      "dst": "0x55d398326f99059ff775485246999027b3197955",
+      "route_type": "same_asset_bridge",
+      "value_ratio_mode": "same_usd_stable",
+      "expected_human_ratio": 1.0
+    },
+    {
+      "route_id": "eth_usdc_to_bsc_usdc",
+      "src_chain": "eth",
+      "src": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+      "dst_chain": "bsc",
+      "dst": "0x8ac76a51cc950d9822d68b83fe1ad97b32cd580d",
+      "route_type": "same_asset_bridge",
+      "value_ratio_mode": "same_usd_stable",
+      "expected_human_ratio": 1.0
+    },
+    {
+      "route_id": "eth_weth_to_bsc_binance_peg_eth",
+      "src_chain": "eth",
+      "src": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+      "dst_chain": "bsc",
+      "dst": "0x2170ed0880ac9a755fd29b2688956bd959f933f8",
+      "route_type": "same_asset_bridge_or_wrapped_asset",
+      "value_ratio_mode": "same_asset_human",
+      "expected_human_ratio": 1.0
+    },
+    {
+      "route_id": "eth_weth_to_bsc_wbnb_dynamic",
+      "src_chain": "eth",
+      "src": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+      "dst_chain": "bsc",
+      "dst": "0xbb4cdb9cbd36b01bd1cbaebf2de08d9173bc095c",
+      "route_type": "cross_asset_swap_or_bridge",
+      "value_ratio_mode": "dynamic_price",
+      "expected_human_ratio": null,
+      "requires_price_snapshot": true
+    }
+  ]
+}

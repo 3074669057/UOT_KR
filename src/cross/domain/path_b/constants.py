@@ -1,0 +1,3 @@
+"""Shared constants for Path B pipelines."""
+
+ZERO_ADDR = "0x0000000000000000000000000000000000000000"

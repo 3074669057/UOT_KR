@@ -1,0 +1,285 @@
+{
+  "audit_version": 1,
+  "generated_at_utc": "2026-09-17T07:04:37Z",
+  "repo": "D:\\trae\\tool\\a\\cross",
+  "git_head": "d5cd14d8051263b49b01b10ad36e6033b2ec3219",
+  "definition_of_contamination": "A seed is CONTAMINATED iff produced experiment output for it exists on disk (a generated data/metric/plan artifact recording a completed run). Plain seed constants in code or reserved-ID lists are NOT contamination.",
+  "scan": {
+    "roots": [
+      "out",
+      "results",
+      "experiments",
+      "config",
+      "data",
+      "docs",
+      "manuscript_final",
+      "schemas",
+      "src",
+      "tests",
+      "scripts",
+      "tools",
+      "1",
+      "2",
+      "3",
+      "ZN_TIFS_R5_ARCHIVE",
+      "ZN_TIFS_R5_PAPER_AUTHORING_PACKAGE",
+      "_review",
+      "_phase3_extract",
+      "_pkg_scratch",
+      "_sivia_work"
+    ],
+    "files_scanned": 3834,
+    "bytes_scanned": 943718400,
+    "budget_bytes": 943718400,
+    "seconds": 56.1
+  },
+  "selection_block_206_215": {
+    "seeds": [
+      206,
+      207,
+      208,
+      209,
+      210,
+      211,
+      212,
+      213,
+      214,
+      215
+    ],
+    "produced_output_seeds": [
+      212,
+      213,
+      214,
+      215
+    ],
+    "content_token_seeds": [],
+    "status": "USED",
+    "contaminated": true
+  },
+  "confirmatory_block_401_410": {
+    "seeds": [
+      401,
+      402,
+      403,
+      404,
+      405,
+      406,
+      407,
+      408,
+      409,
+      410
+    ],
+    "produced_output_seeds": [],
+    "content_token_seeds": [],
+    "status": "UNUSED",
+    "contaminated": false
+  },
+  "forbidden_blocks": {
+    "42-46": {
+      "seeds": [
+        42,
+        43,
+        44,
+        45,
+        46
+      ],
+      "produced_output_seeds": [
+        42,
+        43,
+        44,
+        45,
+        46
+      ],
+      "content_token_seeds": [
+        42,
+        43,
+        44,
+        45,
+        46,
+        201,
+        202,
+        203,
+        204,
+        205,
+        301,
+        302,
+        303,
+        304,
+        305
+      ],
+      "status": "USED",
+      "contaminated": true
+    },
+    "201-205": {
+      "seeds": [
+        201,
+        202,
+        203,
+        204,
+        205
+      ],
+      "produced_output_seeds": [],
+      "content_token_seeds": [
+        42,
+        43,
+        44,
+        45,
+        46,
+        201,
+        202,
+        203,
+        204,
+        205,
+        301,
+        302,
+        303,
+        304,
+        305
+      ],
+      "status": "UNUSED",
+      "contaminated": false
+    },
+    "301-305": {
+      "seeds": [
+        301,
+        302,
+        303,
+        304,
+        305
+      ],
+      "produced_output_seeds": [
+        301,
+        302,
+        303,
+        304,
+        305
+      ],
+      "content_token_seeds": [
+        42,
+        43,
+        44,
+        45,
+        46,
+        201,
+        202,
+        203,
+        204,
+        205,
+        301,
+        302,
+        303,
+        304,
+        305
+      ],
+      "status": "USED",
+      "contaminated": true
+    }
+  },
+  "produced_output_dirs_found": {
+    "paper_full_pipeline_run/synthetic/synthetic_eval_seed_42": {
+      "seed": 42,
+      "block": "forbidden",
+      "file_count": 27,
+      "total_bytes": 24310311
+    },
+    "paper_full_pipeline_run/synthetic/synthetic_eval_seed_43": {
+      "seed": 43,
+      "block": "forbidden",
+      "file_count": 26,
+      "total_bytes": 30713241
+    },
+    "paper_full_pipeline_run/synthetic/synthetic_eval_seed_44": {
+      "seed": 44,
+      "block": "forbidden",
+      "file_count": 26,
+      "total_bytes": 38909166
+    },
+    "paper_full_pipeline_run/synthetic/synthetic_eval_seed_45": {
+      "seed": 45,
+      "block": "forbidden",
+      "file_count": 27,
+      "total_bytes": 27396805
+    },
+    "paper_full_pipeline_run/synthetic/synthetic_eval_seed_46": {
+      "seed": 46,
+      "block": "forbidden",
+      "file_count": 27,
+      "total_bytes": 28549364
+    },
+    "paper_full_pipeline_run/synthetic/synthetic_eval_seed_212": {
+      "seed": 212,
+      "block": "selection",
+      "file_count": 27,
+      "total_bytes": 29025832
+    },
+    "paper_full_pipeline_run/synthetic/synthetic_eval_seed_213": {
+      "seed": 213,
+      "block": "selection",
+      "file_count": 27,
+      "total_bytes": 21286768
+    },
+    "paper_full_pipeline_run/synthetic/synthetic_eval_seed_214": {
+      "seed": 214,
+      "block": "selection",
+      "file_count": 27,
+      "total_bytes": 28660318
+    },
+    "paper_full_pipeline_run/synthetic/synthetic_eval_seed_215": {
+      "seed": 215,
+      "block": "selection",
+      "file_count": 27,
+      "total_bytes": 25824285
+    },
+    "paper_full_pipeline_run/synthetic/synthetic_eval_seed_301": {
+      "seed": 301,
+      "block": "forbidden",
+      "file_count": 27,
+      "total_bytes": 23369104
+    },
+    "paper_full_pipeline_run/synthetic/synthetic_eval_seed_302": {
+      "seed": 302,
+      "block": "forbidden",
+      "file_count": 27,
+      "total_bytes": 25936961
+    },
+    "paper_full_pipeline_run/synthetic/synthetic_eval_seed_303": {
+      "seed": 303,
+      "block": "forbidden",
+      "file_count": 27,
+      "total_bytes": 29691885
+    },
+    "paper_full_pipeline_run/synthetic/synthetic_eval_seed_304": {
+      "seed": 304,
+      "block": "forbidden",
+      "file_count": 26,
+      "total_bytes": 28837381
+    },
+    "paper_full_pipeline_run/synthetic/synthetic_eval_seed_305": {
+      "seed": 305,
+      "block": "forbidden",
+      "file_count": 27,
+      "total_bytes": 26307533
+    }
+  },
+  "evidence_counts": {
+    "selection": {
+      "dir_names": 0,
+      "file_names": 0,
+      "content_hits": 0
+    },
+    "confirmatory": {
+      "dir_names": 0,
+      "file_names": 0,
+      "content_hits": 0
+    },
+    "forbidden": {
+      "dir_names": 478,
+      "file_names": 342,
+      "content_hits": 431
+    }
+  },
+  "HARD_BLOCKER": "SELECTION_BLOCK_ALREADY_USED",
+  "notes": [
+    "206-215 is partially contaminated: [212, 213, 214, 215] already have produced experiment output. The R7 selection block as specified is not fresh."
+  ]
+}

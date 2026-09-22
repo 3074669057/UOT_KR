@@ -1,0 +1,52 @@
+% 4.4(c) patch -- direct-kernel ranking control over decoder width k
+% POST-HOC SUPPLEMENTARY ANALYSIS; NOT PREREGISTERED; DEVELOPMENT SEEDS ONLY.
+% Frozen holdout seeds 301-305 were NOT re-run.
+\paragraph{Post-hoc supplementary analysis.}
+This analysis is post-hoc and supplementary, was not preregistered, uses development seeds 201-205 only, and was not used to modify any main-experiment hyper-parameter. Frozen holdout seeds 301-305 were not re-run; the $k=5$ holdout values serve as an independent reference point only.
+
+\paragraph{Scope.}
+Holding the frozen amount-free renormalised cost matrix, $\epsilon = 0.05$ and
+$\lambda = 0.5$ fixed, we sweep the mutual-selection width
+$k \in \{2, 3, 5, 7, 10, 15\}$ and ask how the relative ordering of
+\textsc{Conditional} and \textsc{AmountFree} (direct-kernel ranking) moves on the
+\emph{development} distribution (seeds 201--205). The sweep answers how the relative
+ordering changes with $k$ on development; it does \emph{not} estimate holdout performance
+for $k \neq 5$, because seeds 301--305 are never re-run and the frozen holdout exists only
+at the default $k=5$.
+
+\paragraph{Result.}
+In the post-hoc k sweep restricted to development seeds 201-205, the conditional-minus-direct-kernel difference is -0.0371 at $k=3$ with a two-sided paired permutation $p = 0.0002$, triggering the pre-specified contribution-downgrade condition C. We therefore no longer describe conditional decoding as generally superior to direct-kernel ordering: its role narrows to repairing the ordering of the raw UOT plan, and its relative merit against the direct kernel is configuration- and split-dependent.
+
+\begin{table}[t]
+\centering
+\small
+\begin{tabular}{rrrrrrr}
+\hline
+$k$ & RAW & COND & AMOUNT\_FREE & SUPPORT$+$K & COND $-$ AMT & paired $p$ \\
+\hline
+2 & 0.0008 & 0.3504 & 0.3861 & 0.3786 & -0.0357 & 0.0002 \\
+3 & 0.1236 & 0.4797 & 0.5169 & 0.5067 & -0.0371 & 0.0002 \\
+5 & 0.2374 & 0.3129 & 0.3172 & 0.3112 & -0.0043 & 0.0571 \\
+7 & 0.2623 & 0.2820 & 0.2828 & 0.2775 & -0.0008 & 0.4598 \\
+10 & 0.2594 & 0.2720 & 0.2621 & 0.2571 & +0.0099 & 0.0006 \\
+15 & 0.2517 & 0.2589 & 0.2329 & 0.2303 & +0.0260 & 0.0003 \\
+\hline
+\end{tabular}
+\caption{Macro-edge F1 by decoder width $k$ (development seeds 201--205, unweighted mean
+over the 15 bridge--seed cells; $\pm$1 SD over the five seeds per bridge is shown in the
+figure). The paired column is a two-sided paired sign-flip permutation test over the 15
+paired bridge--seed cells ($n_{\mathrm{perm}} = 20000$, RNG seed 20240101).
+With 15 pairs the smallest attainable two-sided exact $p$-value is $6.1035\times10^{-5}$;
+with only five pairs per bridge it is $0.0625$, so per-bridge five-cell tests must not be
+reported as $p<0.05$ findings. $k=3$ is the single pre-specified confirmatory trigger; all
+other $p$-values are descriptive.}
+\end{table}
+
+\paragraph{Development vs.\ frozen holdout at $k=5$.}
+The development difference at $k=5$ is $-0.0043$ while the pre-existing frozen
+holdout value of the same contrast is $+0.0048$: the sign reverses. Neither
+direction can therefore be summarised as a general advantage across data splits.
+
+\paragraph{Hyper-parameters.}
+The paper default $k=5$ is unchanged. No hyper-parameter was re-selected from this
+experiment, and no result here replaces any main-experiment result.

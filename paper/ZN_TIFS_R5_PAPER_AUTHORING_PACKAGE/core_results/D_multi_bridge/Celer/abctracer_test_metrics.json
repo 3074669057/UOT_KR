@@ -1,0 +1,32 @@
+{
+  "abstention": 0.0,
+  "candidate_pool_recall": 0.9971139971139971,
+  "coverage": 1.0,
+  "development_selection": {
+    "abstention": 0.0,
+    "coverage": 1.0,
+    "fn": 50.0,
+    "fp": 50.0,
+    "full_set_f1": 0.9902095163501077,
+    "n_abstained": 0.0,
+    "n_predicted": 5107.0,
+    "n_total": 5107.0,
+    "precision": 0.9902095163501077,
+    "recall": 0.9902095163501077,
+    "tp": 5057.0,
+    "window_h": 6.0
+  },
+  "fn": 40,
+  "fp": 40,
+  "full_set_f1": 0.9807599807599807,
+  "n_abstained": 0,
+  "n_predicted": 2079,
+  "n_total": 2079,
+  "precision": 0.9807599807599807,
+  "recall": 0.9807599807599807,
+  "selected_config": {
+    "before_sec": 900.0,
+    "window_h": 6.0
+  },
+  "tp": 2039
+}

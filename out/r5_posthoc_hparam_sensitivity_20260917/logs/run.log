@@ -1,0 +1,23 @@
+[2026-09-17T03:14:11Z] [ablation] 7 cost variants x 3 bridges x 5 dev seeds = 105 cells (CONDITIONAL_UOT_D4 only)
+[2026-09-17T03:14:25Z] [sweep] 14 unique configs x 3 bridges x 5 dev seeds = 210 cells
+[2026-09-17T03:14:25Z] [sweep] holdout guard ACTIVE; forbidden seeds = [301, 302, 303, 304, 305]
+[2026-09-17T03:14:25Z] [ablation] 7 cost variants x 3 bridges x 5 dev seeds = 105 cells (CONDITIONAL_UOT_D4 only)
+[2026-09-17T03:14:33Z] [sweep] progress done=20 skipped=0 failed=0
+[2026-09-17T03:14:37Z] [sweep] progress done=40 skipped=0 failed=0
+[2026-09-17T03:14:41Z] [sweep] progress done=60 skipped=0 failed=0
+[2026-09-17T03:14:46Z] [sweep] progress done=80 skipped=0 failed=0
+[2026-09-17T03:14:50Z] [ablation] FINISHED done=105 skipped=0 failed=0 planned=105
+[2026-09-17T03:14:50Z] [sweep] progress done=100 skipped=0 failed=0
+[2026-09-17T03:14:54Z] [sweep] progress done=120 skipped=0 failed=0
+[2026-09-17T03:14:59Z] [sweep] progress done=140 skipped=0 failed=0
+[2026-09-17T03:15:03Z] [sweep] progress done=160 skipped=0 failed=0
+[2026-09-17T03:15:07Z] [sweep] progress done=180 skipped=0 failed=0
+[2026-09-17T03:15:11Z] [sweep] progress done=200 skipped=0 failed=0
+[2026-09-17T03:15:13Z] [sweep] FINISHED done=210 skipped=0 failed=0 planned=210
+[2026-09-17T03:15:16Z] [aggregate] wrote sweep_long.csv: 420 rows (3 bridges x 5 seeds x 14 configs x 2 methods)
+[2026-09-17T03:15:16Z] [aggregate] wrote sweep_summary.csv: 32 rows
+[2026-09-17T03:15:16Z] [aggregate] wrote sweep_per_seed.csv: 420 rows
+[2026-09-17T03:15:16Z] [aggregate] wrote epsilon_solver_diagnostics.csv: 150 rows
+[2026-09-17T03:15:16Z] [aggregate] wrote lambda_unmatched_mass.csv: 150 rows
+[2026-09-17T03:15:16Z] [aggregate] wrote cost_component_ablation_long.csv: 210 rows
+[2026-09-17T03:15:16Z] [aggregate] wrote cost_component_ablation_summary.csv: 42 rows

@@ -1,0 +1,238 @@
+diff --git a/config/defaults.json b/config/defaults.json
+index 56d2417..c73692f 100644
+--- a/config/defaults.json
++++ b/config/defaults.json
+@@ -68,6 +68,7 @@
+     "flow_mode": "segment",
+     "backend": "pot",
+     "max_delay_sec": 21600,
++    "time_delay_policy": "tx_if_available_else_flow_representative",
+     "causal_violation_penalty": 5.0,
+     "lambda_risk": 0.25,
+     "causal_infeasible_delay_sec": null,
+diff --git a/src/cross/domain/evaluation/flow_metrics.py b/src/cross/domain/evaluation/flow_metrics.py
+index dfd57bd..c9be277 100644
+--- a/src/cross/domain/evaluation/flow_metrics.py
++++ b/src/cross/domain/evaluation/flow_metrics.py
+@@ -58,6 +58,17 @@ def _flow_index_for_dst_tx(dst_flows: list[dict[str, Any]], dst_tx: str) -> int:
+     return -1
+ 
+ 
++def _target_flow_indices_for_tx(dst_flows: list[dict[str, Any]], dst_tx: str) -> set[int]:
++    """All target-flow indices that contain ``dst_tx`` (a tx may appear in multiple flows)."""
++    d = norm_addr(dst_tx)
++    out: set[int] = set()
++    for j, f in enumerate(dst_flows):
++        for h in f.get("tx_hashes") or []:
++            if norm_addr(str(h)) == d:
++                out.add(j)
++    return out
++
++
+ def flow_mass_recall(
+     p: np.ndarray,
+     source_flows: list[dict[str, Any]],
+@@ -102,7 +113,12 @@ def topk_flow_accuracy(
+     label_df: pd.DataFrame,
+     k: int = 3,
+ ) -> float:
+-    """Fraction of labeled src where true dst flow is in top-k by transport mass in row."""
++    """Top-k recall: fraction of labeled src txs whose true dst tx lies in a top-k target flow.
++
++    Target flows are ranked by descending UOT transport mass ``P[source_flow, :]``.
++    A hit occurs when **any** target flow containing the labeled dst tx hash appears in
++    the top-k (needed when a dst tx appears in multiple target flows).
++    """
+     p = np.asarray(p, dtype=float)
+     if p.size == 0:
+         return 0.0
+@@ -123,15 +139,15 @@ def topk_flow_accuracy(
+     kk = max(1, int(k))
+     for s, d_true in truth.items():
+         i = tx_to_i.get(s, -1)
+-        if i < 0:
++        if i < 0 or i >= p.shape[0]:
+             continue
+-        tot += 1
+-        j_star = _flow_index_for_dst_tx(target_flows, d_true)
+-        if j_star < 0:
++        true_flows = _target_flow_indices_for_tx(target_flows, d_true)
++        if not true_flows:
+             continue
++        tot += 1
+         row = p[i]
+-        order = np.argsort(-row)[:kk].astype(int)
+-        if j_star in set(order.tolist()):
++        order = set(np.argsort(-row)[:kk].astype(int).tolist())
++        if true_flows & order:
+             hits += 1
+     return float(hits / max(tot, 1))
+ 
+diff --git a/src/cross/domain/uot/cost_matrix.py b/src/cross/domain/uot/cost_matrix.py
+index b0c3dc1..586e107 100644
+--- a/src/cross/domain/uot/cost_matrix.py
++++ b/src/cross/domain/uot/cost_matrix.py
+@@ -7,6 +7,13 @@ import numpy as np
+ 
+ from cross.utils.safe_cast import safe_int
+ 
++from cross.domain.uot.delay_policy import (
++    DEFAULT_TIME_DELAY_POLICY,
++    build_delay_sec_matrix,
++    flow_representative_times,
++    populate_delay_cost_arrays,
++)
++
+ 
+ def cosine_distance(x: np.ndarray, y: np.ndarray) -> float:
+     x = np.asarray(x, dtype=float).ravel()
+@@ -107,6 +114,7 @@ def build_cost_matrix_decomposed(
+     max_delay_sec: float = 21_600.0,
+     causal_violation_penalty: float = 5.0,
+     causal_infeasible_delay_sec: float | None = None,
++    time_delay_policy: str = DEFAULT_TIME_DELAY_POLICY,
+ ) -> dict[str, np.ndarray]:
+     """Per-cell costs in ``[0, 2]`` (causal may exceed 1); includes causal / feasibility flags."""
+     weights = _normalize_weights(weights)
+@@ -137,6 +145,20 @@ def build_cost_matrix_decomposed(
+     causal_pen = float(causal_violation_penalty)
+     thr = causal_infeasible_delay_sec
+ 
++    delay_sec = build_delay_sec_matrix(source_flows, target_flows, policy=time_delay_policy)
++    delay_parts = populate_delay_cost_arrays(
++        delay_sec,
++        max_delay_sec=max_delay,
++        causal_violation_penalty=causal_pen,
++        causal_infeasible_delay_sec=thr,
++    )
++    time_cost = delay_parts["time_cost"]
++    causal_violation_flag = delay_parts["causal_violation_flag"]
++    causal_penalty = delay_parts["causal_penalty"]
++    feasible_flag = delay_parts["feasible_flag"]
++    infeasible_reason = delay_parts["infeasible_reason"]
++    max_delay_sec_arr = delay_parts["max_delay_sec"]
++
+     for i, s in enumerate(source_flows):
+         for j, t in enumerate(target_flows):
+             s_usd = float(s.get("amount_usd", 0.0))
+@@ -144,41 +166,13 @@ def build_cost_matrix_decomposed(
+             amount_err = abs(s_usd - t_usd) / max(s_usd, t_usd, 1e-12)
+             amount_cost[i, j] = min(float(amount_err), 1.0)
+ 
+-            se = float(s.get("end_time", 0.0))
+-            ds = float(t.get("start_time", 0.0))
+-            delay = ds - se
+-            delay_sec[i, j] = delay
+-            src_end_time[i, j] = se
+-            dst_start_time[i, j] = ds
+-            max_delay_sec_arr[i, j] = max_delay
+-            infeasible_reason[i, j] = ""
+-
+-            if delay < 0:
+-                causal_violation_flag[i, j] = True
+-                if causal_pen <= 0.0:
+-                    # Ablation / relaxed OT: ignore hard causal infeasibility; keep time as symmetric delay magnitude.
+-                    causal_violation_flag[i, j] = False
+-                    causal_penalty[i, j] = 0.0
+-                    time_cost[i, j] = min(abs(float(delay)) / max_delay, 1.0)
+-                    feasible_flag[i, j] = True
+-                    infeasible_reason[i, j] = "negative_delay_ignored_no_causal_penalty"
+-                else:
+-                    causal_penalty[i, j] = causal_pen
+-                    time_cost[i, j] = min(1.0 + causal_pen / max_delay, 2.0)
+-                    feasible_flag[i, j] = False
+-                    infeasible_reason[i, j] = "negative_delay"
+-                if thr is not None and float(delay) < -abs(float(thr)) and causal_pen > 0.0:
+-                    feasible_flag[i, j] = False
+-            elif delay > max_delay:
+-                overflow = delay - max_delay
+-                causal_penalty[i, j] = min(overflow / max_delay, 2.0) * (causal_pen * 0.2)
+-                time_cost[i, j] = 1.0
+-                feasible_flag[i, j] = True
+-                infeasible_reason[i, j] = "delay_exceeds_max_window"
++            if time_delay_policy == "legacy_flow_boundary":
++                src_end_time[i, j] = float(s.get("end_time", 0.0))
++                dst_start_time[i, j] = float(t.get("start_time", 0.0))
+             else:
+-                time_cost[i, j] = min(delay / max_delay, 1.0)
+-                feasible_flag[i, j] = True
+-                infeasible_reason[i, j] = ""
++                ss, dt = flow_representative_times(s, t)
++                src_end_time[i, j] = ss
++                dst_start_time[i, j] = dt
+ 
+             s_risk = float(s.get("aml_score", 0.0))
+             t_proxy = float(t.get("evidence_quality_score", 0.65))
+@@ -246,6 +240,7 @@ def build_cost_matrix_decomposed(
+         "dst_start_time": dst_start_time,
+         "max_delay_sec": max_delay_sec_arr,
+         "infeasible_reason": infeasible_reason,
++        "time_delay_policy": np.array(time_delay_policy),
+     }
+ 
+ 
+@@ -258,6 +253,7 @@ def build_cost_matrix(
+     max_delay_sec: float = 21_600.0,
+     causal_violation_penalty: float = 5.0,
+     causal_infeasible_delay_sec: float | None = None,
++    time_delay_policy: str = DEFAULT_TIME_DELAY_POLICY,
+ ) -> np.ndarray:
+     d = build_cost_matrix_decomposed(
+         source_flows,
+@@ -267,6 +263,7 @@ def build_cost_matrix(
+         max_delay_sec=max_delay_sec,
+         causal_violation_penalty=causal_violation_penalty,
+         causal_infeasible_delay_sec=causal_infeasible_delay_sec,
++        time_delay_policy=time_delay_policy,
+     )
+     c = np.asarray(d["C"], dtype=float)
+     bb = d.get("bridge_prior_bonus")
+diff --git a/src/cross/domain/uot/decode_transport.py b/src/cross/domain/uot/decode_transport.py
+index b64d7bf..06437b0 100644
+--- a/src/cross/domain/uot/decode_transport.py
++++ b/src/cross/domain/uot/decode_transport.py
+@@ -6,6 +6,7 @@ from typing import Any
+ import numpy as np
+ import pandas as pd
+ 
++from cross.domain.uot.tx_decode_policy import pick_dst_tx_in_flow as _pick_dst_tx_in_flow_impl
+ from cross.shared.normalize import norm_addr
+ from cross.shared.transfers import parse_transfer_value
+ from cross.utils.safe_cast import safe_float
+@@ -71,33 +72,9 @@ def _pick_dst_tx_in_flow(
+     dst_flow: dict[str, Any],
+     dst_norm: pd.DataFrame,
+ ) -> str:
+-    """Pick best BNB tx hash inside dst_flow for this src tx."""
+-    hashes = list(dst_flow.get("tx_hashes") or [])
+-    if not hashes:
+-        return ""
+-    if len(hashes) == 1:
+-        return norm_addr(hashes[0])
+-
+-    sub = dst_norm[dst_norm["hash"].astype(str).map(norm_addr).isin({norm_addr(h) for h in hashes})]
+-    if sub.empty:
+-        return norm_addr(hashes[0])
+-
+-    best_h = ""
+-    best_score = float("inf")
+-    for h in hashes:
+-        hn = norm_addr(h)
+-        part = sub[sub["hash"].astype(str).map(norm_addr) == hn]
+-        if part.empty:
+-            continue
+-        ts = safe_float(pd.to_numeric(part["timeStamp"], errors="coerce").fillna(0).min(), 0.0)
+-        vals = part["value"].map(parse_transfer_value).astype(float)
+-        human = float(vals.sum())
+-        delay_pen = 0.0 if ts >= src_ts else 1e6
+-        score = delay_pen + abs(human - src_human_amt) / max(src_human_amt, human, 1e-9) + abs(ts - src_ts) / 86400.0
+-        if score < best_score:
+-            best_score = score
+-            best_h = hn
+-    return best_h or norm_addr(hashes[0])
++    """Pick best BNB tx hash inside dst_flow for this src tx (legacy policy)."""
++    dst, _, _ = _pick_dst_tx_in_flow_impl(src_tx, src_ts, src_human_amt, dst_flow, dst_norm, policy="legacy")
++    return dst
+ 
+ 
+ def _tx_to_flow_index(source_flows: list[dict[str, Any]]) -> dict[str, int]:

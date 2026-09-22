@@ -1,0 +1,72 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "PathBEvidence",
+  "type": "object",
+  "patternProperties": {
+    "^0x[a-fA-F0-9]+$": {
+      "type": "object",
+      "required": [
+        "selected_dstTxHash",
+        "selected_rank",
+        "selected_confidence",
+        "selected_confidence_calibrated",
+        "uncertainty_band",
+        "candidate_count",
+        "topk_candidates"
+      ],
+      "properties": {
+        "selected_dstTxHash": { "type": "string" },
+        "selected_rank": { "type": "integer", "minimum": 0 },
+        "selected_confidence": { "type": "number", "minimum": 0, "maximum": 1 },
+        "selected_confidence_calibrated": { "type": "number", "minimum": 0, "maximum": 1 },
+        "uncertainty_band": { "type": "string", "enum": ["low", "medium", "high"] },
+        "uncertainty_reason": { "type": "string" },
+        "uncertainty_score": { "type": "number" },
+        "competition_gap": { "type": "number" },
+        "candidate_count": { "type": "integer", "minimum": 0 },
+        "match_source": { "type": "string" },
+        "routing_decision": { "type": "string" },
+        "label_hit": { "type": "boolean" },
+        "candidate_fetch_window": { "type": ["object", "null"] },
+        "online_enrichment": {},
+        "model_mode": { "type": "string" },
+        "model_reason": { "type": "string" },
+        "fallback_used": { "type": "boolean" },
+        "graph_score": {},
+        "fusion_score": { "type": "number" },
+        "counter_evidence": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "topk_candidates": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["dstTxHash", "base_error", "rank", "candidate_confidence"],
+            "properties": {
+              "dstTxHash": { "type": "string" },
+              "base_error": { "type": "number" },
+              "rank": { "type": "integer", "minimum": 1 },
+              "candidate_confidence": { "type": "number", "minimum": 0, "maximum": 1 },
+              "evidence_breakdown": { "type": "object" }
+            },
+            "additionalProperties": true
+          }
+        },
+        "narrative": {
+          "type": "object",
+          "required": ["what_happened", "why_we_believe", "counter_evidence", "review_next"],
+          "properties": {
+            "what_happened": { "type": "string" },
+            "why_we_believe": { "type": "array", "items": { "type": "string" } },
+            "counter_evidence": { "type": "array", "items": { "type": "string" } },
+            "review_next": { "type": "string" }
+          },
+          "additionalProperties": true
+        }
+      },
+      "additionalProperties": true
+    }
+  },
+  "additionalProperties": true
+}

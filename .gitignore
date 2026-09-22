@@ -1,0 +1,75 @@
+# ---- secrets / local credentials (NEVER commit) ----
+.env
+*.env
+.env.*
+
+# Local configuration overrides.  These files carry RPC endpoints and provider API
+# keys; they are deliberately excluded from the release.  `local.example.json` is the
+# shipped template and IS tracked (negated below).
+config/local.json
+config/local.runtime.json
+config/local.*.json
+!config/local.example.json
+
+# Provider key files (the private workspace stored one at config/api-key-cross.json;
+# it is NOT part of this release).
+config/api-key*.json
+config/*secret*.json
+config/*credential*.json
+*.token
+*.credentials
+
+secrets/
+credentials/
+*.pem
+*.key
+*.p12
+id_rsa*
+
+# ---- python ----
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+# Root-anchored: these are Python build outputs in the project root.  They must NOT match
+# at any depth -- the release ships a real directory named `reproducibility/build/`.
+/dist/
+/build/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.ipynb_checkpoints/
+/.venv/
+/venv/
+/env/
+
+# ---- IDE / OS ----
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ---- transient run output (regenerable; see README "Data availability") ----
+out/**/runs/tmp/
+out/**/*.tmp
+out/**/*.log.lock
+tmp_*.html
+
+# Run logs are NOT ignored globally: each released experiment line ships the execution
+# log of the run that produced it (out/*/logs/*.log).  Only scratch logs are ignored.
+*.log
+!out/*/logs/*.log
+
+# ---- large regenerable binary intermediates (not shipped; see EXTERNAL_DATA_MANIFEST.md) ----
+# Transport / cost matrices rebuilt deterministically by the released scripts.
+*.npz
+!tests/fixtures/**/*.npz
+
+# ---- stray editor/backup copies ----
+*.bak
+*.orig
+*~
+~$*

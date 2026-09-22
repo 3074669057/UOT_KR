@@ -1,0 +1,29 @@
+{
+  "generated_at": "2026-09-11T12:26:59",
+  "n_blocks": 12,
+  "stop_block": null,
+  "total_anchors": 42114,
+  "final_edges": 39595,
+  "final_fanout_units": 5516,
+  "G_full": 8,
+  "G_conservative": 2,
+  "DATA_ADEQUACY_STATUS": "FAIL",
+  "method_predictions": 0,
+  "method_runs": 0,
+  "files": {
+    "blocks": [
+      "b01/anchors.json",
+      "b02/anchors.json",
+      "b03/anchors.json",
+      "b04/anchors.json",
+      "b05/anchors.json",
+      "b06/anchors.json",
+      "b07/anchors.json",
+      "b08/anchors.json",
+      "b09/anchors.json",
+      "b10/anchors.json",
+      "b11/anchors.json",
+      "b12/anchors.json"
+    ]
+  }
+}

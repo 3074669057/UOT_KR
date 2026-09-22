@@ -1,0 +1,372 @@
+{
+  "experiment_id": "r7_confirmatory_kernel_ranking_20260917",
+  "generated_at_utc": "2026-09-17T07:19:41Z",
+  "stage": "pre-selection (fixed before any selection-block method F1 was observed)",
+  "seed_blocks": {
+    "selection": [
+      206,
+      207,
+      208,
+      209,
+      210,
+      211,
+      112,
+      113,
+      114,
+      115
+    ],
+    "selection_as_originally_specified": [
+      206,
+      207,
+      208,
+      209,
+      210,
+      211,
+      212,
+      213,
+      214,
+      215
+    ],
+    "selection_amendment": {
+      "applied": true,
+      "reason": "the originally reserved block 206-215 was found partially contaminated: 212-215 already carry produced output from out/paper_full_pipeline_run/synthetic/",
+      "decision": "selection = 206-211 (the fresh part of the originally reserved block) + 112-115 (next fresh seeds)",
+      "evidence": "00_preflight/seed_freshness_audit.json",
+      "blocker_report": "BLOCKER_REPORT.md",
+      "owner_decision": "protocol owner approved option A on 2026-09-17"
+    },
+    "confirmatory": [
+      401,
+      402,
+      403,
+      404,
+      405,
+      406,
+      407,
+      408,
+      409,
+      410
+    ],
+    "permanently_forbidden": [
+      42,
+      43,
+      44,
+      45,
+      46,
+      201,
+      202,
+      203,
+      204,
+      205,
+      212,
+      213,
+      214,
+      215,
+      301,
+      302,
+      303,
+      304,
+      305
+    ]
+  },
+  "cost_configuration": {
+    "locked": true,
+    "reopened_by_r7": false,
+    "family": "amount-free renormalised five-component cost",
+    "absolute_weights": {
+      "time": 0.25,
+      "route": 0.15,
+      "risk": 0.15,
+      "evidence": 0.05,
+      "novelty": 0.05
+    },
+    "absolute_sum": 0.65,
+    "normalisation": "each retained weight divided by 0.65",
+    "normalised_weights": {
+      "time": 0.3846153846153846,
+      "route": 0.23076923076923075,
+      "risk": 0.23076923076923075,
+      "evidence": 0.07692307692307693,
+      "novelty": 0.07692307692307693
+    },
+    "amount_component": "removed from the PAIRWISE cost only; the amount-derived transport marginals are preserved unchanged",
+    "epsilon": 0.05,
+    "lambda": 0.5,
+    "back_door_closed": "cost weights, epsilon, lambda and the normalisation are NOT re-tuned in R7, not even if the expanded generator lowers performance; if the cost proves unsuitable that is a result"
+  },
+  "solver_configuration": {
+    "backend": "POT ot.unbalanced.sinkhorn_unbalanced",
+    "reg": 0.05,
+    "reg_m": 0.5,
+    "numItermax": 20000,
+    "stopThr": 1e-11,
+    "convergence_criterion": "final POT err < 1e-7 (frozen R5/R6 criterion)"
+  },
+  "shared_cost_requirement": {
+    "rule": "every method in a cell consumes the SAME C and the SAME P",
+    "recorded": "cost_matrix_sha256 per cell, asserted equal across methods"
+  },
+  "generator": {
+    "implementation": "src/cross/domain/evaluation/semi_synthetic_flows.py (extended in place)",
+    "byte_equivalence_self_test": "selection/generator/generator_equivalence.json",
+    "n_families": 24,
+    "instances_per_family": 2,
+    "templates_per_cell": 48,
+    "degree_distribution": "frozen pooled empirical fan-out (split) and fan-in (merge)",
+    "degree_range": [
+      2,
+      8
+    ],
+    "degree_cap": 8,
+    "truncation": "d_used = min(d_observed, 8) (right winsorisation, not deletion)",
+    "HIGH_TRUNCATION_TAIL": false,
+    "preserved_mechanisms": [
+      "amount allocation (generalised to equal shares amount/d)",
+      "time perturbation",
+      "+60/+120 delay decoys",
+      "unmatched source",
+      "address / evidence / risk construction",
+      "bridge-specific mechanisms"
+    ]
+  },
+  "degree_calibration": {
+    "source": "frozen v4 and v5 audit windows (paper section 4.6)",
+    "provenance": "selection/degree_calibration/source_provenance.json",
+    "definition": "selection/degree_calibration/degree_definition.json",
+    "fanin_empirical": true,
+    "fanin_mirrored_proxy_used": false,
+    "sampling_spec": {
+      "stage": "0B_input",
+      "generated_at_utc": "2026-09-17T07:11:20Z",
+      "source_windows": [
+        "v4",
+        "v5"
+      ],
+      "pooling": "v4/v5 unique protocol-anchored units, deduped on the canonical anchor identity; v5 contributes more units and therefore carries more weight in the pooled distribution, as required",
+      "split_degree": {
+        "name": "split_degree_from_empirical_fanout",
+        "support": [
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8
+        ],
+        "pmf": [
+          0.58014309024727,
+          0.19417597590058994,
+          0.08120999121375674,
+          0.04606501820007531,
+          0.02422492782728756,
+          0.016568344420735535,
+          0.05761265219028493
+        ],
+        "counts": [
+          4622,
+          1547,
+          647,
+          367,
+          193,
+          132,
+          459
+        ],
+        "n_units": 7967,
+        "winsorised": true,
+        "cap": 8,
+        "p_degree_gt_cap": 0.045939500439312164,
+        "empirical": true,
+        "mirrored_proxy_not_empirical_fanin": false
+      },
+      "merge_degree": {
+        "name": "merge_degree_from_empirical_fanin",
+        "support": [
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8
+        ],
+        "pmf": [
+          0.9751552795031055,
+          0.024844720496894408,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "counts": [
+          157,
+          4,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "n_units": 161,
+        "winsorised": true,
+        "cap": 8,
+        "p_degree_gt_cap": 0.0,
+        "empirical": true,
+        "mirrored_proxy_not_empirical_fanin": false
+      },
+      "HIGH_TRUNCATION_TAIL": false,
+      "hashes": {
+        "pooled_degree_hist_truncated.csv": "bb928b5e2e21f1547e83500e80723511765a1d513a3bd59b1a3c79526dc5953b",
+        "pooled_fanin_hist_truncated.csv": "8930b93d29fc544fc49c9633fcc3113390294c873b2f9275005df65796e31cfe"
+      }
+    }
+  },
+  "methods": {
+    "primary_treatment": "UOT_KR",
+    "arms": {
+      "UOT_KR": "selected rule applied to the direct forensic kernel logK = -C/eps",
+      "RAW_UOT_PLAN": "same rule applied to the raw UOT plan P",
+      "CONDITIONAL_UOT": "same rule on the dual-cancelling conditional scores",
+      "SUPPORT_PLUS_K": "same rule on logK with a HARD support filter (P > 1e-9 at the candidate-set level)",
+      "HUNGARIAN_1TO1": "cost-optimal one-to-one assignment baseline: rectangular linear sum assignment on the same C, label-free",
+      "THRESHOLD_MM": "edge iff C_ij <= cutoff; cutoff fixed on the selection block",
+      "DUAL_SOFTMAX": "LoFTR-style dual softmax on logK with bidirectional (mutual nearest neighbour) acceptance and a confidence gate"
+    },
+    "diagnostics_not_baselines": {
+      "ORACLE_1TO1_CEILING": "label-informed maximum-cardinality matching on the ground-truth positive graph; not deployable, not in H1/H2, not in Holm, never used to build a UOT_KR prediction"
+    }
+  },
+  "protocol_corrections": {
+    "C1_hungarian_is_not_an_f1_upper_bound": {
+      "as_proposed": "HUNGARIAN_1TO1 described as the F1 upper bound for one-to-one methods",
+      "operational": "HUNGARIAN_1TO1 is the cost-optimal one-to-one ASSIGNMENT BASELINE at the same forensic cost C. It is not, and must never be written as, an F1 upper bound or a performance upper bound.",
+      "added": "ORACLE_1TO1_CEILING, a pre-registered label-informed diagnostic that does answer what the one-to-one output space can reach: with T true edges and maximum non-conflicting true edges M, precision=1, recall=M/T, F1=2M/(T+M).",
+      "interpretation_rule": {
+        "UOT_KR > ORACLE_CEILING": "strong output-space evidence: one-to-one output semantics impose a measurable ceiling under this synthetic truth topology",
+        "UOT_KR > HUNGARIAN only": "only licenses 'this many-to-many decoding outperformed the cost-optimal one-to-one assignment baseline at equal cost'"
+      }
+    },
+    "C2_gate_c_is_not_an_execution_validity_gate": {
+      "as_proposed": "per-bridge mean effect >= -0.005 listed as an EXECUTION VALIDITY gate",
+      "problem": "a result-dependent threshold must never be able to declare a valid confirmatory execution void",
+      "operational": {
+        "A": "primary efficacy gate (H1)",
+        "B": "primary efficacy gate (H2)",
+        "C": "cross-bridge consistency / claim gate",
+        "D": "technical validity gate",
+        "E": "technical validity gate (independent metric verification)"
+      },
+      "if_C_fails": "the experiment remains a VALID confirmatory result, but no cross-bridge-consistent overall advantage may be claimed",
+      "if_D_or_E_fails": "TECHNICALLY_INVALID_CONFIRMATORY_EXECUTION; all results, reasons and logs are preserved",
+      "never": "401-410 must never be re-run, for any reason"
+    },
+    "C3_holm_and_ci_fully_specified": {
+      "as_proposed": "'95% CI + Holm' with no estimand and no adjustment target",
+      "primary_estimand": {
+        "cell": "for each (bridge, seed): macro edge F1 = equal-weight mean over the 24 template families of the family-mean edge F1",
+        "n_primary_paired_cells": 30,
+        "bridges": [
+          "Celer",
+          "Multi",
+          "Poly"
+        ],
+        "seeds_per_bridge": 10,
+        "pseudoreplication": "the several hundred template instances are NEVER treated as independent samples",
+        "overall_effect": "mean the 10 seed-level paired deltas within each bridge, then equal-weight mean the 3 bridge means"
+      },
+      "primary_ci": {
+        "method": "paired stratified bootstrap",
+        "within_bridge": "resample the 10 seed-level paired cells with replacement",
+        "paired": "both methods of a pair are resampled together",
+        "across_bridges": "equal-weight macro-average of the 3 bridge means",
+        "B": 4000,
+        "rng_seed": 20240101,
+        "interval": "percentile two-sided 95%",
+        "forbidden": "bootstrapping the hundreds of template instances independently"
+      },
+      "primary_p_value": {
+        "test": "one-sided paired sign-flip permutation",
+        "statistic": "equal-weight mean of the 3 bridge means of the 30 paired bridge-seed deltas",
+        "H0": "effect <= 0",
+        "H1": "effect > 0",
+        "rng_seed": 20240102,
+        "n_perm": 20000,
+        "monte_carlo_p": "(extreme + 1) / (n_perm + 1)",
+        "resolution": "about 1/20001 = 5.000e-05",
+        "resolution_note": "1.9e-9 is the theoretical order of a FULL exact enumeration of 2^30 sign patterns; this protocol does NOT enumerate them and therefore never reports a p-value below the Monte-Carlo resolution",
+        "multiplicity": "Holm step-down over the TWO one-sided primary p-values (H1, H2), FWER alpha = 0.05"
+      },
+      "primary_success": [
+        "paired effect > 0",
+        "bootstrap 95% CI lower bound > 0",
+        "Holm-adjusted one-sided p < 0.05"
+      ],
+      "secondary": {
+        "S1": "F(UOT_KR) - F(CONDITIONAL_UOT), direction > 0",
+        "S2": "F(CONDITIONAL_UOT) - F(RAW_UOT_PLAN), direction > 0",
+        "reported": "effect, 95% bootstrap CI, unadjusted secondary p",
+        "explicitly": "secondary confirmatory hypothesis; NOT in the H1/H2 Holm family"
+      }
+    }
+  },
+  "hypotheses": {
+    "H1": {
+      "contrast": "F(UOT_KR) - F(HUNGARIAN_1TO1)",
+      "direction": "> 0",
+      "role": "primary",
+      "gate": "A"
+    },
+    "H2": {
+      "contrast": "F(UOT_KR) - F(THRESHOLD_MM)",
+      "direction": "> 0",
+      "role": "primary",
+      "gate": "B"
+    },
+    "S1": {
+      "contrast": "F(UOT_KR) - F(CONDITIONAL_UOT)",
+      "direction": "> 0",
+      "role": "secondary",
+      "gate": null
+    },
+    "S2": {
+      "contrast": "F(CONDITIONAL_UOT) - F(RAW_UOT_PLAN)",
+      "direction": "> 0",
+      "role": "secondary",
+      "gate": null
+    }
+  },
+  "gates": {
+    "A": "H1: effect > 0 AND bootstrap 95% CI lower > 0 AND Holm-adjusted one-sided p < 0.05",
+    "B": "H2: same three conditions",
+    "C": "cross-bridge consistency / CLAIM gate: the per-bridge mean H1 and H2 effects must all be >= -0.005. FAIL does NOT invalidate the run; it forbids claiming a cross-bridge-consistent advantage.",
+    "D": "technical completeness: all expected confirmatory units present, no missing cells, no duplicates, no forbidden seeds, all solver cells converged, final marginal/KKT error < 1e-07, no silent NaN/Inf, all edge sets valid, all cost hashes consistent, support hard filter valid",
+    "E": "independent metric verification: a frozen validator recomputes precision, recall, macro edge F1, strict exact recovery, edge count and mechanism metrics from the frozen raw prediction/truth files; |diff| <= 1e-9"
+  },
+  "classification_rules": {
+    "CONFIRMATORY_METHOD_SUPPORT": "A/B/C/D/E all PASS",
+    "OVERALL_SUPPORT_WITH_HETEROGENEITY": "A/B/D/E PASS, C FAIL",
+    "VALID_NEGATIVE_CONFIRMATORY_RESULT": "D/E PASS but A or B FAIL",
+    "TECHNICALLY_INVALID_CONFIRMATORY_EXECUTION": "D or E FAIL",
+    "forbidden_rename": "an unfavourable A/B/C scientific result must never be relabelled as an execution failure"
+  },
+  "reporting_requirements": {
+    "always_report": [
+      "strict exact recovery",
+      "unmatched mass",
+      "per-bridge negative effects",
+      "convergence issues"
+    ],
+    "expected_values": "no expected numeric result (for example 'expected to be significantly higher than 0.3104') may survive into the final report; only actual measured results are reported",
+    "preregistration_wording": {
+      "allowed": "hash-locked protocol freeze",
+      "not_allowed": "externally timestamped preregistration",
+      "actual_evidence": [
+        "SHA256 of the locked spec",
+        "freeze time",
+        "code manifest",
+        "one-shot ledger"
+      ]
+    }
+  }
+}

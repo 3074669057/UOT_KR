@@ -1,0 +1,13 @@
+{
+  "timestamp_utc": "2026-09-17T05:25:49Z",
+  "experiment_id": "r6_posthoc_kernel_k_control_20260917",
+  "spec_sha256": "2733d2f5b24d685ca7eba667932a32a2eb96b43459c7d2e49b30c8af70b6f031",
+  "selftests_pass": true,
+  "cost_hash_check_pass": true,
+  "epsilon_invariance_pass": true,
+  "anchor_gate_pass": true,
+  "solver_calls_during_preflight": 31,
+  "holdout_seeds_executed": [],
+  "holdout_guard": "active; 301-305 refused before any data access",
+  "all_pass": true
+}

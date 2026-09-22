@@ -1,0 +1,80 @@
+% S9 supplementary section (post-hoc)
+\section*{S9. Degree-stratified post-hoc analysis}
+\textbf{This section is a post-hoc supplementary analysis. It was not preregistered, it
+does not change the pre-registered R7 decision on H1, and it does not modify any value in
+Table 3.} No prediction method was re-executed: the template-level ground-truth structure
+labels deterministically recovered from the frozen generator were joined with the
+per-template predictions already archived by the confirmatory execution, and re-aggregated
+by maximum source-level truth fan-out degree.
+
+\paragraph{Nature and scope.} Classification: \emph{post-hoc /
+non-preregistered / archived-result re-stratification}; role: mechanism and heterogeneity
+diagnostic. H1/H2/S1/S2, Gates A--E, \texttt{DECISION.json}, Table 3 and the original
+confirmatory metrics are unchanged. No UOT solver, Sinkhorn iteration, cost construction or
+decoder of any kind was executed.
+
+\paragraph{Statistical unit.} The R7 pre-registered primary resampling unit is
+$\mathrm{bridge}\times\mathrm{seed}$ (30 paired cells);
+template instances are \emph{not} independent samples. This section re-stratifies the
+archived paired results at the \emph{template-instance} level, which is \emph{not} the
+seed-level primary estimand of the R7 confirmatory test; the section is therefore reported
+only as a structural-heterogeneity diagnostic.
+
+\paragraph{Feasibility.} Data-availability tier \textbf{A (full)}: the archive stores
+per-template truth edges, UOT-KR and Hungarian prediction edge sets and stable template ids,
+so both F1 values were recomputed independently rather than reusing archived metrics. The
+frozen generator hash matches the manifest, the current worktree and the archived unit
+exactly; a truth-only deterministic replay reproduced the archived truth for
+30/30 units with identical canonical
+SHA256. The join on \texttt{(bridge, seed, template\_id)} is 1:1 with zero duplicates and
+zero unmatched rows over 1440 template instances, and the original R7
+aggregation path reproduces the frozen values to within 1.7e-17.
+
+\paragraph{Stratification variable.} $d_{max}$ is the maximum, over source nodes of a
+template's truth graph, of the number of distinct ground-truth targets, computed from
+non-decoy truth edges only. It matches the generator's sampled split degree for
+1440/1440 instances. Binary and
+three-bin cut points were locked in \texttt{config/locked\_posthoc\_spec.json}
+(sha256 \texttt{38b4bbbd1e6d3101\ldots}) before any stratified H1 was viewed.
+
+\paragraph{Binary result (primary S9).}
+$d_{max}=2$ ($n=801$): UOT-KR 0.5069,
+Hungarian 0.6116, H1 $-0.1053$
+[-0.1141, -0.0962].
+$d_{max}\ge 3$ ($n=639$): UOT-KR
+0.3318, Hungarian 0.1431,
+H1 $+0.1884$
+[+0.1827, +0.1936].
+Descriptive interaction contrast $+0.2937$
+[+0.2829, +0.3042].
+
+\paragraph{Three-bin result.} A ($d=2$, $n=801$)
+$-0.1053$; B ($d\in\{3,4\}$, $n=434$)
+$+0.1953$; C ($d\ge 5$, $n=205$)
+$+0.1745$.
+
+\paragraph{Trend test.} Bridge-centred OLS slopes:
+Celer $+0.0606$, Multi $+0.0598$,
+Poly $+0.0588$; $\beta_{macro} = +0.059728$.
+Two-sided paired-difference sign-flip permutation ($n_{perm}=20000$,
+RNG 20240103) gives $p = 5e-05$; outcome
+\textbf{P_positive_trend}. The analysis object is a paired method difference, so a locked
+paired-difference slope permutation is used instead of Spearman (reported as diagnostics
+only). The exact-degree means are not pointwise monotone, so the result is described as a
+\emph{positive overall trend}, never as a strictly monotonic increase.
+
+\paragraph{Interpretation.} The post-hoc stratified analysis shows that the advantage of UOT-KR over the one-to-one assignment baseline increases with truth source-level fan-out complexity. The overall H1 effect in the full R7 sample is therefore partly diluted by the large number of low-degree templates. This provides post-hoc evidence for a structural-complexity-dependent benefit, but does not change the original pre-registered H1 decision. This is \emph{consistent with} a dilution
+interpretation; it does not prove that many-to-many output semantics caused the H1 gain,
+because H1 still contrasts UOT-KR with a cost-optimal one-to-one baseline and therefore
+mixes a decoder difference with an output-constraint difference.
+
+\paragraph{One-to-one semantic ceiling.} The label-informed ceiling
+$2M_t/(T_t+M_t)$ decreases monotonically with $d_{max}$ (from
+0.7983 at $d=2$ to
+0.4996 at $d=8$). It is a
+\emph{label-informed semantic ceiling}, not a deployable baseline, and must not be
+conflated with HUNGARIAN\_1TO1.
+
+\paragraph{Limitations.} Post-hoc and non-preregistered; template-level stratification
+that differs from the seed-level primary estimand; synthetic confirmatory generator; a
+single confirmatory block.

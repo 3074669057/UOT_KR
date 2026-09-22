@@ -1,0 +1,31 @@
+{
+  "verifier_holdout_pass": true,
+  "issues": [],
+  "recomputed_decision": {
+    "gates": {
+      "A": true,
+      "B": true,
+      "C": true,
+      "D": true,
+      "E": true
+    },
+    "decoder_repair": "DECODER_REPAIR_CONFIRMED",
+    "transport_value_type": "TYPE A",
+    "recovery": {
+      "recovery_fraction": 1.068646337705537,
+      "denominator_D": 0.07056909658636515,
+      "degenerate": false,
+      "gate_c": true
+    },
+    "fp_fn": {
+      "fp_ratio": 1.0511259443996186,
+      "fn_ratio": 0.4945370902817709
+    },
+    "heterogeneous_effect": false
+  },
+  "n_cells": {
+    "Celer": "{301, 302, 303, 304, 305}",
+    "Multi": "{301, 302, 303, 304, 305}",
+    "Poly": "{301, 302, 303, 304, 305}"
+  }
+}

@@ -1,0 +1,47 @@
+cff-version: 1.2.0
+message: "If you use this artifact, please cite the manuscript and this release."
+title: "UOT_KR: Transport Representation and Conditional Decoding for Cross-Chain Forensic Fund-Flow Correspondence"
+version: "1.0-vldb-submission"
+abstract: >-
+  Artifact release for the manuscript "Non-One-to-One Cross-Chain Forensic Fund Flow
+  Correspondence: Transport Representation and Conditional Decoding". It contains the
+  method implementation (risk-weighted unbalanced optimal transport over flow segments,
+  directional conditional decoding, coverage-qualified abstention), the three released
+  experiment lines (R5 post-hoc hyper-parameter sensitivity and cost-component ablation;
+  R6 post-hoc direct-kernel k control; R7 degree-calibrated hash-locked one-shot
+  confirmatory kernel ranking), the frozen confirmatory package with its independent
+  validator, the figure/table authoring package with provenance audits, and a
+  risk-field empirical audit released as a negative result.
+type: software
+license:
+  - MIT
+  - CC-BY-4.0
+repository-code: "https://github.com/3074669057/UOT_KR"
+keywords:
+  - cross-chain forensics
+  - anti-money laundering
+  - fund-flow correspondence
+  - unbalanced optimal transport
+  - Sinkhorn decoding
+  - semi-synthetic evaluation
+  - reproducibility
+# ---------------------------------------------------------------------------
+# PLACEHOLDER AUTHOR METADATA -- replace before publication.
+# The release intentionally ships no personal author identifiers.
+# ---------------------------------------------------------------------------
+authors:
+  - family-names: "UOT_KR authors"
+    name-particle: ""
+    affiliation: "Replace with the final submission affiliation"
+contact:
+  - family-names: "UOT_KR authors"
+    affiliation: "Replace with the final submission affiliation"
+date-released: "2026-09-22"
+preferred-citation:
+  type: article
+  title: "Non-One-to-One Cross-Chain Forensic Fund Flow Correspondence: Transport Representation and Conditional Decoding"
+  authors:
+    - family-names: "UOT_KR authors"
+  year: 2026
+  journal: "Manuscript under review"
+  notes: "Author list, ORCIDs and venue are placeholders pending final submission metadata."

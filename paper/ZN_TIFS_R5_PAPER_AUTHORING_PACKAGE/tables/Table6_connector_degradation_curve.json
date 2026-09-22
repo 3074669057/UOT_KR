@@ -1,0 +1,64 @@
+{
+  "rows": [
+    {
+      "order": 0,
+      "mask_level": "full_native",
+      "connector_raw_f1": 0.9736140350877193,
+      "connector_raw_status": "ACCEPTED",
+      "connector_top1_adm_f1": 0.9736140350877193,
+      "rc_uot_q_joint_f1": 0.7084536082474227,
+      "rc_uot_q_joint_tx_cvr": 0.0,
+      "rc_uot_q_joint_coverage": 0.8453038674033149,
+      "connector_beats_rc": true,
+      "abctracer_status": "BLOCKED"
+    },
+    {
+      "order": 1,
+      "mask_level": "id_anchor_masked",
+      "connector_raw_f1": 0.9736140350877193,
+      "connector_raw_status": "ACCEPTED",
+      "connector_top1_adm_f1": 0.9736140350877193,
+      "rc_uot_q_joint_f1": 0.7086185567010309,
+      "rc_uot_q_joint_tx_cvr": 0.0,
+      "rc_uot_q_joint_coverage": 0.8453038674033149,
+      "connector_beats_rc": true,
+      "abctracer_status": "BLOCKED"
+    },
+    {
+      "order": 2,
+      "mask_level": "no_receiver",
+      "connector_raw_f1": null,
+      "connector_raw_status": "BLOCKED_BY_REQUIRED_RECEIVER_SEMANTICS",
+      "connector_top1_adm_f1": 0.0,
+      "rc_uot_q_joint_f1": 0.7000993048659385,
+      "rc_uot_q_joint_tx_cvr": 0.0,
+      "rc_uot_q_joint_coverage": 0.8406998158379374,
+      "connector_beats_rc": false,
+      "abctracer_status": "BLOCKED"
+    },
+    {
+      "order": 3,
+      "mask_level": "no_amount",
+      "connector_raw_f1": 0.0,
+      "connector_raw_status": "ZERO_PREDICTIONS_AFTER_AMOUNT_MASK",
+      "connector_top1_adm_f1": 0.0,
+      "rc_uot_q_joint_f1": 0.37140891106141405,
+      "rc_uot_q_joint_tx_cvr": 0.0,
+      "rc_uot_q_joint_coverage": 0.7320441988950276,
+      "connector_beats_rc": false,
+      "abctracer_status": "BLOCKED"
+    },
+    {
+      "order": 4,
+      "mask_level": "no_receiver_no_amount",
+      "connector_raw_f1": null,
+      "connector_raw_status": "BLOCKED_BY_REQUIRED_RECEIVER_SEMANTICS",
+      "connector_top1_adm_f1": 0.0,
+      "rc_uot_q_joint_f1": 0.37524341715350096,
+      "rc_uot_q_joint_tx_cvr": 0.0,
+      "rc_uot_q_joint_coverage": 0.8299570288520565,
+      "connector_beats_rc": false,
+      "abctracer_status": "BLOCKED"
+    }
+  ]
+}

@@ -1,0 +1,2820 @@
+﻿ FINAL_AUDIT_STATUS.md                              |      46 -
+ FINAL_CLAIM_SUMMARY.md                             |      48 -
+ PROJECT_FUNCTION_DATAFLOW_EN.txt                   |     277 -
+ PROJECT_FUNCTION_DATAFLOW_ZH.txt                   |     331 -
+ README.md                                          |     414 +-
+ config/defaults.json                               |       1 +
+ configs/celer_cbridge_abi_registry.json            |     200 -
+ docs/baseline_comparison_note.md                   |      49 +
+ docs/paper_readiness_checklist.md                  |      11 +
+ docs/table_1_dataset_label_statistics.md           |       2 +
+ manuscript_final/04_experiments.md                 |     209 +-
+ .../manuscript_final/03_tool_and_design.md         |       2 +-
+ .../manuscript_final/04_experiments.md             |      41 +-
+ .../manuscript_final/05_discussion.md              |      12 +-
+ .../cross_CN_ch4_tables_figures_plan.md            |      35 +-
+ .../ch4/appendix/figA1_evidence_claim_scope.pdf    |     Bin 33152 -> 33152 bytes
+ .../ch4/appendix/figA2_anchor_to_flow_pipeline.pdf |     Bin 15380 -> 15380 bytes
+ .../ch4/appendix/figA3_pattern_distribution.pdf    |     Bin 15645 -> 15645 bytes
+ .../ch4/appendix/figA4_baseline_comparison_2x2.pdf |     Bin 18695 -> 18695 bytes
+ .../figures/ch4/fig5_structural_recovery.pdf       |     Bin 15849 -> 15849 bytes
+ .../figures/ch4/fig6_coverage_scope.pdf            |     Bin 18038 -> 18038 bytes
+ .../figures/ch4/fig7_baseline_grouped_metrics.pdf  |     Bin 16955 -> 16893 bytes
+ .../figures/ch4/fig7_baseline_grouped_metrics.png  |     Bin 91487 -> 93588 bytes
+ .../manuscript_final/full_manuscript_final.md      |      61 +-
+ .../manuscript_final/references.bib                |     342 +-
+ .../audit/audit_phase21.json                       |      32 -
+ .../audit/audit_phase21.md                         |      26 -
+ .../phase21_quotient_candidates_corrected.csv      |    2785 -
+ .../phase21_bridge_key_classifier_ceiling.csv      |       7 -
+ .../phase21_bridge_key_classifier_ceiling.md       |       9 -
+ .../phase21_ceiling_progression_table.csv          |       4 -
+ ...hase21_corrected_quotient_feasibility_gate.json |      53 -
+ .../phase21_corrected_quotient_feasibility_gate.md |       3 -
+ .../phase21_corrected_quotient_infeasibility.md    |       3 -
+ .../diagnosis/phase21_corrected_score_report.md    |       4 -
+ .../diagnosis/phase21_projection_gap_audit.csv     |     421 -
+ .../diagnosis/phase21_projection_gap_summary.csv   |       3 -
+ .../diagnosis/phase21_projection_gap_summary.md    |       5 -
+ .../diagnosis/phase21_score_consistency_audit.csv  |      11 -
+ .../diagnosis/phase21_score_consistency_audit.json |       7 -
+ .../diagnosis/phase21_score_consistency_audit.md   |       6 -
+ .../phase21_quotient_pair_features_corrected.csv   |    2785 -
+ .../holdout/quotient_holdout_claim_gate.json       |      13 -
+ .../phase21_projection_coverage_report.md          |       4 -
+ .../quotient/phase21_event_backed_quotient.csv     |     230 -
+ .../phase21_event_plus_safe_singleton_quotient.csv |     230 -
+ .../splits/split_summary.json                      |      76 -
+ .../audit_phase26_balanced_superiority.json        |      10 +-
+ .../eval/uot_evaluation_metrics.json               |       8 +-
+ .../eval/uot_evaluation_metrics.json               |       8 +-
+ .../eval/uot_evaluation_metrics.json               |       8 +-
+ .../eval/uot_evaluation_metrics.json               |       8 +-
+ .../eval/uot_evaluation_metrics.json               |       8 +-
+ .../eval/uot_evaluation_metrics.json               |       8 +-
+ .../eval/uot_evaluation_metrics.json               |       8 +-
+ .../eval/uot_evaluation_metrics.json               |       8 +-
+ .../eval/uot_evaluation_metrics.json               |       8 +-
+ .../eval/uot_evaluation_metrics.json               |       8 +-
+ .../eval/uot_evaluation_metrics.json               |       8 +-
+ .../eval/uot_evaluation_metrics.json               |       8 +-
+ .../eval/uot_evaluation_metrics.json               |       8 +-
+ .../eval/uot_evaluation_metrics.json               |       8 +-
+ .../eval/uot_evaluation_metrics.json               |       8 +-
+ .../eval/uot_evaluation_metrics.json               |       8 +-
+ .../eval/uot_evaluation_metrics.json               |       8 +-
+ .../eval/uot_evaluation_metrics.json               |       8 +-
+ .../eval/uot_evaluation_metrics.json               |       8 +-
+ .../eval/uot_evaluation_metrics.json               |       8 +-
+ .../eval/uot_evaluation_metrics.json               |       8 +-
+ .../eval/uot_evaluation_metrics.json               |       8 +-
+ .../eval/uot_evaluation_metrics.json               |       8 +-
+ .../eval/uot_evaluation_metrics.json               |       8 +-
+ .../eval/uot_evaluation_metrics.json               |       8 +-
+ .../eval/uot_evaluation_metrics.json               |       8 +-
+ .../eval/uot_evaluation_metrics.json               |       8 +-
+ .../eval/uot_evaluation_metrics.json               |       8 +-
+ .../eval/uot_evaluation_metrics.json               |       8 +-
+ .../eval/uot_evaluation_metrics.json               |       8 +-
+ .../eval/uot_evaluation_metrics.json               |       4 +-
+ .../eval/uot_evaluation_metrics.json               |       4 +-
+ .../eval/uot_evaluation_metrics.json               |       8 +-
+ .../eval/uot_evaluation_metrics.json               |       8 +-
+ .../eval/uot_evaluation_metrics.json               |       8 +-
+ .../eval/uot_evaluation_metrics.json               |       8 +-
+ .../eval/uot_evaluation_metrics.json               |       8 +-
+ .../eval/uot_evaluation_metrics.json               |       8 +-
+ .../eval/uot_evaluation_metrics.json               |       8 +-
+ .../eval/uot_evaluation_metrics.json               |       8 +-
+ .../eval/uot_evaluation_metrics.json               |       8 +-
+ .../eval/uot_evaluation_metrics.json               |       8 +-
+ .../eval/uot_evaluation_metrics.json               |       8 +-
+ .../eval/uot_evaluation_metrics.json               |       8 +-
+ .../eval/uot_evaluation_metrics.json               |       8 +-
+ .../eval/uot_evaluation_metrics.json               |       8 +-
+ .../eval/uot_evaluation_metrics.json               |       8 +-
+ .../eval/uot_evaluation_metrics.json               |       8 +-
+ .../eval/uot_evaluation_metrics.json               |       8 +-
+ .../eval/uot_evaluation_metrics.json               |       8 +-
+ .../eval/uot_evaluation_metrics.json               |       8 +-
+ .../eval/uot_evaluation_metrics.json               |       8 +-
+ .../eval/uot_evaluation_metrics.json               |       8 +-
+ .../eval/eval/uot_evaluation_metrics.json          |       8 +-
+ .../real_pool_rc_uot/real_pool_rc_uot_eval.json    |       8 +-
+ .../table_c_real_celer_same_scope_comparison.csv   |       2 +-
+ out/rc_uot_v2_1/aggregate/decision_report.json     |      12 -
+ out/rc_uot_v2_1/aggregate/decision_report.md       |      24 -
+ out/rc_uot_v2_1/aggregate/development_summary.json |     135 -
+ out/rc_uot_v2_1/aggregate/development_summary.md   |      12 -
+ out/rc_uot_v2_1/aggregate/significance_report.json |      31 -
+ out/rc_uot_v2_1/audit/final_audit_report.json      |      51 -
+ out/rc_uot_v2_1/audit/final_audit_report.md        |      17 -
+ out/rc_uot_v2_1/audit/leakage_audit.json           |      26 -
+ .../confirmation/data_discovery_report.json        |      16 -
+ .../confirmation/eligible_data_manifest.jsonl      |       0
+ .../confirmation/ineligible_data_manifest.jsonl    |       1 -
+ out/rc_uot_v2_1/development/main_results.csv       |       9 -
+ out/rc_uot_v2_1/development/main_results.json      |     114 -
+ .../development/mechanism_ablations.json           |      77 -
+ .../lineage/forbidden_confirmation_data.json       |      21 -
+ .../lineage/predecessor_claim_boundary.md          |       6 -
+ out/rc_uot_v2_1/lineage/predecessor_manifest.json  |      11 -
+ out/rc_uot_v2_1/power/power_analysis.md            |       9 -
+ out/rc_uot_v2_1/power/required_sample_sizes.json   |      33 -
+ out/rc_uot_v2_1/protocol/benchmark_manifest.json   |   27441 -
+ out/rc_uot_v2_1/protocol/benchmark_manifest.jsonl  |    3048 -
+ out/rc_uot_v2_1/protocol/confirmation_data_spec.md |      10 -
+ out/rc_uot_v2_1/protocol/development_protocol.md   |      16 -
+ out/rc_uot_v2_1/protocol/search_space.json         |      29 -
+ .../reliability/forbidden_feature_registry.json    |      24 -
+ .../reliability/input_field_inventory.csv          |      85 -
+ .../reliability/input_field_inventory.md           |      90 -
+ .../reliability/reliability_feature_registry.json  |     178 -
+ .../reliability/reliability_feature_registry.md    |      17 -
+ .../reliability/reliability_signal_results.json    |      99 -
+ out/rc_uot_v2_1/seal/evaluator_seal.json           |      10 -
+ out/rc_uot_v2_1/seal/method_seal.json              |      21 -
+ out/rc_uot_v2_1/stage3_frozen/REPRODUCE.md         |      33 -
+ out/rc_uot_v2_1/stage3_frozen/manifest.json        |      48 -
+ out/rc_uot_v2_1/stage3_frozen/output_hashes.json   |      34 -
+ out/rc_uot_v2_1/stage3_frozen/source_hashes.json   |       7 -
+ out/rc_uot_v2_1/stage3_frozen/stage3_decision.md   |      21 -
+ .../acquisition_launch_checklist.md                |      27 -
+ out/rc_uot_v2_2/acquisition_launch/batch_plan.csv  |       6 -
+ out/rc_uot_v2_2/acquisition_launch/batch_plan.md   |      23 -
+ .../acquisition_launch/batch_plan_dynamic.md       |      25 -
+ .../cohort_allocation_protocol.md                  |      28 -
+ .../collection_forecast_template.json              |      24 -
+ .../collection_forecast_v4_3.json                  |      23 -
+ .../acquisition_launch/collection_forecast_v4_3.md |       6 -
+ .../confirmation_isolation_audit.json              |      40 -
+ .../corrected_sample_allocation.json               |      32 -
+ .../acquisition_launch/formal_runbook.md           |     119 -
+ .../provider_sample_validation_spec.md             |      23 -
+ .../acquisition_launch/stage_4_2_report.json       |      49 -
+ .../acquisition_launch/stage_4_2_report.md         |      34 -
+ out/rc_uot_v2_2/aggregate/.gitkeep                 |       0
+ out/rc_uot_v2_2/aggregate/decision_report.json     |      12 -
+ out/rc_uot_v2_2/aggregate/decision_report.md       |       1 -
+ out/rc_uot_v2_2/aggregate/stage_4_1_report.json    |      43 -
+ .../annotation/adjudication_schema.json            |      35 -
+ out/rc_uot_v2_2/annotation/ambiguity_examples.md   |      21 -
+ out/rc_uot_v2_2/annotation/annotation_guideline.md |      43 -
+ out/rc_uot_v2_2/annotation/annotation_schema.json  |      74 -
+ .../annotation/annotator_training_examples.jsonl   |       4 -
+ .../annotation/blind_batch_template.csv            |       3 -
+ .../annotation/disagreement_resolution.md          |      18 -
+ .../annotation/label_freeze_protocol.md            |      27 -
+ out/rc_uot_v2_2/audit/.gitkeep                     |       0
+ .../audit/confirmation_isolation_audit.json        |      31 -
+ out/rc_uot_v2_2/audit/confirmation_readiness.json  |      23 -
+ out/rc_uot_v2_2/audit/final_audit.json             |      17 -
+ out/rc_uot_v2_2/baselines/.gitkeep                 |       0
+ .../baselines/baseline_compatibility_report.json   |      24 -
+ out/rc_uot_v2_2/calibration/.gitkeep               |       0
+ out/rc_uot_v2_2/confirmation/.gitkeep              |       0
+ .../confirmation_vault/private_manifest.json       |       1 -
+ .../confirmation_vault/steward_seal.json           |      23 -
+ out/rc_uot_v2_2/data/.gitkeep                      |       0
+ out/rc_uot_v2_2/data_acquisition/batch_plan.csv    |       6 -
+ out/rc_uot_v2_2/data_acquisition/batch_plan.md     |      12 -
+ .../data_acquisition/collection_spec.md            |      57 -
+ .../collection_status_template.csv                 |      10 -
+ .../data_acquisition/data_provider_handoff.md      |      21 -
+ .../data_acquisition/forbidden_overlap_policy.md   |      21 -
+ .../data_acquisition/ingestion_example.csv         |       2 -
+ .../data_acquisition/ingestion_example.jsonl       |       1 -
+ .../data_acquisition/optional_fields.schema.json   |      45 -
+ .../data_acquisition/required_fields.schema.json   |     113 -
+ .../source_eligibility_checklist.md                |      26 -
+ out/rc_uot_v2_2/data_acquisition/status.json       |      22 -
+ out/rc_uot_v2_2/data_acquisition/status.md         |      34 -
+ out/rc_uot_v2_2/development/.gitkeep               |       0
+ out/rc_uot_v2_2/forbidden/.gitkeep                 |       0
+ .../forbidden/forbidden_confirmation_data.json     |      23 -
+ .../forbidden/overlap_checker_spec.json            |      14 -
+ out/rc_uot_v2_2/labeling/.gitkeep                  |       0
+ out/rc_uot_v2_2/protocol/.gitkeep                  |       0
+ .../protocol/ambiguity_enrichment_protocol.md      |      47 -
+ .../protocol/ambiguity_policy_seal.json            |      68 -
+ out/rc_uot_v2_2/protocol/annotation_guideline.md   |      39 -
+ .../protocol/cohort_allocation_protocol.md         |      45 -
+ .../protocol/cohort_allocator_seal.json            |      15 -
+ .../protocol/confirmation_public_manifest.json     |      14 -
+ .../protocol/confirmation_readiness_rules.json     |      68 -
+ out/rc_uot_v2_2/protocol/evaluator_seal.json       |      22 -
+ .../protocol/independence_group_definition.md      |      21 -
+ .../mechanism_enriched_cohort_manifest.jsonl       |       3 -
+ out/rc_uot_v2_2/protocol/new_data_spec.md          |      62 -
+ .../population_natural_cohort_manifest.jsonl       |       3 -
+ out/rc_uot_v2_2/protocol/power_analysis.json       |      65 -
+ out/rc_uot_v2_2/protocol/power_analysis.md         |      34 -
+ out/rc_uot_v2_2/protocol/preregistration.md        |      38 -
+ .../protocol/prospective_split_policy.json         |       7 -
+ .../protocol/sampling_estimand_definition.md       |      31 -
+ out/rc_uot_v2_2/provider_contract.zip              |     Bin 4248 -> 0 bytes
+ .../provider_contract/anti_triviality_gate.json    |      27 -
+ .../candidate_generation_policy.json               |      58 -
+ .../candidate_universe_contract.json               |      21 -
+ .../candidate_universe_contract.md                 |      22 -
+ .../collection_manifest.schema.json                |     144 -
+ .../dataset_directory.schema.json                  |      10 -
+ .../dataset_directory_contract.json                |      30 -
+ .../provider_contract/provider_contract.md         |      39 -
+ .../provider_contract/source_flow.schema.json      |     125 -
+ .../provider_contract/target_flow.schema.json      |     125 -
+ out/rc_uot_v2_2/provider_handoff_final.zip         |     Bin 14877 -> 0 bytes
+ out/rc_uot_v2_2/provider_handoff_final.zip.sha256  |       1 -
+ .../PILOT_SUBMISSION_INSTRUCTIONS.md               |      73 -
+ .../provider_handoff_final/README_FIRST.md         |      51 -
+ .../candidate_generation_policy.json               |      58 -
+ .../candidate_universe_contract.md                 |      25 -
+ .../source_flows.template.jsonl                    |       1 -
+ .../target_flows.template.jsonl                    |       1 -
+ .../provider_handoff_v4_3/README_FIRST.md          |       3 -
+ .../collection_manifest_template.json              |       4 -
+ .../forbidden_overlap_notice.md                    |       2 -
+ .../pilot_submission_instructions.md               |       3 -
+ .../provider_data_contract.md                      |       3 -
+ .../provider_handoff_v4_3/source_flow_template.csv |       1 -
+ .../provider_handoff_v4_3/target_flow_template.csv |       1 -
+ .../provider_handoff_v4_3/validation_checklist.md  |       4 -
+ out/rc_uot_v2_2/provider_handoff_v4_3a.zip         |     Bin 11906 -> 0 bytes
+ .../provider_handoff_v4_3a/ERROR_CODE_REFERENCE.md |      13 -
+ .../PRE_SUBMISSION_CHECKLIST.md                    |      14 -
+ .../_test_invalid_labels/collection_manifest.json  |       1 -
+ .../_test_invalid_labels/labels/gold_edges.jsonl   |       0
+ .../_test_invalid_labels/source_flows.jsonl        |       1 -
+ .../_test_invalid_labels/target_flows.jsonl        |       1 -
+ .../anti_triviality_gate.json                      |      27 -
+ .../candidate_generation_policy.json               |      24 -
+ .../collection_manifest.schema.json                |     144 -
+ .../collection_manifest.template.json              |      31 -
+ .../dataset_directory_contract.json                |      30 -
+ .../example_valid_p0/README.txt                    |       3 -
+ .../example_valid_p0/collection_manifest.json      |      31 -
+ .../example_valid_p0/source_flows.jsonl            |      25 -
+ .../example_valid_p0/target_flows.jsonl            |      22 -
+ .../provider_handoff_v4_3a/provider_contract.md    |      39 -
+ .../raw_evidence.template.jsonl                    |       1 -
+ .../route_metadata.template.jsonl                  |       1 -
+ .../provider_handoff_v4_3a/source_flow.schema.json |     125 -
+ .../source_flows.template.jsonl                    |      20 -
+ .../provider_handoff_v4_3a/target_flow.schema.json |     125 -
+ .../target_flows.template.jsonl                    |      20 -
+ .../_test_invalid_labels/decision.json             |       5 -
+ .../_test_invalid_labels/input_manifest.json       |       6 -
+ .../_test_invalid_labels/schema_errors.csv         |       2 -
+ .../_test_invalid_labels/semantic_errors.csv       |       1 -
+ .../_test_invalid_labels/validation_report.json    |      28 -
+ .../_test_invalid_labels/validation_report.md      |      18 -
+ .../provider_pilot/example_valid_p0/decision.json  |       5 -
+ .../example_valid_p0/input_manifest.json           |      20 -
+ .../example_valid_p0/schema_errors.csv             |       1 -
+ .../example_valid_p0/semantic_errors.csv           |       1 -
+ .../example_valid_p0/validation_report.json        |      31 -
+ .../example_valid_p0/validation_report.md          |      26 -
+ out/rc_uot_v2_2/provider_pilot/p0_status.json      |      10 -
+ .../acquisition_handoff_checklist.md               |      27 -
+ .../formal_execution_runbook.md                    |     112 -
+ .../power_threshold_correction.md                  |      25 -
+ .../readiness_gate_test_report.json                |      57 -
+ .../readiness_hardening/stage_4_1_report.json      |      43 -
+ .../readiness_hardening/stage_4_1_report.md        |      63 -
+ .../readiness_hardening/stub_coverage_report.json  |     199 -
+ .../synthetic_e2e_test_report.json                 |       9 -
+ out/rc_uot_v2_2/reliability/.gitkeep               |       0
+ .../reliability/feature_correlation_matrix.csv     |      16 -
+ .../reliability/feature_diagnostic_report.csv      |      16 -
+ .../reliability/feature_diagnostic_report.json     |     195 -
+ out/rc_uot_v2_2/stage3_reference/.gitkeep          |       0
+ .../stage_4_3/anti_triviality_gate_spec.json       |      10 -
+ .../stage_4_3/cohort_allocator_test_report.json    |       5 -
+ .../stage_4_3/data_contract_consistency_audit.json |       5 -
+ .../stage_4_3/forecast_consistency_audit.json      |       4 -
+ .../stage_4_3/provider_pilot_status.json           |       6 -
+ .../stage_4_3/role_isolation_test_report.json      |       5 -
+ out/rc_uot_v2_2/stage_4_3/stage_4_3_report.json    |      15 -
+ out/rc_uot_v2_2/stage_4_3/stage_4_3_report.md      |      26 -
+ out/rc_uot_v2_2/stage_4_3a/final_status.json       |       8 -
+ .../stage_4_3a/json_schema_completeness_audit.json |      12 -
+ out/rc_uot_v2_2/stage_4_3a/p0_cli_test_report.json |       5 -
+ .../stage_4_3a/provider_bundle_manifest.json       |      10 -
+ .../stage_4_3a/semantic_validator_test_report.json |       6 -
+ out/rc_uot_v2_2/stage_4_3a/stage_4_3a_report.json  |      43 -
+ out/rc_uot_v2_2/stage_4_3a/stage_4_3a_report.md    |      13 -
+ ...65\201\347\250\213\350\257\246\350\247\243.txt" |     718 -
+ review_pack/git_diff_stat.txt                      |       1 -
+ review_pack/git_info.txt                           |       5 -
+ .../ablation/ablation_multi_seed_aggregated.json   |    3019 -
+ .../results/ablation/ablation_multi_seed_table.csv |      10 -
+ .../eval/ablation_metrics.csv                      |       2 -
+ .../eval/synthetic_eval_by_scenario.csv            |       6 -
+ .../eval/uot_eval_by_pattern.csv                   |       4 -
+ .../eval/uot_eval_summary.txt                      |       6 -
+ .../eval/uot_evaluation_metrics.json               |      77 -
+ .../synthetic_metrics_summary.json                 |      10 -
+ .../uot/causal_feasibility_summary.json            |      15 -
+ .../uot/flow_segments_bnb.csv                      |     289 -
+ .../uot/flow_segments_eth.csv                      |     289 -
+ .../uot/traceability_index.csv                     |   26769 -
+ .../uot/uot_cost_components_sparse.csv.gz          |     Bin 255149 -> 0 bytes
+ .../synthetic_eval_seed_42/uot/uot_cost_matrix.npz |     Bin 111898 -> 0 bytes
+ .../uot/uot_diagnostics.json                       |    1225 -
+ .../uot/uot_flow_correspondence.csv                |      21 -
+ .../uot/uot_flow_segments_bnb.csv                  |     289 -
+ .../uot/uot_flow_segments_eth.csv                  |     289 -
+ .../synthetic_eval_seed_42/uot/uot_marginals.csv   |     577 -
+ .../uot/uot_split_merge_summary.json               |      10 -
+ .../synthetic_eval_seed_42/uot/uot_summary.json    |      23 -
+ .../uot/uot_transport_matrix.npz                   |     Bin 98032 -> 0 bytes
+ .../uot/uot_transport_plan.csv                     |   26769 -
+ .../uot/uot_unmatched_mass.csv                     |     577 -
+ .../eval/ablation_metrics.csv                      |       2 -
+ .../eval/synthetic_eval_by_scenario.csv            |       6 -
+ .../eval/uot_eval_by_pattern.csv                   |       4 -
+ .../eval/uot_eval_summary.txt                      |       6 -
+ .../eval/uot_evaluation_metrics.json               |      77 -
+ .../synthetic_metrics_summary.json                 |      10 -
+ .../uot/causal_feasibility_summary.json            |      15 -
+ .../uot/flow_segments_bnb.csv                      |     289 -
+ .../uot/flow_segments_eth.csv                      |     289 -
+ .../uot/traceability_index.csv                     |   38749 -
+ .../uot/uot_cost_components_sparse.csv.gz          |     Bin 529308 -> 0 bytes
+ .../synthetic_eval_seed_43/uot/uot_cost_matrix.npz |     Bin 114200 -> 0 bytes
+ .../uot/uot_diagnostics.json                       |    1225 -
+ .../uot/uot_flow_segments_bnb.csv                  |     289 -
+ .../uot/uot_flow_segments_eth.csv                  |     289 -
+ .../synthetic_eval_seed_43/uot/uot_marginals.csv   |     577 -
+ .../uot/uot_split_merge_summary.json               |      10 -
+ .../synthetic_eval_seed_43/uot/uot_summary.json    |      24 -
+ .../uot/uot_transport_matrix.npz                   |     Bin 99895 -> 0 bytes
+ .../uot/uot_transport_plan.csv                     |   38749 -
+ .../uot/uot_unmatched_mass.csv                     |     577 -
+ .../eval/ablation_metrics.csv                      |       2 -
+ .../eval/synthetic_eval_by_scenario.csv            |       6 -
+ .../eval/uot_eval_by_pattern.csv                   |       4 -
+ .../eval/uot_eval_summary.txt                      |       6 -
+ .../eval/uot_evaluation_metrics.json               |      77 -
+ .../synthetic_metrics_summary.json                 |      10 -
+ .../uot/causal_feasibility_summary.json            |      15 -
+ .../uot/flow_segments_bnb.csv                      |     289 -
+ .../uot/flow_segments_eth.csv                      |     289 -
+ .../uot/traceability_index.csv                     |   48609 -
+ .../uot/uot_cost_components_sparse.csv.gz          |     Bin 707980 -> 0 bytes
+ .../synthetic_eval_seed_44/uot/uot_cost_matrix.npz |     Bin 116047 -> 0 bytes
+ .../uot/uot_diagnostics.json                       |    1225 -
+ .../uot/uot_flow_segments_bnb.csv                  |     289 -
+ .../uot/uot_flow_segments_eth.csv                  |     289 -
+ .../synthetic_eval_seed_44/uot/uot_marginals.csv   |     577 -
+ .../uot/uot_split_merge_summary.json               |      10 -
+ .../synthetic_eval_seed_44/uot/uot_summary.json    |      24 -
+ .../uot/uot_transport_matrix.npz                   |     Bin 98073 -> 0 bytes
+ .../uot/uot_transport_plan.csv                     |   48609 -
+ .../uot/uot_unmatched_mass.csv                     |     577 -
+ .../eval/ablation_metrics.csv                      |       2 -
+ .../eval/synthetic_eval_by_scenario.csv            |       6 -
+ .../eval/uot_eval_by_pattern.csv                   |       4 -
+ .../eval/uot_eval_summary.txt                      |       6 -
+ .../eval/uot_evaluation_metrics.json               |      77 -
+ .../synthetic_metrics_summary.json                 |      10 -
+ .../uot/causal_feasibility_summary.json            |      15 -
+ .../uot/flow_segments_bnb.csv                      |     289 -
+ .../uot/flow_segments_eth.csv                      |     289 -
+ .../uot/traceability_index.csv                     |   32669 -
+ .../uot/uot_cost_components_sparse.csv.gz          |     Bin 380677 -> 0 bytes
+ .../synthetic_eval_seed_45/uot/uot_cost_matrix.npz |     Bin 115662 -> 0 bytes
+ .../uot/uot_diagnostics.json                       |    1225 -
+ .../uot/uot_flow_correspondence.csv                |      21 -
+ .../uot/uot_flow_segments_bnb.csv                  |     289 -
+ .../uot/uot_flow_segments_eth.csv                  |     289 -
+ .../synthetic_eval_seed_45/uot/uot_marginals.csv   |     577 -
+ .../uot/uot_split_merge_summary.json               |      10 -
+ .../synthetic_eval_seed_45/uot/uot_summary.json    |      23 -
+ .../uot/uot_transport_matrix.npz                   |     Bin 99864 -> 0 bytes
+ .../uot/uot_transport_plan.csv                     |   32669 -
+ .../uot/uot_unmatched_mass.csv                     |     577 -
+ .../eval/ablation_metrics.csv                      |       2 -
+ .../eval/synthetic_eval_by_scenario.csv            |       6 -
+ .../eval/uot_eval_by_pattern.csv                   |       4 -
+ .../eval/uot_eval_summary.txt                      |       6 -
+ .../eval/uot_evaluation_metrics.json               |      77 -
+ .../synthetic_metrics_summary.json                 |      10 -
+ .../uot/causal_feasibility_summary.json            |      15 -
+ .../uot/flow_segments_bnb.csv                      |     289 -
+ .../uot/flow_segments_eth.csv                      |     289 -
+ .../uot/traceability_index.csv                     |   30785 -
+ .../uot/uot_cost_components_sparse.csv.gz          |     Bin 378439 -> 0 bytes
+ .../synthetic_eval_seed_46/uot/uot_cost_matrix.npz |     Bin 114355 -> 0 bytes
+ .../uot/uot_diagnostics.json                       |    1225 -
+ .../uot/uot_flow_correspondence.csv                |      41 -
+ .../uot/uot_flow_segments_bnb.csv                  |     289 -
+ .../uot/uot_flow_segments_eth.csv                  |     289 -
+ .../synthetic_eval_seed_46/uot/uot_marginals.csv   |     577 -
+ .../uot/uot_split_merge_summary.json               |      10 -
+ .../synthetic_eval_seed_46/uot/uot_summary.json    |      23 -
+ .../uot/uot_transport_matrix.npz                   |     Bin 98522 -> 0 bytes
+ .../uot/uot_transport_plan.csv                     |   30785 -
+ .../uot/uot_unmatched_mass.csv                     |     577 -
+ .../eval/ablation_metrics.csv                      |       2 -
+ .../eval/synthetic_eval_by_scenario.csv            |       6 -
+ .../eval/uot_eval_by_pattern.csv                   |       4 -
+ .../eval/uot_eval_summary.txt                      |       6 -
+ .../eval/uot_evaluation_metrics.json               |      77 -
+ .../flow_segments_bnb_synth.csv                    |     289 -
+ .../flow_segments_eth_synth.csv                    |     289 -
+ .../labels/synthetic_flow_labels.csv               |     337 -
+ .../labels/synthetic_uot_eval_metrics.json         |    5257 -
+ .../synthetic_metrics_summary.json                 |      10 -
+ .../uot/causal_feasibility_summary.json            |      15 -
+ .../uot/flow_segments_bnb.csv                      |     289 -
+ .../uot/flow_segments_eth.csv                      |     289 -
+ .../uot/traceability_index.csv                     |   23881 -
+ .../uot/uot_cost_components_sparse.csv.gz          |     Bin 205962 -> 0 bytes
+ .../synthetic_eval_seed_42/uot/uot_cost_matrix.npz |     Bin 111898 -> 0 bytes
+ .../uot/uot_diagnostics.json                       |    1224 -
+ .../uot/uot_flow_correspondence.csv                |      21 -
+ .../uot/uot_flow_segments_bnb.csv                  |     289 -
+ .../uot/uot_flow_segments_eth.csv                  |     289 -
+ .../synthetic_eval_seed_42/uot/uot_marginals.csv   |     577 -
+ .../uot/uot_split_merge_summary.json               |      10 -
+ .../synthetic_eval_seed_42/uot/uot_summary.json    |      23 -
+ .../uot/uot_transport_matrix.npz                   |     Bin 99403 -> 0 bytes
+ .../uot/uot_transport_plan.csv                     |   23881 -
+ .../uot/uot_unmatched_mass.csv                     |     577 -
+ .../eval/ablation_metrics.csv                      |       2 -
+ .../eval/synthetic_eval_by_scenario.csv            |       6 -
+ .../eval/uot_eval_by_pattern.csv                   |       4 -
+ .../eval/uot_eval_summary.txt                      |       6 -
+ .../eval/uot_evaluation_metrics.json               |      77 -
+ .../flow_segments_bnb_synth.csv                    |     289 -
+ .../flow_segments_eth_synth.csv                    |     289 -
+ .../labels/synthetic_flow_labels.csv               |     337 -
+ .../labels/synthetic_uot_eval_metrics.json         |    5257 -
+ .../synthetic_metrics_summary.json                 |      10 -
+ .../uot/causal_feasibility_summary.json            |      15 -
+ .../uot/flow_segments_bnb.csv                      |     289 -
+ .../uot/flow_segments_eth.csv                      |     289 -
+ .../uot/traceability_index.csv                     |   30941 -
+ .../uot/uot_cost_components_sparse.csv.gz          |     Bin 402454 -> 0 bytes
+ .../synthetic_eval_seed_43/uot/uot_cost_matrix.npz |     Bin 114200 -> 0 bytes
+ .../uot/uot_diagnostics.json                       |    1224 -
+ .../uot/uot_flow_segments_bnb.csv                  |     289 -
+ .../uot/uot_flow_segments_eth.csv                  |     289 -
+ .../synthetic_eval_seed_43/uot/uot_marginals.csv   |     577 -
+ .../uot/uot_split_merge_summary.json               |      10 -
+ .../synthetic_eval_seed_43/uot/uot_summary.json    |      24 -
+ .../uot/uot_transport_matrix.npz                   |     Bin 99465 -> 0 bytes
+ .../uot/uot_transport_plan.csv                     |   30941 -
+ .../uot/uot_unmatched_mass.csv                     |     577 -
+ .../eval/ablation_metrics.csv                      |       2 -
+ .../eval/synthetic_eval_by_scenario.csv            |       6 -
+ .../eval/uot_eval_by_pattern.csv                   |       4 -
+ .../eval/uot_eval_summary.txt                      |       6 -
+ .../eval/uot_evaluation_metrics.json               |      77 -
+ .../flow_segments_bnb_synth.csv                    |     289 -
+ .../flow_segments_eth_synth.csv                    |     289 -
+ .../labels/synthetic_flow_labels.csv               |     337 -
+ .../labels/synthetic_uot_eval_metrics.json         |    5257 -
+ .../synthetic_metrics_summary.json                 |      10 -
+ .../uot/causal_feasibility_summary.json            |      15 -
+ .../uot/flow_segments_bnb.csv                      |     289 -
+ .../uot/flow_segments_eth.csv                      |     289 -
+ .../uot/traceability_index.csv                     |   40381 -
+ .../uot/uot_cost_components_sparse.csv.gz          |     Bin 560701 -> 0 bytes
+ .../synthetic_eval_seed_44/uot/uot_cost_matrix.npz |     Bin 116047 -> 0 bytes
+ .../uot/uot_diagnostics.json                       |    1224 -
+ .../uot/uot_flow_segments_bnb.csv                  |     289 -
+ .../uot/uot_flow_segments_eth.csv                  |     289 -
+ .../synthetic_eval_seed_44/uot/uot_marginals.csv   |     577 -
+ .../uot/uot_split_merge_summary.json               |      10 -
+ .../synthetic_eval_seed_44/uot/uot_summary.json    |      24 -
+ .../uot/uot_transport_matrix.npz                   |     Bin 97877 -> 0 bytes
+ .../uot/uot_transport_plan.csv                     |   40381 -
+ .../uot/uot_unmatched_mass.csv                     |     577 -
+ .../eval/ablation_metrics.csv                      |       2 -
+ .../eval/synthetic_eval_by_scenario.csv            |       6 -
+ .../eval/uot_eval_by_pattern.csv                   |       4 -
+ .../eval/uot_eval_summary.txt                      |       6 -
+ .../eval/uot_evaluation_metrics.json               |      77 -
+ .../flow_segments_bnb_synth.csv                    |     289 -
+ .../flow_segments_eth_synth.csv                    |     289 -
+ .../labels/synthetic_flow_labels.csv               |     337 -
+ .../labels/synthetic_uot_eval_metrics.json         |    5257 -
+ .../synthetic_metrics_summary.json                 |      10 -
+ .../uot/causal_feasibility_summary.json            |      15 -
+ .../uot/flow_segments_bnb.csv                      |     289 -
+ .../uot/flow_segments_eth.csv                      |     289 -
+ .../uot/traceability_index.csv                     |   28013 -
+ .../uot/uot_cost_components_sparse.csv.gz          |     Bin 295901 -> 0 bytes
+ .../synthetic_eval_seed_45/uot/uot_cost_matrix.npz |     Bin 115662 -> 0 bytes
+ .../uot/uot_diagnostics.json                       |    1224 -
+ .../uot/uot_flow_correspondence.csv                |      21 -
+ .../uot/uot_flow_segments_bnb.csv                  |     289 -
+ .../uot/uot_flow_segments_eth.csv                  |     289 -
+ .../synthetic_eval_seed_45/uot/uot_marginals.csv   |     577 -
+ .../uot/uot_split_merge_summary.json               |      10 -
+ .../synthetic_eval_seed_45/uot/uot_summary.json    |      23 -
+ .../uot/uot_transport_matrix.npz                   |     Bin 98834 -> 0 bytes
+ .../uot/uot_transport_plan.csv                     |   28013 -
+ .../uot/uot_unmatched_mass.csv                     |     577 -
+ .../eval/ablation_metrics.csv                      |       2 -
+ .../eval/synthetic_eval_by_scenario.csv            |       6 -
+ .../eval/uot_eval_by_pattern.csv                   |       4 -
+ .../eval/uot_eval_summary.txt                      |       6 -
+ .../eval/uot_evaluation_metrics.json               |      77 -
+ .../flow_segments_bnb_synth.csv                    |     289 -
+ .../flow_segments_eth_synth.csv                    |     289 -
+ .../labels/synthetic_flow_labels.csv               |     337 -
+ .../labels/synthetic_uot_eval_metrics.json         |    5257 -
+ .../synthetic_metrics_summary.json                 |      10 -
+ .../uot/causal_feasibility_summary.json            |      15 -
+ .../uot/flow_segments_bnb.csv                      |     289 -
+ .../uot/flow_segments_eth.csv                      |     289 -
+ .../uot/traceability_index.csv                     |   28297 -
+ .../uot/uot_cost_components_sparse.csv.gz          |     Bin 320571 -> 0 bytes
+ .../synthetic_eval_seed_46/uot/uot_cost_matrix.npz |     Bin 114355 -> 0 bytes
+ .../uot/uot_diagnostics.json                       |    1224 -
+ .../uot/uot_flow_correspondence.csv                |      41 -
+ .../uot/uot_flow_segments_bnb.csv                  |     289 -
+ .../uot/uot_flow_segments_eth.csv                  |     289 -
+ .../synthetic_eval_seed_46/uot/uot_marginals.csv   |     577 -
+ .../uot/uot_split_merge_summary.json               |      10 -
+ .../synthetic_eval_seed_46/uot/uot_summary.json    |      23 -
+ .../uot/uot_transport_matrix.npz                   |     Bin 98450 -> 0 bytes
+ .../uot/uot_transport_plan.csv                     |   28297 -
+ .../uot/uot_unmatched_mass.csv                     |     577 -
+ .../eval/ablation_metrics.csv                      |       2 -
+ .../eval/synthetic_eval_by_scenario.csv            |       6 -
+ .../eval/uot_eval_by_pattern.csv                   |       4 -
+ .../eval/uot_eval_summary.txt                      |       6 -
+ .../eval/uot_evaluation_metrics.json               |      77 -
+ .../synthetic_metrics_summary.json                 |      10 -
+ .../uot/causal_feasibility_summary.json            |      15 -
+ .../uot/flow_segments_bnb.csv                      |     289 -
+ .../uot/flow_segments_eth.csv                      |     289 -
+ .../uot/traceability_index.csv                     |   13245 -
+ .../uot/uot_cost_components_sparse.csv.gz          |     Bin 110974 -> 0 bytes
+ .../synthetic_eval_seed_42/uot/uot_cost_matrix.npz |     Bin 112332 -> 0 bytes
+ .../uot/uot_diagnostics.json                       |    1225 -
+ .../uot/uot_flow_correspondence.csv                |      21 -
+ .../uot/uot_flow_segments_bnb.csv                  |     289 -
+ .../uot/uot_flow_segments_eth.csv                  |     289 -
+ .../synthetic_eval_seed_42/uot/uot_marginals.csv   |     577 -
+ .../uot/uot_split_merge_summary.json               |      10 -
+ .../synthetic_eval_seed_42/uot/uot_summary.json    |      23 -
+ .../uot/uot_transport_matrix.npz                   |     Bin 98985 -> 0 bytes
+ .../uot/uot_transport_plan.csv                     |   13245 -
+ .../uot/uot_unmatched_mass.csv                     |     577 -
+ .../eval/ablation_metrics.csv                      |       2 -
+ .../eval/synthetic_eval_by_scenario.csv            |       6 -
+ .../eval/uot_eval_by_pattern.csv                   |       4 -
+ .../eval/uot_eval_summary.txt                      |       6 -
+ .../eval/uot_evaluation_metrics.json               |      77 -
+ .../synthetic_metrics_summary.json                 |      10 -
+ .../uot/causal_feasibility_summary.json            |      15 -
+ .../uot/flow_segments_bnb.csv                      |     289 -
+ .../uot/flow_segments_eth.csv                      |     289 -
+ .../uot/traceability_index.csv                     |   19173 -
+ .../uot/uot_cost_components_sparse.csv.gz          |     Bin 148759 -> 0 bytes
+ .../synthetic_eval_seed_43/uot/uot_cost_matrix.npz |     Bin 114531 -> 0 bytes
+ .../uot/uot_diagnostics.json                       |    1225 -
+ .../uot/uot_flow_segments_bnb.csv                  |     289 -
+ .../uot/uot_flow_segments_eth.csv                  |     289 -
+ .../synthetic_eval_seed_43/uot/uot_marginals.csv   |     577 -
+ .../uot/uot_split_merge_summary.json               |      10 -
+ .../synthetic_eval_seed_43/uot/uot_summary.json    |      24 -
+ .../uot/uot_transport_matrix.npz                   |     Bin 98705 -> 0 bytes
+ .../uot/uot_transport_plan.csv                     |   19173 -
+ .../uot/uot_unmatched_mass.csv                     |     577 -
+ .../eval/ablation_metrics.csv                      |       2 -
+ .../eval/synthetic_eval_by_scenario.csv            |       6 -
+ .../eval/uot_eval_by_pattern.csv                   |       4 -
+ .../eval/uot_eval_summary.txt                      |       6 -
+ .../eval/uot_evaluation_metrics.json               |      77 -
+ .../synthetic_metrics_summary.json                 |      10 -
+ .../uot/causal_feasibility_summary.json            |      15 -
+ .../uot/flow_segments_bnb.csv                      |     289 -
+ .../uot/flow_segments_eth.csv                      |     289 -
+ .../uot/traceability_index.csv                     |   24081 -
+ .../uot/uot_cost_components_sparse.csv.gz          |     Bin 209955 -> 0 bytes
+ .../synthetic_eval_seed_44/uot/uot_cost_matrix.npz |     Bin 116378 -> 0 bytes
+ .../uot/uot_diagnostics.json                       |    1225 -
+ .../uot/uot_flow_segments_bnb.csv                  |     289 -
+ .../uot/uot_flow_segments_eth.csv                  |     289 -
+ .../synthetic_eval_seed_44/uot/uot_marginals.csv   |     577 -
+ .../uot/uot_split_merge_summary.json               |      10 -
+ .../synthetic_eval_seed_44/uot/uot_summary.json    |      24 -
+ .../uot/uot_transport_matrix.npz                   |     Bin 97490 -> 0 bytes
+ .../uot/uot_transport_plan.csv                     |   24081 -
+ .../uot/uot_unmatched_mass.csv                     |     577 -
+ .../eval/ablation_metrics.csv                      |       2 -
+ .../eval/synthetic_eval_by_scenario.csv            |       6 -
+ .../eval/uot_eval_by_pattern.csv                   |       4 -
+ .../eval/uot_eval_summary.txt                      |       6 -
+ .../eval/uot_evaluation_metrics.json               |      77 -
+ .../synthetic_metrics_summary.json                 |      10 -
+ .../uot/causal_feasibility_summary.json            |      15 -
+ .../uot/flow_segments_bnb.csv                      |     289 -
+ .../uot/flow_segments_eth.csv                      |     289 -
+ .../uot/traceability_index.csv                     |   16133 -
+ .../uot/uot_cost_components_sparse.csv.gz          |     Bin 124599 -> 0 bytes
+ .../synthetic_eval_seed_45/uot/uot_cost_matrix.npz |     Bin 116022 -> 0 bytes
+ .../uot/uot_diagnostics.json                       |    1225 -
+ .../uot/uot_flow_correspondence.csv                |      21 -
+ .../uot/uot_flow_segments_bnb.csv                  |     289 -
+ .../uot/uot_flow_segments_eth.csv                  |     289 -
+ .../synthetic_eval_seed_45/uot/uot_marginals.csv   |     577 -
+ .../uot/uot_split_merge_summary.json               |      10 -
+ .../synthetic_eval_seed_45/uot/uot_summary.json    |      23 -
+ .../uot/uot_transport_matrix.npz                   |     Bin 98758 -> 0 bytes
+ .../uot/uot_transport_plan.csv                     |   16133 -
+ .../uot/uot_unmatched_mass.csv                     |     577 -
+ .../eval/ablation_metrics.csv                      |       2 -
+ .../eval/synthetic_eval_by_scenario.csv            |       6 -
+ .../eval/uot_eval_by_pattern.csv                   |       4 -
+ .../eval/uot_eval_summary.txt                      |       6 -
+ .../eval/uot_evaluation_metrics.json               |      77 -
+ .../synthetic_metrics_summary.json                 |      10 -
+ .../uot/causal_feasibility_summary.json            |      15 -
+ .../uot/flow_segments_bnb.csv                      |     289 -
+ .../uot/flow_segments_eth.csv                      |     289 -
+ .../uot/traceability_index.csv                     |   17729 -
+ .../uot/uot_cost_components_sparse.csv.gz          |     Bin 152047 -> 0 bytes
+ .../synthetic_eval_seed_46/uot/uot_cost_matrix.npz |     Bin 114815 -> 0 bytes
+ .../uot/uot_diagnostics.json                       |    1225 -
+ .../uot/uot_flow_correspondence.csv                |      41 -
+ .../uot/uot_flow_segments_bnb.csv                  |     289 -
+ .../uot/uot_flow_segments_eth.csv                  |     289 -
+ .../synthetic_eval_seed_46/uot/uot_marginals.csv   |     577 -
+ .../uot/uot_split_merge_summary.json               |      10 -
+ .../synthetic_eval_seed_46/uot/uot_summary.json    |      23 -
+ .../uot/uot_transport_matrix.npz                   |     Bin 97692 -> 0 bytes
+ .../uot/uot_transport_plan.csv                     |   17729 -
+ .../uot/uot_unmatched_mass.csv                     |     577 -
+ .../eval/ablation_metrics.csv                      |       2 -
+ .../eval/synthetic_eval_by_scenario.csv            |       6 -
+ .../eval/uot_eval_by_pattern.csv                   |       4 -
+ .../eval/uot_eval_summary.txt                      |       6 -
+ .../eval/uot_evaluation_metrics.json               |      77 -
+ .../synthetic_metrics_summary.json                 |      10 -
+ .../uot/causal_feasibility_summary.json            |      15 -
+ .../uot/flow_segments_bnb.csv                      |     289 -
+ .../uot/flow_segments_eth.csv                      |     289 -
+ .../uot/traceability_index.csv                     |   21001 -
+ .../uot/uot_cost_components_sparse.csv.gz          |     Bin 170612 -> 0 bytes
+ .../synthetic_eval_seed_42/uot/uot_cost_matrix.npz |     Bin 97435 -> 0 bytes
+ .../uot/uot_diagnostics.json                       |    1225 -
+ .../uot/uot_flow_correspondence.csv                |      21 -
+ .../uot/uot_flow_segments_bnb.csv                  |     289 -
+ .../uot/uot_flow_segments_eth.csv                  |     289 -
+ .../synthetic_eval_seed_42/uot/uot_marginals.csv   |     577 -
+ .../uot/uot_split_merge_summary.json               |      10 -
+ .../synthetic_eval_seed_42/uot/uot_summary.json    |      23 -
+ .../uot/uot_transport_matrix.npz                   |     Bin 97790 -> 0 bytes
+ .../uot/uot_transport_plan.csv                     |   21001 -
+ .../uot/uot_unmatched_mass.csv                     |     577 -
+ .../eval/ablation_metrics.csv                      |       2 -
+ .../eval/synthetic_eval_by_scenario.csv            |       6 -
+ .../eval/uot_eval_by_pattern.csv                   |       4 -
+ .../eval/uot_eval_summary.txt                      |       6 -
+ .../eval/uot_evaluation_metrics.json               |      77 -
+ .../synthetic_metrics_summary.json                 |      10 -
+ .../uot/causal_feasibility_summary.json            |      15 -
+ .../uot/flow_segments_bnb.csv                      |     289 -
+ .../uot/flow_segments_eth.csv                      |     289 -
+ .../uot/traceability_index.csv                     |   29837 -
+ .../uot/uot_cost_components_sparse.csv.gz          |     Bin 392479 -> 0 bytes
+ .../synthetic_eval_seed_43/uot/uot_cost_matrix.npz |     Bin 98449 -> 0 bytes
+ .../uot/uot_diagnostics.json                       |    1225 -
+ .../uot/uot_flow_segments_bnb.csv                  |     289 -
+ .../uot/uot_flow_segments_eth.csv                  |     289 -
+ .../synthetic_eval_seed_43/uot/uot_marginals.csv   |     577 -
+ .../uot/uot_split_merge_summary.json               |      10 -
+ .../synthetic_eval_seed_43/uot/uot_summary.json    |      24 -
+ .../uot/uot_transport_matrix.npz                   |     Bin 100614 -> 0 bytes
+ .../uot/uot_transport_plan.csv                     |   29837 -
+ .../uot/uot_unmatched_mass.csv                     |     577 -
+ .../eval/ablation_metrics.csv                      |       2 -
+ .../eval/synthetic_eval_by_scenario.csv            |       6 -
+ .../eval/uot_eval_by_pattern.csv                   |       4 -
+ .../eval/uot_eval_summary.txt                      |       6 -
+ .../eval/uot_evaluation_metrics.json               |      77 -
+ .../synthetic_metrics_summary.json                 |      10 -
+ .../uot/causal_feasibility_summary.json            |      15 -
+ .../uot/flow_segments_bnb.csv                      |     289 -
+ .../uot/flow_segments_eth.csv                      |     289 -
+ .../uot/traceability_index.csv                     |   40405 -
+ .../uot/uot_cost_components_sparse.csv.gz          |     Bin 568630 -> 0 bytes
+ .../synthetic_eval_seed_44/uot/uot_cost_matrix.npz |     Bin 100048 -> 0 bytes
+ .../uot/uot_diagnostics.json                       |    1225 -
+ .../uot/uot_flow_segments_bnb.csv                  |     289 -
+ .../uot/uot_flow_segments_eth.csv                  |     289 -
+ .../synthetic_eval_seed_44/uot/uot_marginals.csv   |     577 -
+ .../uot/uot_split_merge_summary.json               |      10 -
+ .../synthetic_eval_seed_44/uot/uot_summary.json    |      24 -
+ .../uot/uot_transport_matrix.npz                   |     Bin 98092 -> 0 bytes
+ .../uot/uot_transport_plan.csv                     |   40405 -
+ .../uot/uot_unmatched_mass.csv                     |     577 -
+ .../eval/ablation_metrics.csv                      |       2 -
+ .../eval/synthetic_eval_by_scenario.csv            |       6 -
+ .../eval/uot_eval_by_pattern.csv                   |       4 -
+ .../eval/uot_eval_summary.txt                      |       6 -
+ .../eval/uot_evaluation_metrics.json               |      77 -
+ .../synthetic_metrics_summary.json                 |      10 -
+ .../uot/causal_feasibility_summary.json            |      15 -
+ .../uot/flow_segments_bnb.csv                      |     289 -
+ .../uot/flow_segments_eth.csv                      |     289 -
+ .../uot/traceability_index.csv                     |   28205 -
+ .../uot/uot_cost_components_sparse.csv.gz          |     Bin 313647 -> 0 bytes
+ .../synthetic_eval_seed_45/uot/uot_cost_matrix.npz |     Bin 100078 -> 0 bytes
+ .../uot/uot_diagnostics.json                       |    1225 -
+ .../uot/uot_flow_correspondence.csv                |      21 -
+ .../uot/uot_flow_segments_bnb.csv                  |     289 -
+ .../uot/uot_flow_segments_eth.csv                  |     289 -
+ .../synthetic_eval_seed_45/uot/uot_marginals.csv   |     577 -
+ .../uot/uot_split_merge_summary.json               |      10 -
+ .../synthetic_eval_seed_45/uot/uot_summary.json    |      23 -
+ .../uot/uot_transport_matrix.npz                   |     Bin 99153 -> 0 bytes
+ .../uot/uot_transport_plan.csv                     |   28205 -
+ .../uot/uot_unmatched_mass.csv                     |     577 -
+ .../eval/ablation_metrics.csv                      |       2 -
+ .../eval/synthetic_eval_by_scenario.csv            |       6 -
+ .../eval/uot_eval_by_pattern.csv                   |       4 -
+ .../eval/uot_eval_summary.txt                      |       6 -
+ .../eval/uot_evaluation_metrics.json               |      77 -
+ .../synthetic_metrics_summary.json                 |      10 -
+ .../uot/causal_feasibility_summary.json            |      15 -
+ .../uot/flow_segments_bnb.csv                      |     289 -
+ .../uot/flow_segments_eth.csv                      |     289 -
+ .../uot/traceability_index.csv                     |   25605 -
+ .../uot/uot_cost_components_sparse.csv.gz          |     Bin 303231 -> 0 bytes
+ .../synthetic_eval_seed_46/uot/uot_cost_matrix.npz |     Bin 98266 -> 0 bytes
+ .../uot/uot_diagnostics.json                       |    1225 -
+ .../uot/uot_flow_correspondence.csv                |      41 -
+ .../uot/uot_flow_segments_bnb.csv                  |     289 -
+ .../uot/uot_flow_segments_eth.csv                  |     289 -
+ .../synthetic_eval_seed_46/uot/uot_marginals.csv   |     577 -
+ .../uot/uot_split_merge_summary.json               |      10 -
+ .../synthetic_eval_seed_46/uot/uot_summary.json    |      23 -
+ .../uot/uot_transport_matrix.npz                   |     Bin 98678 -> 0 bytes
+ .../uot/uot_transport_plan.csv                     |   25605 -
+ .../uot/uot_unmatched_mass.csv                     |     577 -
+ .../eval/ablation_metrics.csv                      |       2 -
+ .../eval/synthetic_eval_by_scenario.csv            |       6 -
+ .../eval/uot_eval_by_pattern.csv                   |       4 -
+ .../eval/uot_eval_summary.txt                      |       6 -
+ .../eval/uot_evaluation_metrics.json               |      77 -
+ .../synthetic_metrics_summary.json                 |      10 -
+ .../uot/causal_feasibility_summary.json            |      15 -
+ .../uot/flow_segments_bnb.csv                      |     289 -
+ .../uot/flow_segments_eth.csv                      |     289 -
+ .../uot/traceability_index.csv                     |   20269 -
+ .../uot/uot_cost_components_sparse.csv.gz          |     Bin 171504 -> 0 bytes
+ .../synthetic_eval_seed_42/uot/uot_cost_matrix.npz |     Bin 111892 -> 0 bytes
+ .../uot/uot_diagnostics.json                       |    1225 -
+ .../uot/uot_flow_correspondence.csv                |      21 -
+ .../uot/uot_flow_segments_bnb.csv                  |     289 -
+ .../uot/uot_flow_segments_eth.csv                  |     289 -
+ .../synthetic_eval_seed_42/uot/uot_marginals.csv   |     577 -
+ .../uot/uot_split_merge_summary.json               |      10 -
+ .../synthetic_eval_seed_42/uot/uot_summary.json    |      23 -
+ .../uot/uot_transport_matrix.npz                   |     Bin 98619 -> 0 bytes
+ .../uot/uot_transport_plan.csv                     |   20269 -
+ .../uot/uot_unmatched_mass.csv                     |     577 -
+ .../eval/ablation_metrics.csv                      |       2 -
+ .../eval/synthetic_eval_by_scenario.csv            |       6 -
+ .../eval/uot_eval_by_pattern.csv                   |       4 -
+ .../eval/uot_eval_summary.txt                      |       6 -
+ .../eval/uot_evaluation_metrics.json               |      77 -
+ .../synthetic_metrics_summary.json                 |      10 -
+ .../uot/causal_feasibility_summary.json            |      15 -
+ .../uot/flow_segments_bnb.csv                      |     289 -
+ .../uot/flow_segments_eth.csv                      |     289 -
+ .../uot/traceability_index.csv                     |   27053 -
+ .../uot/uot_cost_components_sparse.csv.gz          |     Bin 292724 -> 0 bytes
+ .../synthetic_eval_seed_43/uot/uot_cost_matrix.npz |     Bin 114231 -> 0 bytes
+ .../uot/uot_diagnostics.json                       |    1225 -
+ .../uot/uot_flow_segments_bnb.csv                  |     289 -
+ .../uot/uot_flow_segments_eth.csv                  |     289 -
+ .../synthetic_eval_seed_43/uot/uot_marginals.csv   |     577 -
+ .../uot/uot_split_merge_summary.json               |      10 -
+ .../synthetic_eval_seed_43/uot/uot_summary.json    |      24 -
+ .../uot/uot_transport_matrix.npz                   |     Bin 99304 -> 0 bytes
+ .../uot/uot_transport_plan.csv                     |   27053 -
+ .../uot/uot_unmatched_mass.csv                     |     577 -
+ .../eval/ablation_metrics.csv                      |       2 -
+ .../eval/synthetic_eval_by_scenario.csv            |       6 -
+ .../eval/uot_eval_by_pattern.csv                   |       4 -
+ .../eval/uot_eval_summary.txt                      |       6 -
+ .../eval/uot_evaluation_metrics.json               |      77 -
+ .../synthetic_metrics_summary.json                 |      10 -
+ .../uot/causal_feasibility_summary.json            |      15 -
+ .../uot/flow_segments_bnb.csv                      |     289 -
+ .../uot/flow_segments_eth.csv                      |     289 -
+ .../uot/traceability_index.csv                     |   34093 -
+ .../uot/uot_cost_components_sparse.csv.gz          |     Bin 443043 -> 0 bytes
+ .../synthetic_eval_seed_44/uot/uot_cost_matrix.npz |     Bin 115976 -> 0 bytes
+ .../uot/uot_diagnostics.json                       |    1225 -
+ .../uot/uot_flow_segments_bnb.csv                  |     289 -
+ .../uot/uot_flow_segments_eth.csv                  |     289 -
+ .../synthetic_eval_seed_44/uot/uot_marginals.csv   |     577 -
+ .../uot/uot_split_merge_summary.json               |      10 -
+ .../synthetic_eval_seed_44/uot/uot_summary.json    |      24 -
+ .../uot/uot_transport_matrix.npz                   |     Bin 99483 -> 0 bytes
+ .../uot/uot_transport_plan.csv                     |   34093 -
+ .../uot/uot_unmatched_mass.csv                     |     577 -
+ .../eval/ablation_metrics.csv                      |       2 -
+ .../eval/synthetic_eval_by_scenario.csv            |       6 -
+ .../eval/uot_eval_by_pattern.csv                   |       4 -
+ .../eval/uot_eval_summary.txt                      |       6 -
+ .../eval/uot_evaluation_metrics.json               |      77 -
+ .../synthetic_metrics_summary.json                 |      10 -
+ .../uot/causal_feasibility_summary.json            |      15 -
+ .../uot/flow_segments_bnb.csv                      |     289 -
+ .../uot/flow_segments_eth.csv                      |     289 -
+ .../uot/traceability_index.csv                     |   23201 -
+ .../uot/uot_cost_components_sparse.csv.gz          |     Bin 187960 -> 0 bytes
+ .../synthetic_eval_seed_45/uot/uot_cost_matrix.npz |     Bin 115617 -> 0 bytes
+ .../uot/uot_diagnostics.json                       |    1225 -
+ .../uot/uot_flow_correspondence.csv                |      21 -
+ .../uot/uot_flow_segments_bnb.csv                  |     289 -
+ .../uot/uot_flow_segments_eth.csv                  |     289 -
+ .../synthetic_eval_seed_45/uot/uot_marginals.csv   |     577 -
+ .../uot/uot_split_merge_summary.json               |      10 -
+ .../synthetic_eval_seed_45/uot/uot_summary.json    |      23 -
+ .../uot/uot_transport_matrix.npz                   |     Bin 99233 -> 0 bytes
+ .../uot/uot_transport_plan.csv                     |   23201 -
+ .../uot/uot_unmatched_mass.csv                     |     577 -
+ .../eval/ablation_metrics.csv                      |       2 -
+ .../eval/synthetic_eval_by_scenario.csv            |       6 -
+ .../eval/uot_eval_by_pattern.csv                   |       4 -
+ .../eval/uot_eval_summary.txt                      |       6 -
+ .../eval/uot_evaluation_metrics.json               |      77 -
+ .../synthetic_metrics_summary.json                 |      10 -
+ .../uot/causal_feasibility_summary.json            |      15 -
+ .../uot/flow_segments_bnb.csv                      |     289 -
+ .../uot/flow_segments_eth.csv                      |     289 -
+ .../uot/traceability_index.csv                     |   24633 -
+ .../uot/uot_cost_components_sparse.csv.gz          |     Bin 228992 -> 0 bytes
+ .../synthetic_eval_seed_46/uot/uot_cost_matrix.npz |     Bin 114370 -> 0 bytes
+ .../uot/uot_diagnostics.json                       |    1225 -
+ .../uot/uot_flow_correspondence.csv                |      41 -
+ .../uot/uot_flow_segments_bnb.csv                  |     289 -
+ .../uot/uot_flow_segments_eth.csv                  |     289 -
+ .../synthetic_eval_seed_46/uot/uot_marginals.csv   |     577 -
+ .../uot/uot_split_merge_summary.json               |      10 -
+ .../synthetic_eval_seed_46/uot/uot_summary.json    |      23 -
+ .../uot/uot_transport_matrix.npz                   |     Bin 99686 -> 0 bytes
+ .../uot/uot_transport_plan.csv                     |   24633 -
+ .../uot/uot_unmatched_mass.csv                     |     577 -
+ .../eval/ablation_metrics.csv                      |       2 -
+ .../eval/synthetic_eval_by_scenario.csv            |       6 -
+ .../eval/uot_eval_by_pattern.csv                   |       4 -
+ .../eval/uot_eval_summary.txt                      |       6 -
+ .../eval/uot_evaluation_metrics.json               |      77 -
+ .../synthetic_metrics_summary.json                 |      10 -
+ .../uot/causal_feasibility_summary.json            |      15 -
+ .../uot/flow_segments_bnb.csv                      |     289 -
+ .../uot/flow_segments_eth.csv                      |     289 -
+ .../uot/traceability_index.csv                     |   25805 -
+ .../uot/uot_cost_components_sparse.csv.gz          |     Bin 240802 -> 0 bytes
+ .../synthetic_eval_seed_42/uot/uot_cost_matrix.npz |     Bin 111938 -> 0 bytes
+ .../uot/uot_diagnostics.json                       |    1225 -
+ .../uot/uot_flow_correspondence.csv                |      21 -
+ .../uot/uot_flow_segments_bnb.csv                  |     289 -
+ .../uot/uot_flow_segments_eth.csv                  |     289 -
+ .../synthetic_eval_seed_42/uot/uot_marginals.csv   |     577 -
+ .../uot/uot_split_merge_summary.json               |      10 -
+ .../synthetic_eval_seed_42/uot/uot_summary.json    |      23 -
+ .../uot/uot_transport_matrix.npz                   |     Bin 98617 -> 0 bytes
+ .../uot/uot_transport_plan.csv                     |   25805 -
+ .../uot/uot_unmatched_mass.csv                     |     577 -
+ .../eval/ablation_metrics.csv                      |       2 -
+ .../eval/synthetic_eval_by_scenario.csv            |       6 -
+ .../eval/uot_eval_by_pattern.csv                   |       4 -
+ .../eval/uot_eval_summary.txt                      |       6 -
+ .../eval/uot_evaluation_metrics.json               |      77 -
+ .../synthetic_metrics_summary.json                 |      10 -
+ .../uot/causal_feasibility_summary.json            |      15 -
+ .../uot/flow_segments_bnb.csv                      |     289 -
+ .../uot/flow_segments_eth.csv                      |     289 -
+ .../uot/traceability_index.csv                     |   33233 -
+ .../uot/uot_cost_components_sparse.csv.gz          |     Bin 442514 -> 0 bytes
+ .../synthetic_eval_seed_43/uot/uot_cost_matrix.npz |     Bin 114162 -> 0 bytes
+ .../uot/uot_diagnostics.json                       |    1225 -
+ .../uot/uot_flow_segments_bnb.csv                  |     289 -
+ .../uot/uot_flow_segments_eth.csv                  |     289 -
+ .../synthetic_eval_seed_43/uot/uot_marginals.csv   |     577 -
+ .../uot/uot_split_merge_summary.json               |      10 -
+ .../synthetic_eval_seed_43/uot/uot_summary.json    |      24 -
+ .../uot/uot_transport_matrix.npz                   |     Bin 99086 -> 0 bytes
+ .../uot/uot_transport_plan.csv                     |   33233 -
+ .../uot/uot_unmatched_mass.csv                     |     577 -
+ .../eval/ablation_metrics.csv                      |       2 -
+ .../eval/synthetic_eval_by_scenario.csv            |       6 -
+ .../eval/uot_eval_by_pattern.csv                   |       4 -
+ .../eval/uot_eval_summary.txt                      |       6 -
+ .../eval/uot_evaluation_metrics.json               |      77 -
+ .../synthetic_metrics_summary.json                 |      10 -
+ .../uot/causal_feasibility_summary.json            |      15 -
+ .../uot/flow_segments_bnb.csv                      |     289 -
+ .../uot/flow_segments_eth.csv                      |     289 -
+ .../uot/traceability_index.csv                     |   44341 -
+ .../uot/uot_cost_components_sparse.csv.gz          |     Bin 633677 -> 0 bytes
+ .../synthetic_eval_seed_44/uot/uot_cost_matrix.npz |     Bin 115991 -> 0 bytes
+ .../uot/uot_diagnostics.json                       |    1225 -
+ .../uot/uot_flow_segments_bnb.csv                  |     289 -
+ .../uot/uot_flow_segments_eth.csv                  |     289 -
+ .../synthetic_eval_seed_44/uot/uot_marginals.csv   |     577 -
+ .../uot/uot_split_merge_summary.json               |      10 -
+ .../synthetic_eval_seed_44/uot/uot_summary.json    |      24 -
+ .../uot/uot_transport_matrix.npz                   |     Bin 99354 -> 0 bytes
+ .../uot/uot_transport_plan.csv                     |   44341 -
+ .../uot/uot_unmatched_mass.csv                     |     577 -
+ .../eval/ablation_metrics.csv                      |       2 -
+ .../eval/synthetic_eval_by_scenario.csv            |       6 -
+ .../eval/uot_eval_by_pattern.csv                   |       4 -
+ .../eval/uot_eval_summary.txt                      |       6 -
+ .../eval/uot_evaluation_metrics.json               |      77 -
+ .../synthetic_metrics_summary.json                 |      10 -
+ .../uot/causal_feasibility_summary.json            |      15 -
+ .../uot/flow_segments_bnb.csv                      |     289 -
+ .../uot/flow_segments_eth.csv                      |     289 -
+ .../uot/traceability_index.csv                     |   30369 -
+ .../uot/uot_cost_components_sparse.csv.gz          |     Bin 354449 -> 0 bytes
+ .../synthetic_eval_seed_45/uot/uot_cost_matrix.npz |     Bin 115628 -> 0 bytes
+ .../uot/uot_diagnostics.json                       |    1225 -
+ .../uot/uot_flow_correspondence.csv                |      21 -
+ .../uot/uot_flow_segments_bnb.csv                  |     289 -
+ .../uot/uot_flow_segments_eth.csv                  |     289 -
+ .../synthetic_eval_seed_45/uot/uot_marginals.csv   |     577 -
+ .../uot/uot_split_merge_summary.json               |      10 -
+ .../synthetic_eval_seed_45/uot/uot_summary.json    |      23 -
+ .../uot/uot_transport_matrix.npz                   |     Bin 97995 -> 0 bytes
+ .../uot/uot_transport_plan.csv                     |   30369 -
+ .../uot/uot_unmatched_mass.csv                     |     577 -
+ .../eval/ablation_metrics.csv                      |       2 -
+ .../eval/synthetic_eval_by_scenario.csv            |       6 -
+ .../eval/uot_eval_by_pattern.csv                   |       4 -
+ .../eval/uot_eval_summary.txt                      |       6 -
+ .../eval/uot_evaluation_metrics.json               |      77 -
+ .../synthetic_metrics_summary.json                 |      10 -
+ .../uot/causal_feasibility_summary.json            |      15 -
+ .../uot/flow_segments_bnb.csv                      |     289 -
+ .../uot/flow_segments_eth.csv                      |     289 -
+ .../uot/traceability_index.csv                     |   29549 -
+ .../uot/uot_cost_components_sparse.csv.gz          |     Bin 355486 -> 0 bytes
+ .../synthetic_eval_seed_46/uot/uot_cost_matrix.npz |     Bin 114445 -> 0 bytes
+ .../uot/uot_diagnostics.json                       |    1225 -
+ .../uot/uot_flow_correspondence.csv                |      41 -
+ .../uot/uot_flow_segments_bnb.csv                  |     289 -
+ .../uot/uot_flow_segments_eth.csv                  |     289 -
+ .../synthetic_eval_seed_46/uot/uot_marginals.csv   |     577 -
+ .../uot/uot_split_merge_summary.json               |      10 -
+ .../synthetic_eval_seed_46/uot/uot_summary.json    |      23 -
+ .../uot/uot_transport_matrix.npz                   |     Bin 99849 -> 0 bytes
+ .../uot/uot_transport_plan.csv                     |   29549 -
+ .../uot/uot_unmatched_mass.csv                     |     577 -
+ .../eval/ablation_metrics.csv                      |       2 -
+ .../eval/synthetic_eval_by_scenario.csv            |       6 -
+ .../eval/uot_eval_by_pattern.csv                   |       4 -
+ .../eval/uot_eval_summary.txt                      |       6 -
+ .../eval/uot_evaluation_metrics.json               |      77 -
+ .../synthetic_metrics_summary.json                 |      10 -
+ .../uot/causal_feasibility_summary.json            |      15 -
+ .../uot/flow_segments_bnb.csv                      |     289 -
+ .../uot/flow_segments_eth.csv                      |     289 -
+ .../uot/traceability_index.csv                     |   23881 -
+ .../uot/uot_cost_components_sparse.csv.gz          |     Bin 205962 -> 0 bytes
+ .../synthetic_eval_seed_42/uot/uot_cost_matrix.npz |     Bin 111898 -> 0 bytes
+ .../uot/uot_diagnostics.json                       |    1225 -
+ .../uot/uot_flow_correspondence.csv                |      21 -
+ .../uot/uot_flow_segments_bnb.csv                  |     289 -
+ .../uot/uot_flow_segments_eth.csv                  |     289 -
+ .../synthetic_eval_seed_42/uot/uot_marginals.csv   |     577 -
+ .../uot/uot_split_merge_summary.json               |      10 -
+ .../synthetic_eval_seed_42/uot/uot_summary.json    |      23 -
+ .../uot/uot_transport_matrix.npz                   |     Bin 99829 -> 0 bytes
+ .../uot/uot_transport_plan.csv                     |   23881 -
+ .../uot/uot_unmatched_mass.csv                     |     577 -
+ .../eval/ablation_metrics.csv                      |       2 -
+ .../eval/synthetic_eval_by_scenario.csv            |       6 -
+ .../eval/uot_eval_by_pattern.csv                   |       4 -
+ .../eval/uot_eval_summary.txt                      |       6 -
+ .../eval/uot_evaluation_metrics.json               |      77 -
+ .../synthetic_metrics_summary.json                 |      10 -
+ .../uot/causal_feasibility_summary.json            |      15 -
+ .../uot/flow_segments_bnb.csv                      |     289 -
+ .../uot/flow_segments_eth.csv                      |     289 -
+ .../uot/traceability_index.csv                     |   30941 -
+ .../uot/uot_cost_components_sparse.csv.gz          |     Bin 402454 -> 0 bytes
+ .../synthetic_eval_seed_43/uot/uot_cost_matrix.npz |     Bin 114200 -> 0 bytes
+ .../uot/uot_diagnostics.json                       |    1225 -
+ .../uot/uot_flow_segments_bnb.csv                  |     289 -
+ .../uot/uot_flow_segments_eth.csv                  |     289 -
+ .../synthetic_eval_seed_43/uot/uot_marginals.csv   |     577 -
+ .../uot/uot_split_merge_summary.json               |      10 -
+ .../synthetic_eval_seed_43/uot/uot_summary.json    |      24 -
+ .../uot/uot_transport_matrix.npz                   |     Bin 99465 -> 0 bytes
+ .../uot/uot_transport_plan.csv                     |   30941 -
+ .../uot/uot_unmatched_mass.csv                     |     577 -
+ .../eval/ablation_metrics.csv                      |       2 -
+ .../eval/synthetic_eval_by_scenario.csv            |       6 -
+ .../eval/uot_eval_by_pattern.csv                   |       4 -
+ .../eval/uot_eval_summary.txt                      |       6 -
+ .../eval/uot_evaluation_metrics.json               |      77 -
+ .../synthetic_metrics_summary.json                 |      10 -
+ .../uot/causal_feasibility_summary.json            |      15 -
+ .../uot/flow_segments_bnb.csv                      |     289 -
+ .../uot/flow_segments_eth.csv                      |     289 -
+ .../uot/traceability_index.csv                     |   40381 -
+ .../uot/uot_cost_components_sparse.csv.gz          |     Bin 560701 -> 0 bytes
+ .../synthetic_eval_seed_44/uot/uot_cost_matrix.npz |     Bin 116047 -> 0 bytes
+ .../uot/uot_diagnostics.json                       |    1225 -
+ .../uot/uot_flow_segments_bnb.csv                  |     289 -
+ .../uot/uot_flow_segments_eth.csv                  |     289 -
+ .../synthetic_eval_seed_44/uot/uot_marginals.csv   |     577 -
+ .../uot/uot_split_merge_summary.json               |      10 -
+ .../synthetic_eval_seed_44/uot/uot_summary.json    |      24 -
+ .../uot/uot_transport_matrix.npz                   |     Bin 97877 -> 0 bytes
+ .../uot/uot_transport_plan.csv                     |   40381 -
+ .../uot/uot_unmatched_mass.csv                     |     577 -
+ .../eval/ablation_metrics.csv                      |       2 -
+ .../eval/synthetic_eval_by_scenario.csv            |       6 -
+ .../eval/uot_eval_by_pattern.csv                   |       4 -
+ .../eval/uot_eval_summary.txt                      |       6 -
+ .../eval/uot_evaluation_metrics.json               |      77 -
+ .../synthetic_metrics_summary.json                 |      10 -
+ .../uot/causal_feasibility_summary.json            |      15 -
+ .../uot/flow_segments_bnb.csv                      |     289 -
+ .../uot/flow_segments_eth.csv                      |     289 -
+ .../uot/traceability_index.csv                     |   28013 -
+ .../uot/uot_cost_components_sparse.csv.gz          |     Bin 295901 -> 0 bytes
+ .../synthetic_eval_seed_45/uot/uot_cost_matrix.npz |     Bin 115662 -> 0 bytes
+ .../uot/uot_diagnostics.json                       |    1225 -
+ .../uot/uot_flow_correspondence.csv                |      21 -
+ .../uot/uot_flow_segments_bnb.csv                  |     289 -
+ .../uot/uot_flow_segments_eth.csv                  |     289 -
+ .../synthetic_eval_seed_45/uot/uot_marginals.csv   |     577 -
+ .../uot/uot_split_merge_summary.json               |      10 -
+ .../synthetic_eval_seed_45/uot/uot_summary.json    |      23 -
+ .../uot/uot_transport_matrix.npz                   |     Bin 99129 -> 0 bytes
+ .../uot/uot_transport_plan.csv                     |   28013 -
+ .../uot/uot_unmatched_mass.csv                     |     577 -
+ .../eval/ablation_metrics.csv                      |       2 -
+ .../eval/synthetic_eval_by_scenario.csv            |       6 -
+ .../eval/uot_eval_by_pattern.csv                   |       4 -
+ .../eval/uot_eval_summary.txt                      |       6 -
+ .../eval/uot_evaluation_metrics.json               |      77 -
+ .../synthetic_metrics_summary.json                 |      10 -
+ .../uot/causal_feasibility_summary.json            |      15 -
+ .../uot/flow_segments_bnb.csv                      |     289 -
+ .../uot/flow_segments_eth.csv                      |     289 -
+ .../uot/traceability_index.csv                     |   28297 -
+ .../uot/uot_cost_components_sparse.csv.gz          |     Bin 320571 -> 0 bytes
+ .../synthetic_eval_seed_46/uot/uot_cost_matrix.npz |     Bin 114355 -> 0 bytes
+ .../uot/uot_diagnostics.json                       |    1225 -
+ .../uot/uot_flow_correspondence.csv                |      41 -
+ .../uot/uot_flow_segments_bnb.csv                  |     289 -
+ .../uot/uot_flow_segments_eth.csv                  |     289 -
+ .../synthetic_eval_seed_46/uot/uot_marginals.csv   |     577 -
+ .../uot/uot_split_merge_summary.json               |      10 -
+ .../synthetic_eval_seed_46/uot/uot_summary.json    |      23 -
+ .../uot/uot_transport_matrix.npz                   |     Bin 99849 -> 0 bytes
+ .../uot/uot_transport_plan.csv                     |   28297 -
+ .../uot/uot_unmatched_mass.csv                     |     577 -
+ .../eval/ablation_metrics.csv                      |       2 -
+ .../eval/synthetic_eval_by_scenario.csv            |       6 -
+ .../eval/uot_eval_by_pattern.csv                   |       4 -
+ .../eval/uot_eval_summary.txt                      |       6 -
+ .../eval/uot_evaluation_metrics.json               |      77 -
+ .../synthetic_metrics_summary.json                 |      10 -
+ .../uot/causal_feasibility_summary.json            |      15 -
+ .../uot/flow_segments_bnb.csv                      |     289 -
+ .../uot/flow_segments_eth.csv                      |     289 -
+ .../uot/traceability_index.csv                     |   39013 -
+ .../uot/uot_cost_components_sparse.csv.gz          |     Bin 540996 -> 0 bytes
+ .../synthetic_eval_seed_42/uot/uot_cost_matrix.npz |     Bin 112271 -> 0 bytes
+ .../uot/uot_diagnostics.json                       |    1225 -
+ .../uot/uot_flow_correspondence.csv                |      21 -
+ .../uot/uot_flow_segments_bnb.csv                  |     289 -
+ .../uot/uot_flow_segments_eth.csv                  |     289 -
+ .../synthetic_eval_seed_42/uot/uot_marginals.csv   |     577 -
+ .../uot/uot_split_merge_summary.json               |      10 -
+ .../synthetic_eval_seed_42/uot/uot_summary.json    |      23 -
+ .../uot/uot_transport_matrix.npz                   |     Bin 98374 -> 0 bytes
+ .../uot/uot_transport_plan.csv                     |   39013 -
+ .../uot/uot_unmatched_mass.csv                     |     577 -
+ .../eval/ablation_metrics.csv                      |       2 -
+ .../eval/synthetic_eval_by_scenario.csv            |       6 -
+ .../eval/uot_eval_by_pattern.csv                   |       4 -
+ .../eval/uot_eval_summary.txt                      |       6 -
+ .../eval/uot_evaluation_metrics.json               |      77 -
+ .../synthetic_metrics_summary.json                 |      10 -
+ .../uot/causal_feasibility_summary.json            |      15 -
+ .../uot/flow_segments_bnb.csv                      |     289 -
+ .../uot/flow_segments_eth.csv                      |     289 -
+ .../uot/traceability_index.csv                     |   51973 -
+ .../uot/uot_cost_components_sparse.csv.gz          |     Bin 741324 -> 0 bytes
+ .../synthetic_eval_seed_43/uot/uot_cost_matrix.npz |     Bin 114760 -> 0 bytes
+ .../uot/uot_diagnostics.json                       |    1225 -
+ .../uot/uot_flow_segments_bnb.csv                  |     289 -
+ .../uot/uot_flow_segments_eth.csv                  |     289 -
+ .../synthetic_eval_seed_43/uot/uot_marginals.csv   |     577 -
+ .../uot/uot_split_merge_summary.json               |      10 -
+ .../synthetic_eval_seed_43/uot/uot_summary.json    |      24 -
+ .../uot/uot_transport_matrix.npz                   |     Bin 98418 -> 0 bytes
+ .../uot/uot_transport_plan.csv                     |   51973 -
+ .../uot/uot_unmatched_mass.csv                     |     577 -
+ .../eval/ablation_metrics.csv                      |       2 -
+ .../eval/synthetic_eval_by_scenario.csv            |       6 -
+ .../eval/uot_eval_by_pattern.csv                   |       4 -
+ .../eval/uot_eval_summary.txt                      |       6 -
+ .../eval/uot_evaluation_metrics.json               |      77 -
+ .../synthetic_metrics_summary.json                 |      10 -
+ .../uot/causal_feasibility_summary.json            |      15 -
+ .../uot/flow_segments_bnb.csv                      |     289 -
+ .../uot/flow_segments_eth.csv                      |     289 -
+ .../uot/traceability_index.csv                     |   63565 -
+ .../uot/uot_cost_components_sparse.csv.gz          |     Bin 943840 -> 0 bytes
+ .../synthetic_eval_seed_44/uot/uot_cost_matrix.npz |     Bin 116404 -> 0 bytes
+ .../uot/uot_diagnostics.json                       |    1225 -
+ .../uot/uot_flow_segments_bnb.csv                  |     289 -
+ .../uot/uot_flow_segments_eth.csv                  |     289 -
+ .../synthetic_eval_seed_44/uot/uot_marginals.csv   |     577 -
+ .../uot/uot_split_merge_summary.json               |      10 -
+ .../synthetic_eval_seed_44/uot/uot_summary.json    |      24 -
+ .../uot/uot_transport_matrix.npz                   |     Bin 98098 -> 0 bytes
+ .../uot/uot_transport_plan.csv                     |   63565 -
+ .../uot/uot_unmatched_mass.csv                     |     577 -
+ .../eval/ablation_metrics.csv                      |       2 -
+ .../eval/synthetic_eval_by_scenario.csv            |       6 -
+ .../eval/uot_eval_by_pattern.csv                   |       4 -
+ .../eval/uot_eval_summary.txt                      |       6 -
+ .../eval/uot_evaluation_metrics.json               |      77 -
+ .../synthetic_metrics_summary.json                 |      10 -
+ .../uot/causal_feasibility_summary.json            |      15 -
+ .../uot/flow_segments_bnb.csv                      |     289 -
+ .../uot/flow_segments_eth.csv                      |     289 -
+ .../uot/traceability_index.csv                     |   46529 -
+ .../uot/uot_cost_components_sparse.csv.gz          |     Bin 648738 -> 0 bytes
+ .../synthetic_eval_seed_45/uot/uot_cost_matrix.npz |     Bin 116155 -> 0 bytes
+ .../uot/uot_diagnostics.json                       |    1225 -
+ .../uot/uot_flow_correspondence.csv                |      21 -
+ .../uot/uot_flow_segments_bnb.csv                  |     289 -
+ .../uot/uot_flow_segments_eth.csv                  |     289 -
+ .../synthetic_eval_seed_45/uot/uot_marginals.csv   |     577 -
+ .../uot/uot_split_merge_summary.json               |      10 -
+ .../synthetic_eval_seed_45/uot/uot_summary.json    |      23 -
+ .../uot/uot_transport_matrix.npz                   |     Bin 99151 -> 0 bytes
+ .../uot/uot_transport_plan.csv                     |   46529 -
+ .../uot/uot_unmatched_mass.csv                     |     577 -
+ .../eval/ablation_metrics.csv                      |       2 -
+ .../eval/synthetic_eval_by_scenario.csv            |       6 -
+ .../eval/uot_eval_by_pattern.csv                   |       4 -
+ .../eval/uot_eval_summary.txt                      |       6 -
+ .../eval/uot_evaluation_metrics.json               |      77 -
+ .../synthetic_metrics_summary.json                 |      10 -
+ .../uot/causal_feasibility_summary.json            |      15 -
+ .../uot/flow_segments_bnb.csv                      |     289 -
+ .../uot/flow_segments_eth.csv                      |     289 -
+ .../uot/traceability_index.csv                     |   41525 -
+ .../uot/uot_cost_components_sparse.csv.gz          |     Bin 582438 -> 0 bytes
+ .../synthetic_eval_seed_46/uot/uot_cost_matrix.npz |     Bin 114918 -> 0 bytes
+ .../uot/uot_diagnostics.json                       |    1225 -
+ .../uot/uot_flow_correspondence.csv                |      41 -
+ .../uot/uot_flow_segments_bnb.csv                  |     289 -
+ .../uot/uot_flow_segments_eth.csv                  |     289 -
+ .../synthetic_eval_seed_46/uot/uot_marginals.csv   |     577 -
+ .../uot/uot_split_merge_summary.json               |      10 -
+ .../synthetic_eval_seed_46/uot/uot_summary.json    |      23 -
+ .../uot/uot_transport_matrix.npz                   |     Bin 98586 -> 0 bytes
+ .../uot/uot_transport_plan.csv                     |   41525 -
+ .../uot/uot_unmatched_mass.csv                     |     577 -
+ .../eval/ablation_metrics.csv                      |       2 -
+ .../eval/synthetic_eval_by_scenario.csv            |       6 -
+ .../eval/uot_eval_by_pattern.csv                   |       4 -
+ .../eval/uot_eval_summary.txt                      |       6 -
+ .../eval/uot_evaluation_metrics.json               |      77 -
+ .../synthetic_metrics_summary.json                 |      10 -
+ .../uot/causal_feasibility_summary.json            |      15 -
+ .../uot/flow_segments_bnb.csv                      |     289 -
+ .../uot/flow_segments_eth.csv                      |     289 -
+ .../uot/traceability_index.csv                     |   14557 -
+ .../uot/uot_cost_components_sparse.csv.gz          |     Bin 115983 -> 0 bytes
+ .../synthetic_eval_seed_42/uot/uot_cost_matrix.npz |     Bin 111898 -> 0 bytes
+ .../uot/uot_diagnostics.json                       |    1225 -
+ .../uot/uot_flow_correspondence.csv                |      21 -
+ .../uot/uot_flow_segments_bnb.csv                  |     289 -
+ .../uot/uot_flow_segments_eth.csv                  |     289 -
+ .../synthetic_eval_seed_42/uot/uot_marginals.csv   |     577 -
+ .../uot/uot_split_merge_summary.json               |      10 -
+ .../synthetic_eval_seed_42/uot/uot_summary.json    |      23 -
+ .../uot/uot_transport_matrix.npz                   |     Bin 98451 -> 0 bytes
+ .../uot/uot_transport_plan.csv                     |   14557 -
+ .../uot/uot_unmatched_mass.csv                     |     577 -
+ .../eval/ablation_metrics.csv                      |       2 -
+ .../eval/synthetic_eval_by_scenario.csv            |       6 -
+ .../eval/uot_eval_by_pattern.csv                   |       4 -
+ .../eval/uot_eval_summary.txt                      |       6 -
+ .../eval/uot_evaluation_metrics.json               |      77 -
+ .../synthetic_metrics_summary.json                 |      10 -
+ .../uot/causal_feasibility_summary.json            |      15 -
+ .../uot/flow_segments_bnb.csv                      |     289 -
+ .../uot/flow_segments_eth.csv                      |     289 -
+ .../uot/traceability_index.csv                     |   22749 -
+ .../uot/uot_cost_components_sparse.csv.gz          |     Bin 199639 -> 0 bytes
+ .../synthetic_eval_seed_43/uot/uot_cost_matrix.npz |     Bin 114200 -> 0 bytes
+ .../uot/uot_diagnostics.json                       |    1225 -
+ .../uot/uot_flow_segments_bnb.csv                  |     289 -
+ .../uot/uot_flow_segments_eth.csv                  |     289 -
+ .../synthetic_eval_seed_43/uot/uot_marginals.csv   |     577 -
+ .../uot/uot_split_merge_summary.json               |      10 -
+ .../synthetic_eval_seed_43/uot/uot_summary.json    |      24 -
+ .../uot/uot_transport_matrix.npz                   |     Bin 99157 -> 0 bytes
+ .../uot/uot_transport_plan.csv                     |   22749 -
+ .../uot/uot_unmatched_mass.csv                     |     577 -
+ .../eval/ablation_metrics.csv                      |       2 -
+ .../eval/synthetic_eval_by_scenario.csv            |       6 -
+ .../eval/uot_eval_by_pattern.csv                   |       4 -
+ .../eval/uot_eval_summary.txt                      |       6 -
+ .../eval/uot_evaluation_metrics.json               |      77 -
+ .../synthetic_metrics_summary.json                 |      10 -
+ .../uot/causal_feasibility_summary.json            |      15 -
+ .../uot/flow_segments_bnb.csv                      |     289 -
+ .../uot/flow_segments_eth.csv                      |     289 -
+ .../uot/traceability_index.csv                     |   28333 -
+ .../uot/uot_cost_components_sparse.csv.gz          |     Bin 348178 -> 0 bytes
+ .../synthetic_eval_seed_44/uot/uot_cost_matrix.npz |     Bin 116047 -> 0 bytes
+ .../uot/uot_diagnostics.json                       |    1225 -
+ .../uot/uot_flow_segments_bnb.csv                  |     289 -
+ .../uot/uot_flow_segments_eth.csv                  |     289 -
+ .../synthetic_eval_seed_44/uot/uot_marginals.csv   |     577 -
+ .../uot/uot_split_merge_summary.json               |      10 -
+ .../synthetic_eval_seed_44/uot/uot_summary.json    |      24 -
+ .../uot/uot_transport_matrix.npz                   |     Bin 98507 -> 0 bytes
+ .../uot/uot_transport_plan.csv                     |   28333 -
+ .../uot/uot_unmatched_mass.csv                     |     577 -
+ .../eval/ablation_metrics.csv                      |       2 -
+ .../eval/synthetic_eval_by_scenario.csv            |       6 -
+ .../eval/uot_eval_by_pattern.csv                   |       4 -
+ .../eval/uot_eval_summary.txt                      |       6 -
+ .../eval/uot_evaluation_metrics.json               |      77 -
+ .../synthetic_metrics_summary.json                 |      10 -
+ .../uot/causal_feasibility_summary.json            |      15 -
+ .../uot/flow_segments_bnb.csv                      |     289 -
+ .../uot/flow_segments_eth.csv                      |     289 -
+ .../uot/traceability_index.csv                     |   18633 -
+ .../uot/uot_cost_components_sparse.csv.gz          |     Bin 140117 -> 0 bytes
+ .../synthetic_eval_seed_45/uot/uot_cost_matrix.npz |     Bin 115662 -> 0 bytes
+ .../uot/uot_diagnostics.json                       |    1225 -
+ .../uot/uot_flow_correspondence.csv                |      17 -
+ .../uot/uot_flow_segments_bnb.csv                  |     289 -
+ .../uot/uot_flow_segments_eth.csv                  |     289 -
+ .../synthetic_eval_seed_45/uot/uot_marginals.csv   |     577 -
+ .../uot/uot_split_merge_summary.json               |      10 -
+ .../synthetic_eval_seed_45/uot/uot_summary.json    |      23 -
+ .../uot/uot_transport_matrix.npz                   |     Bin 98376 -> 0 bytes
+ .../uot/uot_transport_plan.csv                     |   18633 -
+ .../uot/uot_unmatched_mass.csv                     |     577 -
+ .../eval/ablation_metrics.csv                      |       2 -
+ .../eval/synthetic_eval_by_scenario.csv            |       6 -
+ .../eval/uot_eval_by_pattern.csv                   |       4 -
+ .../eval/uot_eval_summary.txt                      |       6 -
+ .../eval/uot_evaluation_metrics.json               |      77 -
+ .../synthetic_metrics_summary.json                 |      10 -
+ .../uot/causal_feasibility_summary.json            |      15 -
+ .../uot/flow_segments_bnb.csv                      |     289 -
+ .../uot/flow_segments_eth.csv                      |     289 -
+ .../uot/traceability_index.csv                     |   19517 -
+ .../uot/uot_cost_components_sparse.csv.gz          |     Bin 164746 -> 0 bytes
+ .../synthetic_eval_seed_46/uot/uot_cost_matrix.npz |     Bin 114355 -> 0 bytes
+ .../uot/uot_diagnostics.json                       |    1225 -
+ .../uot/uot_flow_segments_bnb.csv                  |     289 -
+ .../uot/uot_flow_segments_eth.csv                  |     289 -
+ .../synthetic_eval_seed_46/uot/uot_marginals.csv   |     577 -
+ .../uot/uot_split_merge_summary.json               |      10 -
+ .../synthetic_eval_seed_46/uot/uot_summary.json    |      23 -
+ .../uot/uot_transport_matrix.npz                   |     Bin 98535 -> 0 bytes
+ .../uot/uot_transport_plan.csv                     |   19517 -
+ .../uot/uot_unmatched_mass.csv                     |     577 -
+ .../results/ablation/phase3_run_manifest.json      |     350 -
+ .../seed_42/eval/ablation_metrics.csv              |       2 -
+ .../seed_42/eval/synthetic_eval_by_scenario.csv    |       6 -
+ .../seed_42/eval/uot_eval_by_pattern.csv           |       4 -
+ .../seed_42/eval/uot_eval_summary.txt              |       6 -
+ .../seed_42/eval/uot_evaluation_metrics.json       |      77 -
+ .../seed_42/flow_segments_bnb_synth.csv            |     289 -
+ .../seed_42/flow_segments_eth_synth.csv            |     289 -
+ .../seed_42/labels/synthetic_flow_labels.csv       |     337 -
+ .../seed_42/labels/synthetic_uot_eval_metrics.json |    5257 -
+ .../seed_42/synthetic_metrics_summary.json         |      10 -
+ .../seed_42/uot/causal_feasibility_summary.json    |      15 -
+ .../seed_42/uot/flow_segments_bnb.csv              |     289 -
+ .../seed_42/uot/flow_segments_eth.csv              |     289 -
+ .../seed_42/uot/traceability_index.csv             |   23881 -
+ .../seed_42/uot/uot_cost_components_sparse.csv.gz  |     Bin 205962 -> 0 bytes
+ .../seed_42/uot/uot_cost_matrix.npz                |     Bin 111898 -> 0 bytes
+ .../seed_42/uot/uot_diagnostics.json               |    1224 -
+ .../seed_42/uot/uot_flow_correspondence.csv        |      21 -
+ .../seed_42/uot/uot_flow_segments_bnb.csv          |     289 -
+ .../seed_42/uot/uot_flow_segments_eth.csv          |     289 -
+ .../seed_42/uot/uot_marginals.csv                  |     577 -
+ .../seed_42/uot/uot_split_merge_summary.json       |      10 -
+ .../seed_42/uot/uot_summary.json                   |      23 -
+ .../seed_42/uot/uot_transport_matrix.npz           |     Bin 99403 -> 0 bytes
+ .../seed_42/uot/uot_transport_plan.csv             |   23881 -
+ .../seed_42/uot/uot_unmatched_mass.csv             |     577 -
+ .../seed_43/eval/ablation_metrics.csv              |       2 -
+ .../seed_43/eval/synthetic_eval_by_scenario.csv    |       6 -
+ .../seed_43/eval/uot_eval_by_pattern.csv           |       4 -
+ .../seed_43/eval/uot_eval_summary.txt              |       6 -
+ .../seed_43/eval/uot_evaluation_metrics.json       |      77 -
+ .../seed_43/flow_segments_bnb_synth.csv            |     289 -
+ .../seed_43/flow_segments_eth_synth.csv            |     289 -
+ .../seed_43/labels/synthetic_flow_labels.csv       |     337 -
+ .../seed_43/labels/synthetic_uot_eval_metrics.json |    5257 -
+ .../seed_43/synthetic_metrics_summary.json         |      10 -
+ .../seed_43/uot/causal_feasibility_summary.json    |      15 -
+ .../seed_43/uot/flow_segments_bnb.csv              |     289 -
+ .../seed_43/uot/flow_segments_eth.csv              |     289 -
+ .../seed_43/uot/traceability_index.csv             |   30941 -
+ .../seed_43/uot/uot_cost_components_sparse.csv.gz  |     Bin 402454 -> 0 bytes
+ .../seed_43/uot/uot_cost_matrix.npz                |     Bin 114200 -> 0 bytes
+ .../seed_43/uot/uot_diagnostics.json               |    1224 -
+ .../seed_43/uot/uot_flow_segments_bnb.csv          |     289 -
+ .../seed_43/uot/uot_flow_segments_eth.csv          |     289 -
+ .../seed_43/uot/uot_marginals.csv                  |     577 -
+ .../seed_43/uot/uot_split_merge_summary.json       |      10 -
+ .../seed_43/uot/uot_summary.json                   |      24 -
+ .../seed_43/uot/uot_transport_matrix.npz           |     Bin 99465 -> 0 bytes
+ .../seed_43/uot/uot_transport_plan.csv             |   30941 -
+ .../seed_43/uot/uot_unmatched_mass.csv             |     577 -
+ .../seed_44/eval/ablation_metrics.csv              |       2 -
+ .../seed_44/eval/synthetic_eval_by_scenario.csv    |       6 -
+ .../seed_44/eval/uot_eval_by_pattern.csv           |       4 -
+ .../seed_44/eval/uot_eval_summary.txt              |       6 -
+ .../seed_44/eval/uot_evaluation_metrics.json       |      77 -
+ .../seed_44/flow_segments_bnb_synth.csv            |     289 -
+ .../seed_44/flow_segments_eth_synth.csv            |     289 -
+ .../seed_44/labels/synthetic_flow_labels.csv       |     337 -
+ .../seed_44/labels/synthetic_uot_eval_metrics.json |    5257 -
+ .../seed_44/synthetic_metrics_summary.json         |      10 -
+ .../seed_44/uot/causal_feasibility_summary.json    |      15 -
+ .../seed_44/uot/flow_segments_bnb.csv              |     289 -
+ .../seed_44/uot/flow_segments_eth.csv              |     289 -
+ .../seed_44/uot/traceability_index.csv             |   40381 -
+ .../seed_44/uot/uot_cost_components_sparse.csv.gz  |     Bin 560701 -> 0 bytes
+ .../seed_44/uot/uot_cost_matrix.npz                |     Bin 116047 -> 0 bytes
+ .../seed_44/uot/uot_diagnostics.json               |    1224 -
+ .../seed_44/uot/uot_flow_segments_bnb.csv          |     289 -
+ .../seed_44/uot/uot_flow_segments_eth.csv          |     289 -
+ .../seed_44/uot/uot_marginals.csv                  |     577 -
+ .../seed_44/uot/uot_split_merge_summary.json       |      10 -
+ .../seed_44/uot/uot_summary.json                   |      24 -
+ .../seed_44/uot/uot_transport_matrix.npz           |     Bin 97877 -> 0 bytes
+ .../seed_44/uot/uot_transport_plan.csv             |   40381 -
+ .../seed_44/uot/uot_unmatched_mass.csv             |     577 -
+ .../seed_45/eval/ablation_metrics.csv              |       2 -
+ .../seed_45/eval/synthetic_eval_by_scenario.csv    |       6 -
+ .../seed_45/eval/uot_eval_by_pattern.csv           |       4 -
+ .../seed_45/eval/uot_eval_summary.txt              |       6 -
+ .../seed_45/eval/uot_evaluation_metrics.json       |      77 -
+ .../seed_45/flow_segments_bnb_synth.csv            |     289 -
+ .../seed_45/flow_segments_eth_synth.csv            |     289 -
+ .../seed_45/labels/synthetic_flow_labels.csv       |     337 -
+ .../seed_45/labels/synthetic_uot_eval_metrics.json |    5257 -
+ .../seed_45/synthetic_metrics_summary.json         |      10 -
+ .../seed_45/uot/causal_feasibility_summary.json    |      15 -
+ .../seed_45/uot/flow_segments_bnb.csv              |     289 -
+ .../seed_45/uot/flow_segments_eth.csv              |     289 -
+ .../seed_45/uot/traceability_index.csv             |   28013 -
+ .../seed_45/uot/uot_cost_components_sparse.csv.gz  |     Bin 295901 -> 0 bytes
+ .../seed_45/uot/uot_cost_matrix.npz                |     Bin 115662 -> 0 bytes
+ .../seed_45/uot/uot_diagnostics.json               |    1224 -
+ .../seed_45/uot/uot_flow_correspondence.csv        |      21 -
+ .../seed_45/uot/uot_flow_segments_bnb.csv          |     289 -
+ .../seed_45/uot/uot_flow_segments_eth.csv          |     289 -
+ .../seed_45/uot/uot_marginals.csv                  |     577 -
+ .../seed_45/uot/uot_split_merge_summary.json       |      10 -
+ .../seed_45/uot/uot_summary.json                   |      23 -
+ .../seed_45/uot/uot_transport_matrix.npz           |     Bin 98834 -> 0 bytes
+ .../seed_45/uot/uot_transport_plan.csv             |   28013 -
+ .../seed_45/uot/uot_unmatched_mass.csv             |     577 -
+ .../seed_46/eval/ablation_metrics.csv              |       2 -
+ .../seed_46/eval/synthetic_eval_by_scenario.csv    |       6 -
+ .../seed_46/eval/uot_eval_by_pattern.csv           |       4 -
+ .../seed_46/eval/uot_eval_summary.txt              |       6 -
+ .../seed_46/eval/uot_evaluation_metrics.json       |      77 -
+ .../seed_46/flow_segments_bnb_synth.csv            |     289 -
+ .../seed_46/flow_segments_eth_synth.csv            |     289 -
+ .../seed_46/labels/synthetic_flow_labels.csv       |     337 -
+ .../seed_46/labels/synthetic_uot_eval_metrics.json |    5257 -
+ .../seed_46/synthetic_metrics_summary.json         |      10 -
+ .../seed_46/uot/causal_feasibility_summary.json    |      15 -
+ .../seed_46/uot/flow_segments_bnb.csv              |     289 -
+ .../seed_46/uot/flow_segments_eth.csv              |     289 -
+ .../seed_46/uot/traceability_index.csv             |   28297 -
+ .../seed_46/uot/uot_cost_components_sparse.csv.gz  |     Bin 320571 -> 0 bytes
+ .../seed_46/uot/uot_cost_matrix.npz                |     Bin 114355 -> 0 bytes
+ .../seed_46/uot/uot_diagnostics.json               |    1224 -
+ .../seed_46/uot/uot_flow_correspondence.csv        |      41 -
+ .../seed_46/uot/uot_flow_segments_bnb.csv          |     289 -
+ .../seed_46/uot/uot_flow_segments_eth.csv          |     289 -
+ .../seed_46/uot/uot_marginals.csv                  |     577 -
+ .../seed_46/uot/uot_split_merge_summary.json       |      10 -
+ .../seed_46/uot/uot_summary.json                   |      23 -
+ .../seed_46/uot/uot_transport_matrix.npz           |     Bin 98450 -> 0 bytes
+ .../seed_46/uot/uot_transport_plan.csv             |   28297 -
+ .../seed_46/uot/uot_unmatched_mass.csv             |     577 -
+ .../missing_knob_ablation_aggregated.json          |     109 -
+ .../missing_knob_ablation_table.csv                |       5 -
+ .../seed_42/eval/ablation_metrics.csv              |       2 -
+ .../seed_42/eval/synthetic_eval_by_scenario.csv    |       6 -
+ .../seed_42/eval/uot_eval_by_pattern.csv           |       4 -
+ .../seed_42/eval/uot_eval_summary.txt              |       6 -
+ .../seed_42/eval/uot_evaluation_metrics.json       |      77 -
+ .../seed_42/synthetic_metrics_summary.json         |      10 -
+ .../seed_42/uot/causal_feasibility_summary.json    |      15 -
+ .../seed_42/uot/flow_segments_bnb.csv              |     289 -
+ .../seed_42/uot/flow_segments_eth.csv              |     289 -
+ .../seed_42/uot/traceability_index.csv             |   23881 -
+ .../seed_42/uot/uot_cost_components_sparse.csv.gz  |     Bin 207409 -> 0 bytes
+ .../seed_42/uot/uot_cost_matrix.npz                |     Bin 112475 -> 0 bytes
+ .../seed_42/uot/uot_diagnostics.json               |    1225 -
+ .../seed_42/uot/uot_flow_correspondence.csv        |      21 -
+ .../seed_42/uot/uot_flow_segments_bnb.csv          |     289 -
+ .../seed_42/uot/uot_flow_segments_eth.csv          |     289 -
+ .../seed_42/uot/uot_marginals.csv                  |     577 -
+ .../seed_42/uot/uot_split_merge_summary.json       |      10 -
+ .../seed_42/uot/uot_summary.json                   |      23 -
+ .../seed_42/uot/uot_transport_matrix.npz           |     Bin 99403 -> 0 bytes
+ .../seed_42/uot/uot_transport_plan.csv             |   23881 -
+ .../seed_42/uot/uot_unmatched_mass.csv             |     577 -
+ .../seed_43/eval/ablation_metrics.csv              |       2 -
+ .../seed_43/eval/synthetic_eval_by_scenario.csv    |       6 -
+ .../seed_43/eval/uot_eval_by_pattern.csv           |       4 -
+ .../seed_43/eval/uot_eval_summary.txt              |       6 -
+ .../seed_43/eval/uot_evaluation_metrics.json       |      77 -
+ .../seed_43/synthetic_metrics_summary.json         |      10 -
+ .../seed_43/uot/causal_feasibility_summary.json    |      15 -
+ .../seed_43/uot/flow_segments_bnb.csv              |     289 -
+ .../seed_43/uot/flow_segments_eth.csv              |     289 -
+ .../seed_43/uot/traceability_index.csv             |   30941 -
+ .../seed_43/uot/uot_cost_components_sparse.csv.gz  |     Bin 403385 -> 0 bytes
+ .../seed_43/uot/uot_cost_matrix.npz                |     Bin 114843 -> 0 bytes
+ .../seed_43/uot/uot_diagnostics.json               |    1225 -
+ .../seed_43/uot/uot_flow_segments_bnb.csv          |     289 -
+ .../seed_43/uot/uot_flow_segments_eth.csv          |     289 -
+ .../seed_43/uot/uot_marginals.csv                  |     577 -
+ .../seed_43/uot/uot_split_merge_summary.json       |      10 -
+ .../seed_43/uot/uot_summary.json                   |      24 -
+ .../seed_43/uot/uot_transport_matrix.npz           |     Bin 99465 -> 0 bytes
+ .../seed_43/uot/uot_transport_plan.csv             |   30941 -
+ .../seed_43/uot/uot_unmatched_mass.csv             |     577 -
+ .../seed_44/eval/ablation_metrics.csv              |       2 -
+ .../seed_44/eval/synthetic_eval_by_scenario.csv    |       6 -
+ .../seed_44/eval/uot_eval_by_pattern.csv           |       4 -
+ .../seed_44/eval/uot_eval_summary.txt              |       6 -
+ .../seed_44/eval/uot_evaluation_metrics.json       |      77 -
+ .../seed_44/synthetic_metrics_summary.json         |      10 -
+ .../seed_44/uot/causal_feasibility_summary.json    |      15 -
+ .../seed_44/uot/flow_segments_bnb.csv              |     289 -
+ .../seed_44/uot/flow_segments_eth.csv              |     289 -
+ .../seed_44/uot/traceability_index.csv             |   40381 -
+ .../seed_44/uot/uot_cost_components_sparse.csv.gz  |     Bin 562082 -> 0 bytes
+ .../seed_44/uot/uot_cost_matrix.npz                |     Bin 116691 -> 0 bytes
+ .../seed_44/uot/uot_diagnostics.json               |    1225 -
+ .../seed_44/uot/uot_flow_segments_bnb.csv          |     289 -
+ .../seed_44/uot/uot_flow_segments_eth.csv          |     289 -
+ .../seed_44/uot/uot_marginals.csv                  |     577 -
+ .../seed_44/uot/uot_split_merge_summary.json       |      10 -
+ .../seed_44/uot/uot_summary.json                   |      24 -
+ .../seed_44/uot/uot_transport_matrix.npz           |     Bin 97877 -> 0 bytes
+ .../seed_44/uot/uot_transport_plan.csv             |   40381 -
+ .../seed_44/uot/uot_unmatched_mass.csv             |     577 -
+ .../seed_45/eval/ablation_metrics.csv              |       2 -
+ .../seed_45/eval/synthetic_eval_by_scenario.csv    |       6 -
+ .../seed_45/eval/uot_eval_by_pattern.csv           |       4 -
+ .../seed_45/eval/uot_eval_summary.txt              |       6 -
+ .../seed_45/eval/uot_evaluation_metrics.json       |      77 -
+ .../seed_45/synthetic_metrics_summary.json         |      10 -
+ .../seed_45/uot/causal_feasibility_summary.json    |      15 -
+ .../seed_45/uot/flow_segments_bnb.csv              |     289 -
+ .../seed_45/uot/flow_segments_eth.csv              |     289 -
+ .../seed_45/uot/traceability_index.csv             |   28013 -
+ .../seed_45/uot/uot_cost_components_sparse.csv.gz  |     Bin 298986 -> 0 bytes
+ .../seed_45/uot/uot_cost_matrix.npz                |     Bin 116367 -> 0 bytes
+ .../seed_45/uot/uot_diagnostics.json               |    1225 -
+ .../seed_45/uot/uot_flow_correspondence.csv        |      21 -
+ .../seed_45/uot/uot_flow_segments_bnb.csv          |     289 -
+ .../seed_45/uot/uot_flow_segments_eth.csv          |     289 -
+ .../seed_45/uot/uot_marginals.csv                  |     577 -
+ .../seed_45/uot/uot_split_merge_summary.json       |      10 -
+ .../seed_45/uot/uot_summary.json                   |      23 -
+ .../seed_45/uot/uot_transport_matrix.npz           |     Bin 98834 -> 0 bytes
+ .../seed_45/uot/uot_transport_plan.csv             |   28013 -
+ .../seed_45/uot/uot_unmatched_mass.csv             |     577 -
+ .../seed_46/eval/ablation_metrics.csv              |       2 -
+ .../seed_46/eval/synthetic_eval_by_scenario.csv    |       6 -
+ .../seed_46/eval/uot_eval_by_pattern.csv           |       4 -
+ .../seed_46/eval/uot_eval_summary.txt              |       6 -
+ .../seed_46/eval/uot_evaluation_metrics.json       |      77 -
+ .../seed_46/synthetic_metrics_summary.json         |      10 -
+ .../seed_46/uot/causal_feasibility_summary.json    |      15 -
+ .../seed_46/uot/flow_segments_bnb.csv              |     289 -
+ .../seed_46/uot/flow_segments_eth.csv              |     289 -
+ .../seed_46/uot/traceability_index.csv             |   28297 -
+ .../seed_46/uot/uot_cost_components_sparse.csv.gz  |     Bin 321292 -> 0 bytes
+ .../seed_46/uot/uot_cost_matrix.npz                |     Bin 114936 -> 0 bytes
+ .../seed_46/uot/uot_diagnostics.json               |    1225 -
+ .../seed_46/uot/uot_flow_correspondence.csv        |      41 -
+ .../seed_46/uot/uot_flow_segments_bnb.csv          |     289 -
+ .../seed_46/uot/uot_flow_segments_eth.csv          |     289 -
+ .../seed_46/uot/uot_marginals.csv                  |     577 -
+ .../seed_46/uot/uot_split_merge_summary.json       |      10 -
+ .../seed_46/uot/uot_summary.json                   |      23 -
+ .../seed_46/uot/uot_transport_matrix.npz           |     Bin 98450 -> 0 bytes
+ .../seed_46/uot/uot_transport_plan.csv             |   28297 -
+ .../seed_46/uot/uot_unmatched_mass.csv             |     577 -
+ .../seed_42/eval/ablation_metrics.csv              |       2 -
+ .../seed_42/eval/synthetic_eval_by_scenario.csv    |       6 -
+ .../seed_42/eval/uot_eval_by_pattern.csv           |       4 -
+ .../seed_42/eval/uot_eval_summary.txt              |       6 -
+ .../seed_42/eval/uot_evaluation_metrics.json       |      77 -
+ .../seed_42/synthetic_metrics_summary.json         |      10 -
+ .../seed_42/uot/causal_feasibility_summary.json    |      15 -
+ .../seed_42/uot/flow_segments_bnb.csv              |     289 -
+ .../seed_42/uot/flow_segments_eth.csv              |     289 -
+ .../seed_42/uot/traceability_index.csv             |   41801 -
+ .../seed_42/uot/uot_cost_components_sparse.csv.gz  |     Bin 579418 -> 0 bytes
+ .../no_amount_cost/seed_42/uot/uot_cost_matrix.npz |     Bin 110037 -> 0 bytes
+ .../seed_42/uot/uot_diagnostics.json               |    1225 -
+ .../seed_42/uot/uot_flow_correspondence.csv        |      17 -
+ .../seed_42/uot/uot_flow_segments_bnb.csv          |     289 -
+ .../seed_42/uot/uot_flow_segments_eth.csv          |     289 -
+ .../no_amount_cost/seed_42/uot/uot_marginals.csv   |     577 -
+ .../seed_42/uot/uot_split_merge_summary.json       |      10 -
+ .../no_amount_cost/seed_42/uot/uot_summary.json    |      23 -
+ .../seed_42/uot/uot_transport_matrix.npz           |     Bin 99826 -> 0 bytes
+ .../seed_42/uot/uot_transport_plan.csv             |   41801 -
+ .../seed_42/uot/uot_unmatched_mass.csv             |     577 -
+ .../seed_43/eval/ablation_metrics.csv              |       2 -
+ .../seed_43/eval/synthetic_eval_by_scenario.csv    |       6 -
+ .../seed_43/eval/uot_eval_by_pattern.csv           |       4 -
+ .../seed_43/eval/uot_eval_summary.txt              |       6 -
+ .../seed_43/eval/uot_evaluation_metrics.json       |      77 -
+ .../seed_43/synthetic_metrics_summary.json         |      10 -
+ .../seed_43/uot/causal_feasibility_summary.json    |      15 -
+ .../seed_43/uot/flow_segments_bnb.csv              |     289 -
+ .../seed_43/uot/flow_segments_eth.csv              |     289 -
+ .../seed_43/uot/traceability_index.csv             |   51837 -
+ .../seed_43/uot/uot_cost_components_sparse.csv.gz  |     Bin 737498 -> 0 bytes
+ .../no_amount_cost/seed_43/uot/uot_cost_matrix.npz |     Bin 112499 -> 0 bytes
+ .../seed_43/uot/uot_diagnostics.json               |    1225 -
+ .../seed_43/uot/uot_flow_segments_bnb.csv          |     289 -
+ .../seed_43/uot/uot_flow_segments_eth.csv          |     289 -
+ .../no_amount_cost/seed_43/uot/uot_marginals.csv   |     577 -
+ .../seed_43/uot/uot_split_merge_summary.json       |      10 -
+ .../no_amount_cost/seed_43/uot/uot_summary.json    |      24 -
+ .../seed_43/uot/uot_transport_matrix.npz           |     Bin 97797 -> 0 bytes
+ .../seed_43/uot/uot_transport_plan.csv             |   51837 -
+ .../seed_43/uot/uot_unmatched_mass.csv             |     577 -
+ .../seed_44/eval/ablation_metrics.csv              |       2 -
+ .../seed_44/eval/synthetic_eval_by_scenario.csv    |       6 -
+ .../seed_44/eval/uot_eval_by_pattern.csv           |       4 -
+ .../seed_44/eval/uot_eval_summary.txt              |       6 -
+ .../seed_44/eval/uot_evaluation_metrics.json       |      77 -
+ .../seed_44/synthetic_metrics_summary.json         |      10 -
+ .../seed_44/uot/causal_feasibility_summary.json    |      15 -
+ .../seed_44/uot/flow_segments_bnb.csv              |     289 -
+ .../seed_44/uot/flow_segments_eth.csv              |     289 -
+ .../seed_44/uot/traceability_index.csv             |   65621 -
+ .../seed_44/uot/uot_cost_components_sparse.csv.gz  |     Bin 959714 -> 0 bytes
+ .../no_amount_cost/seed_44/uot/uot_cost_matrix.npz |     Bin 114186 -> 0 bytes
+ .../seed_44/uot/uot_diagnostics.json               |    1225 -
+ .../seed_44/uot/uot_flow_segments_bnb.csv          |     289 -
+ .../seed_44/uot/uot_flow_segments_eth.csv          |     289 -
+ .../no_amount_cost/seed_44/uot/uot_marginals.csv   |     577 -
+ .../seed_44/uot/uot_split_merge_summary.json       |      10 -
+ .../no_amount_cost/seed_44/uot/uot_summary.json    |      24 -
+ .../seed_44/uot/uot_transport_matrix.npz           |     Bin 98185 -> 0 bytes
+ .../seed_44/uot/uot_transport_plan.csv             |   65621 -
+ .../seed_44/uot/uot_unmatched_mass.csv             |     577 -
+ .../seed_45/eval/ablation_metrics.csv              |       2 -
+ .../seed_45/eval/synthetic_eval_by_scenario.csv    |       6 -
+ .../seed_45/eval/uot_eval_by_pattern.csv           |       4 -
+ .../seed_45/eval/uot_eval_summary.txt              |       6 -
+ .../seed_45/eval/uot_evaluation_metrics.json       |      77 -
+ .../seed_45/synthetic_metrics_summary.json         |      10 -
+ .../seed_45/uot/causal_feasibility_summary.json    |      15 -
+ .../seed_45/uot/flow_segments_bnb.csv              |     289 -
+ .../seed_45/uot/flow_segments_eth.csv              |     289 -
+ .../seed_45/uot/traceability_index.csv             |   53221 -
+ .../seed_45/uot/uot_cost_components_sparse.csv.gz  |     Bin 738613 -> 0 bytes
+ .../no_amount_cost/seed_45/uot/uot_cost_matrix.npz |     Bin 114049 -> 0 bytes
+ .../seed_45/uot/uot_diagnostics.json               |    1225 -
+ .../seed_45/uot/uot_flow_correspondence.csv        |      17 -
+ .../seed_45/uot/uot_flow_segments_bnb.csv          |     289 -
+ .../seed_45/uot/uot_flow_segments_eth.csv          |     289 -
+ .../no_amount_cost/seed_45/uot/uot_marginals.csv   |     577 -
+ .../seed_45/uot/uot_split_merge_summary.json       |      10 -
+ .../no_amount_cost/seed_45/uot/uot_summary.json    |      23 -
+ .../seed_45/uot/uot_transport_matrix.npz           |     Bin 98523 -> 0 bytes
+ .../seed_45/uot/uot_transport_plan.csv             |   53221 -
+ .../seed_45/uot/uot_unmatched_mass.csv             |     577 -
+ .../seed_46/eval/ablation_metrics.csv              |       2 -
+ .../seed_46/eval/synthetic_eval_by_scenario.csv    |       6 -
+ .../seed_46/eval/uot_eval_by_pattern.csv           |       4 -
+ .../seed_46/eval/uot_eval_summary.txt              |       6 -
+ .../seed_46/eval/uot_evaluation_metrics.json       |      77 -
+ .../seed_46/synthetic_metrics_summary.json         |      10 -
+ .../seed_46/uot/causal_feasibility_summary.json    |      15 -
+ .../seed_46/uot/flow_segments_bnb.csv              |     289 -
+ .../seed_46/uot/flow_segments_eth.csv              |     289 -
+ .../seed_46/uot/traceability_index.csv             |   45873 -
+ .../seed_46/uot/uot_cost_components_sparse.csv.gz  |     Bin 642980 -> 0 bytes
+ .../no_amount_cost/seed_46/uot/uot_cost_matrix.npz |     Bin 112686 -> 0 bytes
+ .../seed_46/uot/uot_diagnostics.json               |    1225 -
+ .../seed_46/uot/uot_flow_correspondence.csv        |      17 -
+ .../seed_46/uot/uot_flow_segments_bnb.csv          |     289 -
+ .../seed_46/uot/uot_flow_segments_eth.csv          |     289 -
+ .../no_amount_cost/seed_46/uot/uot_marginals.csv   |     577 -
+ .../seed_46/uot/uot_split_merge_summary.json       |      10 -
+ .../no_amount_cost/seed_46/uot/uot_summary.json    |      23 -
+ .../seed_46/uot/uot_transport_matrix.npz           |     Bin 99582 -> 0 bytes
+ .../seed_46/uot/uot_transport_plan.csv             |   45873 -
+ .../seed_46/uot/uot_unmatched_mass.csv             |     577 -
+ .../seed_42/eval/ablation_metrics.csv              |       2 -
+ .../seed_42/eval/synthetic_eval_by_scenario.csv    |       6 -
+ .../seed_42/eval/uot_eval_by_pattern.csv           |       4 -
+ .../seed_42/eval/uot_eval_summary.txt              |       6 -
+ .../seed_42/eval/uot_evaluation_metrics.json       |      77 -
+ .../seed_42/synthetic_metrics_summary.json         |      10 -
+ .../seed_42/uot/causal_feasibility_summary.json    |      15 -
+ .../seed_42/uot/flow_segments_bnb.csv              |     289 -
+ .../seed_42/uot/flow_segments_eth.csv              |     289 -
+ .../seed_42/uot/traceability_index.csv             |   13329 -
+ .../seed_42/uot/uot_cost_components_sparse.csv.gz  |     Bin 112250 -> 0 bytes
+ .../seed_42/uot/uot_cost_matrix.npz                |     Bin 111738 -> 0 bytes
+ .../seed_42/uot/uot_diagnostics.json               |    1225 -
+ .../seed_42/uot/uot_flow_correspondence.csv        |      21 -
+ .../seed_42/uot/uot_flow_segments_bnb.csv          |     289 -
+ .../seed_42/uot/uot_flow_segments_eth.csv          |     289 -
+ .../no_route_bridge/seed_42/uot/uot_marginals.csv  |     577 -
+ .../seed_42/uot/uot_split_merge_summary.json       |      10 -
+ .../no_route_bridge/seed_42/uot/uot_summary.json   |      23 -
+ .../seed_42/uot/uot_transport_matrix.npz           |     Bin 96665 -> 0 bytes
+ .../seed_42/uot/uot_transport_plan.csv             |   13329 -
+ .../seed_42/uot/uot_unmatched_mass.csv             |     577 -
+ .../seed_43/eval/ablation_metrics.csv              |       2 -
+ .../seed_43/eval/synthetic_eval_by_scenario.csv    |       6 -
+ .../seed_43/eval/uot_eval_by_pattern.csv           |       4 -
+ .../seed_43/eval/uot_eval_summary.txt              |       6 -
+ .../seed_43/eval/uot_evaluation_metrics.json       |      77 -
+ .../seed_43/synthetic_metrics_summary.json         |      10 -
+ .../seed_43/uot/causal_feasibility_summary.json    |      15 -
+ .../seed_43/uot/flow_segments_bnb.csv              |     289 -
+ .../seed_43/uot/flow_segments_eth.csv              |     289 -
+ .../seed_43/uot/traceability_index.csv             |   19489 -
+ .../seed_43/uot/uot_cost_components_sparse.csv.gz  |     Bin 151160 -> 0 bytes
+ .../seed_43/uot/uot_cost_matrix.npz                |     Bin 114092 -> 0 bytes
+ .../seed_43/uot/uot_diagnostics.json               |    1225 -
+ .../seed_43/uot/uot_flow_segments_bnb.csv          |     289 -
+ .../seed_43/uot/uot_flow_segments_eth.csv          |     289 -
+ .../no_route_bridge/seed_43/uot/uot_marginals.csv  |     577 -
+ .../seed_43/uot/uot_split_merge_summary.json       |      10 -
+ .../no_route_bridge/seed_43/uot/uot_summary.json   |      24 -
+ .../seed_43/uot/uot_transport_matrix.npz           |     Bin 98264 -> 0 bytes
+ .../seed_43/uot/uot_transport_plan.csv             |   19489 -
+ .../seed_43/uot/uot_unmatched_mass.csv             |     577 -
+ .../seed_44/eval/ablation_metrics.csv              |       2 -
+ .../seed_44/eval/synthetic_eval_by_scenario.csv    |       6 -
+ .../seed_44/eval/uot_eval_by_pattern.csv           |       4 -
+ .../seed_44/eval/uot_eval_summary.txt              |       6 -
+ .../seed_44/eval/uot_evaluation_metrics.json       |      77 -
+ .../seed_44/synthetic_metrics_summary.json         |      10 -
+ .../seed_44/uot/causal_feasibility_summary.json    |      15 -
+ .../seed_44/uot/flow_segments_bnb.csv              |     289 -
+ .../seed_44/uot/flow_segments_eth.csv              |     289 -
+ .../seed_44/uot/traceability_index.csv             |   24333 -
+ .../seed_44/uot/uot_cost_components_sparse.csv.gz  |     Bin 220551 -> 0 bytes
+ .../seed_44/uot/uot_cost_matrix.npz                |     Bin 115862 -> 0 bytes
+ .../seed_44/uot/uot_diagnostics.json               |    1225 -
+ .../seed_44/uot/uot_flow_segments_bnb.csv          |     289 -
+ .../seed_44/uot/uot_flow_segments_eth.csv          |     289 -
+ .../no_route_bridge/seed_44/uot/uot_marginals.csv  |     577 -
+ .../seed_44/uot/uot_split_merge_summary.json       |      10 -
+ .../no_route_bridge/seed_44/uot/uot_summary.json   |      24 -
+ .../seed_44/uot/uot_transport_matrix.npz           |     Bin 100314 -> 0 bytes
+ .../seed_44/uot/uot_transport_plan.csv             |   24333 -
+ .../seed_44/uot/uot_unmatched_mass.csv             |     577 -
+ .../seed_45/eval/ablation_metrics.csv              |       2 -
+ .../seed_45/eval/synthetic_eval_by_scenario.csv    |       6 -
+ .../seed_45/eval/uot_eval_by_pattern.csv           |       4 -
+ .../seed_45/eval/uot_eval_summary.txt              |       6 -
+ .../seed_45/eval/uot_evaluation_metrics.json       |      77 -
+ .../seed_45/synthetic_metrics_summary.json         |      10 -
+ .../seed_45/uot/causal_feasibility_summary.json    |      15 -
+ .../seed_45/uot/flow_segments_bnb.csv              |     289 -
+ .../seed_45/uot/flow_segments_eth.csv              |     289 -
+ .../seed_45/uot/traceability_index.csv             |   15949 -
+ .../seed_45/uot/uot_cost_components_sparse.csv.gz  |     Bin 122872 -> 0 bytes
+ .../seed_45/uot/uot_cost_matrix.npz                |     Bin 115567 -> 0 bytes
+ .../seed_45/uot/uot_diagnostics.json               |    1225 -
+ .../seed_45/uot/uot_flow_correspondence.csv        |      21 -
+ .../seed_45/uot/uot_flow_segments_bnb.csv          |     289 -
+ .../seed_45/uot/uot_flow_segments_eth.csv          |     289 -
+ .../no_route_bridge/seed_45/uot/uot_marginals.csv  |     577 -
+ .../seed_45/uot/uot_split_merge_summary.json       |      10 -
+ .../no_route_bridge/seed_45/uot/uot_summary.json   |      23 -
+ .../seed_45/uot/uot_transport_matrix.npz           |     Bin 99268 -> 0 bytes
+ .../seed_45/uot/uot_transport_plan.csv             |   15949 -
+ .../seed_45/uot/uot_unmatched_mass.csv             |     577 -
+ .../seed_46/eval/ablation_metrics.csv              |       2 -
+ .../seed_46/eval/synthetic_eval_by_scenario.csv    |       6 -
+ .../seed_46/eval/uot_eval_by_pattern.csv           |       4 -
+ .../seed_46/eval/uot_eval_summary.txt              |       6 -
+ .../seed_46/eval/uot_evaluation_metrics.json       |      77 -
+ .../seed_46/synthetic_metrics_summary.json         |      10 -
+ .../seed_46/uot/causal_feasibility_summary.json    |      15 -
+ .../seed_46/uot/flow_segments_bnb.csv              |     289 -
+ .../seed_46/uot/flow_segments_eth.csv              |     289 -
+ .../seed_46/uot/traceability_index.csv             |   17989 -
+ .../seed_46/uot/uot_cost_components_sparse.csv.gz  |     Bin 154114 -> 0 bytes
+ .../seed_46/uot/uot_cost_matrix.npz                |     Bin 114255 -> 0 bytes
+ .../seed_46/uot/uot_diagnostics.json               |    1225 -
+ .../seed_46/uot/uot_flow_correspondence.csv        |      41 -
+ .../seed_46/uot/uot_flow_segments_bnb.csv          |     289 -
+ .../seed_46/uot/uot_flow_segments_eth.csv          |     289 -
+ .../no_route_bridge/seed_46/uot/uot_marginals.csv  |     577 -
+ .../seed_46/uot/uot_split_merge_summary.json       |      10 -
+ .../no_route_bridge/seed_46/uot/uot_summary.json   |      23 -
+ .../seed_46/uot/uot_transport_matrix.npz           |     Bin 98065 -> 0 bytes
+ .../seed_46/uot/uot_transport_plan.csv             |   17989 -
+ .../seed_46/uot/uot_unmatched_mass.csv             |     577 -
+ review_pack/results/baselines/README.md            |      47 -
+ .../baselines/abctracer_feasibility_audit.md       |      20 -
+ .../baselines/abctracer_style_flow_pairs.csv       |    6734 -
+ .../baselines/abctracer_style_tx_rankings.csv      |   28374 -
+ .../baselines/connector_style_flow_pairs.csv       |    1700 -
+ .../results/baselines/connector_style_tx_pairs.csv |    1862 -
+ .../baselines/external_baseline_results.json       |     162 -
+ .../results/baselines/external_baseline_table.csv  |       5 -
+ .../table_a_external_tx_baselines_celer_real.csv   |       3 -
+ .../table_b_rc_uot_semi_synthetic_stress.csv       |       2 -
+ .../results/experiments/artifact_inventory.json    |      46 -
+ .../results/experiments/candidate_pool_sweep.csv   |       8 -
+ .../results/experiments/decode_threshold_sweep.csv |      55 -
+ .../experiments/decode_threshold_top_rules.csv     |      16 -
+ .../experiments/decode_threshold_tradeoff.md       |      64 -
+ .../results/experiments/final_artifact_audit.md    |      68 -
+ .../experiments/final_artifact_manifest.json       |     130 -
+ .../experiments/flow_id_consistency_report.json    |      12 -
+ .../experiments/flow_segmentation_sensitivity.json |     377 -
+ .../results/experiments/large_budget_setting.json  |      11 -
+ .../results/experiments/oracle_forcing_debug.csv   |    4510 -
+ .../experiments/oracle_forcing_summary.json        |      13 -
+ .../experiments/paper_limitations_refined.md       |      17 -
+ .../experiments/paper_results_candidate_pool.md    |      11 -
+ .../results/experiments/paper_results_decode.md    |      31 -
+ .../experiments/paper_results_synthetic_failure.md |      33 -
+ .../experiments/recommended_decode_rule.json       |      12 -
+ .../experiments/synthetic_metric_interpretation.md |      42 -
+ .../results/experiments/threshold_sensitivity.csv  |       4 -
+ .../phase10r_audit/phase10r_audit_report.md        |     151 -
+ .../phase10r_audit/phase10r_audit_summary.csv      |      50 -
+ .../phase10r_audit/phase10r_audit_summary.json     |      68 -
+ .../phase10r_audit/phase10r_blocking_issues.md     |      11 -
+ .../eval/eval/uot_eval_by_pattern.csv              |       4 -
+ .../eval/eval/uot_eval_summary.txt                 |       6 -
+ .../eval/eval/uot_evaluation_metrics.json          |      37 -
+ .../real_pool_rc_uot/real_pool_candidate_pairs.csv |   23639 -
+ .../real_pool_candidate_stats.json                 |     101 -
+ .../real_pool_rc_uot/real_pool_component_meta.json |     143 -
+ .../real_pool_rc_uot/real_pool_rc_uot_eval.json    |      61 -
+ .../real_pool_rc_uot_transport.csv                 |     162 -
+ .../real_pool_rc_uot_transport_full_unfiltered.csv | 1213704 -----------------
+ .../table_c_real_celer_same_scope_comparison.csv   |       4 -
+ .../eval/uot_evaluation_metrics.json               |       1 -
+ .../component_stable_BUSD/flow_segments_bnb.csv    |     638 -
+ .../component_stable_BUSD/flow_segments_eth.csv    |     636 -
+ .../uot/causal_feasibility_summary.json            |      15 -
+ .../uot/flow_segments_bnb.csv                      |     638 -
+ .../uot/flow_segments_eth.csv                      |     636 -
+ .../uot/traceability_index.csv                     |  312796 -----
+ .../component_stable_BUSD/uot/uot_cost_matrix.npz  |     Bin 4154776 -> 0 bytes
+ .../component_stable_BUSD/uot/uot_diagnostics.json |    2607 -
+ .../uot/uot_flow_correspondence.csv                |      21 -
+ .../uot/uot_flow_segments_bnb.csv                  |     638 -
+ .../uot/uot_flow_segments_eth.csv                  |     636 -
+ .../component_stable_BUSD/uot/uot_marginals.csv    |    1273 -
+ .../uot/uot_split_merge_summary.json               |      10 -
+ .../component_stable_BUSD/uot/uot_summary.json     |      23 -
+ .../uot/uot_transport_matrix.npz                   |     Bin 3112555 -> 0 bytes
+ .../uot/uot_transport_plan.csv                     |  312796 -----
+ .../uot/uot_unmatched_mass.csv                     |    1273 -
+ .../eval/uot_evaluation_metrics.json               |       1 -
+ .../component_stable_USDC/flow_segments_bnb.csv    |     978 -
+ .../component_stable_USDC/flow_segments_eth.csv    |     980 -
+ .../uot/causal_feasibility_summary.json            |      15 -
+ .../uot/flow_segments_bnb.csv                      |     978 -
+ .../uot/flow_segments_eth.csv                      |     980 -
+ .../uot/traceability_index.csv                     |  672562 ---------
+ .../component_stable_USDC/uot/uot_cost_matrix.npz  |     Bin 9582818 -> 0 bytes
+ .../component_stable_USDC/uot/uot_diagnostics.json |    3975 -
+ .../uot/uot_flow_correspondence.csv                |      23 -
+ .../uot/uot_flow_segments_bnb.csv                  |     978 -
+ .../uot/uot_flow_segments_eth.csv                  |     980 -
+ .../component_stable_USDC/uot/uot_marginals.csv    |    1957 -
+ .../uot/uot_split_merge_summary.json               |      10 -
+ .../component_stable_USDC/uot/uot_summary.json     |      23 -
+ .../uot/uot_transport_matrix.npz                   |     Bin 7345089 -> 0 bytes
+ .../uot/uot_transport_plan.csv                     |  672562 ---------
+ .../uot/uot_unmatched_mass.csv                     |    1957 -
+ .../eval/uot_evaluation_metrics.json               |       1 -
+ .../component_stable_USDT/flow_segments_bnb.csv    |    2020 -
+ .../component_stable_USDT/flow_segments_eth.csv    |    2021 -
+ .../uot/causal_feasibility_summary.json            |      15 -
+ .../uot/flow_segments_bnb.csv                      |    2020 -
+ .../uot/flow_segments_eth.csv                      |    2021 -
+ .../uot/traceability_index.csv                     |      62 -
+ .../component_stable_USDT/uot/uot_cost_matrix.npz  |     Bin 41084757 -> 0 bytes
+ .../component_stable_USDT/uot/uot_diagnostics.json |    8141 -
+ .../uot/uot_flow_segments_bnb.csv                  |    2020 -
+ .../uot/uot_flow_segments_eth.csv                  |    2021 -
+ .../component_stable_USDT/uot/uot_marginals.csv    |    4040 -
+ .../uot/uot_split_merge_summary.json               |      10 -
+ .../component_stable_USDT/uot/uot_summary.json     |      23 -
+ .../uot/uot_transport_matrix.npz                   |     Bin 31333475 -> 0 bytes
+ .../uot/uot_transport_plan.csv                     |      62 -
+ .../uot/uot_unmatched_mass.csv                     |    4040 -
+ .../eval/uot_evaluation_metrics.json               |       1 -
+ .../component_token_ANML/flow_segments_bnb.csv     |      96 -
+ .../component_token_ANML/flow_segments_eth.csv     |      97 -
+ .../uot/causal_feasibility_summary.json            |      15 -
+ .../component_token_ANML/uot/flow_segments_bnb.csv |      96 -
+ .../component_token_ANML/uot/flow_segments_eth.csv |      97 -
+ .../uot/traceability_index.csv                     |    8590 -
+ .../component_token_ANML/uot/uot_cost_matrix.npz   |     Bin 99111 -> 0 bytes
+ .../component_token_ANML/uot/uot_diagnostics.json  |     444 -
+ .../uot/uot_flow_correspondence.csv                |       2 -
+ .../uot/uot_flow_segments_bnb.csv                  |      96 -
+ .../uot/uot_flow_segments_eth.csv                  |      97 -
+ .../component_token_ANML/uot/uot_marginals.csv     |     192 -
+ .../uot/uot_split_merge_summary.json               |      10 -
+ .../component_token_ANML/uot/uot_summary.json      |      23 -
+ .../uot/uot_transport_matrix.npz                   |     Bin 76572 -> 0 bytes
+ .../uot/uot_transport_plan.csv                     |    8590 -
+ .../uot/uot_unmatched_mass.csv                     |     192 -
+ .../eval/uot_evaluation_metrics.json               |       1 -
+ .../component_token_AVG/flow_segments_bnb.csv      |       6 -
+ .../component_token_AVG/flow_segments_eth.csv      |       6 -
+ .../uot/causal_feasibility_summary.json            |      15 -
+ .../component_token_AVG/uot/flow_segments_bnb.csv  |       6 -
+ .../component_token_AVG/uot/flow_segments_eth.csv  |       6 -
+ .../component_token_AVG/uot/traceability_index.csv |      26 -
+ .../component_token_AVG/uot/uot_cost_matrix.npz    |     Bin 4105 -> 0 bytes
+ .../component_token_AVG/uot/uot_diagnostics.json   |      82 -
+ .../uot/uot_flow_correspondence.csv                |       3 -
+ .../uot/uot_flow_segments_bnb.csv                  |       6 -
+ .../uot/uot_flow_segments_eth.csv                  |       6 -
+ .../component_token_AVG/uot/uot_marginals.csv      |      11 -
+ .../uot/uot_split_merge_summary.json               |      10 -
+ .../component_token_AVG/uot/uot_summary.json       |      23 -
+ .../uot/uot_transport_matrix.npz                   |     Bin 2288 -> 0 bytes
+ .../component_token_AVG/uot/uot_transport_plan.csv |      26 -
+ .../component_token_AVG/uot/uot_unmatched_mass.csv |      11 -
+ .../eval/uot_evaluation_metrics.json               |       1 -
+ .../component_token_BZZ/flow_segments_bnb.csv      |       3 -
+ .../component_token_BZZ/flow_segments_eth.csv      |       3 -
+ .../uot/causal_feasibility_summary.json            |      15 -
+ .../component_token_BZZ/uot/flow_segments_bnb.csv  |       3 -
+ .../component_token_BZZ/uot/flow_segments_eth.csv  |       3 -
+ .../component_token_BZZ/uot/traceability_index.csv |       5 -
+ .../component_token_BZZ/uot/uot_cost_matrix.npz    |     Bin 3781 -> 0 bytes
+ .../component_token_BZZ/uot/uot_diagnostics.json   |      70 -
+ .../uot/uot_flow_correspondence.csv                |       3 -
+ .../uot/uot_flow_segments_bnb.csv                  |       3 -
+ .../uot/uot_flow_segments_eth.csv                  |       3 -
+ .../component_token_BZZ/uot/uot_marginals.csv      |       5 -
+ .../uot/uot_split_merge_summary.json               |      10 -
+ .../component_token_BZZ/uot/uot_summary.json       |      23 -
+ .../uot/uot_transport_matrix.npz                   |     Bin 1927 -> 0 bytes
+ .../component_token_BZZ/uot/uot_transport_plan.csv |       5 -
+ .../component_token_BZZ/uot/uot_unmatched_mass.csv |       5 -
+ .../eval/uot_evaluation_metrics.json               |       1 -
+ .../component_token_DODO/flow_segments_bnb.csv     |       5 -
+ .../component_token_DODO/flow_segments_eth.csv     |       5 -
+ .../uot/causal_feasibility_summary.json            |      15 -
+ .../component_token_DODO/uot/flow_segments_bnb.csv |       5 -
+ .../component_token_DODO/uot/flow_segments_eth.csv |       5 -
+ .../uot/traceability_index.csv                     |      17 -
+ .../component_token_DODO/uot/uot_cost_matrix.npz   |     Bin 3975 -> 0 bytes
+ .../component_token_DODO/uot/uot_diagnostics.json  |      78 -
+ .../uot/uot_flow_correspondence.csv                |       7 -
+ .../uot/uot_flow_segments_bnb.csv                  |       5 -
+ .../uot/uot_flow_segments_eth.csv                  |       5 -
+ .../component_token_DODO/uot/uot_marginals.csv     |       9 -
+ .../uot/uot_split_merge_summary.json               |      10 -
+ .../component_token_DODO/uot/uot_summary.json      |      23 -
+ .../uot/uot_transport_matrix.npz                   |     Bin 2160 -> 0 bytes
+ .../uot/uot_transport_plan.csv                     |      17 -
+ .../uot/uot_unmatched_mass.csv                     |       9 -
+ .../eval/uot_evaluation_metrics.json               |       1 -
+ .../component_token_DOMI/flow_segments_bnb.csv     |     151 -
+ .../component_token_DOMI/flow_segments_eth.csv     |     151 -
+ .../uot/causal_feasibility_summary.json            |      15 -
+ .../component_token_DOMI/uot/flow_segments_bnb.csv |     151 -
+ .../component_token_DOMI/uot/flow_segments_eth.csv |     151 -
+ .../uot/traceability_index.csv                     |   21381 -
+ .../component_token_DOMI/uot/uot_cost_matrix.npz   |     Bin 246684 -> 0 bytes
+ .../component_token_DOMI/uot/uot_diagnostics.json  |     662 -
+ .../uot/uot_flow_correspondence.csv                |       3 -
+ .../uot/uot_flow_segments_bnb.csv                  |     151 -
+ .../uot/uot_flow_segments_eth.csv                  |     151 -
+ .../component_token_DOMI/uot/uot_marginals.csv     |     301 -
+ .../uot/uot_split_merge_summary.json               |      10 -
+ .../component_token_DOMI/uot/uot_summary.json      |      24 -
+ .../uot/uot_transport_matrix.npz                   |     Bin 180955 -> 0 bytes
+ .../uot/uot_transport_plan.csv                     |   21381 -
+ .../uot/uot_unmatched_mass.csv                     |     301 -
+ .../eval/uot_evaluation_metrics.json               |       1 -
+ .../component_token_GHX/flow_segments_bnb.csv      |     108 -
+ .../component_token_GHX/flow_segments_eth.csv      |     108 -
+ .../uot/causal_feasibility_summary.json            |      15 -
+ .../component_token_GHX/uot/flow_segments_bnb.csv  |     108 -
+ .../component_token_GHX/uot/flow_segments_eth.csv  |     108 -
+ .../component_token_GHX/uot/traceability_index.csv |   11246 -
+ .../component_token_GHX/uot/uot_cost_matrix.npz    |     Bin 122878 -> 0 bytes
+ .../component_token_GHX/uot/uot_diagnostics.json   |     490 -
+ .../uot/uot_flow_correspondence.csv                |      20 -
+ .../uot/uot_flow_segments_bnb.csv                  |     108 -
+ .../uot/uot_flow_segments_eth.csv                  |     108 -
+ .../component_token_GHX/uot/uot_marginals.csv      |     215 -
+ .../uot/uot_split_merge_summary.json               |      10 -
+ .../component_token_GHX/uot/uot_summary.json       |      23 -
+ .../uot/uot_transport_matrix.npz                   |     Bin 94682 -> 0 bytes
+ .../component_token_GHX/uot/uot_transport_plan.csv |   11246 -
+ .../component_token_GHX/uot/uot_unmatched_mass.csv |     215 -
+ .../eval/uot_evaluation_metrics.json               |       1 -
+ .../component_token_GNO/flow_segments_bnb.csv      |       3 -
+ .../component_token_GNO/flow_segments_eth.csv      |       3 -
+ .../uot/causal_feasibility_summary.json            |      15 -
+ .../component_token_GNO/uot/flow_segments_bnb.csv  |       3 -
+ .../component_token_GNO/uot/flow_segments_eth.csv  |       3 -
+ .../component_token_GNO/uot/traceability_index.csv |       5 -
+ .../component_token_GNO/uot/uot_cost_matrix.npz    |     Bin 3788 -> 0 bytes
+ .../component_token_GNO/uot/uot_diagnostics.json   |      70 -
+ .../uot/uot_flow_correspondence.csv                |       3 -
+ .../uot/uot_flow_segments_bnb.csv                  |       3 -
+ .../uot/uot_flow_segments_eth.csv                  |       3 -
+ .../component_token_GNO/uot/uot_marginals.csv      |       5 -
+ .../uot/uot_split_merge_summary.json               |      10 -
+ .../component_token_GNO/uot/uot_summary.json       |      23 -
+ .../uot/uot_transport_matrix.npz                   |     Bin 1931 -> 0 bytes
+ .../component_token_GNO/uot/uot_transport_plan.csv |       5 -
+ .../component_token_GNO/uot/uot_unmatched_mass.csv |       5 -
+ .../eval/uot_evaluation_metrics.json               |       1 -
+ .../component_token_LEAP/flow_segments_bnb.csv     |      25 -
+ .../component_token_LEAP/flow_segments_eth.csv     |      25 -
+ .../uot/causal_feasibility_summary.json            |      15 -
+ .../component_token_LEAP/uot/flow_segments_bnb.csv |      25 -
+ .../component_token_LEAP/uot/flow_segments_eth.csv |      25 -
+ .../uot/traceability_index.csv                     |     552 -
+ .../component_token_LEAP/uot/uot_cost_matrix.npz   |     Bin 10744 -> 0 bytes
+ .../component_token_LEAP/uot/uot_diagnostics.json  |     158 -
+ .../uot/uot_flow_correspondence.csv                |       7 -
+ .../uot/uot_flow_segments_bnb.csv                  |      25 -
+ .../uot/uot_flow_segments_eth.csv                  |      25 -
+ .../component_token_LEAP/uot/uot_marginals.csv     |      49 -
+ .../uot/uot_split_merge_summary.json               |      10 -
+ .../component_token_LEAP/uot/uot_summary.json      |      23 -
+ .../uot/uot_transport_matrix.npz                   |     Bin 7563 -> 0 bytes
+ .../uot/uot_transport_plan.csv                     |     552 -
+ .../uot/uot_unmatched_mass.csv                     |      49 -
+ .../eval/uot_evaluation_metrics.json               |       1 -
+ .../component_token_LUSD/flow_segments_bnb.csv     |       3 -
+ .../component_token_LUSD/flow_segments_eth.csv     |       3 -
+ .../uot/causal_feasibility_summary.json            |      15 -
+ .../component_token_LUSD/uot/flow_segments_bnb.csv |       3 -
+ .../component_token_LUSD/uot/flow_segments_eth.csv |       3 -
+ .../uot/traceability_index.csv                     |       5 -
+ .../component_token_LUSD/uot/uot_cost_matrix.npz   |     Bin 3783 -> 0 bytes
+ .../component_token_LUSD/uot/uot_diagnostics.json  |      70 -
+ .../uot/uot_flow_correspondence.csv                |       3 -
+ .../uot/uot_flow_segments_bnb.csv                  |       3 -
+ .../uot/uot_flow_segments_eth.csv                  |       3 -
+ .../component_token_LUSD/uot/uot_marginals.csv     |       5 -
+ .../uot/uot_split_merge_summary.json               |      10 -
+ .../component_token_LUSD/uot/uot_summary.json      |      23 -
+ .../uot/uot_transport_matrix.npz                   |     Bin 1929 -> 0 bytes
+ .../uot/uot_transport_plan.csv                     |       5 -
+ .../uot/uot_unmatched_mass.csv                     |       5 -
+ .../eval/uot_evaluation_metrics.json               |       1 -
+ .../component_token_MCB/flow_segments_bnb.csv      |       3 -
+ .../component_token_MCB/flow_segments_eth.csv      |       3 -
+ .../uot/causal_feasibility_summary.json            |      15 -
+ .../component_token_MCB/uot/flow_segments_bnb.csv  |       3 -
+ .../component_token_MCB/uot/flow_segments_eth.csv  |       3 -
+ .../component_token_MCB/uot/traceability_index.csv |       5 -
+ .../component_token_MCB/uot/uot_cost_matrix.npz    |     Bin 3785 -> 0 bytes
+ .../component_token_MCB/uot/uot_diagnostics.json   |      70 -
+ .../uot/uot_flow_correspondence.csv                |       2 -
+ .../uot/uot_flow_segments_bnb.csv                  |       3 -
+ .../uot/uot_flow_segments_eth.csv                  |       3 -
+ .../component_token_MCB/uot/uot_marginals.csv      |       5 -
+ .../uot/uot_split_merge_summary.json               |      10 -
+ .../component_token_MCB/uot/uot_summary.json       |      23 -
+ .../uot/uot_transport_matrix.npz                   |     Bin 1934 -> 0 bytes
+ .../component_token_MCB/uot/uot_transport_plan.csv |       5 -
+ .../component_token_MCB/uot/uot_unmatched_mass.csv |       5 -
+ .../eval/uot_evaluation_metrics.json               |       1 -
+ .../component_token_MELOS/flow_segments_bnb.csv    |       6 -
+ .../component_token_MELOS/flow_segments_eth.csv    |       6 -
+ .../uot/causal_feasibility_summary.json            |      15 -
+ .../uot/flow_segments_bnb.csv                      |       6 -
+ .../uot/flow_segments_eth.csv                      |       6 -
+ .../uot/traceability_index.csv                     |      26 -
+ .../component_token_MELOS/uot/uot_cost_matrix.npz  |     Bin 4129 -> 0 bytes
+ .../component_token_MELOS/uot/uot_diagnostics.json |      82 -
+ .../uot/uot_flow_correspondence.csv                |       4 -
+ .../uot/uot_flow_segments_bnb.csv                  |       6 -
+ .../uot/uot_flow_segments_eth.csv                  |       6 -
+ .../component_token_MELOS/uot/uot_marginals.csv    |      11 -
+ .../uot/uot_split_merge_summary.json               |      10 -
+ .../component_token_MELOS/uot/uot_summary.json     |      23 -
+ .../uot/uot_transport_matrix.npz                   |     Bin 2300 -> 0 bytes
+ .../uot/uot_transport_plan.csv                     |      26 -
+ .../uot/uot_unmatched_mass.csv                     |      11 -
+ .../eval/uot_evaluation_metrics.json               |       1 -
+ .../component_token_MSU/flow_segments_bnb.csv      |       4 -
+ .../component_token_MSU/flow_segments_eth.csv      |       4 -
+ .../uot/causal_feasibility_summary.json            |      15 -
+ .../component_token_MSU/uot/flow_segments_bnb.csv  |       4 -
+ .../component_token_MSU/uot/flow_segments_eth.csv  |       4 -
+ .../component_token_MSU/uot/traceability_index.csv |      10 -
+ .../component_token_MSU/uot/uot_cost_matrix.npz    |     Bin 3871 -> 0 bytes
+ .../component_token_MSU/uot/uot_diagnostics.json   |      74 -
+ .../uot/uot_flow_correspondence.csv                |       3 -
+ .../uot/uot_flow_segments_bnb.csv                  |       4 -
+ .../uot/uot_flow_segments_eth.csv                  |       4 -
+ .../component_token_MSU/uot/uot_marginals.csv      |       7 -
+ .../uot/uot_split_merge_summary.json               |      10 -
+ .../component_token_MSU/uot/uot_summary.json       |      23 -
+ .../uot/uot_transport_matrix.npz                   |     Bin 2037 -> 0 bytes
+ .../component_token_MSU/uot/uot_transport_plan.csv |      10 -
+ .../component_token_MSU/uot/uot_unmatched_mass.csv |       7 -
+ .../eval/uot_evaluation_metrics.json               |       1 -
+ .../component_token_NYM/flow_segments_bnb.csv      |       8 -
+ .../component_token_NYM/flow_segments_eth.csv      |       8 -
+ .../uot/causal_feasibility_summary.json            |      15 -
+ .../component_token_NYM/uot/flow_segments_bnb.csv  |       8 -
+ .../component_token_NYM/uot/flow_segments_eth.csv  |       8 -
+ .../component_token_NYM/uot/traceability_index.csv |      50 -
+ .../component_token_NYM/uot/uot_cost_matrix.npz    |     Bin 4470 -> 0 bytes
+ .../component_token_NYM/uot/uot_diagnostics.json   |      90 -
+ .../uot/uot_flow_correspondence.csv                |       8 -
+ .../uot/uot_flow_segments_bnb.csv                  |       8 -
+ .../uot/uot_flow_segments_eth.csv                  |       8 -
+ .../component_token_NYM/uot/uot_marginals.csv      |      15 -
+ .../uot/uot_split_merge_summary.json               |      10 -
+ .../component_token_NYM/uot/uot_summary.json       |      23 -
+ .../uot/uot_transport_matrix.npz                   |     Bin 2611 -> 0 bytes
+ .../component_token_NYM/uot/uot_transport_plan.csv |      50 -
+ .../component_token_NYM/uot/uot_unmatched_mass.csv |      15 -
+ .../eval/uot_evaluation_metrics.json               |       1 -
+ .../component_token_ONEDODO/flow_segments_bnb.csv  |      19 -
+ .../component_token_ONEDODO/flow_segments_eth.csv  |      19 -
+ .../uot/causal_feasibility_summary.json            |      15 -
+ .../uot/flow_segments_bnb.csv                      |      19 -
+ .../uot/flow_segments_eth.csv                      |      19 -
+ .../uot/traceability_index.csv                     |     293 -
+ .../uot/uot_cost_matrix.npz                        |     Bin 7400 -> 0 bytes
+ .../uot/uot_diagnostics.json                       |     134 -
+ .../uot/uot_flow_correspondence.csv                |      16 -
+ .../uot/uot_flow_segments_bnb.csv                  |      19 -
+ .../uot/uot_flow_segments_eth.csv                  |      19 -
+ .../component_token_ONEDODO/uot/uot_marginals.csv  |      37 -
+ .../uot/uot_split_merge_summary.json               |      10 -
+ .../component_token_ONEDODO/uot/uot_summary.json   |      23 -
+ .../uot/uot_transport_matrix.npz                   |     Bin 5326 -> 0 bytes
+ .../uot/uot_transport_plan.csv                     |     293 -
+ .../uot/uot_unmatched_mass.csv                     |      37 -
+ .../eval/uot_evaluation_metrics.json               |       1 -
+ .../component_token_PBR/flow_segments_bnb.csv      |     128 -
+ .../component_token_PBR/flow_segments_eth.csv      |     128 -
+ .../uot/causal_feasibility_summary.json            |      15 -
+ .../component_token_PBR/uot/flow_segments_bnb.csv  |     128 -
+ .../component_token_PBR/uot/flow_segments_eth.csv  |     128 -
+ .../component_token_PBR/uot/traceability_index.csv |   15848 -
+ .../component_token_PBR/uot/uot_cost_matrix.npz    |     Bin 178391 -> 0 bytes
+ .../component_token_PBR/uot/uot_diagnostics.json   |     570 -
+ .../uot/uot_flow_correspondence.csv                |       8 -
+ .../uot/uot_flow_segments_bnb.csv                  |     128 -
+ .../uot/uot_flow_segments_eth.csv                  |     128 -
+ .../component_token_PBR/uot/uot_marginals.csv      |     255 -
+ .../uot/uot_split_merge_summary.json               |      10 -
+ .../component_token_PBR/uot/uot_summary.json       |      24 -
+ .../uot/uot_transport_matrix.npz                   |     Bin 131379 -> 0 bytes
+ .../component_token_PBR/uot/uot_transport_plan.csv |   15848 -
+ .../component_token_PBR/uot/uot_unmatched_mass.csv |     255 -
+ .../eval/uot_evaluation_metrics.json               |       1 -
+ .../component_token_PEOPLE/flow_segments_bnb.csv   |       8 -
+ .../component_token_PEOPLE/flow_segments_eth.csv   |       8 -
+ .../uot/causal_feasibility_summary.json            |      15 -
+ .../uot/flow_segments_bnb.csv                      |       8 -
+ .../uot/flow_segments_eth.csv                      |       8 -
+ .../uot/traceability_index.csv                     |      50 -
+ .../component_token_PEOPLE/uot/uot_cost_matrix.npz |     Bin 4474 -> 0 bytes
+ .../uot/uot_diagnostics.json                       |      90 -
+ .../uot/uot_flow_correspondence.csv                |       4 -
+ .../uot/uot_flow_segments_bnb.csv                  |       8 -
+ .../uot/uot_flow_segments_eth.csv                  |       8 -
+ .../component_token_PEOPLE/uot/uot_marginals.csv   |      15 -
+ .../uot/uot_split_merge_summary.json               |      10 -
+ .../component_token_PEOPLE/uot/uot_summary.json    |      23 -
+ .../uot/uot_transport_matrix.npz                   |     Bin 2617 -> 0 bytes
+ .../uot/uot_transport_plan.csv                     |      50 -
+ .../uot/uot_unmatched_mass.csv                     |      15 -
+ .../eval/uot_evaluation_metrics.json               |       1 -
+ .../component_token_PSP/flow_segments_bnb.csv      |      41 -
+ .../component_token_PSP/flow_segments_eth.csv      |      41 -
+ .../uot/causal_feasibility_summary.json            |      15 -
+ .../component_token_PSP/uot/flow_segments_bnb.csv  |      41 -
+ .../component_token_PSP/uot/flow_segments_eth.csv  |      41 -
+ .../component_token_PSP/uot/traceability_index.csv |    1571 -
+ .../component_token_PSP/uot/uot_cost_matrix.npz    |     Bin 20467 -> 0 bytes
+ .../component_token_PSP/uot/uot_diagnostics.json   |     222 -
+ .../uot/uot_flow_correspondence.csv                |      24 -
+ .../uot/uot_flow_segments_bnb.csv                  |      41 -
+ .../uot/uot_flow_segments_eth.csv                  |      41 -
+ .../component_token_PSP/uot/uot_marginals.csv      |      81 -
+ .../uot/uot_split_merge_summary.json               |      10 -
+ .../component_token_PSP/uot/uot_summary.json       |      23 -
+ .../uot/uot_transport_matrix.npz                   |     Bin 16153 -> 0 bytes
+ .../component_token_PSP/uot/uot_transport_plan.csv |    1571 -
+ .../component_token_PSP/uot/uot_unmatched_mass.csv |      81 -
+ .../eval/uot_evaluation_metrics.json               |       1 -
+ .../component_token_PSTAKE/flow_segments_bnb.csv   |     424 -
+ .../component_token_PSTAKE/flow_segments_eth.csv   |     424 -
+ .../uot/causal_feasibility_summary.json            |      15 -
+ .../uot/flow_segments_bnb.csv                      |     424 -
+ .../uot/flow_segments_eth.csv                      |     424 -
+ .../uot/traceability_index.csv                     |  168572 ---
+ .../component_token_PSTAKE/uot/uot_cost_matrix.npz |     Bin 1888377 -> 0 bytes
+ .../uot/uot_diagnostics.json                       |    1755 -
+ .../uot/uot_flow_correspondence.csv                |      19 -
+ .../uot/uot_flow_segments_bnb.csv                  |     424 -
+ .../uot/uot_flow_segments_eth.csv                  |     424 -
+ .../component_token_PSTAKE/uot/uot_marginals.csv   |     847 -
+ .../uot/uot_split_merge_summary.json               |      10 -
+ .../component_token_PSTAKE/uot/uot_summary.json    |      24 -
+ .../uot/uot_transport_matrix.npz                   |     Bin 1382335 -> 0 bytes
+ .../uot/uot_transport_plan.csv                     |  168572 ---
+ .../uot/uot_unmatched_mass.csv                     |     847 -
+ .../eval/uot_evaluation_metrics.json               |       1 -
+ .../component_token_SOS/flow_segments_bnb.csv      |       7 -
+ .../component_token_SOS/flow_segments_eth.csv      |       7 -
+ .../uot/causal_feasibility_summary.json            |      15 -
+ .../component_token_SOS/uot/flow_segments_bnb.csv  |       7 -
+ .../component_token_SOS/uot/flow_segments_eth.csv  |       7 -
+ .../component_token_SOS/uot/traceability_index.csv |      37 -
+ .../component_token_SOS/uot/uot_cost_matrix.npz    |     Bin 4294 -> 0 bytes
+ .../component_token_SOS/uot/uot_diagnostics.json   |      86 -
+ .../uot/uot_flow_correspondence.csv                |       5 -
+ .../uot/uot_flow_segments_bnb.csv                  |       7 -
+ .../uot/uot_flow_segments_eth.csv                  |       7 -
+ .../component_token_SOS/uot/uot_marginals.csv      |      13 -
+ .../uot/uot_split_merge_summary.json               |      10 -
+ .../component_token_SOS/uot/uot_summary.json       |      23 -
+ .../uot/uot_transport_matrix.npz                   |     Bin 2452 -> 0 bytes
+ .../component_token_SOS/uot/uot_transport_plan.csv |      37 -
+ .../component_token_SOS/uot/uot_unmatched_mass.csv |      13 -
+ .../eval/uot_evaluation_metrics.json               |       1 -
+ .../component_token_UCG/flow_segments_bnb.csv      |       5 -
+ .../component_token_UCG/flow_segments_eth.csv      |       5 -
+ .../uot/causal_feasibility_summary.json            |      15 -
+ .../component_token_UCG/uot/flow_segments_bnb.csv  |       5 -
+ .../component_token_UCG/uot/flow_segments_eth.csv  |       5 -
+ .../component_token_UCG/uot/traceability_index.csv |      17 -
+ .../component_token_UCG/uot/uot_cost_matrix.npz    |     Bin 3901 -> 0 bytes
+ .../component_token_UCG/uot/uot_diagnostics.json   |      78 -
+ .../uot/uot_flow_correspondence.csv                |       3 -
+ .../uot/uot_flow_segments_bnb.csv                  |       5 -
+ .../uot/uot_flow_segments_eth.csv                  |       5 -
+ .../component_token_UCG/uot/uot_marginals.csv      |       9 -
+ .../uot/uot_split_merge_summary.json               |      10 -
+ .../component_token_UCG/uot/uot_summary.json       |      23 -
+ .../uot/uot_transport_matrix.npz                   |     Bin 2163 -> 0 bytes
+ .../component_token_UCG/uot/uot_transport_plan.csv |      17 -
+ .../component_token_UCG/uot/uot_unmatched_mass.csv |       9 -
+ .../uot_run/uot/uot_transport_plan.csv             |     162 -
+ .../uot_run/uot/uot_unmatched_mass.csv             |    9335 -
+ .../results/synthetic/phase2_1_threshold_sweep.csv |      36 -
+ .../phase2_1_unmatched_decoy_metrics.json          |    1367 -
+ .../synthetic/phase2_anomaly_diagnosis.json        |     876 -
+ .../synthetic/synthetic_eval_aggregated.json       |     175 -
+ .../eval/ablation_metrics.csv                      |       2 -
+ .../eval/synthetic_eval_by_scenario.csv            |       6 -
+ .../eval/uot_eval_by_pattern.csv                   |       4 -
+ .../eval/uot_eval_summary.txt                      |       6 -
+ .../eval/uot_evaluation_metrics.json               |      77 -
+ .../flow_segments_bnb_synth.csv                    |     289 -
+ .../flow_segments_eth_synth.csv                    |     289 -
+ .../labels/synthetic_flow_labels.csv               |     337 -
+ .../labels/synthetic_uot_eval_metrics.json         |    5257 -
+ .../synthetic_metrics_summary.json                 |      10 -
+ .../synthetic_seed_stratification.json             |      83 -
+ .../uot/causal_feasibility_summary.json            |      15 -
+ .../uot/flow_segments_bnb.csv                      |     289 -
+ .../uot/flow_segments_eth.csv                      |     289 -
+ .../uot/traceability_index.csv                     |   23881 -
+ .../uot/uot_cost_components_sparse.csv.gz          |     Bin 205962 -> 0 bytes
+ .../synthetic_eval_seed_42/uot/uot_cost_matrix.npz |     Bin 111898 -> 0 bytes
+ .../uot/uot_diagnostics.json                       |    1224 -
+ .../uot/uot_flow_correspondence.csv                |      21 -
+ .../uot/uot_flow_segments_bnb.csv                  |     289 -
+ .../uot/uot_flow_segments_eth.csv                  |     289 -
+ .../synthetic_eval_seed_42/uot/uot_marginals.csv   |     577 -
+ .../uot/uot_split_merge_summary.json               |      10 -
+ .../synthetic_eval_seed_42/uot/uot_summary.json    |      23 -
+ .../uot/uot_transport_matrix.npz                   |     Bin 99403 -> 0 bytes
+ .../uot/uot_transport_plan.csv                     |   23881 -
+ .../uot/uot_unmatched_mass.csv                     |     577 -
+ .../eval/ablation_metrics.csv                      |       2 -
+ .../eval/synthetic_eval_by_scenario.csv            |       6 -
+ .../eval/uot_eval_by_pattern.csv                   |       4 -
+ .../eval/uot_eval_summary.txt                      |       6 -
+ .../eval/uot_evaluation_metrics.json               |      77 -
+ .../flow_segments_bnb_synth.csv                    |     289 -
+ .../flow_segments_eth_synth.csv                    |     289 -
+ .../labels/synthetic_flow_labels.csv               |     337 -
+ .../labels/synthetic_uot_eval_metrics.json         |    5257 -
+ .../synthetic_metrics_summary.json                 |      10 -
+ .../synthetic_seed_stratification.json             |      83 -
+ .../uot/causal_feasibility_summary.json            |      15 -
+ .../uot/flow_segments_bnb.csv                      |     289 -
+ .../uot/flow_segments_eth.csv                      |     289 -
+ .../uot/traceability_index.csv                     |   30941 -
+ .../uot/uot_cost_components_sparse.csv.gz          |     Bin 402454 -> 0 bytes
+ .../synthetic_eval_seed_43/uot/uot_cost_matrix.npz |     Bin 114200 -> 0 bytes
+ .../uot/uot_diagnostics.json                       |    1224 -
+ .../uot/uot_flow_segments_bnb.csv                  |     289 -
+ .../uot/uot_flow_segments_eth.csv                  |     289 -
+ .../synthetic_eval_seed_43/uot/uot_marginals.csv   |     577 -
+ .../uot/uot_split_merge_summary.json               |      10 -
+ .../synthetic_eval_seed_43/uot/uot_summary.json    |      24 -
+ .../uot/uot_transport_matrix.npz                   |     Bin 99465 -> 0 bytes
+ .../uot/uot_transport_plan.csv                     |   30941 -
+ .../uot/uot_unmatched_mass.csv                     |     577 -
+ .../eval/ablation_metrics.csv                      |       2 -
+ .../eval/synthetic_eval_by_scenario.csv            |       6 -
+ .../eval/uot_eval_by_pattern.csv                   |       4 -
+ .../eval/uot_eval_summary.txt                      |       6 -
+ .../eval/uot_evaluation_metrics.json               |      77 -
+ .../flow_segments_bnb_synth.csv                    |     289 -
+ .../flow_segments_eth_synth.csv                    |     289 -
+ .../labels/synthetic_flow_labels.csv               |     337 -
+ .../labels/synthetic_uot_eval_metrics.json         |    5257 -
+ .../synthetic_metrics_summary.json                 |      10 -
+ .../synthetic_seed_stratification.json             |      83 -
+ .../uot/causal_feasibility_summary.json            |      15 -
+ .../uot/flow_segments_bnb.csv                      |     289 -
+ .../uot/flow_segments_eth.csv                      |     289 -
+ .../uot/traceability_index.csv                     |   40381 -
+ .../uot/uot_cost_components_sparse.csv.gz          |     Bin 560701 -> 0 bytes
+ .../synthetic_eval_seed_44/uot/uot_cost_matrix.npz |     Bin 116047 -> 0 bytes
+ .../uot/uot_diagnostics.json                       |    1224 -
+ .../uot/uot_flow_segments_bnb.csv                  |     289 -
+ .../uot/uot_flow_segments_eth.csv                  |     289 -
+ .../synthetic_eval_seed_44/uot/uot_marginals.csv   |     577 -
+ .../uot/uot_split_merge_summary.json               |      10 -
+ .../synthetic_eval_seed_44/uot/uot_summary.json    |      24 -
+ .../uot/uot_transport_matrix.npz                   |     Bin 97877 -> 0 bytes
+ .../uot/uot_transport_plan.csv                     |   40381 -
+ .../uot/uot_unmatched_mass.csv                     |     577 -
+ .../eval/ablation_metrics.csv                      |       2 -
+ .../eval/synthetic_eval_by_scenario.csv            |       6 -
+ .../eval/uot_eval_by_pattern.csv                   |       4 -
+ .../eval/uot_eval_summary.txt                      |       6 -
+ .../eval/uot_evaluation_metrics.json               |      77 -
+ .../flow_segments_bnb_synth.csv                    |     289 -
+ .../flow_segments_eth_synth.csv                    |     289 -
+ .../labels/synthetic_flow_labels.csv               |     337 -
+ .../labels/synthetic_uot_eval_metrics.json         |    5257 -
+ .../synthetic_metrics_summary.json                 |      10 -
+ .../synthetic_seed_stratification.json             |      83 -
+ .../uot/causal_feasibility_summary.json            |      15 -
+ .../uot/flow_segments_bnb.csv                      |     289 -
+ .../uot/flow_segments_eth.csv                      |     289 -
+ .../uot/traceability_index.csv                     |   28013 -
+ .../uot/uot_cost_components_sparse.csv.gz          |     Bin 295901 -> 0 bytes
+ .../synthetic_eval_seed_45/uot/uot_cost_matrix.npz |     Bin 115662 -> 0 bytes
+ .../uot/uot_diagnostics.json                       |    1224 -
+ .../uot/uot_flow_correspondence.csv                |      21 -
+ .../uot/uot_flow_segments_bnb.csv                  |     289 -
+ .../uot/uot_flow_segments_eth.csv                  |     289 -
+ .../synthetic_eval_seed_45/uot/uot_marginals.csv   |     577 -
+ .../uot/uot_split_merge_summary.json               |      10 -
+ .../synthetic_eval_seed_45/uot/uot_summary.json    |      23 -
+ .../uot/uot_transport_matrix.npz                   |     Bin 98834 -> 0 bytes
+ .../uot/uot_transport_plan.csv                     |   28013 -
+ .../uot/uot_unmatched_mass.csv                     |     577 -
+ .../eval/ablation_metrics.csv                      |       2 -
+ .../eval/synthetic_eval_by_scenario.csv            |       6 -
+ .../eval/uot_eval_by_pattern.csv                   |       4 -
+ .../eval/uot_eval_summary.txt                      |       6 -
+ .../eval/uot_evaluation_metrics.json               |      77 -
+ .../flow_segments_bnb_synth.csv                    |     289 -
+ .../flow_segments_eth_synth.csv                    |     289 -
+ .../labels/synthetic_flow_labels.csv               |     337 -
+ .../labels/synthetic_uot_eval_metrics.json         |    5257 -
+ .../synthetic_metrics_summary.json                 |      10 -
+ .../synthetic_seed_stratification.json             |      83 -
+ .../uot/causal_feasibility_summary.json            |      15 -
+ .../uot/flow_segments_bnb.csv                      |     289 -
+ .../uot/flow_segments_eth.csv                      |     289 -
+ .../uot/traceability_index.csv                     |   28297 -
+ .../uot/uot_cost_components_sparse.csv.gz          |     Bin 320571 -> 0 bytes
+ .../synthetic_eval_seed_46/uot/uot_cost_matrix.npz |     Bin 114355 -> 0 bytes
+ .../uot/uot_diagnostics.json                       |    1224 -
+ .../uot/uot_flow_correspondence.csv                |      41 -
+ .../uot/uot_flow_segments_bnb.csv                  |     289 -
+ .../uot/uot_flow_segments_eth.csv                  |     289 -
+ .../synthetic_eval_seed_46/uot/uot_marginals.csv   |     577 -
+ .../uot/uot_split_merge_summary.json               |      10 -
+ .../synthetic_eval_seed_46/uot/uot_summary.json    |      23 -
+ .../uot/uot_transport_matrix.npz                   |     Bin 98450 -> 0 bytes
+ .../uot/uot_transport_plan.csv                     |   28297 -
+ .../uot/uot_unmatched_mass.csv                     |     577 -
+ .../solver_scan_stage1_seed42.csv                  |      17 -
+ .../solver_scan_summary.json                       |      14 -
+ .../eval/ablation_metrics.csv                      |       2 -
+ .../eval/synthetic_eval_by_scenario.csv            |       6 -
+ .../eval/uot_eval_by_pattern.csv                   |       4 -
+ .../eval/uot_eval_summary.txt                      |       6 -
+ .../eval/uot_evaluation_metrics.json               |      77 -
+ .../uot/causal_feasibility_summary.json            |      15 -
+ .../uot/flow_segments_bnb.csv                      |     289 -
+ .../uot/flow_segments_eth.csv                      |     289 -
+ .../uot/traceability_index.csv                     |    3757 -
+ .../uot/uot_cost_matrix.npz                        |     Bin 112061 -> 0 bytes
+ .../uot/uot_diagnostics.json                       |    1224 -
+ .../uot/uot_flow_correspondence.csv                |      21 -
+ .../uot/uot_flow_segments_bnb.csv                  |     289 -
+ .../uot/uot_flow_segments_eth.csv                  |     289 -
+ .../uot/uot_marginals.csv                          |     577 -
+ .../uot/uot_split_merge_summary.json               |      10 -
+ .../uot/uot_summary.json                           |      23 -
+ .../uot/uot_transport_matrix.npz                   |     Bin 95315 -> 0 bytes
+ .../uot/uot_transport_plan.csv                     |    3757 -
+ .../uot/uot_unmatched_mass.csv                     |     577 -
+ .../eval/ablation_metrics.csv                      |       2 -
+ .../eval/synthetic_eval_by_scenario.csv            |       6 -
+ .../eval/uot_eval_by_pattern.csv                   |       4 -
+ .../eval/uot_eval_summary.txt                      |       6 -
+ .../eval/uot_evaluation_metrics.json               |      77 -
+ .../uot/causal_feasibility_summary.json            |      15 -
+ .../uot/flow_segments_bnb.csv                      |     289 -
+ .../uot/flow_segments_eth.csv                      |     289 -
+ .../uot/traceability_index.csv                     |    3757 -
+ .../uot/uot_cost_matrix.npz                        |     Bin 112061 -> 0 bytes
+ .../uot/uot_diagnostics.json                       |    1224 -
+ .../uot/uot_flow_correspondence.csv                |      21 -
+ .../uot/uot_flow_segments_bnb.csv                  |     289 -
+ .../uot/uot_flow_segments_eth.csv                  |     289 -
+ .../uot/uot_marginals.csv                          |     577 -
+ .../uot/uot_split_merge_summary.json               |      10 -
+ .../uot/uot_summary.json                           |      23 -
+ .../uot/uot_transport_matrix.npz                   |     Bin 95315 -> 0 bytes
+ .../uot/uot_transport_plan.csv                     |    3757 -
+ .../uot/uot_unmatched_mass.csv                     |     577 -
+ .../eval/ablation_metrics.csv                      |       2 -
+ .../eval/synthetic_eval_by_scenario.csv            |       6 -
+ .../eval/uot_eval_by_pattern.csv                   |       4 -
+ .../eval/uot_eval_summary.txt                      |       6 -
+ .../eval/uot_evaluation_metrics.json               |      77 -
+ .../uot/causal_feasibility_summary.json            |      15 -
+ .../uot/flow_segments_bnb.csv                      |     289 -
+ .../uot/flow_segments_eth.csv                      |     289 -
+ .../uot/traceability_index.csv                     |    3757 -
+ .../uot/uot_cost_matrix.npz                        |     Bin 112061 -> 0 bytes
+ .../uot/uot_diagnostics.json                       |    1224 -
+ .../uot/uot_flow_correspondence.csv                |      21 -
+ .../uot/uot_flow_segments_bnb.csv                  |     289 -
+ .../uot/uot_flow_segments_eth.csv                  |     289 -
+ .../uot/uot_marginals.csv                          |     577 -
+ .../uot/uot_split_merge_summary.json               |      10 -
+ .../uot/uot_summary.json                           |      23 -
+ .../uot/uot_transport_matrix.npz                   |     Bin 95315 -> 0 bytes
+ .../uot/uot_transport_plan.csv                     |    3757 -
+ .../uot/uot_unmatched_mass.csv                     |     577 -
+ .../eval/ablation_metrics.csv                      |       2 -
+ .../eval/synthetic_eval_by_scenario.csv            |       6 -
+ .../eval/uot_eval_by_pattern.csv                   |       4 -
+ .../eval/uot_eval_summary.txt                      |       6 -
+ .../eval/uot_evaluation_metrics.json               |      77 -
+ .../uot/causal_feasibility_summary.json            |      15 -
+ .../uot/flow_segments_bnb.csv                      |     289 -
+ .../uot/flow_segments_eth.csv                      |     289 -
+ .../uot/traceability_index.csv                     |    3757 -
+ .../uot/uot_cost_matrix.npz                        |     Bin 112061 -> 0 bytes
+ .../uot/uot_diagnostics.json                       |    1224 -
+ .../uot/uot_flow_correspondence.csv                |      21 -
+ .../uot/uot_flow_segments_bnb.csv                  |     289 -
+ .../uot/uot_flow_segments_eth.csv                  |     289 -
+ .../uot/uot_marginals.csv                          |     577 -
+ .../uot/uot_split_merge_summary.json               |      10 -
+ .../uot/uot_summary.json                           |      23 -
+ .../uot/uot_transport_matrix.npz                   |     Bin 95315 -> 0 bytes
+ .../uot/uot_transport_plan.csv                     |    3757 -
+ .../uot/uot_unmatched_mass.csv                     |     577 -
+ .../eval/ablation_metrics.csv                      |       2 -
+ .../eval/synthetic_eval_by_scenario.csv            |       6 -
+ .../eval/uot_eval_by_pattern.csv                   |       4 -
+ .../eval/uot_eval_summary.txt                      |       6 -
+ .../eval/uot_evaluation_metrics.json               |      77 -
+ .../uot/causal_feasibility_summary.json            |      15 -
+ .../uot/flow_segments_bnb.csv                      |     289 -
+ .../uot/flow_segments_eth.csv                      |     289 -
+ .../uot/traceability_index.csv                     |    3757 -
+ .../uot/uot_cost_matrix.npz                        |     Bin 112061 -> 0 bytes
+ .../uot/uot_diagnostics.json                       |    1224 -
+ .../uot/uot_flow_correspondence.csv                |     177 -
+ .../uot/uot_flow_segments_bnb.csv                  |     289 -
+ .../uot/uot_flow_segments_eth.csv                  |     289 -
+ .../uot/uot_marginals.csv                          |     577 -
+ .../uot/uot_split_merge_summary.json               |      10 -
+ .../uot/uot_summary.json                           |      23 -
+ .../uot/uot_transport_matrix.npz                   |     Bin 95315 -> 0 bytes
+ .../uot/uot_transport_plan.csv                     |    3757 -
+ .../uot/uot_unmatched_mass.csv                     |     577 -
+ .../eval/ablation_metrics.csv                      |       2 -
+ .../eval/synthetic_eval_by_scenario.csv            |       6 -
+ .../eval/uot_eval_by_pattern.csv                   |       4 -
+ .../eval/uot_eval_summary.txt                      |       6 -
+ .../eval/uot_evaluation_metrics.json               |      77 -
+ .../uot/causal_feasibility_summary.json            |      15 -
+ .../uot/flow_segments_bnb.csv                      |     289 -
+ .../uot/flow_segments_eth.csv                      |     289 -
+ .../uot/traceability_index.csv                     |    3757 -
+ .../uot/uot_cost_matrix.npz                        |     Bin 112061 -> 0 bytes
+ .../uot/uot_diagnostics.json                       |    1224 -
+ .../uot/uot_flow_correspondence.csv                |     177 -
+ .../uot/uot_flow_segments_bnb.csv                  |     289 -
+ .../uot/uot_flow_segments_eth.csv                  |     289 -
+ .../uot/uot_marginals.csv                          |     577 -
+ .../uot/uot_split_merge_summary.json               |      10 -
+ .../uot/uot_summary.json                           |      23 -
+ .../uot/uot_transport_matrix.npz                   |     Bin 95315 -> 0 bytes
+ .../uot/uot_transport_plan.csv                     |    3757 -
+ .../uot/uot_unmatched_mass.csv                     |     577 -
+ .../eval/ablation_metrics.csv                      |       2 -
+ .../eval/synthetic_eval_by_scenario.csv            |       6 -
+ .../eval/uot_eval_by_pattern.csv                   |       4 -
+ .../eval/uot_eval_summary.txt                      |       6 -
+ .../eval/uot_evaluation_metrics.json               |      77 -
+ .../uot/causal_feasibility_summary.json            |      15 -
+ .../uot/flow_segments_bnb.csv                      |     289 -
+ .../uot/flow_segments_eth.csv                      |     289 -
+ .../uot/traceability_index.csv                     |    3757 -
+ .../uot/uot_cost_matrix.npz                        |     Bin 112061 -> 0 bytes
+ .../uot/uot_diagnostics.json                       |    1224 -
+ .../uot/uot_flow_correspondence.csv                |     177 -
+ .../uot/uot_flow_segments_bnb.csv                  |     289 -
+ .../uot/uot_flow_segments_eth.csv                  |     289 -
+ .../uot/uot_marginals.csv                          |     577 -
+ .../uot/uot_split_merge_summary.json               |      10 -
+ .../uot/uot_summary.json                           |      23 -
+ .../uot/uot_transport_matrix.npz                   |     Bin 95315 -> 0 bytes
+ .../uot/uot_transport_plan.csv                     |    3757 -
+ .../uot/uot_unmatched_mass.csv                     |     577 -
+ .../eval/ablation_metrics.csv                      |       2 -
+ .../eval/synthetic_eval_by_scenario.csv            |       6 -
+ .../eval/uot_eval_by_pattern.csv                   |       4 -
+ .../eval/uot_eval_summary.txt                      |       6 -
+ .../eval/uot_evaluation_metrics.json               |      77 -
+ .../uot/causal_feasibility_summary.json            |      15 -
+ .../uot/flow_segments_bnb.csv                      |     289 -
+ .../uot/flow_segments_eth.csv                      |     289 -
+ .../uot/traceability_index.csv                     |    3757 -
+ .../uot/uot_cost_matrix.npz                        |     Bin 112061 -> 0 bytes
+ .../uot/uot_diagnostics.json                       |    1224 -
+ .../uot/uot_flow_correspondence.csv                |     177 -
+ .../uot/uot_flow_segments_bnb.csv                  |     289 -
+ .../uot/uot_flow_segments_eth.csv                  |     289 -
+ .../uot/uot_marginals.csv                          |     577 -
+ .../uot/uot_split_merge_summary.json               |      10 -
+ .../uot/uot_summary.json                           |      23 -
+ .../uot/uot_transport_matrix.npz                   |     Bin 95315 -> 0 bytes
+ .../uot/uot_transport_plan.csv                     |    3757 -
+ .../uot/uot_unmatched_mass.csv                     |     577 -
+ .../eval/ablation_metrics.csv                      |       2 -
+ .../eval/synthetic_eval_by_scenario.csv            |       6 -
+ .../eval/uot_eval_by_pattern.csv                   |       4 -
+ .../eval/uot_eval_summary.txt                      |       6 -
+ .../eval/uot_evaluation_metrics.json               |      77 -
+ .../uot/causal_feasibility_summary.json            |      15 -
+ .../uot/flow_segments_bnb.csv                      |     289 -
+ .../uot/flow_segments_eth.csv                      |     289 -
+ .../uot/traceability_index.csv                     |    3757 -
+ .../uot/uot_cost_matrix.npz                        |     Bin 112061 -> 0 bytes
+ .../uot/uot_diagnostics.json                       |    1224 -
+ .../uot/uot_flow_correspondence.csv                |     777 -
+ .../uot/uot_flow_segments_bnb.csv                  |     289 -
+ .../uot/uot_flow_segments_eth.csv                  |     289 -
+ .../uot/uot_marginals.csv                          |     577 -
+ .../uot/uot_split_merge_summary.json               |      10 -
+ .../uot/uot_summary.json                           |      23 -
+ .../uot/uot_transport_matrix.npz                   |     Bin 95315 -> 0 bytes
+ .../uot/uot_transport_plan.csv                     |    3757 -
+ .../uot/uot_unmatched_mass.csv                     |     577 -
+ .../eval/ablation_metrics.csv                      |       2 -
+ .../eval/synthetic_eval_by_scenario.csv            |       6 -
+ .../eval/uot_eval_by_pattern.csv                   |       4 -
+ .../eval/uot_eval_summary.txt                      |       6 -
+ .../eval/uot_evaluation_metrics.json               |      77 -
+ .../uot/causal_feasibility_summary.json            |      15 -
+ .../uot/flow_segments_bnb.csv                      |     289 -
+ .../uot/flow_segments_eth.csv                      |     289 -
+ .../uot/traceability_index.csv                     |    3757 -
+ .../uot/uot_cost_matrix.npz                        |     Bin 112061 -> 0 bytes
+ .../uot/uot_diagnostics.json                       |    1224 -
+ .../uot/uot_flow_correspondence.csv                |     777 -
+ .../uot/uot_flow_segments_bnb.csv                  |     289 -
+ .../uot/uot_flow_segments_eth.csv                  |     289 -
+ .../uot/uot_marginals.csv                          |     577 -
+ .../uot/uot_split_merge_summary.json               |      10 -
+ .../uot/uot_summary.json                           |      23 -
+ .../uot/uot_transport_matrix.npz                   |     Bin 95315 -> 0 bytes
+ .../uot/uot_transport_plan.csv                     |    3757 -
+ .../uot/uot_unmatched_mass.csv                     |     577 -
+ .../eval/ablation_metrics.csv                      |       2 -
+ .../eval/synthetic_eval_by_scenario.csv            |       6 -
+ .../eval/uot_eval_by_pattern.csv                   |       4 -
+ .../eval/uot_eval_summary.txt                      |       6 -
+ .../eval/uot_evaluation_metrics.json               |      77 -
+ .../uot/causal_feasibility_summary.json            |      15 -
+ .../uot/flow_segments_bnb.csv                      |     289 -
+ .../uot/flow_segments_eth.csv                      |     289 -
+ .../uot/traceability_index.csv                     |    3757 -
+ .../uot/uot_cost_matrix.npz                        |     Bin 112061 -> 0 bytes
+ .../uot/uot_diagnostics.json                       |    1224 -
+ .../uot/uot_flow_correspondence.csv                |     777 -
+ .../uot/uot_flow_segments_bnb.csv                  |     289 -
+ .../uot/uot_flow_segments_eth.csv                  |     289 -
+ .../uot/uot_marginals.csv                          |     577 -
+ .../uot/uot_split_merge_summary.json               |      10 -
+ .../uot/uot_summary.json                           |      23 -
+ .../uot/uot_transport_matrix.npz                   |     Bin 95315 -> 0 bytes
+ .../uot/uot_transport_plan.csv                     |    3757 -
+ .../uot/uot_unmatched_mass.csv                     |     577 -
+ .../eval/ablation_metrics.csv                      |       2 -
+ .../eval/synthetic_eval_by_scenario.csv            |       6 -
+ .../eval/uot_eval_by_pattern.csv                   |       4 -
+ .../eval/uot_eval_summary.txt                      |       6 -
+ .../eval/uot_evaluation_metrics.json               |      77 -
+ .../uot/causal_feasibility_summary.json            |      15 -
+ .../uot/flow_segments_bnb.csv                      |     289 -
+ .../uot/flow_segments_eth.csv                      |     289 -
+ .../uot/traceability_index.csv                     |    3757 -
+ .../uot/uot_cost_matrix.npz                        |     Bin 112061 -> 0 bytes
+ .../uot/uot_diagnostics.json                       |    1224 -
+ .../uot/uot_flow_correspondence.csv                |     777 -
+ .../uot/uot_flow_segments_bnb.csv                  |     289 -
+ .../uot/uot_flow_segments_eth.csv                  |     289 -
+ .../uot/uot_marginals.csv                          |     577 -
+ .../uot/uot_split_merge_summary.json               |      10 -
+ .../uot/uot_summary.json                           |      23 -
+ .../uot/uot_transport_matrix.npz                   |     Bin 95315 -> 0 bytes
+ .../uot/uot_transport_plan.csv                     |    3757 -
+ .../uot/uot_unmatched_mass.csv                     |     577 -
+ .../eval/ablation_metrics.csv                      |       2 -
+ .../eval/synthetic_eval_by_scenario.csv            |       6 -
+ .../eval/uot_eval_by_pattern.csv                   |       4 -
+ .../eval/uot_eval_summary.txt                      |       6 -
+ .../eval/uot_evaluation_metrics.json               |      77 -
+ .../uot/causal_feasibility_summary.json            |      15 -
+ .../uot/flow_segments_bnb.csv                      |     289 -
+ .../uot/flow_segments_eth.csv                      |     289 -
+ .../uot/traceability_index.csv                     |    3757 -
+ .../uot/uot_cost_matrix.npz                        |     Bin 112061 -> 0 bytes
+ .../uot/uot_diagnostics.json                       |    1224 -
+ .../uot/uot_flow_correspondence.csv                |    3757 -
+ .../uot/uot_flow_segments_bnb.csv                  |     289 -
+ .../uot/uot_flow_segments_eth.csv                  |     289 -
+ .../uot/uot_marginals.csv                          |     577 -
+ .../uot/uot_split_merge_summary.json               |      10 -
+ .../uot/uot_summary.json                           |      23 -
+ .../uot/uot_transport_matrix.npz                   |     Bin 95315 -> 0 bytes
+ .../uot/uot_transport_plan.csv                     |    3757 -
+ .../uot/uot_unmatched_mass.csv                     |     577 -
+ .../eval/ablation_metrics.csv                      |       2 -
+ .../eval/synthetic_eval_by_scenario.csv            |       6 -
+ .../eval/uot_eval_by_pattern.csv                   |       4 -
+ .../eval/uot_eval_summary.txt                      |       6 -
+ .../eval/uot_evaluation_metrics.json               |      77 -
+ .../uot/causal_feasibility_summary.json            |      15 -
+ .../uot/flow_segments_bnb.csv                      |     289 -
+ .../uot/flow_segments_eth.csv                      |     289 -
+ .../uot/traceability_index.csv                     |    3757 -
+ .../uot/uot_cost_matrix.npz                        |     Bin 112061 -> 0 bytes
+ .../uot/uot_diagnostics.json                       |    1224 -
+ .../uot/uot_flow_correspondence.csv                |    3757 -
+ .../uot/uot_flow_segments_bnb.csv                  |     289 -
+ .../uot/uot_flow_segments_eth.csv                  |     289 -
+ .../uot/uot_marginals.csv                          |     577 -
+ .../uot/uot_split_merge_summary.json               |      10 -
+ .../uot/uot_summary.json                           |      23 -
+ .../uot/uot_transport_matrix.npz                   |     Bin 95315 -> 0 bytes
+ .../uot/uot_transport_plan.csv                     |    3757 -
+ .../uot/uot_unmatched_mass.csv                     |     577 -
+ .../eval/ablation_metrics.csv                      |       2 -
+ .../eval/synthetic_eval_by_scenario.csv            |       6 -
+ .../eval/uot_eval_by_pattern.csv                   |       4 -
+ .../eval/uot_eval_summary.txt                      |       6 -
+ .../eval/uot_evaluation_metrics.json               |      77 -
+ .../uot/causal_feasibility_summary.json            |      15 -
+ .../uot/flow_segments_bnb.csv                      |     289 -
+ .../uot/flow_segments_eth.csv                      |     289 -
+ .../uot/traceability_index.csv                     |    3757 -
+ .../uot/uot_cost_matrix.npz                        |     Bin 112061 -> 0 bytes
+ .../uot/uot_diagnostics.json                       |    1224 -
+ .../uot/uot_flow_correspondence.csv                |    3757 -
+ .../uot/uot_flow_segments_bnb.csv                  |     289 -
+ .../uot/uot_flow_segments_eth.csv                  |     289 -
+ .../uot/uot_marginals.csv                          |     577 -
+ .../uot/uot_split_merge_summary.json               |      10 -
+ .../uot/uot_summary.json                           |      23 -
+ .../uot/uot_transport_matrix.npz                   |     Bin 95315 -> 0 bytes
+ .../uot/uot_transport_plan.csv                     |    3757 -
+ .../uot/uot_unmatched_mass.csv                     |     577 -
+ .../eval/ablation_metrics.csv                      |       2 -
+ .../eval/synthetic_eval_by_scenario.csv            |       6 -
+ .../eval/uot_eval_by_pattern.csv                   |       4 -
+ .../eval/uot_eval_summary.txt                      |       6 -
+ .../eval/uot_evaluation_metrics.json               |      77 -
+ .../uot/causal_feasibility_summary.json            |      15 -
+ .../uot/flow_segments_bnb.csv                      |     289 -
+ .../uot/flow_segments_eth.csv                      |     289 -
+ .../uot/traceability_index.csv                     |    3757 -
+ .../uot/uot_cost_matrix.npz                        |     Bin 112061 -> 0 bytes
+ .../uot/uot_diagnostics.json                       |    1224 -
+ .../uot/uot_flow_correspondence.csv                |    3757 -
+ .../uot/uot_flow_segments_bnb.csv                  |     289 -
+ .../uot/uot_flow_segments_eth.csv                  |     289 -
+ .../uot/uot_marginals.csv                          |     577 -
+ .../uot/uot_split_merge_summary.json               |      10 -
+ .../uot/uot_summary.json                           |      23 -
+ .../uot/uot_transport_matrix.npz                   |     Bin 95315 -> 0 bytes
+ .../uot/uot_transport_plan.csv                     |    3757 -
+ .../uot/uot_unmatched_mass.csv                     |     577 -
+ review_pack/run.py                                 |      36 -
+ review_pack/scripts/audit_phase10r_outputs.py      |    1556 -
+ .../scripts/scripts/aggregate_phase3_ablation.py   |     308 -
+ .../scripts/aggregate_synthetic_multi_seed.py      |     126 -
+ .../scripts/scripts/consolidate_phase4_paper.py    |     153 -
+ .../diagnose_flow_segmentation_sensitivity.py      |     465 -
+ .../scripts/scripts/diagnose_phase2_anomalies.py   |     211 -
+ .../scripts/scripts/generate_matching_doc.py       |     184 -
+ .../scripts/patch_phase10r_a_audit_exports.py      |      93 -
+ .../scripts/phase2_1_unmatched_decoy_eval.py       |     340 -
+ .../scripts/run_phase10r_missing_knob_ablation.py  |     128 -
+ .../scripts/run_phase10r_real_pool_rc_uot.py       |     597 -
+ .../scripts/run_phase10r_unmatched_solver_scan.py  |     231 -
+ .../scripts/run_phase3_ablation_multi_seed.py      |     191 -
+ .../scripts/run_phase7_5_external_baselines.py     |     871 -
+ review_pack/src/cross/__init__.py                  |      12 -
+ review_pack/src/cross/__main__.py                  |       5 -
+ review_pack/src/cross/application/__init__.py      |       1 -
+ review_pack/src/cross/application/bootstrap.py     |      86 -
+ .../src/cross/application/experiments/__init__.py  |       1 -
+ .../application/experiments/run_uot_matching.py    |     114 -
+ .../cross/application/paper_experiment_closure.py  |    1374 -
+ review_pack/src/cross/application/pipeline.py      |    1753 -
+ .../src/cross/application/standalone_flow_uot.py   |     533 -
+ review_pack/src/cross/application/two_stage.py     |     710 -
+ review_pack/src/cross/config/__init__.py           |      29 -
+ review_pack/src/cross/config/output_layout.py      |     241 -
+ review_pack/src/cross/config/paths.py              |      31 -
+ review_pack/src/cross/domain/__init__.py           |       1 -
+ review_pack/src/cross/domain/aml/__init__.py       |      27 -
+ review_pack/src/cross/domain/aml/features.py       |      76 -
+ review_pack/src/cross/domain/aml/inference.py      |     173 -
+ review_pack/src/cross/domain/aml/model.py          |      24 -
+ review_pack/src/cross/domain/aml/rules.py          |     276 -
+ review_pack/src/cross/domain/amount/__init__.py    |      20 -
+ review_pack/src/cross/domain/amount/normalizer.py  |      70 -
+ review_pack/src/cross/domain/analytics/__init__.py |       1 -
+ .../src/cross/domain/analytics/aggregation.py      |      67 -
+ .../src/cross/domain/evaluation/__init__.py        |       5 -
+ review_pack/src/cross/domain/evaluation/compare.py |      53 -
+ .../domain/evaluation/decode_threshold_sweep.py    |     298 -
+ .../src/cross/domain/evaluation/flow_eval.py       |     432 -
+ .../src/cross/domain/evaluation/flow_metrics.py    |     339 -
+ .../domain/evaluation/semi_synthetic_flows.py      |     311 -
+ .../domain/evaluation/synthetic_failure_debug.py   |     160 -
+ .../domain/evaluation/synthetic_scenario_eval.py   |     111 -
+ .../evaluation/synthetic_segment_subgraph.py       |      70 -
+ review_pack/src/cross/domain/evidence.py           |     685 -
+ review_pack/src/cross/domain/flow/__init__.py      |       6 -
+ .../src/cross/domain/flow/segment_builder.py       |     299 -
+ review_pack/src/cross/domain/flows/__init__.py     |      10 -
+ .../src/cross/domain/flows/flow_features.py        |     176 -
+ .../src/cross/domain/flows/segment_builder.py      |     283 -
+ review_pack/src/cross/domain/graph/__init__.py     |      14 -
+ review_pack/src/cross/domain/graph/features.py     |     107 -
+ review_pack/src/cross/domain/graph/inference.py    |      80 -
+ review_pack/src/cross/domain/graph/model.py        |      21 -
+ review_pack/src/cross/domain/labels/__init__.py    |      31 -
+ .../cross/domain/labels/celer_evidence_builder.py  |     177 -
+ .../domain/labels/celer_supervised_pipeline.py     |     873 -
+ .../src/cross/domain/labels/flow_label_builder.py  |     263 -
+ .../cross/domain/labels/flow_segment_builder.py    |     363 -
+ review_pack/src/cross/domain/labels/raw_value.py   |      45 -
+ .../src/cross/domain/labels/tx_anchor_builder.py   |     530 -
+ .../src/cross/domain/labels/uot_flow_loader.py     |      65 -
+ review_pack/src/cross/domain/locator/__init__.py   |       3 -
+ .../src/cross/domain/locator/withdraw_locator.py   |     247 -
+ review_pack/src/cross/domain/path_a/__init__.py    |       1 -
+ review_pack/src/cross/domain/path_a/pairing.py     |     130 -
+ review_pack/src/cross/domain/path_a/service.py     |      48 -
+ review_pack/src/cross/domain/path_b/__init__.py    |      24 -
+ .../src/cross/domain/path_b/address_aggregate.py   |      50 -
+ review_pack/src/cross/domain/path_b/align.py       |      55 -
+ review_pack/src/cross/domain/path_b/constants.py   |       3 -
+ review_pack/src/cross/domain/path_b/env.py         |      17 -
+ review_pack/src/cross/domain/path_b/greedy.py      |     989 -
+ .../src/cross/domain/path_b/legacy_connector.py    |     280 -
+ .../src/cross/domain/path_b/route_registry.py      |     206 -
+ review_pack/src/cross/domain/path_b/runner.py      |    2418 -
+ review_pack/src/cross/domain/path_b/service.py     |      31 -
+ .../src/cross/domain/path_b/unlabeled_io.py        |     215 -
+ review_pack/src/cross/domain/path_b/uot_pairs.py   |     263 -
+ review_pack/src/cross/domain/ranker/__init__.py    |       7 -
+ review_pack/src/cross/domain/ranker/features.py    |     108 -
+ review_pack/src/cross/domain/ranker/inference.py   |      63 -
+ review_pack/src/cross/domain/ranker/model.py       |      24 -
+ review_pack/src/cross/domain/token/__init__.py     |      13 -
+ .../src/cross/domain/token/decimals_registry.py    |      58 -
+ .../src/cross/domain/token/route_registry.py       |      82 -
+ review_pack/src/cross/domain/uot/__init__.py       |      26 -
+ .../domain/uot/candidate_recall_diagnostics.py     |     824 -
+ review_pack/src/cross/domain/uot/cost_matrix.py    |     286 -
+ .../src/cross/domain/uot/decode_transport.py       |     368 -
+ .../domain/uot/flow_uot_candidate_subgraph.py      |     909 -
+ review_pack/src/cross/domain/uot/uot_solver.py     |     136 -
+ .../src/cross/domain/uot/uot_solver_numpy.py       |      44 -
+ .../src/cross/domain/validation/__init__.py        |       5 -
+ .../domain/validation/paper_artifact_validator.py  |     196 -
+ .../src/cross/domain/validation/rc_uot_exports.py  |     299 -
+ review_pack/src/cross/experiments/__init__.py      |       1 -
+ .../src/cross/experiments/ablation_suite.py        |      65 -
+ .../src/cross/experiments/export_paper_tables.py   |     135 -
+ .../src/cross/experiments/paper_finalize_bundle.py |     656 -
+ review_pack/src/cross/infrastructure/__init__.py   |       1 -
+ .../src/cross/infrastructure/config/__init__.py    |       1 -
+ .../src/cross/infrastructure/config/loader.py      |      73 -
+ .../src/cross/infrastructure/config/service.py     |      12 -
+ .../src/cross/infrastructure/evidence_validate.py  |      89 -
+ .../src/cross/infrastructure/logging_bootstrap.py  |       7 -
+ .../src/cross/infrastructure/online/__init__.py    |      10 -
+ .../infrastructure/online/bnb_window_fetch.py      |    1614 -
+ .../src/cross/infrastructure/online/eth_rpc.py     |      23 -
+ .../infrastructure/online/evm_json_rpc_client.py   |     240 -
+ .../online/receipt_transfer_verify.py              |     448 -
+ review_pack/src/cross/infrastructure/run_init.py   |     127 -
+ review_pack/src/cross/interfaces/__init__.py       |       1 -
+ review_pack/src/cross/interfaces/cli.py            |     374 -
+ review_pack/src/cross/legacy/__init__.py           |      19 -
+ review_pack/src/cross/legacy/abct_tx_adapter.py    |     102 -
+ review_pack/src/cross/legacy/locator_path.py       |      31 -
+ review_pack/src/cross/reporting/__init__.py        |       1 -
+ review_pack/src/cross/reporting/audit_report.py    |     540 -
+ review_pack/src/cross/shared/__init__.py           |       1 -
+ review_pack/src/cross/shared/amount_hints.py       |      92 -
+ review_pack/src/cross/shared/amount_normalizer.py  |      61 -
+ review_pack/src/cross/shared/bnb_pick.py           |      74 -
+ review_pack/src/cross/shared/connector_decimals.py |      12 -
+ review_pack/src/cross/shared/decimals_registry.py  |     113 -
+ review_pack/src/cross/shared/label_availability.py |      21 -
+ review_pack/src/cross/shared/label_index.py        |      22 -
+ review_pack/src/cross/shared/label_split.py        |      49 -
+ review_pack/src/cross/shared/load_csv.py           |      32 -
+ review_pack/src/cross/shared/normalize.py          |       8 -
+ review_pack/src/cross/shared/token_map.py          |      47 -
+ review_pack/src/cross/shared/transfers.py          |      79 -
+ review_pack/src/cross/shared/tx_hash.py            |      30 -
+ review_pack/src/cross/utils/__init__.py            |       5 -
+ review_pack/src/cross/utils/safe_cast.py           |     185 -
+ .../application/experiments/run_uot_matching.py    |     107 +-
+ src/cross/application/pipeline.py                  |      46 +
+ src/cross/domain/evaluation/flow_metrics.py        |      30 +-
+ src/cross/domain/path_b/runner.py                  |     114 +
+ src/cross/domain/uot/cost_matrix.py                |      65 +-
+ src/cross/domain/uot/decode_transport.py           |      31 +-
+ src/cross/interfaces/cli.py                        |      83 +-
+ tests/test_cost_matrix.py                          |      10 +
+ 2819 files changed, 1489 insertions(+), 8737828 deletions(-)

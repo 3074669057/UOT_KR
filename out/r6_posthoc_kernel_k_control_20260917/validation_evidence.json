@@ -1,0 +1,236 @@
+{
+  "timestamp_utc": "2026-09-17T05:25:54Z",
+  "checks": [
+    {
+      "check": "locked_spec hash unchanged",
+      "status": "PASS",
+      "evidence": "config/locked_spec.sha256",
+      "detail": "2733d2f5b24d685ca7eba667932a32a2eb96b43459c7d2e49b30c8af70b6f031"
+    },
+    {
+      "check": "AMOUNT_FREE anchor PASS",
+      "status": "PASS",
+      "evidence": "00_preflight/anchor_gate.json",
+      "detail": "0.3171931003584229"
+    },
+    {
+      "check": "CONDITIONAL anchor PASS",
+      "status": "PASS",
+      "evidence": "00_preflight/anchor_gate.json",
+      "detail": "0.3129093352883675"
+    },
+    {
+      "check": "RAW anchor PASS",
+      "status": "PASS",
+      "evidence": "00_preflight/anchor_gate.json",
+      "detail": "0.23742822838252942"
+    },
+    {
+      "check": "epsilon invariance PASS",
+      "status": "PASS",
+      "evidence": "00_preflight/epsilon_invariance_check.json",
+      "detail": "max symdiff 0"
+    },
+    {
+      "check": "cost hash check PASS",
+      "status": "PASS",
+      "evidence": "00_preflight/cost_hash_check.csv",
+      "detail": "15/15 vs R5 CSV"
+    },
+    {
+      "check": "seed guard selftest PASS",
+      "status": "PASS",
+      "evidence": "00_preflight/selftests.json",
+      "detail": "301-305 refused; 201-205 allowed"
+    },
+    {
+      "check": "tie determinism PASS",
+      "status": "PASS",
+      "evidence": "00_preflight/selftests.json",
+      "detail": "score desc, ties by index"
+    },
+    {
+      "check": "kernel/cost rank equivalence PASS",
+      "status": "PASS",
+      "evidence": "00_preflight/selftests.json",
+      "detail": "90 comparisons"
+    },
+    {
+      "check": "support mask selftest PASS",
+      "status": "PASS",
+      "evidence": "00_preflight/selftests.json",
+      "detail": "no P<=1e-9 edge selected"
+    },
+    {
+      "check": "solver reuse selftest PASS",
+      "status": "PASS",
+      "evidence": "00_preflight/selftests.json",
+      "detail": "repeat solve served from cache"
+    },
+    {
+      "check": "k reuse on a fresh full unit (1 solve -> 24 rows)",
+      "status": "PASS",
+      "evidence": "00_preflight/solver_reuse_check.json",
+      "detail": "solver_invocations=1, rows=24, distinct plan hashes=1"
+    },
+    {
+      "check": "sweep solver invocations consistent with unit count",
+      "status": "PASS",
+      "evidence": "logs/full_inventory.json",
+      "detail": "0 invocations for 15 units (0 means the run resumed completed unit files); file-level unit count = 15"
+    },
+    {
+      "check": "all 15 unit files present on disk",
+      "status": "PASS",
+      "evidence": "runs/unit__*.json",
+      "detail": "15 files"
+    },
+    {
+      "check": "3 bridges complete",
+      "status": "PASS",
+      "evidence": "results/kernel_k_long.csv",
+      "detail": "['Celer', 'Multi', 'Poly']"
+    },
+    {
+      "check": "5 seeds complete",
+      "status": "PASS",
+      "evidence": "results/kernel_k_long.csv",
+      "detail": "[201, 202, 203, 204, 205]"
+    },
+    {
+      "check": "6 k complete",
+      "status": "PASS",
+      "evidence": "results/kernel_k_long.csv",
+      "detail": "[2, 3, 5, 7, 10, 15]"
+    },
+    {
+      "check": "4 methods complete",
+      "status": "PASS",
+      "evidence": "results/kernel_k_long.csv",
+      "detail": "['AMOUNT_FREE_COST_D4', 'CONDITIONAL_UOT_D4', 'RAW_UOT_PLAN_D4', 'SUPPORT_PLUS_K_D4']"
+    },
+    {
+      "check": "expected 360 method-level cells present",
+      "status": "PASS",
+      "evidence": "results/kernel_k_long.csv",
+      "detail": "360 rows"
+    },
+    {
+      "check": "no duplicate cells",
+      "status": "PASS",
+      "evidence": "results/kernel_k_long.csv",
+      "detail": "0 duplicates"
+    },
+    {
+      "check": "no silent NaN in core metrics",
+      "status": "PASS",
+      "evidence": "results/kernel_k_long.csv",
+      "detail": "0 NaNs across ['macro_edge_f1', 'precision', 'recall', 'n_templates', 'n_pred_edges']"
+    },
+    {
+      "check": "all cells 48 templates",
+      "status": "PASS",
+      "evidence": "results/kernel_k_long.csv",
+      "detail": "min=48 max=48"
+    },
+    {
+      "check": "all solver runs converged",
+      "status": "PASS",
+      "evidence": "results/kernel_k_long.csv",
+      "detail": "max residual 9.676e-12"
+    },
+    {
+      "check": "support mask assertions PASS (0 violations)",
+      "status": "PASS",
+      "evidence": "results/kernel_k_long.csv",
+      "detail": "0 violations"
+    },
+    {
+      "check": "no forbidden seed in results",
+      "status": "PASS",
+      "evidence": "results/kernel_k_long.csv",
+      "detail": "[]"
+    },
+    {
+      "check": "no forbidden seed in logs",
+      "status": "PASS",
+      "evidence": "logs/run.log",
+      "detail": "[]"
+    },
+    {
+      "check": "k reuse: one solver run id per unit",
+      "status": "PASS",
+      "evidence": "results/kernel_k_long.csv",
+      "detail": "max distinct run ids = 1"
+    },
+    {
+      "check": "six primary contrasts computed",
+      "status": "PASS",
+      "evidence": "results/primary_contrasts.csv",
+      "detail": "['10', '15', '2', '3', '5', '7']"
+    },
+    {
+      "check": "k=3 trigger evaluated",
+      "status": "PASS",
+      "evidence": "results/k3_primary_contrast.json",
+      "detail": "True"
+    },
+    {
+      "check": "frozen holdout markers have provenance",
+      "status": "PASS",
+      "evidence": "provenance/frozen_holdout_k5.json",
+      "detail": "8 points"
+    },
+    {
+      "check": "frozen holdout markers agree with author-reported 4dp",
+      "status": "PASS",
+      "evidence": "provenance/frozen_holdout_k5.json",
+      "detail": "[('AMOUNT_FREE_COST_D4', 'Celer', True), ('AMOUNT_FREE_COST_D4', 'Multi', True), ('AMOUNT_FREE_COST_D4', 'Poly', True), ('CONDITIONAL_UOT_D4', 'Celer', True), ('CONDITIONAL_UOT_D4', 'Multi', True), ('CONDITIONAL_UOT_D4', 'Poly', True)]"
+    },
+    {
+      "check": "no holdout value for k != 5 invented",
+      "status": "PASS",
+      "evidence": "provenance/frozen_holdout_k5.json",
+      "detail": "[5]"
+    },
+    {
+      "check": "figure values trace exactly to CSV",
+      "status": "PASS",
+      "evidence": "figures/kernel_k_control.png",
+      "detail": "all 3 bridges x 4 methods x 6 k x 5 seeds plotted from kernel_k_long.csv"
+    },
+    {
+      "check": "src/cross not modified by this task",
+      "status": "PASS",
+      "evidence": "00_preflight/git_status_before.txt vs current git status",
+      "detail": "no NEW dirty entry under src/cross; any entry listed there pre-dates this task"
+    },
+    {
+      "check": "config/ not modified by this task",
+      "status": "PASS",
+      "evidence": "00_preflight/git_status_before.txt vs current git status",
+      "detail": "no NEW dirty entry under config/"
+    },
+    {
+      "check": "frozen manuscript and frozen artefacts untouched",
+      "status": "PASS",
+      "evidence": "00_preflight/git_status_before.txt vs current git status",
+      "detail": "no NEW dirty entry under any frozen path"
+    },
+    {
+      "check": "manuscript wording matches classification",
+      "status": "PASS",
+      "evidence": "paper/section_4_4_c_patch_CN.md",
+      "detail": "classification=C-trigger; required phrases present=all"
+    },
+    {
+      "check": "no main hyperparameter changed",
+      "status": "PASS",
+      "evidence": "config/locked_spec.json",
+      "detail": "k default 5, epsilon 0.05, lambda 0.5; nothing re-tuned"
+    }
+  ],
+  "n_pass": 38,
+  "n_fail": 0,
+  "pass": true
+}

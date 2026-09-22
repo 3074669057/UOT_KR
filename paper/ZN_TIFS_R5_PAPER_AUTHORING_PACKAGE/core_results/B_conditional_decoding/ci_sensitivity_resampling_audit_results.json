@@ -1,0 +1,197 @@
+{
+  "setup": {
+    "B": 4000,
+    "rng_seed": 20240101,
+    "methods": [
+      "CONDITIONAL_UOT_D4",
+      "RAW_UOT_PLAN_D4"
+    ],
+    "n_instances_per_bridge": 240,
+    "bridges": [
+      "Celer",
+      "Multi",
+      "Poly"
+    ]
+  },
+  "structure": {
+    "n_bridges": 3,
+    "n_seeds_per_bridge": 5,
+    "n_template_families_per_bridge": 12,
+    "family_sizes": {
+      "Celer": [
+        20,
+        20,
+        20,
+        20,
+        20,
+        20,
+        20,
+        20,
+        20,
+        20,
+        20,
+        20
+      ],
+      "Multi": [
+        20,
+        20,
+        20,
+        20,
+        20,
+        20,
+        20,
+        20,
+        20,
+        20,
+        20,
+        20
+      ],
+      "Poly": [
+        20,
+        20,
+        20,
+        20,
+        20,
+        20,
+        20,
+        20,
+        20,
+        20,
+        20,
+        20
+      ]
+    },
+    "seed_sizes": {
+      "Celer": [
+        48,
+        48,
+        48,
+        48,
+        48
+      ],
+      "Multi": [
+        48,
+        48,
+        48,
+        48,
+        48
+      ],
+      "Poly": [
+        48,
+        48,
+        48,
+        48,
+        48
+      ]
+    },
+    "n_instances_per_family_per_seed": 4
+  },
+  "unknown_cell_templates": {
+    "Celer": 0,
+    "Multi": 0,
+    "Poly": 0
+  },
+  "frozen_reproduction": {
+    "per_bridge_delta_mean": {
+      "Celer": 0.08258327693811568,
+      "Multi": 0.08204892728823306,
+      "Poly": 0.06160801564027375
+    },
+    "macro_mean": 0.07541340662220748,
+    "macro_ci95": [
+      0.07074574799056527,
+      0.08042201672874232
+    ],
+    "ci_width": 0.009676268738177049,
+    "target_frozen_ci": [
+      0.07055749054591975,
+      0.0803125005363676
+    ],
+    "reproduces_frozen": true
+  },
+  "per_bridge_sensitivity": {
+    "Celer": {
+      "frozen_ci95": [
+        0.07424954413865707,
+        0.09178180690277468
+      ],
+      "family_cluster_ci95": [
+        0.06290322580645166,
+        0.10626663658921727
+      ],
+      "sample_mean": 0.08258327693811568,
+      "excludes_zero": true
+    },
+    "Multi": {
+      "frozen_ci95": [
+        0.07091015858703012,
+        0.09327747991620934
+      ],
+      "family_cluster_ci95": [
+        0.0695518645391542,
+        0.09801104675259875
+      ],
+      "sample_mean": 0.08204892728823306,
+      "excludes_zero": true
+    },
+    "Poly": {
+      "frozen_ci95": [
+        0.05865102639296193,
+        0.0649315738025416
+      ],
+      "family_cluster_ci95": [
+        0.05923631476050836,
+        0.06434506353861198
+      ],
+      "sample_mean": 0.06160801564027375,
+      "excludes_zero": true
+    }
+  },
+  "sensitivity_schemes": {
+    "A_frozen_instance_bootstrap": {
+      "resample_unit": "template instance (240/bridge)",
+      "ci95": [
+        0.07074574799056527,
+        0.08042201672874232
+      ],
+      "width": 0.009676268738177049,
+      "excludes_zero": true
+    },
+    "B_cell_cluster_bootstrap": {
+      "resample_unit": "Q|D template family (12 clusters/bridge)",
+      "ci95": [
+        0.06761604571333493,
+        0.08492481059681713
+      ],
+      "width": 0.017308764883482194,
+      "excludes_zero": true
+    },
+    "C_cell_x_seed_cluster_bootstrap": {
+      "resample_unit": "Q|D cell x seed (60 clusters/bridge)",
+      "ci95": [
+        0.06956964377979238,
+        0.08183592625452507
+      ],
+      "width": 0.012266282474732687,
+      "excludes_zero": true
+    },
+    "D_seed_cluster_bootstrap": {
+      "resample_unit": "seed (5 clusters/bridge)",
+      "ci95": [
+        0.06907454939992418,
+        0.08112434156686002
+      ],
+      "width": 0.012049792166935844,
+      "excludes_zero": true
+    },
+    "E_two_stage_seed_then_template": {
+      "resample_unit": "seed -> template hierarchical",
+      "ci95": [
+        0.06758247358965062,
+        0.08319852976519355
+      ],
+      "width": 0.01561605617554293,
+      "excludes_zero": true
+    }
+  }
+}

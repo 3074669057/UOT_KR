@@ -1,0 +1,24 @@
+% R7 contributions patch
+\begin{enumerate}
+  \item \textbf{CSFFC formalization} of cross-chain split/merge forensic correspondence,
+        including unmatched mass and many-to-many semantics. (unchanged)
+  \item \textbf{Direct forensic kernel as a ranking signal.} At equal forensic cost, ranking
+        by the direct kernel $\log K = -C/\epsilon$ with a bilateral top-$k$ decoder
+        outperforms the cost-optimal one-to-one assignment baseline
+        (H1 effect $+0.0255$, Holm $p = 0.00055$) \emph{and}
+        a predicted-edge-budget-matched Threshold-MM
+        (H2 effect $+0.3670$, Holm $p = 0.0001$), on an
+        independently generated, single-shot, previously untouched confirmatory holdout.
+  \item \textbf{Transport for representation.} UOT supplies $\delta^S$/$\delta^T$,
+        realized marginals and support, supporting the many-to-many / unmatched output
+        semantics. The selected rule (\texttt{R-const@k3}) does \emph{not} rank by
+        realized mass, so no claim is made that transport mass directly improves ranking.
+  \item \textbf{Empirical degree calibration.} The generator's split/merge degree
+        distributions are driven by the empirical fan-out / fan-in distributions of the
+        frozen v4/v5 audit windows, removing the fixed $1\!\to\!2$ / $2\!\to\!1$ structural
+        artefact.
+  \item \textbf{Scope of conditional correction (R6 retained).} Conditional decoding repairs
+        the raw plan ordering (S2 effect $+0.3051$) but adds only a
+        small increment over direct-kernel ranking (S1 effect
+        $+0.0142$, secondary).
+\end{enumerate}

@@ -1,0 +1,15 @@
+<<git diff -- src/cross failed: 'gbk' codec can't decode byte 0xab in position 33486: illegal multibyte sequence>>
+diff --git a/config/defaults.json b/config/defaults.json
+index 56d2417..c73692f 100644
+--- a/config/defaults.json
++++ b/config/defaults.json
+@@ -68,6 +68,7 @@
+     "flow_mode": "segment",
+     "backend": "pot",
+     "max_delay_sec": 21600,
++    "time_delay_policy": "tx_if_available_else_flow_representative",
+     "causal_violation_penalty": 5.0,
+     "lambda_risk": 0.25,
+     "causal_infeasible_delay_sec": null,
+
+

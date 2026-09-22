@@ -1,0 +1,89 @@
+{
+  "checks": [
+    {
+      "check": "locked_spec_sha256",
+      "status": "PASS",
+      "detail": {
+        "computed": "392f88f654d8bc97c1f3d42d77ae506991940f798d266854ff54ee26a89b0bd6",
+        "recorded": "392f88f654d8bc97c1f3d42d77ae506991940f798d266854ff54ee26a89b0bd6"
+      }
+    },
+    {
+      "check": "locked_spec_matches_manifest",
+      "status": "PASS",
+      "detail": {
+        "computed": "392f88f654d8bc97c1f3d42d77ae506991940f798d266854ff54ee26a89b0bd6",
+        "manifest": "392f88f654d8bc97c1f3d42d77ae506991940f798d266854ff54ee26a89b0bd6"
+      }
+    },
+    {
+      "check": "frozen_artifact_hashes",
+      "status": "PASS",
+      "detail": {}
+    },
+    {
+      "check": "executor_self_sha256",
+      "status": "PASS",
+      "detail": {
+        "computed": "65f0feef440d70c74888645ba8984dc1ef6475926b18e1c8cc2f6991e758341b",
+        "frozen": "65f0feef440d70c74888645ba8984dc1ef6475926b18e1c8cc2f6991e758341b",
+        "key": "scripts/run_r7_confirmatory_kernel_ranking.py"
+      }
+    },
+    {
+      "check": "confirmatory_seed_block_only",
+      "status": "PASS",
+      "detail": {
+        "manifest": [
+          401,
+          402,
+          403,
+          404,
+          405,
+          406,
+          407,
+          408,
+          409,
+          410
+        ],
+        "runtime": [
+          401,
+          402,
+          403,
+          404,
+          405,
+          406,
+          407,
+          408,
+          409,
+          410
+        ]
+      }
+    },
+    {
+      "check": "non_confirmatory_seeds_rejected",
+      "status": "PASS",
+      "detail": 403
+    },
+    {
+      "check": "one_shot_ledger_absent",
+      "status": "PASS",
+      "detail": {
+        "path": "out\\r7_confirmatory_kernel_ranking_20260917\\confirmatory\\CONFIRMATORY_TOUCH_ONCE.json",
+        "exists": false
+      }
+    },
+    {
+      "check": "confirmatory_raw_absent",
+      "status": "PASS",
+      "detail": {
+        "path": "out\\r7_confirmatory_kernel_ranking_20260917\\confirmatory\\raw",
+        "exists": false
+      }
+    }
+  ],
+  "checked_at_utc": "2026-09-17T07:32:36Z",
+  "spec_sha256": "392f88f654d8bc97c1f3d42d77ae506991940f798d266854ff54ee26a89b0bd6",
+  "executor_sha256": "65f0feef440d70c74888645ba8984dc1ef6475926b18e1c8cc2f6991e758341b",
+  "ALL_PASS": true
+}

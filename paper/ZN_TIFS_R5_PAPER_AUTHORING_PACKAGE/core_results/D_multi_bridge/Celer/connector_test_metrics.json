@@ -1,0 +1,34 @@
+{
+  "abstention": 0.5214045214045214,
+  "candidate_pool_recall": 0.9971139971139971,
+  "coverage": 0.4785954785954786,
+  "development_selection": {
+    "abstention": 0.008419815938907393,
+    "coverage": 0.9915801840610926,
+    "fn": 50.0,
+    "fp": 7.0,
+    "full_set_f1": 0.9943958312850261,
+    "n_abstained": 43.0,
+    "n_predicted": 5064.0,
+    "n_total": 5107.0,
+    "precision": 0.9986176935229067,
+    "recall": 0.9902095163501077,
+    "threshold": 0.0,
+    "tp": 5057.0,
+    "window_h": 6.0
+  },
+  "fn": 1084,
+  "fp": 0,
+  "full_set_f1": 0.6473649967469095,
+  "n_abstained": 1084,
+  "n_predicted": 995,
+  "n_total": 2079,
+  "precision": 1.0,
+  "recall": 0.4785954785954786,
+  "selected_config": {
+    "confidence_threshold": 0.0,
+    "window_h": 6.0
+  },
+  "token_map_size": 7,
+  "tp": 995
+}

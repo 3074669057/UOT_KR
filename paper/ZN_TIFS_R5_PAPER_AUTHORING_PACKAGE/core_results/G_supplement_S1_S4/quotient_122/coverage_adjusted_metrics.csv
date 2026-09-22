@@ -1,0 +1,2 @@
+event_backed_projection_coverage,coverage_adjusted_recall_upper_bound,coverage_adjusted_effective_recall,abstention_rate,full_scope_claim_allowed,original_canonical_exact_pair_claim_allowed
+0.792,0.792,0.792,0.20799999999999996,False,False

@@ -1,0 +1,27 @@
+{
+  "_comment": [
+    "EXAMPLE ONLY -- copy to config/local.json and fill in your own values:",
+    "    cp config/local.example.json config/local.json        (Linux/macOS)",
+    "    copy config\\local.example.json config\\local.json      (Windows)",
+    "",
+    "config/local.json is git-ignored and MUST NOT be committed.  It overrides the",
+    "corresponding blocks of config/defaults.json.",
+    "",
+    "The released experiment lines R5 / R6 / R7 do NOT need any provider credential:",
+    "they operate on the frozen development and confirmatory cells.  Only the online",
+    "acquisition stage (scripts/multi_bridge/tifs_external/*, src/cross/infrastructure/online/*)",
+    "reads this file, and that stage is not reproducible from this release because the",
+    "raw on-chain corpora are withheld -- see EXTERNAL_DATA_MANIFEST.md."
+  ],
+  "nodereal": {
+    "enabled": false,
+    "api_keys": ["<YOUR_NODEREAL_API_KEY>"],
+    "rpc_urls": ["<YOUR_BSC_RPC_URL>"],
+    "window_before_sec": 3600,
+    "window_after_sec": 3600
+  },
+  "ethereum": {
+    "enabled": false,
+    "rpc_urls": ["<YOUR_ETH_RPC_URL>"]
+  }
+}

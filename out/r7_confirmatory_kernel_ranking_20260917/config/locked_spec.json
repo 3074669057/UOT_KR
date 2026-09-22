@@ -1,0 +1,753 @@
+{
+  "experiment_id": "r7_confirmatory_kernel_ranking_20260917",
+  "spec_version": 1,
+  "frozen_at_utc": "2026-09-17T07:51:46Z",
+  "git_head": "d5cd14d8051263b49b01b10ad36e6033b2ec3219",
+  "git_branch": "master",
+  "freeze_type": "hash-locked protocol freeze",
+  "freeze_evidence": [
+    "SHA256 of this spec",
+    "freeze timestamp",
+    "code manifest",
+    "one-shot ledger"
+  ],
+  "preregistration_wording": {
+    "allowed": "hash-locked protocol freeze",
+    "not_allowed": "externally timestamped preregistration",
+    "actual_evidence": [
+      "SHA256 of the locked spec",
+      "freeze time",
+      "code manifest",
+      "one-shot ledger"
+    ]
+  },
+  "seed_blocks": {
+    "selection": [
+      206,
+      207,
+      208,
+      209,
+      210,
+      211,
+      112,
+      113,
+      114,
+      115
+    ],
+    "selection_as_originally_specified": [
+      206,
+      207,
+      208,
+      209,
+      210,
+      211,
+      212,
+      213,
+      214,
+      215
+    ],
+    "selection_amendment": {
+      "applied": true,
+      "reason": "the originally reserved block 206-215 was found partially contaminated: 212-215 already carry produced output from out/paper_full_pipeline_run/synthetic/",
+      "decision": "selection = 206-211 (the fresh part of the originally reserved block) + 112-115 (next fresh seeds)",
+      "evidence": "00_preflight/seed_freshness_audit.json",
+      "blocker_report": "BLOCKER_REPORT.md",
+      "owner_decision": "protocol owner approved option A on 2026-09-17"
+    },
+    "confirmatory": [
+      401,
+      402,
+      403,
+      404,
+      405,
+      406,
+      407,
+      408,
+      409,
+      410
+    ],
+    "permanently_forbidden": [
+      42,
+      43,
+      44,
+      45,
+      46,
+      201,
+      202,
+      203,
+      204,
+      205,
+      212,
+      213,
+      214,
+      215,
+      301,
+      302,
+      303,
+      304,
+      305
+    ]
+  },
+  "frozen_cost": {
+    "family": "amount-free renormalised five-component cost",
+    "absolute_weights": {
+      "time": 0.25,
+      "route": 0.15,
+      "risk": 0.15,
+      "evidence": 0.05,
+      "novelty": 0.05
+    },
+    "renormalisation_denominator": 0.65,
+    "weights_used": {
+      "time": 0.3846153846153846,
+      "route": 0.23076923076923075,
+      "risk": 0.23076923076923075,
+      "evidence": 0.07692307692307693,
+      "novelty": 0.07692307692307693
+    },
+    "amount_component": "removed pairwise only; amount-derived marginals preserved",
+    "epsilon": 0.05,
+    "lambda": 0.5,
+    "reopened_by_r7": false
+  },
+  "solver_parameters": {
+    "backend": "POT ot.unbalanced.sinkhorn_unbalanced",
+    "reg": 0.05,
+    "reg_m": 0.5,
+    "numItermax": 20000,
+    "stopThr": 1e-11,
+    "convergence_criterion": "final POT err < 1e-7 (frozen R5/R6 criterion)"
+  },
+  "support_threshold": 1e-09,
+  "degree_calibration": {
+    "sampling_spec": {
+      "stage": "0B_input",
+      "generated_at_utc": "2026-09-17T07:29:35Z",
+      "source_windows": [
+        "v4",
+        "v5"
+      ],
+      "pooling": "v4/v5 unique protocol-anchored units, deduped on the canonical anchor identity; v5 contributes more units and therefore carries more weight in the pooled distribution, as required",
+      "split_degree": {
+        "name": "split_degree_from_empirical_fanout",
+        "support": [
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8
+        ],
+        "pmf": [
+          0.58014309024727,
+          0.19417597590058994,
+          0.08120999121375674,
+          0.04606501820007531,
+          0.02422492782728756,
+          0.016568344420735535,
+          0.05761265219028493
+        ],
+        "counts": [
+          4622,
+          1547,
+          647,
+          367,
+          193,
+          132,
+          459
+        ],
+        "n_units": 7967,
+        "winsorised": true,
+        "cap": 8,
+        "p_degree_gt_cap": 0.045939500439312164,
+        "empirical": true,
+        "mirrored_proxy_not_empirical_fanin": false
+      },
+      "merge_degree": {
+        "name": "merge_degree_from_empirical_fanin",
+        "support": [
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8
+        ],
+        "pmf": [
+          0.9751552795031055,
+          0.024844720496894408,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "counts": [
+          157,
+          4,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "n_units": 161,
+        "winsorised": true,
+        "cap": 8,
+        "p_degree_gt_cap": 0.0,
+        "empirical": true,
+        "mirrored_proxy_not_empirical_fanin": false
+      },
+      "HIGH_TRUNCATION_TAIL": false,
+      "hashes": {
+        "pooled_degree_hist_truncated.csv": "bb928b5e2e21f1547e83500e80723511765a1d513a3bd59b1a3c79526dc5953b",
+        "pooled_fanin_hist_truncated.csv": "8930b93d29fc544fc49c9633fcc3113390294c873b2f9275005df65796e31cfe"
+      }
+    },
+    "histogram_hashes": {
+      "pooled_degree_hist_truncated.csv": "bb928b5e2e21f1547e83500e80723511765a1d513a3bd59b1a3c79526dc5953b",
+      "pooled_fanin_hist_truncated.csv": "8930b93d29fc544fc49c9633fcc3113390294c873b2f9275005df65796e31cfe"
+    },
+    "truncation": {
+      "range": [
+        2,
+        8
+      ],
+      "cap": 8,
+      "rule": "d_used = min(d_observed, 8)"
+    },
+    "HIGH_TRUNCATION_TAIL": false,
+    "fanin_empirical": true,
+    "mirrored_proxy_not_empirical_fanin": false
+  },
+  "generator_spec": {
+    "implementation": "src/cross/domain/evaluation/semi_synthetic_flows.py (extended in place)",
+    "byte_equivalence_self_test": "selection/generator/generator_equivalence.json",
+    "n_families": 24,
+    "instances_per_family": 2,
+    "templates_per_cell": 48,
+    "degree_distribution": "frozen pooled empirical fan-out (split) and fan-in (merge)",
+    "degree_range": [
+      2,
+      8
+    ],
+    "degree_cap": 8,
+    "truncation": "d_used = min(d_observed, 8) (right winsorisation, not deletion)",
+    "HIGH_TRUNCATION_TAIL": false,
+    "preserved_mechanisms": [
+      "amount allocation (generalised to equal shares amount/d)",
+      "time perturbation",
+      "+60/+120 delay decoys",
+      "unmatched source",
+      "address / evidence / risk construction",
+      "bridge-specific mechanisms"
+    ],
+    "family_manifest_sha256": "a11c7ca53d12757975799eee40fa6a774492f706130417de0f91695bbfe92e8d",
+    "family_manifest_rows": 1440,
+    "structural_qa": "PASS",
+    "structural_qa_completed_before_method_f1": true
+  },
+  "candidate_space": {
+    "n_candidates": 22,
+    "criterion": "highest bridge-balanced overall macro edge F1",
+    "tie_break": {
+      "order": [
+        "R-const",
+        "R-quantile",
+        "R-threshold",
+        "R-adaptive"
+      ],
+      "within_family": "smaller parameter value",
+      "tolerance": 1e-12,
+      "note": "no holdout information, no 'more publishable' tie-break"
+    },
+    "candidates": [
+      {
+        "rule_id": "R-const@k2",
+        "family": "R-const",
+        "k": 2,
+        "param_name": "k",
+        "param_value": 2.0,
+        "definition": "bilateral mutual top-k on the ranking signal"
+      },
+      {
+        "rule_id": "R-const@k3",
+        "family": "R-const",
+        "k": 3,
+        "param_name": "k",
+        "param_value": 3.0,
+        "definition": "bilateral mutual top-k on the ranking signal"
+      },
+      {
+        "rule_id": "R-const@k4",
+        "family": "R-const",
+        "k": 4,
+        "param_name": "k",
+        "param_value": 4.0,
+        "definition": "bilateral mutual top-k on the ranking signal"
+      },
+      {
+        "rule_id": "R-const@k5",
+        "family": "R-const",
+        "k": 5,
+        "param_name": "k",
+        "param_value": 5.0,
+        "definition": "bilateral mutual top-k on the ranking signal"
+      },
+      {
+        "rule_id": "R-const@k6",
+        "family": "R-const",
+        "k": 6,
+        "param_name": "k",
+        "param_value": 6.0,
+        "definition": "bilateral mutual top-k on the ranking signal"
+      },
+      {
+        "rule_id": "R-const@k8",
+        "family": "R-const",
+        "k": 8,
+        "param_name": "k",
+        "param_value": 8.0,
+        "definition": "bilateral mutual top-k on the ranking signal"
+      },
+      {
+        "rule_id": "R-quantile@q0.75",
+        "family": "R-quantile",
+        "q": 0.75,
+        "k": 3,
+        "param_name": "q",
+        "param_value": 0.75,
+        "definition": "k = ceil(Q_0.75) of the FROZEN pooled truncated degree distribution, clipped to [2,8] -> k=3; ONE k shared by all bridges"
+      },
+      {
+        "rule_id": "R-quantile@q0.9",
+        "family": "R-quantile",
+        "q": 0.9,
+        "k": 5,
+        "param_name": "q",
+        "param_value": 0.9,
+        "definition": "k = ceil(Q_0.9) of the FROZEN pooled truncated degree distribution, clipped to [2,8] -> k=5; ONE k shared by all bridges"
+      },
+      {
+        "rule_id": "R-quantile@q0.95",
+        "family": "R-quantile",
+        "q": 0.95,
+        "k": 8,
+        "param_name": "q",
+        "param_value": 0.95,
+        "definition": "k = ceil(Q_0.95) of the FROZEN pooled truncated degree distribution, clipped to [2,8] -> k=8; ONE k shared by all bridges"
+      },
+      {
+        "rule_id": "R-adaptive@a2",
+        "family": "R-adaptive",
+        "alpha": 2,
+        "param_name": "alpha",
+        "param_value": 2.0,
+        "k_max": 8,
+        "definition": "k_i^S = clip(ceil(alpha*r_i/median(r_positive)),1,8) and k_j^T = clip(ceil(alpha*c_j/median(c_positive)),1,8); symmetric on both sides"
+      },
+      {
+        "rule_id": "R-adaptive@a3",
+        "family": "R-adaptive",
+        "alpha": 3,
+        "param_name": "alpha",
+        "param_value": 3.0,
+        "k_max": 8,
+        "definition": "k_i^S = clip(ceil(alpha*r_i/median(r_positive)),1,8) and k_j^T = clip(ceil(alpha*c_j/median(c_positive)),1,8); symmetric on both sides"
+      },
+      {
+        "rule_id": "R-adaptive@a4",
+        "family": "R-adaptive",
+        "alpha": 4,
+        "param_name": "alpha",
+        "param_value": 4.0,
+        "k_max": 8,
+        "definition": "k_i^S = clip(ceil(alpha*r_i/median(r_positive)),1,8) and k_j^T = clip(ceil(alpha*c_j/median(c_positive)),1,8); symmetric on both sides"
+      },
+      {
+        "rule_id": "R-adaptive@a5",
+        "family": "R-adaptive",
+        "alpha": 5,
+        "param_name": "alpha",
+        "param_value": 5.0,
+        "k_max": 8,
+        "definition": "k_i^S = clip(ceil(alpha*r_i/median(r_positive)),1,8) and k_j^T = clip(ceil(alpha*c_j/median(c_positive)),1,8); symmetric on both sides"
+      },
+      {
+        "rule_id": "R-adaptive@a6",
+        "family": "R-adaptive",
+        "alpha": 6,
+        "param_name": "alpha",
+        "param_value": 6.0,
+        "k_max": 8,
+        "definition": "k_i^S = clip(ceil(alpha*r_i/median(r_positive)),1,8) and k_j^T = clip(ceil(alpha*c_j/median(c_positive)),1,8); symmetric on both sides"
+      },
+      {
+        "rule_id": "R-adaptive@a8",
+        "family": "R-adaptive",
+        "alpha": 8,
+        "param_name": "alpha",
+        "param_value": 8.0,
+        "k_max": 8,
+        "definition": "k_i^S = clip(ceil(alpha*r_i/median(r_positive)),1,8) and k_j^T = clip(ceil(alpha*c_j/median(c_positive)),1,8); symmetric on both sides"
+      },
+      {
+        "rule_id": "R-threshold@t0.05",
+        "family": "R-threshold",
+        "theta": 0.05,
+        "param_name": "theta",
+        "param_value": 0.05,
+        "definition": "K_ij/rowmax_i >= theta AND K_ij/colmax_j >= theta (log-domain comparison); no k"
+      },
+      {
+        "rule_id": "R-threshold@t0.1",
+        "family": "R-threshold",
+        "theta": 0.1,
+        "param_name": "theta",
+        "param_value": 0.1,
+        "definition": "K_ij/rowmax_i >= theta AND K_ij/colmax_j >= theta (log-domain comparison); no k"
+      },
+      {
+        "rule_id": "R-threshold@t0.2",
+        "family": "R-threshold",
+        "theta": 0.2,
+        "param_name": "theta",
+        "param_value": 0.2,
+        "definition": "K_ij/rowmax_i >= theta AND K_ij/colmax_j >= theta (log-domain comparison); no k"
+      },
+      {
+        "rule_id": "R-threshold@t0.3",
+        "family": "R-threshold",
+        "theta": 0.3,
+        "param_name": "theta",
+        "param_value": 0.3,
+        "definition": "K_ij/rowmax_i >= theta AND K_ij/colmax_j >= theta (log-domain comparison); no k"
+      },
+      {
+        "rule_id": "R-threshold@t0.5",
+        "family": "R-threshold",
+        "theta": 0.5,
+        "param_name": "theta",
+        "param_value": 0.5,
+        "definition": "K_ij/rowmax_i >= theta AND K_ij/colmax_j >= theta (log-domain comparison); no k"
+      },
+      {
+        "rule_id": "R-threshold@t0.7",
+        "family": "R-threshold",
+        "theta": 0.7,
+        "param_name": "theta",
+        "param_value": 0.7,
+        "definition": "K_ij/rowmax_i >= theta AND K_ij/colmax_j >= theta (log-domain comparison); no k"
+      },
+      {
+        "rule_id": "R-threshold@t0.9",
+        "family": "R-threshold",
+        "theta": 0.9,
+        "param_name": "theta",
+        "param_value": 0.9,
+        "definition": "K_ij/rowmax_i >= theta AND K_ij/colmax_j >= theta (log-domain comparison); no k"
+      }
+    ]
+  },
+  "selected_rule": {
+    "generated_at_utc": "2026-09-17T07:48:50Z",
+    "selection_criterion": "highest bridge-balanced overall macro edge F1",
+    "winner": "R-const@k3",
+    "winner_family": "R-const",
+    "winner_params": {
+      "family": "R-const",
+      "k": 3
+    },
+    "winner_score": 0.4321507567008728,
+    "n_tied_at_tolerance": 2,
+    "tied_rule_ids": [
+      "R-const@k3",
+      "R-quantile@q0.75"
+    ],
+    "tie_break": {
+      "tolerance": 1e-12,
+      "order": [
+        "R-const",
+        "R-quantile",
+        "R-threshold",
+        "R-adaptive"
+      ],
+      "within_family": "smaller parameter value",
+      "applied": true
+    },
+    "per_bridge": {
+      "Celer": 0.45256417210025957,
+      "Multi": 0.38407100011057055,
+      "Poly": 0.4598170978917883
+    },
+    "mean_edges_per_family": 17.425,
+    "mean_pred_edges_per_cell": 418.20000000000005,
+    "rule_for_executor": {
+      "family": "R-const",
+      "k": 3
+    },
+    "truncation_boundary_dependence": {
+      "TRUNCATION_BOUNDARY_DEPENDENCE": false,
+      "reasons": [],
+      "degree_cap_modified": false,
+      "manuscript_note": "no boundary dependence detected"
+    }
+  },
+  "method_list": [
+    "UOT_KR",
+    "RAW_UOT_PLAN",
+    "CONDITIONAL_UOT",
+    "SUPPORT_PLUS_K",
+    "HUNGARIAN_1TO1",
+    "THRESHOLD_MM",
+    "DUAL_SOFTMAX"
+  ],
+  "method_definitions": {
+    "primary_treatment": "UOT_KR",
+    "arms": {
+      "UOT_KR": "selected rule applied to the direct forensic kernel logK = -C/eps",
+      "RAW_UOT_PLAN": "same rule applied to the raw UOT plan P",
+      "CONDITIONAL_UOT": "same rule on the dual-cancelling conditional scores",
+      "SUPPORT_PLUS_K": "same rule on logK with a HARD support filter (P > 1e-9 at the candidate-set level)",
+      "HUNGARIAN_1TO1": "cost-optimal one-to-one assignment baseline: rectangular linear sum assignment on the same C, label-free",
+      "THRESHOLD_MM": "edge iff C_ij <= cutoff; cutoff fixed on the selection block",
+      "DUAL_SOFTMAX": "LoFTR-style dual softmax on logK with bidirectional (mutual nearest neighbour) acceptance and a confidence gate"
+    },
+    "diagnostics_not_baselines": {
+      "ORACLE_1TO1_CEILING": "label-informed maximum-cardinality matching on the ground-truth positive graph; not deployable, not in H1/H2, not in Holm, never used to build a UOT_KR prediction"
+    }
+  },
+  "threshold_mm": {
+    "cutoff": 0.2301501518518518,
+    "quantile": 0.004,
+    "criterion": "minimise |bridge-balanced mean predicted edge count per family - selected UOT_KR budget|",
+    "uses_ground_truth_f1": false,
+    "tie_break": "higher threshold",
+    "target_budget": 17.425,
+    "achieved_abs_diff": 1.2555555555555564,
+    "recalibrated_on_holdout": false,
+    "grid_amendment": {
+      "applied": true,
+      "reason": "the pre-registered coarse quantile grid (q >= 0.02) bound the solution: at q = 0.02 the threshold rule already predicts far more edges per family than the selected UOT_KR rule, so the equal-budget minimum was not attainable inside the grid",
+      "what_changed": "the discretisation of the continuous threshold only",
+      "what_did_not_change": [
+        "the criterion (minimise |budget - UOT_KR budget|)",
+        "the target (UOT_KR bridge-balanced budget)",
+        "the method definition (edge iff C_ij <= cutoff)",
+        "the tie-break (higher threshold)"
+      ],
+      "direction_of_effect": "refining the grid moves THRESHOLD_MM toward the UOT_KR edge budget, i.e. makes the H2 comparator stronger; conservative",
+      "observed_before_amendment": true,
+      "applied_before_protocol_freeze": true,
+      "confirmatory_block_untouched": true,
+      "coarse_grid_result": {
+        "selected_q": 0.02,
+        "selected_cutoff": 0.3446759259259259,
+        "selected_abs_diff": 63.15972222222223,
+        "n_candidates": 49
+      },
+      "target_budget": 17.425
+    }
+  },
+  "dual_softmax": {
+    "tau": 0.0,
+    "acceptance": "bidirectional mutual nearest neighbour (never tuned)",
+    "criterion": "maximise selection-block bridge-balanced mean family macro edge F1 over the frozen tau grid",
+    "monotone_decreasing_in_tau": true,
+    "tau_zero_is_global_optimum": true,
+    "tie_break": "higher tau",
+    "recalibrated_on_holdout": false
+  },
+  "hypotheses": {
+    "H1": {
+      "contrast": "F(UOT_KR) - F(HUNGARIAN_1TO1)",
+      "direction": "> 0",
+      "role": "primary",
+      "gate": "A"
+    },
+    "H2": {
+      "contrast": "F(UOT_KR) - F(THRESHOLD_MM)",
+      "direction": "> 0",
+      "role": "primary",
+      "gate": "B"
+    },
+    "S1": {
+      "contrast": "F(UOT_KR) - F(CONDITIONAL_UOT)",
+      "direction": "> 0",
+      "role": "secondary",
+      "gate": null
+    },
+    "S2": {
+      "contrast": "F(CONDITIONAL_UOT) - F(RAW_UOT_PLAN)",
+      "direction": "> 0",
+      "role": "secondary",
+      "gate": null
+    }
+  },
+  "estimand": {
+    "cell": "for each (bridge, seed): macro edge F1 = equal-weight mean over the 24 template families of the family-mean edge F1",
+    "n_primary_paired_cells": 30,
+    "bridges": [
+      "Celer",
+      "Multi",
+      "Poly"
+    ],
+    "seeds_per_bridge": 10,
+    "pseudoreplication": "the several hundred template instances are NEVER treated as independent samples",
+    "overall_effect": "mean the 10 seed-level paired deltas within each bridge, then equal-weight mean the 3 bridge means"
+  },
+  "aggregation": {
+    "order": [
+      "instance",
+      "family mean (equal weight)",
+      "24-family macro",
+      "seed",
+      "bridge",
+      "bridge-balanced overall"
+    ],
+    "primary_paired_cells": 30,
+    "pseudoreplication_forbidden": true
+  },
+  "bootstrap": {
+    "method": "paired stratified bootstrap",
+    "within_bridge": "resample the 10 seed-level paired cells with replacement",
+    "paired": "both methods of a pair are resampled together",
+    "across_bridges": "equal-weight macro-average of the 3 bridge means",
+    "B": 4000,
+    "rng_seed": 20240101,
+    "interval": "percentile two-sided 95%",
+    "forbidden": "bootstrapping the hundreds of template instances independently"
+  },
+  "permutation": {
+    "test": "one-sided paired sign-flip permutation",
+    "statistic": "equal-weight mean of the 3 bridge means of the 30 paired bridge-seed deltas",
+    "H0": "effect <= 0",
+    "H1": "effect > 0",
+    "rng_seed": 20240102,
+    "n_perm": 20000,
+    "monte_carlo_p": "(extreme + 1) / (n_perm + 1)",
+    "resolution": "about 1/20001 = 5.000e-05",
+    "resolution_note": "1.9e-9 is the theoretical order of a FULL exact enumeration of 2^30 sign patterns; this protocol does NOT enumerate them and therefore never reports a p-value below the Monte-Carlo resolution",
+    "multiplicity": "Holm step-down over the TWO one-sided primary p-values (H1, H2), FWER alpha = 0.05"
+  },
+  "holm": {
+    "family": [
+      "H1",
+      "H2"
+    ],
+    "method": "Holm step-down",
+    "alpha": 0.05,
+    "sided": "one-sided (effect > 0)"
+  },
+  "secondary": {
+    "S1": "F(UOT_KR) - F(CONDITIONAL_UOT), direction > 0",
+    "S2": "F(CONDITIONAL_UOT) - F(RAW_UOT_PLAN), direction > 0",
+    "reported": "effect, 95% bootstrap CI, unadjusted secondary p",
+    "explicitly": "secondary confirmatory hypothesis; NOT in the H1/H2 Holm family"
+  },
+  "gates": {
+    "A": "H1: effect > 0 AND bootstrap 95% CI lower > 0 AND Holm-adjusted one-sided p < 0.05",
+    "B": "H2: same three conditions",
+    "C": "cross-bridge consistency / CLAIM gate: the per-bridge mean H1 and H2 effects must all be >= -0.005. FAIL does NOT invalidate the run; it forbids claiming a cross-bridge-consistent advantage.",
+    "D": "technical completeness: all expected confirmatory units present, no missing cells, no duplicates, no forbidden seeds, all solver cells converged, final marginal/KKT error < 1e-07, no silent NaN/Inf, all edge sets valid, all cost hashes consistent, support hard filter valid",
+    "E": "independent metric verification: a frozen validator recomputes precision, recall, macro edge F1, strict exact recovery, edge count and mechanism metrics from the frozen raw prediction/truth files; |diff| <= 1e-9"
+  },
+  "classification_rules": {
+    "CONFIRMATORY_METHOD_SUPPORT": "A/B/C/D/E all PASS",
+    "OVERALL_SUPPORT_WITH_HETEROGENEITY": "A/B/D/E PASS, C FAIL",
+    "VALID_NEGATIVE_CONFIRMATORY_RESULT": "D/E PASS but A or B FAIL",
+    "TECHNICALLY_INVALID_CONFIRMATORY_EXECUTION": "D or E FAIL",
+    "forbidden_rename": "an unfavourable A/B/C scientific result must never be relabelled as an execution failure"
+  },
+  "negative_result_handling": {
+    "A_or_B_fail": "VALID_NEGATIVE_CONFIRMATORY_RESULT; never called an execution failure",
+    "C_fail": "valid result; no cross-bridge-consistent claim; report the bridge, effect and CI",
+    "D_or_E_fail": "TECHNICALLY_INVALID_CONFIRMATORY_EXECUTION; keep everything; never re-run 401-410",
+    "holdout_reuse": "forbidden under all circumstances"
+  },
+  "raw_result_schema": {
+    "per_unit_fields": [
+      "unit_id",
+      "bridge",
+      "seed",
+      "n_src",
+      "n_dst",
+      "source_ids",
+      "target_ids",
+      "template_of_source",
+      "template_of_target",
+      "truth",
+      "oracle_1to1_ceiling",
+      "predictions",
+      "method_metrics",
+      "family_edge_counts",
+      "margin_mass",
+      "solver",
+      "kkt",
+      "degrees",
+      "hashes",
+      "oracle_summary",
+      "hungarian_info",
+      "threshold_mm_info",
+      "dual_softmax_info",
+      "support_filter_violations",
+      "runtime_sec"
+    ],
+    "index": "confirmatory/raw/INDEX.json"
+  },
+  "executor": {
+    "path": "scripts/run_r7_confirmatory_kernel_ranking.py",
+    "seed_block": [
+      411,
+      412,
+      413,
+      414,
+      415,
+      416,
+      417,
+      418,
+      419,
+      420
+    ],
+    "ledger": "confirmatory/CONFIRMATORY_TOUCH_ONCE__411_420.json",
+    "one_shot": true,
+    "verifications": [
+      "locked_spec_sha256",
+      "executor_self_sha256",
+      "generator_sha256",
+      "validator_sha256",
+      "family_manifest_hash",
+      "degree_histogram_hash",
+      "selected_rule_artifact",
+      "seed_block_guard",
+      "one_shot_ledger_absent"
+    ]
+  },
+  "pre_selection_evidence": {
+    "preflight_all_pass": true,
+    "frozen_reproduction_anchors": {
+      "AMOUNT_FREE_COST_D4": {
+        "r7_value": 0.3171931003584229,
+        "frozen_value": 0.3172,
+        "abs_diff": 6.899641577073901e-06,
+        "tolerance": 0.0005,
+        "pass": true
+      },
+      "CONDITIONAL_UOT_D4": {
+        "r7_value": 0.3129093352883675,
+        "frozen_value": 0.3129,
+        "abs_diff": 9.335288367495753e-06,
+        "tolerance": 0.0005,
+        "pass": true
+      }
+    },
+    "validator_selftest_on_selection": "PASS",
+    "validator_metric_tolerance": 1e-09,
+    "validator_max_abs_diff": 1.6653345369377348e-16
+  },
+  "confirmatory_block_generated": false,
+  "confirmatory_block_read": false,
+  "confirmatory_block_reused": false
+}

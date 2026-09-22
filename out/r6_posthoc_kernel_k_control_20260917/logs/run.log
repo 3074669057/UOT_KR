@@ -1,0 +1,192 @@
+[2026-09-17T05:22:23Z] [full] spec_sha256=2733d2f5b24d685ca7eba667932a32a2eb96b43459c7d2e49b30c8af70b6f031
+[2026-09-17T05:22:23Z] [full] holdout guard ACTIVE; forbidden seeds = [301, 302, 303, 304, 305]
+[2026-09-17T05:22:23Z] [full] 3 bridges x 5 seeds x 6 k x 4 methods = 360 method-level rows from 15 solver units
+[2026-09-17T05:22:28Z] [full] unit__Celer__s201__eps0.05.json: 24 rows, cert=converged
+[2026-09-17T05:22:30Z] [full] unit__Celer__s202__eps0.05.json: 24 rows, cert=converged
+[2026-09-17T05:22:31Z] [full] unit__Celer__s203__eps0.05.json: 24 rows, cert=converged
+[2026-09-17T05:22:33Z] [full] unit__Celer__s204__eps0.05.json: 24 rows, cert=converged
+[2026-09-17T05:22:35Z] [full] unit__Celer__s205__eps0.05.json: 24 rows, cert=converged
+[2026-09-17T05:22:36Z] [full] unit__Multi__s201__eps0.05.json: 24 rows, cert=converged
+[2026-09-17T05:22:38Z] [full] unit__Multi__s202__eps0.05.json: 24 rows, cert=converged
+[2026-09-17T05:22:39Z] [full] unit__Multi__s203__eps0.05.json: 24 rows, cert=converged
+[2026-09-17T05:22:41Z] [full] unit__Multi__s204__eps0.05.json: 24 rows, cert=converged
+[2026-09-17T05:22:42Z] [full] unit__Multi__s205__eps0.05.json: 24 rows, cert=converged
+[2026-09-17T05:22:44Z] [full] unit__Poly__s201__eps0.05.json: 24 rows, cert=converged
+[2026-09-17T05:22:46Z] [full] unit__Poly__s202__eps0.05.json: 24 rows, cert=converged
+[2026-09-17T05:22:48Z] [full] unit__Poly__s203__eps0.05.json: 24 rows, cert=converged
+[2026-09-17T05:22:50Z] [full] unit__Poly__s204__eps0.05.json: 24 rows, cert=converged
+[2026-09-17T05:22:51Z] [full] unit__Poly__s205__eps0.05.json: 24 rows, cert=converged
+[2026-09-17T05:22:51Z] [full] FINISHED ok=15 skipped=0 failed=0 solver_invocations=15 cache_hits=0
+[2026-09-17T05:23:19Z] [preflight] selftests pass=True
+[2026-09-17T05:23:20Z] [cost-hash] 15/15 match R5 CSV; 15/15 match frozen artefact; 15/15 fresh solve == frozen plan; pass=True
+[2026-09-17T05:23:21Z] [eps-invariance] 36/36 identical; pass=True
+[2026-09-17T05:23:24Z] [anchor] AMOUNT_FREE_COST_D4: actual=0.3171931003584229 expected=0.3172 diff=6.899641577073901e-06 PASS=True
+[2026-09-17T05:23:24Z] [anchor] SUPPORT_PLUS_K_D4: actual=0.3111732241772564 expected=None diff=None PASS=None
+[2026-09-17T05:23:24Z] [anchor] CONDITIONAL_UOT_D4: actual=0.3129093352883675 expected=0.3129 diff=9.335288367495753e-06 PASS=True
+[2026-09-17T05:23:24Z] [anchor] RAW_UOT_PLAN_D4: actual=0.23742822838252942 expected=0.2374 diff=2.8228382529416063e-05 PASS=True
+[2026-09-17T05:23:24Z] [anchor] gate pass=True
+[2026-09-17T05:23:24Z] [preflight] ALL GATES PASS -- full sweep permitted
+[2026-09-17T05:23:26Z] [verify-reuse] solver_invocations=1 rows=24 distinct_plan_hashes=1 pass=True
+[2026-09-17T05:23:26Z] [full] spec_sha256=2733d2f5b24d685ca7eba667932a32a2eb96b43459c7d2e49b30c8af70b6f031
+[2026-09-17T05:23:26Z] [full] holdout guard ACTIVE; forbidden seeds = [301, 302, 303, 304, 305]
+[2026-09-17T05:23:26Z] [full] 3 bridges x 5 seeds x 6 k x 4 methods = 360 method-level rows from 15 solver units
+[2026-09-17T05:23:26Z] [full] reuse unit__Celer__s201__eps0.05.json
+[2026-09-17T05:23:26Z] [full] reuse unit__Celer__s202__eps0.05.json
+[2026-09-17T05:23:26Z] [full] reuse unit__Celer__s203__eps0.05.json
+[2026-09-17T05:23:26Z] [full] reuse unit__Celer__s204__eps0.05.json
+[2026-09-17T05:23:26Z] [full] reuse unit__Celer__s205__eps0.05.json
+[2026-09-17T05:23:26Z] [full] reuse unit__Multi__s201__eps0.05.json
+[2026-09-17T05:23:26Z] [full] reuse unit__Multi__s202__eps0.05.json
+[2026-09-17T05:23:26Z] [full] reuse unit__Multi__s203__eps0.05.json
+[2026-09-17T05:23:26Z] [full] reuse unit__Multi__s204__eps0.05.json
+[2026-09-17T05:23:26Z] [full] reuse unit__Multi__s205__eps0.05.json
+[2026-09-17T05:23:26Z] [full] reuse unit__Poly__s201__eps0.05.json
+[2026-09-17T05:23:26Z] [full] reuse unit__Poly__s202__eps0.05.json
+[2026-09-17T05:23:26Z] [full] reuse unit__Poly__s203__eps0.05.json
+[2026-09-17T05:23:26Z] [full] reuse unit__Poly__s204__eps0.05.json
+[2026-09-17T05:23:26Z] [full] reuse unit__Poly__s205__eps0.05.json
+[2026-09-17T05:23:26Z] [full] FINISHED ok=0 skipped=15 failed=0 solver_invocations=0 cache_hits=0
+[2026-09-17T05:23:26Z] [aggregate] wrote kernel_k_long.csv: 360 method-level rows
+[2026-09-17T05:23:26Z] [aggregate] wrote kernel_k_template_long.csv: 17280 template-level rows
+[2026-09-17T05:23:26Z] [aggregate] wrote kernel_k_summary.csv: 24 rows
+[2026-09-17T05:23:26Z] [aggregate] wrote kernel_k_per_seed.csv: 360 rows
+[2026-09-17T05:23:26Z] [analysis] classification=C-trigger C=True deltas={'2': -0.035728, '3': -0.037134, '5': -0.004284, '7': -0.00077, '10': 0.009905, '15': 0.025952}
+[2026-09-17T05:23:26Z] [tables] wrote analysis_tables.md
+[2026-09-17T05:23:27Z] [provenance] 8 frozen holdout points extracted; author cross-check ok=True
+[2026-09-17T05:23:27Z] [provenance] frozen holdout k=5 delta(COND-AMOUNT_FREE)=0.00484431003584229
+[2026-09-17T05:23:28Z] [figure] wrote kernel_k_control.png and kernel_k_control.pdf
+[2026-09-17T05:23:28Z] [paper] wrote 10 patch files for classification C-trigger
+[2026-09-17T05:23:29Z] [validate] 38 PASS / 0 FAIL
+[2026-09-17T05:23:29Z] [manifest] 64 files
+[2026-09-17T05:23:29Z] [report] wrote FINAL_EXPERIMENT_REPORT.md
+[2026-09-17T05:23:29Z] [manifest] 64 files
+[2026-09-17T05:23:57Z] [preflight] selftests pass=True
+[2026-09-17T05:23:58Z] [cost-hash] 15/15 match R5 CSV; 15/15 match frozen artefact; 15/15 fresh solve == frozen plan; pass=True
+[2026-09-17T05:23:59Z] [eps-invariance] 36/36 identical; pass=True
+[2026-09-17T05:24:02Z] [anchor] AMOUNT_FREE_COST_D4: actual=0.3171931003584229 expected=0.3172 diff=6.899641577073901e-06 PASS=True
+[2026-09-17T05:24:02Z] [anchor] SUPPORT_PLUS_K_D4: actual=0.3111732241772564 expected=None diff=None PASS=None
+[2026-09-17T05:24:02Z] [anchor] CONDITIONAL_UOT_D4: actual=0.3129093352883675 expected=0.3129 diff=9.335288367495753e-06 PASS=True
+[2026-09-17T05:24:02Z] [anchor] RAW_UOT_PLAN_D4: actual=0.23742822838252942 expected=0.2374 diff=2.8228382529416063e-05 PASS=True
+[2026-09-17T05:24:02Z] [anchor] gate pass=True
+[2026-09-17T05:24:02Z] [preflight] ALL GATES PASS -- full sweep permitted
+[2026-09-17T05:24:04Z] [verify-reuse] solver_invocations=1 rows=24 distinct_plan_hashes=1 pass=True
+[2026-09-17T05:24:04Z] [full] spec_sha256=2733d2f5b24d685ca7eba667932a32a2eb96b43459c7d2e49b30c8af70b6f031
+[2026-09-17T05:24:04Z] [full] holdout guard ACTIVE; forbidden seeds = [301, 302, 303, 304, 305]
+[2026-09-17T05:24:04Z] [full] 3 bridges x 5 seeds x 6 k x 4 methods = 360 method-level rows from 15 solver units
+[2026-09-17T05:24:04Z] [full] reuse unit__Celer__s201__eps0.05.json
+[2026-09-17T05:24:04Z] [full] reuse unit__Celer__s202__eps0.05.json
+[2026-09-17T05:24:04Z] [full] reuse unit__Celer__s203__eps0.05.json
+[2026-09-17T05:24:04Z] [full] reuse unit__Celer__s204__eps0.05.json
+[2026-09-17T05:24:04Z] [full] reuse unit__Celer__s205__eps0.05.json
+[2026-09-17T05:24:04Z] [full] reuse unit__Multi__s201__eps0.05.json
+[2026-09-17T05:24:04Z] [full] reuse unit__Multi__s202__eps0.05.json
+[2026-09-17T05:24:04Z] [full] reuse unit__Multi__s203__eps0.05.json
+[2026-09-17T05:24:04Z] [full] reuse unit__Multi__s204__eps0.05.json
+[2026-09-17T05:24:04Z] [full] reuse unit__Multi__s205__eps0.05.json
+[2026-09-17T05:24:04Z] [full] reuse unit__Poly__s201__eps0.05.json
+[2026-09-17T05:24:04Z] [full] reuse unit__Poly__s202__eps0.05.json
+[2026-09-17T05:24:04Z] [full] reuse unit__Poly__s203__eps0.05.json
+[2026-09-17T05:24:04Z] [full] reuse unit__Poly__s204__eps0.05.json
+[2026-09-17T05:24:04Z] [full] reuse unit__Poly__s205__eps0.05.json
+[2026-09-17T05:24:04Z] [full] FINISHED ok=0 skipped=15 failed=0 solver_invocations=0 cache_hits=0
+[2026-09-17T05:24:04Z] [aggregate] wrote kernel_k_long.csv: 360 method-level rows
+[2026-09-17T05:24:04Z] [aggregate] wrote kernel_k_template_long.csv: 17280 template-level rows
+[2026-09-17T05:24:04Z] [aggregate] wrote kernel_k_summary.csv: 24 rows
+[2026-09-17T05:24:04Z] [aggregate] wrote kernel_k_per_seed.csv: 360 rows
+[2026-09-17T05:24:05Z] [analysis] classification=C-trigger C=True deltas={'2': -0.035728, '3': -0.037134, '5': -0.004284, '7': -0.00077, '10': 0.009905, '15': 0.025952}
+[2026-09-17T05:24:05Z] [tables] wrote analysis_tables.md
+[2026-09-17T05:24:05Z] [provenance] 8 frozen holdout points extracted; author cross-check ok=True
+[2026-09-17T05:24:05Z] [provenance] frozen holdout k=5 delta(COND-AMOUNT_FREE)=0.00484431003584229
+[2026-09-17T05:24:06Z] [figure] wrote kernel_k_control.png and kernel_k_control.pdf
+[2026-09-17T05:24:06Z] [paper] wrote 10 patch files for classification C-trigger
+[2026-09-17T05:24:07Z] [validate] 38 PASS / 0 FAIL
+[2026-09-17T05:24:07Z] [manifest] 64 files
+[2026-09-17T05:24:07Z] [report] wrote FINAL_EXPERIMENT_REPORT.md
+[2026-09-17T05:24:07Z] [manifest] 64 files
+[2026-09-17T05:24:35Z] [preflight] selftests pass=True
+[2026-09-17T05:24:36Z] [cost-hash] 15/15 match R5 CSV; 15/15 match frozen artefact; 15/15 fresh solve == frozen plan; pass=True
+[2026-09-17T05:24:37Z] [eps-invariance] 36/36 identical; pass=True
+[2026-09-17T05:24:41Z] [anchor] AMOUNT_FREE_COST_D4: actual=0.3171931003584229 expected=0.3172 diff=6.899641577073901e-06 PASS=True
+[2026-09-17T05:24:41Z] [anchor] SUPPORT_PLUS_K_D4: actual=0.3111732241772564 expected=None diff=None PASS=None
+[2026-09-17T05:24:41Z] [anchor] CONDITIONAL_UOT_D4: actual=0.3129093352883675 expected=0.3129 diff=9.335288367495753e-06 PASS=True
+[2026-09-17T05:24:41Z] [anchor] RAW_UOT_PLAN_D4: actual=0.23742822838252942 expected=0.2374 diff=2.8228382529416063e-05 PASS=True
+[2026-09-17T05:24:41Z] [anchor] gate pass=True
+[2026-09-17T05:24:41Z] [preflight] ALL GATES PASS -- full sweep permitted
+[2026-09-17T05:24:42Z] [verify-reuse] solver_invocations=1 rows=24 distinct_plan_hashes=1 pass=True
+[2026-09-17T05:24:42Z] [full] spec_sha256=2733d2f5b24d685ca7eba667932a32a2eb96b43459c7d2e49b30c8af70b6f031
+[2026-09-17T05:24:42Z] [full] holdout guard ACTIVE; forbidden seeds = [301, 302, 303, 304, 305]
+[2026-09-17T05:24:42Z] [full] 3 bridges x 5 seeds x 6 k x 4 methods = 360 method-level rows from 15 solver units
+[2026-09-17T05:24:42Z] [full] reuse unit__Celer__s201__eps0.05.json
+[2026-09-17T05:24:42Z] [full] reuse unit__Celer__s202__eps0.05.json
+[2026-09-17T05:24:42Z] [full] reuse unit__Celer__s203__eps0.05.json
+[2026-09-17T05:24:42Z] [full] reuse unit__Celer__s204__eps0.05.json
+[2026-09-17T05:24:42Z] [full] reuse unit__Celer__s205__eps0.05.json
+[2026-09-17T05:24:42Z] [full] reuse unit__Multi__s201__eps0.05.json
+[2026-09-17T05:24:42Z] [full] reuse unit__Multi__s202__eps0.05.json
+[2026-09-17T05:24:42Z] [full] reuse unit__Multi__s203__eps0.05.json
+[2026-09-17T05:24:42Z] [full] reuse unit__Multi__s204__eps0.05.json
+[2026-09-17T05:24:42Z] [full] reuse unit__Multi__s205__eps0.05.json
+[2026-09-17T05:24:42Z] [full] reuse unit__Poly__s201__eps0.05.json
+[2026-09-17T05:24:42Z] [full] reuse unit__Poly__s202__eps0.05.json
+[2026-09-17T05:24:42Z] [full] reuse unit__Poly__s203__eps0.05.json
+[2026-09-17T05:24:42Z] [full] reuse unit__Poly__s204__eps0.05.json
+[2026-09-17T05:24:42Z] [full] reuse unit__Poly__s205__eps0.05.json
+[2026-09-17T05:24:42Z] [full] FINISHED ok=0 skipped=15 failed=0 solver_invocations=0 cache_hits=0
+[2026-09-17T05:24:42Z] [aggregate] wrote kernel_k_long.csv: 360 method-level rows
+[2026-09-17T05:24:42Z] [aggregate] wrote kernel_k_template_long.csv: 17280 template-level rows
+[2026-09-17T05:24:43Z] [aggregate] wrote kernel_k_summary.csv: 24 rows
+[2026-09-17T05:24:43Z] [aggregate] wrote kernel_k_per_seed.csv: 360 rows
+[2026-09-17T05:24:43Z] [analysis] classification=C-trigger C=True deltas={'2': -0.035728, '3': -0.037134, '5': -0.004284, '7': -0.00077, '10': 0.009905, '15': 0.025952}
+[2026-09-17T05:24:43Z] [tables] wrote analysis_tables.md
+[2026-09-17T05:24:43Z] [provenance] 8 frozen holdout points extracted; author cross-check ok=True
+[2026-09-17T05:24:43Z] [provenance] frozen holdout k=5 delta(COND-AMOUNT_FREE)=0.00484431003584229
+[2026-09-17T05:24:45Z] [figure] wrote kernel_k_control.png and kernel_k_control.pdf
+[2026-09-17T05:24:45Z] [paper] wrote 10 patch files for classification C-trigger
+[2026-09-17T05:24:45Z] [validate] 38 PASS / 0 FAIL
+[2026-09-17T05:24:45Z] [manifest] 64 files
+[2026-09-17T05:24:45Z] [report] wrote FINAL_EXPERIMENT_REPORT.md
+[2026-09-17T05:24:46Z] [manifest] 64 files
+[2026-09-17T05:25:23Z] [manifest] 64 files
+[2026-09-17T05:25:43Z] [preflight] selftests pass=True
+[2026-09-17T05:25:44Z] [cost-hash] 15/15 match R5 CSV; 15/15 match frozen artefact; 15/15 fresh solve == frozen plan; pass=True
+[2026-09-17T05:25:45Z] [eps-invariance] 36/36 identical; pass=True
+[2026-09-17T05:25:49Z] [anchor] AMOUNT_FREE_COST_D4: actual=0.3171931003584229 expected=0.3172 diff=6.899641577073901e-06 PASS=True
+[2026-09-17T05:25:49Z] [anchor] SUPPORT_PLUS_K_D4: actual=0.3111732241772564 expected=None diff=None PASS=None
+[2026-09-17T05:25:49Z] [anchor] CONDITIONAL_UOT_D4: actual=0.3129093352883675 expected=0.3129 diff=9.335288367495753e-06 PASS=True
+[2026-09-17T05:25:49Z] [anchor] RAW_UOT_PLAN_D4: actual=0.23742822838252942 expected=0.2374 diff=2.8228382529416063e-05 PASS=True
+[2026-09-17T05:25:49Z] [anchor] gate pass=True
+[2026-09-17T05:25:49Z] [preflight] ALL GATES PASS -- full sweep permitted
+[2026-09-17T05:25:51Z] [verify-reuse] solver_invocations=1 rows=24 distinct_plan_hashes=1 pass=True
+[2026-09-17T05:25:51Z] [full] spec_sha256=2733d2f5b24d685ca7eba667932a32a2eb96b43459c7d2e49b30c8af70b6f031
+[2026-09-17T05:25:51Z] [full] holdout guard ACTIVE; forbidden seeds = [301, 302, 303, 304, 305]
+[2026-09-17T05:25:51Z] [full] 3 bridges x 5 seeds x 6 k x 4 methods = 360 method-level rows from 15 solver units
+[2026-09-17T05:25:51Z] [full] reuse unit__Celer__s201__eps0.05.json
+[2026-09-17T05:25:51Z] [full] reuse unit__Celer__s202__eps0.05.json
+[2026-09-17T05:25:51Z] [full] reuse unit__Celer__s203__eps0.05.json
+[2026-09-17T05:25:51Z] [full] reuse unit__Celer__s204__eps0.05.json
+[2026-09-17T05:25:51Z] [full] reuse unit__Celer__s205__eps0.05.json
+[2026-09-17T05:25:51Z] [full] reuse unit__Multi__s201__eps0.05.json
+[2026-09-17T05:25:51Z] [full] reuse unit__Multi__s202__eps0.05.json
+[2026-09-17T05:25:51Z] [full] reuse unit__Multi__s203__eps0.05.json
+[2026-09-17T05:25:51Z] [full] reuse unit__Multi__s204__eps0.05.json
+[2026-09-17T05:25:51Z] [full] reuse unit__Multi__s205__eps0.05.json
+[2026-09-17T05:25:51Z] [full] reuse unit__Poly__s201__eps0.05.json
+[2026-09-17T05:25:51Z] [full] reuse unit__Poly__s202__eps0.05.json
+[2026-09-17T05:25:51Z] [full] reuse unit__Poly__s203__eps0.05.json
+[2026-09-17T05:25:51Z] [full] reuse unit__Poly__s204__eps0.05.json
+[2026-09-17T05:25:51Z] [full] reuse unit__Poly__s205__eps0.05.json
+[2026-09-17T05:25:51Z] [full] FINISHED ok=0 skipped=15 failed=0 solver_invocations=0 cache_hits=0
+[2026-09-17T05:25:51Z] [aggregate] wrote kernel_k_long.csv: 360 method-level rows
+[2026-09-17T05:25:51Z] [aggregate] wrote kernel_k_template_long.csv: 17280 template-level rows
+[2026-09-17T05:25:51Z] [aggregate] wrote kernel_k_summary.csv: 24 rows
+[2026-09-17T05:25:51Z] [aggregate] wrote kernel_k_per_seed.csv: 360 rows
+[2026-09-17T05:25:51Z] [analysis] classification=C-trigger C=True deltas={'2': -0.035728, '3': -0.037134, '5': -0.004284, '7': -0.00077, '10': 0.009905, '15': 0.025952}
+[2026-09-17T05:25:51Z] [tables] wrote analysis_tables.md
+[2026-09-17T05:25:51Z] [provenance] 8 frozen holdout points extracted; author cross-check ok=True
+[2026-09-17T05:25:51Z] [provenance] frozen holdout k=5 delta(COND-AMOUNT_FREE)=0.00484431003584229
+[2026-09-17T05:25:53Z] [figure] wrote kernel_k_control.png and kernel_k_control.pdf
+[2026-09-17T05:25:53Z] [paper] wrote 10 patch files for classification C-trigger
+[2026-09-17T05:25:54Z] [validate] 38 PASS / 0 FAIL
+[2026-09-17T05:25:54Z] [manifest] 64 files
+[2026-09-17T05:25:54Z] [report] wrote FINAL_EXPERIMENT_REPORT.md
+[2026-09-17T05:25:54Z] [manifest] 64 files

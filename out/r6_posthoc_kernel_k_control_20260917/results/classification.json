@@ -1,0 +1,37 @@
+{
+  "classification": "C-trigger",
+  "priority_order": [
+    "C",
+    "A",
+    "B"
+  ],
+  "C_trigger": {
+    "condition": "Delta_dev(3) < 0 AND paired permutation p < 0.05",
+    "delta_dev_k3": -0.0371341684822077,
+    "delta_dev_k3_is_negative": true,
+    "paired_p_k3": 0.0002,
+    "paired_p_k3_below_0p05": true,
+    "PASS": true
+  },
+  "A_condition": {
+    "condition": "all six Delta_dev(k) <= 0",
+    "all_nonpositive": false,
+    "PASS": false
+  },
+  "B_condition": {
+    "condition": "at least one Delta_dev(k) > 0 AND at least one < 0",
+    "has_positive": true,
+    "has_negative": true,
+    "PASS": false
+  },
+  "deltas_dev": {
+    "2": -0.0357275132275132,
+    "3": -0.0371341684822077,
+    "5": -0.004283765070055412,
+    "7": -0.0007698492385865026,
+    "10": 0.009905494239709522,
+    "15": 0.025952218165954555
+  },
+  "author_proposed_rules_applied": false,
+  "author_rules_note": "the author's A/B require Delta_dev(5) >= 0 / > 0, but the locked pre-existing development anchor is -0.0043, so those two rules were false before any R6 data existed and are not used here"
+}

@@ -1,0 +1,22 @@
+{
+  "timestamp_utc": "2026-09-17T05:14:46Z",
+  "python_version": "3.11.11 (main, Mar 17 2025, 21:01:29) [MSC v.1943 64 bit (AMD64)]",
+  "python_executable": "C:\\Users\\30746\\python-sdk\\python3.11.11\\python.exe",
+  "platform": "Windows-10-10.0.26200-SP0",
+  "processor": "Intel64 Family 6 Model 183 Stepping 1, GenuineIntel",
+  "packages": {
+    "numpy": "1.26.4",
+    "pandas": "2.3.3",
+    "scipy": "1.17.1",
+    "matplotlib": "3.10.9",
+    "ot": "0.9.6.post1",
+    "sklearn": "1.8.0",
+    "pytest": "9.0.3",
+    "pyarrow": "25.0.0",
+    "statsmodels": "NOT INSTALLED (ModuleNotFoundError)"
+  },
+  "git_head": "d5cd14d8051263b49b01b10ad36e6033b2ec3219",
+  "git_branch": "master",
+  "n_dirty_entries": 3154,
+  "runner_sha256": "79b84e30919297f20c89d74e932e6d95f0a5358663bab018dd67a2ef56f1eb7e"
+}

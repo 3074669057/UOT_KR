@@ -1,0 +1,18 @@
+{
+  "join_key_definition": [
+    "bridge",
+    "seed",
+    "template_id"
+  ],
+  "join_key_is_unique": true,
+  "truth_rows": 1440,
+  "prediction_rows": 1440,
+  "matched_rows": 1440,
+  "unmatched_truth": 0,
+  "unmatched_predictions": 0,
+  "duplicate_keys": 0,
+  "join_cardinality": "1:1",
+  "expected_templates": 1440,
+  "observed_templates": 1440,
+  "note": "both sides are keyed by the archived template id <anchor>__r7fam<FF>__inst<II>; predictions are attributed to a template by the frozen rule tpl_of(source_flow_id), the same rule the R7 evaluator used"
+}

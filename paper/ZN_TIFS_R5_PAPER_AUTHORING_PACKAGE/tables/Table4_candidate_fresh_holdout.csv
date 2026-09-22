@@ -1,0 +1,2 @@
+model,pair_precision,pair_recall,pair_f1,flow_mass_recall,split_recovery,merge_recovery,coverage_adjusted_effective_recall,ece,covered_quotient_precision,covered_quotient_recall,covered_quotient_f1
+rcuot_q_precision_rerank,0.1915586286825314,0.899702380952381,0.31580321411907103,0.17380398541285572,0.8604166666666668,0.9604166666666666,0.7125642857142858,0.02771342979956658,0.9750000000000002,1.0,0.9833333333333336

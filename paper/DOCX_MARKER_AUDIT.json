@@ -1,0 +1,24 @@
+{
+ "ZN_TIFS_CN_R10.docx": {
+  "paragraphs": 295,
+  "chars": 27939,
+  "bracket_numbers_distinct": 51,
+  "bracket_numbers_max": 51,
+  "reference_list_entries": 51,
+  "markers_daibu": 75,
+  "markers_verify": 7,
+  "markers_experiment": 4,
+  "embedded_media": 7
+ },
+ "ZN_TIFS_CN_R11_SUBMISSION_READY.docx": {
+  "paragraphs": 207,
+  "chars": 26363,
+  "bracket_numbers_distinct": 51,
+  "bracket_numbers_max": 51,
+  "reference_list_entries": 51,
+  "markers_daibu": 4,
+  "markers_verify": 2,
+  "markers_experiment": 1,
+  "embedded_media": 7
+ }
+}

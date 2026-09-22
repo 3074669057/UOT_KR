@@ -1,0 +1,42 @@
+{
+  "RC-UOT-Q": {
+    "scope": "Celer full flow-level pipeline (frozen, manuscript Table 2)",
+    "split_recovery": 0.9458333333333332,
+    "merge_recovery": 0.9666666666666668
+  },
+  "baselines_one_to_one": {
+    "Celer": {
+      "Connector-style": {
+        "split_recovery": 0.0,
+        "merge_recovery": 0.0
+      },
+      "ABCTracer-style": {
+        "split_recovery": 0.0,
+        "merge_recovery": 0.0
+      },
+      "n_dev_anchors_available": 5107
+    },
+    "Multi": {
+      "Connector-style": {
+        "split_recovery": 0.0,
+        "merge_recovery": 0.0
+      },
+      "ABCTracer-style": {
+        "split_recovery": 0.0,
+        "merge_recovery": 0.0
+      },
+      "n_dev_anchors_available": 5844
+    },
+    "Poly": {
+      "Connector-style": {
+        "split_recovery": 0.0,
+        "merge_recovery": 0.0
+      },
+      "ABCTracer-style": {
+        "split_recovery": 0.0,
+        "merge_recovery": 0.0
+      },
+      "n_dev_anchors_available": 3821
+    }
+  }
+}

@@ -1,0 +1,61 @@
+﻿====================================================================================================
+POOLED per-bridge aml_risk_score  (faithful_flow_structural_three_bridges/per_seed)
+====================================================================================================
+
+### Celer   files=5  pooled_rows=1440
+    min=0.0 max=27.906977 mean=4.031008 median=0.0 std=6.283644
+    quantiles: q05=0.000000  q25=0.000000  q50=0.000000  q75=4.651163  q95=16.279070  q99=20.930233
+    missing=0 (0.00%)  n_distinct=7
+    fraction == 0 : 0.6292   fraction > 0 : 0.3708
+    value_counts:
+        0.0              n=906     62.92%   -> k = value*0.43 = 0.000000   <-- INTEGER
+        4.651163         n=210     14.58%   -> k = value*0.43 = 2.000000   <-- INTEGER
+        9.302326         n=6        0.42%   -> k = value*0.43 = 4.000000   <-- INTEGER
+        11.627907        n=126      8.75%   -> k = value*0.43 = 5.000000   <-- INTEGER
+        16.27907         n=162     11.25%   -> k = value*0.43 = 7.000000   <-- INTEGER
+        20.930233        n=24       1.67%   -> k = value*0.43 = 9.000000   <-- INTEGER
+        27.906977        n=6        0.42%   -> k = value*0.43 = 12.000000   <-- INTEGER
+    aml_risk_level: nonnull=0/1440 nunique=0 min=None max=None
+    evidence_quality_score: nonnull=1440/1440 nunique=3 min=0.75 max=0.8
+
+### Multi   files=5  pooled_rows=1440
+    min=0.0 max=20.930233 mean=2.102713 median=0.0 std=4.821288
+    quantiles: q05=0.000000  q25=0.000000  q50=0.000000  q75=0.000000  q95=16.279070  q99=16.279070
+    missing=0 (0.00%)  n_distinct=7
+    fraction == 0 : 0.7917   fraction > 0 : 0.2083
+    value_counts:
+        0.0              n=1140    79.17%   -> k = value*0.43 = 0.000000   <-- INTEGER
+        4.651163         n=144     10.00%   -> k = value*0.43 = 2.000000   <-- INTEGER
+        9.302326         n=12       0.83%   -> k = value*0.43 = 4.000000   <-- INTEGER
+        11.627907        n=24       1.67%   -> k = value*0.43 = 5.000000   <-- INTEGER
+        13.953488        n=6        0.42%   -> k = value*0.43 = 6.000000   <-- INTEGER
+        16.27907         n=108      7.50%   -> k = value*0.43 = 7.000000   <-- INTEGER
+        20.930233        n=6        0.42%   -> k = value*0.43 = 9.000000   <-- INTEGER
+    aml_risk_level: nonnull=0/1440 nunique=0 min=None max=None
+    evidence_quality_score: nonnull=1440/1440 nunique=3 min=0.75 max=0.8
+
+### Poly   files=5  pooled_rows=1440
+    min=0.0 max=20.930233 mean=15.155039 median=16.27907 std=4.012413
+    quantiles: q05=0.000000  q25=16.279070  q50=16.279070  q75=16.279070  q95=16.279070  q99=20.930233
+    missing=0 (0.00%)  n_distinct=4
+    fraction == 0 : 0.0583   fraction > 0 : 0.9417
+    value_counts:
+        0.0              n=84       5.83%   -> k = value*0.43 = 0.000000   <-- INTEGER
+        11.627907        n=90       6.25%   -> k = value*0.43 = 5.000000   <-- INTEGER
+        16.27907         n=1230    85.42%   -> k = value*0.43 = 7.000000   <-- INTEGER
+        20.930233        n=36       2.50%   -> k = value*0.43 = 9.000000   <-- INTEGER
+    aml_risk_level: nonnull=0/1440 nunique=0 min=None max=None
+    evidence_quality_score: nonnull=1440/1440 nunique=2 min=0.775 max=0.8
+
+====================================================================================================
+ARITHMETIC HYPOTHESIS CHECK: every observed aml_risk_score == k/0.43 ?
+====================================================================================================
+all distinct values observed across 15 files: [0.0, 4.651163, 9.302326, 11.627907, 13.953488, 16.27907, 20.930233, 27.906977]
+   0.0              * 0.43 = 0.00000000   -> k=0  int_match=True
+   4.651163         * 0.43 = 2.00000009   -> k=2  int_match=True
+   9.302326         * 0.43 = 4.00000018   -> k=4  int_match=True
+   11.627907        * 0.43 = 5.00000001   -> k=5  int_match=True
+   13.953488        * 0.43 = 5.99999984   -> k=6  int_match=True
+   16.27907         * 0.43 = 7.00000010   -> k=7  int_match=True
+   20.930233        * 0.43 = 9.00000019   -> k=9  int_match=True
+   27.906977        * 0.43 = 12.00000011   -> k=12  int_match=True

@@ -1,0 +1,124 @@
+{
+  "gate": "D",
+  "generated_at_utc": "2026-09-17T07:52:45Z",
+  "GATE_D": "PASS",
+  "checks": [
+    {
+      "check": "no_missing_cells",
+      "status": "PASS",
+      "detail": []
+    },
+    {
+      "check": "no_duplicate_cells",
+      "status": "PASS",
+      "detail": 30
+    },
+    {
+      "check": "no_forbidden_seeds",
+      "status": "PASS",
+      "detail": []
+    },
+    {
+      "check": "no_unit_failures",
+      "status": "PASS",
+      "detail": []
+    },
+    {
+      "check": "all_solver_cells_converged",
+      "status": "PASS",
+      "detail": []
+    },
+    {
+      "check": "no_solver_hit_max_iter",
+      "status": "PASS",
+      "detail": 0
+    },
+    {
+      "check": "uot_kkt_residual_below_tolerance",
+      "status": "PASS",
+      "detail": []
+    },
+    {
+      "check": "no_nan_inf_solver_fields",
+      "status": "PASS",
+      "detail": []
+    },
+    {
+      "check": "no_nan_metrics",
+      "status": "PASS",
+      "detail": []
+    },
+    {
+      "check": "all_methods_present",
+      "status": "PASS",
+      "detail": {
+        "expected": 210,
+        "observed": 210
+      }
+    },
+    {
+      "check": "methods_per_cell_complete",
+      "status": "PASS",
+      "detail": {
+        "Celer|411": 7,
+        "Celer|412": 7,
+        "Celer|413": 7,
+        "Celer|414": 7,
+        "Celer|415": 7,
+        "Celer|416": 7,
+        "Celer|417": 7,
+        "Celer|418": 7,
+        "Celer|419": 7,
+        "Celer|420": 7,
+        "Multi|411": 7,
+        "Multi|412": 7,
+        "Multi|413": 7,
+        "Multi|414": 7,
+        "Multi|415": 7,
+        "Multi|416": 7,
+        "Multi|417": 7,
+        "Multi|418": 7,
+        "Multi|419": 7,
+        "Multi|420": 7,
+        "Poly|411": 7,
+        "Poly|412": 7,
+        "Poly|413": 7,
+        "Poly|414": 7,
+        "Poly|415": 7,
+        "Poly|416": 7,
+        "Poly|417": 7,
+        "Poly|418": 7,
+        "Poly|419": 7,
+        "Poly|420": 7
+      }
+    },
+    {
+      "check": "cost_hash_present_per_unit",
+      "status": "PASS",
+      "detail": 30
+    },
+    {
+      "check": "support_hard_filter_valid",
+      "status": "PASS",
+      "detail": 0
+    },
+    {
+      "check": "all_edge_sets_valid",
+      "status": "PASS",
+      "detail": 0
+    }
+  ],
+  "n_units": 30,
+  "n_expected_units": 30,
+  "n_method_rows": 210,
+  "failures": [],
+  "config": {
+    "epsilon": 0.05,
+    "selected_rule": {
+      "family": "R-const",
+      "k": 3
+    },
+    "threshold_mm_cutoff": 0.2301501518518518,
+    "dual_softmax_tau": 0.0
+  }
+}

@@ -1,0 +1,860 @@
+﻿diff --git a/config/defaults.json b/config/defaults.json
+index 56d2417..c73692f 100644
+--- a/config/defaults.json
++++ b/config/defaults.json
+@@ -68,6 +68,7 @@
+     "flow_mode": "segment",
+     "backend": "pot",
+     "max_delay_sec": 21600,
++    "time_delay_policy": "tx_if_available_else_flow_representative",
+     "causal_violation_penalty": 5.0,
+     "lambda_risk": 0.25,
+     "causal_infeasible_delay_sec": null,
+diff --git a/src/cross/application/experiments/run_uot_matching.py b/src/cross/application/experiments/run_uot_matching.py
+index ceaaf10..897ed41 100644
+--- a/src/cross/application/experiments/run_uot_matching.py
++++ b/src/cross/application/experiments/run_uot_matching.py
+@@ -6,6 +6,13 @@ Example::
+         --eth in/Celer_ETH_cun.csv --bnb path/to/bnb.csv --out out/uot_exp \\
+         --label label/celer_label.csv --method uot --uot-backend numpy
+ 
++Leave-the-anchor-out ablation::
++
++    python -m cross.application.experiments.run_uot_matching \\
++        --eth in/Celer_ETH_cun.csv --bnb path/to/bnb.csv \\
++        --label label/celer_label.csv --out out/leave_anchor_out \\
++        --method uot --uot-backend numpy --leave-anchor-out --anchor-mask-strict
++
+ Requires ``bnb`` to be a BNB export compatible with ``bnb_df_to_dst_txs`` (hash, from, to, contractAddress, timeStamp, value).
+ """
+ from __future__ import annotations
+@@ -13,10 +20,13 @@ from __future__ import annotations
+ import argparse
+ import json
+ import logging
++import sys
+ from pathlib import Path
+ 
+ import pandas as pd
+ 
++from cross.application.experiments.leave_anchor_out_ablation import run_leave_anchor_out_ablation
++from cross.domain.uot.delay_policy import DEFAULT_TIME_DELAY_POLICY, DELAY_POLICIES
+ from cross.config.output_layout import output_file
+ from cross.config.paths import CROSS_ROOT
+ from cross.domain.path_b.service import execute_path_b, persist_path_b_outputs
+@@ -31,6 +41,33 @@ def _parse_weights(s: str | None) -> dict[str, float] | None:
+     return json.loads(s)
+ 
+ 
++def _path_b_kwargs(args: argparse.Namespace, weights: dict[str, float] | None, bnb_df: pd.DataFrame) -> dict:
++    kw = dict(
++        eth_path=args.eth,
++        label_path=args.label,
++        chunk_size=args.chunk_size,
++        bnb_df_override=bnb_df,
++        unlabeled=args.label is None,
++        matching_method=args.method,
++        uot_reg=args.uot_reg,
++        uot_reg_m=args.uot_reg_m,
++        uot_decode_threshold=args.uot_decode_threshold,
++        uot_cost_weights=weights,
++        uot_flow_mode=args.uot_flow_mode,
++        uot_backend=args.uot_backend,
++        uot_segment_time_bucket_sec=int(args.uot_segment_time_bucket_sec),
++        uot_time_delay_policy=str(
++            getattr(args, "time_delay_policy", None)
++            or getattr(args, "uot_time_delay_policy", None)
++            or DEFAULT_TIME_DELAY_POLICY
++        ),
++    )
++    if getattr(args, "anchor_mask_mode", None):
++        kw["anchor_mask_mode"] = args.anchor_mask_mode
++        kw["leave_anchor_out"] = args.anchor_mask_mode != "none"
++    return kw
++
++
+ def main() -> int:
+     p = argparse.ArgumentParser(description="UOT cross-chain matching experiment runner")
+     p.add_argument("--eth", type=Path, required=True)
+@@ -45,7 +82,37 @@ def main() -> int:
+     p.add_argument("--uot-backend", choices=("pot", "numpy"), default="pot")
+     p.add_argument("--uot-cost-weights", type=str, default=None)
+     p.add_argument("--uot-segment-time-bucket-sec", type=int, default=600)
++    p.add_argument(
++        "--time-delay-policy",
++        dest="time_delay_policy",
++        choices=tuple(sorted(DELAY_POLICIES)),
++        default=DEFAULT_TIME_DELAY_POLICY,
++        help="Delay semantics for UOT time cost and causal penalty",
++    )
+     p.add_argument("--chunk-size", type=int, default=80)
++    p.add_argument(
++        "--leave-anchor-out",
++        action="store_true",
++        help="Run full leakage-resistant anchor ablation suite",
++    )
++    p.add_argument(
++        "--anchor-mask-mode",
++        choices=("none", "leave_key_out", "leave_anchor_out_strict"),
++        default=None,
++        help="Optional single-run masking tier (without full suite)",
++    )
++    p.add_argument(
++        "--anchor-mask-strict",
++        action=argparse.BooleanOptionalAction,
++        default=True,
++        help="Strict anchor masking: raise on leakage scan failure (default: true)",
++    )
++    p.add_argument(
++        "--anchor-mask-report",
++        type=Path,
++        default=None,
++        help="Optional path for anchor_mask_report.json (default: <out>/anchor_mask_report.json)",
++    )
+     args = p.parse_args()
+ 
+     out = Path(args.out)
+@@ -67,22 +134,29 @@ def main() -> int:
+ 
+     bnb_df = pd.read_csv(args.bnb, low_memory=False)
+     weights = _parse_weights(args.uot_cost_weights)
+-
+-    pb_df, cmp_dict = execute_path_b(
+-        eth_path=args.eth,
+-        label_path=args.label,
+-        chunk_size=args.chunk_size,
+-        bnb_df_override=bnb_df,
+-        unlabeled=args.label is None,
+-        matching_method=args.method,
+-        uot_reg=args.uot_reg,
+-        uot_reg_m=args.uot_reg_m,
+-        uot_decode_threshold=args.uot_decode_threshold,
+-        uot_cost_weights=weights,
+-        uot_flow_mode=args.uot_flow_mode,
+-        uot_backend=args.uot_backend,
+-        uot_segment_time_bucket_sec=int(args.uot_segment_time_bucket_sec),
+-    )
++    pb_kw = _path_b_kwargs(args, weights, bnb_df)
++
++    if args.leave_anchor_out:
++        report_path = args.anchor_mask_report
++        if report_path is not None and not report_path.is_absolute():
++            report_path = (CROSS_ROOT / report_path).resolve()
++        elif report_path is None:
++            report_path = output_file(out, "anchor_mask_report.json")
++        run_leave_anchor_out_ablation(
++            out_dir=out,
++            path_b_kwargs=pb_kw,
++            eth_path=args.eth,
++            bnb_df=bnb_df,
++            label_path=args.label,
++            anchor_mask_strict=bool(args.anchor_mask_strict),
++            anchor_mask_report=report_path,
++            bnb_path=Path(args.bnb),
++            command_argv=sys.argv,
++        )
++        logger.info("Leave-anchor-out ablation complete under %s", out)
++        return 0
++
++    pb_df, cmp_dict = execute_path_b(**pb_kw)
+ 
+     persist_path_b_outputs(
+         args.out,
+@@ -93,7 +167,6 @@ def main() -> int:
+         validate_evidence_schema=False,
+     )
+ 
+-    # Summary table for sweeps
+     fm = (cmp_dict.get("uot") or {}).get("flow_metrics") or {}
+     row = {
+         "method": args.method,
+diff --git a/src/cross/application/pipeline.py b/src/cross/application/pipeline.py
+index ecb3ea4..5eb9227 100644
+--- a/src/cross/application/pipeline.py
++++ b/src/cross/application/pipeline.py
+@@ -43,6 +43,7 @@ from cross.utils.safe_cast import safe_float, safe_int
+ 
+ from cross.domain.path_a.service import path_a_vs_label_cmp, run_path_a_and_aggregate
+ from cross.domain.path_b.service import execute_path_b, persist_path_b_outputs
++from cross.domain.uot.delay_policy import DEFAULT_TIME_DELAY_POLICY
+ from cross.domain.validation.paper_artifact_validator import write_paper_artifact_validation
+ from cross.domain.validation.rc_uot_exports import build_token_route_validation, write_token_route_validation_json
+ from cross.reporting.audit_report import generate_run_audit_report
+@@ -134,6 +135,7 @@ def uot_kwargs_from_config(args: Namespace, cfg: dict) -> dict:
+         "uot_use_graph_embedding": bool(getattr(args, "uot_use_graph_embedding", False)),
+         "uot_segment_time_bucket_sec": bucket,
+         "uot_max_delay_sec": _pick_float("uot_max_delay_sec", "max_delay_sec", 21_600.0),
++        "uot_time_delay_policy": _pick_str("uot_time_delay_policy", "time_delay_policy", DEFAULT_TIME_DELAY_POLICY),
+         "uot_causal_violation_penalty": _pick_float("uot_causal_violation_penalty", "causal_violation_penalty", 5.0),
+         "uot_lambda_risk": _pick_float("uot_lambda_risk", "lambda_risk", 0.25),
+         "uot_causal_infeasible_delay_sec": (
+@@ -1695,6 +1697,50 @@ def run_pipeline(args: Namespace, *, cfg: dict | None = None) -> int:
+                 output_file(args.out, "ablation_results.csv"), index=False
+             )
+ 
++        if getattr(args, "leave_anchor_out", False) and not getattr(args, "two_stage", False):
++            from cross.application.experiments.leave_anchor_out_ablation import run_leave_anchor_out_ablation
++            from cross.config.output_layout import output_file as _out_file
++
++            report_p = getattr(args, "anchor_mask_report", None)
++            if report_p is not None and not Path(report_p).is_absolute():
++                report_p = (args.out / report_p).resolve() if str(report_p) else _out_file(args.out, "anchor_mask_report.json")
++            elif report_p is None:
++                report_p = _out_file(args.out, "anchor_mask_report.json")
++            la_kw = dict(
++                eth_path=args.eth,
++                label_path=None if effective_unlabeled else args.label,
++                chunk_size=args.chunk_size,
++                boost_label_dst=args.boost_label,
++                greedy_assignment=args.path_b_assignment,
++                label_train_fraction=args.label_train_fraction,
++                receiver_mode=args.receiver_mode,
++                ranker_mode=args.ranker_mode,
++                ranker_checkpoint=effective_ranker_ckpt,
++                graph_ranker_checkpoint=effective_graph_ranker_ckpt,
++                hybrid_heuristic_weight=float(args.hybrid_heuristic_weight),
++                hybrid_graph_weight=float(args.hybrid_graph_weight),
++                unlabeled=effective_unlabeled,
++                unlabeled_priors_path=args.unlabeled_priors,
++                token_routes_path=getattr(args, "token_routes", None),
++                aml_mode=args.aml_mode,
++                aml_keep_levels=aml_levels,
++                aml_medium_threshold=float(args.aml_medium_threshold),
++                aml_high_threshold=float(args.aml_high_threshold),
++                aml_checkpoint=effective_aml_ckpt,
++                aml_threshold=float(args.aml_threshold),
++                bnb_df_override=bnb_df_online,
++                **ukw,
++            )
++            run_leave_anchor_out_ablation(
++                out_dir=args.out,
++                path_b_kwargs=la_kw,
++                eth_path=args.eth,
++                bnb_df=bnb_df_online,
++                label_path=None if effective_unlabeled else args.label,
++                anchor_mask_strict=bool(getattr(args, "anchor_mask_strict", True)),
++                anchor_mask_report=Path(report_p),
++            )
++
+         export_all_paper_tables(args.out)
+         try:
+             ev_eth_refresh = output_file(args.out, "evidence_eth.csv").resolve()
+diff --git a/src/cross/domain/evaluation/flow_metrics.py b/src/cross/domain/evaluation/flow_metrics.py
+index dfd57bd..c9be277 100644
+--- a/src/cross/domain/evaluation/flow_metrics.py
++++ b/src/cross/domain/evaluation/flow_metrics.py
+@@ -58,6 +58,17 @@ def _flow_index_for_dst_tx(dst_flows: list[dict[str, Any]], dst_tx: str) -> int:
+     return -1
+ 
+ 
++def _target_flow_indices_for_tx(dst_flows: list[dict[str, Any]], dst_tx: str) -> set[int]:
++    """All target-flow indices that contain ``dst_tx`` (a tx may appear in multiple flows)."""
++    d = norm_addr(dst_tx)
++    out: set[int] = set()
++    for j, f in enumerate(dst_flows):
++        for h in f.get("tx_hashes") or []:
++            if norm_addr(str(h)) == d:
++                out.add(j)
++    return out
++
++
+ def flow_mass_recall(
+     p: np.ndarray,
+     source_flows: list[dict[str, Any]],
+@@ -102,7 +113,12 @@ def topk_flow_accuracy(
+     label_df: pd.DataFrame,
+     k: int = 3,
+ ) -> float:
+-    """Fraction of labeled src where true dst flow is in top-k by transport mass in row."""
++    """Top-k recall: fraction of labeled src txs whose true dst tx lies in a top-k target flow.
++
++    Target flows are ranked by descending UOT transport mass ``P[source_flow, :]``.
++    A hit occurs when **any** target flow containing the labeled dst tx hash appears in
++    the top-k (needed when a dst tx appears in multiple target flows).
++    """
+     p = np.asarray(p, dtype=float)
+     if p.size == 0:
+         return 0.0
+@@ -123,15 +139,15 @@ def topk_flow_accuracy(
+     kk = max(1, int(k))
+     for s, d_true in truth.items():
+         i = tx_to_i.get(s, -1)
+-        if i < 0:
++        if i < 0 or i >= p.shape[0]:
+             continue
+-        tot += 1
+-        j_star = _flow_index_for_dst_tx(target_flows, d_true)
+-        if j_star < 0:
++        true_flows = _target_flow_indices_for_tx(target_flows, d_true)
++        if not true_flows:
+             continue
++        tot += 1
+         row = p[i]
+-        order = np.argsort(-row)[:kk].astype(int)
+-        if j_star in set(order.tolist()):
++        order = set(np.argsort(-row)[:kk].astype(int).tolist())
++        if true_flows & order:
+             hits += 1
+     return float(hits / max(tot, 1))
+ 
+diff --git a/src/cross/domain/path_b/runner.py b/src/cross/domain/path_b/runner.py
+index a1c3136..0bbe31e 100644
+--- a/src/cross/domain/path_b/runner.py
++++ b/src/cross/domain/path_b/runner.py
+@@ -35,6 +35,7 @@ from ..flows.segment_builder import (
+ )
+ from ..evidence import write_evidence_candidates_paper, write_evidence_exports
+ from ..uot.cost_matrix import build_cost_matrix_decomposed
++from ..uot.delay_policy import DEFAULT_TIME_DELAY_POLICY
+ from ..uot.decode_transport import (
+     build_transport_plan_export_rows,
+     build_uot_summary_dict,
+@@ -463,6 +464,7 @@ def run_path_b(
+     uot_use_graph_embedding: bool = False,
+     uot_segment_time_bucket_sec: int = 600,
+     uot_max_delay_sec: float = 21_600.0,
++    uot_time_delay_policy: str = DEFAULT_TIME_DELAY_POLICY,
+     uot_causal_violation_penalty: float = 5.0,
+     uot_lambda_risk: float = 0.25,
+     uot_causal_infeasible_delay_sec: float | None = None,
+@@ -474,6 +476,11 @@ def run_path_b(
+     flow_min_tx_count: int = 1,
+     uot_ablation: str = "none",
+     paper_mode: bool = False,
++    leave_anchor_out: bool = False,
++    anchor_mask_mode: str | None = None,
++    anchor_mask_strict: bool = True,
++    anchor_mask_report_path: Path | None = None,
++    inject_fake_anchor_probe: bool = False,
+ ) -> tuple[pd.DataFrame, dict]:
+     """Path B: global matching (default) or legacy WithdrawLocator pipeline.
+ 
+@@ -592,6 +599,7 @@ def run_path_b(
+             uot_use_graph_embedding=uot_use_graph_embedding,
+             uot_segment_time_bucket_sec=uot_segment_time_bucket_sec,
+             uot_max_delay_sec=uot_max_delay_sec,
++            uot_time_delay_policy=uot_time_delay_policy,
+             uot_causal_violation_penalty=uot_causal_violation_penalty,
+             uot_lambda_risk=uot_lambda_risk,
+             uot_causal_infeasible_delay_sec=uot_causal_infeasible_delay_sec,
+@@ -602,6 +610,11 @@ def run_path_b(
+             flow_min_amount_usd=flow_min_amount_usd,
+             flow_min_tx_count=flow_min_tx_count,
+             uot_ablation=uot_ablation,
++            leave_anchor_out=leave_anchor_out,
++            anchor_mask_mode=anchor_mask_mode,
++            anchor_mask_strict=anchor_mask_strict,
++            anchor_mask_report_path=anchor_mask_report_path,
++            inject_fake_anchor_probe=inject_fake_anchor_probe,
+         )
+         _attach_path_b_export_src_all(cmp, src_all)
+         cmp["_export_dst_norm"] = dst_norm
+@@ -716,6 +729,7 @@ def run_path_b(
+         uot_use_graph_embedding=uot_use_graph_embedding,
+         uot_segment_time_bucket_sec=uot_segment_time_bucket_sec,
+         uot_max_delay_sec=uot_max_delay_sec,
++        uot_time_delay_policy=uot_time_delay_policy,
+         uot_causal_violation_penalty=uot_causal_violation_penalty,
+         uot_lambda_risk=uot_lambda_risk,
+         uot_causal_infeasible_delay_sec=uot_causal_infeasible_delay_sec,
+@@ -726,6 +740,11 @@ def run_path_b(
+         flow_min_amount_usd=flow_min_amount_usd,
+         flow_min_tx_count=flow_min_tx_count,
+         uot_ablation=uot_ablation,
++        leave_anchor_out=leave_anchor_out,
++        anchor_mask_mode=anchor_mask_mode,
++        anchor_mask_strict=anchor_mask_strict,
++        anchor_mask_report_path=anchor_mask_report_path,
++        inject_fake_anchor_probe=inject_fake_anchor_probe,
+     )
+     _attach_path_b_export_src_all(cmp, src_all)
+     cmp["_export_dst_norm"] = dst_norm
+@@ -859,6 +878,7 @@ def _run_path_b_uot_core(
+     uot_use_graph_embedding: bool,
+     uot_segment_time_bucket_sec: int,
+     uot_max_delay_sec: float = 21_600.0,
++    uot_time_delay_policy: str = DEFAULT_TIME_DELAY_POLICY,
+     uot_causal_violation_penalty: float = 5.0,
+     uot_lambda_risk: float = 0.25,
+     uot_causal_infeasible_delay_sec: float | None = None,
+@@ -869,6 +889,11 @@ def _run_path_b_uot_core(
+     flow_min_amount_usd: float = 0.0,
+     flow_min_tx_count: int = 1,
+     uot_ablation: str = "none",
++    leave_anchor_out: bool = False,
++    anchor_mask_mode: str | None = None,
++    anchor_mask_strict: bool = True,
++    anchor_mask_report_path: Path | None = None,
++    inject_fake_anchor_probe: bool = False,
+ ) -> tuple[pd.DataFrame, dict]:
+     """UOT transport on RC flow segments; returns Path B-shaped ``pairs`` + ``cmp``."""
+     bridge_label = "celer"
+@@ -889,6 +914,7 @@ def _run_path_b_uot_core(
+         "uot_ablation": str(uot_ablation or "none").strip().lower(),
+         "uot_segment_policy": seg_policy,
+     }
++    anchor_mask_meta: dict[str, Any] = {}
+     if mode_l == "tx":
+         eth_flows = build_eth_flow_segments(
+             src_all,
+@@ -1150,6 +1176,76 @@ def _run_path_b_uot_core(
+     causal_pen_eff = float(uot_causal_violation_penalty)
+     if str(uot_ablation or "").strip().lower() == "no_causal":
+         causal_pen_eff = 0.0
++
++    from ..labels.anchor_masking import (
++        AnchorMaskMode,
++        collect_schema_keys,
++        inject_fake_perfect_anchor_fields,
++        mask_matching_flows,
++        resolve_anchor_mask_mode,
++        scan_matching_features_for_leakage,
++        write_anchor_mask_report,
++        write_masked_fields_csv,
++    )
++    from ..uot.cost_matrix import default_cost_weights
++
++    resolved_mask_mode = resolve_anchor_mask_mode(
++        leave_anchor_out=leave_anchor_out,
++        anchor_mask_mode=anchor_mask_mode,
++        anchor_mask_strict=anchor_mask_strict,
++    )
++
++    if inject_fake_anchor_probe and not unlabeled and labels_for_eval is not None and not labels_for_eval.empty:
++        inject_fake_perfect_anchor_fields(eth_flows, bnb_flows, labels_for_eval)
++
++    anchor_mask_meta: dict[str, Any] = {}
++    if resolved_mask_mode != AnchorMaskMode.NONE:
++        before_schema = sorted(set(collect_schema_keys(eth_flows) + collect_schema_keys(bnb_flows)))
++        eth_flows, masked_eth = mask_matching_flows(eth_flows, mode=resolved_mask_mode)
++        bnb_flows, masked_bnb = mask_matching_flows(bnb_flows, mode=resolved_mask_mode)
++        after_schema = sorted(set(collect_schema_keys(eth_flows) + collect_schema_keys(bnb_flows)))
++        all_masked = sorted(set(masked_eth + masked_bnb))
++        leakage_scan = scan_matching_features_for_leakage(
++            eth_flows + bnb_flows,
++            mode=resolved_mask_mode,
++            audit_strict=anchor_mask_strict,
++        )
++        if (
++            anchor_mask_strict
++            and resolved_mask_mode == AnchorMaskMode.LEAVE_ANCHOR_OUT_STRICT
++            and not leakage_scan.get("leakage_scan_passed", True)
++        ):
++            viol = leakage_scan.get("violations") or []
++            raise ValueError(f"anchor leakage scan failed (strict): {viol[:5]}")
++        if anchor_mask_report_path is not None:
++            write_anchor_mask_report(
++                before_schema,
++                after_schema,
++                Path(anchor_mask_report_path),
++                masked_fields=all_masked,
++                leakage_scan=leakage_scan,
++                mode=str(resolved_mask_mode),
++            )
++            write_masked_fields_csv(all_masked, Path(anchor_mask_report_path).parent / "anchor_masked_fields.csv")
++        anchor_mask_meta = {
++            "mode": str(resolved_mask_mode),
++            "leave_anchor_out": True,
++            "anchor_mask_strict": bool(anchor_mask_strict),
++            "before_schema": before_schema,
++            "after_schema": after_schema,
++            "masked_fields": all_masked,
++            "masked_field_count": len(all_masked),
++            "leakage_scan": leakage_scan,
++            "leakage_scan_passed": bool(leakage_scan.get("leakage_scan_passed", True)),
++            "report_written": anchor_mask_report_path is not None,
++        }
++
++    if resolved_mask_mode == AnchorMaskMode.LEAVE_ANCHOR_OUT_STRICT:
++        eff_w = dict(eff_w or default_cost_weights())
++        eff_w["evidence"] = 0.0
++        eff_w = _renormalize_cost_weights(eff_w)
++        use_ev_tgt_mass = False
++
+     decomp = build_cost_matrix_decomposed(
+         eth_flows,
+         bnb_flows,
+@@ -1158,6 +1254,7 @@ def _run_path_b_uot_core(
+         max_delay_sec=float(uot_max_delay_sec),
+         causal_violation_penalty=causal_pen_eff,
+         causal_infeasible_delay_sec=uot_causal_infeasible_delay_sec,
++        time_delay_policy=str(uot_time_delay_policy),
+     )
+     c_base = np.asarray(decomp["C"], dtype=float)
+     bb = decomp.get("bridge_prior_bonus")
+@@ -1274,6 +1371,7 @@ def _run_path_b_uot_core(
+         "uot_use_graph_embedding": use_graph,
+         "uot_cost_weights": uot_cost_weights or {},
+         "uot_max_delay_sec": float(uot_max_delay_sec),
++        "uot_time_delay_policy": str(uot_time_delay_policy),
+         "uot_causal_violation_penalty": float(uot_causal_violation_penalty),
+         "uot_lambda_risk": float(uot_lambda_risk),
+         "uot_causal_infeasible_delay_sec": uot_causal_infeasible_delay_sec,
+@@ -1308,6 +1406,8 @@ def _run_path_b_uot_core(
+         cmp["uot_source_flow_segments"] = eth_flows
+         cmp["uot_target_flow_segments"] = bnb_flows
+         cmp["_uot_cost_decomposition"] = cmp_cost_snapshot
++        if anchor_mask_meta:
++            cmp["anchor_mask_meta"] = anchor_mask_meta
+         return pairs, cmp
+ 
+     cmp = compare_to_label(pairs, labels_for_eval)
+@@ -1336,6 +1436,8 @@ def _run_path_b_uot_core(
+     cmp["uot_source_flow_segments"] = eth_flows
+     cmp["uot_target_flow_segments"] = bnb_flows
+     cmp["_uot_cost_decomposition"] = cmp_cost_snapshot
++    if anchor_mask_meta:
++        cmp["anchor_mask_meta"] = anchor_mask_meta
+     return pairs, cmp
+ 
+ 
+@@ -1391,6 +1493,7 @@ def _run_path_b_core(
+     uot_use_graph_embedding: bool = False,
+     uot_segment_time_bucket_sec: int = 600,
+     uot_max_delay_sec: float = 21_600.0,
++    uot_time_delay_policy: str = DEFAULT_TIME_DELAY_POLICY,
+     uot_causal_violation_penalty: float = 5.0,
+     uot_lambda_risk: float = 0.25,
+     uot_causal_infeasible_delay_sec: float | None = None,
+@@ -1401,6 +1504,11 @@ def _run_path_b_core(
+     flow_min_amount_usd: float = 0.0,
+     flow_min_tx_count: int = 1,
+     uot_ablation: str = "none",
++    leave_anchor_out: bool = False,
++    anchor_mask_mode: str | None = None,
++    anchor_mask_strict: bool = True,
++    anchor_mask_report_path: Path | None = None,
++    inject_fake_anchor_probe: bool = False,
+ ) -> tuple[pd.DataFrame, dict]:
+     label_aligned_rows = int(len(src_all))
+     filtered_src, aml_meta = apply_aml_filter_to_src_all(
+@@ -1505,6 +1613,7 @@ def _run_path_b_core(
+                 uot_use_graph_embedding=uot_use_graph_embedding,
+                 uot_segment_time_bucket_sec=uot_segment_time_bucket_sec,
+                 uot_max_delay_sec=uot_max_delay_sec,
++                uot_time_delay_policy=uot_time_delay_policy,
+                 uot_causal_violation_penalty=uot_causal_violation_penalty,
+                 uot_lambda_risk=uot_lambda_risk,
+                 uot_causal_infeasible_delay_sec=uot_causal_infeasible_delay_sec,
+@@ -1515,6 +1624,11 @@ def _run_path_b_core(
+                 flow_min_amount_usd=flow_min_amount_usd,
+                 flow_min_tx_count=flow_min_tx_count,
+                 uot_ablation=uot_ablation,
++                leave_anchor_out=leave_anchor_out,
++                anchor_mask_mode=anchor_mask_mode,
++                anchor_mask_strict=anchor_mask_strict,
++                anchor_mask_report_path=anchor_mask_report_path,
++                inject_fake_anchor_probe=inject_fake_anchor_probe,
+             )
+ 
+         if method == "hungarian":
+diff --git a/src/cross/domain/uot/cost_matrix.py b/src/cross/domain/uot/cost_matrix.py
+index b0c3dc1..586e107 100644
+--- a/src/cross/domain/uot/cost_matrix.py
++++ b/src/cross/domain/uot/cost_matrix.py
+@@ -7,6 +7,13 @@ import numpy as np
+ 
+ from cross.utils.safe_cast import safe_int
+ 
++from cross.domain.uot.delay_policy import (
++    DEFAULT_TIME_DELAY_POLICY,
++    build_delay_sec_matrix,
++    flow_representative_times,
++    populate_delay_cost_arrays,
++)
++
+ 
+ def cosine_distance(x: np.ndarray, y: np.ndarray) -> float:
+     x = np.asarray(x, dtype=float).ravel()
+@@ -107,6 +114,7 @@ def build_cost_matrix_decomposed(
+     max_delay_sec: float = 21_600.0,
+     causal_violation_penalty: float = 5.0,
+     causal_infeasible_delay_sec: float | None = None,
++    time_delay_policy: str = DEFAULT_TIME_DELAY_POLICY,
+ ) -> dict[str, np.ndarray]:
+     """Per-cell costs in ``[0, 2]`` (causal may exceed 1); includes causal / feasibility flags."""
+     weights = _normalize_weights(weights)
+@@ -137,6 +145,20 @@ def build_cost_matrix_decomposed(
+     causal_pen = float(causal_violation_penalty)
+     thr = causal_infeasible_delay_sec
+ 
++    delay_sec = build_delay_sec_matrix(source_flows, target_flows, policy=time_delay_policy)
++    delay_parts = populate_delay_cost_arrays(
++        delay_sec,
++        max_delay_sec=max_delay,
++        causal_violation_penalty=causal_pen,
++        causal_infeasible_delay_sec=thr,
++    )
++    time_cost = delay_parts["time_cost"]
++    causal_violation_flag = delay_parts["causal_violation_flag"]
++    causal_penalty = delay_parts["causal_penalty"]
++    feasible_flag = delay_parts["feasible_flag"]
++    infeasible_reason = delay_parts["infeasible_reason"]
++    max_delay_sec_arr = delay_parts["max_delay_sec"]
++
+     for i, s in enumerate(source_flows):
+         for j, t in enumerate(target_flows):
+             s_usd = float(s.get("amount_usd", 0.0))
+@@ -144,41 +166,13 @@ def build_cost_matrix_decomposed(
+             amount_err = abs(s_usd - t_usd) / max(s_usd, t_usd, 1e-12)
+             amount_cost[i, j] = min(float(amount_err), 1.0)
+ 
+-            se = float(s.get("end_time", 0.0))
+-            ds = float(t.get("start_time", 0.0))
+-            delay = ds - se
+-            delay_sec[i, j] = delay
+-            src_end_time[i, j] = se
+-            dst_start_time[i, j] = ds
+-            max_delay_sec_arr[i, j] = max_delay
+-            infeasible_reason[i, j] = ""
+-
+-            if delay < 0:
+-                causal_violation_flag[i, j] = True
+-                if causal_pen <= 0.0:
+-                    # Ablation / relaxed OT: ignore hard causal infeasibility; keep time as symmetric delay magnitude.
+-                    causal_violation_flag[i, j] = False
+-                    causal_penalty[i, j] = 0.0
+-                    time_cost[i, j] = min(abs(float(delay)) / max_delay, 1.0)
+-                    feasible_flag[i, j] = True
+-                    infeasible_reason[i, j] = "negative_delay_ignored_no_causal_penalty"
+-                else:
+-                    causal_penalty[i, j] = causal_pen
+-                    time_cost[i, j] = min(1.0 + causal_pen / max_delay, 2.0)
+-                    feasible_flag[i, j] = False
+-                    infeasible_reason[i, j] = "negative_delay"
+-                if thr is not None and float(delay) < -abs(float(thr)) and causal_pen > 0.0:
+-                    feasible_flag[i, j] = False
+-            elif delay > max_delay:
+-                overflow = delay - max_delay
+-                causal_penalty[i, j] = min(overflow / max_delay, 2.0) * (causal_pen * 0.2)
+-                time_cost[i, j] = 1.0
+-                feasible_flag[i, j] = True
+-                infeasible_reason[i, j] = "delay_exceeds_max_window"
++            if time_delay_policy == "legacy_flow_boundary":
++                src_end_time[i, j] = float(s.get("end_time", 0.0))
++                dst_start_time[i, j] = float(t.get("start_time", 0.0))
+             else:
+-                time_cost[i, j] = min(delay / max_delay, 1.0)
+-                feasible_flag[i, j] = True
+-                infeasible_reason[i, j] = ""
++                ss, dt = flow_representative_times(s, t)
++                src_end_time[i, j] = ss
++                dst_start_time[i, j] = dt
+ 
+             s_risk = float(s.get("aml_score", 0.0))
+             t_proxy = float(t.get("evidence_quality_score", 0.65))
+@@ -246,6 +240,7 @@ def build_cost_matrix_decomposed(
+         "dst_start_time": dst_start_time,
+         "max_delay_sec": max_delay_sec_arr,
+         "infeasible_reason": infeasible_reason,
++        "time_delay_policy": np.array(time_delay_policy),
+     }
+ 
+ 
+@@ -258,6 +253,7 @@ def build_cost_matrix(
+     max_delay_sec: float = 21_600.0,
+     causal_violation_penalty: float = 5.0,
+     causal_infeasible_delay_sec: float | None = None,
++    time_delay_policy: str = DEFAULT_TIME_DELAY_POLICY,
+ ) -> np.ndarray:
+     d = build_cost_matrix_decomposed(
+         source_flows,
+@@ -267,6 +263,7 @@ def build_cost_matrix(
+         max_delay_sec=max_delay_sec,
+         causal_violation_penalty=causal_violation_penalty,
+         causal_infeasible_delay_sec=causal_infeasible_delay_sec,
++        time_delay_policy=time_delay_policy,
+     )
+     c = np.asarray(d["C"], dtype=float)
+     bb = d.get("bridge_prior_bonus")
+diff --git a/src/cross/domain/uot/decode_transport.py b/src/cross/domain/uot/decode_transport.py
+index b64d7bf..06437b0 100644
+--- a/src/cross/domain/uot/decode_transport.py
++++ b/src/cross/domain/uot/decode_transport.py
+@@ -6,6 +6,7 @@ from typing import Any
+ import numpy as np
+ import pandas as pd
+ 
++from cross.domain.uot.tx_decode_policy import pick_dst_tx_in_flow as _pick_dst_tx_in_flow_impl
+ from cross.shared.normalize import norm_addr
+ from cross.shared.transfers import parse_transfer_value
+ from cross.utils.safe_cast import safe_float
+@@ -71,33 +72,9 @@ def _pick_dst_tx_in_flow(
+     dst_flow: dict[str, Any],
+     dst_norm: pd.DataFrame,
+ ) -> str:
+-    """Pick best BNB tx hash inside dst_flow for this src tx."""
+-    hashes = list(dst_flow.get("tx_hashes") or [])
+-    if not hashes:
+-        return ""
+-    if len(hashes) == 1:
+-        return norm_addr(hashes[0])
+-
+-    sub = dst_norm[dst_norm["hash"].astype(str).map(norm_addr).isin({norm_addr(h) for h in hashes})]
+-    if sub.empty:
+-        return norm_addr(hashes[0])
+-
+-    best_h = ""
+-    best_score = float("inf")
+-    for h in hashes:
+-        hn = norm_addr(h)
+-        part = sub[sub["hash"].astype(str).map(norm_addr) == hn]
+-        if part.empty:
+-            continue
+-        ts = safe_float(pd.to_numeric(part["timeStamp"], errors="coerce").fillna(0).min(), 0.0)
+-        vals = part["value"].map(parse_transfer_value).astype(float)
+-        human = float(vals.sum())
+-        delay_pen = 0.0 if ts >= src_ts else 1e6
+-        score = delay_pen + abs(human - src_human_amt) / max(src_human_amt, human, 1e-9) + abs(ts - src_ts) / 86400.0
+-        if score < best_score:
+-            best_score = score
+-            best_h = hn
+-    return best_h or norm_addr(hashes[0])
++    """Pick best BNB tx hash inside dst_flow for this src tx (legacy policy)."""
++    dst, _, _ = _pick_dst_tx_in_flow_impl(src_tx, src_ts, src_human_amt, dst_flow, dst_norm, policy="legacy")
++    return dst
+ 
+ 
+ def _tx_to_flow_index(source_flows: list[dict[str, Any]]) -> dict[str, int]:
+diff --git a/src/cross/interfaces/cli.py b/src/cross/interfaces/cli.py
+index d3c9661..eb7dd05 100644
+--- a/src/cross/interfaces/cli.py
++++ b/src/cross/interfaces/cli.py
+@@ -110,6 +110,13 @@ def build_parser() -> argparse.ArgumentParser:
+         default=None,
+         help="Delay threshold (sec) for strict causal infeasibility flag; use 'none' via config null (default: config)",
+     )
++    p.add_argument(
++        "--time-delay-policy",
++        dest="uot_time_delay_policy",
++        choices=("legacy_flow_boundary", "tx_if_available_else_flow_representative"),
++        default=None,
++        help="UOT delay semantics for time cost and causal penalty (default: config uot.time_delay_policy)",
++    )
+     p.add_argument(
+         "--uot-export-matrix",
+         action=argparse.BooleanOptionalAction,
+@@ -183,13 +190,36 @@ def build_parser() -> argparse.ArgumentParser:
+         action="store_true",
+         help="After the main RC-UOT run, execute in-process matching ablations and write out/ablation_results.csv",
+     )
++    p.add_argument(
++        "--leave-anchor-out",
++        action="store_true",
++        help="After matching, run full leakage-resistant anchor ablation suite",
++    )
++    p.add_argument(
++        "--anchor-mask-mode",
++        choices=("none", "leave_key_out", "leave_anchor_out_strict"),
++        default=None,
++        help="Optional single-run anchor masking tier",
++    )
++    p.add_argument(
++        "--anchor-mask-strict",
++        action=argparse.BooleanOptionalAction,
++        default=True,
++        help="Strict anchor masking during leave-anchor-out (default: true)",
++    )
++    p.add_argument(
++        "--anchor-mask-report",
++        type=Path,
++        default=None,
++        help="Path for anchor_mask_report.json when --leave-anchor-out is set",
++    )
+     p.add_argument("--path-b-unlabeled", action="store_true")
+     p.add_argument("--unlabeled-priors", type=Path, default=None)
+     p.add_argument(
+         "--token-routes",
+         type=Path,
+         default=None,
+-        help="Optional ETH→BSC token routes JSON (see config/token_routes.eth_bsc.json); defaults to that file if present",
++        help="Optional ETH鈫払SC token routes JSON (see config/token_routes.eth_bsc.json); defaults to that file if present",
+     )
+     p.add_argument("--path-b-auto", action="store_true")
+     p.add_argument("--config", type=Path, default=DEFAULT_CONFIG_PATH)
+@@ -257,7 +287,7 @@ def build_parser() -> argparse.ArgumentParser:
+         "--celer-tx-labels",
+         type=Path,
+         default=None,
+-        help="Celer ETH↔BNB tx-pair supervision CSV (optional; if omitted, search label/celer_label.csv then label/tx/celer_label.csv under repo root)",
++        help="Celer ETH鈫擝NB tx-pair supervision CSV (optional; if omitted, search label/celer_label.csv then label/tx/celer_label.csv under repo root)",
+     )
+     p.add_argument(
+         "--label-source-mode",
+@@ -362,7 +392,54 @@ def build_parser() -> argparse.ArgumentParser:
+     p.add_argument(
+         "--run-synthetic-multi-seed",
+         action="store_true",
+-        help="Run semi-synthetic UOT for seeds 42–46 into synthetic/synthetic_eval_seed_{seed}/ (no full paper closure)",
++        help="Run semi-synthetic UOT for seeds 42鈥?6 into synthetic/synthetic_eval_seed_{seed}/ (no full paper closure)",
++    )
++    p.add_argument(
++        "--window-sensitivity",
++        action="store_true",
++        help="Run time upper-bound window W sensitivity experiment (frozen transport plan replay)",
++    )
++    p.add_argument(
++        "--window-sensitivity-source-run",
++        type=Path,
++        default=None,
++        help="Source run directory with frozen transport plan + cost matrix for window sensitivity replay",
++    )
++    p.add_argument(
++        "--window-sensitivity-grid",
++        type=str,
++        default=None,
++        help="Comma-separated window grid in seconds (default: 300,600,1200,1800,3600,7200,14400)",
++    )
++    p.add_argument(
++        "--window-sensitivity-operating-sec",
++        type=float,
++        default=3600,
++        help="Operating window in seconds (default: 3600)",
++    )
++    p.add_argument(
++        "--window-sensitivity-reference-sec",
++        type=float,
++        default=14400,
++        help="Reference window in seconds for transition audit (default: 14400)",
++    )
++    p.add_argument(
++        "--window-sensitivity-bootstrap-reps",
++        type=int,
++        default=10000,
++        help="Bootstrap repetitions at operating point (default: 10000)",
++    )
++    p.add_argument(
++        "--window-sensitivity-seed",
++        type=int,
++        default=20260629,
++        help="Bootstrap random seed (default: 20260629)",
++    )
++    p.add_argument(
++        "--window-sensitivity-selection-record",
++        type=Path,
++        default=None,
++        help="Optional selection provenance JSON for development-set window selection",
+     )
+     return p
+ 
+diff --git a/tests/test_cost_matrix.py b/tests/test_cost_matrix.py
+index 0965652..f90f753 100644
+--- a/tests/test_cost_matrix.py
++++ b/tests/test_cost_matrix.py
+@@ -42,6 +42,16 @@ def test_build_cost_matrix_decomposed_keys():
+     assert d["time_cost"].shape == (1, 1)
+ 
+ 
++def test_legacy_vs_representative_delay_differs():
++    s = [{"flow_id": "e1", "amount_usd": 1.0, "start_time": 0.0, "end_time": 100.0, "aml_score": 0.0, "bridge": "x", "graph_embedding": None}]
++    t = [{"flow_id": "b1", "amount_usd": 1.0, "start_time": 200.0, "end_time": 300.0, "aml_score": 0.0, "bridge": "x", "graph_embedding": None}]
++    d_legacy = build_cost_matrix_decomposed(s, t, use_graph=False, time_delay_policy="legacy_flow_boundary")
++    d_repr = build_cost_matrix_decomposed(s, t, use_graph=False, time_delay_policy="tx_if_available_else_flow_representative")
++    assert float(d_legacy["delay_sec"][0, 0]) == 100.0  # dst.start - src.end
++    assert float(d_repr["delay_sec"][0, 0]) == 300.0  # dst.end - src.start
++    assert float(d_legacy["delay_sec"][0, 0]) != float(d_repr["delay_sec"][0, 0])
++
++
+ def test_time_causal_violation_is_max_cost():
+     s = [{"flow_id": "e1", "amount_usd": 1.0, "start_time": 500.0, "end_time": 500.0, "aml_score": 0.0, "bridge": "x", "graph_embedding": None}]
+     t = [{"flow_id": "b1", "amount_usd": 1.0, "start_time": 100.0, "end_time": 100.0, "aml_score": 0.0, "bridge": "x", "graph_embedding": None}]

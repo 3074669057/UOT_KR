@@ -1,0 +1,211 @@
+{
+  "provenance_type": "read-only extraction of pre-existing frozen holdout results",
+  "generated_utc": "2026-09-17T05:25:51Z",
+  "holdout_re_executed": false,
+  "holdout_re_execution_statement": "Seeds 301-305 were NOT re-run, re-solved, re-decoded, re-matched or re-evaluated by this experiment. No solver, decoder or evaluator was invoked on them. Every value below is copied from a pre-existing frozen artefact identified by path, field and SHA256.",
+  "git_head_at_extraction": "d5cd14d8051263b49b01b10ad36e6033b2ec3219",
+  "paper_default_setting": {
+    "k": 5,
+    "epsilon": 0.05,
+    "lambda": 0.5
+  },
+  "source_files": {
+    "statistics.json": {
+      "path": "out\\multi_bridge_expansion\\conditional_plan_holdout_results\\statistics.json",
+      "sha256": "43d98964046ed8c51dfee50327e1dbdeb65aaa894a3809fa44932737e49b4517",
+      "size_bytes": 4706
+    },
+    "FINAL_CONFIRMATORY_HOLDOUT_REPORT.md": {
+      "path": "out\\multi_bridge_expansion\\conditional_plan_holdout_results\\FINAL_CONFIRMATORY_HOLDOUT_REPORT.md",
+      "sha256": "96fa7f8688b89fc2773c8a53b195b655c6f59e16f1db1e69e53e24a27c001e88",
+      "size_bytes": 11171
+    },
+    "verification.json": {
+      "path": "out\\multi_bridge_expansion\\conditional_plan_holdout_results\\verification.json",
+      "sha256": "96931e28982c84b0c14872bd33542191bc043ea9362586afeafb4eb681040063"
+    }
+  },
+  "points": [
+    {
+      "bridge": "ALL",
+      "method": "CONDITIONAL_UOT_D4",
+      "metric": "macro_edge_f1",
+      "k": 5,
+      "value": 0.3103718637992831,
+      "source_path": "out\\multi_bridge_expansion\\conditional_plan_holdout_results\\statistics.json",
+      "source_row_or_field": "macro_f1.CONDITIONAL_UOT_D4",
+      "source_file_sha256": "43d98964046ed8c51dfee50327e1dbdeb65aaa894a3809fa44932737e49b4517",
+      "read_only_confirmation": "opened read-only; no write, no re-execution"
+    },
+    {
+      "bridge": "ALL",
+      "method": "AMOUNT_FREE_COST_D4",
+      "metric": "macro_edge_f1",
+      "k": 5,
+      "value": 0.3055275537634408,
+      "source_path": "out\\multi_bridge_expansion\\conditional_plan_holdout_results\\statistics.json",
+      "source_row_or_field": "macro_f1.AMOUNT_FREE_COST_D4",
+      "source_file_sha256": "43d98964046ed8c51dfee50327e1dbdeb65aaa894a3809fa44932737e49b4517",
+      "read_only_confirmation": "opened read-only; no write, no re-execution"
+    },
+    {
+      "bridge": "Celer",
+      "method": "CONDITIONAL_UOT_D4",
+      "metric": "macro_edge_f1",
+      "k": 5,
+      "value": 0.319355,
+      "source_path": "out\\multi_bridge_expansion\\conditional_plan_holdout_results\\FINAL_CONFIRMATORY_HOLDOUT_REPORT.md",
+      "source_row_or_field": "table row '| CONDITIONAL_UOT_D4 | 0.319355 | 0.293481 | 0.318280 |'",
+      "source_file_sha256": "96fa7f8688b89fc2773c8a53b195b655c6f59e16f1db1e69e53e24a27c001e88",
+      "read_only_confirmation": "opened read-only; no write, no re-execution"
+    },
+    {
+      "bridge": "Multi",
+      "method": "CONDITIONAL_UOT_D4",
+      "metric": "macro_edge_f1",
+      "k": 5,
+      "value": 0.293481,
+      "source_path": "out\\multi_bridge_expansion\\conditional_plan_holdout_results\\FINAL_CONFIRMATORY_HOLDOUT_REPORT.md",
+      "source_row_or_field": "table row '| CONDITIONAL_UOT_D4 | 0.319355 | 0.293481 | 0.318280 |'",
+      "source_file_sha256": "96fa7f8688b89fc2773c8a53b195b655c6f59e16f1db1e69e53e24a27c001e88",
+      "read_only_confirmation": "opened read-only; no write, no re-execution"
+    },
+    {
+      "bridge": "Poly",
+      "method": "CONDITIONAL_UOT_D4",
+      "metric": "macro_edge_f1",
+      "k": 5,
+      "value": 0.31828,
+      "source_path": "out\\multi_bridge_expansion\\conditional_plan_holdout_results\\FINAL_CONFIRMATORY_HOLDOUT_REPORT.md",
+      "source_row_or_field": "table row '| CONDITIONAL_UOT_D4 | 0.319355 | 0.293481 | 0.318280 |'",
+      "source_file_sha256": "96fa7f8688b89fc2773c8a53b195b655c6f59e16f1db1e69e53e24a27c001e88",
+      "read_only_confirmation": "opened read-only; no write, no re-execution"
+    },
+    {
+      "bridge": "Celer",
+      "method": "AMOUNT_FREE_COST_D4",
+      "metric": "macro_edge_f1",
+      "k": 5,
+      "value": 0.319892,
+      "source_path": "out\\multi_bridge_expansion\\conditional_plan_holdout_results\\FINAL_CONFIRMATORY_HOLDOUT_REPORT.md",
+      "source_row_or_field": "table row '| AMOUNT_FREE_COST_D4 | 0.319892 | 0.274110 | 0.322581 |'",
+      "source_file_sha256": "96fa7f8688b89fc2773c8a53b195b655c6f59e16f1db1e69e53e24a27c001e88",
+      "read_only_confirmation": "opened read-only; no write, no re-execution"
+    },
+    {
+      "bridge": "Multi",
+      "method": "AMOUNT_FREE_COST_D4",
+      "metric": "macro_edge_f1",
+      "k": 5,
+      "value": 0.27411,
+      "source_path": "out\\multi_bridge_expansion\\conditional_plan_holdout_results\\FINAL_CONFIRMATORY_HOLDOUT_REPORT.md",
+      "source_row_or_field": "table row '| AMOUNT_FREE_COST_D4 | 0.319892 | 0.274110 | 0.322581 |'",
+      "source_file_sha256": "96fa7f8688b89fc2773c8a53b195b655c6f59e16f1db1e69e53e24a27c001e88",
+      "read_only_confirmation": "opened read-only; no write, no re-execution"
+    },
+    {
+      "bridge": "Poly",
+      "method": "AMOUNT_FREE_COST_D4",
+      "metric": "macro_edge_f1",
+      "k": 5,
+      "value": 0.322581,
+      "source_path": "out\\multi_bridge_expansion\\conditional_plan_holdout_results\\FINAL_CONFIRMATORY_HOLDOUT_REPORT.md",
+      "source_row_or_field": "table row '| AMOUNT_FREE_COST_D4 | 0.319892 | 0.274110 | 0.322581 |'",
+      "source_file_sha256": "96fa7f8688b89fc2773c8a53b195b655c6f59e16f1db1e69e53e24a27c001e88",
+      "read_only_confirmation": "opened read-only; no write, no re-execution"
+    }
+  ],
+  "author_reported_cross_check": [
+    {
+      "method": "AMOUNT_FREE_COST_D4",
+      "bridge": "Celer",
+      "author_reported_4dp": 0.3199,
+      "frozen_value": 0.319892,
+      "agrees_at_4dp": true,
+      "available": true
+    },
+    {
+      "method": "AMOUNT_FREE_COST_D4",
+      "bridge": "Multi",
+      "author_reported_4dp": 0.2741,
+      "frozen_value": 0.27411,
+      "agrees_at_4dp": true,
+      "available": true
+    },
+    {
+      "method": "AMOUNT_FREE_COST_D4",
+      "bridge": "Poly",
+      "author_reported_4dp": 0.3226,
+      "frozen_value": 0.322581,
+      "agrees_at_4dp": true,
+      "available": true
+    },
+    {
+      "method": "CONDITIONAL_UOT_D4",
+      "bridge": "Celer",
+      "author_reported_4dp": 0.3194,
+      "frozen_value": 0.319355,
+      "agrees_at_4dp": true,
+      "available": true
+    },
+    {
+      "method": "CONDITIONAL_UOT_D4",
+      "bridge": "Multi",
+      "author_reported_4dp": 0.2935,
+      "frozen_value": 0.293481,
+      "agrees_at_4dp": true,
+      "available": true
+    },
+    {
+      "method": "CONDITIONAL_UOT_D4",
+      "bridge": "Poly",
+      "author_reported_4dp": 0.3183,
+      "frozen_value": 0.31828,
+      "agrees_at_4dp": true,
+      "available": true
+    }
+  ],
+  "frozen_d_cost": {
+    "macro_mean": 0.00484431003584229,
+    "macro_ci95_lo": 0.0013424059139784915,
+    "macro_ci95_hi": 0.008876708109318997,
+    "per_bridge_mean": {
+      "Celer": -0.0005376344086021532,
+      "Multi": 0.019371639784946233,
+      "Poly": -0.004301075268817208
+    },
+    "definition": "CONDITIONAL_UOT_D4 - AMOUNT_FREE_COST_D4 (per-bridge paired)",
+    "source_path": "out\\multi_bridge_expansion\\conditional_plan_holdout_results\\statistics.json",
+    "source_row_or_field": "d_cost",
+    "source_file_sha256": "43d98964046ed8c51dfee50327e1dbdeb65aaa894a3809fa44932737e49b4517"
+  },
+  "per_bridge_reconstruction": [
+    {
+      "bridge": "Celer",
+      "cond": 0.319355,
+      "amount_free": 0.319892,
+      "cond_minus_amount_free": -0.0005370000000000097,
+      "frozen_d_cost_per_bridge_mean": -0.0005376344086021532,
+      "consistent_within_1e_9": false
+    },
+    {
+      "bridge": "Multi",
+      "cond": 0.293481,
+      "amount_free": 0.27411,
+      "cond_minus_amount_free": 0.01937099999999997,
+      "frozen_d_cost_per_bridge_mean": 0.019371639784946233,
+      "consistent_within_1e_9": false
+    },
+    {
+      "bridge": "Poly",
+      "cond": 0.31828,
+      "amount_free": 0.322581,
+      "cond_minus_amount_free": -0.004300999999999999,
+      "frozen_d_cost_per_bridge_mean": -0.004301075268817208,
+      "consistent_within_1e_9": false
+    }
+  ],
+  "frozen_holdout_k5_delta_conditional_minus_amount_free": 0.00484431003584229,
+  "usage_in_this_experiment": "markers at the DEFAULT k=5 position on the figure only; never connected to the development curves and never used to choose any hyper-parameter",
+  "provenance_gap": null
+}

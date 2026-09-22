@@ -1,0 +1,200 @@
+{
+  "version": "phase15-minimal-v1",
+  "contract_families": {
+    "sgn-v2": {
+      "name": "sgn-v2 liquidity bridge / Bridge.sol",
+      "events": {
+        "Send": {
+          "signature": "Send(bytes32,address,address,address,uint256,uint64,uint64,uint32)",
+          "decode_mode": "all_in_data",
+          "field_names": [
+            "transferId",
+            "sender",
+            "receiver",
+            "token",
+            "amount",
+            "dstChainId",
+            "nonce",
+            "maxSlippage"
+          ],
+          "indexed_fields": [],
+          "non_indexed_fields": [
+            "transferId",
+            "sender",
+            "receiver",
+            "token",
+            "amount",
+            "dstChainId",
+            "nonce",
+            "maxSlippage"
+          ],
+          "field_types": [
+            "bytes32",
+            "address",
+            "address",
+            "address",
+            "uint256",
+            "uint64",
+            "uint64",
+            "uint32"
+          ]
+        },
+        "Relay": {
+          "signature": "Relay(bytes32,address,address,address,uint256,uint64,bytes32)",
+          "decode_mode": "all_in_data",
+          "field_names": [
+            "transferId",
+            "sender",
+            "receiver",
+            "token",
+            "amount",
+            "srcChainId",
+            "srcTransferId"
+          ],
+          "indexed_fields": [],
+          "non_indexed_fields": [
+            "transferId",
+            "sender",
+            "receiver",
+            "token",
+            "amount",
+            "srcChainId",
+            "srcTransferId"
+          ],
+          "field_types": [
+            "bytes32",
+            "address",
+            "address",
+            "address",
+            "uint256",
+            "uint64",
+            "bytes32"
+          ]
+        }
+      },
+      "functions": {
+        "send": "send(address,address,uint256,uint64,uint64,uint32)",
+        "sendNative": "sendNative(address,uint256,uint64,uint64,uint32)"
+      }
+    },
+    "legacy": {
+      "name": "legacy HTLC CBridge.sol",
+      "events": {
+        "LogNewTransferOut": {
+          "signature": "LogNewTransferOut(bytes32,address,address,address,uint256,bytes32,uint64,uint64,address)",
+          "decode_mode": "indexed_3",
+          "field_names": [
+            "transferId",
+            "sender",
+            "receiver",
+            "token",
+            "amount",
+            "hashlock",
+            "timelock",
+            "dstChainId",
+            "dstAddress"
+          ],
+          "indexed_fields": [
+            "transferId",
+            "sender",
+            "receiver"
+          ],
+          "non_indexed_fields": [
+            "token",
+            "amount",
+            "hashlock",
+            "timelock",
+            "dstChainId",
+            "dstAddress"
+          ],
+          "field_types": [
+            "bytes32",
+            "address",
+            "address",
+            "address",
+            "uint256",
+            "bytes32",
+            "uint64",
+            "uint64",
+            "address"
+          ]
+        },
+        "LogNewTransferIn": {
+          "signature": "LogNewTransferIn(bytes32,address,address,address,uint256,bytes32,uint64,uint64,bytes32)",
+          "decode_mode": "indexed_3",
+          "field_names": [
+            "transferId",
+            "sender",
+            "receiver",
+            "token",
+            "amount",
+            "hashlock",
+            "timelock",
+            "srcChainId",
+            "srcTransferId"
+          ],
+          "indexed_fields": [
+            "transferId",
+            "sender",
+            "receiver"
+          ],
+          "non_indexed_fields": [
+            "token",
+            "amount",
+            "hashlock",
+            "timelock",
+            "srcChainId",
+            "srcTransferId"
+          ],
+          "field_types": [
+            "bytes32",
+            "address",
+            "address",
+            "address",
+            "uint256",
+            "bytes32",
+            "uint64",
+            "uint64",
+            "bytes32"
+          ]
+        },
+        "LogTransferConfirmed": {
+          "signature": "LogTransferConfirmed(bytes32,bytes32)",
+          "decode_mode": "indexed_1",
+          "field_names": [
+            "transferId",
+            "preimage"
+          ],
+          "indexed_fields": [
+            "transferId"
+          ],
+          "non_indexed_fields": [
+            "preimage"
+          ],
+          "field_types": [
+            "bytes32",
+            "bytes32"
+          ]
+        },
+        "LogTransferRefunded": {
+          "signature": "LogTransferRefunded(bytes32)",
+          "decode_mode": "indexed_1",
+          "field_names": [
+            "transferId"
+          ],
+          "indexed_fields": [
+            "transferId"
+          ],
+          "non_indexed_fields": [],
+          "field_types": [
+            "bytes32"
+          ]
+        }
+      }
+    }
+  },
+  "chain_ids": {
+    "ethereum": 1,
+    "bsc": 56
+  }
+}

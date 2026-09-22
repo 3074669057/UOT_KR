@@ -1,0 +1,197 @@
+{
+  "experiment_id": "r7_posthoc_degree_stratification_20260918",
+  "classification": "POST-HOC / NON-PREREGISTERED / ARCHIVED-PREDICTION RE-STRATIFICATION ANALYSIS",
+  "locked_at_utc": "2026-09-18T18:14:40Z",
+  "locked_before_viewing_stratified_h1": true,
+  "no_rerun": {
+    "prediction_methods_executed": false,
+    "solver_calls": 0,
+    "decoder_calls": 0,
+    "generator_calls": "truth-only replay only; no cost construction, no solver, no decoder",
+    "forbidden_seeds_never_executed": [
+      42,
+      43,
+      44,
+      45,
+      46,
+      201,
+      202,
+      203,
+      204,
+      205,
+      301,
+      302,
+      303,
+      304,
+      305,
+      401,
+      402,
+      403,
+      404,
+      405,
+      406,
+      407,
+      408,
+      409,
+      410
+    ],
+    "confirmatory_block_used": [
+      411,
+      412,
+      413,
+      414,
+      415,
+      416,
+      417,
+      418,
+      419,
+      420
+    ],
+    "block_401_410_used": false
+  },
+  "r7_primary_unit_statement": {
+    "r7_primary_resampling_unit": "bridge x seed",
+    "r7_n_primary_paired_cells": 30,
+    "r7_uses_template_instances_as_independent_samples": false,
+    "consequence": "S9 re-stratifies archived paired results at the TEMPLATE INSTANCE level. This is NOT the seed-level primary estimand of the R7 confirmatory test, so S9 is reported only as a structural-heterogeneity diagnostic.",
+    "forbidden_wording": [
+      "template instances match the resampling unit of the main analysis",
+      "preregistered",
+      "new confirmatory hypothesis",
+      "prospective subgroup analysis",
+      "second holdout execution"
+    ]
+  },
+  "d_max_definition": {
+    "primary": "d_max = max over source nodes i of |{j : (i,j) is a NON-DECOY ground-truth truth edge}|, i.e. over split union merge",
+    "decoy_edges_excluded": true,
+    "unmatched_source_degree_zero": true,
+    "target_ids_deduplicated": true,
+    "computed_from": "ground-truth edges ONLY (never from predictions, never from transport support)",
+    "cross_check": "d_max_including_decoys is recorded and must equal d_max because every decoy pair is 1-to-1",
+    "sampled_split_degree_cross_check": "compared against the archived generator metadata; truth-derived d_max is authoritative if they differ"
+  },
+  "strata": {
+    "binary_primary": {
+      "low": "d_max == 2",
+      "higher": "d_max >= 3"
+    },
+    "three_bin": {
+      "A": "d_max == 2",
+      "B": "d_max in {3,4}",
+      "C": "d_max >= 5"
+    },
+    "exact_degree": "each observed d_max value separately (2,3,4,5,6,7,8, ...)",
+    "cut_points_locked_before_viewing_effects": true,
+    "no_post_hoc_cut_point_adjustment": true,
+    "values_above_8_kept_unmerged": true
+  },
+  "estimands": {
+    "per_template_effect": "delta_H1(t) = F1_UOT_KR(t) - F1_HUNGARIAN(t)",
+    "source": "Tier A: recomputed independently from ARCHIVED prediction edge sets and archived truth edges",
+    "stratum_macro_effect": "within each bridge, mean delta_H1 over that bridge's template instances in the stratum; then equal-weight mean over the three bridges",
+    "interaction_contrast": "effect(d_max>=3) - effect(d_max=2), descriptive"
+  },
+  "bootstrap": {
+    "B": 4000,
+    "rng_seed": 20240101,
+    "design": "within each bridge, resample that bridge's stratum template instances WITH replacement; UOT_KR and HUNGARIAN move together as a paired observation; per-bridge mean; equal-weight mean over the three bridges",
+    "interval": "percentile 2.5 / 97.5",
+    "applied_to": [
+      "d_max=2",
+      "d_max>=3",
+      "A",
+      "B",
+      "C",
+      "interaction"
+    ]
+  },
+  "missing_bridge_rule": {
+    "trigger": "a bridge has n = 0 in a stratum",
+    "action": [
+      "report the stratum raw counts",
+      "flag 'bridge-balanced three-bridge estimand unavailable'",
+      "optionally report an available-bridge descriptive effect",
+      "never compare it directly with a complete three-bridge stratum"
+    ],
+    "silent_two_bridge_macro_average_forbidden": true
+  },
+  "dependence_sensitivity": {
+    "required_because_primary_unit_is_bridge_x_seed": true,
+    "design": "within each bridge resample SEED clusters with replacement, then keep the stratum template instances belonging to the sampled seeds",
+    "purpose": "check whether the template-level bootstrap is over-optimistic because of family/template dependence",
+    "may_not_change_the_conclusion": true
+  },
+  "oracle_ceiling": {
+    "definition": "per template, maximum-cardinality bipartite matching on the ground-truth POSITIVE graph",
+    "T_t": "truth positive edge count",
+    "M_t": "maximum one-to-one truth matching",
+    "ceiling_f1": "2*M_t/(T_t+M_t)",
+    "precision": 1.0,
+    "recall": "M_t/T_t",
+    "status": "label-informed one-to-one semantic ceiling; NOT a deployable baseline",
+    "must_not_be_conflated_with": "HUNGARIAN_1TO1",
+    "monotonicity_assumed": false,
+    "smoothing_forbidden": [
+      "monotonic smoothing",
+      "isotonic regression",
+      "dropping points"
+    ]
+  },
+  "trend_test": {
+    "question": "does delta_H1 change linearly with d_max?",
+    "observed_slope": "within each bridge, center d_max and center delta_H1, then ordinary least squares slope; beta_macro = equal-weight mean of the three bridge slopes",
+    "null": "degree-association slope = 0, while each bridge may keep a non-zero mean H1",
+    "permutation": "per bridge, take the centered paired-difference residuals delta_H1 - bridge_mean_delta; multiply each independently by random +/-1; add the original bridge mean back; keep d_max fixed; recompute the three-bridge macro slope",
+    "n_perm": 20000,
+    "rng_seed": 20240103,
+    "sided": "two-sided",
+    "p_value": "(extreme + 1) / (n_perm + 1), extreme = count(|beta_perm| >= |beta_obs|)",
+    "why_not_spearman": "the analysis object is a PAIRED METHOD DIFFERENCE; the question is whether that paired effect changes with structural degree, so a locked paired-difference slope permutation is used. Any Spearman value is diagnostics only."
+  },
+  "decision_wording": {
+    "P_positive_trend": {
+      "condition": "beta_macro > 0 AND two-sided permutation p < 0.05",
+      "text": "事后分层分析显示，UOT-KR 相对一对一指派基线的优势随真值源级扇出复杂度增加而增强。R7 全体样本中的总体 H1 效应因此部分受到大量低度模板的稀释。该结果为结构复杂度依赖的收益提供了事后证据，但不改变原预注册 H1 判定。",
+      "extra": "if the exact-degree means are not pointwise monotone, write 'positive overall trend', never 'strictly monotonic increase'"
+    },
+    "N_no_detectable_trend": {
+      "condition": "p >= 0.05 (whatever the sign of beta_macro)",
+      "text": "本事后分析未检测到 H1 效应随源级最大扇出度系统变化的证据。因此，“总体 +0.0255 主要被低度模板稀释”的解释未得到本分析支持。",
+      "extra": "p >= 0.05 must NOT be written as proof that the effect is flat"
+    },
+    "D_negative_trend": {
+      "condition": "beta_macro < 0 AND p < 0.05",
+      "text": "H1 效应随真值扇出复杂度增加反而下降，与预期的结构稀释解释方向相反。该事后结果需作为局限和进一步机制研究对象明确报告。"
+    }
+  },
+  "claim_limits": {
+    "always_labelled": [
+      "post-hoc",
+      "non-preregistered",
+      "archived-result re-stratification",
+      "mechanism / heterogeneity diagnostic"
+    ],
+    "allowed_if_P": [
+      "consistent with a dilution interpretation",
+      "supports the hypothesis that benefits are larger under higher fan-out complexity"
+    ],
+    "forbidden": [
+      "proves that many-to-many output semantics caused the H1 gain",
+      "preregistered evidence",
+      "new confirmatory hypothesis",
+      "new H1"
+    ],
+    "h1_confound_note": "H1 still compares UOT-KR against a cost-optimal one-to-one baseline and therefore mixes a decoder difference with an output-constraint difference",
+    "oracle_wording": "if the ceiling decreases with degree, one may say 'the representational capacity of a one-to-one output space decreases as the truth graph becomes more one-to-many'; one must NOT say Hungarian performance must equal the ceiling"
+  },
+  "unchanged_by_s9": [
+    "R7 H1/H2/S1/S2",
+    "Gate A-E",
+    "analysis/DECISION.json",
+    "Table 3",
+    "original confirmatory metrics",
+    "frozen protocol",
+    "success classification"
+  ]
+}

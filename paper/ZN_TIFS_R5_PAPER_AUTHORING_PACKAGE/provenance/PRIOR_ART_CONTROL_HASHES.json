@@ -1,0 +1,8 @@
+﻿{
+    "control_b_module_sha256":  "1148A6C09F5B2923F0559A5C4C115B593045129BD83D9FE99EF2E8D2EB488959",
+    "control_a":  "holdout arm AMOUNT_FREE_COST_D4 (hash-locked via holdout HASH_MANIFEST.json)",
+    "frozen_at":  "2026-09-11T10:08:51.6164822+08:00",
+    "execution_status":  "NEVER_RUN_THIS_ROUND",
+    "r5c_retirement_note":  "R5B freeze hash (1148A6C0...) was recorded before the R5C retirement docstring was added; the module is MIS-SPECIFIED/NEVER EXECUTED/RETIRED per R5C_PRIOR_ART_CORRECTION_NOTE.md",
+    "r5c_post_retirement_hash":  "C4902C6BD18513FF69DF1034FFE4EF54244FE44A933A28BE5FD16E69281DEECD"
+}

@@ -1,0 +1,6 @@
+scenario,truth_edge_count,edge_recovery_rate,unmatched_detection_f1,decoy_pair_match_rate
+split,96,1.0,,
+merge,96,1.0,,
+unmatched,48,,0.0,
+delay_noise,96,,,1.0
+split_merge_global,192,1.0,,

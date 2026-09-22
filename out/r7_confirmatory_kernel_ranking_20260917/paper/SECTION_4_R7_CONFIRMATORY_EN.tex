@@ -1,0 +1,47 @@
+% R7 Section 4 -- confirmatory evaluation
+\subsection{Confirmatory evaluation (R7)}
+\textbf{Degree calibration.} The generator's split/merge degree distributions are
+recomputed from the frozen v4/v5 audit windows rather than transcribed: v4 contributes
+2{,}451 fan-out and 85 fan-in units, v5 contributes 5{,}516 and 76. The recomputed v4
+fan-out histogram matches the frozen v4 report exactly, and the canonical anchor sets of
+the two windows are disjoint. Degrees are winsorised, not deleted
+($d_{\mathrm{used}}=\min(d,8)$); $P(d>8)=0.0459$
+for fan-out and 0.0000 for fan-in, so
+\texttt{HIGH\_TRUNCATION\_TAIL} is False. Fan-in is empirical; no
+mirrored proxy is used.
+
+\textbf{Generator.} Each bridge/seed cell carries 24 distinct template families
+(4 amount quartiles $\times$ 6 delay sextiles), two instances each, one distinct base
+anchor per family. Structural QA passed all twelve checks \emph{before} any method F1 was
+computed. Every mechanism other than the degree draw is unchanged.
+
+\textbf{Freeze and one-shot execution.} Hash-locked protocol freeze
+(\texttt{locked\_spec.json} sha256 \texttt{9775479b742833d0\ldots}); the confirmatory block
+[411, 412, 413, 414, 415, 416, 417, 418, 419, 420] was first generated inside the locked executor, after an
+\texttt{O\_CREAT\textbar{}O\_EXCL} touch ledger was durably written. 30 units,
+3$\times$10 seeds; the primary statistical unit is the
+$(\mathrm{bridge},\mathrm{seed})$ pair (30 cells), never the template instances.
+
+\textbf{Results (bridge-balanced family-macro edge F1).} UOT-KR
+0.4292, SUPPORT\_PLUS\_K
+0.4171, CONDITIONAL\_UOT
+0.4150, HUNGARIAN\_1TO1
+0.4037, DUAL\_SOFTMAX
+0.2480, RAW\_UOT\_PLAN
+0.1099, THRESHOLD\_MM 0.0622.
+
+\textbf{Hypotheses.} H1 (UOT-KR $-$ HUNGARIAN\_1TO1) $+0.0255$,
+95\% CI $[+0.0134, +0.0371]$, Holm-adjusted one-sided
+$p=0.00055$ (Gate A \textbf{PASS}). H2
+(UOT-KR $-$ THRESHOLD\_MM) $+0.3670$,
+95\% CI $[+0.3603, +0.3734]$, Holm-adjusted one-sided
+$p=0.0001$ (Gate B \textbf{PASS}).
+Secondary: S1 $+0.0142$, S2 $+0.3051$.
+Cross-bridge consistency (Gate C) \textbf{PASS},
+with Multi H1 only $+0.0030$ reported explicitly.
+
+\textbf{Scope.} Strict exact recovery is $0$ for every method. UOT-KR never exceeds the
+label-informed one-to-one ceiling (0.7364) in any of the 30 cells,
+so only the equal-cost comparison against the cost-optimal one-to-one assignment baseline
+is claimed. This is a synthetic confirmatory evaluation, not a real-system validation;
+Connector/ABCTracer remain style baselines.

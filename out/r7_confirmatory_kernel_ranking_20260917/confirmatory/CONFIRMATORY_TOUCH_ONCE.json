@@ -1,0 +1,36 @@
+{
+  "ledger_version": 1,
+  "HOLDOUT_TOUCHED": "YES",
+  "timestamp_utc": "2026-09-17T07:32:40Z",
+  "experiment_id": "r7_confirmatory_kernel_ranking_20260917",
+  "run_id": "r7-1789630356-25288",
+  "pid": 25288,
+  "hostname": "ZYX",
+  "platform": "Windows-10-10.0.26200-SP0",
+  "python": "3.11.11 (main, Mar 17 2025, 21:01:29) [MSC v.1943 64 bit (AMD64)]",
+  "locked_spec_sha256": "392f88f654d8bc97c1f3d42d77ae506991940f798d266854ff54ee26a89b0bd6",
+  "executor_sha256": "65f0feef440d70c74888645ba8984dc1ef6475926b18e1c8cc2f6991e758341b",
+  "generator_sha256": "efe435471ddad437d95265b132dfb29f7f29616ef562c47587e0d60a37c433dd",
+  "validator_sha256": "59dbe87b636b4c0e4d5568b4d5549de2db51a86507d7a63c1cc9dcdbdf83dad0",
+  "frozen_protocol_manifest_sha256": "185309f8613e657fdfb15e525bb9347bdafd72d628df4d946883391f1620e184",
+  "seed_block": [
+    401,
+    402,
+    403,
+    404,
+    405,
+    406,
+    407,
+    408,
+    409,
+    410
+  ],
+  "bridges": [
+    "Celer",
+    "Multi",
+    "Poly"
+  ],
+  "git_head": "d5cd14d8051263b49b01b10ad36e6033b2ec3219",
+  "git_branch": "master",
+  "statement": "This file is the irreversible first-touch record for the R7 confirmatory holdout 401-410. It was created with O_CREAT|O_EXCL BEFORE the first byte of holdout data was generated or read. The confirmatory executor refuses to run again while this file exists."
+}

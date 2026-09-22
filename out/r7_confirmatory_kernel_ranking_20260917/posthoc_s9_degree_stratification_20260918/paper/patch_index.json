@@ -1,0 +1,23 @@
+{
+  "role": "POST-HOC / NON-PREREGISTERED supplementary patches",
+  "changes_r7_confirmatory_claim_level": false,
+  "table_3_modified": false,
+  "files": {
+    "S9_DEGREE_STRATIFIED_POSTHOC_CN.md": {
+      "bytes": 7573,
+      "sha256": "bb3c717c51f4665604c6826e4ffd91ca3ebc087270437190d23a229633d602e7"
+    },
+    "S9_DEGREE_STRATIFIED_POSTHOC_EN.tex": {
+      "bytes": 4750,
+      "sha256": "064a9f360f4d2b37a4e831da873f809719469d3c007242450ad34d47a9f6220e"
+    },
+    "SECTION_4_3_CROSSREF_PATCH_CN.md": {
+      "bytes": 638,
+      "sha256": "e1f211079f275ee3c31a5ccaa8b93a47bb35794c2c7ad300aac484fbc057cd14"
+    },
+    "SECTION_4_3_CROSSREF_PATCH_EN.tex": {
+      "bytes": 575,
+      "sha256": "5f4e5b1fd577418bfc0da6c57353fbeebe21c938d79a66150b60c99bc4720ad6"
+    }
+  }
+}

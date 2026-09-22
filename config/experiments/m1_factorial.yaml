@@ -1,0 +1,45 @@
+﻿# M1 Factorial Experiment Configuration
+# 2 x 3 factor experiment: causal mask (on/off) x solver (rc_uot, hungarian, greedy_nn)
+
+seed: 42
+
+bootstrap:
+  n: 1000
+  ci: 0.95
+
+factors:
+  causal_condition:
+    - no_causal_mask
+    - with_causal_mask
+  solver:
+    - rc_uot
+    - hungarian
+    - greedy_nn
+
+# Total: 6 conditions
+
+cost:
+  time_weight: 0.25
+  causal_violation_penalty_full: 5.0
+  causal_violation_penalty_none: 0.0
+  time_weight_grid: [0.0, 0.05, 0.10, 0.20, 0.30]
+
+decoder:
+  strategy: joint_time_admissible_filter
+  delay_policy: tx_if_available_else_flow_representative
+  tx_decode_policy: legacy
+
+transport:
+  temperature: 1.0
+  apply_feasible_mask_inside_solver: true
+
+evaluation:
+  stratify_by_structure: true
+  bootstrap_ci: true
+  structure_labels:
+    - "1-1"
+    - "m-1"
+    - "1-m"
+    - "m-n"
+    - "unmatched"
+    - "other"

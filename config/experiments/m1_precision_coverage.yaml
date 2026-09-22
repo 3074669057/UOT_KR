@@ -1,0 +1,31 @@
+﻿# M1 Precision-Coverage Curve Experiment Configuration
+
+seed: 42
+
+solvers:
+  - thresholded_cost
+  - greedy_nn
+  - hungarian
+  - balanced_ot
+  - rc_uot
+
+operation_point:
+  target_coverage: 0.90  # For best-precision-at-target-coverage reporting
+
+threshold_grid:
+  num_points: 41  # Percentile-based grid, 0-100 in 41 steps
+
+decoder:
+  strategy: joint_time_admissible_filter
+  delay_policy: tx_if_available_else_flow_representative
+  tx_decode_policy: amount_nearest_positive_delay
+
+transport:
+  temperature: 1.0
+
+output:
+  formats:
+    - csv
+    - png
+    - pdf
+  combined_curve: true

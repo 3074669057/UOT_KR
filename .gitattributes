@@ -1,0 +1,78 @@
+# Line-ending policy for this artifact release.
+#
+# Without this file, `core.autocrlf=true` (a common global default on Windows) rewrites
+# LF to CRLF on checkout.  That changes file *bytes* without changing Git content, so
+# `RELEASE_SHA256SUMS.txt` / `RELEASE_MANIFEST.json` verification fails for every text
+# file even though nothing is actually wrong.  In the pre-publication rehearsal this hit
+# 633 of 2079 files on a machine with a global autocrlf=true.
+#
+# The manifests in this repository are byte-exact and line-ending sensitive, so the
+# checkout must be byte-exact too, on every platform.  Therefore: pin LF everywhere
+# except the formats that require CRLF by specification.
+#
+# Git normalises to LF in the object database; `eol=lf` additionally guarantees LF in the
+# working tree regardless of core.autocrlf.
+
+* text=auto eol=lf
+
+# --- binary (never touch) ---
+*.npz   binary
+*.zip   binary
+*.docx  binary
+*.pdf   binary
+*.png   binary
+
+# --- explicit text, LF in the working tree ---
+*.py      text eol=lf
+*.json    text eol=lf
+*.md      text eol=lf
+*.txt     text eol=lf
+*.csv     text eol=lf
+*.tsv     text eol=lf
+*.yml     text eol=lf
+*.yaml    text eol=lf
+*.toml    text eol=lf
+*.cff     text eol=lf
+*.cfg     text eol=lf
+*.ini     text eol=lf
+*.ps1     text eol=lf
+*.sh      text eol=lf
+*.tex     text eol=lf
+*.bib     text eol=lf
+*.jsonl   text eol=lf
+*.patch   text eol=lf
+*.diff    text eol=lf
+*.log     text eol=lf
+.gitignore      text eol=lf
+.gitattributes  text eol=lf
+
+# --- CRLF by specification ---
+*.bat   text eol=crlf
+*.cmd   text eol=crlf
+
+# --- mis-extensioned captures: byte-exact, never transformed ---
+# Two captured console transcripts are not UTF-8/ASCII despite their extensions; they carry
+# NUL bytes (UTF-16 text and interleaved padding).  Git must not normalise or re-encode them,
+# so they are marked explicitly non-text.  Their manifests hash the bytes as shipped.
+audit/risk_field/07_stdout.txt                 -text
+scripts/_run_m1_solver_ablation_orig.py        -text
+
+# --- HASH-LOCKED TREES: byte-exact, never normalised ---
+#
+# These trees are cryptographically pinned.  config/locked_spec.json,
+# config/FROZEN_PROTOCOL_MANIFEST.json and MANIFEST.json record the SHA256 of specific
+# artifact bytes, and the R7 executor and independent validator refuse to run when those
+# bytes differ.  Line-ending normalisation is therefore a *correctness* hazard here, not a
+# style choice: converting these files CRLF->LF changed locked_spec.json from
+# 9775479b... to c478a6ab... and turned GATE_E from PASS into FAIL.
+#
+# They must keep their original bytes on checkout, on every platform, whatever the host's
+# core.autocrlf setting is.  Marking them binary (-text) disables all EOL conversion and
+# diff textconv for them.
+out/r7_confirmatory_kernel_ranking_20260917/**  -text
+out/handoff_r11_remaining6/**                   -text
+out/r5_posthoc_hparam_sensitivity_20260917/**   -text
+out/r6_posthoc_kernel_k_control_20260917/**     -text
+audit/risk_field/**                             -text
+
+

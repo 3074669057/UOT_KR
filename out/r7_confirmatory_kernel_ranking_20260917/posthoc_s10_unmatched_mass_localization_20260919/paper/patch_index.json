@@ -1,0 +1,32 @@
+{
+  "outcome": "L3_weak_or_no_separation",
+  "contribution_upgrade_generated": false,
+  "classification": "POST-HOC / NON-PREREGISTERED / MECHANISM-CAPABILITY ANALYSIS",
+  "changes_r7_confirmatory_claim_level": false,
+  "files": {
+    "S10_UNMATCHED_MASS_LOCALIZATION_CN.md": {
+      "bytes": 6288,
+      "sha256": "0c2dc79e1ea689fa218f510430746cd081bb32b9e183c37f7b0b855d6dd5888a"
+    },
+    "S10_UNMATCHED_MASS_LOCALIZATION_EN.tex": {
+      "bytes": 3208,
+      "sha256": "88474c51b04ef12d72b44fb5c0215de1bf0b52144e0c108fcdacc87772237e76"
+    },
+    "MAIN_TEXT_LOCALIZATION_CROSSREF_CN.md": {
+      "bytes": 479,
+      "sha256": "df88d5edd084058a40f37dfcb4aa8578ae2219e8b68a96d1921dafbb8dadb325"
+    },
+    "MAIN_TEXT_LOCALIZATION_CROSSREF_EN.tex": {
+      "bytes": 498,
+      "sha256": "986e9d7e004af22d1de0ac463472ed20c743ea2f8f745ac9ccf127c63abd6cf9"
+    },
+    "CONTRIBUTION_1_LOCALIZATION_LIMITATION_CN.md": {
+      "bytes": 934,
+      "sha256": "374a876d660e653dac844f62e6641ef314721cd29242ec90d5c6255b7607a2a4"
+    },
+    "CONTRIBUTION_1_LOCALIZATION_LIMITATION_EN.tex": {
+      "bytes": 800,
+      "sha256": "e055e288075af89c16b767ac3679b6dfee05564f186c4ef78500a0b0655eec21"
+    }
+  }
+}

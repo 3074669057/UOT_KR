@@ -1,0 +1,65 @@
+{
+  "run_id": "r7-1789631512-34220",
+  "wall_sec": 52.65483021736145,
+  "units_written": 30,
+  "failures": [],
+  "gate_pre_execution": true,
+  "gate_d": "PASS",
+  "ledger": {
+    "ledger_version": 1,
+    "HOLDOUT_TOUCHED": "YES",
+    "timestamp_utc": "2026-09-17T07:51:56Z",
+    "experiment_id": "r7_confirmatory_kernel_ranking_20260917",
+    "run_id": "r7-1789631512-34220",
+    "pid": 34220,
+    "hostname": "ZYX",
+    "platform": "Windows-10-10.0.26200-SP0",
+    "python": "3.11.11 (main, Mar 17 2025, 21:01:29) [MSC v.1943 64 bit (AMD64)]",
+    "confirmatory_seed_block": [
+      411,
+      412,
+      413,
+      414,
+      415,
+      416,
+      417,
+      418,
+      419,
+      420
+    ],
+    "locked_spec_sha256": "9775479b742833d02beeffb469569b0d885002749b84e996844dcce9b845e11d",
+    "executor_sha256": "5a125184154213c736a41bff8597237d01444372c0b805f35cb6ce4ca552f5bb",
+    "generator_sha256": "efe435471ddad437d95265b132dfb29f7f29616ef562c47587e0d60a37c433dd",
+    "validator_sha256": "59dbe87b636b4c0e4d5568b4d5549de2db51a86507d7a63c1cc9dcdbdf83dad0",
+    "frozen_protocol_manifest_sha256": "822a56a2321cf97c47928b28f0f12fdca141d1dc851b09245d4713f9d193ed03",
+    "seed_block": [
+      411,
+      412,
+      413,
+      414,
+      415,
+      416,
+      417,
+      418,
+      419,
+      420
+    ],
+    "bridges": [
+      "Celer",
+      "Multi",
+      "Poly"
+    ],
+    "git_head": "d5cd14d8051263b49b01b10ad36e6033b2ec3219",
+    "git_branch": "master",
+    "retired_previous_block": {
+      "block": [
+        401,
+        410
+      ],
+      "ledger": "out\\r7_confirmatory_kernel_ranking_20260917\\confirmatory\\CONFIRMATORY_TOUCH_ONCE.json",
+      "reason": "the first confirmatory execution (block 401-410) crashed on a plumbing defect after its ledger was written and after Celer/401 was generated, but before any unit result was written or observed; see confirmatory/INCOMPLETE_FIRST_CONFIRMATORY_EXECUTION.md",
+      "reused": false
+    },
+    "statement": "This file is the irreversible first-touch record for the R7 confirmatory holdout. It was created with O_CREAT|O_EXCL BEFORE the first byte of holdout data was generated or read. The confirmatory executor refuses to run again while this file exists."
+  }
+}

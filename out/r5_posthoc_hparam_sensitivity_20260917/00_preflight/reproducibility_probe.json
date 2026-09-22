@@ -1,0 +1,199 @@
+{
+  "purpose": "preflight reproduction check on frozen development cells; no data was regenerated and no holdout seed was touched",
+  "development_seeds": [
+    201,
+    202,
+    203,
+    204,
+    205
+  ],
+  "holdout_seeds_touched": [],
+  "frozen_primary_weights": {
+    "time": 0.3846153846153845,
+    "route": 0.23076923076923073,
+    "risk": 0.23076923076923073,
+    "evidence": 0.07692307692307691,
+    "novelty": 0.07692307692307691
+  },
+  "frozen_kept_abs_weights": {
+    "time": 0.25,
+    "route": 0.15,
+    "risk": 0.15,
+    "evidence": 0.05,
+    "novelty": 0.05
+  },
+  "worst_case_errors": {
+    "marginal": 0.0,
+    "closure": 2.220446049250313e-16,
+    "primary": 0.0,
+    "ids": 0
+  },
+  "pass": true,
+  "cells": [
+    {
+      "bridge": "Celer",
+      "seed": 201,
+      "max_abs_err_recomputed_marginals_vs_frozen": 0.0,
+      "flow_id_mismatches": 0,
+      "max_abs_err_cost_decomposition_closure": 2.220446049250313e-16,
+      "max_abs_err_primary_vs_frozen_amount_free": 0.0,
+      "bridge_prior_bonus_nonzero_entries": 0,
+      "n_sources": 288,
+      "n_targets": 288
+    },
+    {
+      "bridge": "Celer",
+      "seed": 202,
+      "max_abs_err_recomputed_marginals_vs_frozen": 0.0,
+      "flow_id_mismatches": 0,
+      "max_abs_err_cost_decomposition_closure": 2.220446049250313e-16,
+      "max_abs_err_primary_vs_frozen_amount_free": 0.0,
+      "bridge_prior_bonus_nonzero_entries": 0,
+      "n_sources": 288,
+      "n_targets": 288
+    },
+    {
+      "bridge": "Celer",
+      "seed": 203,
+      "max_abs_err_recomputed_marginals_vs_frozen": 0.0,
+      "flow_id_mismatches": 0,
+      "max_abs_err_cost_decomposition_closure": 2.220446049250313e-16,
+      "max_abs_err_primary_vs_frozen_amount_free": 0.0,
+      "bridge_prior_bonus_nonzero_entries": 0,
+      "n_sources": 288,
+      "n_targets": 288
+    },
+    {
+      "bridge": "Celer",
+      "seed": 204,
+      "max_abs_err_recomputed_marginals_vs_frozen": 0.0,
+      "flow_id_mismatches": 0,
+      "max_abs_err_cost_decomposition_closure": 2.220446049250313e-16,
+      "max_abs_err_primary_vs_frozen_amount_free": 0.0,
+      "bridge_prior_bonus_nonzero_entries": 0,
+      "n_sources": 288,
+      "n_targets": 288
+    },
+    {
+      "bridge": "Celer",
+      "seed": 205,
+      "max_abs_err_recomputed_marginals_vs_frozen": 0.0,
+      "flow_id_mismatches": 0,
+      "max_abs_err_cost_decomposition_closure": 2.220446049250313e-16,
+      "max_abs_err_primary_vs_frozen_amount_free": 0.0,
+      "bridge_prior_bonus_nonzero_entries": 0,
+      "n_sources": 288,
+      "n_targets": 288
+    },
+    {
+      "bridge": "Multi",
+      "seed": 201,
+      "max_abs_err_recomputed_marginals_vs_frozen": 0.0,
+      "flow_id_mismatches": 0,
+      "max_abs_err_cost_decomposition_closure": 2.220446049250313e-16,
+      "max_abs_err_primary_vs_frozen_amount_free": 0.0,
+      "bridge_prior_bonus_nonzero_entries": 0,
+      "n_sources": 288,
+      "n_targets": 288
+    },
+    {
+      "bridge": "Multi",
+      "seed": 202,
+      "max_abs_err_recomputed_marginals_vs_frozen": 0.0,
+      "flow_id_mismatches": 0,
+      "max_abs_err_cost_decomposition_closure": 2.220446049250313e-16,
+      "max_abs_err_primary_vs_frozen_amount_free": 0.0,
+      "bridge_prior_bonus_nonzero_entries": 0,
+      "n_sources": 288,
+      "n_targets": 288
+    },
+    {
+      "bridge": "Multi",
+      "seed": 203,
+      "max_abs_err_recomputed_marginals_vs_frozen": 0.0,
+      "flow_id_mismatches": 0,
+      "max_abs_err_cost_decomposition_closure": 2.220446049250313e-16,
+      "max_abs_err_primary_vs_frozen_amount_free": 0.0,
+      "bridge_prior_bonus_nonzero_entries": 0,
+      "n_sources": 288,
+      "n_targets": 288
+    },
+    {
+      "bridge": "Multi",
+      "seed": 204,
+      "max_abs_err_recomputed_marginals_vs_frozen": 0.0,
+      "flow_id_mismatches": 0,
+      "max_abs_err_cost_decomposition_closure": 2.220446049250313e-16,
+      "max_abs_err_primary_vs_frozen_amount_free": 0.0,
+      "bridge_prior_bonus_nonzero_entries": 0,
+      "n_sources": 288,
+      "n_targets": 288
+    },
+    {
+      "bridge": "Multi",
+      "seed": 205,
+      "max_abs_err_recomputed_marginals_vs_frozen": 0.0,
+      "flow_id_mismatches": 0,
+      "max_abs_err_cost_decomposition_closure": 2.220446049250313e-16,
+      "max_abs_err_primary_vs_frozen_amount_free": 0.0,
+      "bridge_prior_bonus_nonzero_entries": 0,
+      "n_sources": 288,
+      "n_targets": 288
+    },
+    {
+      "bridge": "Poly",
+      "seed": 201,
+      "max_abs_err_recomputed_marginals_vs_frozen": 0.0,
+      "flow_id_mismatches": 0,
+      "max_abs_err_cost_decomposition_closure": 2.220446049250313e-16,
+      "max_abs_err_primary_vs_frozen_amount_free": 0.0,
+      "bridge_prior_bonus_nonzero_entries": 0,
+      "n_sources": 288,
+      "n_targets": 288
+    },
+    {
+      "bridge": "Poly",
+      "seed": 202,
+      "max_abs_err_recomputed_marginals_vs_frozen": 0.0,
+      "flow_id_mismatches": 0,
+      "max_abs_err_cost_decomposition_closure": 2.220446049250313e-16,
+      "max_abs_err_primary_vs_frozen_amount_free": 0.0,
+      "bridge_prior_bonus_nonzero_entries": 0,
+      "n_sources": 288,
+      "n_targets": 288
+    },
+    {
+      "bridge": "Poly",
+      "seed": 203,
+      "max_abs_err_recomputed_marginals_vs_frozen": 0.0,
+      "flow_id_mismatches": 0,
+      "max_abs_err_cost_decomposition_closure": 2.220446049250313e-16,
+      "max_abs_err_primary_vs_frozen_amount_free": 0.0,
+      "bridge_prior_bonus_nonzero_entries": 0,
+      "n_sources": 288,
+      "n_targets": 288
+    },
+    {
+      "bridge": "Poly",
+      "seed": 204,
+      "max_abs_err_recomputed_marginals_vs_frozen": 0.0,
+      "flow_id_mismatches": 0,
+      "max_abs_err_cost_decomposition_closure": 2.220446049250313e-16,
+      "max_abs_err_primary_vs_frozen_amount_free": 0.0,
+      "bridge_prior_bonus_nonzero_entries": 0,
+      "n_sources": 288,
+      "n_targets": 288
+    },
+    {
+      "bridge": "Poly",
+      "seed": 205,
+      "max_abs_err_recomputed_marginals_vs_frozen": 0.0,
+      "flow_id_mismatches": 0,
+      "max_abs_err_cost_decomposition_closure": 2.220446049250313e-16,
+      "max_abs_err_primary_vs_frozen_amount_free": 0.0,
+      "bridge_prior_bonus_nonzero_entries": 0,
+      "n_sources": 288,
+      "n_targets": 288
+    }
+  ]
+}

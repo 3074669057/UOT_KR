@@ -1,0 +1,177 @@
+{
+  "experiment_id": "r7_posthoc_unmatched_mass_localization_20260919",
+  "classification": "POST-HOC / NON-PREREGISTERED / MECHANISM-CAPABILITY ANALYSIS",
+  "locked_at_utc": "2026-09-19T11:30:45Z",
+  "locked_before_viewing_localization_results": true,
+  "provenance_mode": "A_ARCHIVED_CONFIRMATORY_REPRESENTATION_ANALYSIS",
+  "tier": "A",
+  "no_rerun": {
+    "prediction_methods_executed": false,
+    "uot_resolved": false,
+    "confirmatory_block": [
+      411,
+      412,
+      413,
+      414,
+      415,
+      416,
+      417,
+      418,
+      419,
+      420
+    ],
+    "block_401_410_touched": false,
+    "forbidden_seeds_never_executed": [
+      42,
+      43,
+      44,
+      45,
+      46,
+      201,
+      202,
+      203,
+      204,
+      205,
+      301,
+      302,
+      303,
+      304,
+      305,
+      401,
+      402,
+      403,
+      404,
+      405,
+      406,
+      407,
+      408,
+      409,
+      410
+    ]
+  },
+  "delta_definition": {
+    "delta_S": "a_i - sum_j P_ij   (a = risk-weighted source mass, normalised)",
+    "delta_T": "b_j - sum_i P_ij   (b = evidence-weighted target mass, normalised)",
+    "source": "frozen scripts/run_r7_confirmatory_kernel_ranking.py build_unit lines 90-91; normalization frozen scripts/r7/r7_generator.py build_cells lines 258-259",
+    "verified_from_archived_plan": true,
+    "verification_tolerance": 1e-12
+  },
+  "truth_labels": {
+    "TRUE_UNMATCHED_SOURCE": "the single generator-injected __synth_unmatched_src",
+    "DECOY_TARGET": "the two generator-injected __synth_noise_dst_* targets",
+    "MATCHED_SOURCE": "any source with at least one positive truth edge",
+    "MATCHED_TARGET": "any other target",
+    "identity_from_predictions": false,
+    "identity_from_delta_maximum": false
+  },
+  "top1_rule": {
+    "ranking": "delta descending",
+    "tie_break": "ties by ascending canonical source index -- the EXISTING frozen engineering rule (r7_methods.rank_desc uses np.lexsort((index, -score))); no new rule was invented",
+    "source_top1_hit": "1 iff the true unmatched source is the deterministic rank 1",
+    "tie_aware_top1": "diagnostic: 1 iff the true unmatched source attains the maximum delta (any tie counts)",
+    "primary_metric_uses_deterministic_rule": true
+  },
+  "zero_total_rule": {
+    "tau": 1e-15,
+    "if_sum_delta_S_le_tau": [
+      "source_delta_informative = False",
+      "source Top-1 counts as a MISS",
+      "source share is NaN",
+      "the template is NOT silently dropped",
+      "zero-total rate is reported separately"
+    ],
+    "same_for_targets": true
+  },
+  "chance_baselines": {
+    "source_top1": "per template 1 / n_sources_t, then bridge-balanced",
+    "target_two_target": "per template the share of two targets drawn uniformly WITHOUT replacement, then bridge-balanced",
+    "size_adjusted": true
+  },
+  "primary_discrimination_metric": {
+    "name": "template_stratified_source_AUC",
+    "definition": "per informative template, the probability that the true unmatched source's delta exceeds a uniformly drawn matched source's delta, with ties counted 0.5: AUC_t = (#(d_u > d_m) + 0.5 #(d_u = d_m)) / N_matched.  Template -> bridge/seed -> three-bridge equal weight.",
+    "avoids_template_size_weighting": true,
+    "pooled_source_AUC": "DIAGNOSTIC ONLY"
+  },
+  "uncertainty": {
+    "primary": "bridge-balanced seed-cluster bootstrap (resample the 10 seeds within each bridge; keep all templates and nodes inside a cluster; three-bridge equal weight)",
+    "B": 4000,
+    "rng_seed": 20240105,
+    "interval": "percentile 2.5 / 97.5",
+    "naive_template_bootstrap": "sensitivity only, never the primary CI",
+    "pseudoreplication_forbidden": "nodes are never treated as independent samples"
+  },
+  "permutation_tests": {
+    "source_top1": {
+      "design": "keep each template's delta vector; assign the 'unmatched' label to a uniformly random source in that template; recompute the bridge-balanced Top-1 hit rate",
+      "n_perm": 20000,
+      "rng_seed": 20240104,
+      "sided": "one-sided (observed > null)"
+    },
+    "target_decoy_share": {
+      "design": "keep each template's delta_T vector; label two uniformly random distinct targets as 'decoy'; recompute the bridge-balanced combined share",
+      "n_perm": 20000,
+      "rng_seed": 20240106,
+      "sided": "one-sided (observed > null)"
+    },
+    "role": "post-hoc mechanism evidence; NOT confirmatory; NOT in any Holm family"
+  },
+  "decision_rules": {
+    "L1_strong_localization": {
+      "conditions": [
+        "source Top-1 hit is significantly above the size-adjusted random baseline (permutation p < 0.05)",
+        "source stratified AUC 95% CI lower bound > 0.5",
+        "target true-decoy combined delta_T share exceeds the random two-target baseline with permutation p < 0.05"
+      ],
+      "conclusion": "UOT 的未匹配质量不仅在形式上存在，而且在该半合成数据中显著集中到生成器已知的真实未匹配源与诱饵目标上。",
+      "still_called": "post-hoc evidence, never pre-registered confirmation"
+    },
+    "L2_source_localization_only": {
+      "conditions": [
+        "source conditions met",
+        "target condition NOT met"
+      ],
+      "conclusion": "delta^S 对真实未匹配源表现出定位能力，但 delta^T 对诱饵目标的对应证据不足。",
+      "must_not": "generalise to two-sided localization"
+    },
+    "L3_weak_or_no_separation": {
+      "conditions": [
+        "source AUC CI contains 0.5",
+        "or Top-1 not above the random baseline"
+      ],
+      "conclusion": "本分析未发现足够证据证明未匹配质量能够可靠定位真实未匹配源；因此 UOT 的贡献仍应限定为表示未匹配质量，而不能升级为定位能力。"
+    },
+    "L4_reversed_localization": {
+      "conditions": [
+        "source AUC clearly < 0.5"
+      ],
+      "conclusion": "report the reversal explicitly as a limitation",
+      "must_not": [
+        "change the delta definition",
+        "delete anomalous templates"
+      ]
+    }
+  },
+  "claim_boundaries": {
+    "do_not_write": [
+      "任何一对一方法在构造上都无法做到这一点",
+      "UOT causes the R7 H1 gain",
+      "calibration curve (ROC/AUC is discrimination, not calibration)"
+    ],
+    "accurate_wording": "the cost-optimal one-to-one assignment baseline used in R7 does not expose distributed source/target unmatched-mass variables analogous to delta^S / delta^T; assignment variants with dummy/null states can express rejection, but with different semantics from UOT's continuous mass relaxation",
+    "figure_title": "Unmatched-mass localization and discrimination"
+  },
+  "unchanged_by_s10": [
+    "R7 H1/H2/S1/S2",
+    "Gate A-E",
+    "R7 success classification",
+    "Table 3",
+    "S9",
+    "frozen confirmatory outputs"
+  ],
+  "post_hoc_label_required_on": [
+    "Top-1",
+    "target share",
+    "AUC"
+  ]
+}

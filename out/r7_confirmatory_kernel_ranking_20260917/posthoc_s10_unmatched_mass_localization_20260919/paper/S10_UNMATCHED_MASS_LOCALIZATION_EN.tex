@@ -1,0 +1,49 @@
+% S10 supplementary section (post-hoc)
+\section*{S10. Unmatched-mass localization}
+\textbf{This section is a post-hoc mechanism analysis. It was not preregistered and it
+does not change any pre-registered R7 decision.} No prediction method was re-executed: the
+per-node unmatched mass was read (or deterministically recovered) from the frozen transport
+representation of the confirmatory run and joined with the generator's ground-truth
+unmatched source and decoy targets.
+
+\paragraph{Provenance.} Mode \textbf{A} (\texttt{ARCHIVED\_CONFIRMATORY\_REPRESENTATION\_ANALYSIS}),
+tier \textbf{A} (per-node \texttt{delta\_S}/\texttt{delta\_T} archived directly);
+block [411, 412, 413, 414, 415, 416, 417, 418, 419, 420], 1440 template instances.
+Block 401--410 was never read. The UOT solver, Sinkhorn, the cost builder and every decoder
+were never called; a runtime guard aborts on any such import. This section is not part of
+the R7 Holm family and does not modify Gates A--E, \texttt{DECISION.json}, Table~3 or S9.
+
+\paragraph{Definition of delta (located in the frozen source, not assumed).}
+$\delta^S_i = a_i - \sum_j P_{ij}$ and $\delta^T_j = b_j - \sum_i P_{ij}$, where $a$ is
+the normalised risk-weighted source mass and $b$ the normalised evidence-weighted target
+mass (\texttt{scripts/run\_r7\_confirmatory\_kernel\_ranking.py}, frozen sha256
+\texttt{5a125184154213c7\ldots}, \texttt{build\_unit} lines 90--91). Re-deriving delta
+from the archived frozen plan $P$ reproduces the archived vectors to
+4.4e-16.
+
+\paragraph{Source side.} Top-1 hit 0.0681 against a size-adjusted chance
+baseline of 0.1662 (permutation $p = 1$, observed
+\emph{below} chance); tie-aware Top-1 0.9194; template-stratified AUC
+0.7042 with 95\% seed-cluster bootstrap CI
+[0.7008, 0.7077];
+pooled AUC (diagnostic only) 0.5327.
+However, $\delta^S$ is a deterministic function of the source marginal $a_i$ alone in
+1440/1440 templates and takes only two distinct values per
+template; replacing $\delta^S$ by $a_i$ reproduces the AUC almost exactly
+(0.7009 vs
+0.7042). The source-side discrimination therefore reflects the
+generator's amount allocation, not transport geometry.
+
+\paragraph{Target side.} The true decoy pair carries a combined $\delta^T$ share of
+0.3991 against a random two-target baseline of 0.2957
+(permutation $p = 5e-05$); Top-2 both-hit 0.9417. But the
+marginal-only null gives 0.4000, i.e. this concentration is
+also essentially reproduced by the target marginal $b_j$.
+
+\paragraph{Outcome: \texttt{L3_weak_or_no_separation}.} This analysis finds insufficient evidence that the unmatched mass can reliably localize the true unmatched source; the contribution of UOT must therefore remain limited to representing unmatched mass and must not be upgraded to a localization capability.
+
+\paragraph{Claim boundary.} The cost-optimal one-to-one assignment baseline used in R7 does
+not expose distributed source/target unmatched-mass variables analogous to
+$\delta^S/\delta^T$; assignment variants with dummy or null states can express rejection,
+but with different semantics from UOT's continuous mass relaxation. ROC/AUC here is
+discrimination, not calibration, and $\delta$ shares are not prediction probabilities.

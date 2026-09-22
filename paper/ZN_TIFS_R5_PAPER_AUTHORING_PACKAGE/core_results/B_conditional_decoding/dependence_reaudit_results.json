@@ -1,0 +1,53 @@
+{
+  "F_anchor_cluster_bootstrap": {
+    "resample_unit": "base anchor (template_id) clusters; cross-seed repeats merged",
+    "n_clusters_per_bridge": {
+      "Celer": 236,
+      "Multi": 235,
+      "Poly": 229
+    },
+    "cluster_size_dist": {
+      "Celer": {
+        "1": 232,
+        "2": 4
+      },
+      "Multi": {
+        "1": 230,
+        "2": 5
+      },
+      "Poly": {
+        "1": 218,
+        "2": 11
+      }
+    },
+    "ci95": [
+      0.07079978989570994,
+      0.08031797197461288
+    ],
+    "width": 0.00951818207890294,
+    "excludes_zero": true
+  },
+  "G_two_stage_seed_then_template": {
+    "resample_unit": "seed (with replacement) then template within seed",
+    "ci95": [
+      0.0677426806808491,
+      0.08309971359845356
+    ],
+    "width": 0.015357032917604457,
+    "excludes_zero": true
+  },
+  "H_QD_stratification_bootstrap": {
+    "resample_unit": "Q|D stratification cell (12 per bridge) \u2014 stratification sensitivity, NOT a dependence cluster",
+    "ci95": [
+      0.06761604571333493,
+      0.08492481059681713
+    ],
+    "width": 0.017308764883482194,
+    "excludes_zero": true
+  },
+  "frozen_reference_ci": [
+    0.07055749054591975,
+    0.0803125005363676
+  ],
+  "macro_mean": 0.07541340662220748
+}

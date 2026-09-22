@@ -1,0 +1,399 @@
+{
+  "experiment_id": "r6_posthoc_kernel_k_control_20260917",
+  "generated_utc": "2026-09-17T05:25:54Z",
+  "git_head": "d5cd14d8051263b49b01b10ad36e6033b2ec3219",
+  "spec_sha256": "2733d2f5b24d685ca7eba667932a32a2eb96b43459c7d2e49b30c8af70b6f031",
+  "n_files": 64,
+  "files": [
+    {
+      "relative_path": "00_preflight/anchor_gate.json",
+      "sha256": "9a1b8db70c582a95c3d8ad4a446e56f3de21cc721d274836949cadcc29ade468",
+      "bytes": 49496,
+      "role": "k=5 reproduction gate"
+    },
+    {
+      "relative_path": "00_preflight/cost_hash_check.csv",
+      "sha256": "8ce0fc7cf4c638dfa6a8225a40b114605606d9fcce89f9be0778a5bdbbfecc7a",
+      "bytes": 11663,
+      "role": "R6-vs-R5 cost hash comparison"
+    },
+    {
+      "relative_path": "00_preflight/cost_hash_provenance.json",
+      "sha256": "27d650a6fec324579a2fb7d43e771babaaeecc31dcd4b60541fe8dd8a40eda37",
+      "bytes": 21612,
+      "role": "cost hash provenance"
+    },
+    {
+      "relative_path": "00_preflight/epsilon_invariance_check.json",
+      "sha256": "c845e89e4f6c3947c7b32edb5580a989f68dcd9ca82bbd42ba9c50a9ce1aa1fa",
+      "bytes": 17440,
+      "role": "kernel epsilon invariance gate"
+    },
+    {
+      "relative_path": "00_preflight/git_branch.txt",
+      "sha256": "20c33ec3becb9fdfd2ebb8086c3b6623fe2e81a9a65f8c5a5b8ab187b35002d5",
+      "bytes": 8,
+      "role": "run artefact"
+    },
+    {
+      "relative_path": "00_preflight/git_diff_cached_stat_before.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "role": "run artefact"
+    },
+    {
+      "relative_path": "00_preflight/git_diff_stat_before.txt",
+      "sha256": "7d2ef2ae569482d8392d966f2908650bbc8b01b0ad0a1021eb4a7c46c59f697c",
+      "bytes": 188051,
+      "role": "diff stat at task start"
+    },
+    {
+      "relative_path": "00_preflight/git_head.txt",
+      "sha256": "823a6e94c624c8ad248b234ee82513caea9ede82e22d1b780b2ce66d16b28b10",
+      "bytes": 42,
+      "role": "git HEAD at task start"
+    },
+    {
+      "relative_path": "00_preflight/git_status_before.txt",
+      "sha256": "624e2c5ac331f92bcbc3fd3a0a9a7d1cf5852bc7055552e03fd2a5e3fc6d3b41",
+      "bytes": 289248,
+      "role": "dirty working tree at task start"
+    },
+    {
+      "relative_path": "00_preflight/preflight_summary.json",
+      "sha256": "1c842e181ee2e3aabae7283852a1b02231c90a0bc5ac0bcde139c15c6e7a24ee",
+      "bytes": 484,
+      "role": "preflight gate summary"
+    },
+    {
+      "relative_path": "00_preflight/README_LOCKING.md",
+      "sha256": "927b32163d57200a5b70b8fcf67af300133ece79d6dd3c3740aa73102ef3fd6d",
+      "bytes": 924,
+      "role": "locking procedure note"
+    },
+    {
+      "relative_path": "00_preflight/relevant_diff_before.patch",
+      "sha256": "2ebe5d434ecdee8328c8e69134b7f5cbb8dc995145766c1e0f5c3d2fe167a502",
+      "bytes": 548,
+      "role": "pre-existing relevant diff at task start"
+    },
+    {
+      "relative_path": "00_preflight/selftests.json",
+      "sha256": "35b529292cd6d3efb0b72139d0e2518c6a8abbb06c00b90bdcbbb35ae6f1941b",
+      "bytes": 64493,
+      "role": "automated self-tests"
+    },
+    {
+      "relative_path": "00_preflight/software_check.json",
+      "sha256": "7079deca8c0c914a70f5d18d4d59acfa797b8cac93de73a8759030e38469802a",
+      "bytes": 822,
+      "role": "python/package versions"
+    },
+    {
+      "relative_path": "00_preflight/solver_reuse_check.json",
+      "sha256": "99e2d7c5efe129d5e00478a8a7b1d1fe8e493053ad73638b584cab0cd46e3220",
+      "bytes": 767,
+      "role": "run artefact"
+    },
+    {
+      "relative_path": "config/locked_spec.json",
+      "sha256": "2733d2f5b24d685ca7eba667932a32a2eb96b43459c7d2e49b30c8af70b6f031",
+      "bytes": 8265,
+      "role": "locked pre-registered-by-this-run specification"
+    },
+    {
+      "relative_path": "config/locked_spec.sha256",
+      "sha256": "7c3729d3121daf6c2ccc5e69ca31eff487f8a0475a9423597e433ade14a9db0f",
+      "bytes": 84,
+      "role": "SHA256 lock of the specification"
+    },
+    {
+      "relative_path": "figures/kernel_k_control.pdf",
+      "sha256": "e36144785f5c97c87deea79c13f56424fc7ba7d8d54039c4d8b9c773c85bee43",
+      "bytes": 27721,
+      "role": "main figure (vector)"
+    },
+    {
+      "relative_path": "figures/kernel_k_control.png",
+      "sha256": "faf45ba9b1258a080d63342950a3f5a30adc613659d19dfb70aa0a9893f14ad4",
+      "bytes": 539186,
+      "role": "main figure (raster, 320 dpi)"
+    },
+    {
+      "relative_path": "figures/kernel_k_control_caption.md",
+      "sha256": "e4a755c7ad3adc800db3f677dbf9ace2b42dffc660d97c0c1875e688aea15812",
+      "bytes": 217,
+      "role": "figure caption"
+    },
+    {
+      "relative_path": "FINAL_EXPERIMENT_REPORT.md",
+      "sha256": "05b8b2069841a0522bf7f39a09ecb6744a62aaac556dff4798cbe39ff8a5d4c0",
+      "bytes": 22007,
+      "role": "final experiment report"
+    },
+    {
+      "relative_path": "logs/full_inventory.json",
+      "sha256": "d598d879d50c06604977df63cc9ca035d0fdd7f791eb44ac559a7b92f5fb8cde",
+      "bytes": 404,
+      "role": "sweep inventory"
+    },
+    {
+      "relative_path": "logs/run.log",
+      "sha256": "e8a83a1cf47c7f89fbd73ea8c2c7408b423c47a94377daea2f2c296b8b2bb204",
+      "bytes": 15966,
+      "role": "run log (APPEND-ONLY: this hash is a point-in-time snapshot and is expected to change whenever the runner is invoked again)"
+    },
+    {
+      "relative_path": "paper/abstract_patch_CN.md",
+      "sha256": "406ba741c5e94f4608f030c9b149a9cd02054698361525ba4140f52e986f8338",
+      "bytes": 870,
+      "role": "run artefact"
+    },
+    {
+      "relative_path": "paper/abstract_patch_EN.tex",
+      "sha256": "90c525ebeac3eeabdfbccbd1ad41ccd8a2bdd2d117ee21a024126e40cb0540f2",
+      "bytes": 520,
+      "role": "run artefact"
+    },
+    {
+      "relative_path": "paper/conclusion_patch_CN.md",
+      "sha256": "21f388f7c0b891f7b6080d83c0da1ffb2321764e71120f4593881ca7d21bfe26",
+      "bytes": 1102,
+      "role": "run artefact"
+    },
+    {
+      "relative_path": "paper/conclusion_patch_EN.tex",
+      "sha256": "3645eec69a6e0e63c01353929f206eab2a8e4ca9c0a99c499b86336a7c54e06d",
+      "bytes": 522,
+      "role": "run artefact"
+    },
+    {
+      "relative_path": "paper/contribution_2_patch_CN.md",
+      "sha256": "0914273a634051cb978809f0d48141fd1a0fc1f7aa659cec3ea43fcdd56ff6bb",
+      "bytes": 1630,
+      "role": "run artefact"
+    },
+    {
+      "relative_path": "paper/contribution_2_patch_EN.tex",
+      "sha256": "1219712798cbef3ce860a9c6f000e076dd71ee595c6e394e5ae61342f1539271",
+      "bytes": 969,
+      "role": "run artefact"
+    },
+    {
+      "relative_path": "paper/patch_index.json",
+      "sha256": "47442275cdd141a4707f154ee0c08aa356ba721b6eb764dc94921f8d913a8315",
+      "bytes": 565,
+      "role": "run artefact"
+    },
+    {
+      "relative_path": "paper/section_4_4_c_patch_CN.md",
+      "sha256": "cc26f6bc3b83471e6134f1053e86b2d30154cc1c6815e30ea64fee01d33041e7",
+      "bytes": 3747,
+      "role": "manuscript patch (CN)"
+    },
+    {
+      "relative_path": "paper/section_4_4_c_patch_EN.tex",
+      "sha256": "6fccaf353740930863c180ee4b3c9a098669502a741955816fbc5999ac716aec",
+      "bytes": 3364,
+      "role": "manuscript patch (EN)"
+    },
+    {
+      "relative_path": "paper/table_4_extended_CN.md",
+      "sha256": "9b59618dc0f3b61104bd6d333fd789994042c89e86576578411c71f7a9b92690",
+      "bytes": 1834,
+      "role": "extended table 4 (CN)"
+    },
+    {
+      "relative_path": "paper/table_4_extended_EN.tex",
+      "sha256": "f2206b4b401ae95d7d7001a347f6e4a9bfd39f41e1a16feed5d3b54ac4d2aaaa",
+      "bytes": 1233,
+      "role": "extended table 4 (EN)"
+    },
+    {
+      "relative_path": "provenance/frozen_holdout_k5.json",
+      "sha256": "4ce3b03231d932474536494eed5980fbefccbec43c5fa5b7ea56ce2874e83280",
+      "bytes": 8759,
+      "role": "read-only frozen holdout provenance"
+    },
+    {
+      "relative_path": "results/analysis_tables.md",
+      "sha256": "924516e7efacc2de1a2a4c5a7becd70d451644123d02824933a910183f560d2b",
+      "bytes": 4954,
+      "role": "main tables"
+    },
+    {
+      "relative_path": "results/classification.json",
+      "sha256": "4ef43155f834c9cf9b4782eb822a083c9843ef0bf21a7bbe72b69800848c7c5d",
+      "bytes": 1126,
+      "role": "A/B/C classification"
+    },
+    {
+      "relative_path": "results/k3_primary_contrast.json",
+      "sha256": "e006ed8505f3fc9d15c1c244f4108672f75cc70473a12a68ce9809d919370cd0",
+      "bytes": 4344,
+      "role": "k=3 predefined trigger report"
+    },
+    {
+      "relative_path": "results/kernel_k_long.csv",
+      "sha256": "e2af1dd76576310d71b28562a8d0b1bc54c1d26f02e4a8b15e846d4f4f063956",
+      "bytes": 213982,
+      "role": "primary long table (method-level)"
+    },
+    {
+      "relative_path": "results/kernel_k_per_seed.csv",
+      "sha256": "486908a967b288e967ba8b5c0e54330c181a33e61f79cbaa2caca2e126a0c79b",
+      "bytes": 122867,
+      "role": "per-seed raw table"
+    },
+    {
+      "relative_path": "results/kernel_k_summary.csv",
+      "sha256": "3c2d024d63d4440477ca7fc7c323c06141529255f9ec95d95d884409348cfaf1",
+      "bytes": 11098,
+      "role": "aggregated summary"
+    },
+    {
+      "relative_path": "results/kernel_k_template_long.csv",
+      "sha256": "b64e5a87c20ac693f7864bff454dd54de10de79f45f1001b2ceeb09f9987212d",
+      "bytes": 2536947,
+      "role": "template-level raw data"
+    },
+    {
+      "relative_path": "results/method_diagnostics.json",
+      "sha256": "30a79f91cb4382777258fbfced7c31701ddeb709ecbf31d95b41a7c11c8c8a67",
+      "bytes": 3471,
+      "role": "SUPPORT+K mechanism diagnostic"
+    },
+    {
+      "relative_path": "results/primary_contrasts.csv",
+      "sha256": "a6ac5cec6638309a9007566fd42987e6bf4fae7f9a5e9367f7fc1c452f1f6a5d",
+      "bytes": 1476,
+      "role": "paired primary contrasts"
+    },
+    {
+      "relative_path": "results/primary_contrasts.json",
+      "sha256": "a3dcd90ab7ecbc3ebffe4b7d73c965eb86869e7f62c71b879ff9c760ec38a756",
+      "bytes": 31524,
+      "role": "paired primary contrasts (full)"
+    },
+    {
+      "relative_path": "results/r5_crosscheck.json",
+      "sha256": "1223a53e811836db0bf58c3dfba943d3965121a7a4e293a62a84c783e3e6b2c9",
+      "bytes": 3157,
+      "role": "R5 cross-check context"
+    },
+    {
+      "relative_path": "runs/unit__Celer__s201__eps0.05.json",
+      "sha256": "1d90332bd7e50e8dc523572ff84b91fa51fdfca821f5663f7c41a278fa5f1878",
+      "bytes": 598432,
+      "role": "run artefact"
+    },
+    {
+      "relative_path": "runs/unit__Celer__s202__eps0.05.json",
+      "sha256": "70338a19ee2dc7c391fdd8a9b516d6f8f2d2cbff266e440ff7e6a13d2b2d2e62",
+      "bytes": 596311,
+      "role": "run artefact"
+    },
+    {
+      "relative_path": "runs/unit__Celer__s203__eps0.05.json",
+      "sha256": "8557adb1ac997a06a14c303e936dedbac8c1c56d6312434b4a694fbf6d6729cd",
+      "bytes": 599580,
+      "role": "run artefact"
+    },
+    {
+      "relative_path": "runs/unit__Celer__s204__eps0.05.json",
+      "sha256": "8074ce2cca4deb6a200e340aed82ce471b3c790bba1ffd16957bf22bd9c94f0d",
+      "bytes": 597769,
+      "role": "run artefact"
+    },
+    {
+      "relative_path": "runs/unit__Celer__s205__eps0.05.json",
+      "sha256": "b152ec5fa73d37fea8bfb13f874fef36b80bf8c56505de66d6c8ad207fbe132b",
+      "bytes": 598857,
+      "role": "run artefact"
+    },
+    {
+      "relative_path": "runs/unit__Multi__s201__eps0.05.json",
+      "sha256": "bd47e88b35ea936c5902dcb7c54ffe48c46c688510f4f535fef3395711873fac",
+      "bytes": 595466,
+      "role": "run artefact"
+    },
+    {
+      "relative_path": "runs/unit__Multi__s202__eps0.05.json",
+      "sha256": "7a86388d2daedc096d28c61d085f3f23e10aadb8c7ee3a72c5f101b8e16ccab8",
+      "bytes": 596351,
+      "role": "run artefact"
+    },
+    {
+      "relative_path": "runs/unit__Multi__s203__eps0.05.json",
+      "sha256": "fcdd534480cb3dcc4a3c37cd2e0787b2851f21fbdb4f519031dc7d131c8de381",
+      "bytes": 597324,
+      "role": "run artefact"
+    },
+    {
+      "relative_path": "runs/unit__Multi__s204__eps0.05.json",
+      "sha256": "9eb9d146d34a3c7738366ca535a76e2400b7e14c83e0437049ccf961d7e5e499",
+      "bytes": 592678,
+      "role": "run artefact"
+    },
+    {
+      "relative_path": "runs/unit__Multi__s205__eps0.05.json",
+      "sha256": "733c787e13a6e5bd166f9d2dab14de0d6412e544d28e1af6dfc6f444a36fe2aa",
+      "bytes": 596840,
+      "role": "run artefact"
+    },
+    {
+      "relative_path": "runs/unit__Poly__s201__eps0.05.json",
+      "sha256": "b100c0f4db49661e8bf00be2e35c54311cb506ad9c8892dbb65e13e0892ac6ae",
+      "bytes": 598491,
+      "role": "run artefact"
+    },
+    {
+      "relative_path": "runs/unit__Poly__s202__eps0.05.json",
+      "sha256": "647dd81952754154553a1028e7fed3502ed50bfc38de16cbc0f9ef70064a344b",
+      "bytes": 598095,
+      "role": "run artefact"
+    },
+    {
+      "relative_path": "runs/unit__Poly__s203__eps0.05.json",
+      "sha256": "75744c256c4cab408a3710c9f750ab389791c39ced9fab44b10cb913cb19149a",
+      "bytes": 598239,
+      "role": "run artefact"
+    },
+    {
+      "relative_path": "runs/unit__Poly__s204__eps0.05.json",
+      "sha256": "5e4a4c0b4cab698c579f8ce9c9eb50a86f310e537c2d264af4ae16e699095952",
+      "bytes": 598196,
+      "role": "run artefact"
+    },
+    {
+      "relative_path": "runs/unit__Poly__s205__eps0.05.json",
+      "sha256": "0ebe393949f08b8b688fbcac56ffe0246b030cd07d00c3fe37c518494b939b58",
+      "bytes": 598126,
+      "role": "run artefact"
+    },
+    {
+      "relative_path": "VALIDATION_CHECKLIST.md",
+      "sha256": "980e4748679c1ab81b27fb7c9167b199f41bd42de948dde46338346fb0d45447",
+      "bytes": 5027,
+      "role": "validation checklist"
+    },
+    {
+      "relative_path": "validation_evidence.json",
+      "sha256": "26f8b4ea39b5c714b75aebf6063914609042bbe95c9d36186e78f86f187ff8b3",
+      "bytes": 7655,
+      "role": "validation evidence"
+    },
+    {
+      "relative_path": "scripts/run_r6_posthoc_kernel_k_control.py",
+      "sha256": "e61ff403c92eac4454fa23bac3b928a990a5b58e2a3584e8c28dc6424fdcafd4",
+      "bytes": 183650,
+      "role": "the single new runner added by this task"
+    }
+  ],
+  "append_only_files": [
+    "logs/run.log"
+  ],
+  "append_only_note": "logs/run.log is append-only: every invocation of this runner adds lines, so its recorded hash is a point-in-time snapshot. All other entries are stable artefacts.",
+  "holdout_re_executed": false,
+  "holdout_statement": "seeds 301-305 were never executed, read for computation, re-solved, re-decoded or re-evaluated by this experiment"
+}

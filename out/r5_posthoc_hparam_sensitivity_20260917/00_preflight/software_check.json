@@ -1,0 +1,101 @@
+{
+  "timestamp_utc": "2026-09-17T03:13:58Z",
+  "source_commit": "d5cd14d8051263b49b01b10ad36e6033b2ec3219",
+  "holdout_guard_selftest": {
+    "forbidden": [
+      301,
+      302,
+      303,
+      304,
+      305
+    ],
+    "refused_examples": {
+      "301": "refused",
+      "302": "refused",
+      "303": "refused",
+      "304": "refused",
+      "305": "refused"
+    },
+    "dev_201_allowed": true,
+    "dev_202_allowed": true,
+    "dev_203_allowed": true,
+    "dev_204_allowed": true,
+    "dev_205_allowed": true,
+    "all_holdout_refused": true,
+    "all_dev_allowed": true,
+    "pass": true
+  },
+  "plan_equivalence": [
+    {
+      "bridge": "Celer",
+      "seed": 201,
+      "dP_vs_project_wrapper": 0.0,
+      "dP_rel_vs_project_wrapper": 0.0,
+      "converged_instrumented": true,
+      "converged_wrapper": true,
+      "final_err_instrumented": 8.959816442786158e-12,
+      "final_err_wrapper": 8.959816442786158e-12,
+      "iterations": 131,
+      "frozen_plan_file_present": true,
+      "frozen_plan_sum": 0.7650883230295951,
+      "frozen_plan_is_full_cost": true
+    },
+    {
+      "bridge": "Multi",
+      "seed": 201,
+      "dP_vs_project_wrapper": 0.0,
+      "dP_rel_vs_project_wrapper": 0.0,
+      "converged_instrumented": true,
+      "converged_wrapper": true,
+      "final_err_instrumented": 8.986215706814507e-12,
+      "final_err_wrapper": 8.986215706814507e-12,
+      "iterations": 131,
+      "frozen_plan_file_present": true,
+      "frozen_plan_sum": 0.7303051289588713,
+      "frozen_plan_is_full_cost": true
+    },
+    {
+      "bridge": "Poly",
+      "seed": 201,
+      "dP_vs_project_wrapper": 0.0,
+      "dP_rel_vs_project_wrapper": 0.0,
+      "converged_instrumented": true,
+      "converged_wrapper": true,
+      "final_err_instrumented": 9.60681267129868e-12,
+      "final_err_wrapper": 9.60681267129868e-12,
+      "iterations": 131,
+      "frozen_plan_file_present": true,
+      "frozen_plan_sum": 0.7321649580048822,
+      "frozen_plan_is_full_cost": true
+    }
+  ],
+  "plan_equivalence_pass": true,
+  "anchor_reproduction": {
+    "RAW_UOT_PLAN_D4": {
+      "macro_f1_mean_of_15_cells": 0.23742822838252942,
+      "expected": 0.2374,
+      "per_bridge_seed_mean": {
+        "Celer": 0.243631100082713,
+        "Multi": 0.21058906893584312,
+        "Poly": 0.25806451612903225
+      },
+      "abs_deviation": 2.8228382529416063e-05
+    },
+    "CONDITIONAL_UOT_D4": {
+      "macro_f1_mean_of_15_cells": 0.3129093352883675,
+      "expected": 0.3129,
+      "per_bridge_seed_mean": {
+        "Celer": 0.31908602150537635,
+        "Multi": 0.3029753176930596,
+        "Poly": 0.31666666666666665
+      },
+      "abs_deviation": 9.335288367495753e-06
+    }
+  },
+  "max_abs_deviation_from_anchor": 2.8228382529416063e-05,
+  "anchor_tolerance": 0.0005,
+  "anchor_note": "Published frozen development anchors reproduce ONLY on the paper's primary amount-free renormalised cost C_primary (amount weight removed, remaining 5 weights renormalised to sum 1). The frozen C_effective is the 6-component full cost used for the paper's AMOUNT_FREE_COST_D4 reference arm and does NOT reproduce these anchors. This experiment's main sweep therefore uses C_primary, exactly as the frozen development study did.",
+  "anchor_reproduction_pass": true,
+  "spec_sha256": "638a64c6e7e5ec7021ff80d6105fe668be534fb73efd082276bfc3951e5ffe3c",
+  "overall_pass": true
+}

@@ -1,0 +1,26 @@
+{
+  "gate_pass": true,
+  "conditions": {
+    "precision_gt_both_baselines": true,
+    "f1_gt_both_baselines": true,
+    "ece_le_connector": true,
+    "recall_ge_connector": true,
+    "not_dominated_by_abctracer": true,
+    "on_pareto_frontier": true,
+    "selected_source_dev": true
+  },
+  "holdout_metrics": {
+    "pair_precision": 0.1915586286825314,
+    "pair_recall": 0.899702380952381,
+    "pair_f1": 0.31580321411907103,
+    "flow_mass_recall": 0.17380398541285572,
+    "split_recovery": 0.8604166666666668,
+    "merge_recovery": 0.9604166666666666,
+    "coverage_adjusted_effective_recall": 0.7125642857142858,
+    "ece": 0.02771342979956658,
+    "covered_quotient_precision": 0.9750000000000002,
+    "covered_quotient_recall": 1.0,
+    "covered_quotient_f1": 0.9833333333333336
+  },
+  "selected_candidate": "rcuot_q_precision_rerank"
+}

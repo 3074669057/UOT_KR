@@ -1,0 +1,1858 @@
+﻿{
+  "seed_files": [
+    "scripts\\run_baseline_compare_phase1_connector.py",
+    "scripts\\run_open_pool_baseline.py",
+    "scripts\\multi_bridge\\run_main_baseline_study.py",
+    "scripts\\multi_bridge\\run_capability_tests.py",
+    "scripts\\multi_bridge\\run_rc_uot_q_multi_bridge.py",
+    "scripts\\multi_bridge\\run_structural_baselines.py",
+    "scripts\\multi_bridge\\verify_baseline_mechanism_study.py",
+    "scripts\\run_phase29_robust_rcuot_superiority.py"
+  ],
+  "n_local_files": 75,
+  "files": [
+    {
+      "path": "scripts\\multi_bridge\\baseline_mechanism\\common.py",
+      "depth": 1,
+      "sha256": "68b0beda9a6c2f29cd96cb569958f817e222093f0f80f2f79c75c13739aa0781"
+    },
+    {
+      "path": "scripts\\multi_bridge\\run_capability_tests.py",
+      "depth": 0,
+      "sha256": "1fd5cd6220c223361db8c86bcd41ceef6e049fbed50b0fbee5eb25e6e5c3b54c"
+    },
+    {
+      "path": "scripts\\multi_bridge\\run_main_baseline_study.py",
+      "depth": 0,
+      "sha256": "56618bf385efdd19153134401123332f2956055bed07e4b663f10a5e252eccab"
+    },
+    {
+      "path": "scripts\\multi_bridge\\run_rc_uot_q_multi_bridge.py",
+      "depth": 0,
+      "sha256": "7dbc5dbb1fe68f23eecee27b851df9d91cfd6c398e320bc5987655cf87d0ad5e"
+    },
+    {
+      "path": "scripts\\multi_bridge\\run_structural_baselines.py",
+      "depth": 0,
+      "sha256": "ff255ca7a607b2c1ed74799131ed0d4508ca0b774c289374ee32b1630b420f9e"
+    },
+    {
+      "path": "scripts\\multi_bridge\\verify_baseline_mechanism_study.py",
+      "depth": 0,
+      "sha256": "2e436609d452ddfb061d3d1748411c7d227442cda061a5c06d8b66d9364741f7"
+    },
+    {
+      "path": "scripts\\run_baseline_compare_phase1_connector.py",
+      "depth": 0,
+      "sha256": "953d1c24f571c11a0c376e9fcce30c78f1e02dde5dd61a573c8573cba57982a1"
+    },
+    {
+      "path": "scripts\\run_open_pool_baseline.py",
+      "depth": 0,
+      "sha256": "6731126b95afabb596963262707cc488596f33289d76a2253ff9090f4dd25a0e"
+    },
+    {
+      "path": "scripts\\run_phase29_robust_rcuot_superiority.py",
+      "depth": 0,
+      "sha256": "a66fbdc8109f5344cf818d01da835c3753c981850270220e579d10e2d6116a94"
+    },
+    {
+      "path": "src\\cross\\application\\experiments\\delay_semantics_utils.py",
+      "depth": 1,
+      "sha256": "6e25a09a6a0295ca829656b2005b22cda43b25242057ce8b04d2ea775a18df4f"
+    },
+    {
+      "path": "src\\cross\\application\\experiments\\recalculate_topk_recall.py",
+      "depth": 2,
+      "sha256": "982955e071944468ecf599996caaca4c7b5d24bfc48b5bbc8f3de58b1fabe7ef"
+    },
+    {
+      "path": "src\\cross\\application\\experiments\\run_time_causal_sensitivity.py",
+      "depth": 2,
+      "sha256": "6ddc575864c99f9591a0dfb100c7c1163825ea78e5d5fcbd3ef653e2931d087c"
+    },
+    {
+      "path": "src\\cross\\application\\experiments\\uot_cache_utils.py",
+      "depth": 2,
+      "sha256": "089540bbe74dc4b78dde6c6fe1541edfc1ad4c2d18f81e844f186e1f962fff58"
+    },
+    {
+      "path": "src\\cross\\application\\experiments\\uot_sweep_metrics.py",
+      "depth": 3,
+      "sha256": "cf2605abc09cc07689ef93c79352578ac19ed7ce4de284a8aecf530f2302381f"
+    },
+    {
+      "path": "src\\cross\\application\\standalone_flow_uot.py",
+      "depth": 1,
+      "sha256": "d2a52eb0899bda1b0350de080bc7240daa4451ae3db33a63950d9a70b911b6dc"
+    },
+    {
+      "path": "src\\cross\\baseline_compare\\open_pool.py",
+      "depth": 1,
+      "sha256": "4b09ab2028b49c5769b465d810fd6ef3684275ffe6b66b4e9a6fc1b802f7dbfb"
+    },
+    {
+      "path": "src\\cross\\config\\output_layout.py",
+      "depth": 3,
+      "sha256": "0924711efbc3418a60add3246b41b6084c22f1b245bafac2cb8e4db9ae985b8c"
+    },
+    {
+      "path": "src\\cross\\config\\paths.py",
+      "depth": 4,
+      "sha256": "d3eba23f159706351b5ab2683210598a5f7acd3f4e4fb73f8c95d9f2bff8153f"
+    },
+    {
+      "path": "src\\cross\\domain\\aml\\features.py",
+      "depth": 4,
+      "sha256": "c64a2d386507ac8dc6494b3c883a333c1bf913911eb8de426a3c1eb6743fc33e"
+    },
+    {
+      "path": "src\\cross\\domain\\aml\\inference.py",
+      "depth": 3,
+      "sha256": "48ea7116bbd5d16154757531376e10cd9ad992fffb7de7d955b64c1bc23380a9"
+    },
+    {
+      "path": "src\\cross\\domain\\aml\\model.py",
+      "depth": 4,
+      "sha256": "1496365b5ba68a3835487afb79566f5f37c7e3b690315ce9d10bb499a0036861"
+    },
+    {
+      "path": "src\\cross\\domain\\aml\\rules.py",
+      "depth": 4,
+      "sha256": "8f0d828e5a7e49ce764ff19602bf59fa50757859b1dc648838bac3dd6c6ea700"
+    },
+    {
+      "path": "src\\cross\\domain\\amount\\normalizer.py",
+      "depth": 4,
+      "sha256": "50f5335b8d3e78b5369d9e63655b4ee3ef5d933ae61a3e186a9c1b65b1247714"
+    },
+    {
+      "path": "src\\cross\\domain\\evaluation\\__init__.py",
+      "depth": 3,
+      "sha256": "385d91b434e3525cc6f96fef04409e2b6fe27c9fa8a8354abb825fc7b8d28884"
+    },
+    {
+      "path": "src\\cross\\domain\\evaluation\\compare.py",
+      "depth": 3,
+      "sha256": "4565e45984be45ad5f786fd610e36fe773dbc23c2abef9062392bfa37cff64f6"
+    },
+    {
+      "path": "src\\cross\\domain\\evaluation\\flow_eval.py",
+      "depth": 2,
+      "sha256": "c2e92af04ccd5ca2b7564832d03efc9651ac9fd830b015dc0ef262a918efa991"
+    },
+    {
+      "path": "src\\cross\\domain\\evaluation\\flow_metrics.py",
+      "depth": 2,
+      "sha256": "34fac900706f2632e466eb74765c4761fb62f303c25a6950162424963e309629"
+    },
+    {
+      "path": "src\\cross\\domain\\evaluation\\synthetic_scenario_eval.py",
+      "depth": 3,
+      "sha256": "3413dbf3f272ee42940eb064d356e8e3a6e499c36cc7458fbcda26bae74ef493"
+    },
+    {
+      "path": "src\\cross\\domain\\evidence.py",
+      "depth": 3,
+      "sha256": "5624e2c6c4320313c5e9f68bb8d14b53dd54a1c960079b57ed69e05ddf968cca"
+    },
+    {
+      "path": "src\\cross\\domain\\flow\\segment_builder.py",
+      "depth": 3,
+      "sha256": "b03901a1c9492e034d85d51c2747c742a655bc7a9540fced1da1d3841cee9382"
+    },
+    {
+      "path": "src\\cross\\domain\\flows\\flow_features.py",
+      "depth": 3,
+      "sha256": "c75672ffe4f58224a3b9499ccb1694a7250f380abe0117625cf03c2679191989"
+    },
+    {
+      "path": "src\\cross\\domain\\flows\\segment_builder.py",
+      "depth": 3,
+      "sha256": "459974641a72105046ab555e0323614b34f189798ecdeefcab9b399ce7151c72"
+    },
+    {
+      "path": "src\\cross\\domain\\graph\\features.py",
+      "depth": 4,
+      "sha256": "b09138748939e009cf7c76937689a5a8802dc31f8c0a91bded610cf67eedbf42"
+    },
+    {
+      "path": "src\\cross\\domain\\graph\\inference.py",
+      "depth": 3,
+      "sha256": "620c62d3239e3cc4dae94bd6cd40cf45e23d6f458f91a46e83fec4beaae9dc5c"
+    },
+    {
+      "path": "src\\cross\\domain\\graph\\model.py",
+      "depth": 4,
+      "sha256": "d0b00ab5d843fec97e5f0c329565d4881898c24589f4d520f3dd817623c9b8a8"
+    },
+    {
+      "path": "src\\cross\\domain\\labels\\anchor_masking.py",
+      "depth": 3,
+      "sha256": "e943c8d7db1ae2e63b3fee96db392932d1dc4a65c916e03cba3507c3a71e61c3"
+    },
+    {
+      "path": "src\\cross\\domain\\labels\\feature_provenance.py",
+      "depth": 4,
+      "sha256": "795274d6c943bdea580400af97b2e905095daafb1199cd9c2fc6fad87db5e314"
+    },
+    {
+      "path": "src\\cross\\domain\\labels\\uot_flow_loader.py",
+      "depth": 2,
+      "sha256": "0b30c30537adc00d1d1bc1b2e970f3daf3a99666a1f564d1cbceac4907eba2d9"
+    },
+    {
+      "path": "src\\cross\\domain\\locator\\withdraw_locator.py",
+      "depth": 4,
+      "sha256": "d8d28db47d755cdc867a7611425a2cebc216124374e4b6fe75eb1753142d4eff"
+    },
+    {
+      "path": "src\\cross\\domain\\path_a\\pairing.py",
+      "depth": 4,
+      "sha256": "92254fbadfd19b328b163c14702304864ac2a2af37809d0356557eec9ace42c7"
+    },
+    {
+      "path": "src\\cross\\domain\\path_b\\address_aggregate.py",
+      "depth": 3,
+      "sha256": "cef6cd6a9b18b5d46e89d7d6e6db117b6644d0b8e9266f5ae39d4ffce01cf6e7"
+    },
+    {
+      "path": "src\\cross\\domain\\path_b\\align.py",
+      "depth": 3,
+      "sha256": "f5361e4c0465ba682cf87e3478057dfe6aec1a6e0bd95703582889b2e991c138"
+    },
+    {
+      "path": "src\\cross\\domain\\path_b\\constants.py",
+      "depth": 4,
+      "sha256": "7c5301db6ad9284d860508eace001d6daa6887608b4545678325fefe3268c38f"
+    },
+    {
+      "path": "src\\cross\\domain\\path_b\\env.py",
+      "depth": 3,
+      "sha256": "553cf76f0d5489fbe6f7ba41058693ccce047dd650abde711af2deafb7adc31f"
+    },
+    {
+      "path": "src\\cross\\domain\\path_b\\greedy.py",
+      "depth": 5,
+      "sha256": "a1b2a576abca246667988785da5723353a9a7b3adcec792698a6c5c29613345e"
+    },
+    {
+      "path": "src\\cross\\domain\\path_b\\legacy_connector.py",
+      "depth": 3,
+      "sha256": "eb372449d6d4c40b4269f286fd2244c763a57bf39185abfff9f077b6111553d6"
+    },
+    {
+      "path": "src\\cross\\domain\\path_b\\route_registry.py",
+      "depth": 4,
+      "sha256": "562dde0dc0074518b503f1eafc63659a7d1ac8dd8b4d30c2b8a0de5b01957178"
+    },
+    {
+      "path": "src\\cross\\domain\\path_b\\runner.py",
+      "depth": 2,
+      "sha256": "1bfdfc5ca6bd5232200e3a66b0198c22eb942f1e485d6194762e99b3d06ec093"
+    },
+    {
+      "path": "src\\cross\\domain\\path_b\\unlabeled_io.py",
+      "depth": 3,
+      "sha256": "c412de68b608c85484b6ee81b9a671134b7bafd46b765bd027e11d0ef1b519ba"
+    },
+    {
+      "path": "src\\cross\\domain\\path_b\\uot_pairs.py",
+      "depth": 3,
+      "sha256": "0768af1a269a1011d1d48325f7548a9a686a28c01ef513f2d2b709ceeb0730dc"
+    },
+    {
+      "path": "src\\cross\\domain\\ranker\\features.py",
+      "depth": 4,
+      "sha256": "8e7e09315af6d3c463d508ce3a87df2eccd78df6131b8080fd708669be6659e7"
+    },
+    {
+      "path": "src\\cross\\domain\\ranker\\inference.py",
+      "depth": 3,
+      "sha256": "33cb8e651c7c134c2284016f23e1abea339a52086469bf4bafb13556fa38ef26"
+    },
+    {
+      "path": "src\\cross\\domain\\ranker\\model.py",
+      "depth": 4,
+      "sha256": "da2669d8ad00b605b17c0b645ecb9be534efcf949edb6d4e214ebb77d65c8136"
+    },
+    {
+      "path": "src\\cross\\domain\\token\\decimals_registry.py",
+      "depth": 4,
+      "sha256": "e0f9a4ee5950b8241a9a9b8c1c3396cd551e36b92de4712e3f3f09cc06f76530"
+    },
+    {
+      "path": "src\\cross\\domain\\uot\\cost_matrix.py",
+      "depth": 3,
+      "sha256": "189dcddc157ac47479344ff092f8272af3b1111a83d45864be7d27036e52e813"
+    },
+    {
+      "path": "src\\cross\\domain\\uot\\decode_transport.py",
+      "depth": 2,
+      "sha256": "73a9493bbff354325e98f257e4be0649faca3c44ae1e27cf35f504a7340992b9"
+    },
+    {
+      "path": "src\\cross\\domain\\uot\\delay_policy.py",
+      "depth": 4,
+      "sha256": "e8cd179606861582c418aeba57c547e39fd408030e51f2f343c4de48c9bc197a"
+    },
+    {
+      "path": "src\\cross\\domain\\uot\\flow_uot_candidate_subgraph.py",
+      "depth": 2,
+      "sha256": "4e22812ad47c370bac96c06aff3d400c47912da1ec7897b0e7d466adec242a66"
+    },
+    {
+      "path": "src\\cross\\domain\\uot\\tx_decode_policy.py",
+      "depth": 3,
+      "sha256": "c50a0d811c94e2dc844fa6d0003e1aa36364980334bf7acc48c53a3ecf9b6e46"
+    },
+    {
+      "path": "src\\cross\\domain\\uot\\uot_solver.py",
+      "depth": 2,
+      "sha256": "6bcfa3122dda29351d3f785c184be935aa038441bbb4f0c03cf258dcde6c5a92"
+    },
+    {
+      "path": "src\\cross\\domain\\uot\\uot_solver_numpy.py",
+      "depth": 3,
+      "sha256": "b8117f66db0eee1fbe6d030401d95ab7af9c46a90624ba140fbcb3ed389fb02d"
+    },
+    {
+      "path": "src\\cross\\domain\\validation\\rc_uot_exports.py",
+      "depth": 3,
+      "sha256": "3a06142aa7015df08db9f463460f39b5d751af8b124cc8ae69b1a2c61e84763b"
+    },
+    {
+      "path": "src\\cross\\infrastructure\\evidence_validate.py",
+      "depth": 3,
+      "sha256": "065e556401c8cc7757c0808ce1086c2d404589abfe714cffc2b1ce1cb37f2d78"
+    },
+    {
+      "path": "src\\cross\\shared\\__init__.py",
+      "depth": 5,
+      "sha256": "ea7deff8726e6c1fb0f355866a5fe2e71bd0932ed1507437dd82f3258cc603fd"
+    },
+    {
+      "path": "src\\cross\\shared\\amount_hints.py",
+      "depth": 3,
+      "sha256": "7229f8513fe2d0c05194a8bd73e00009c6cf0c3ea9012f979bf87fdfff4c54fc"
+    },
+    {
+      "path": "src\\cross\\shared\\amount_normalizer.py",
+      "depth": 5,
+      "sha256": "86478c6fff63035f10d53670df633849a40926fe6ad4c28acbf74e00e20a5264"
+    },
+    {
+      "path": "src\\cross\\shared\\bnb_pick.py",
+      "depth": 5,
+      "sha256": "cfad699f1fc014d389fac3b5a3df5579752034d1408614748e56b61e56346b38"
+    },
+    {
+      "path": "src\\cross\\shared\\connector_decimals.py",
+      "depth": 4,
+      "sha256": "577440550193508e61ab900e688010781fa69c49bcd9f11bacf5a3c327117372"
+    },
+    {
+      "path": "src\\cross\\shared\\decimals_registry.py",
+      "depth": 5,
+      "sha256": "1e9d180a60ce4c9667370de3c527134b9834aefecd1dfc00a7b2aae81b9b91c0"
+    },
+    {
+      "path": "src\\cross\\shared\\label_split.py",
+      "depth": 3,
+      "sha256": "7dc9234762c1665e2cdac766826701c96efc48cee0f60e95acde030cde6841ba"
+    },
+    {
+      "path": "src\\cross\\shared\\load_csv.py",
+      "depth": 3,
+      "sha256": "139cfaab767f294dc74547a7777410c69812a8a3d979ae3f67fe7fae8d246340"
+    },
+    {
+      "path": "src\\cross\\shared\\normalize.py",
+      "depth": 1,
+      "sha256": "bbad17966cecf5258f05e27fe27d2aa1b9e481ab5d8609754b910f29f76cf438"
+    },
+    {
+      "path": "src\\cross\\shared\\token_map.py",
+      "depth": 3,
+      "sha256": "57698577fb45a1147454d9d672337f9447265d8ba467df77d9a6d42d8a60ca16"
+    },
+    {
+      "path": "src\\cross\\shared\\transfers.py",
+      "depth": 3,
+      "sha256": "f716bfe4575c31be0ea27cd6738a8c8a4102e78a19c1b7315b087cd8cc592cfa"
+    },
+    {
+      "path": "src\\cross\\utils\\safe_cast.py",
+      "depth": 4,
+      "sha256": "b6382b37d0f44187c74302fb6d34534a069f3bc04024cad6ed0d9a6009d77e8a"
+    }
+  ],
+  "edges": [
+    {
+      "caller": "scripts\\multi_bridge\\verify_baseline_mechanism_study.py",
+      "module": "baseline_mechanism.common",
+      "level": 0,
+      "resolved": "scripts\\multi_bridge\\baseline_mechanism\\common.py",
+      "sha256": "68b0beda9a6c2f29cd96cb569958f817e222093f0f80f2f79c75c13739aa0781"
+    },
+    {
+      "caller": "scripts\\multi_bridge\\baseline_mechanism\\common.py",
+      "module": "cross.domain.uot.uot_solver",
+      "level": 0,
+      "resolved": "src\\cross\\domain\\uot\\uot_solver.py",
+      "sha256": "6bcfa3122dda29351d3f785c184be935aa038441bbb4f0c03cf258dcde6c5a92"
+    },
+    {
+      "caller": "src\\cross\\domain\\uot\\uot_solver.py",
+      "module": "cost_matrix",
+      "level": 1,
+      "resolved": "src\\cross\\domain\\uot\\cost_matrix.py",
+      "sha256": "189dcddc157ac47479344ff092f8272af3b1111a83d45864be7d27036e52e813"
+    },
+    {
+      "caller": "src\\cross\\domain\\uot\\uot_solver.py",
+      "module": "uot_solver_numpy",
+      "level": 1,
+      "resolved": "src\\cross\\domain\\uot\\uot_solver_numpy.py",
+      "sha256": "b8117f66db0eee1fbe6d030401d95ab7af9c46a90624ba140fbcb3ed389fb02d"
+    },
+    {
+      "caller": "src\\cross\\domain\\uot\\cost_matrix.py",
+      "module": "cross.utils.safe_cast",
+      "level": 0,
+      "resolved": "src\\cross\\utils\\safe_cast.py",
+      "sha256": "b6382b37d0f44187c74302fb6d34534a069f3bc04024cad6ed0d9a6009d77e8a"
+    },
+    {
+      "caller": "src\\cross\\domain\\uot\\cost_matrix.py",
+      "module": "cross.domain.uot.delay_policy",
+      "level": 0,
+      "resolved": "src\\cross\\domain\\uot\\delay_policy.py",
+      "sha256": "e8cd179606861582c418aeba57c547e39fd408030e51f2f343c4de48c9bc197a"
+    },
+    {
+      "caller": "scripts\\multi_bridge\\run_capability_tests.py",
+      "module": "baseline_mechanism.common",
+      "level": 0,
+      "resolved": "scripts\\multi_bridge\\baseline_mechanism\\common.py",
+      "sha256": "68b0beda9a6c2f29cd96cb569958f817e222093f0f80f2f79c75c13739aa0781"
+    },
+    {
+      "caller": "scripts\\multi_bridge\\run_main_baseline_study.py",
+      "module": "baseline_mechanism.common",
+      "level": 0,
+      "resolved": "scripts\\multi_bridge\\baseline_mechanism\\common.py",
+      "sha256": "68b0beda9a6c2f29cd96cb569958f817e222093f0f80f2f79c75c13739aa0781"
+    },
+    {
+      "caller": "scripts\\run_open_pool_baseline.py",
+      "module": "cross.baseline_compare.open_pool",
+      "level": 0,
+      "resolved": "src\\cross\\baseline_compare\\open_pool.py",
+      "sha256": "4b09ab2028b49c5769b465d810fd6ef3684275ffe6b66b4e9a6fc1b802f7dbfb"
+    },
+    {
+      "caller": "scripts\\run_open_pool_baseline.py",
+      "module": "cross.baseline_compare.open_pool",
+      "level": 0,
+      "resolved": "src\\cross\\baseline_compare\\open_pool.py",
+      "sha256": "4b09ab2028b49c5769b465d810fd6ef3684275ffe6b66b4e9a6fc1b802f7dbfb"
+    },
+    {
+      "caller": "scripts\\run_open_pool_baseline.py",
+      "module": "cross.application.standalone_flow_uot",
+      "level": 0,
+      "resolved": "src\\cross\\application\\standalone_flow_uot.py",
+      "sha256": "d2a52eb0899bda1b0350de080bc7240daa4451ae3db33a63950d9a70b911b6dc"
+    },
+    {
+      "caller": "scripts\\run_open_pool_baseline.py",
+      "module": "cross.shared.normalize",
+      "level": 0,
+      "resolved": "src\\cross\\shared\\normalize.py",
+      "sha256": "bbad17966cecf5258f05e27fe27d2aa1b9e481ab5d8609754b910f29f76cf438"
+    },
+    {
+      "caller": "scripts\\run_open_pool_baseline.py",
+      "module": "cross.application.experiments.uot_cache_utils",
+      "level": 0,
+      "resolved": "src\\cross\\application\\experiments\\uot_cache_utils.py",
+      "sha256": "089540bbe74dc4b78dde6c6fe1541edfc1ad4c2d18f81e844f186e1f962fff58"
+    },
+    {
+      "caller": "scripts\\run_open_pool_baseline.py",
+      "module": "cross.domain.evaluation.flow_metrics",
+      "level": 0,
+      "resolved": "src\\cross\\domain\\evaluation\\flow_metrics.py",
+      "sha256": "34fac900706f2632e466eb74765c4761fb62f303c25a6950162424963e309629"
+    },
+    {
+      "caller": "scripts\\run_open_pool_baseline.py",
+      "module": "cross.baseline_compare.open_pool",
+      "level": 0,
+      "resolved": "src\\cross\\baseline_compare\\open_pool.py",
+      "sha256": "4b09ab2028b49c5769b465d810fd6ef3684275ffe6b66b4e9a6fc1b802f7dbfb"
+    },
+    {
+      "caller": "scripts\\run_open_pool_baseline.py",
+      "module": "cross.shared.normalize",
+      "level": 0,
+      "resolved": "src\\cross\\shared\\normalize.py",
+      "sha256": "bbad17966cecf5258f05e27fe27d2aa1b9e481ab5d8609754b910f29f76cf438"
+    },
+    {
+      "caller": "src\\cross\\baseline_compare\\open_pool.py",
+      "module": "cross.application.experiments.uot_cache_utils",
+      "level": 0,
+      "resolved": "src\\cross\\application\\experiments\\uot_cache_utils.py",
+      "sha256": "089540bbe74dc4b78dde6c6fe1541edfc1ad4c2d18f81e844f186e1f962fff58"
+    },
+    {
+      "caller": "src\\cross\\baseline_compare\\open_pool.py",
+      "module": "cross.domain.uot.flow_uot_candidate_subgraph",
+      "level": 0,
+      "resolved": "src\\cross\\domain\\uot\\flow_uot_candidate_subgraph.py",
+      "sha256": "4e22812ad47c370bac96c06aff3d400c47912da1ec7897b0e7d466adec242a66"
+    },
+    {
+      "caller": "src\\cross\\baseline_compare\\open_pool.py",
+      "module": "cross.shared.normalize",
+      "level": 0,
+      "resolved": "src\\cross\\shared\\normalize.py",
+      "sha256": "bbad17966cecf5258f05e27fe27d2aa1b9e481ab5d8609754b910f29f76cf438"
+    },
+    {
+      "caller": "src\\cross\\baseline_compare\\open_pool.py",
+      "module": "cross.domain.evaluation.flow_metrics",
+      "level": 0,
+      "resolved": "src\\cross\\domain\\evaluation\\flow_metrics.py",
+      "sha256": "34fac900706f2632e466eb74765c4761fb62f303c25a6950162424963e309629"
+    },
+    {
+      "caller": "src\\cross\\domain\\evaluation\\flow_metrics.py",
+      "module": "cross.shared.normalize",
+      "level": 0,
+      "resolved": "src\\cross\\shared\\normalize.py",
+      "sha256": "bbad17966cecf5258f05e27fe27d2aa1b9e481ab5d8609754b910f29f76cf438"
+    },
+    {
+      "caller": "src\\cross\\domain\\evaluation\\flow_metrics.py",
+      "module": "cross.utils.safe_cast",
+      "level": 0,
+      "resolved": "src\\cross\\utils\\safe_cast.py",
+      "sha256": "b6382b37d0f44187c74302fb6d34534a069f3bc04024cad6ed0d9a6009d77e8a"
+    },
+    {
+      "caller": "src\\cross\\application\\experiments\\uot_cache_utils.py",
+      "module": "cross.domain.uot.cost_matrix",
+      "level": 0,
+      "resolved": "src\\cross\\domain\\uot\\cost_matrix.py",
+      "sha256": "189dcddc157ac47479344ff092f8272af3b1111a83d45864be7d27036e52e813"
+    },
+    {
+      "caller": "src\\cross\\application\\experiments\\uot_cache_utils.py",
+      "module": "cross.domain.uot.delay_policy",
+      "level": 0,
+      "resolved": "src\\cross\\domain\\uot\\delay_policy.py",
+      "sha256": "e8cd179606861582c418aeba57c547e39fd408030e51f2f343c4de48c9bc197a"
+    },
+    {
+      "caller": "src\\cross\\application\\experiments\\uot_cache_utils.py",
+      "module": "cross.domain.uot.uot_solver_numpy",
+      "level": 0,
+      "resolved": "src\\cross\\domain\\uot\\uot_solver_numpy.py",
+      "sha256": "b8117f66db0eee1fbe6d030401d95ab7af9c46a90624ba140fbcb3ed389fb02d"
+    },
+    {
+      "caller": "src\\cross\\application\\standalone_flow_uot.py",
+      "module": "cross.config.output_layout",
+      "level": 0,
+      "resolved": "src\\cross\\config\\output_layout.py",
+      "sha256": "0924711efbc3418a60add3246b41b6084c22f1b245bafac2cb8e4db9ae985b8c"
+    },
+    {
+      "caller": "src\\cross\\application\\standalone_flow_uot.py",
+      "module": "cross.domain.labels.uot_flow_loader",
+      "level": 0,
+      "resolved": "src\\cross\\domain\\labels\\uot_flow_loader.py",
+      "sha256": "0b30c30537adc00d1d1bc1b2e970f3daf3a99666a1f564d1cbceac4907eba2d9"
+    },
+    {
+      "caller": "src\\cross\\application\\standalone_flow_uot.py",
+      "module": "cross.domain.path_b.runner",
+      "level": 0,
+      "resolved": "src\\cross\\domain\\path_b\\runner.py",
+      "sha256": "1bfdfc5ca6bd5232200e3a66b0198c22eb942f1e485d6194762e99b3d06ec093"
+    },
+    {
+      "caller": "src\\cross\\application\\standalone_flow_uot.py",
+      "module": "cross.domain.uot.cost_matrix",
+      "level": 0,
+      "resolved": "src\\cross\\domain\\uot\\cost_matrix.py",
+      "sha256": "189dcddc157ac47479344ff092f8272af3b1111a83d45864be7d27036e52e813"
+    },
+    {
+      "caller": "src\\cross\\application\\standalone_flow_uot.py",
+      "module": "cross.domain.uot.decode_transport",
+      "level": 0,
+      "resolved": "src\\cross\\domain\\uot\\decode_transport.py",
+      "sha256": "73a9493bbff354325e98f257e4be0649faca3c44ae1e27cf35f504a7340992b9"
+    },
+    {
+      "caller": "src\\cross\\application\\standalone_flow_uot.py",
+      "module": "cross.domain.uot.flow_uot_candidate_subgraph",
+      "level": 0,
+      "resolved": "src\\cross\\domain\\uot\\flow_uot_candidate_subgraph.py",
+      "sha256": "4e22812ad47c370bac96c06aff3d400c47912da1ec7897b0e7d466adec242a66"
+    },
+    {
+      "caller": "src\\cross\\application\\standalone_flow_uot.py",
+      "module": "cross.domain.uot.uot_solver",
+      "level": 0,
+      "resolved": "src\\cross\\domain\\uot\\uot_solver.py",
+      "sha256": "6bcfa3122dda29351d3f785c184be935aa038441bbb4f0c03cf258dcde6c5a92"
+    },
+    {
+      "caller": "src\\cross\\application\\standalone_flow_uot.py",
+      "module": "cross.domain.evaluation.flow_eval",
+      "level": 0,
+      "resolved": "src\\cross\\domain\\evaluation\\flow_eval.py",
+      "sha256": "c2e92af04ccd5ca2b7564832d03efc9651ac9fd830b015dc0ef262a918efa991"
+    },
+    {
+      "caller": "src\\cross\\domain\\evaluation\\flow_eval.py",
+      "module": "cross.config.output_layout",
+      "level": 0,
+      "resolved": "src\\cross\\config\\output_layout.py",
+      "sha256": "0924711efbc3418a60add3246b41b6084c22f1b245bafac2cb8e4db9ae985b8c"
+    },
+    {
+      "caller": "src\\cross\\domain\\evaluation\\flow_eval.py",
+      "module": "cross.domain.evaluation.synthetic_scenario_eval",
+      "level": 0,
+      "resolved": "src\\cross\\domain\\evaluation\\synthetic_scenario_eval.py",
+      "sha256": "3413dbf3f272ee42940eb064d356e8e3a6e499c36cc7458fbcda26bae74ef493"
+    },
+    {
+      "caller": "src\\cross\\domain\\uot\\decode_transport.py",
+      "module": "cross.domain.uot.tx_decode_policy",
+      "level": 0,
+      "resolved": "src\\cross\\domain\\uot\\tx_decode_policy.py",
+      "sha256": "c50a0d811c94e2dc844fa6d0003e1aa36364980334bf7acc48c53a3ecf9b6e46"
+    },
+    {
+      "caller": "src\\cross\\domain\\uot\\decode_transport.py",
+      "module": "cross.shared.normalize",
+      "level": 0,
+      "resolved": "src\\cross\\shared\\normalize.py",
+      "sha256": "bbad17966cecf5258f05e27fe27d2aa1b9e481ab5d8609754b910f29f76cf438"
+    },
+    {
+      "caller": "src\\cross\\domain\\uot\\decode_transport.py",
+      "module": "cross.shared.transfers",
+      "level": 0,
+      "resolved": "src\\cross\\shared\\transfers.py",
+      "sha256": "f716bfe4575c31be0ea27cd6738a8c8a4102e78a19c1b7315b087cd8cc592cfa"
+    },
+    {
+      "caller": "src\\cross\\domain\\uot\\decode_transport.py",
+      "module": "cross.utils.safe_cast",
+      "level": 0,
+      "resolved": "src\\cross\\utils\\safe_cast.py",
+      "sha256": "b6382b37d0f44187c74302fb6d34534a069f3bc04024cad6ed0d9a6009d77e8a"
+    },
+    {
+      "caller": "src\\cross\\shared\\transfers.py",
+      "module": "cross.utils.safe_cast",
+      "level": 0,
+      "resolved": "src\\cross\\utils\\safe_cast.py",
+      "sha256": "b6382b37d0f44187c74302fb6d34534a069f3bc04024cad6ed0d9a6009d77e8a"
+    },
+    {
+      "caller": "src\\cross\\shared\\transfers.py",
+      "module": "normalize",
+      "level": 1,
+      "resolved": "src\\cross\\shared\\normalize.py",
+      "sha256": "bbad17966cecf5258f05e27fe27d2aa1b9e481ab5d8609754b910f29f76cf438"
+    },
+    {
+      "caller": "src\\cross\\domain\\uot\\tx_decode_policy.py",
+      "module": "cross.shared.normalize",
+      "level": 0,
+      "resolved": "src\\cross\\shared\\normalize.py",
+      "sha256": "bbad17966cecf5258f05e27fe27d2aa1b9e481ab5d8609754b910f29f76cf438"
+    },
+    {
+      "caller": "src\\cross\\domain\\uot\\tx_decode_policy.py",
+      "module": "cross.shared.transfers",
+      "level": 0,
+      "resolved": "src\\cross\\shared\\transfers.py",
+      "sha256": "f716bfe4575c31be0ea27cd6738a8c8a4102e78a19c1b7315b087cd8cc592cfa"
+    },
+    {
+      "caller": "src\\cross\\domain\\uot\\tx_decode_policy.py",
+      "module": "cross.utils.safe_cast",
+      "level": 0,
+      "resolved": "src\\cross\\utils\\safe_cast.py",
+      "sha256": "b6382b37d0f44187c74302fb6d34534a069f3bc04024cad6ed0d9a6009d77e8a"
+    },
+    {
+      "caller": "src\\cross\\domain\\uot\\tx_decode_policy.py",
+      "module": "cross.domain.uot.decode_transport",
+      "level": 0,
+      "resolved": "src\\cross\\domain\\uot\\decode_transport.py",
+      "sha256": "73a9493bbff354325e98f257e4be0649faca3c44ae1e27cf35f504a7340992b9"
+    },
+    {
+      "caller": "src\\cross\\domain\\path_b\\runner.py",
+      "module": "config.output_layout",
+      "level": 3,
+      "resolved": "src\\cross\\config\\output_layout.py",
+      "sha256": "0924711efbc3418a60add3246b41b6084c22f1b245bafac2cb8e4db9ae985b8c"
+    },
+    {
+      "caller": "src\\cross\\domain\\path_b\\runner.py",
+      "module": "shared.load_csv",
+      "level": 3,
+      "resolved": "src\\cross\\shared\\load_csv.py",
+      "sha256": "139cfaab767f294dc74547a7777410c69812a8a3d979ae3f67fe7fae8d246340"
+    },
+    {
+      "caller": "src\\cross\\domain\\path_b\\runner.py",
+      "module": "shared.normalize",
+      "level": 3,
+      "resolved": "src\\cross\\shared\\normalize.py",
+      "sha256": "bbad17966cecf5258f05e27fe27d2aa1b9e481ab5d8609754b910f29f76cf438"
+    },
+    {
+      "caller": "src\\cross\\domain\\path_b\\runner.py",
+      "module": "greedy",
+      "level": 1,
+      "resolved": "src\\cross\\domain\\path_b\\greedy.py",
+      "sha256": "a1b2a576abca246667988785da5723353a9a7b3adcec792698a6c5c29613345e"
+    },
+    {
+      "caller": "src\\cross\\domain\\path_b\\runner.py",
+      "module": "shared.amount_hints",
+      "level": 3,
+      "resolved": "src\\cross\\shared\\amount_hints.py",
+      "sha256": "7229f8513fe2d0c05194a8bd73e00009c6cf0c3ea9012f979bf87fdfff4c54fc"
+    },
+    {
+      "caller": "src\\cross\\domain\\path_b\\runner.py",
+      "module": "shared.label_split",
+      "level": 3,
+      "resolved": "src\\cross\\shared\\label_split.py",
+      "sha256": "7dc9234762c1665e2cdac766826701c96efc48cee0f60e95acde030cde6841ba"
+    },
+    {
+      "caller": "src\\cross\\domain\\path_b\\runner.py",
+      "module": "shared.token_map",
+      "level": 3,
+      "resolved": "src\\cross\\shared\\token_map.py",
+      "sha256": "57698577fb45a1147454d9d672337f9447265d8ba467df77d9a6d42d8a60ca16"
+    },
+    {
+      "caller": "src\\cross\\domain\\path_b\\runner.py",
+      "module": "shared.transfers",
+      "level": 3,
+      "resolved": "src\\cross\\shared\\transfers.py",
+      "sha256": "f716bfe4575c31be0ea27cd6738a8c8a4102e78a19c1b7315b087cd8cc592cfa"
+    },
+    {
+      "caller": "src\\cross\\domain\\path_b\\runner.py",
+      "module": "utils.safe_cast",
+      "level": 3,
+      "resolved": "src\\cross\\utils\\safe_cast.py",
+      "sha256": "b6382b37d0f44187c74302fb6d34534a069f3bc04024cad6ed0d9a6009d77e8a"
+    },
+    {
+      "caller": "src\\cross\\domain\\path_b\\runner.py",
+      "module": "aml.inference",
+      "level": 2,
+      "resolved": "src\\cross\\domain\\aml\\inference.py",
+      "sha256": "48ea7116bbd5d16154757531376e10cd9ad992fffb7de7d955b64c1bc23380a9"
+    },
+    {
+      "caller": "src\\cross\\domain\\path_b\\runner.py",
+      "module": "graph.inference",
+      "level": 2,
+      "resolved": "src\\cross\\domain\\graph\\inference.py",
+      "sha256": "620c62d3239e3cc4dae94bd6cd40cf45e23d6f458f91a46e83fec4beaae9dc5c"
+    },
+    {
+      "caller": "src\\cross\\domain\\path_b\\runner.py",
+      "module": "ranker.inference",
+      "level": 2,
+      "resolved": "src\\cross\\domain\\ranker\\inference.py",
+      "sha256": "33cb8e651c7c134c2284016f23e1abea339a52086469bf4bafb13556fa38ef26"
+    },
+    {
+      "caller": "src\\cross\\domain\\path_b\\runner.py",
+      "module": "evaluation.compare",
+      "level": 2,
+      "resolved": "src\\cross\\domain\\evaluation\\compare.py",
+      "sha256": "4565e45984be45ad5f786fd610e36fe773dbc23c2abef9062392bfa37cff64f6"
+    },
+    {
+      "caller": "src\\cross\\domain\\path_b\\runner.py",
+      "module": "evaluation",
+      "level": 2,
+      "resolved": "src\\cross\\domain\\evaluation\\__init__.py",
+      "sha256": "385d91b434e3525cc6f96fef04409e2b6fe27c9fa8a8354abb825fc7b8d28884"
+    },
+    {
+      "caller": "src\\cross\\domain\\path_b\\runner.py",
+      "module": "flows.flow_features",
+      "level": 2,
+      "resolved": "src\\cross\\domain\\flows\\flow_features.py",
+      "sha256": "c75672ffe4f58224a3b9499ccb1694a7250f380abe0117625cf03c2679191989"
+    },
+    {
+      "caller": "src\\cross\\domain\\path_b\\runner.py",
+      "module": "flow.segment_builder",
+      "level": 2,
+      "resolved": "src\\cross\\domain\\flow\\segment_builder.py",
+      "sha256": "b03901a1c9492e034d85d51c2747c742a655bc7a9540fced1da1d3841cee9382"
+    },
+    {
+      "caller": "src\\cross\\domain\\path_b\\runner.py",
+      "module": "flows.segment_builder",
+      "level": 2,
+      "resolved": "src\\cross\\domain\\flows\\segment_builder.py",
+      "sha256": "459974641a72105046ab555e0323614b34f189798ecdeefcab9b399ce7151c72"
+    },
+    {
+      "caller": "src\\cross\\domain\\path_b\\runner.py",
+      "module": "evidence",
+      "level": 2,
+      "resolved": "src\\cross\\domain\\evidence.py",
+      "sha256": "5624e2c6c4320313c5e9f68bb8d14b53dd54a1c960079b57ed69e05ddf968cca"
+    },
+    {
+      "caller": "src\\cross\\domain\\path_b\\runner.py",
+      "module": "uot.cost_matrix",
+      "level": 2,
+      "resolved": "src\\cross\\domain\\uot\\cost_matrix.py",
+      "sha256": "189dcddc157ac47479344ff092f8272af3b1111a83d45864be7d27036e52e813"
+    },
+    {
+      "caller": "src\\cross\\domain\\path_b\\runner.py",
+      "module": "uot.delay_policy",
+      "level": 2,
+      "resolved": "src\\cross\\domain\\uot\\delay_policy.py",
+      "sha256": "e8cd179606861582c418aeba57c547e39fd408030e51f2f343c4de48c9bc197a"
+    },
+    {
+      "caller": "src\\cross\\domain\\path_b\\runner.py",
+      "module": "uot.decode_transport",
+      "level": 2,
+      "resolved": "src\\cross\\domain\\uot\\decode_transport.py",
+      "sha256": "73a9493bbff354325e98f257e4be0649faca3c44ae1e27cf35f504a7340992b9"
+    },
+    {
+      "caller": "src\\cross\\domain\\path_b\\runner.py",
+      "module": "validation.rc_uot_exports",
+      "level": 2,
+      "resolved": "src\\cross\\domain\\validation\\rc_uot_exports.py",
+      "sha256": "3a06142aa7015df08db9f463460f39b5d751af8b124cc8ae69b1a2c61e84763b"
+    },
+    {
+      "caller": "src\\cross\\domain\\path_b\\runner.py",
+      "module": "uot.uot_solver",
+      "level": 2,
+      "resolved": "src\\cross\\domain\\uot\\uot_solver.py",
+      "sha256": "6bcfa3122dda29351d3f785c184be935aa038441bbb4f0c03cf258dcde6c5a92"
+    },
+    {
+      "caller": "src\\cross\\domain\\path_b\\runner.py",
+      "module": "align",
+      "level": 1,
+      "resolved": "src\\cross\\domain\\path_b\\align.py",
+      "sha256": "f5361e4c0465ba682cf87e3478057dfe6aec1a6e0bd95703582889b2e991c138"
+    },
+    {
+      "caller": "src\\cross\\domain\\path_b\\runner.py",
+      "module": "env",
+      "level": 1,
+      "resolved": "src\\cross\\domain\\path_b\\env.py",
+      "sha256": "553cf76f0d5489fbe6f7ba41058693ccce047dd650abde711af2deafb7adc31f"
+    },
+    {
+      "caller": "src\\cross\\domain\\path_b\\runner.py",
+      "module": "legacy_connector",
+      "level": 1,
+      "resolved": "src\\cross\\domain\\path_b\\legacy_connector.py",
+      "sha256": "eb372449d6d4c40b4269f286fd2244c763a57bf39185abfff9f077b6111553d6"
+    },
+    {
+      "caller": "src\\cross\\domain\\path_b\\runner.py",
+      "module": "unlabeled_io",
+      "level": 1,
+      "resolved": "src\\cross\\domain\\path_b\\unlabeled_io.py",
+      "sha256": "c412de68b608c85484b6ee81b9a671134b7bafd46b765bd027e11d0ef1b519ba"
+    },
+    {
+      "caller": "src\\cross\\domain\\path_b\\runner.py",
+      "module": "route_registry",
+      "level": 1,
+      "resolved": "src\\cross\\domain\\path_b\\route_registry.py",
+      "sha256": "562dde0dc0074518b503f1eafc63659a7d1ac8dd8b4d30c2b8a0de5b01957178"
+    },
+    {
+      "caller": "src\\cross\\domain\\path_b\\runner.py",
+      "module": "uot_pairs",
+      "level": 1,
+      "resolved": "src\\cross\\domain\\path_b\\uot_pairs.py",
+      "sha256": "0768af1a269a1011d1d48325f7548a9a686a28c01ef513f2d2b709ceeb0730dc"
+    },
+    {
+      "caller": "src\\cross\\domain\\path_b\\runner.py",
+      "module": "config.paths",
+      "level": 3,
+      "resolved": "src\\cross\\config\\paths.py",
+      "sha256": "d3eba23f159706351b5ab2683210598a5f7acd3f4e4fb73f8c95d9f2bff8153f"
+    },
+    {
+      "caller": "src\\cross\\domain\\path_b\\runner.py",
+      "module": "labels.anchor_masking",
+      "level": 2,
+      "resolved": "src\\cross\\domain\\labels\\anchor_masking.py",
+      "sha256": "e943c8d7db1ae2e63b3fee96db392932d1dc4a65c916e03cba3507c3a71e61c3"
+    },
+    {
+      "caller": "src\\cross\\domain\\path_b\\runner.py",
+      "module": "uot.cost_matrix",
+      "level": 2,
+      "resolved": "src\\cross\\domain\\uot\\cost_matrix.py",
+      "sha256": "189dcddc157ac47479344ff092f8272af3b1111a83d45864be7d27036e52e813"
+    },
+    {
+      "caller": "src\\cross\\domain\\path_b\\runner.py",
+      "module": "infrastructure.evidence_validate",
+      "level": 3,
+      "resolved": "src\\cross\\infrastructure\\evidence_validate.py",
+      "sha256": "065e556401c8cc7757c0808ce1086c2d404589abfe714cffc2b1ce1cb37f2d78"
+    },
+    {
+      "caller": "src\\cross\\domain\\path_b\\runner.py",
+      "module": "address_aggregate",
+      "level": 1,
+      "resolved": "src\\cross\\domain\\path_b\\address_aggregate.py",
+      "sha256": "cef6cd6a9b18b5d46e89d7d6e6db117b6644d0b8e9266f5ae39d4ffce01cf6e7"
+    },
+    {
+      "caller": "src\\cross\\domain\\path_b\\runner.py",
+      "module": "shared.load_csv",
+      "level": 3,
+      "resolved": "src\\cross\\shared\\load_csv.py",
+      "sha256": "139cfaab767f294dc74547a7777410c69812a8a3d979ae3f67fe7fae8d246340"
+    },
+    {
+      "caller": "src\\cross\\domain\\path_b\\runner.py",
+      "module": "infrastructure.evidence_validate",
+      "level": 3,
+      "resolved": "src\\cross\\infrastructure\\evidence_validate.py",
+      "sha256": "065e556401c8cc7757c0808ce1086c2d404589abfe714cffc2b1ce1cb37f2d78"
+    },
+    {
+      "caller": "src\\cross\\infrastructure\\evidence_validate.py",
+      "module": "cross.config.paths",
+      "level": 0,
+      "resolved": "src\\cross\\config\\paths.py",
+      "sha256": "d3eba23f159706351b5ab2683210598a5f7acd3f4e4fb73f8c95d9f2bff8153f"
+    },
+    {
+      "caller": "src\\cross\\shared\\load_csv.py",
+      "module": "normalize",
+      "level": 1,
+      "resolved": "src\\cross\\shared\\normalize.py",
+      "sha256": "bbad17966cecf5258f05e27fe27d2aa1b9e481ab5d8609754b910f29f76cf438"
+    },
+    {
+      "caller": "src\\cross\\domain\\path_b\\address_aggregate.py",
+      "module": "shared.bnb_pick",
+      "level": 3,
+      "resolved": "src\\cross\\shared\\bnb_pick.py",
+      "sha256": "cfad699f1fc014d389fac3b5a3df5579752034d1408614748e56b61e56346b38"
+    },
+    {
+      "caller": "src\\cross\\domain\\path_b\\address_aggregate.py",
+      "module": "shared.load_csv",
+      "level": 3,
+      "resolved": "src\\cross\\shared\\load_csv.py",
+      "sha256": "139cfaab767f294dc74547a7777410c69812a8a3d979ae3f67fe7fae8d246340"
+    },
+    {
+      "caller": "src\\cross\\domain\\path_b\\address_aggregate.py",
+      "module": "shared.normalize",
+      "level": 3,
+      "resolved": "src\\cross\\shared\\normalize.py",
+      "sha256": "bbad17966cecf5258f05e27fe27d2aa1b9e481ab5d8609754b910f29f76cf438"
+    },
+    {
+      "caller": "src\\cross\\domain\\path_b\\address_aggregate.py",
+      "module": "path_a.pairing",
+      "level": 2,
+      "resolved": "src\\cross\\domain\\path_a\\pairing.py",
+      "sha256": "92254fbadfd19b328b163c14702304864ac2a2af37809d0356557eec9ace42c7"
+    },
+    {
+      "caller": "src\\cross\\domain\\path_a\\pairing.py",
+      "module": "cross.shared.bnb_pick",
+      "level": 0,
+      "resolved": "src\\cross\\shared\\bnb_pick.py",
+      "sha256": "cfad699f1fc014d389fac3b5a3df5579752034d1408614748e56b61e56346b38"
+    },
+    {
+      "caller": "src\\cross\\domain\\path_a\\pairing.py",
+      "module": "cross.shared.load_csv",
+      "level": 0,
+      "resolved": "src\\cross\\shared\\load_csv.py",
+      "sha256": "139cfaab767f294dc74547a7777410c69812a8a3d979ae3f67fe7fae8d246340"
+    },
+    {
+      "caller": "src\\cross\\domain\\path_a\\pairing.py",
+      "module": "cross.shared.normalize",
+      "level": 0,
+      "resolved": "src\\cross\\shared\\normalize.py",
+      "sha256": "bbad17966cecf5258f05e27fe27d2aa1b9e481ab5d8609754b910f29f76cf438"
+    },
+    {
+      "caller": "src\\cross\\shared\\bnb_pick.py",
+      "module": "normalize",
+      "level": 1,
+      "resolved": "src\\cross\\shared\\normalize.py",
+      "sha256": "bbad17966cecf5258f05e27fe27d2aa1b9e481ab5d8609754b910f29f76cf438"
+    },
+    {
+      "caller": "src\\cross\\domain\\labels\\anchor_masking.py",
+      "module": "cross.domain.labels.feature_provenance",
+      "level": 0,
+      "resolved": "src\\cross\\domain\\labels\\feature_provenance.py",
+      "sha256": "795274d6c943bdea580400af97b2e905095daafb1199cd9c2fc6fad87db5e314"
+    },
+    {
+      "caller": "src\\cross\\domain\\labels\\anchor_masking.py",
+      "module": "cross.shared.normalize",
+      "level": 0,
+      "resolved": "src\\cross\\shared\\normalize.py",
+      "sha256": "bbad17966cecf5258f05e27fe27d2aa1b9e481ab5d8609754b910f29f76cf438"
+    },
+    {
+      "caller": "src\\cross\\domain\\path_b\\uot_pairs.py",
+      "module": "cross.shared.amount_normalizer",
+      "level": 0,
+      "resolved": "src\\cross\\shared\\amount_normalizer.py",
+      "sha256": "86478c6fff63035f10d53670df633849a40926fe6ad4c28acbf74e00e20a5264"
+    },
+    {
+      "caller": "src\\cross\\domain\\path_b\\uot_pairs.py",
+      "module": "cross.shared.connector_decimals",
+      "level": 0,
+      "resolved": "src\\cross\\shared\\connector_decimals.py",
+      "sha256": "577440550193508e61ab900e688010781fa69c49bcd9f11bacf5a3c327117372"
+    },
+    {
+      "caller": "src\\cross\\domain\\path_b\\uot_pairs.py",
+      "module": "cross.shared.normalize",
+      "level": 0,
+      "resolved": "src\\cross\\shared\\normalize.py",
+      "sha256": "bbad17966cecf5258f05e27fe27d2aa1b9e481ab5d8609754b910f29f76cf438"
+    },
+    {
+      "caller": "src\\cross\\domain\\path_b\\uot_pairs.py",
+      "module": "cross.utils.safe_cast",
+      "level": 0,
+      "resolved": "src\\cross\\utils\\safe_cast.py",
+      "sha256": "b6382b37d0f44187c74302fb6d34534a069f3bc04024cad6ed0d9a6009d77e8a"
+    },
+    {
+      "caller": "src\\cross\\domain\\path_b\\uot_pairs.py",
+      "module": "route_registry",
+      "level": 1,
+      "resolved": "src\\cross\\domain\\path_b\\route_registry.py",
+      "sha256": "562dde0dc0074518b503f1eafc63659a7d1ac8dd8b4d30c2b8a0de5b01957178"
+    },
+    {
+      "caller": "src\\cross\\domain\\path_b\\route_registry.py",
+      "module": "cross.shared.amount_normalizer",
+      "level": 0,
+      "resolved": "src\\cross\\shared\\amount_normalizer.py",
+      "sha256": "86478c6fff63035f10d53670df633849a40926fe6ad4c28acbf74e00e20a5264"
+    },
+    {
+      "caller": "src\\cross\\domain\\path_b\\route_registry.py",
+      "module": "cross.shared.decimals_registry",
+      "level": 0,
+      "resolved": "src\\cross\\shared\\decimals_registry.py",
+      "sha256": "1e9d180a60ce4c9667370de3c527134b9834aefecd1dfc00a7b2aae81b9b91c0"
+    },
+    {
+      "caller": "src\\cross\\domain\\path_b\\route_registry.py",
+      "module": "cross.shared.normalize",
+      "level": 0,
+      "resolved": "src\\cross\\shared\\normalize.py",
+      "sha256": "bbad17966cecf5258f05e27fe27d2aa1b9e481ab5d8609754b910f29f76cf438"
+    },
+    {
+      "caller": "src\\cross\\shared\\decimals_registry.py",
+      "module": "cross.config.paths",
+      "level": 0,
+      "resolved": "src\\cross\\config\\paths.py",
+      "sha256": "d3eba23f159706351b5ab2683210598a5f7acd3f4e4fb73f8c95d9f2bff8153f"
+    },
+    {
+      "caller": "src\\cross\\shared\\connector_decimals.py",
+      "module": "cross.shared.decimals_registry",
+      "level": 0,
+      "resolved": "src\\cross\\shared\\decimals_registry.py",
+      "sha256": "1e9d180a60ce4c9667370de3c527134b9834aefecd1dfc00a7b2aae81b9b91c0"
+    },
+    {
+      "caller": "src\\cross\\domain\\path_b\\unlabeled_io.py",
+      "module": "shared.transfers",
+      "level": 3,
+      "resolved": "src\\cross\\shared\\transfers.py",
+      "sha256": "f716bfe4575c31be0ea27cd6738a8c8a4102e78a19c1b7315b087cd8cc592cfa"
+    },
+    {
+      "caller": "src\\cross\\domain\\path_b\\unlabeled_io.py",
+      "module": "shared.normalize",
+      "level": 3,
+      "resolved": "src\\cross\\shared\\normalize.py",
+      "sha256": "bbad17966cecf5258f05e27fe27d2aa1b9e481ab5d8609754b910f29f76cf438"
+    },
+    {
+      "caller": "src\\cross\\domain\\path_b\\unlabeled_io.py",
+      "module": "route_registry",
+      "level": 1,
+      "resolved": "src\\cross\\domain\\path_b\\route_registry.py",
+      "sha256": "562dde0dc0074518b503f1eafc63659a7d1ac8dd8b4d30c2b8a0de5b01957178"
+    },
+    {
+      "caller": "src\\cross\\domain\\path_b\\legacy_connector.py",
+      "module": "shared.connector_decimals",
+      "level": 3,
+      "resolved": "src\\cross\\shared\\connector_decimals.py",
+      "sha256": "577440550193508e61ab900e688010781fa69c49bcd9f11bacf5a3c327117372"
+    },
+    {
+      "caller": "src\\cross\\domain\\path_b\\legacy_connector.py",
+      "module": "shared.transfers",
+      "level": 3,
+      "resolved": "src\\cross\\shared\\transfers.py",
+      "sha256": "f716bfe4575c31be0ea27cd6738a8c8a4102e78a19c1b7315b087cd8cc592cfa"
+    },
+    {
+      "caller": "src\\cross\\domain\\path_b\\legacy_connector.py",
+      "module": "shared.normalize",
+      "level": 3,
+      "resolved": "src\\cross\\shared\\normalize.py",
+      "sha256": "bbad17966cecf5258f05e27fe27d2aa1b9e481ab5d8609754b910f29f76cf438"
+    },
+    {
+      "caller": "src\\cross\\domain\\path_b\\legacy_connector.py",
+      "module": "utils.safe_cast",
+      "level": 3,
+      "resolved": "src\\cross\\utils\\safe_cast.py",
+      "sha256": "b6382b37d0f44187c74302fb6d34534a069f3bc04024cad6ed0d9a6009d77e8a"
+    },
+    {
+      "caller": "src\\cross\\domain\\path_b\\legacy_connector.py",
+      "module": "locator.withdraw_locator",
+      "level": 2,
+      "resolved": "src\\cross\\domain\\locator\\withdraw_locator.py",
+      "sha256": "d8d28db47d755cdc867a7611425a2cebc216124374e4b6fe75eb1753142d4eff"
+    },
+    {
+      "caller": "src\\cross\\domain\\path_b\\legacy_connector.py",
+      "module": "constants",
+      "level": 1,
+      "resolved": "src\\cross\\domain\\path_b\\constants.py",
+      "sha256": "7c5301db6ad9284d860508eace001d6daa6887608b4545678325fefe3268c38f"
+    },
+    {
+      "caller": "src\\cross\\domain\\locator\\withdraw_locator.py",
+      "module": "config.paths",
+      "level": 3,
+      "resolved": "src\\cross\\config\\paths.py",
+      "sha256": "d3eba23f159706351b5ab2683210598a5f7acd3f4e4fb73f8c95d9f2bff8153f"
+    },
+    {
+      "caller": "src\\cross\\domain\\path_b\\align.py",
+      "module": "shared.transfers",
+      "level": 3,
+      "resolved": "src\\cross\\shared\\transfers.py",
+      "sha256": "f716bfe4575c31be0ea27cd6738a8c8a4102e78a19c1b7315b087cd8cc592cfa"
+    },
+    {
+      "caller": "src\\cross\\domain\\path_b\\align.py",
+      "module": "shared.normalize",
+      "level": 3,
+      "resolved": "src\\cross\\shared\\normalize.py",
+      "sha256": "bbad17966cecf5258f05e27fe27d2aa1b9e481ab5d8609754b910f29f76cf438"
+    },
+    {
+      "caller": "src\\cross\\domain\\path_b\\align.py",
+      "module": "path_a.pairing",
+      "level": 2,
+      "resolved": "src\\cross\\domain\\path_a\\pairing.py",
+      "sha256": "92254fbadfd19b328b163c14702304864ac2a2af37809d0356557eec9ace42c7"
+    },
+    {
+      "caller": "src\\cross\\domain\\validation\\rc_uot_exports.py",
+      "module": "cross.config.output_layout",
+      "level": 0,
+      "resolved": "src\\cross\\config\\output_layout.py",
+      "sha256": "0924711efbc3418a60add3246b41b6084c22f1b245bafac2cb8e4db9ae985b8c"
+    },
+    {
+      "caller": "src\\cross\\domain\\validation\\rc_uot_exports.py",
+      "module": "cross.shared.normalize",
+      "level": 0,
+      "resolved": "src\\cross\\shared\\normalize.py",
+      "sha256": "bbad17966cecf5258f05e27fe27d2aa1b9e481ab5d8609754b910f29f76cf438"
+    },
+    {
+      "caller": "src\\cross\\domain\\evidence.py",
+      "module": "cross.domain.amount.normalizer",
+      "level": 0,
+      "resolved": "src\\cross\\domain\\amount\\normalizer.py",
+      "sha256": "50f5335b8d3e78b5369d9e63655b4ee3ef5d933ae61a3e186a9c1b65b1247714"
+    },
+    {
+      "caller": "src\\cross\\domain\\evidence.py",
+      "module": "cross.domain.token.decimals_registry",
+      "level": 0,
+      "resolved": "src\\cross\\domain\\token\\decimals_registry.py",
+      "sha256": "e0f9a4ee5950b8241a9a9b8c1c3396cd551e36b92de4712e3f3f09cc06f76530"
+    },
+    {
+      "caller": "src\\cross\\domain\\evidence.py",
+      "module": "cross.shared.normalize",
+      "level": 0,
+      "resolved": "src\\cross\\shared\\normalize.py",
+      "sha256": "bbad17966cecf5258f05e27fe27d2aa1b9e481ab5d8609754b910f29f76cf438"
+    },
+    {
+      "caller": "src\\cross\\domain\\evidence.py",
+      "module": "cross.utils.safe_cast",
+      "level": 0,
+      "resolved": "src\\cross\\utils\\safe_cast.py",
+      "sha256": "b6382b37d0f44187c74302fb6d34534a069f3bc04024cad6ed0d9a6009d77e8a"
+    },
+    {
+      "caller": "src\\cross\\domain\\token\\decimals_registry.py",
+      "module": "cross.config.paths",
+      "level": 0,
+      "resolved": "src\\cross\\config\\paths.py",
+      "sha256": "d3eba23f159706351b5ab2683210598a5f7acd3f4e4fb73f8c95d9f2bff8153f"
+    },
+    {
+      "caller": "src\\cross\\domain\\token\\decimals_registry.py",
+      "module": "cross.shared.decimals_registry",
+      "level": 0,
+      "resolved": "src\\cross\\shared\\decimals_registry.py",
+      "sha256": "1e9d180a60ce4c9667370de3c527134b9834aefecd1dfc00a7b2aae81b9b91c0"
+    },
+    {
+      "caller": "src\\cross\\domain\\amount\\normalizer.py",
+      "module": "cross.domain.token.decimals_registry",
+      "level": 0,
+      "resolved": "src\\cross\\domain\\token\\decimals_registry.py",
+      "sha256": "e0f9a4ee5950b8241a9a9b8c1c3396cd551e36b92de4712e3f3f09cc06f76530"
+    },
+    {
+      "caller": "src\\cross\\domain\\amount\\normalizer.py",
+      "module": "cross.shared",
+      "level": 0,
+      "resolved": "src\\cross\\shared\\__init__.py",
+      "sha256": "ea7deff8726e6c1fb0f355866a5fe2e71bd0932ed1507437dd82f3258cc603fd"
+    },
+    {
+      "caller": "src\\cross\\domain\\flows\\segment_builder.py",
+      "module": "cross.shared.normalize",
+      "level": 0,
+      "resolved": "src\\cross\\shared\\normalize.py",
+      "sha256": "bbad17966cecf5258f05e27fe27d2aa1b9e481ab5d8609754b910f29f76cf438"
+    },
+    {
+      "caller": "src\\cross\\domain\\flows\\segment_builder.py",
+      "module": "cross.shared.transfers",
+      "level": 0,
+      "resolved": "src\\cross\\shared\\transfers.py",
+      "sha256": "f716bfe4575c31be0ea27cd6738a8c8a4102e78a19c1b7315b087cd8cc592cfa"
+    },
+    {
+      "caller": "src\\cross\\domain\\flows\\segment_builder.py",
+      "module": "cross.utils.safe_cast",
+      "level": 0,
+      "resolved": "src\\cross\\utils\\safe_cast.py",
+      "sha256": "b6382b37d0f44187c74302fb6d34534a069f3bc04024cad6ed0d9a6009d77e8a"
+    },
+    {
+      "caller": "src\\cross\\domain\\flow\\segment_builder.py",
+      "module": "cross.shared.normalize",
+      "level": 0,
+      "resolved": "src\\cross\\shared\\normalize.py",
+      "sha256": "bbad17966cecf5258f05e27fe27d2aa1b9e481ab5d8609754b910f29f76cf438"
+    },
+    {
+      "caller": "src\\cross\\domain\\flow\\segment_builder.py",
+      "module": "cross.utils.safe_cast",
+      "level": 0,
+      "resolved": "src\\cross\\utils\\safe_cast.py",
+      "sha256": "b6382b37d0f44187c74302fb6d34534a069f3bc04024cad6ed0d9a6009d77e8a"
+    },
+    {
+      "caller": "src\\cross\\domain\\flow\\segment_builder.py",
+      "module": "cross.domain.path_b.route_registry",
+      "level": 0,
+      "resolved": "src\\cross\\domain\\path_b\\route_registry.py",
+      "sha256": "562dde0dc0074518b503f1eafc63659a7d1ac8dd8b4d30c2b8a0de5b01957178"
+    },
+    {
+      "caller": "src\\cross\\domain\\flows\\flow_features.py",
+      "module": "cross.shared.connector_decimals",
+      "level": 0,
+      "resolved": "src\\cross\\shared\\connector_decimals.py",
+      "sha256": "577440550193508e61ab900e688010781fa69c49bcd9f11bacf5a3c327117372"
+    },
+    {
+      "caller": "src\\cross\\domain\\flows\\flow_features.py",
+      "module": "cross.shared.normalize",
+      "level": 0,
+      "resolved": "src\\cross\\shared\\normalize.py",
+      "sha256": "bbad17966cecf5258f05e27fe27d2aa1b9e481ab5d8609754b910f29f76cf438"
+    },
+    {
+      "caller": "src\\cross\\domain\\flows\\flow_features.py",
+      "module": "cross.utils.safe_cast",
+      "level": 0,
+      "resolved": "src\\cross\\utils\\safe_cast.py",
+      "sha256": "b6382b37d0f44187c74302fb6d34534a069f3bc04024cad6ed0d9a6009d77e8a"
+    },
+    {
+      "caller": "src\\cross\\domain\\evaluation\\__init__.py",
+      "module": "flow_metrics",
+      "level": 1,
+      "resolved": "src\\cross\\domain\\evaluation\\flow_metrics.py",
+      "sha256": "34fac900706f2632e466eb74765c4761fb62f303c25a6950162424963e309629"
+    },
+    {
+      "caller": "src\\cross\\domain\\evaluation\\compare.py",
+      "module": "cross.shared.normalize",
+      "level": 0,
+      "resolved": "src\\cross\\shared\\normalize.py",
+      "sha256": "bbad17966cecf5258f05e27fe27d2aa1b9e481ab5d8609754b910f29f76cf438"
+    },
+    {
+      "caller": "src\\cross\\domain\\ranker\\inference.py",
+      "module": "cross.shared.connector_decimals",
+      "level": 0,
+      "resolved": "src\\cross\\shared\\connector_decimals.py",
+      "sha256": "577440550193508e61ab900e688010781fa69c49bcd9f11bacf5a3c327117372"
+    },
+    {
+      "caller": "src\\cross\\domain\\ranker\\inference.py",
+      "module": "cross.shared.normalize",
+      "level": 0,
+      "resolved": "src\\cross\\shared\\normalize.py",
+      "sha256": "bbad17966cecf5258f05e27fe27d2aa1b9e481ab5d8609754b910f29f76cf438"
+    },
+    {
+      "caller": "src\\cross\\domain\\ranker\\inference.py",
+      "module": "cross.domain.path_b.greedy",
+      "level": 0,
+      "resolved": "src\\cross\\domain\\path_b\\greedy.py",
+      "sha256": "a1b2a576abca246667988785da5723353a9a7b3adcec792698a6c5c29613345e"
+    },
+    {
+      "caller": "src\\cross\\domain\\ranker\\inference.py",
+      "module": "features",
+      "level": 1,
+      "resolved": "src\\cross\\domain\\ranker\\features.py",
+      "sha256": "8e7e09315af6d3c463d508ce3a87df2eccd78df6131b8080fd708669be6659e7"
+    },
+    {
+      "caller": "src\\cross\\domain\\ranker\\inference.py",
+      "module": "model",
+      "level": 1,
+      "resolved": "src\\cross\\domain\\ranker\\model.py",
+      "sha256": "da2669d8ad00b605b17c0b645ecb9be534efcf949edb6d4e214ebb77d65c8136"
+    },
+    {
+      "caller": "src\\cross\\domain\\ranker\\features.py",
+      "module": "cross.shared.bnb_pick",
+      "level": 0,
+      "resolved": "src\\cross\\shared\\bnb_pick.py",
+      "sha256": "cfad699f1fc014d389fac3b5a3df5579752034d1408614748e56b61e56346b38"
+    },
+    {
+      "caller": "src\\cross\\domain\\ranker\\features.py",
+      "module": "cross.shared.normalize",
+      "level": 0,
+      "resolved": "src\\cross\\shared\\normalize.py",
+      "sha256": "bbad17966cecf5258f05e27fe27d2aa1b9e481ab5d8609754b910f29f76cf438"
+    },
+    {
+      "caller": "src\\cross\\domain\\ranker\\features.py",
+      "module": "cross.utils.safe_cast",
+      "level": 0,
+      "resolved": "src\\cross\\utils\\safe_cast.py",
+      "sha256": "b6382b37d0f44187c74302fb6d34534a069f3bc04024cad6ed0d9a6009d77e8a"
+    },
+    {
+      "caller": "src\\cross\\domain\\ranker\\features.py",
+      "module": "cross.domain.path_b.greedy",
+      "level": 0,
+      "resolved": "src\\cross\\domain\\path_b\\greedy.py",
+      "sha256": "a1b2a576abca246667988785da5723353a9a7b3adcec792698a6c5c29613345e"
+    },
+    {
+      "caller": "src\\cross\\domain\\path_b\\greedy.py",
+      "module": "shared.bnb_pick",
+      "level": 3,
+      "resolved": "src\\cross\\shared\\bnb_pick.py",
+      "sha256": "cfad699f1fc014d389fac3b5a3df5579752034d1408614748e56b61e56346b38"
+    },
+    {
+      "caller": "src\\cross\\domain\\path_b\\greedy.py",
+      "module": "shared.connector_decimals",
+      "level": 3,
+      "resolved": "src\\cross\\shared\\connector_decimals.py",
+      "sha256": "577440550193508e61ab900e688010781fa69c49bcd9f11bacf5a3c327117372"
+    },
+    {
+      "caller": "src\\cross\\domain\\path_b\\greedy.py",
+      "module": "shared.normalize",
+      "level": 3,
+      "resolved": "src\\cross\\shared\\normalize.py",
+      "sha256": "bbad17966cecf5258f05e27fe27d2aa1b9e481ab5d8609754b910f29f76cf438"
+    },
+    {
+      "caller": "src\\cross\\domain\\path_b\\greedy.py",
+      "module": "utils.safe_cast",
+      "level": 3,
+      "resolved": "src\\cross\\utils\\safe_cast.py",
+      "sha256": "b6382b37d0f44187c74302fb6d34534a069f3bc04024cad6ed0d9a6009d77e8a"
+    },
+    {
+      "caller": "src\\cross\\domain\\graph\\inference.py",
+      "module": "cross.shared.connector_decimals",
+      "level": 0,
+      "resolved": "src\\cross\\shared\\connector_decimals.py",
+      "sha256": "577440550193508e61ab900e688010781fa69c49bcd9f11bacf5a3c327117372"
+    },
+    {
+      "caller": "src\\cross\\domain\\graph\\inference.py",
+      "module": "cross.shared.normalize",
+      "level": 0,
+      "resolved": "src\\cross\\shared\\normalize.py",
+      "sha256": "bbad17966cecf5258f05e27fe27d2aa1b9e481ab5d8609754b910f29f76cf438"
+    },
+    {
+      "caller": "src\\cross\\domain\\graph\\inference.py",
+      "module": "cross.domain.path_b.greedy",
+      "level": 0,
+      "resolved": "src\\cross\\domain\\path_b\\greedy.py",
+      "sha256": "a1b2a576abca246667988785da5723353a9a7b3adcec792698a6c5c29613345e"
+    },
+    {
+      "caller": "src\\cross\\domain\\graph\\inference.py",
+      "module": "features",
+      "level": 1,
+      "resolved": "src\\cross\\domain\\graph\\features.py",
+      "sha256": "b09138748939e009cf7c76937689a5a8802dc31f8c0a91bded610cf67eedbf42"
+    },
+    {
+      "caller": "src\\cross\\domain\\graph\\inference.py",
+      "module": "model",
+      "level": 1,
+      "resolved": "src\\cross\\domain\\graph\\model.py",
+      "sha256": "d0b00ab5d843fec97e5f0c329565d4881898c24589f4d520f3dd817623c9b8a8"
+    },
+    {
+      "caller": "src\\cross\\domain\\graph\\inference.py",
+      "module": "cross.domain.ranker.features",
+      "level": 0,
+      "resolved": "src\\cross\\domain\\ranker\\features.py",
+      "sha256": "8e7e09315af6d3c463d508ce3a87df2eccd78df6131b8080fd708669be6659e7"
+    },
+    {
+      "caller": "src\\cross\\domain\\graph\\features.py",
+      "module": "cross.shared.connector_decimals",
+      "level": 0,
+      "resolved": "src\\cross\\shared\\connector_decimals.py",
+      "sha256": "577440550193508e61ab900e688010781fa69c49bcd9f11bacf5a3c327117372"
+    },
+    {
+      "caller": "src\\cross\\domain\\graph\\features.py",
+      "module": "cross.shared.normalize",
+      "level": 0,
+      "resolved": "src\\cross\\shared\\normalize.py",
+      "sha256": "bbad17966cecf5258f05e27fe27d2aa1b9e481ab5d8609754b910f29f76cf438"
+    },
+    {
+      "caller": "src\\cross\\domain\\graph\\features.py",
+      "module": "cross.utils.safe_cast",
+      "level": 0,
+      "resolved": "src\\cross\\utils\\safe_cast.py",
+      "sha256": "b6382b37d0f44187c74302fb6d34534a069f3bc04024cad6ed0d9a6009d77e8a"
+    },
+    {
+      "caller": "src\\cross\\domain\\graph\\features.py",
+      "module": "cross.domain.ranker.features",
+      "level": 0,
+      "resolved": "src\\cross\\domain\\ranker\\features.py",
+      "sha256": "8e7e09315af6d3c463d508ce3a87df2eccd78df6131b8080fd708669be6659e7"
+    },
+    {
+      "caller": "src\\cross\\domain\\aml\\inference.py",
+      "module": "cross.shared.load_csv",
+      "level": 0,
+      "resolved": "src\\cross\\shared\\load_csv.py",
+      "sha256": "139cfaab767f294dc74547a7777410c69812a8a3d979ae3f67fe7fae8d246340"
+    },
+    {
+      "caller": "src\\cross\\domain\\aml\\inference.py",
+      "module": "cross.shared.normalize",
+      "level": 0,
+      "resolved": "src\\cross\\shared\\normalize.py",
+      "sha256": "bbad17966cecf5258f05e27fe27d2aa1b9e481ab5d8609754b910f29f76cf438"
+    },
+    {
+      "caller": "src\\cross\\domain\\aml\\inference.py",
+      "module": "features",
+      "level": 1,
+      "resolved": "src\\cross\\domain\\aml\\features.py",
+      "sha256": "c64a2d386507ac8dc6494b3c883a333c1bf913911eb8de426a3c1eb6743fc33e"
+    },
+    {
+      "caller": "src\\cross\\domain\\aml\\inference.py",
+      "module": "model",
+      "level": 1,
+      "resolved": "src\\cross\\domain\\aml\\model.py",
+      "sha256": "1496365b5ba68a3835487afb79566f5f37c7e3b690315ce9d10bb499a0036861"
+    },
+    {
+      "caller": "src\\cross\\domain\\aml\\inference.py",
+      "module": "rules",
+      "level": 1,
+      "resolved": "src\\cross\\domain\\aml\\rules.py",
+      "sha256": "8f0d828e5a7e49ce764ff19602bf59fa50757859b1dc648838bac3dd6c6ea700"
+    },
+    {
+      "caller": "src\\cross\\domain\\aml\\rules.py",
+      "module": "cross.shared.normalize",
+      "level": 0,
+      "resolved": "src\\cross\\shared\\normalize.py",
+      "sha256": "bbad17966cecf5258f05e27fe27d2aa1b9e481ab5d8609754b910f29f76cf438"
+    },
+    {
+      "caller": "src\\cross\\domain\\aml\\rules.py",
+      "module": "cross.shared.transfers",
+      "level": 0,
+      "resolved": "src\\cross\\shared\\transfers.py",
+      "sha256": "f716bfe4575c31be0ea27cd6738a8c8a4102e78a19c1b7315b087cd8cc592cfa"
+    },
+    {
+      "caller": "src\\cross\\domain\\aml\\features.py",
+      "module": "cross.shared.transfers",
+      "level": 0,
+      "resolved": "src\\cross\\shared\\transfers.py",
+      "sha256": "f716bfe4575c31be0ea27cd6738a8c8a4102e78a19c1b7315b087cd8cc592cfa"
+    },
+    {
+      "caller": "src\\cross\\domain\\aml\\features.py",
+      "module": "cross.shared.normalize",
+      "level": 0,
+      "resolved": "src\\cross\\shared\\normalize.py",
+      "sha256": "bbad17966cecf5258f05e27fe27d2aa1b9e481ab5d8609754b910f29f76cf438"
+    },
+    {
+      "caller": "src\\cross\\domain\\aml\\features.py",
+      "module": "cross.utils.safe_cast",
+      "level": 0,
+      "resolved": "src\\cross\\utils\\safe_cast.py",
+      "sha256": "b6382b37d0f44187c74302fb6d34534a069f3bc04024cad6ed0d9a6009d77e8a"
+    },
+    {
+      "caller": "src\\cross\\shared\\token_map.py",
+      "module": "cross.shared.bnb_pick",
+      "level": 0,
+      "resolved": "src\\cross\\shared\\bnb_pick.py",
+      "sha256": "cfad699f1fc014d389fac3b5a3df5579752034d1408614748e56b61e56346b38"
+    },
+    {
+      "caller": "src\\cross\\shared\\token_map.py",
+      "module": "cross.domain.path_a.pairing",
+      "level": 0,
+      "resolved": "src\\cross\\domain\\path_a\\pairing.py",
+      "sha256": "92254fbadfd19b328b163c14702304864ac2a2af37809d0356557eec9ace42c7"
+    },
+    {
+      "caller": "src\\cross\\shared\\token_map.py",
+      "module": "cross.shared.load_csv",
+      "level": 0,
+      "resolved": "src\\cross\\shared\\load_csv.py",
+      "sha256": "139cfaab767f294dc74547a7777410c69812a8a3d979ae3f67fe7fae8d246340"
+    },
+    {
+      "caller": "src\\cross\\shared\\token_map.py",
+      "module": "cross.shared.normalize",
+      "level": 0,
+      "resolved": "src\\cross\\shared\\normalize.py",
+      "sha256": "bbad17966cecf5258f05e27fe27d2aa1b9e481ab5d8609754b910f29f76cf438"
+    },
+    {
+      "caller": "src\\cross\\shared\\label_split.py",
+      "module": "cross.shared.load_csv",
+      "level": 0,
+      "resolved": "src\\cross\\shared\\load_csv.py",
+      "sha256": "139cfaab767f294dc74547a7777410c69812a8a3d979ae3f67fe7fae8d246340"
+    },
+    {
+      "caller": "src\\cross\\shared\\label_split.py",
+      "module": "cross.shared.normalize",
+      "level": 0,
+      "resolved": "src\\cross\\shared\\normalize.py",
+      "sha256": "bbad17966cecf5258f05e27fe27d2aa1b9e481ab5d8609754b910f29f76cf438"
+    },
+    {
+      "caller": "src\\cross\\shared\\label_split.py",
+      "module": "cross.utils.safe_cast",
+      "level": 0,
+      "resolved": "src\\cross\\utils\\safe_cast.py",
+      "sha256": "b6382b37d0f44187c74302fb6d34534a069f3bc04024cad6ed0d9a6009d77e8a"
+    },
+    {
+      "caller": "src\\cross\\shared\\label_split.py",
+      "module": "cross.domain.path_a.pairing",
+      "level": 0,
+      "resolved": "src\\cross\\domain\\path_a\\pairing.py",
+      "sha256": "92254fbadfd19b328b163c14702304864ac2a2af37809d0356557eec9ace42c7"
+    },
+    {
+      "caller": "src\\cross\\shared\\label_split.py",
+      "module": "cross.shared.load_csv",
+      "level": 0,
+      "resolved": "src\\cross\\shared\\load_csv.py",
+      "sha256": "139cfaab767f294dc74547a7777410c69812a8a3d979ae3f67fe7fae8d246340"
+    },
+    {
+      "caller": "src\\cross\\shared\\amount_hints.py",
+      "module": "cross.shared.bnb_pick",
+      "level": 0,
+      "resolved": "src\\cross\\shared\\bnb_pick.py",
+      "sha256": "cfad699f1fc014d389fac3b5a3df5579752034d1408614748e56b61e56346b38"
+    },
+    {
+      "caller": "src\\cross\\shared\\amount_hints.py",
+      "module": "cross.domain.path_a.pairing",
+      "level": 0,
+      "resolved": "src\\cross\\domain\\path_a\\pairing.py",
+      "sha256": "92254fbadfd19b328b163c14702304864ac2a2af37809d0356557eec9ace42c7"
+    },
+    {
+      "caller": "src\\cross\\shared\\amount_hints.py",
+      "module": "cross.shared.load_csv",
+      "level": 0,
+      "resolved": "src\\cross\\shared\\load_csv.py",
+      "sha256": "139cfaab767f294dc74547a7777410c69812a8a3d979ae3f67fe7fae8d246340"
+    },
+    {
+      "caller": "src\\cross\\shared\\amount_hints.py",
+      "module": "cross.shared.normalize",
+      "level": 0,
+      "resolved": "src\\cross\\shared\\normalize.py",
+      "sha256": "bbad17966cecf5258f05e27fe27d2aa1b9e481ab5d8609754b910f29f76cf438"
+    },
+    {
+      "caller": "src\\cross\\shared\\amount_hints.py",
+      "module": "cross.utils.safe_cast",
+      "level": 0,
+      "resolved": "src\\cross\\utils\\safe_cast.py",
+      "sha256": "b6382b37d0f44187c74302fb6d34534a069f3bc04024cad6ed0d9a6009d77e8a"
+    },
+    {
+      "caller": "src\\cross\\domain\\labels\\uot_flow_loader.py",
+      "module": "cross.utils.safe_cast",
+      "level": 0,
+      "resolved": "src\\cross\\utils\\safe_cast.py",
+      "sha256": "b6382b37d0f44187c74302fb6d34534a069f3bc04024cad6ed0d9a6009d77e8a"
+    },
+    {
+      "caller": "scripts\\run_baseline_compare_phase1_connector.py",
+      "module": "cross.application.experiments.delay_semantics_utils",
+      "level": 0,
+      "resolved": "src\\cross\\application\\experiments\\delay_semantics_utils.py",
+      "sha256": "6e25a09a6a0295ca829656b2005b22cda43b25242057ce8b04d2ea775a18df4f"
+    },
+    {
+      "caller": "scripts\\run_baseline_compare_phase1_connector.py",
+      "module": "cross.domain.evaluation.flow_metrics",
+      "level": 0,
+      "resolved": "src\\cross\\domain\\evaluation\\flow_metrics.py",
+      "sha256": "34fac900706f2632e466eb74765c4761fb62f303c25a6950162424963e309629"
+    },
+    {
+      "caller": "scripts\\run_baseline_compare_phase1_connector.py",
+      "module": "cross.shared.normalize",
+      "level": 0,
+      "resolved": "src\\cross\\shared\\normalize.py",
+      "sha256": "bbad17966cecf5258f05e27fe27d2aa1b9e481ab5d8609754b910f29f76cf438"
+    },
+    {
+      "caller": "scripts\\run_baseline_compare_phase1_connector.py",
+      "module": "cross.shared.transfers",
+      "level": 0,
+      "resolved": "src\\cross\\shared\\transfers.py",
+      "sha256": "f716bfe4575c31be0ea27cd6738a8c8a4102e78a19c1b7315b087cd8cc592cfa"
+    },
+    {
+      "caller": "src\\cross\\application\\experiments\\delay_semantics_utils.py",
+      "module": "cross.application.experiments.recalculate_topk_recall",
+      "level": 0,
+      "resolved": "src\\cross\\application\\experiments\\recalculate_topk_recall.py",
+      "sha256": "982955e071944468ecf599996caaca4c7b5d24bfc48b5bbc8f3de58b1fabe7ef"
+    },
+    {
+      "caller": "src\\cross\\application\\experiments\\delay_semantics_utils.py",
+      "module": "cross.application.experiments.uot_cache_utils",
+      "level": 0,
+      "resolved": "src\\cross\\application\\experiments\\uot_cache_utils.py",
+      "sha256": "089540bbe74dc4b78dde6c6fe1541edfc1ad4c2d18f81e844f186e1f962fff58"
+    },
+    {
+      "caller": "src\\cross\\application\\experiments\\delay_semantics_utils.py",
+      "module": "cross.domain.evaluation.flow_metrics",
+      "level": 0,
+      "resolved": "src\\cross\\domain\\evaluation\\flow_metrics.py",
+      "sha256": "34fac900706f2632e466eb74765c4761fb62f303c25a6950162424963e309629"
+    },
+    {
+      "caller": "src\\cross\\application\\experiments\\delay_semantics_utils.py",
+      "module": "cross.domain.path_a.pairing",
+      "level": 0,
+      "resolved": "src\\cross\\domain\\path_a\\pairing.py",
+      "sha256": "92254fbadfd19b328b163c14702304864ac2a2af37809d0356557eec9ace42c7"
+    },
+    {
+      "caller": "src\\cross\\application\\experiments\\delay_semantics_utils.py",
+      "module": "cross.domain.uot.delay_policy",
+      "level": 0,
+      "resolved": "src\\cross\\domain\\uot\\delay_policy.py",
+      "sha256": "e8cd179606861582c418aeba57c547e39fd408030e51f2f343c4de48c9bc197a"
+    },
+    {
+      "caller": "src\\cross\\application\\experiments\\delay_semantics_utils.py",
+      "module": "cross.shared.normalize",
+      "level": 0,
+      "resolved": "src\\cross\\shared\\normalize.py",
+      "sha256": "bbad17966cecf5258f05e27fe27d2aa1b9e481ab5d8609754b910f29f76cf438"
+    },
+    {
+      "caller": "src\\cross\\application\\experiments\\delay_semantics_utils.py",
+      "module": "cross.utils.safe_cast",
+      "level": 0,
+      "resolved": "src\\cross\\utils\\safe_cast.py",
+      "sha256": "b6382b37d0f44187c74302fb6d34534a069f3bc04024cad6ed0d9a6009d77e8a"
+    },
+    {
+      "caller": "src\\cross\\application\\experiments\\delay_semantics_utils.py",
+      "module": "cross.domain.uot.decode_transport",
+      "level": 0,
+      "resolved": "src\\cross\\domain\\uot\\decode_transport.py",
+      "sha256": "73a9493bbff354325e98f257e4be0649faca3c44ae1e27cf35f504a7340992b9"
+    },
+    {
+      "caller": "src\\cross\\application\\experiments\\delay_semantics_utils.py",
+      "module": "cross.application.experiments.run_time_causal_sensitivity",
+      "level": 0,
+      "resolved": "src\\cross\\application\\experiments\\run_time_causal_sensitivity.py",
+      "sha256": "6ddc575864c99f9591a0dfb100c7c1163825ea78e5d5fcbd3ef653e2931d087c"
+    },
+    {
+      "caller": "src\\cross\\application\\experiments\\run_time_causal_sensitivity.py",
+      "module": "cross.application.experiments.delay_semantics_utils",
+      "level": 0,
+      "resolved": "src\\cross\\application\\experiments\\delay_semantics_utils.py",
+      "sha256": "6e25a09a6a0295ca829656b2005b22cda43b25242057ce8b04d2ea775a18df4f"
+    },
+    {
+      "caller": "src\\cross\\application\\experiments\\run_time_causal_sensitivity.py",
+      "module": "cross.application.experiments.uot_cache_utils",
+      "level": 0,
+      "resolved": "src\\cross\\application\\experiments\\uot_cache_utils.py",
+      "sha256": "089540bbe74dc4b78dde6c6fe1541edfc1ad4c2d18f81e844f186e1f962fff58"
+    },
+    {
+      "caller": "src\\cross\\application\\experiments\\run_time_causal_sensitivity.py",
+      "module": "cross.application.experiments.uot_sweep_metrics",
+      "level": 0,
+      "resolved": "src\\cross\\application\\experiments\\uot_sweep_metrics.py",
+      "sha256": "cf2605abc09cc07689ef93c79352578ac19ed7ce4de284a8aecf530f2302381f"
+    },
+    {
+      "caller": "src\\cross\\application\\experiments\\run_time_causal_sensitivity.py",
+      "module": "cross.domain.uot.delay_policy",
+      "level": 0,
+      "resolved": "src\\cross\\domain\\uot\\delay_policy.py",
+      "sha256": "e8cd179606861582c418aeba57c547e39fd408030e51f2f343c4de48c9bc197a"
+    },
+    {
+      "caller": "src\\cross\\application\\experiments\\run_time_causal_sensitivity.py",
+      "module": "cross.shared.normalize",
+      "level": 0,
+      "resolved": "src\\cross\\shared\\normalize.py",
+      "sha256": "bbad17966cecf5258f05e27fe27d2aa1b9e481ab5d8609754b910f29f76cf438"
+    },
+    {
+      "caller": "src\\cross\\application\\experiments\\uot_sweep_metrics.py",
+      "module": "cross.domain.evaluation.flow_metrics",
+      "level": 0,
+      "resolved": "src\\cross\\domain\\evaluation\\flow_metrics.py",
+      "sha256": "34fac900706f2632e466eb74765c4761fb62f303c25a6950162424963e309629"
+    },
+    {
+      "caller": "src\\cross\\application\\experiments\\uot_sweep_metrics.py",
+      "module": "cross.domain.uot.decode_transport",
+      "level": 0,
+      "resolved": "src\\cross\\domain\\uot\\decode_transport.py",
+      "sha256": "73a9493bbff354325e98f257e4be0649faca3c44ae1e27cf35f504a7340992b9"
+    },
+    {
+      "caller": "src\\cross\\application\\experiments\\uot_sweep_metrics.py",
+      "module": "cross.domain.uot.delay_policy",
+      "level": 0,
+      "resolved": "src\\cross\\domain\\uot\\delay_policy.py",
+      "sha256": "e8cd179606861582c418aeba57c547e39fd408030e51f2f343c4de48c9bc197a"
+    },
+    {
+      "caller": "src\\cross\\application\\experiments\\uot_sweep_metrics.py",
+      "module": "cross.shared.normalize",
+      "level": 0,
+      "resolved": "src\\cross\\shared\\normalize.py",
+      "sha256": "bbad17966cecf5258f05e27fe27d2aa1b9e481ab5d8609754b910f29f76cf438"
+    },
+    {
+      "caller": "src\\cross\\application\\experiments\\recalculate_topk_recall.py",
+      "module": "cross.domain.evaluation.flow_metrics",
+      "level": 0,
+      "resolved": "src\\cross\\domain\\evaluation\\flow_metrics.py",
+      "sha256": "34fac900706f2632e466eb74765c4761fb62f303c25a6950162424963e309629"
+    },
+    {
+      "caller": "src\\cross\\application\\experiments\\recalculate_topk_recall.py",
+      "module": "cross.shared.normalize",
+      "level": 0,
+      "resolved": "src\\cross\\shared\\normalize.py",
+      "sha256": "bbad17966cecf5258f05e27fe27d2aa1b9e481ab5d8609754b910f29f76cf438"
+    }
+  ],
+  "unresolved_local_candidates": [
+    "core.dst_chain"
+  ]
+}

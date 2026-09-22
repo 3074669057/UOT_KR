@@ -1,0 +1,189 @@
+{
+  "experiment_id": "r6_posthoc_kernel_k_control_20260917",
+  "status": "post-hoc supplementary analysis",
+  "preregistration": "not preregistered",
+  "created_utc": "2026-09-17T05:14:51Z",
+  "runner": "scripts/run_r6_posthoc_kernel_k_control.py",
+  "one_line_question": "On the development distribution, how does the relative ordering of CONDITIONAL_UOT_D4 vs AMOUNT_FREE_COST_D4 change with the decoder width k?",
+  "allowed_seeds": [
+    201,
+    202,
+    203,
+    204,
+    205
+  ],
+  "forbidden_seeds": [
+    301,
+    302,
+    303,
+    304,
+    305
+  ],
+  "bridges": [
+    "Celer",
+    "Multi",
+    "Poly"
+  ],
+  "bridge_paper_names": {
+    "Celer": "Celer",
+    "Multi": "Multi",
+    "Poly": "Poly"
+  },
+  "k_grid": [
+    2,
+    3,
+    5,
+    7,
+    10,
+    15
+  ],
+  "k_default": 5,
+  "epsilon": 0.05,
+  "lambda": 0.5,
+  "methods": [
+    "AMOUNT_FREE_COST_D4",
+    "SUPPORT_PLUS_K_D4",
+    "CONDITIONAL_UOT_D4",
+    "RAW_UOT_PLAN_D4"
+  ],
+  "primary_contrast": "CONDITIONAL_UOT_D4 - AMOUNT_FREE_COST_D4",
+  "anchor_tolerance": 0.0005,
+  "paired_test": "two-sided paired sign-flip permutation",
+  "confirmatory_trigger": "k=3, delta<0, p<0.05",
+  "n_perm": 20000,
+  "perm_rng_seed": 20240101,
+  "support_threshold": 1e-09,
+  "support_sentinel": -1e+300,
+  "solver": {
+    "numItermax": 20000,
+    "stopThr": 1e-11,
+    "reg": 0.05,
+    "reg_m": 0.5
+  },
+  "prior_known_facts": {
+    "development_k5": {
+      "CONDITIONAL_UOT_D4": 0.3129,
+      "AMOUNT_FREE_COST_D4": 0.3172,
+      "delta_conditional_minus_amount_free": -0.0043,
+      "source": "out/multi_bridge_expansion/conditional_plan_holdout_preregistration/holdout_common.EXPECTED_DEV_ANCHORS (frozen, published)"
+    },
+    "frozen_holdout_k5": {
+      "delta_conditional_minus_amount_free_macro": 0.00484431003584229,
+      "source": "out/multi_bridge_expansion/conditional_plan_holdout_results/statistics.json :: d_cost.macro_mean (frozen, read-only)"
+    },
+    "consequence": "A development-vs-holdout SIGN REVERSAL in the primary contrast already existed at k=5 before this experiment. The author's proposed rules A and B are therefore impossible on development data and cannot be used as the operational classification."
+  },
+  "author_proposed_decision_rules": {
+    "source": "author plan as supplied with the task; preserved verbatim",
+    "A": {
+      "condition": "all six k have Delta_dev(k) >= 0",
+      "meaning": "conditional decoding dominates the direct kernel ordering at every k on development"
+    },
+    "B": {
+      "condition": "default k=5 still has Delta_dev(5) > 0",
+      "meaning": "the default configuration keeps the positive sign"
+    },
+    "C": {
+      "condition": "k=3 Delta_dev(3) < 0 and paired p < 0.05",
+      "meaning": "pre-specified contribution downgrade trigger"
+    },
+    "why_unusable": "Both A and B require a NON-NEGATIVE development Delta at k=5, but the locked, pre-existing development k=5 anchor is Delta_dev(5) = -0.0043. Both conditions are therefore false by construction, before any R6 data is collected. Reporting them as the decision rule would guarantee a foregone 'non-A, non-B' outcome and would misdescribe the experiment."
+  },
+  "operational_decision_rules": {
+    "delta_definition": "Delta_dev(k) = macro_edge_f1(CONDITIONAL_UOT_D4, k) - macro_edge_f1(AMOUNT_FREE_COST_D4, k), where macro_edge_f1 is the unweighted macro mean over the 15 (bridge, seed) development cells of the per-cell 48-template macro edge F1",
+    "sign_convention": "All sign decisions use the full-precision values written to results/kernel_k_long.csv, never the 4-decimal display values.",
+    "C": {
+      "priority": "highest; evaluated first",
+      "condition": "Delta_dev(3) < 0 AND two-sided paired sign-flip permutation p < 0.05 over the 15 (bridge, seed) paired cells",
+      "role": "the single pre-specified confirmatory trigger",
+      "other_k_p_values": "descriptive only; no additional significance claim is constructed from them",
+      "paper_action": [
+        "do not describe conditional decoding as generally superior to direct kernel ordering",
+        "narrow contribution (2) to: conditional decoding repairs the RAW UOT plan ordering",
+        "produce abstract / contribution-list / section 4.4(c) / conclusion patch suggestions",
+        "write patches only; never overwrite the frozen manuscript"
+      ]
+    },
+    "A": {
+      "priority": "second; only if C is not triggered",
+      "condition": "all six Delta_dev(k) <= 0",
+      "interpretation": "the direct-kernel ordering advantage over conditional decoding keeps a single direction across the whole k grid on development",
+      "mandatory_caveat": "the frozen holdout at k=5 has Delta_holdout(5) > 0, so this is a clear development/holdout sign reversal; the paper must NOT claim that the conditional advantage is robust in k",
+      "required_wording": "the relative ordering on development is stable in k, but its direction is opposite to the frozen holdout k=5 result, so neither direction can be summarised as a general advantage across data splits"
+    },
+    "B": {
+      "priority": "third; only if C is not triggered and A does not apply",
+      "condition": "at least one Delta_dev(k) > 0 AND at least one Delta_dev(k) < 0",
+      "interpretation": "the relative ordering of the two decoders depends on k",
+      "paper_action": [
+        "keep the split-specific k=5 description",
+        "state explicitly that it does not generalise",
+        "list the joint selection of k and decoder as future work",
+        "do not claim that either decoder is universally better"
+      ]
+    }
+  },
+  "interpretation_boundary": {
+    "can_answer": "how the CONDITIONAL vs AMOUNT_FREE relative ordering moves with k on the development distribution",
+    "cannot_answer": "whether the frozen holdout +0.0048 at k=5 still holds at k != 5",
+    "reason": "seeds 301-305 are never re-run and no frozen holdout artefact exists for any k other than the default k=5",
+    "rule": "the development k sweep must never be presented as a holdout robustness proof; the frozen holdout k=5 value is an independent reference point only"
+  },
+  "pre_existing_frozen_dev_anchors": {
+    "AMOUNT_FREE_COST_D4": 0.3172,
+    "CONDITIONAL_UOT_D4": 0.3129,
+    "RAW_UOT_PLAN_D4": 0.2374
+  },
+  "r5_k_grid_cross_check_context": {
+    "2": {
+      "RAW_UOT_PLAN_D4": 0.000833,
+      "CONDITIONAL_UOT_D4": 0.350384
+    },
+    "3": {
+      "RAW_UOT_PLAN_D4": 0.123611,
+      "CONDITIONAL_UOT_D4": 0.479718
+    },
+    "5": {
+      "RAW_UOT_PLAN_D4": 0.237428,
+      "CONDITIONAL_UOT_D4": 0.312909
+    },
+    "7": {
+      "RAW_UOT_PLAN_D4": 0.262283,
+      "CONDITIONAL_UOT_D4": 0.281992
+    },
+    "10": {
+      "RAW_UOT_PLAN_D4": 0.259415,
+      "CONDITIONAL_UOT_D4": 0.272004
+    },
+    "15": {
+      "RAW_UOT_PLAN_D4": 0.251672,
+      "CONDITIONAL_UOT_D4": 0.258896
+    }
+  },
+  "gates_before_full_sweep": [
+    "seed guard self-test",
+    "tie determinism self-test",
+    "kernel epsilon invariance (0.05 vs 0.2, all six k, identical edge sets)",
+    "R6 cost hash == R5 reference cost hash for all 15 bridge x seed cells",
+    "k=5 anchor gate: AMOUNT_FREE / CONDITIONAL / RAW within 5e-4 of the frozen development anchors, computed as the unweighted mean over the same 15 bridge-seed cells with the frozen 48-template aggregation"
+  ],
+  "no_tuning_clause": "The anchor tolerance is fixed at 5e-4 and must not be relaxed to make a gate pass. No main-experiment hyper-parameter is changed by this experiment: the paper default stays k=5 and the holdout is never re-run, even if some other k looks better on development.",
+  "out_of_scope": [
+    "new bridges",
+    "new seeds",
+    "new cost configurations",
+    "new generators",
+    "epsilon sweep",
+    "lambda sweep",
+    "solver tolerance tuning",
+    "support threshold tuning",
+    "cost weight tuning",
+    "label changes",
+    "metric changes"
+  ],
+  "expected_shape": {
+    "bridge_seed_k_units": 90,
+    "method_level_rows_if_complete": 360,
+    "note": "90 is the number of bridge-seed-k units, NOT the number of method-level result rows"
+  }
+}

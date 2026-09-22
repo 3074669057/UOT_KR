@@ -1,0 +1,141 @@
+{
+  "k": 3,
+  "metric": "macro_edge_f1",
+  "epsilon": 0.05,
+  "lambda": 0.5,
+  "conditional_mean": 0.47971768336964415,
+  "amount_free_mean": 0.5168518518518518,
+  "delta": -0.0371341684822077,
+  "paired_deltas_15": {
+    "Celer__s201": -0.03888888888888892,
+    "Celer__s202": -0.07222222222222224,
+    "Celer__s203": -0.036111111111111094,
+    "Celer__s204": -0.019444444444444486,
+    "Celer__s205": -0.022222222222222254,
+    "Multi__s201": -0.03611111111111104,
+    "Multi__s202": 0.002777777777777768,
+    "Multi__s203": -0.04722222222222222,
+    "Multi__s204": -0.04999999999999993,
+    "Multi__s205": -0.014814814814814836,
+    "Poly__s201": -0.047058823529411764,
+    "Poly__s202": -0.050694444444444486,
+    "Poly__s203": -0.033333333333333326,
+    "Poly__s204": -0.036111111111111094,
+    "Poly__s205": -0.055555555555555636
+  },
+  "paired_permutation_p": 0.0002,
+  "paired_permutation": {
+    "mean_diff": -0.0371341684822077,
+    "p_value": 0.0002,
+    "n": 15,
+    "n_perm": 20000,
+    "rng_seed": 20240101
+  },
+  "exact_signflip": {
+    "exact_p_value": 0.0001220703125,
+    "n": 15,
+    "n_sign_patterns": 32768,
+    "min_attainable_two_sided_p": 3.0517578125e-05,
+    "n_patterns_at_least_as_extreme": 4
+  },
+  "descriptives": {
+    "n": 15,
+    "median_paired_delta": -0.036111111111111094,
+    "std_paired_delta": 0.01845316879238429,
+    "n_positive": 1,
+    "n_negative": 14,
+    "n_zero": 0,
+    "min": -0.07222222222222224,
+    "max": 0.002777777777777768
+  },
+  "effect_sign": "negative",
+  "C_trigger_PASS": true,
+  "C_trigger_rule": "Delta_dev(3) < 0 AND paired permutation p < 0.05",
+  "note": "C is the single pre-specified confirmatory trigger; the other k p-values are descriptive only",
+  "per_bridge": {
+    "Celer": {
+      "n": 5,
+      "mean_paired_delta": -0.0377777777777778,
+      "median_paired_delta": -0.036111111111111094,
+      "std_paired_delta": 0.021026878741972843,
+      "min": -0.07222222222222224,
+      "max": -0.019444444444444486,
+      "n_positive": 0,
+      "n_negative": 5,
+      "n_zero": 0,
+      "sign": "negative",
+      "conditional_mean": 0.4955555555555556,
+      "amount_free_mean": 0.5333333333333333,
+      "paired_permutation": {
+        "mean_diff": -0.0377777777777778,
+        "p_value": 0.0628,
+        "n": 5,
+        "n_perm": 20000,
+        "rng_seed": 20240101
+      },
+      "exact_signflip": {
+        "exact_p_value": 0.0625,
+        "n": 5,
+        "n_sign_patterns": 32,
+        "min_attainable_two_sided_p": 0.03125,
+        "n_patterns_at_least_as_extreme": 2
+      }
+    },
+    "Multi": {
+      "n": 5,
+      "mean_paired_delta": -0.02907407407407405,
+      "median_paired_delta": -0.03611111111111104,
+      "std_paired_delta": 0.02255347250613632,
+      "min": -0.04999999999999993,
+      "max": 0.002777777777777768,
+      "n_positive": 1,
+      "n_negative": 4,
+      "n_zero": 0,
+      "sign": "mixed",
+      "conditional_mean": 0.4548148148148147,
+      "amount_free_mean": 0.48388888888888876,
+      "paired_permutation": {
+        "mean_diff": -0.02907407407407405,
+        "p_value": 0.12335,
+        "n": 5,
+        "n_perm": 20000,
+        "rng_seed": 20240101
+      },
+      "exact_signflip": {
+        "exact_p_value": 0.125,
+        "n": 5,
+        "n_sign_patterns": 32,
+        "min_attainable_two_sided_p": 0.03125,
+        "n_patterns_at_least_as_extreme": 4
+      }
+    },
+    "Poly": {
+      "n": 5,
+      "mean_paired_delta": -0.04455065359477126,
+      "median_paired_delta": -0.047058823529411764,
+      "std_paired_delta": 0.009515764561678816,
+      "min": -0.055555555555555636,
+      "max": -0.033333333333333326,
+      "n_positive": 0,
+      "n_negative": 5,
+      "n_zero": 0,
+      "sign": "negative",
+      "conditional_mean": 0.4887826797385621,
+      "amount_free_mean": 0.5333333333333333,
+      "paired_permutation": {
+        "mean_diff": -0.04455065359477126,
+        "p_value": 0.0628,
+        "n": 5,
+        "n_perm": 20000,
+        "rng_seed": 20240101
+      },
+      "exact_signflip": {
+        "exact_p_value": 0.0625,
+        "n": 5,
+        "n_sign_patterns": 32,
+        "min_attainable_two_sided_p": 0.03125,
+        "n_patterns_at_least_as_extreme": 2
+      }
+    }
+  }
+}

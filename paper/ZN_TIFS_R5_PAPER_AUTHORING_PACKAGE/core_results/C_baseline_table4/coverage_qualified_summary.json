@@ -1,0 +1,14 @@
+{
+  "event_backed_projection_coverage": 0.792,
+  "covered_quotient_dev": {
+    "covered_quotient_precision": 0.9943492991738607,
+    "covered_quotient_recall": 1.0,
+    "covered_quotient_f1": 0.9971217730956652
+  },
+  "covered_quotient_holdout": {
+    "covered_quotient_precision": 0.975,
+    "covered_quotient_recall": 1.0,
+    "covered_quotient_f1": 0.9833333333333334
+  },
+  "full_scope_claim_allowed": false
+}

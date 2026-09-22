@@ -1,0 +1,29 @@
+{
+  "preaudit_hashes_unchanged": true,
+  "seeds_used_in_artifacts": [
+    201,
+    202,
+    203,
+    204,
+    205
+  ],
+  "only_dev_seeds_used": true,
+  "holdout_seed_references": [],
+  "holdout_artifacts_exist": false,
+  "d4_k_unchanged": true,
+  "frozen_weights_unchanged": true,
+  "frozen_params_unchanged": true,
+  "sweep_metas_diagnostic_marked": [
+    225,
+    225
+  ],
+  "loco_variants_pre_registered": true,
+  "reg_grid_pre_registered": true,
+  "regm_grid_pre_registered": true,
+  "candidate_spec_exists": true,
+  "candidate_spec_hash_matches": true,
+  "spec_written_before_holdout": true,
+  "n_issues": 0,
+  "issues": [],
+  "overall_pass": true
+}

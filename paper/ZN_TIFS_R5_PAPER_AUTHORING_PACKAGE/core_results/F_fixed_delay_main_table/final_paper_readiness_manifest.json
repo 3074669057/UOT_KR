@@ -1,0 +1,48 @@
+{
+  "generated_at_utc": "2026-06-10T10:12:51.872120+00:00",
+  "fixed_delay_policy_integrated": true,
+  "admissible_decoding_paper_ready": true,
+  "fixed_delay_anchor_audit_completed": true,
+  "headline_uses_fixed_delay_results": true,
+  "old_0321_results_deprecated_for_headline": true,
+  "paper_ready": true,
+  "permuted_control_display_note": "For permuted-label control, timing/CVR/coverage fields are not interpreted as method-performance metrics in paper-facing tables.",
+  "audit_output_dir": "D:\\trae\\tool\\a\\cross\\out\\fixed_delay_anchor_audit",
+  "admissible_decoding_dir": "D:\\trae\\tool\\a\\cross\\out\\admissible_decoding",
+  "recommended_forensic_decoding": "joint_time_admissible_filter",
+  "recommended_high_coverage_decoding": "positive_delay_top3_rescue",
+  "leakage_comparison": {
+    "per_strategy": {
+      "raw_argmax_fixed_delay": {
+        "baseline_vs_leave_key_out_close": true,
+        "baseline_vs_strict_close": true,
+        "leave_key_out_vs_strict_close": true,
+        "baseline_pair_f1": 0.5886787280701754,
+        "strict_pair_f1": 0.5886787280701754,
+        "baseline_tx_cvr": 0.33813048245614036,
+        "strict_tx_cvr": 0.33813048245614036
+      },
+      "positive_delay_top3_rescue": {
+        "baseline_vs_leave_key_out_close": true,
+        "baseline_vs_strict_close": true,
+        "leave_key_out_vs_strict_close": true,
+        "baseline_pair_f1": 0.5895184524626149,
+        "strict_pair_f1": 0.5895184524626149,
+        "baseline_tx_cvr": 0.004669046965119473,
+        "strict_tx_cvr": 0.004669046965119473
+      },
+      "joint_time_admissible_filter": {
+        "baseline_vs_leave_key_out_close": true,
+        "baseline_vs_strict_close": true,
+        "leave_key_out_vs_strict_close": true,
+        "baseline_pair_f1": 0.7084536082474227,
+        "strict_pair_f1": 0.7084536082474227,
+        "baseline_tx_cvr": 0.0,
+        "strict_tx_cvr": 0.0
+      }
+    },
+    "no_anchor_leakage_claim_supported": true,
+    "tolerance": 0.02,
+    "claim_text": "The fixed-delay RC-UOT-Q gains are not explained by bridge-key or bridge-evidence leakage."
+  }
+}

@@ -1,0 +1,718 @@
+本文中的资金流并非指链上天然存在的原子实体，
+而是面向跨链 AML 对应任务构造的可观测行为单元。
+我们依据主地址 + 链 + 资产组优先的路径标识 + 30 分钟滚动时间窗口对交易进行聚合，
+以降低单笔交易噪声并保留跨链转移中的金额、时间与路径一致性信息。
+30 分钟窗口用于刻画短期桥接行为会话，
+并在实验中通过多窗口敏感性分析验证该选择不会改变主要结论。
+
+流级标签构建流程详解
+====================================
+
+一、数据概览
+------------------------------------
+
+| 指标 | 数值 |
+|------|------|
+| Celer 原始锚定对 | 7,296 |
+| ETH 交易总数 | 7,296 |
+| BNB 交易总数 | 7,296 |
+| ETH 源流数量 | 5,735 |
+| BNB 目标流数量 | 7,122 |
+| 最终流标签数量 | 7,128 |
+| 交易级覆盖率 | 100% |
+| 金额级覆盖率 | 100% |
+| 边级 one_to_one 占比 | 72.32% |
+| support_tx_pair_count=1 占比 | ~100% |
+
+二、框架整体架构
+------------------------------------
+
+### 2.1 系统架构概览
+
+该框架基于 Celer 跨链桥的官方交易锚定数据，构建端到端的流级标签。
+
+```
+┌─────────────────────────────────────────────────────────────────────────────┐
+│  Celer 官方锚定数据 (Evidence Layer)                                         │
+│  celer_label.csv: ETH→BNB 交易对应关系                                      │
+└─────────────────────────────────────────────────────────────────────────────┘
+                                    │
+                                    ▼
+┌─────────────────────────────────────────────────────────────────────────────┐
+│  流分段层 (Flow Segmentation Layer)                                          │
+│  主地址 + 链 + 资产组优先路径标识 + 30分钟滚动时间窗口聚合                      │
+└─────────────────────────────────────────────────────────────────────────────┘
+                                    │
+                                    ▼
+┌─────────────────────────────────────────────────────────────────────────────┐
+│  流标签层 (Flow Label Layer)                                                 │
+│  一对一、一对多、多对一、未匹配等模式                                         │
+└─────────────────────────────────────────────────────────────────────────────┘
+```
+
+### 2.2 各层详细说明
+
+#### 第一层：Celer 官方锚定数据
+
+使用 `label/celer_label.csv` 中的官方交易锚定对（兼容旧路径 `label/tx/celer_label.csv`）：
+- 格式：`srcnet, srcTxHash, dstnet, dstTxHash`
+- 数据来源：Celer 跨链桥官方记录
+- 数据质量：高度可信，无启发式筛选
+
+#### 第二层：流分段层
+
+流分段将单笔交易聚合为语义单元，规则是 `tx_agg_rolling_1800s_same_asset_group_or_route`：
+- 同一主地址、同一链
+- 路径标识：优先 `asset_group`，若缺失则回退 `route_id`（实现：`bundle = asset_group if asset_group else route_id`）
+- 同一路径标识下，相邻交易间隔不超过 30 分钟滚动窗口（1800s）
+
+**为什么流分段重要？**
+- 将交易粒度抽象为流粒度，更符合真实资金流动
+- 同一用户短时间内的相关交易被聚合
+- 金额覆盖率达到 99.9%
+
+#### 第三层：流标签层
+
+最终输出的流标签能够表达以下跨链资金流形态：
+
+| 模式类型 | 数量 | 占比 | 说明 |
+|---------|------|------|------|
+| one_to_one | 5,155 | 72.32% | 一对一（流图度数 sd=1, dd=1） |
+| one_to_many | 12 | 0.17% | 多 ETH 源汇入同一 BNB 流（sd=1, dd>1） |
+| many_to_one | 1,961 | 27.51% | 单 ETH 流扇出多条 BNB 边（sd>1, dd=1） |
+| many_to_many | 0 | 0% | - |
+
+### 2.3 核心设计理念
+
+**数据质量优先：**
+- 使用官方桥接数据，避免启发式筛选的不确定性
+- 覆盖率极高（98.9%交易 / 99.9%金额）
+- 置信度高，无需额外评分筛选
+
+**一致性原则：**
+- 流分段规则保持一致
+- 模式分布由当前 evidence 分段 + Celer 映射决定（见 §4.3.3 实测）
+- 确保语义一致性
+
+### 2.4 与实验数据的对应关系
+
+| 框架层级 | 实验数据文件 | 关键指标 |
+|---------|-------------|---------|
+| 锚定数据 | tx_anchor_labels_from_celer.csv | 7,296 交易锚定对 |
+| 流分段层 | flow_segments_eth.csv / flow_segments_bnb.csv | 5,735 / 7,122 流 |
+| 流标签层 | flow_labels_from_celer.csv | 7,128 流标签 |
+
+三、完整构建流程
+------------------------------------
+
+第一步：Celer 官方锚定数据
+
+从 **`label/celer_label.csv`** 读取 ETH→BNB 交易对应关系（兼容旧路径 `label/tx/celer_label.csv`）：
+- 7,296 条官方锚定记录
+- 每条包含源交易哈希和目标交易哈希
+- 数据格式：`srcnet, srcTxHash, dstnet, dstTxHash`
+
+第二步：流分段构建
+
+从交易级别转换为流级别（输入为 evidence 层 CSV，见 §4.2）：
+- ETH 链：7,296 交易 → **5,735** 流
+- BNB 链：7,296 交易 → **7,122** 流
+- 聚合规则：主地址 + 链 + **asset_group if available else route_id** + **1800s** 滚动窗口
+
+第三步：交易到流的映射
+
+通过 `tx_to_flow_map.csv` 将 Celer 交易锚定对映射到对应的流：
+- 保留官方交易对应关系
+- 升级为流级别的对应关系
+
+第四步：流标签生成
+
+从 `flow_labels_from_celer.csv` 和 `flow_label_stats_from_celer.json` 可以看到最终标签：
+
+流标签 CSV 结构示例：
+- src_flow_id: 源端流 ID
+- dst_flow_id: 目标端流 ID
+- support_tx_pair_count: 支持的交易对数量
+- src_tx_count: 源端交易数
+- dst_tx_count: 目标端交易数
+- support_src_tx_hashes: 支持的源端交易哈希列表
+- support_dst_tx_hashes: 支持的目标端交易哈希列表
+- src_amount_usd: 源端金额（USD）
+- dst_amount_usd: 目标端金额（USD）
+- matched_src_amount_usd: 匹配的源端金额
+- matched_dst_amount_usd: 匹配的目标端金额
+- flow_mass_ratio_src: 源流质量比率
+- flow_mass_ratio_dst: 目标流质量比率
+- src_coverage: 源端覆盖率
+- dst_coverage: 目标端覆盖率
+- label_confidence: 标签置信度（1.0，官方数据）
+- pattern_type: 模式类型（one_to_one 等）
+- src_degree: 源度
+- dst_degree: 目标度
+- route_consistency: 路由一致性
+- time_valid: 时间有效性
+- min_delay_sec: 最小延迟（秒）
+- median_delay_sec: 中位数延迟（秒）
+- max_delay_sec: 最大延迟（秒）
+- label_source: celer_source
+
+四、流级弱标签详细构建过程
+------------------------------------
+
+本章节详细阐述从 Celer 官方锚定数据到最终流级标签的完整构建路径。
+
+### 4.1 构建路径概览
+
+```
+Celer 原始锚定对: 7,296
+    ↓ [交易→流映射]
+流分段 (ETH: 5,735 / BNB: 7,122)
+    ↓ [按 (src_flow, dst_flow) 聚合 + 流图分析]
+流级标签: 7,128  (support_tx_pair_count.sum = 7,296)
+```
+
+### 4.2 阶段一：交易→流映射
+
+#### 4.2.1 原始交易数据
+
+- ETH 唯一交易数：7,296
+- BNB 唯一交易数：7,296
+- 来源：Celer 官方桥接记录
+
+#### 4.2.2 流分段逻辑
+
+流分段将单笔交易聚合为语义单元，规则是 `tx_agg_rolling_1800s_same_asset_group_or_route`：
+
+```python
+current_flow = None
+for summary in sorted_transaction_summaries:
+    pk = (
+        summary.primary_address,
+        summary.asset_group,
+        summary.route_id,
+        summary.chain
+    )
+
+    need_new_flow = (
+        current_flow is None or
+        current_flow.segment_key != pk or
+        (summary.timestamp - current_flow.last_ts) > 1800  # 30分钟
+    )
+
+    if need_new_flow:
+        if current_flow:
+            flush(current_flow)  # 保存当前流
+        current_flow = create_new_flow(summary, pk)
+    else:
+        current_flow.add_transaction(summary)
+```
+
+#### 4.2.3 流分段结果
+
+- ETH 源流数：5,735
+- BNB 目标流数：7,122
+
+| 统计指标 | 源流 (ETH) | 目标流 (BNB) |
+|---------|-----------|------------|
+| 平均交易数 | 1.15 | 1.02 |
+| 中位数交易数 | 1.0 | 1.0 |
+| 多笔交易的流占比 | 12.1% | 1.9% |
+
+**说明：**
+- 大部分流只包含单笔交易
+- 只有少量流包含多笔交易
+- 表明大多数跨链交易是单笔完成的
+
+#### 4.2.4 交易到流的映射
+
+通过 `tx_to_flow_map.csv` 将 7,296 个 Celer 交易锚定对映射到对应的流：
+
+```
+原始交易锚定对：
+  eth_tx_1 → bnb_tx_34
+  eth_tx_2 → bnb_tx_45
+  eth_tx_3 → bnb_tx_45
+  ...
+
+映射后（流级别）：
+  eth_flow_A → bnb_flow_X   ← eth_tx_1 属于 eth_flow_A
+  eth_flow_A → bnb_flow_Y   ← eth_tx_2 属于 eth_flow_A
+  eth_flow_B → bnb_flow_Y   ← eth_tx_3 属于 eth_flow_B
+```
+
+### 4.3 阶段二：聚合为流级标签 (7,296 → 7,128)
+
+#### 4.3.1 同一流对的锚定对聚合
+
+**为什么有数量减少？** (7,296 → 7,128，减少 168 个)
+
+当多个交易锚定对指向相同的 `(src_flow, dst_flow)` 组合时，它们被聚合为单个流标签：
+
+```
+交易锚定对：
+  (eth_tx_2, bnb_tx_45)  → (eth_flow_A, bnb_flow_Y)
+  (eth_tx_3, bnb_tx_45)  → (eth_flow_A, bnb_flow_Y)
+  (eth_tx_4, bnb_tx_46)  → (eth_flow_A, bnb_flow_Y)
+
+聚合后：
+  (eth_flow_A, bnb_flow_Y)  ← 1 个流标签，由 3 个交易锚定对支持
+```
+
+**聚合字段计算：**
+
+| 字段 | 计算方式 |
+|-----|---------|
+| support_tx_pair_count | 该流对支持的交易锚定对数量 |
+| src_amount_usd | 源流总金额 |
+| dst_amount_usd | 目标流总金额 |
+| matched_src_amount_usd | 匹配到的源金额 |
+| matched_dst_amount_usd | 匹配到的目标金额 |
+| label_confidence | 1.0（官方数据） |
+| min/median/max_delay_sec | 支持的交易锚定对的延迟统计 |
+| src_coverage | matched_src_amount / src_amount |
+| dst_coverage | matched_dst_amount / dst_amount |
+
+#### 4.3.2 流图构建与模式判定
+
+**步骤1：构建流图**
+
+```python
+src_to_dst = defaultdict(set)
+dst_to_src = defaultdict(set)
+
+for flow_label in aggregated_flow_labels:
+    sf = flow_label.src_flow_id
+    df = flow_label.dst_flow_id
+    src_to_dst[sf].add(df)
+    dst_to_src[df].add(sf)
+```
+
+**步骤2：确定每个流的度数**
+
+```python
+src_degree = {sf: len(dfs) for sf, dfs in src_to_dst.items()}
+dst_degree = {df: len(sfs) for df, sfs in dst_to_src.items()}
+```
+
+**步骤3：模式分类**
+
+```python
+for flow_label in aggregated_flow_labels:
+    sf = flow_label.src_flow_id
+    df = flow_label.dst_flow_id
+
+    sd = src_degree[sf]
+    dd = dst_degree[df]
+
+    if sd == 1 and dd == 1:
+        flow_label.pattern_type = "one_to_one"
+    elif sd == 1 and dd > 1:
+        flow_label.pattern_type = "one_to_many"
+    elif sd > 1 and dd == 1:
+        flow_label.pattern_type = "many_to_one"
+    else:
+        flow_label.pattern_type = "many_to_many"
+```
+
+#### 4.3.3 最终流标签分布
+
+| 模式类型 | 数量 | 占比 |
+|---------|------|------|
+| one_to_one | 5,155 | 72.32% |
+| one_to_many | 12 | 0.17% |
+| many_to_one | 1,961 | 27.51% |
+| many_to_many | 0 | 0% |
+| **总计** | **7,128** | **100.00%** |
+
+（实测 run：`out/paper_full_pipeline_run/labels/flow_labels.csv`，2026-05-20）
+
+### 4.4 为什么这是高质量标签？
+
+**"高质量标签"的特点：**
+- 基于官方桥接数据，非人工标注
+- 无启发式筛选，完整保留原始对应关系
+- 极高覆盖率（98.9%交易 / 99.9%金额）
+- 置信度为 1.0，无不确定性
+
+**证据质量指标：**
+
+| 指标 | 值 | 说明 |
+|-----|----|------|
+| 交易级覆盖率 | 98.9% | 几乎完全覆盖 |
+| 金额级覆盖率 | 99.9% | 几乎完全覆盖 |
+| support_tx_pair_count=1 占比 | ~100% | 每条流标签对应 1 个锚定交易对 |
+| 边级 `pattern_type` one_to_one | 72.32% (5,155/7,128) | 流图度数口径，见 §4.3.2 |
+| 置信度 | 1.0 | 官方数据，无误差 |
+
+**口径说明：** 旧文档「99.85% 一对一」混用了早期 run 的边级统计（7,206/7,217）；**当前 canonical** 以 **72.32%** `one_to_one` 为准，**27.51%** 为 `many_to_one`（分裂扇出）。
+
+### 4.5 数值演变的详细说明
+
+| 阶段 | 数量 | 变化原因 |
+|-----|------|---------|
+| 原始锚定对 | 7,296 | Celer 官方数据 |
+| 流分段 | **5,735 / 7,122** | 主地址 + 链 + asset_group/route + 1800s |
+| **最终流标签** | **7,128** | 同一 `(src_flow, dst_flow)` 的锚定对聚合 |
+| support_tx 合计 | **7,296** | 锚定不丢失 |
+
+**关键变化：** 7,296 → 7,128（标签行 −168）；`support_tx_pair_count.sum` 仍为 7,296。
+
+五、完整演变图
+------------------------------------
+
+┌─────────────────────────────────────────────────────────────────────────────┐
+│  Celer 官方锚定数据                                                         │
+│  原始锚定对: 7,296                                                         │
+└─────────────────────────────────────────────────────────────────────────────┘
+                                    │
+                                    ▼ 交易→流映射
+┌─────────────────────────────────────────────────────────────────────────────┐
+│  流分段 (tx_agg_rolling_1800s_same_asset_group_or_route)                   │
+│  源端流: 5,735    目标端流: 7,122                                         │
+│  每个流 = 主地址 + 链 + asset_group if available else route_id + 1800s      │
+└─────────────────────────────────────────────────────────────────────────────┘
+                                    │
+                                    ▼ 按 (src_flow, dst_flow) 聚合
+┌─────────────────────────────────────────────────────────────────────────────┐
+│  流标签生成（canonical `labels/flow_labels.csv`）                           │
+│  最终流标签: 7,128                                                         │
+│  ├── one_to_one:    5,155   (72.32%)                                       │
+│  ├── one_to_many:   12      (0.17%)                                        │
+│  ├── many_to_one:   1,961   (27.51%)                                       │
+│  └── many_to_many:  0       (0%)                                           │
+└─────────────────────────────────────────────────────────────────────────────┘
+
+六、验证检查
+------------------------------------
+
+实验包含一系列完整性和合理性检查（从 validation_report.json）：
+
+| 检查项 | 结果 |
+|--------|------|
+| 锚定对数量与官方数据一致 | ✓ |
+| 金额级覆盖率在 0-1 之间 | ✓ |
+| 流标签数未显著超过原始锚定对 | ✓ |
+| many_to_many 模式未接近总标签数 | ✓ |
+
+### 分段输入验证
+
+**当前主线（`out/paper_full_pipeline_run`，2026-05-20）：**
+
+| 参数 | 值 |
+|------|-----|
+| ETH 流分段行数 | 5,735 |
+| BNB 流分段行数 | 7,122 |
+| 流标签行数 | 7,128 |
+| `support_tx_pair_count.sum` | 7,296 |
+
+**【旧版本历史值，勿用于当前 run】** 早期 `validation_report.json` / paper closure 快照曾记录：
+
+| 参数 | 旧值 |
+|------|------|
+| selected_eth_flow_segments_rows | 6,316 |
+| selected_bnb_flow_segments_rows | 7,117 |
+| expected_src_flows_from_stats | 6,316 |
+| expected_dst_flows_from_stats | 7,117 |
+
+### 论文完整性检查
+
+实验包含的制品检查，确保所有必要文件存在和完整性：
+
+| 检查项 | 结果 |
+|--------|------|
+| predominantly_one_to_one | true |
+| validation_sanity_checks_all_true | true |
+| synthetic_metrics_present | true |
+| ablation_methods_complete | true |
+| synthetic_scenarios_complete | true |
+| threshold_settings_complete | true |
+| paper_summary_draft_ready | true |
+
+消融方法包括：Balanced OT, Greedy, Hungarian, RC-UOT, RC-UOT no_causal, RC-UOT no_evidence, RC-UOT no_graph, RC-UOT no_risk。
+
+七、半合成测试数据（stress test，非 canonical 标签）
+------------------------------------
+
+**用途：** 仅在 **半合成子图** 上评估 RC-UOT 的 split/merge/unmatched/decoy **应力** 与 **诊断指标**；**不**替代 `labels/flow_labels.csv`（7,128 行 Celer 监督标签）。
+
+**当前主线配置（Phase 2 / 2.1 / 3，`--synthetic-num-seeds 48`，评估 seeds **42–46**）：**
+
+| 配置项 | 值 |
+|--------|-----|
+| 分层种子模板数 | **48**（金额四分位 × 延迟三分位） |
+| 每 seed 合成标签行数 | **336** |
+| 评估随机种子 | **42, 43, 44, 45, 46** |
+| 子图规模（典型） | 288 ETH × 288 BNB，`full_matrix` |
+
+**每 seed 场景行数（`synthetic_uot_eval_metrics.json` → `scenario_counts`）：**
+
+| 场景类型 | 行数 | 说明 |
+|---------|------|------|
+| split_edges | 96 | 分裂场景 |
+| merge_edges | 96 | 合并场景 |
+| unmatched_labels | 48 | 未匹配源流 |
+| noise_edges | 96 | decoy / 延迟噪声 |
+
+**【旧版本历史值】** 早期 8 模板 × 单 seed 42 配置：8 模板、56 行合成数据、`predominantly_one_to_one=true` — **已废弃**，勿写入论文主表。
+
+### 7.1 半合成场景构建原理
+
+半合成测试数据的核心思想是：**以真实流作为种子模板，通过人为构造的修改来创建具有已知真实对应关系的测试用例**。这种方法既保留了真实数据的分布特征，又提供了可验证的 ground truth。
+
+**为什么使用半合成而非完全合成？**
+- 完全合成的数据可能无法反映真实跨链交易的分布特征
+- 半合成保留了真实流的统计特性（金额分布、时间模式等）
+- 可以精确控制场景变量，便于评估算法在特定条件下的表现
+
+### 7.2 种子模板选择（48 分层模板）
+
+从 canonical 流标签中按 **金额四分位 × 跨链延迟三分位** 分层抽样 **48** 个 `(eth_flow, bnb_flow)` 模板（`pick_semi_synthetic_seeds`，`max_seeds=48`）。每个模板克隆 split / merge / unmatched / delay_noise 四类场景；细节见 `out/paper_full_pipeline_run/synthetic/synthetic_eval_seed_{42..46}/synthetic_seed_stratification.json`。
+
+**【旧版本历史值】** 曾固定 8 个 ETH 模板 ID（如 `eth_flow_b14cc2dda8f743` 等）— 仅作历史说明，**当前 run 不使用**。
+
+### 7.3 各场景详细构建过程
+
+#### Split（分裂场景）构建
+
+**目的：** 模拟一个源流对应两个目标流的分裂情况（如跨链后分散到两个地址）
+
+**构建步骤：**
+
+```
+原始一对一对应：
+  eth_flow_xxx__synth_split_src (100 USD)
+      ↓
+  bnb_flow_yyy (100 USD)
+
+构造后的分裂对应：
+  eth_flow_xxx__synth_split_src (100 USD)
+      ↓
+  bnb_flow_yyy__synth_split_a (50 USD)   ← 金额缩放 0.5
+  bnb_flow_yyy__synth_split_b (50 USD)   ← 金额缩放 0.5
+```
+
+**关键参数：**
+- 源流金额缩放：1.0（保持不变）
+- 每个目标流金额缩放：0.5（各占一半）
+- 总金额守恒：50 + 50 = 100
+
+#### Merge（合并场景）构建
+
+**目的：** 模拟两个源流对应一个目标流的合并情况（如从两个地址汇聚到一个地址）
+
+**构建步骤：**
+
+```
+原始一对一对应：
+  eth_flow_xxx (100 USD) ─┬─→ bnb_flow_yyy (100 USD)
+  eth_flow_xxx'           │
+
+构造后的合并对应：
+  eth_flow_xxx__synth_merge_src1 (50 USD) ─┬─→ bnb_flow_yyy__synth_merge_dst (100 USD)
+  eth_flow_xxx__synth_merge_src2 (50 USD) ─┘
+```
+
+**关键参数：**
+- 每个源流金额缩放：0.5（各占一半）
+- 目标流金额缩放：1.0（保持不变）
+- 总金额守恒：50 + 50 = 100
+
+#### Unmatched（未匹配场景）构建
+
+**目的：** 模拟无匹配目标流的孤立源端流，测试算法的召回能力
+
+**构建步骤：**
+
+```
+原始一对一对应：
+  eth_flow_xxx (100 USD) → bnb_flow_yyy (100 USD)
+
+构造后的未匹配对应：
+  eth_flow_xxx__synth_unmatched_src (100 USD) → [无目标流]
+  [隐藏] bnb_flow_yyy__synth_hidden_dst (0 USD)  ← 金额缩放 0.0
+```
+
+**关键参数：**
+- 源流金额缩放：1.0（保持不变）
+- 目标流金额缩放：0.0（完全隐藏）
+- 隐藏的目标流不参与匹配，但存在于数据中用于评估算法是否能识别未匹配
+
+#### Delay Noise（延迟噪声场景）构建
+
+**目的：** 模拟添加随机延迟噪声的匹配对，测试算法的鲁棒性
+
+**构建步骤：**
+
+```
+原始对应：
+  eth_flow_xxx (t=100s) → bnb_flow_yyy (t=110s)  [delay=10s]
+
+添加噪声后：
+  eth_flow_xxx__synth_noise_src_0 (t=100s) → bnb_flow_yyy__synth_noise_dst_0 (t=200s)  [delay=100s]
+  eth_flow_xxx__synth_noise_src_1 (t=100s) → bnb_flow_yyy__synth_noise_dst_1 (t=300s)  [delay=200s]
+```
+
+**关键参数：**
+- 源流和目标流金额缩放：1.0（保持不变）
+- 每个场景生成 2 个噪声副本（_0 和 _1）
+- 噪声类型：时间延迟扰动
+- 这些是"诱饵对"（decoy pairs），算法应该能识别它们不是真实对应
+
+### 7.4 合成数据结构与金额缩放规则
+
+合成流 ID 格式：`{template_flow_id}__synth_{scenario}`
+
+| 场景 | 源流金额缩放 | 目标流金额缩放 |
+|------|-------------|--------------|
+| split | 1.0 (保持原样) | 0.5 (两个目标流各一半) |
+| merge | 0.5 (两个源流各一半) | 1.0 (保持原样) |
+| unmatched | 1.0 (保持原样) | 0.0 (目标流隐藏) |
+| delay_noise | 1.0 (保持原样) | 1.0 (保持原样) |
+
+### 7.5 合成数据结构示例
+
+以第一个种子模板为例：
+
+| 合成流 ID | 模板流 ID | 链 | 金额缩放 | 场景 |
+|-----------|----------|-----|---------|------|
+| eth_flow_b14cc2dda8f743__synth_split_src | eth_flow_b14cc2dda8f743 | ETH | 1.0 | split |
+| bnb_flow_1203eb96899646__synth_split_a | bnb_flow_1203eb96899646 | BNB | 0.5 | split |
+| bnb_flow_1203eb96899646__synth_split_b | bnb_flow_1203eb96899646 | BNB | 0.5 | split |
+| eth_flow_b14cc2dda8f743__synth_merge_src1 | eth_flow_b14cc2dda8f743 | ETH | 0.5 | merge |
+| eth_flow_b14cc2dda8f743__synth_merge_src2 | eth_flow_b14cc2dda8f743 | ETH | 0.5 | merge |
+| bnb_flow_1203eb96899646__synth_merge_dst | bnb_flow_1203eb96899646 | BNB | 1.0 | merge |
+| eth_flow_b14cc2dda8f743__synth_unmatched_src | eth_flow_b14cc2dda8f743 | ETH | 1.0 | unmatched |
+| bnb_flow_1203eb96899646__synth_hidden_dst | bnb_flow_1203eb96899646 | BNB | 0.0 | unmatched |
+| eth_flow_b14cc2dda8f743__synth_noise_src_0 | eth_flow_b14cc2dda8f743 | ETH | 1.0 | delay_noise |
+| bnb_flow_1203eb96899646__synth_noise_dst_0 | bnb_flow_1203eb96899646 | BNB | 1.0 | delay_noise |
+
+### 7.6 评估提示
+
+合成数据包含以下已知真实对应关系，用于算法评估：
+
+| 类型 | 数量（每 eval seed） | 说明 |
+|------|------|------|
+| truth_flow_pairs | 336 边级监督子集 | split + merge 等场景真值边 |
+| truth_unmatched_src_flows | **48** | 无匹配源流 |
+| noise_decoy_pairs | **96** | decoy 边 |
+
+**评估指标（半合成 stress / 附录）：**
+- Split / Merge recovery（Phase 2 multi-seed 主表）
+- Top-k recovery、Flow-mass recall、Pair-F1
+- **Unmatched / decoy：** 仅 **诊断**（Phase 2.1：阈值无关 AUROC/AUPRC；**不**宣称 strong mass-level detection）
+- Phase 3 ablation：9 可跑变体 × 5 seeds；缺失 knob：`no_amount`、`no_route`、`no_address_novelty`
+
+### 7.7 与真实数据的对比
+
+| 特性 | 真实数据 | 合成数据 |
+|------|---------|---------|
+| 金额分布 | 符合真实跨链分布 | 继承种子模板的分布 |
+| 时间模式 | 真实跨链延迟 | 可能经过噪声处理 |
+| 对应关系 | 已知（官方数据） | 已知，预先定义 |
+| 用途 | 最终应用 | 算法评估 |
+
+八、关键洞察
+------------------------------------
+
+| 转变 | 变化率 | 原因 |
+|------|--------|------|
+| 7,296 → 7,128（标签行） | −2.3% | 多锚定对汇入同一 `(src_flow, dst_flow)` |
+| support_tx 合计 | 0% | 锚定对不丢失 |
+
+**当前 canonical 特点：**
+- **监督覆盖：** `support_tx_pair_count.sum = 7,296`；`label_source = celer_source`
+- **边级模式：** **72.32%** `one_to_one`，**27.51%** `many_to_one`（ETH 源扇出多 BNB 边，非旧文档 99.85%）
+- **半合成：** 仅用于算法应力与 ablation 诊断（Phase 2–3），见 §七
+
+**【旧版本历史值】** 7,217 行标签、99.85% one_to_one、6,316/7,117 分段 — 早期 evidence/分段口径，**不用于当前 `paper_full_pipeline_run`**。
+
+九、数据文件清单
+------------------------------------
+
+### 核心数据文件
+
+| 文件名 | 说明 |
+|--------|------|
+| flow_labels_from_celer.csv | 基于 Celer 数据的流标签，包含流对映射、置信度、模式类型等 |
+| flow_label_stats_from_celer.json | Celer 方法的流标签统计信息 |
+| flow_segments_eth.csv | ETH 链流分段定义 |
+| flow_segments_bnb.csv | BNB 链流分段定义 |
+| tx_to_flow_map.csv | 交易到流的映射关系 |
+| tx_anchor_labels_from_celer.csv | 从 Celer 转换的交易锚定标签 |
+| label_diagnostics.json | 构建诊断信息 |
+
+### 外部数据源文件
+
+| 文件名 | 说明 |
+|--------|------|
+| ../label/celer_label.csv | Celer 官方锚定（**默认优先**；兼容 `label/tx/celer_label.csv`） |
+
+### 辅助调试文件
+
+| 文件名 | 说明 |
+|--------|------|
+| validation_report.json | 完整验证报告 |
+
+### 合成测试数据文件
+
+| 文件名 | 说明 |
+|--------|------|
+| synthetic_flow_labels.csv | 合成流标签 |
+| synthetic_uot_eval_metrics.json | 合成 UOT 评估指标 |
+
+### 文件关系图
+
+```
+celer_label.csv (原始官方数据)
+    ↓
+tx_anchor_labels_from_celer.csv (转换)
+    ↓
+flow_labels_from_celer.csv (流级别标签)
+    ↓
+flow_label_stats_from_celer.json (统计)
+```
+
+### 实验说明文档
+
+| 文件名 | 位置 | 说明 |
+|--------|------|------|
+| flow_label_construction_audit.md | experiments/ | 构建逻辑说明文档 |
+
+---
+
+## Changelog（当前主线，2026-05-20）
+
+**分段表述（统一）：** 主地址 + 链 + **asset_group if available else route_id** + **1800s** 滚动窗口。
+
+**主线 commit 链（`out/diagnosis_report.md`）：**
+
+| 阶段 | Commit | 说明 |
+|------|--------|------|
+| Phase 1.5 | `1e248f4` | 流分段敏感性诊断 |
+| Phase 2 | `b1134e5` | 半合成 multi-seed（42–46，48 模板） |
+| Phase 2.1 | `1c9560c` | unmatched / decoy 评估修复 |
+| Phase 3 | `494ee82` | 半合成 ablation multi-seed |
+
+**【历史说明】** `997755e` 为旧实验分支上的分段诊断提交，**非当前主线**；勿与上表混用。
+
+**当前 run 实测（`paper_full_pipeline_run`）：**
+
+| 字段 | 值 |
+|------|-----|
+| Celer 锚定对 | **7,296** |
+| ETH 源流 / BNB 目标流 | **5,735 / 7,122** |
+| 流标签行数 | **7,128** |
+| `one_to_one` / `many_to_one` / `one_to_many` | **5,155 (72.32%) / 1,961 (27.51%) / 12 (0.17%)** |
+| `support_tx_pair_count.sum` | **7,296** |
+| Celer CSV | **`label/celer_label.csv`**（优先） |
+
+**Phase 1.5：** `asset_group` 在本数据集全非空，route 回退未触发；1800s 窗口与 canonical 一致。
+
+**Phase 1'-D（已入库）：** `celer_only_if_available`、Celer fallback WARNING、`--freeze-label-layer-v1`。
+
+**Phase 2–3 论文叙事：**
+- 主表：split/merge recovery、flow-mass、time + unbalanced ablation 敏感性
+- **不宣称** strong unmatched / decoy mass-level detection（见 Phase 2.1）
+- **不支持** amount / route / address-novelty 单独 ablation（代码无 knob）
+
+**旧文档数值（6,316 / 7,117 / 7,217 / 99.85% / 8 模板 / 56 行）均已废弃，仅可在「旧版本历史值」脚注中出现。**

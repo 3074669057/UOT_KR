@@ -1,0 +1,50 @@
+{
+  "locked_spec_sha256": "38b4bbbd1e6d3101a9aa6ed8b1a8fbe3751e4a9fbd0db9e64f56270f5b5518cb",
+  "available": true,
+  "beta_per_bridge": {
+    "Celer": 0.06063350616084488,
+    "Multi": 0.05979659939912493,
+    "Poly": 0.058753591864285616
+  },
+  "beta_macro": 0.05972789914141848,
+  "n_perm": 20000,
+  "rng_seed": 20240103,
+  "sided": "two-sided",
+  "extreme_count": 0,
+  "p_value": 4.999750012499375e-05,
+  "resolution": 4.999750012499375e-05,
+  "permutation_distribution_sha256": "e228947cfd4f3eca2fb969c36d466c80c5a5eede1e5058fb4e8ba10399c23d75",
+  "n_templates": 1440,
+  "bridges_used": [
+    "Celer",
+    "Multi",
+    "Poly"
+  ],
+  "spearman_qa_only": {
+    "warning": "DIAGNOSTIC ONLY. The primary trend evidence is the paired-difference slope permutation above; Spearman is reported for QA and must never be presented as the main statistical evidence.",
+    "per_bridge": {
+      "Celer": {
+        "rho": 0.7400435738761019,
+        "p": 2.223824277946381e-84,
+        "n": 480
+      },
+      "Multi": {
+        "rho": 0.6304203200878343,
+        "p": 1.5234891447081226e-54,
+        "n": 480
+      },
+      "Poly": {
+        "rho": 0.6581888053581997,
+        "p": 6.455279163660314e-61,
+        "n": 480
+      }
+    },
+    "pooled": {
+      "rho": 0.6732684803043724,
+      "p": 8.739257516835459e-191,
+      "n": 1440
+    }
+  },
+  "outcome": "P_positive_trend",
+  "expected_h1_full_precision": 0.025531674679475275
+}

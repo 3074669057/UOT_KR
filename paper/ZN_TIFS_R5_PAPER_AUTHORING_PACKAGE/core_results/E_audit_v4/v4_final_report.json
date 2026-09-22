@@ -1,0 +1,68 @@
+{
+  "v4_start": 1716076800,
+  "stop_block": null,
+  "untouched_after_stop": [],
+  "n_anchors_total": 32905,
+  "n_unique_edges": 25621,
+  "duplicate_unique_edge_count": 0,
+  "edge_topology": {
+    "1to1": 19673,
+    "1toN_fanout": 5777,
+    "Nto1_merge": 124,
+    "NtoM": 47
+  },
+  "tier_edge_counts": {
+    "A": 25621
+  },
+  "n_src_flows": 22248,
+  "n_dst_flows": 25535,
+  "n_source_level_fanout_units": 2451,
+  "n_merge_units": 85,
+  "n_connected_components": 22162,
+  "conn_counts_by_class": {
+    "1to1": 19673,
+    "1toN": 2404,
+    "Nto1": 43,
+    "NtoM": 42
+  },
+  "fanout_degree_distribution": {
+    "2": 1868,
+    "3": 405,
+    "4": 118,
+    "5": 34,
+    "6": 9,
+    "7": 4,
+    "8": 2,
+    "9": 3,
+    "10": 2,
+    "11": 1,
+    "12": 1,
+    "13": 1,
+    "14": 1,
+    "16": 1,
+    "20": 1
+  },
+  "degree_le_5": 2425,
+  "degree_gt_5": 26,
+  "cluster_count_G": 7,
+  "cluster_size_vector_sorted": [
+    910,
+    587,
+    452,
+    432,
+    60,
+    8,
+    2
+  ],
+  "max_cluster_share": 0.371277,
+  "temporal_spread_days": 359.98,
+  "gates": {
+    "G_ge_8": false,
+    "max_share_lt_0.5": true,
+    "n_fanout_ge_30": true,
+    "spread_ge_2_months": true
+  },
+  "DATA_ADEQUACY": "FAIL",
+  "statistical_branch": "NOT_EVALUABLE",
+  "PRIMARY_V4_SOURCE_UNIT_SHA256": "bdeab6072fad4785420949f2c9353a8a88cff4f3df2bc2243755353cb485321f"
+}

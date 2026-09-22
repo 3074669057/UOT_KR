@@ -1,0 +1,4 @@
+pattern_type,label_row_count,truth_edge_count,flow_pair_f1
+many_to_one,96,96,0.01827371695178849
+one_to_many,96,96,0.01750047555640099
+one_to_one,144,144,0.015920510359622875

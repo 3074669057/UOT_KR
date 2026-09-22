@@ -1,0 +1,21 @@
+{
+  "fixture_type": "synthetic",
+  "n_src": 30,
+  "n_dst": 35,
+  "n_gold": 17,
+  "topologies": {
+    "one_to_one": 10,
+    "one_to_many": 2,
+    "many_to_one": 1,
+    "unmatched_source": 7,
+    "unmatched_target": 7,
+    "mixed": "remainder"
+  },
+  "component_stats": {
+    "total_components": 15,
+    "nontrivial_components": 6,
+    "positive_only_components": 5,
+    "has_negative_candidates": true
+  },
+  "usage": "synthetic integration test only ? not scientific evidence"
+}

@@ -1,0 +1,3 @@
+# Paper leakage audit paragraph (fixed-delay)
+
+We audit the **fixed-delay + admissible decoding** pipeline with leave-key-out and leave-anchor-out-strict masking (Appendix Table A.1). Under strict masking, **forbidden_features_remaining = 0** and fake-oracle anchor injection is fully neutralized (fake-anchor probe invariant). **The fixed-delay RC-UOT-Q gains are not explained by bridge-key or bridge-evidence leakage.** Baseline, leave-key-out, and strict agree within tolerance **0.02** on pair F1, recall, and top-3 recall for raw projection, top-3 rescue, and joint filter decodings. This audit supports the new fixed-delay headline; the legacy leave-anchor-out result (pair F1 ≈ 0.321) is **not** used to substantiate current claims.

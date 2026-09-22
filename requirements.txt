@@ -1,0 +1,26 @@
+# UOT_KR artifact -- exact environment used to produce every result in this repository
+# Captured from the run host: Python 3.11.11 (main, Mar 17 2025, 21:01:29) [MSC v.1943 64 bit (AMD64)]
+#
+# Versions below are the *pinned* versions recorded by the R7 confirmatory run
+# (out/r7_confirmatory_kernel_ranking_20260917/FINAL_EXPERIMENT_REPORT.md, section 18)
+# together with the versions that produced the R5/R6 result lines.
+#
+# The entropic optimal-transport solver is POT (`import ot`). POT >= 0.9.5 changed the
+# default `reg_type` to 'kl', so the effective unbalanced kernel is
+#     exp(-C / reg) * outer(a, b)
+# Every UOT optimality claim in this repository was evaluated against that kernel.
+
+# --- core numerical / OT stack (exact) ---
+numpy==1.26.4
+scipy==1.17.1
+pandas==2.3.3
+POT==0.9.6.post1
+scikit-learn==1.8.0
+matplotlib==3.10.9
+
+# --- declared project dependencies (pyproject.toml) ---
+torch==2.11.0+cpu
+
+# --- test / schema tooling ---
+pytest==9.0.3
+jsonschema==4.26.0

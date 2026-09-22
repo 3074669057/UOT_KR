@@ -1,0 +1,18 @@
+{
+  "classification": "C-trigger",
+  "files": [
+    "section_4_4_c_patch_CN.md",
+    "section_4_4_c_patch_EN.tex",
+    "table_4_extended_CN.md",
+    "table_4_extended_EN.tex",
+    "contribution_2_patch_CN.md",
+    "contribution_2_patch_EN.tex",
+    "abstract_patch_CN.md",
+    "abstract_patch_EN.tex",
+    "conclusion_patch_CN.md",
+    "conclusion_patch_EN.tex"
+  ],
+  "generated_utc": "2026-09-17T05:25:53Z",
+  "frozen_manuscript_modified": false,
+  "note": "patches only; 3/final/ZN_TIFS_FINAL_CN.docx and every frozen artefact are untouched"
+}

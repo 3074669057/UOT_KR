@@ -1,0 +1,33 @@
+{
+  "checks": {
+    "n_predicted": true,
+    "n_correct": true,
+    "n_no_match": true,
+    "f1_tol": true,
+    "prediction_set_equal": true,
+    "no_extra_vs_phase1": true
+  },
+  "all_pass": true,
+  "phase1_canonical": {
+    "f1": 0.9736140350877193,
+    "n_predicted": 6954,
+    "n_correct": 6937,
+    "n_no_match": 342
+  },
+  "v2_full_native": {
+    "f1": 0.9736140350877193,
+    "n_predicted": 6954,
+    "n_correct": 6937,
+    "n_no_match": 342
+  },
+  "prediction_diff_vs_phase1": {
+    "n_a": 6954,
+    "n_b": 6954,
+    "src_overlap": 6954,
+    "only_a": 0,
+    "only_b": 0,
+    "diff_dst_count": 0,
+    "diff_dst_samples": [],
+    "equal": true
+  }
+}

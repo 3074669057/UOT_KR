@@ -1,0 +1,74 @@
+{
+  "criterion": "pooled edge F1 over calibration templates (truth = split + merge + decoy positive edges)",
+  "calibration_seeds": [
+    101,
+    102,
+    103
+  ],
+  "test_seeds_untouched": [
+    42,
+    43,
+    44,
+    45,
+    46
+  ],
+  "n_calibration_instances": 9,
+  "n_templates_total": 432,
+  "n_cost_cells_pooled": 746496,
+  "global_tau": 0.05,
+  "global_cutoff_cost": 0.47762288884480164,
+  "ecdf_min": 0.13124432155545762,
+  "ecdf_max": 0.8612824130984938,
+  "selected_grid_row": {
+    "tau": 0.05,
+    "cutoff": 0.47762288884480164,
+    "edge_tp": 2400.0,
+    "edge_fp": 34926.0,
+    "edge_fn": 192.0,
+    "edge_precision": 0.06429834431763382,
+    "edge_recall": 0.9259259259259259,
+    "edge_f1": 0.12024650533593867,
+    "split_exact": 0.0,
+    "merge_exact": 0.0,
+    "n_templates": 432.0
+  },
+  "per_bridge_tau_supplementary": {
+    "Celer": {
+      "tau": 0.05,
+      "cutoff": 0.49520718493785665,
+      "edge_f1": 0.1522136845956824
+    },
+    "Multi": {
+      "tau": 0.05,
+      "cutoff": 0.486194,
+      "edge_f1": 0.11502843216896833
+    },
+    "Poly": {
+      "tau": 0.05,
+      "cutoff": 0.4574744527718833,
+      "edge_f1": 0.10314224034540656
+    }
+  },
+  "rule": "edge kept iff C_ij <= global_cutoff_cost (equivalently ECDF_cal(C_ij) <= global_tau)",
+  "threshold_grid_taus": [
+    0.05,
+    0.1,
+    0.15,
+    0.2,
+    0.25,
+    0.3,
+    0.35,
+    0.4,
+    0.45,
+    0.5,
+    0.55,
+    0.6,
+    0.65,
+    0.7,
+    0.75,
+    0.8,
+    0.85,
+    0.9,
+    0.95
+  ]
+}

@@ -1,0 +1,799 @@
+==============================================================================================================
+STEP 2/3 - RISK FIELD DISTRIBUTIONS (pandas 2.3.3, numpy 1.26.4)
+==============================================================================================================
+
+### out\multi_bridge_expansion\flow_structural_three_bridges\Celer\flow_segments_eth.csv  [2167600 B]
+--- whole file   rows=5063
+    aml_score_mean           n=5063    miss=0      miss%= 0.00% min=    0.0000 max=    0.0000 mean=    0.0000 med=    0.0000 std=    0.0000
+        q05=   0.0000 q25=   0.0000 q50=   0.0000 q75=   0.0000 q95=   0.0000 q99=   0.0000  ndistinct=1 const=True
+        value_counts (<=20 distinct):
+            0                            5063
+    aml_score_max            n=5063    miss=0      miss%= 0.00% min=    0.0000 max=    0.0000 mean=    0.0000 med=    0.0000 std=    0.0000
+        q05=   0.0000 q25=   0.0000 q50=   0.0000 q75=   0.0000 q95=   0.0000 q99=   0.0000  ndistinct=1 const=True
+        value_counts (<=20 distinct):
+            0                            5063
+    evidence_quality_mean    n=5063    miss=0      miss%= 0.00% min=    0.8250 max=    0.8250 mean=    0.8250 med=    0.8250 std=    0.0000
+        q05=   0.8250 q25=   0.8250 q50=   0.8250 q75=   0.8250 q95=   0.8250 q99=   0.8250  ndistinct=1 const=True
+        value_counts (<=20 distinct):
+            0.825                        5063
+    [note] no `bridge` column; chain values = ['ETH']
+
+### out\multi_bridge_expansion\flow_structural_three_bridges\Celer\flow_segments_bnb.csv  [2167600 B]
+--- whole file   rows=5063
+    aml_score_mean           n=5063    miss=0      miss%= 0.00% min=    0.0000 max=    0.0000 mean=    0.0000 med=    0.0000 std=    0.0000
+        q05=   0.0000 q25=   0.0000 q50=   0.0000 q75=   0.0000 q95=   0.0000 q99=   0.0000  ndistinct=1 const=True
+        value_counts (<=20 distinct):
+            0                            5063
+    aml_score_max            n=5063    miss=0      miss%= 0.00% min=    0.0000 max=    0.0000 mean=    0.0000 med=    0.0000 std=    0.0000
+        q05=   0.0000 q25=   0.0000 q50=   0.0000 q75=   0.0000 q95=   0.0000 q99=   0.0000  ndistinct=1 const=True
+        value_counts (<=20 distinct):
+            0                            5063
+    evidence_quality_mean    n=5063    miss=0      miss%= 0.00% min=    0.6750 max=    0.6750 mean=    0.6750 med=    0.6750 std=    0.0000
+        q05=   0.6750 q25=   0.6750 q50=   0.6750 q75=   0.6750 q95=   0.6750 q99=   0.6750  ndistinct=1 const=True
+        value_counts (<=20 distinct):
+            0.675                        5063
+    [note] no `bridge` column; chain values = ['BNB']
+
+### out\multi_bridge_expansion\flow_structural_three_bridges\Celer\flow_segments_eth_synth.csv  [128662 B]
+--- whole file   rows=288
+    aml_score_mean           n=288     miss=0      miss%= 0.00% min=    0.0000 max=    0.0000 mean=    0.0000 med=    0.0000 std=    0.0000
+        q05=   0.0000 q25=   0.0000 q50=   0.0000 q75=   0.0000 q95=   0.0000 q99=   0.0000  ndistinct=1 const=True
+        value_counts (<=20 distinct):
+            0                            288
+    aml_score_max            n=288     miss=0      miss%= 0.00% min=    0.0000 max=    0.0000 mean=    0.0000 med=    0.0000 std=    0.0000
+        q05=   0.0000 q25=   0.0000 q50=   0.0000 q75=   0.0000 q95=   0.0000 q99=   0.0000  ndistinct=1 const=True
+        value_counts (<=20 distinct):
+            0                            288
+    evidence_quality_mean    n=288     miss=0      miss%= 0.00% min=    0.8250 max=    0.8250 mean=    0.8250 med=    0.8250 std=    0.0000
+        q05=   0.8250 q25=   0.8250 q50=   0.8250 q75=   0.8250 q95=   0.8250 q99=   0.8250  ndistinct=1 const=True
+        value_counts (<=20 distinct):
+            0.825                        288
+    [note] no `bridge` column; chain values = ['ETH']
+
+### out\multi_bridge_expansion\flow_structural_three_bridges\Celer\flow_segments_bnb_synth.csv  [128230 B]
+--- whole file   rows=288
+    aml_score_mean           n=288     miss=0      miss%= 0.00% min=    0.0000 max=    0.0000 mean=    0.0000 med=    0.0000 std=    0.0000
+        q05=   0.0000 q25=   0.0000 q50=   0.0000 q75=   0.0000 q95=   0.0000 q99=   0.0000  ndistinct=1 const=True
+        value_counts (<=20 distinct):
+            0                            288
+    aml_score_max            n=288     miss=0      miss%= 0.00% min=    0.0000 max=    0.0000 mean=    0.0000 med=    0.0000 std=    0.0000
+        q05=   0.0000 q25=   0.0000 q50=   0.0000 q75=   0.0000 q95=   0.0000 q99=   0.0000  ndistinct=1 const=True
+        value_counts (<=20 distinct):
+            0                            288
+    evidence_quality_mean    n=288     miss=0      miss%= 0.00% min=    0.6750 max=    0.6750 mean=    0.6750 med=    0.6750 std=    0.0000
+        q05=   0.6750 q25=   0.6750 q50=   0.6750 q75=   0.6750 q95=   0.6750 q99=   0.6750  ndistinct=1 const=True
+        value_counts (<=20 distinct):
+            0.675                        288
+    [note] no `bridge` column; chain values = ['BNB']
+
+### out\multi_bridge_expansion\flow_structural_three_bridges\Celer\uot\flow_segments_eth.csv  [126074 B]
+--- whole file   rows=288
+    aml_risk_score           n=288     miss=0      miss%= 0.00% min=    0.0000 max=    0.0000 mean=    0.0000 med=    0.0000 std=    0.0000
+        q05=   0.0000 q25=   0.0000 q50=   0.0000 q75=   0.0000 q95=   0.0000 q99=   0.0000  ndistinct=1 const=True
+        value_counts (<=20 distinct):
+            0.0                          288
+    evidence_quality_score   n=288     miss=0      miss%= 0.00% min=    0.8250 max=    0.8250 mean=    0.8250 med=    0.8250 std=    0.0000
+        q05=   0.8250 q25=   0.8250 q50=   0.8250 q75=   0.8250 q95=   0.8250 q99=   0.8250  ndistinct=1 const=True
+        value_counts (<=20 distinct):
+            0.825                        288
+    aml_risk_level           n=288 n_distinct=0 const=False
+        'nan'                        288
+    aml_score_mean           n=288     miss=0      miss%= 0.00% min=    0.0000 max=    0.0000 mean=    0.0000 med=    0.0000 std=    0.0000
+        q05=   0.0000 q25=   0.0000 q50=   0.0000 q75=   0.0000 q95=   0.0000 q99=   0.0000  ndistinct=1 const=True
+        value_counts (<=20 distinct):
+            0.0                          288
+    aml_score_max            n=288     miss=0      miss%= 0.00% min=    0.0000 max=    0.0000 mean=    0.0000 med=    0.0000 std=    0.0000
+        q05=   0.0000 q25=   0.0000 q50=   0.0000 q75=   0.0000 q95=   0.0000 q99=   0.0000  ndistinct=1 const=True
+        value_counts (<=20 distinct):
+            0.0                          288
+    evidence_level           n=288 n_distinct=1
+        'aml_tx'                     288
+    [note] no `bridge` column; chain values = ['ETH']
+
+### out\multi_bridge_expansion\flow_structural_three_bridges\Celer\uot\flow_segments_bnb.csv  [125354 B]
+--- whole file   rows=288
+    aml_risk_score           n=288     miss=0      miss%= 0.00% min=    0.0000 max=    0.0000 mean=    0.0000 med=    0.0000 std=    0.0000
+        q05=   0.0000 q25=   0.0000 q50=   0.0000 q75=   0.0000 q95=   0.0000 q99=   0.0000  ndistinct=1 const=True
+        value_counts (<=20 distinct):
+            0.0                          288
+    evidence_quality_score   n=288     miss=0      miss%= 0.00% min=    0.6750 max=    0.6750 mean=    0.6750 med=    0.6750 std=    0.0000
+        q05=   0.6750 q25=   0.6750 q50=   0.6750 q75=   0.6750 q95=   0.6750 q99=   0.6750  ndistinct=1 const=True
+        value_counts (<=20 distinct):
+            0.675                        288
+    aml_risk_level           n=288 n_distinct=0 const=False
+        'nan'                        288
+    aml_score_mean           n=288     miss=0      miss%= 0.00% min=    0.0000 max=    0.0000 mean=    0.0000 med=    0.0000 std=    0.0000
+        q05=   0.0000 q25=   0.0000 q50=   0.0000 q75=   0.0000 q95=   0.0000 q99=   0.0000  ndistinct=1 const=True
+        value_counts (<=20 distinct):
+            0.0                          288
+    aml_score_max            n=288     miss=0      miss%= 0.00% min=    0.0000 max=    0.0000 mean=    0.0000 med=    0.0000 std=    0.0000
+        q05=   0.0000 q25=   0.0000 q50=   0.0000 q75=   0.0000 q95=   0.0000 q99=   0.0000  ndistinct=1 const=True
+        value_counts (<=20 distinct):
+            0.0                          288
+    evidence_level           n=288 n_distinct=1
+        '0.675'                      288
+    [note] no `bridge` column; chain values = ['BNB']
+
+### out\multi_bridge_expansion\flow_structural_three_bridges\Celer\uot\uot_marginals.csv  [118580 B]
+--- whole file   rows=576
+    aml_risk_score           n=576     miss=0      miss%= 0.00% min=    0.0000 max=    0.0000 mean=    0.0000 med=    0.0000 std=    0.0000
+        q05=   0.0000 q25=   0.0000 q50=   0.0000 q75=   0.0000 q95=   0.0000 q99=   0.0000  ndistinct=1 const=True
+        value_counts (<=20 distinct):
+            0.0                          576
+    evidence_quality_score   n=576     miss=0      miss%= 0.00% min=    0.6750 max=    0.8250 mean=    0.7500 med=    0.7500 std=    0.0751
+        q05=   0.6750 q25=   0.6750 q50=   0.7500 q75=   0.8250 q95=   0.8250 q99=   0.8250  ndistinct=2 const=False
+        value_counts (<=20 distinct):
+            0.675                        288
+            0.825                        288
+    risk_weighted_mass       n=576     miss=0      miss%= 0.00% min=    0.0000 max=    0.0488 mean=    0.0035 med=    0.0005 std=    0.0079
+        q05=   0.0000 q25=   0.0002 q50=   0.0005 q75=   0.0023 q95=   0.0173 q99=   0.0488  ndistinct=103 const=False
+    [note] no `bridge` column; chain values = ['BNB', 'ETH']
+
+### out\multi_bridge_expansion\flow_structural_three_bridges\Multi\flow_segments_eth.csv  [2433638 B]
+--- whole file   rows=5843
+    aml_score_mean           n=5843    miss=0      miss%= 0.00% min=    0.0000 max=    0.0000 mean=    0.0000 med=    0.0000 std=    0.0000
+        q05=   0.0000 q25=   0.0000 q50=   0.0000 q75=   0.0000 q95=   0.0000 q99=   0.0000  ndistinct=1 const=True
+        value_counts (<=20 distinct):
+            0                            5843
+    aml_score_max            n=5843    miss=0      miss%= 0.00% min=    0.0000 max=    0.0000 mean=    0.0000 med=    0.0000 std=    0.0000
+        q05=   0.0000 q25=   0.0000 q50=   0.0000 q75=   0.0000 q95=   0.0000 q99=   0.0000  ndistinct=1 const=True
+        value_counts (<=20 distinct):
+            0                            5843
+    evidence_quality_mean    n=5843    miss=0      miss%= 0.00% min=    0.8250 max=    0.8250 mean=    0.8250 med=    0.8250 std=    0.0000
+        q05=   0.8250 q25=   0.8250 q50=   0.8250 q75=   0.8250 q95=   0.8250 q99=   0.8250  ndistinct=1 const=True
+        value_counts (<=20 distinct):
+            0.825                        5843
+    [note] no `bridge` column; chain values = ['ETH']
+
+### out\multi_bridge_expansion\flow_structural_three_bridges\Multi\flow_segments_bnb.csv  [2433638 B]
+--- whole file   rows=5843
+    aml_score_mean           n=5843    miss=0      miss%= 0.00% min=    0.0000 max=    0.0000 mean=    0.0000 med=    0.0000 std=    0.0000
+        q05=   0.0000 q25=   0.0000 q50=   0.0000 q75=   0.0000 q95=   0.0000 q99=   0.0000  ndistinct=1 const=True
+        value_counts (<=20 distinct):
+            0                            5843
+    aml_score_max            n=5843    miss=0      miss%= 0.00% min=    0.0000 max=    0.0000 mean=    0.0000 med=    0.0000 std=    0.0000
+        q05=   0.0000 q25=   0.0000 q50=   0.0000 q75=   0.0000 q95=   0.0000 q99=   0.0000  ndistinct=1 const=True
+        value_counts (<=20 distinct):
+            0                            5843
+    evidence_quality_mean    n=5843    miss=0      miss%= 0.00% min=    0.6750 max=    0.6750 mean=    0.6750 med=    0.6750 std=    0.0000
+        q05=   0.6750 q25=   0.6750 q50=   0.6750 q75=   0.6750 q95=   0.6750 q99=   0.6750  ndistinct=1 const=True
+        value_counts (<=20 distinct):
+            0.675                        5843
+    [note] no `bridge` column; chain values = ['BNB']
+
+### out\multi_bridge_expansion\flow_structural_three_bridges\Multi\flow_segments_eth_synth.csv  [125662 B]
+--- whole file   rows=288
+    aml_score_mean           n=288     miss=0      miss%= 0.00% min=    0.0000 max=    0.0000 mean=    0.0000 med=    0.0000 std=    0.0000
+        q05=   0.0000 q25=   0.0000 q50=   0.0000 q75=   0.0000 q95=   0.0000 q99=   0.0000  ndistinct=1 const=True
+        value_counts (<=20 distinct):
+            0                            288
+    aml_score_max            n=288     miss=0      miss%= 0.00% min=    0.0000 max=    0.0000 mean=    0.0000 med=    0.0000 std=    0.0000
+        q05=   0.0000 q25=   0.0000 q50=   0.0000 q75=   0.0000 q95=   0.0000 q99=   0.0000  ndistinct=1 const=True
+        value_counts (<=20 distinct):
+            0                            288
+    evidence_quality_mean    n=288     miss=0      miss%= 0.00% min=    0.8250 max=    0.8250 mean=    0.8250 med=    0.8250 std=    0.0000
+        q05=   0.8250 q25=   0.8250 q50=   0.8250 q75=   0.8250 q95=   0.8250 q99=   0.8250  ndistinct=1 const=True
+        value_counts (<=20 distinct):
+            0.825                        288
+    [note] no `bridge` column; chain values = ['ETH']
+
+### out\multi_bridge_expansion\flow_structural_three_bridges\Multi\flow_segments_bnb_synth.csv  [125230 B]
+--- whole file   rows=288
+    aml_score_mean           n=288     miss=0      miss%= 0.00% min=    0.0000 max=    0.0000 mean=    0.0000 med=    0.0000 std=    0.0000
+        q05=   0.0000 q25=   0.0000 q50=   0.0000 q75=   0.0000 q95=   0.0000 q99=   0.0000  ndistinct=1 const=True
+        value_counts (<=20 distinct):
+            0                            288
+    aml_score_max            n=288     miss=0      miss%= 0.00% min=    0.0000 max=    0.0000 mean=    0.0000 med=    0.0000 std=    0.0000
+        q05=   0.0000 q25=   0.0000 q50=   0.0000 q75=   0.0000 q95=   0.0000 q99=   0.0000  ndistinct=1 const=True
+        value_counts (<=20 distinct):
+            0                            288
+    evidence_quality_mean    n=288     miss=0      miss%= 0.00% min=    0.6750 max=    0.6750 mean=    0.6750 med=    0.6750 std=    0.0000
+        q05=   0.6750 q25=   0.6750 q50=   0.6750 q75=   0.6750 q95=   0.6750 q99=   0.6750  ndistinct=1 const=True
+        value_counts (<=20 distinct):
+            0.675                        288
+    [note] no `bridge` column; chain values = ['BNB']
+
+### out\multi_bridge_expansion\flow_structural_three_bridges\Multi\uot\flow_segments_eth.csv  [119880 B]
+--- whole file   rows=288
+    aml_risk_score           n=288     miss=0      miss%= 0.00% min=    0.0000 max=    0.0000 mean=    0.0000 med=    0.0000 std=    0.0000
+        q05=   0.0000 q25=   0.0000 q50=   0.0000 q75=   0.0000 q95=   0.0000 q99=   0.0000  ndistinct=1 const=True
+        value_counts (<=20 distinct):
+            0.0                          288
+    evidence_quality_score   n=288     miss=0      miss%= 0.00% min=    0.8250 max=    0.8250 mean=    0.8250 med=    0.8250 std=    0.0000
+        q05=   0.8250 q25=   0.8250 q50=   0.8250 q75=   0.8250 q95=   0.8250 q99=   0.8250  ndistinct=1 const=True
+        value_counts (<=20 distinct):
+            0.825                        288
+    aml_risk_level           n=288 n_distinct=0 const=False
+        'nan'                        288
+    aml_score_mean           n=288     miss=0      miss%= 0.00% min=    0.0000 max=    0.0000 mean=    0.0000 med=    0.0000 std=    0.0000
+        q05=   0.0000 q25=   0.0000 q50=   0.0000 q75=   0.0000 q95=   0.0000 q99=   0.0000  ndistinct=1 const=True
+        value_counts (<=20 distinct):
+            0.0                          288
+    aml_score_max            n=288     miss=0      miss%= 0.00% min=    0.0000 max=    0.0000 mean=    0.0000 med=    0.0000 std=    0.0000
+        q05=   0.0000 q25=   0.0000 q50=   0.0000 q75=   0.0000 q95=   0.0000 q99=   0.0000  ndistinct=1 const=True
+        value_counts (<=20 distinct):
+            0.0                          288
+    evidence_level           n=288 n_distinct=1
+        'aml_tx'                     288
+    [note] no `bridge` column; chain values = ['ETH']
+
+### out\multi_bridge_expansion\flow_structural_three_bridges\Multi\uot\flow_segments_bnb.csv  [119160 B]
+--- whole file   rows=288
+    aml_risk_score           n=288     miss=0      miss%= 0.00% min=    0.0000 max=    0.0000 mean=    0.0000 med=    0.0000 std=    0.0000
+        q05=   0.0000 q25=   0.0000 q50=   0.0000 q75=   0.0000 q95=   0.0000 q99=   0.0000  ndistinct=1 const=True
+        value_counts (<=20 distinct):
+            0.0                          288
+    evidence_quality_score   n=288     miss=0      miss%= 0.00% min=    0.6750 max=    0.6750 mean=    0.6750 med=    0.6750 std=    0.0000
+        q05=   0.6750 q25=   0.6750 q50=   0.6750 q75=   0.6750 q95=   0.6750 q99=   0.6750  ndistinct=1 const=True
+        value_counts (<=20 distinct):
+            0.675                        288
+    aml_risk_level           n=288 n_distinct=0 const=False
+        'nan'                        288
+    aml_score_mean           n=288     miss=0      miss%= 0.00% min=    0.0000 max=    0.0000 mean=    0.0000 med=    0.0000 std=    0.0000
+        q05=   0.0000 q25=   0.0000 q50=   0.0000 q75=   0.0000 q95=   0.0000 q99=   0.0000  ndistinct=1 const=True
+        value_counts (<=20 distinct):
+            0.0                          288
+    aml_score_max            n=288     miss=0      miss%= 0.00% min=    0.0000 max=    0.0000 mean=    0.0000 med=    0.0000 std=    0.0000
+        q05=   0.0000 q25=   0.0000 q50=   0.0000 q75=   0.0000 q95=   0.0000 q99=   0.0000  ndistinct=1 const=True
+        value_counts (<=20 distinct):
+            0.0                          288
+    evidence_level           n=288 n_distinct=1
+        '0.675'                      288
+    [note] no `bridge` column; chain values = ['BNB']
+
+### out\multi_bridge_expansion\flow_structural_three_bridges\Multi\uot\uot_marginals.csv  [115896 B]
+--- whole file   rows=576
+    aml_risk_score           n=576     miss=0      miss%= 0.00% min=    0.0000 max=    0.0000 mean=    0.0000 med=    0.0000 std=    0.0000
+        q05=   0.0000 q25=   0.0000 q50=   0.0000 q75=   0.0000 q95=   0.0000 q99=   0.0000  ndistinct=1 const=True
+        value_counts (<=20 distinct):
+            0.0                          576
+    evidence_quality_score   n=576     miss=0      miss%= 0.00% min=    0.6750 max=    0.8250 mean=    0.7500 med=    0.7500 std=    0.0751
+        q05=   0.6750 q25=   0.6750 q50=   0.7500 q75=   0.8250 q95=   0.8250 q99=   0.8250  ndistinct=2 const=False
+        value_counts (<=20 distinct):
+            0.675                        288
+            0.825                        288
+    risk_weighted_mass       n=576     miss=0      miss%= 0.00% min=    0.0000 max=    0.1930 mean=    0.0035 med=    0.0000 std=    0.0239
+        q05=   0.0000 q25=   0.0000 q50=   0.0000 q75=   0.0001 q95=   0.0009 q99=   0.1930  ndistinct=92 const=False
+    [note] no `bridge` column; chain values = ['BNB', 'ETH']
+
+### out\multi_bridge_expansion\flow_structural_three_bridges\Poly\flow_segments_eth.csv  [1692144 B]
+--- whole file   rows=3821
+    aml_score_mean           n=3821    miss=0      miss%= 0.00% min=    0.0000 max=    0.0000 mean=    0.0000 med=    0.0000 std=    0.0000
+        q05=   0.0000 q25=   0.0000 q50=   0.0000 q75=   0.0000 q95=   0.0000 q99=   0.0000  ndistinct=1 const=True
+        value_counts (<=20 distinct):
+            0                            3821
+    aml_score_max            n=3821    miss=0      miss%= 0.00% min=    0.0000 max=    0.0000 mean=    0.0000 med=    0.0000 std=    0.0000
+        q05=   0.0000 q25=   0.0000 q50=   0.0000 q75=   0.0000 q95=   0.0000 q99=   0.0000  ndistinct=1 const=True
+        value_counts (<=20 distinct):
+            0                            3821
+    evidence_quality_mean    n=3821    miss=0      miss%= 0.00% min=    0.8250 max=    0.8250 mean=    0.8250 med=    0.8250 std=    0.0000
+        q05=   0.8250 q25=   0.8250 q50=   0.8250 q75=   0.8250 q95=   0.8250 q99=   0.8250  ndistinct=1 const=True
+        value_counts (<=20 distinct):
+            0.825                        3821
+    [note] no `bridge` column; chain values = ['ETH']
+
+### out\multi_bridge_expansion\flow_structural_three_bridges\Poly\flow_segments_bnb.csv  [1692144 B]
+--- whole file   rows=3821
+    aml_score_mean           n=3821    miss=0      miss%= 0.00% min=    0.0000 max=    0.0000 mean=    0.0000 med=    0.0000 std=    0.0000
+        q05=   0.0000 q25=   0.0000 q50=   0.0000 q75=   0.0000 q95=   0.0000 q99=   0.0000  ndistinct=1 const=True
+        value_counts (<=20 distinct):
+            0                            3821
+    aml_score_max            n=3821    miss=0      miss%= 0.00% min=    0.0000 max=    0.0000 mean=    0.0000 med=    0.0000 std=    0.0000
+        q05=   0.0000 q25=   0.0000 q50=   0.0000 q75=   0.0000 q95=   0.0000 q99=   0.0000  ndistinct=1 const=True
+        value_counts (<=20 distinct):
+            0                            3821
+    evidence_quality_mean    n=3821    miss=0      miss%= 0.00% min=    0.6750 max=    0.6750 mean=    0.6750 med=    0.6750 std=    0.0000
+        q05=   0.6750 q25=   0.6750 q50=   0.6750 q75=   0.6750 q95=   0.6750 q99=   0.6750  ndistinct=1 const=True
+        value_counts (<=20 distinct):
+            0.675                        3821
+    [note] no `bridge` column; chain values = ['BNB']
+
+### out\multi_bridge_expansion\flow_structural_three_bridges\Poly\flow_segments_eth_synth.csv  [133278 B]
+--- whole file   rows=288
+    aml_score_mean           n=288     miss=0      miss%= 0.00% min=    0.0000 max=    0.0000 mean=    0.0000 med=    0.0000 std=    0.0000
+        q05=   0.0000 q25=   0.0000 q50=   0.0000 q75=   0.0000 q95=   0.0000 q99=   0.0000  ndistinct=1 const=True
+        value_counts (<=20 distinct):
+            0                            288
+    aml_score_max            n=288     miss=0      miss%= 0.00% min=    0.0000 max=    0.0000 mean=    0.0000 med=    0.0000 std=    0.0000
+        q05=   0.0000 q25=   0.0000 q50=   0.0000 q75=   0.0000 q95=   0.0000 q99=   0.0000  ndistinct=1 const=True
+        value_counts (<=20 distinct):
+            0                            288
+    evidence_quality_mean    n=288     miss=0      miss%= 0.00% min=    0.8250 max=    0.8250 mean=    0.8250 med=    0.8250 std=    0.0000
+        q05=   0.8250 q25=   0.8250 q50=   0.8250 q75=   0.8250 q95=   0.8250 q99=   0.8250  ndistinct=1 const=True
+        value_counts (<=20 distinct):
+            0.825                        288
+    [note] no `bridge` column; chain values = ['ETH']
+
+### out\multi_bridge_expansion\flow_structural_three_bridges\Poly\flow_segments_bnb_synth.csv  [132846 B]
+--- whole file   rows=288
+    aml_score_mean           n=288     miss=0      miss%= 0.00% min=    0.0000 max=    0.0000 mean=    0.0000 med=    0.0000 std=    0.0000
+        q05=   0.0000 q25=   0.0000 q50=   0.0000 q75=   0.0000 q95=   0.0000 q99=   0.0000  ndistinct=1 const=True
+        value_counts (<=20 distinct):
+            0                            288
+    aml_score_max            n=288     miss=0      miss%= 0.00% min=    0.0000 max=    0.0000 mean=    0.0000 med=    0.0000 std=    0.0000
+        q05=   0.0000 q25=   0.0000 q50=   0.0000 q75=   0.0000 q95=   0.0000 q99=   0.0000  ndistinct=1 const=True
+        value_counts (<=20 distinct):
+            0                            288
+    evidence_quality_mean    n=288     miss=0      miss%= 0.00% min=    0.6750 max=    0.6750 mean=    0.6750 med=    0.6750 std=    0.0000
+        q05=   0.6750 q25=   0.6750 q50=   0.6750 q75=   0.6750 q95=   0.6750 q99=   0.6750  ndistinct=1 const=True
+        value_counts (<=20 distinct):
+            0.675                        288
+    [note] no `bridge` column; chain values = ['BNB']
+
+### out\multi_bridge_expansion\flow_structural_three_bridges\Poly\uot\flow_segments_eth.csv  [132954 B]
+--- whole file   rows=288
+    aml_risk_score           n=288     miss=0      miss%= 0.00% min=    0.0000 max=    0.0000 mean=    0.0000 med=    0.0000 std=    0.0000
+        q05=   0.0000 q25=   0.0000 q50=   0.0000 q75=   0.0000 q95=   0.0000 q99=   0.0000  ndistinct=1 const=True
+        value_counts (<=20 distinct):
+            0.0                          288
+    evidence_quality_score   n=288     miss=0      miss%= 0.00% min=    0.8250 max=    0.8250 mean=    0.8250 med=    0.8250 std=    0.0000
+        q05=   0.8250 q25=   0.8250 q50=   0.8250 q75=   0.8250 q95=   0.8250 q99=   0.8250  ndistinct=1 const=True
+        value_counts (<=20 distinct):
+            0.825                        288
+    aml_risk_level           n=288 n_distinct=0 const=False
+        'nan'                        288
+    aml_score_mean           n=288     miss=0      miss%= 0.00% min=    0.0000 max=    0.0000 mean=    0.0000 med=    0.0000 std=    0.0000
+        q05=   0.0000 q25=   0.0000 q50=   0.0000 q75=   0.0000 q95=   0.0000 q99=   0.0000  ndistinct=1 const=True
+        value_counts (<=20 distinct):
+            0.0                          288
+    aml_score_max            n=288     miss=0      miss%= 0.00% min=    0.0000 max=    0.0000 mean=    0.0000 med=    0.0000 std=    0.0000
+        q05=   0.0000 q25=   0.0000 q50=   0.0000 q75=   0.0000 q95=   0.0000 q99=   0.0000  ndistinct=1 const=True
+        value_counts (<=20 distinct):
+            0.0                          288
+    evidence_level           n=288 n_distinct=1
+        'aml_tx'                     288
+    [note] no `bridge` column; chain values = ['ETH']
+
+### out\multi_bridge_expansion\flow_structural_three_bridges\Poly\uot\flow_segments_bnb.csv  [132234 B]
+--- whole file   rows=288
+    aml_risk_score           n=288     miss=0      miss%= 0.00% min=    0.0000 max=    0.0000 mean=    0.0000 med=    0.0000 std=    0.0000
+        q05=   0.0000 q25=   0.0000 q50=   0.0000 q75=   0.0000 q95=   0.0000 q99=   0.0000  ndistinct=1 const=True
+        value_counts (<=20 distinct):
+            0.0                          288
+    evidence_quality_score   n=288     miss=0      miss%= 0.00% min=    0.6750 max=    0.6750 mean=    0.6750 med=    0.6750 std=    0.0000
+        q05=   0.6750 q25=   0.6750 q50=   0.6750 q75=   0.6750 q95=   0.6750 q99=   0.6750  ndistinct=1 const=True
+        value_counts (<=20 distinct):
+            0.675                        288
+    aml_risk_level           n=288 n_distinct=0 const=False
+        'nan'                        288
+    aml_score_mean           n=288     miss=0      miss%= 0.00% min=    0.0000 max=    0.0000 mean=    0.0000 med=    0.0000 std=    0.0000
+        q05=   0.0000 q25=   0.0000 q50=   0.0000 q75=   0.0000 q95=   0.0000 q99=   0.0000  ndistinct=1 const=True
+        value_counts (<=20 distinct):
+            0.0                          288
+    aml_score_max            n=288     miss=0      miss%= 0.00% min=    0.0000 max=    0.0000 mean=    0.0000 med=    0.0000 std=    0.0000
+        q05=   0.0000 q25=   0.0000 q50=   0.0000 q75=   0.0000 q95=   0.0000 q99=   0.0000  ndistinct=1 const=True
+        value_counts (<=20 distinct):
+            0.0                          288
+    evidence_level           n=288 n_distinct=1
+        '0.675'                      288
+    [note] no `bridge` column; chain values = ['BNB']
+
+### out\multi_bridge_expansion\flow_structural_three_bridges\Poly\uot\uot_marginals.csv  [121380 B]
+--- whole file   rows=576
+    aml_risk_score           n=576     miss=0      miss%= 0.00% min=    0.0000 max=    0.0000 mean=    0.0000 med=    0.0000 std=    0.0000
+        q05=   0.0000 q25=   0.0000 q50=   0.0000 q75=   0.0000 q95=   0.0000 q99=   0.0000  ndistinct=1 const=True
+        value_counts (<=20 distinct):
+            0.0                          576
+    evidence_quality_score   n=576     miss=0      miss%= 0.00% min=    0.6750 max=    0.8250 mean=    0.7500 med=    0.7500 std=    0.0751
+        q05=   0.6750 q25=   0.6750 q50=   0.7500 q75=   0.8250 q95=   0.8250 q99=   0.8250  ndistinct=2 const=False
+        value_counts (<=20 distinct):
+            0.675                        288
+            0.825                        288
+    risk_weighted_mass       n=576     miss=0      miss%= 0.00% min=    0.0000 max=    0.0811 mean=    0.0035 med=    0.0000 std=    0.0133
+        q05=   0.0000 q25=   0.0000 q50=   0.0000 q75=   0.0005 q95=   0.0329 q99=   0.0811  ndistinct=148 const=False
+    [note] no `bridge` column; chain values = ['BNB', 'ETH']
+
+### out\paper_full_pipeline_run\labels\flow_segments_eth.csv  [3039914 B]
+--- whole file   rows=5735
+    aml_score_mean           n=5735    miss=0      miss%= 0.00% min=    0.0000 max=    0.0000 mean=    0.0000 med=    0.0000 std=    0.0000
+        q05=   0.0000 q25=   0.0000 q50=   0.0000 q75=   0.0000 q95=   0.0000 q99=   0.0000  ndistinct=1 const=True
+        value_counts (<=20 distinct):
+            0.0                          5735
+    aml_score_max            n=5735    miss=0      miss%= 0.00% min=    0.0000 max=    0.0000 mean=    0.0000 med=    0.0000 std=    0.0000
+        q05=   0.0000 q25=   0.0000 q50=   0.0000 q75=   0.0000 q95=   0.0000 q99=   0.0000  ndistinct=1 const=True
+        value_counts (<=20 distinct):
+            0.0                          5735
+    evidence_quality_mean    n=5735    miss=0      miss%= 0.00% min=    0.6500 max=    1.0000 mean=    0.8555 med=    0.8250 std=    0.1232
+        q05=   0.6500 q25=   0.8250 q50=   0.8250 q75=   1.0000 q95=   1.0000 q99=   1.0000  ndistinct=6 const=False
+        value_counts (<=20 distinct):
+            0.6499999999999999           2
+            0.65                         994
+            0.6500000000000001           11
+            0.8249999999999998           6
+            0.825                        2714
+            1.0                          2008
+    [note] no `bridge` column; chain values = ['ETH']
+
+### out\paper_full_pipeline_run\labels\flow_segments_bnb.csv  [3915988 B]
+--- whole file   rows=7122
+    aml_score_mean           n=7122    miss=0      miss%= 0.00% min=    0.0000 max=    0.0000 mean=    0.0000 med=    0.0000 std=    0.0000
+        q05=   0.0000 q25=   0.0000 q50=   0.0000 q75=   0.0000 q95=   0.0000 q99=   0.0000  ndistinct=1 const=True
+        value_counts (<=20 distinct):
+            0.0                          7122
+    aml_score_max            n=7122    miss=0      miss%= 0.00% min=    0.0000 max=    0.0000 mean=    0.0000 med=    0.0000 std=    0.0000
+        q05=   0.0000 q25=   0.0000 q50=   0.0000 q75=   0.0000 q95=   0.0000 q99=   0.0000  ndistinct=1 const=True
+        value_counts (<=20 distinct):
+            0.0                          7122
+    evidence_quality_mean    n=7122    miss=0      miss%= 0.00% min=    0.6750 max=    0.8700 mean=    0.6758 med=    0.6750 std=    0.0126
+        q05=   0.6750 q25=   0.6750 q50=   0.6750 q75=   0.6750 q95=   0.6750 q99=   0.6750  ndistinct=3 const=False
+        value_counts (<=20 distinct):
+            0.675                        7085
+            0.6750000000000002           7
+            0.8699999999999999           30
+    [note] no `bridge` column; chain values = ['BNB']
+
+### out\paper_full_pipeline_run\uot\uot_marginals.csv  [1134535 B]
+--- whole file   rows=7827
+    aml_risk_score           n=7827    miss=0      miss%= 0.00% min=    0.0000 max=    0.0000 mean=    0.0000 med=    0.0000 std=    0.0000
+        q05=   0.0000 q25=   0.0000 q50=   0.0000 q75=   0.0000 q95=   0.0000 q99=   0.0000  ndistinct=1 const=True
+        value_counts (<=20 distinct):
+            0.0                          7827
+    evidence_quality_score   n=7827    miss=0      miss%= 0.00% min=    0.6500 max=    1.0000 mean=    0.8077 med=    0.8250 std=    0.1322
+        q05=   0.6500 q25=   0.6750 q50=   0.8250 q75=   1.0000 q95=   1.0000 q99=   1.0000  ndistinct=9 const=False
+        value_counts (<=20 distinct):
+            0.6499999999999999           2
+            0.65                         994
+            0.6500000000000001           11
+            0.675                        2069
+            0.6750000000000002           5
+            0.8249999999999998           6
+            0.825                        2714
+            0.8699999999999999           18
+            1.0                          2008
+    risk_weighted_mass       n=7827    miss=0      miss%= 0.00% min=    0.0000 max=    0.4445 mean=    0.0003 med=    0.0000 std=    0.0081
+        q05=   0.0000 q25=   0.0000 q50=   0.0000 q75=   0.0000 q95=   0.0001 q99=   0.0006  ndistinct=6527 const=False
+    [note] no `bridge` column; chain values = ['BNB', 'ETH']
+
+### out\paper_full_pipeline_run\evidence\evidence_eth.csv  [8225844 B]
+--- whole file   rows=12445
+    evidence_quality         n=12445 ALL MISSING/non-numeric (n_distinct=0)
+  --- bridge == CelerNetwork   rows=12445
+    evidence_quality         n=12445 ALL MISSING/non-numeric (n_distinct=0)
+
+### out\paper_full_pipeline_run\evidence\evidence_bnb.csv  [10096809 B]
+--- whole file   rows=14688
+    evidence_quality         n=14688 ALL MISSING/non-numeric (n_distinct=0)
+  --- bridge == CelerNetwork   rows=14688
+    evidence_quality         n=14688 ALL MISSING/non-numeric (n_distinct=0)
+
+### out\chapter4_data_package\frozen_substrates\flow_segments_eth.csv  [3039914 B]
+--- whole file   rows=5735
+    aml_score_mean           n=5735    miss=0      miss%= 0.00% min=    0.0000 max=    0.0000 mean=    0.0000 med=    0.0000 std=    0.0000
+        q05=   0.0000 q25=   0.0000 q50=   0.0000 q75=   0.0000 q95=   0.0000 q99=   0.0000  ndistinct=1 const=True
+        value_counts (<=20 distinct):
+            0.0                          5735
+    aml_score_max            n=5735    miss=0      miss%= 0.00% min=    0.0000 max=    0.0000 mean=    0.0000 med=    0.0000 std=    0.0000
+        q05=   0.0000 q25=   0.0000 q50=   0.0000 q75=   0.0000 q95=   0.0000 q99=   0.0000  ndistinct=1 const=True
+        value_counts (<=20 distinct):
+            0.0                          5735
+    evidence_quality_mean    n=5735    miss=0      miss%= 0.00% min=    0.6500 max=    1.0000 mean=    0.8555 med=    0.8250 std=    0.1232
+        q05=   0.6500 q25=   0.8250 q50=   0.8250 q75=   1.0000 q95=   1.0000 q99=   1.0000  ndistinct=6 const=False
+        value_counts (<=20 distinct):
+            0.6499999999999999           2
+            0.65                         994
+            0.6500000000000001           11
+            0.8249999999999998           6
+            0.825                        2714
+            1.0                          2008
+    [note] no `bridge` column; chain values = ['ETH']
+
+### out\chapter4_data_package\frozen_substrates\flow_segments_bnb.csv  [3915988 B]
+--- whole file   rows=7122
+    aml_score_mean           n=7122    miss=0      miss%= 0.00% min=    0.0000 max=    0.0000 mean=    0.0000 med=    0.0000 std=    0.0000
+        q05=   0.0000 q25=   0.0000 q50=   0.0000 q75=   0.0000 q95=   0.0000 q99=   0.0000  ndistinct=1 const=True
+        value_counts (<=20 distinct):
+            0.0                          7122
+    aml_score_max            n=7122    miss=0      miss%= 0.00% min=    0.0000 max=    0.0000 mean=    0.0000 med=    0.0000 std=    0.0000
+        q05=   0.0000 q25=   0.0000 q50=   0.0000 q75=   0.0000 q95=   0.0000 q99=   0.0000  ndistinct=1 const=True
+        value_counts (<=20 distinct):
+            0.0                          7122
+    evidence_quality_mean    n=7122    miss=0      miss%= 0.00% min=    0.6750 max=    0.8700 mean=    0.6758 med=    0.6750 std=    0.0126
+        q05=   0.6750 q25=   0.6750 q50=   0.6750 q75=   0.6750 q95=   0.6750 q99=   0.6750  ndistinct=3 const=False
+        value_counts (<=20 distinct):
+            0.675                        7085
+            0.6750000000000002           7
+            0.8699999999999999           30
+    [note] no `bridge` column; chain values = ['BNB']
+
+### out\baseline_compare\labels\candidate_bnb_universe_flows.csv  [4290541 B]
+--- whole file   rows=5226
+    aml_risk_score           n=5226    miss=0      miss%= 0.00% min=    0.0000 max=    0.0000 mean=    0.0000 med=    0.0000 std=    0.0000
+        q05=   0.0000 q25=   0.0000 q50=   0.0000 q75=   0.0000 q95=   0.0000 q99=   0.0000  ndistinct=1 const=True
+        value_counts (<=20 distinct):
+            0.0                          5226
+    evidence_quality_score   n=5226 ALL MISSING/non-numeric (n_distinct=0)
+    aml_risk_level           n=5226 n_distinct=0 const=False
+        'nan'                        5226
+    aml_score_mean           n=5226    miss=0      miss%= 0.00% min=    0.0000 max=    0.0000 mean=    0.0000 med=    0.0000 std=    0.0000
+        q05=   0.0000 q25=   0.0000 q50=   0.0000 q75=   0.0000 q95=   0.0000 q99=   0.0000  ndistinct=1 const=True
+        value_counts (<=20 distinct):
+            0.0                          5226
+    aml_score_max            n=5226    miss=0      miss%= 0.00% min=    0.0000 max=    0.0000 mean=    0.0000 med=    0.0000 std=    0.0000
+        q05=   0.0000 q25=   0.0000 q50=   0.0000 q75=   0.0000 q95=   0.0000 q99=   0.0000  ndistinct=1 const=True
+        value_counts (<=20 distinct):
+            0.0                          5226
+    evidence_level           n=5226 n_distinct=0
+        'nan'                        5226
+    [note] no `bridge` column; chain values = ['BNB']
+
+### out\baseline_compare\labels\candidate_eth_universe_flows.csv  [2220324 B]
+--- whole file   rows=3258
+    aml_risk_score           n=3258    miss=0      miss%= 0.00% min=    0.0000 max=    0.0000 mean=    0.0000 med=    0.0000 std=    0.0000
+        q05=   0.0000 q25=   0.0000 q50=   0.0000 q75=   0.0000 q95=   0.0000 q99=   0.0000  ndistinct=1 const=True
+        value_counts (<=20 distinct):
+            0.0                          3258
+    evidence_quality_score   n=3258 ALL MISSING/non-numeric (n_distinct=0)
+    aml_risk_level           n=3258 n_distinct=0 const=False
+        'nan'                        3258
+    aml_score_mean           n=3258    miss=0      miss%= 0.00% min=    0.0000 max=    0.0000 mean=    0.0000 med=    0.0000 std=    0.0000
+        q05=   0.0000 q25=   0.0000 q50=   0.0000 q75=   0.0000 q95=   0.0000 q99=   0.0000  ndistinct=1 const=True
+        value_counts (<=20 distinct):
+            0.0                          3258
+    aml_score_max            n=3258    miss=0      miss%= 0.00% min=    0.0000 max=    0.0000 mean=    0.0000 med=    0.0000 std=    0.0000
+        q05=   0.0000 q25=   0.0000 q50=   0.0000 q75=   0.0000 q95=   0.0000 q99=   0.0000  ndistinct=1 const=True
+        value_counts (<=20 distinct):
+            0.0                          3258
+    evidence_level           n=3258 n_distinct=1
+        'aml_tx'                     3258
+    [note] no `bridge` column; chain values = ['ETH']
+
+### out\bsc_open_independent_v1\stage5_6_flow_aggregation\src_flows_aggregated.csv  [940010 B]
+--- whole file   rows=2600
+    aml_score                n=2600    miss=0      miss%= 0.00% min=    0.0000 max=    0.0000 mean=    0.0000 med=    0.0000 std=    0.0000
+        q05=   0.0000 q25=   0.0000 q50=   0.0000 q75=   0.0000 q95=   0.0000 q99=   0.0000  ndistinct=1 const=True
+        value_counts (<=20 distinct):
+            0.0                          2600
+    aml_risk_score_raw       n=2600    miss=0      miss%= 0.00% min=    0.0000 max=    0.0000 mean=    0.0000 med=    0.0000 std=    0.0000
+        q05=   0.0000 q25=   0.0000 q50=   0.0000 q75=   0.0000 q95=   0.0000 q99=   0.0000  ndistinct=1 const=True
+        value_counts (<=20 distinct):
+            0.0                          2600
+    evidence_quality_score   n=2600    miss=0      miss%= 0.00% min=    0.5000 max=    0.5000 mean=    0.5000 med=    0.5000 std=    0.0000
+        q05=   0.5000 q25=   0.5000 q50=   0.5000 q75=   0.5000 q95=   0.5000 q99=   0.5000  ndistinct=1 const=True
+        value_counts (<=20 distinct):
+            0.5                          2600
+    evidence_level           n=2600 n_distinct=1
+        '1'                          2600
+    [note] no `bridge` column; chain values = ['ETH']
+
+### out\chapter4_data_package\frozen_substrates\baseline_compare_labels\candidate_bnb_universe_flows.csv  [4290541 B]
+--- whole file   rows=5226
+    aml_risk_score           n=5226    miss=0      miss%= 0.00% min=    0.0000 max=    0.0000 mean=    0.0000 med=    0.0000 std=    0.0000
+        q05=   0.0000 q25=   0.0000 q50=   0.0000 q75=   0.0000 q95=   0.0000 q99=   0.0000  ndistinct=1 const=True
+        value_counts (<=20 distinct):
+            0.0                          5226
+    evidence_quality_score   n=5226 ALL MISSING/non-numeric (n_distinct=0)
+    aml_risk_level           n=5226 n_distinct=0 const=False
+        'nan'                        5226
+    aml_score_mean           n=5226    miss=0      miss%= 0.00% min=    0.0000 max=    0.0000 mean=    0.0000 med=    0.0000 std=    0.0000
+        q05=   0.0000 q25=   0.0000 q50=   0.0000 q75=   0.0000 q95=   0.0000 q99=   0.0000  ndistinct=1 const=True
+        value_counts (<=20 distinct):
+            0.0                          5226
+    aml_score_max            n=5226    miss=0      miss%= 0.00% min=    0.0000 max=    0.0000 mean=    0.0000 med=    0.0000 std=    0.0000
+        q05=   0.0000 q25=   0.0000 q50=   0.0000 q75=   0.0000 q95=   0.0000 q99=   0.0000  ndistinct=1 const=True
+        value_counts (<=20 distinct):
+            0.0                          5226
+    evidence_level           n=5226 n_distinct=0
+        'nan'                        5226
+    [note] no `bridge` column; chain values = ['BNB']
+
+### out\chapter4_data_package\frozen_substrates\baseline_compare_labels\candidate_eth_universe_flows.csv  [2220324 B]
+--- whole file   rows=3258
+    aml_risk_score           n=3258    miss=0      miss%= 0.00% min=    0.0000 max=    0.0000 mean=    0.0000 med=    0.0000 std=    0.0000
+        q05=   0.0000 q25=   0.0000 q50=   0.0000 q75=   0.0000 q95=   0.0000 q99=   0.0000  ndistinct=1 const=True
+        value_counts (<=20 distinct):
+            0.0                          3258
+    evidence_quality_score   n=3258 ALL MISSING/non-numeric (n_distinct=0)
+    aml_risk_level           n=3258 n_distinct=0 const=False
+        'nan'                        3258
+    aml_score_mean           n=3258    miss=0      miss%= 0.00% min=    0.0000 max=    0.0000 mean=    0.0000 med=    0.0000 std=    0.0000
+        q05=   0.0000 q25=   0.0000 q50=   0.0000 q75=   0.0000 q95=   0.0000 q99=   0.0000  ndistinct=1 const=True
+        value_counts (<=20 distinct):
+            0.0                          3258
+    aml_score_max            n=3258    miss=0      miss%= 0.00% min=    0.0000 max=    0.0000 mean=    0.0000 med=    0.0000 std=    0.0000
+        q05=   0.0000 q25=   0.0000 q50=   0.0000 q75=   0.0000 q95=   0.0000 q99=   0.0000  ndistinct=1 const=True
+        value_counts (<=20 distinct):
+            0.0                          3258
+    evidence_level           n=3258 n_distinct=1
+        'aml_tx'                     3258
+    [note] no `bridge` column; chain values = ['ETH']
+
+### out\chapter4_repro_package\data\frozen_substrates\baseline_compare_labels\candidate_bnb_universe_flows.csv  [4290541 B]
+--- whole file   rows=5226
+    aml_risk_score           n=5226    miss=0      miss%= 0.00% min=    0.0000 max=    0.0000 mean=    0.0000 med=    0.0000 std=    0.0000
+        q05=   0.0000 q25=   0.0000 q50=   0.0000 q75=   0.0000 q95=   0.0000 q99=   0.0000  ndistinct=1 const=True
+        value_counts (<=20 distinct):
+            0.0                          5226
+    evidence_quality_score   n=5226 ALL MISSING/non-numeric (n_distinct=0)
+    aml_risk_level           n=5226 n_distinct=0 const=False
+        'nan'                        5226
+    aml_score_mean           n=5226    miss=0      miss%= 0.00% min=    0.0000 max=    0.0000 mean=    0.0000 med=    0.0000 std=    0.0000
+        q05=   0.0000 q25=   0.0000 q50=   0.0000 q75=   0.0000 q95=   0.0000 q99=   0.0000  ndistinct=1 const=True
+        value_counts (<=20 distinct):
+            0.0                          5226
+    aml_score_max            n=5226    miss=0      miss%= 0.00% min=    0.0000 max=    0.0000 mean=    0.0000 med=    0.0000 std=    0.0000
+        q05=   0.0000 q25=   0.0000 q50=   0.0000 q75=   0.0000 q95=   0.0000 q99=   0.0000  ndistinct=1 const=True
+        value_counts (<=20 distinct):
+            0.0                          5226
+    evidence_level           n=5226 n_distinct=0
+        'nan'                        5226
+    [note] no `bridge` column; chain values = ['BNB']
+
+### out\chapter4_repro_package\data\frozen_substrates\baseline_compare_labels\candidate_eth_universe_flows.csv  [2220324 B]
+--- whole file   rows=3258
+    aml_risk_score           n=3258    miss=0      miss%= 0.00% min=    0.0000 max=    0.0000 mean=    0.0000 med=    0.0000 std=    0.0000
+        q05=   0.0000 q25=   0.0000 q50=   0.0000 q75=   0.0000 q95=   0.0000 q99=   0.0000  ndistinct=1 const=True
+        value_counts (<=20 distinct):
+            0.0                          3258
+    evidence_quality_score   n=3258 ALL MISSING/non-numeric (n_distinct=0)
+    aml_risk_level           n=3258 n_distinct=0 const=False
+        'nan'                        3258
+    aml_score_mean           n=3258    miss=0      miss%= 0.00% min=    0.0000 max=    0.0000 mean=    0.0000 med=    0.0000 std=    0.0000
+        q05=   0.0000 q25=   0.0000 q50=   0.0000 q75=   0.0000 q95=   0.0000 q99=   0.0000  ndistinct=1 const=True
+        value_counts (<=20 distinct):
+            0.0                          3258
+    aml_score_max            n=3258    miss=0      miss%= 0.00% min=    0.0000 max=    0.0000 mean=    0.0000 med=    0.0000 std=    0.0000
+        q05=   0.0000 q25=   0.0000 q50=   0.0000 q75=   0.0000 q95=   0.0000 q99=   0.0000  ndistinct=1 const=True
+        value_counts (<=20 distinct):
+            0.0                          3258
+    evidence_level           n=3258 n_distinct=1
+        'aml_tx'                     3258
+    [note] no `bridge` column; chain values = ['ETH']
+
+### out\leave_anchor_out_real\evidence\evidence_eth.csv  [1780248 B]
+--- whole file   rows=7296
+    aml_risk_score           n=7296    miss=0      miss%= 0.00% min=    0.0000 max=    0.0000 mean=    0.0000 med=    0.0000 std=    0.0000
+        q05=   0.0000 q25=   0.0000 q50=   0.0000 q75=   0.0000 q95=   0.0000 q99=   0.0000  ndistinct=1 const=True
+        value_counts (<=20 distinct):
+            0.0                          7296
+    aml_risk_level           n=7296 n_distinct=0 const=False
+        'nan'                        7296
+    evidence_level           n=7296 n_distinct=1
+        'aml_tx'                     7296
+    [note] no `bridge` column; chain values = ['ethereum']
+
+### ZN_TIFS_R5_ARCHIVE\experiment_results\out_bsc_open_independent_v1\stage5_6_flow_aggregation\src_flows_aggregated.csv  [940010 B]
+--- whole file   rows=2600
+    aml_score                n=2600    miss=0      miss%= 0.00% min=    0.0000 max=    0.0000 mean=    0.0000 med=    0.0000 std=    0.0000
+        q05=   0.0000 q25=   0.0000 q50=   0.0000 q75=   0.0000 q95=   0.0000 q99=   0.0000  ndistinct=1 const=True
+        value_counts (<=20 distinct):
+            0.0                          2600
+    aml_risk_score_raw       n=2600    miss=0      miss%= 0.00% min=    0.0000 max=    0.0000 mean=    0.0000 med=    0.0000 std=    0.0000
+        q05=   0.0000 q25=   0.0000 q50=   0.0000 q75=   0.0000 q95=   0.0000 q99=   0.0000  ndistinct=1 const=True
+        value_counts (<=20 distinct):
+            0.0                          2600
+    evidence_quality_score   n=2600    miss=0      miss%= 0.00% min=    0.5000 max=    0.5000 mean=    0.5000 med=    0.5000 std=    0.0000
+        q05=   0.5000 q25=   0.5000 q50=   0.5000 q75=   0.5000 q95=   0.5000 q99=   0.5000  ndistinct=1 const=True
+        value_counts (<=20 distinct):
+            0.5                          2600
+    evidence_level           n=2600 n_distinct=1
+        '1'                          2600
+    [note] no `bridge` column; chain values = ['ETH']
+
+### ZN_TIFS_R5_FULL_ARCHIVE\experiment_results\out_bsc_open_independent_v1\stage5_6_flow_aggregation\src_flows_aggregated.csv  [940010 B]
+--- whole file   rows=2600
+    aml_score                n=2600    miss=0      miss%= 0.00% min=    0.0000 max=    0.0000 mean=    0.0000 med=    0.0000 std=    0.0000
+        q05=   0.0000 q25=   0.0000 q50=   0.0000 q75=   0.0000 q95=   0.0000 q99=   0.0000  ndistinct=1 const=True
+        value_counts (<=20 distinct):
+            0.0                          2600
+    aml_risk_score_raw       n=2600    miss=0      miss%= 0.00% min=    0.0000 max=    0.0000 mean=    0.0000 med=    0.0000 std=    0.0000
+        q05=   0.0000 q25=   0.0000 q50=   0.0000 q75=   0.0000 q95=   0.0000 q99=   0.0000  ndistinct=1 const=True
+        value_counts (<=20 distinct):
+            0.0                          2600
+    evidence_quality_score   n=2600    miss=0      miss%= 0.00% min=    0.5000 max=    0.5000 mean=    0.5000 med=    0.5000 std=    0.0000
+        q05=   0.5000 q25=   0.5000 q50=   0.5000 q75=   0.5000 q95=   0.5000 q99=   0.5000  ndistinct=1 const=True
+        value_counts (<=20 distinct):
+            0.5                          2600
+    evidence_level           n=2600 n_distinct=1
+        '1'                          2600
+    [note] no `bridge` column; chain values = ['ETH']
+
+==============================================================================================================
+STEP 4 - `data\` SIDE FILES: full header + risk-column presence check
+==============================================================================================================
+
+data\Validation\ETH-BNB\Celer\input.csv   rows=7296  ncols=2
+    HEADER: ,0
+    risk-like cols: NONE - column NOT present
+
+data\Validation\ETH-BNB\Multi\input.csv   rows=8349  ncols=2
+    HEADER: ,0
+    risk-like cols: NONE - column NOT present
+
+data\Validation\ETH-BNB\Poly\input.csv   rows=5460  ncols=2
+    HEADER: ,0
+    risk-like cols: NONE - column NOT present
+
+data\Validation\ETH-Polygon\Celer\input.csv   rows=598  ncols=2
+    HEADER: ,0
+    risk-like cols: NONE - column NOT present
+
+data\Validation\ETH-Polygon\Multi\input.csv   rows=2138  ncols=2
+    HEADER: ,0
+    risk-like cols: NONE - column NOT present
+
+data\Validation\ETH-Polygon\Poly\input.csv   rows=545  ncols=2
+    HEADER: ,0
+    risk-like cols: NONE - column NOT present
+
+data\Validation\ETH-BNB\Celer\label.csv   rows=7296  ncols=5
+    HEADER: ,srcnet,srcTxhash,dstnet,dstTxhash
+    risk-like cols: NONE - column NOT present
+
+data\Validation\ETH-BNB\Multi\label.csv   rows=8349  ncols=5
+    HEADER: ,srcnet,srcTxhash,dstnet,dstTxhash
+    risk-like cols: NONE - column NOT present
+
+data\Validation\ETH-BNB\Poly\label.csv   rows=5460  ncols=5
+    HEADER: ,srcnet,srcTxhash,dstnet,dstTxhash
+    risk-like cols: NONE - column NOT present
+
+data\Validation\ETH-Polygon\Celer\label.csv   rows=598  ncols=5
+    HEADER: ,srcnet,srcTxhash,dstnet,dstTxhash
+    risk-like cols: NONE - column NOT present
+
+data\Validation\ETH-Polygon\Multi\label.csv   rows=2144  ncols=5
+    HEADER: ,srcnet,srcTxhash,dstnet,dstTxhash
+    risk-like cols: NONE - column NOT present
+
+data\Validation\ETH-Polygon\Poly\label.csv   rows=545  ncols=5
+    HEADER: ,srcnet,srcTxhash,dstnet,dstTxhash
+    risk-like cols: NONE - column NOT present
+
+data\label\celer_label.csv   rows=7296  ncols=5
+    HEADER: ,srcnet,srcTxhash,dstnet,dstTxhash
+    risk-like cols: NONE - column NOT present
+
+data\FirstPhrase\Celer.csv   rows=10  ncols=4
+    HEADER: address,contract_name,name_tag,srcnet
+    risk-like cols: NONE - column NOT present
+
+data\FirstPhrase\Multi.csv   rows=24  ncols=4
+    HEADER: address,contract_name,name_tag,srcnet
+    risk-like cols: NONE - column NOT present
+
+data\FirstPhrase\Multi_ETH.csv   rows=102064  ncols=13
+    HEADER: ,Net,Bridge,Address,id,hash,from,to,value,timeStamp,blockNumber,symbol,contractAddress
+    risk-like cols: NONE - column NOT present
+
+data\FirstPhrase\Poly.csv   rows=8  ncols=4
+    HEADER: address,contract_name,name_tag,srcnet
+    risk-like cols: NONE - column NOT present
+
+data\FirstPhrase\Poly_ETH.csv   rows=40562  ncols=13
+    HEADER: ,Net,Bridge,Address,id,hash,from,to,value,timeStamp,blockNumber,symbol,contractAddress
+    risk-like cols: NONE - column NOT present
+
+data\FirstPhrase\Celer_ETH.csv   rows=80610  ncols=13
+    HEADER: ,Net,Bridge,Address,id,hash,from,to,value,timeStamp,blockNumber,symbol,contractAddress
+    risk-like cols: NONE - column NOT present
+
+data\in\Celer_ETH_cun.csv   rows=12445  ncols=13
+    HEADER: ,Net,Bridge,Address,id,hash,from,to,value,timeStamp,blockNumber,symbol,contractAddress
+    risk-like cols: NONE - column NOT present
+
+data\label\tx\Celer_ETH_cun.csv   rows=12445  ncols=13
+    HEADER: ,Net,Bridge,Address,id,hash,from,to,value,timeStamp,blockNumber,symbol,contractAddress
+    risk-like cols: NONE - column NOT present
+
+data\label\tx\Celer_BNB_qu.csv   rows=14688  ncols=13
+    HEADER: ,Net,Bridge,Address,id,hash,from,to,value,timeStamp,blockNumber,symbol,contractAddress
+    risk-like cols: NONE - column NOT present
+
+data\label\tx\Celer_ETH_BNB_completed.csv   rows=14  ncols=6
+    HEADER: <BOM>address,contract_name,name_tag,srcnet,source_url,verification_note
+    risk-like cols: NONE - column NOT present
+
+data\Model\model_evaluation_results.csv   rows=7  ncols=6
+    HEADER: model,accuracy,precision,recall,f1_score,auc
+    risk-like cols: NONE - column NOT present
+
+data\Model\combined_resampling_results.csv   rows=28  ncols=8
+    HEADER: model,accuracy,precision,recall,f1_score,auc,average_rank,strategy
+    risk-like cols: NONE - column NOT present
+
+data\Model\normalization_map.csv   rows=37  ncols=6
+    HEADER: <BOM>account,account,,,,
+    risk-like cols: NONE - column NOT present
+
+
+[written] <REPO>\_risk_audit_tmp\stats_report.txt

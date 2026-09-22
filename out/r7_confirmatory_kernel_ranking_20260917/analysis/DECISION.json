@@ -1,0 +1,322 @@
+{
+  "experiment_id": "r7_confirmatory_kernel_ranking_20260917",
+  "generated_at_utc": "2026-09-17T08:12:02Z",
+  "classification": "CONFIRMATORY_METHOD_SUPPORT",
+  "gate_A": {
+    "effect_gt_zero": true,
+    "ci_lower_gt_zero": true,
+    "holm_adjusted_p_lt_alpha": true,
+    "effect": 0.025531674679475275,
+    "ci": [
+      0.01340454739556185,
+      0.03709975394032736
+    ],
+    "holm_adjusted_p": 0.0005499725013749313,
+    "PASS": true,
+    "gate": "A",
+    "hypothesis": "H1 UOT_KR - HUNGARIAN_1TO1"
+  },
+  "gate_B": {
+    "effect_gt_zero": true,
+    "ci_lower_gt_zero": true,
+    "holm_adjusted_p_lt_alpha": true,
+    "effect": 0.36703971518526995,
+    "ci": [
+      0.36034177338502377,
+      0.37342362898025416
+    ],
+    "holm_adjusted_p": 9.99950002499875e-05,
+    "PASS": true,
+    "gate": "B",
+    "hypothesis": "H2 UOT_KR - THRESHOLD_MM"
+  },
+  "gate_C": {
+    "gate": "C",
+    "role": "cross-bridge consistency / CLAIM gate",
+    "floor": -0.005,
+    "per_bridge": {
+      "Celer": {
+        "H1_mean_effect": 0.031382588805673184,
+        "H2_mean_effect": 0.38406564937415566,
+        "n_seeds": 10,
+        "meets_floor": true
+      },
+      "Multi": {
+        "H1_mean_effect": 0.002967047339628637,
+        "H2_mean_effect": 0.36964118322767703,
+        "n_seeds": 10,
+        "meets_floor": true
+      },
+      "Poly": {
+        "H1_mean_effect": 0.042245387893124,
+        "H2_mean_effect": 0.3474123129539771,
+        "n_seeds": 10,
+        "meets_floor": true
+      }
+    },
+    "PASS": true,
+    "if_fail": "the run remains a VALID confirmatory result; no cross-bridge consistent advantage may be claimed"
+  },
+  "gate_D": {
+    "PASS": true,
+    "detail": [
+      {
+        "check": "no_missing_cells",
+        "status": "PASS",
+        "detail": []
+      },
+      {
+        "check": "no_duplicate_cells",
+        "status": "PASS",
+        "detail": 30
+      },
+      {
+        "check": "no_forbidden_seeds",
+        "status": "PASS",
+        "detail": []
+      },
+      {
+        "check": "no_unit_failures",
+        "status": "PASS",
+        "detail": []
+      },
+      {
+        "check": "all_solver_cells_converged",
+        "status": "PASS",
+        "detail": []
+      },
+      {
+        "check": "no_solver_hit_max_iter",
+        "status": "PASS",
+        "detail": 0
+      },
+      {
+        "check": "uot_kkt_residual_below_tolerance",
+        "status": "PASS",
+        "detail": []
+      },
+      {
+        "check": "no_nan_inf_solver_fields",
+        "status": "PASS",
+        "detail": []
+      },
+      {
+        "check": "no_nan_metrics",
+        "status": "PASS",
+        "detail": []
+      },
+      {
+        "check": "all_methods_present",
+        "status": "PASS",
+        "detail": {
+          "expected": 210,
+          "observed": 210
+        }
+      },
+      {
+        "check": "methods_per_cell_complete",
+        "status": "PASS",
+        "detail": {
+          "Celer|411": 7,
+          "Celer|412": 7,
+          "Celer|413": 7,
+          "Celer|414": 7,
+          "Celer|415": 7,
+          "Celer|416": 7,
+          "Celer|417": 7,
+          "Celer|418": 7,
+          "Celer|419": 7,
+          "Celer|420": 7,
+          "Multi|411": 7,
+          "Multi|412": 7,
+          "Multi|413": 7,
+          "Multi|414": 7,
+          "Multi|415": 7,
+          "Multi|416": 7,
+          "Multi|417": 7,
+          "Multi|418": 7,
+          "Multi|419": 7,
+          "Multi|420": 7,
+          "Poly|411": 7,
+          "Poly|412": 7,
+          "Poly|413": 7,
+          "Poly|414": 7,
+          "Poly|415": 7,
+          "Poly|416": 7,
+          "Poly|417": 7,
+          "Poly|418": 7,
+          "Poly|419": 7,
+          "Poly|420": 7
+        }
+      },
+      {
+        "check": "cost_hash_present_per_unit",
+        "status": "PASS",
+        "detail": 30
+      },
+      {
+        "check": "support_hard_filter_valid",
+        "status": "PASS",
+        "detail": 0
+      },
+      {
+        "check": "all_edge_sets_valid",
+        "status": "PASS",
+        "detail": 0
+      }
+    ],
+    "raw": "PASS"
+  },
+  "gate_E": {
+    "PASS": true,
+    "raw": "PASS",
+    "tolerance": 1e-09,
+    "max_abs_metric_diff": 2.220446049250313e-16,
+    "packaging_note": "the corrected validator is authoritative; the pre-correction frozen-validator run is preserved at confirmatory/VALIDITY_GATE_E_frozen_validator_precorrection.json"
+  },
+  "S1": {
+    "contrast": "UOT_KR - CONDITIONAL_UOT",
+    "effect": 0.014211157489311515,
+    "ci95": [
+      0.007749444779739394,
+      0.020294877337509086
+    ],
+    "raw_p": 0.00044997750112494374,
+    "role": "secondary confirmatory hypothesis",
+    "in_holm_family": false
+  },
+  "S2": {
+    "contrast": "CONDITIONAL_UOT - RAW_UOT_PLAN",
+    "effect": 0.3050919529172238,
+    "ci95": [
+      0.2959806224553943,
+      0.3146507833200058
+    ],
+    "raw_p": 4.999750012499375e-05,
+    "role": "secondary confirmatory hypothesis",
+    "in_holm_family": false
+  },
+  "selected_rule": "R-const@k3",
+  "selected_rule_params": {
+    "family": "R-const",
+    "k": 3
+  },
+  "overall_method_ranking": [
+    {
+      "method": "UOT_KR",
+      "macro_edge_f1_bridge_balanced": 0.4292104171878746
+    },
+    {
+      "method": "SUPPORT_PLUS_K",
+      "macro_edge_f1_bridge_balanced": 0.4170810427588248
+    },
+    {
+      "method": "CONDITIONAL_UOT",
+      "macro_edge_f1_bridge_balanced": 0.41499925969856316
+    },
+    {
+      "method": "HUNGARIAN_1TO1",
+      "macro_edge_f1_bridge_balanced": 0.40367874250839936
+    },
+    {
+      "method": "DUAL_SOFTMAX",
+      "macro_edge_f1_bridge_balanced": 0.2479600877517544
+    },
+    {
+      "method": "RAW_UOT_PLAN",
+      "macro_edge_f1_bridge_balanced": 0.10990730678133927
+    },
+    {
+      "method": "THRESHOLD_MM",
+      "macro_edge_f1_bridge_balanced": 0.06217070200260466
+    }
+  ],
+  "per_bridge_primary_effects": {
+    "Celer": {
+      "H1": 0.031382588805673184,
+      "H2": 0.38406564937415566
+    },
+    "Multi": {
+      "H1": 0.002967047339628637,
+      "H2": 0.36964118322767703
+    },
+    "Poly": {
+      "H1": 0.042245387893124,
+      "H2": 0.3474123129539771
+    }
+  },
+  "oracle_1to1_ceiling": {
+    "macro_f1_mean": 0.7364266466104702,
+    "UOT_KR_macro_edge_f1": 0.4292104171878746,
+    "UOT_KR_above_oracle_cells": 0,
+    "n_cells": 30,
+    "interpretation": "UOT_KR does not exceed the label-informed one-to-one ceiling in any holdout cell, so NO output-space ceiling claim is licensed; H1 supports only 'the selected many-to-many decoding outperformed the cost-optimal one-to-one assignment baseline at equal forensic cost'"
+  },
+  "threshold_mm_budget_on_holdout": {
+    "note": "the Threshold-MM threshold was FIXED on the selection block and was NOT re-calibrated on the holdout, per protocol",
+    "UOT_KR_edges_per_family": 17.454166666666666,
+    "THRESHOLD_MM_edges_per_family": 16.894444444444446,
+    "budget_difference": 0.55972222222222
+  },
+  "strict_exact_recovery": {
+    "UOT_KR": {
+      "family_mean_overall_exact": 0.0
+    },
+    "RAW_UOT_PLAN": {
+      "family_mean_overall_exact": 0.0
+    },
+    "CONDITIONAL_UOT": {
+      "family_mean_overall_exact": 0.0
+    },
+    "SUPPORT_PLUS_K": {
+      "family_mean_overall_exact": 0.0
+    },
+    "HUNGARIAN_1TO1": {
+      "family_mean_overall_exact": 0.0
+    },
+    "THRESHOLD_MM": {
+      "family_mean_overall_exact": 0.0
+    },
+    "DUAL_SOFTMAX": {
+      "family_mean_overall_exact": 0.0
+    }
+  },
+  "convergence_issues": {
+    "n_units": 30,
+    "all_converged": true,
+    "max_kkt_residual": 4.669042930061096e-13
+  },
+  "negative_or_unfavourable_findings": [
+    {
+      "finding": "strict exact recovery is 0 for every method",
+      "detail": "no method exactly recovers the split and merge structure under the variable-degree truth topology; reported as measured (0.0), the definition was not changed"
+    },
+    {
+      "finding": "Multi bridge H1 effect is only +0.0030",
+      "detail": "the cross-bridge heterogeneity is real; the per-bridge exact two-sided p for Multi H1 is 0.8438, so the H1 advantage is carried by Celer and Poly"
+    },
+    {
+      "finding": "UOT_KR never exceeds the label-informed one-to-one ceiling",
+      "detail": "0 of 30 cells; no output-space limitation claim is licensed"
+    },
+    {
+      "finding": "Threshold-MM is a weak comparator under equal-budget calibration",
+      "detail": "at a matched predicted-edge budget it reaches only 0.196 recall vs UOT_KR 0.509; the large H2 effect is partly a consequence of budget-matched thresholding being a poor decoder, which is stated explicitly"
+    },
+    {
+      "finding": "the first confirmatory execution (block 401-410) was incomplete",
+      "detail": "plumbing defect after the one-shot ledger was written; block retired, never re-run; see confirmatory/INCOMPLETE_FIRST_CONFIRMATORY_EXECUTION.md"
+    },
+    {
+      "finding": "one stale documentation field in the locked spec",
+      "detail": "locked_spec.seed_blocks.confirmatory records 401-410 while every operative artefact records 411-420; reported in-band by the validator, never rewritten post-touch"
+    }
+  ],
+  "real_system_comparison_status": {
+    "real_connector_implementation_available": false,
+    "real_abctracer_implementation_available": false,
+    "r7_confirmatory_includes_real_system": false,
+    "limitation_retained": "style baselines are not system-level reproductions; no real Connector / ABCTracer system-level comparison was performed"
+  },
+  "manuscript_branch": "success"
+}

@@ -1,0 +1,55 @@
+% main.tex — R3 TIFS-style rebuild (initial submission, <=13 pages)
+% Scientific authority: frozen artifacts + audited Chinese mother manuscript (R3).
+\documentclass[journal]{IEEEtran}
+
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{makecell}
+\usepackage{tabularx}
+\usepackage{cite}
+\usepackage[hidelinks]{hyperref}
+\usepackage{url}
+\usepackage{xurl}
+
+\newtheorem{proposition}{Proposition}
+
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
+
+\begin{document}
+
+\title{Non-One-to-One Cross-Chain Forensic Fund-Flow Correspondence: Transport Representation and Conditional Decoding}
+
+\author{Author~Names~\IEEEmembership{Member,~IEEE}%
+\thanks{Manuscript submitted for review. Author names, affiliations, and contact details are completed by the authors before submission (see AUTHOR\_METADATA\_REQUIRED.md in the submission package).}%
+}
+
+\markboth{IEEE Transactions on Information Forensics and Security}%
+{Author \MakeLowercase{\textit{et al.}}: Non-One-to-One Cross-Chain Forensic Fund-Flow Correspondence}
+
+\maketitle
+
+\begin{abstract}
+Cross-chain money laundering splits suspicious asset trails across chains, tokens, and delayed settlements, so anti-money-laundering (AML) forensics can no longer assume a one-to-one mapping between source-chain and destination-chain transactions. We formalize Cross-Chain Suspicious Fund-Flow Correspondence (CSFFC), in which fund flows are matched through a nonnegative transport plan that expresses one-to-one, one-to-many (fan-out), many-to-one (merge), and unmatched mass. We further show that ranking correspondences directly from the raw transport plan is distorted: the plan's solver dual scalings are mixed with the true correspondence affinities. To repair this, we propose directional conditional decoding---row scores normalized by column mass and column scores normalized by row mass, decoded with a mutual top-$k$ rule---whose dual-cancellation property removes the conditioned side's common scaling factor exactly; the identity is stated as a direct corollary of standard Sinkhorn structure, not as a new normalization. In a preregistered, hash-locked, one-shot confirmatory holdout on untouched seeds across three bridges (Celer, Multichain, PolyNetwork), conditional decoding raises macro edge F1 from \textbf{0.2350} (raw-plan decoding) to \textbf{0.3104}, with primary effect \textbf{$\Delta = +0.075413$} and paired 95\% CI \textbf{$[0.070557, 0.080312]$}, positive on every bridge, all five preregistered mechanism directions satisfied, and an independent verifier recomputing every result; the same experiment shows balanced and unbalanced conditional decoding differ by $-0.0003$ (CI includes zero), so no unbalanced-relaxation-specific gain is claimed. Structural experiments show that the transport representation expresses $1{\to}N$ edge sets that one-to-one decoders cannot (edge-inclusion recall 0.946/0.967, not exact topology recovery), while we report transparently that strict exact-topology recovery is zero for every tested method and a globally calibrated threshold rule is stronger on edge F1. An independent post-development data audit (data-only; no method executed) confirms real flow-level fan-out outside the development corpus (2{,}451 Tier-A fan-out units over 359.98 days) but did not meet the preregistered adequacy criterion ($G = 7 < 8$), so no external method-performance claim is made.
+\end{abstract}
+
+\begin{IEEEkeywords}
+Cross-chain forensics, anti-money laundering, fund-flow correspondence, optimal transport, conditional decoding, selective abstention.
+\end{IEEEkeywords}
+
+\IEEEpeerreviewmaketitle
+
+\input{sections/01_introduction}
+\input{sections/02_related_work}
+\input{sections/03_overview}
+\input{sections/04_method}
+\input{sections/05_experiments}
+\input{sections/06_discussion}
+\input{sections/07_conclusion}
+
+\bibliographystyle{IEEEtran}
+\bibliography{references}
+
+\end{document}

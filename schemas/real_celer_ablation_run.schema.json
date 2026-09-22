@@ -1,0 +1,346 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "real_celer_ablation_run.schema.json",
+  "title": "Real Celer Transport Solver Ablation - per-run output schema",
+  "type": "object",
+  "required": [
+    "run_id",
+    "solver",
+    "config_hash",
+    "input_hash",
+    "metrics",
+    "solver_meta"
+  ],
+  "properties": {
+    "run_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "solver": {
+      "type": "string",
+      "enum": [
+        "rc_uot_full",
+        "rc_uot_numpy",
+        "balanced_sinkhorn",
+        "balanced_emd",
+        "hungarian",
+        "greedy_nn",
+        "cost_ranking"
+      ]
+    },
+    "config_hash": {
+      "type": "string",
+      "minLength": 1
+    },
+    "input_hash": {
+      "type": "string",
+      "minLength": 1
+    },
+    "skipped": {
+      "type": "boolean"
+    },
+    "skip_reason": {
+      "type": "string"
+    },
+    "paths": {
+      "type": "object",
+      "properties": {
+        "config_json": {
+          "type": "string"
+        },
+        "meta_json": {
+          "type": "string"
+        },
+        "metrics_json": {
+          "type": "string"
+        },
+        "solver_meta_json": {
+          "type": "string"
+        },
+        "transport_plan_csv": {
+          "type": "string"
+        },
+        "topk_candidates_csv": {
+          "type": "string"
+        }
+      }
+    },
+    "metrics": {
+      "type": "object",
+      "required": [],
+      "properties": {
+        "skipped": {
+          "type": "boolean"
+        },
+        "run_id": {
+          "type": "string"
+        },
+        "solver": {
+          "type": "string"
+        },
+        "pair_precision_before_filter": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "pair_recall_before_filter": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "pair_f1_before_filter": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "pair_precision_after_filter": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "pair_recall_after_filter": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "pair_f1_after_filter": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "top1_accuracy": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "top3_recall": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "flow_mass_precision": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "flow_mass_recall": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "unmatched_source_mass_ratio": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "unmatched_target_mass_ratio": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "causal_violation_rate_before_filter": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "causal_violation_rate_after_filter": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "abstention_rate": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "n_src_flow": {
+          "type": [
+            "integer",
+            "null"
+          ]
+        },
+        "n_dst_flow": {
+          "type": [
+            "integer",
+            "null"
+          ]
+        },
+        "n_gt_tx_pairs": {
+          "type": [
+            "integer",
+            "null"
+          ]
+        },
+        "n_pred_pairs_before_filter": {
+          "type": [
+            "integer",
+            "null"
+          ]
+        },
+        "n_pred_pairs_after_filter": {
+          "type": [
+            "integer",
+            "null"
+          ]
+        },
+        "covered_quotient_precision": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "covered_quotient_recall": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "covered_quotient_f1": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "runtime_sec": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "input_hash": {
+          "type": "string"
+        },
+        "config_hash": {
+          "type": "string"
+        },
+        "skip_reason": {
+          "type": "string"
+        }
+      }
+    },
+    "solver_meta": {
+      "type": "object",
+      "properties": {
+        "backend": {
+          "type": "string"
+        },
+        "reg": {
+          "type": "number"
+        },
+        "reg_m": {
+          "type": "number"
+        },
+        "converged": {
+          "type": "boolean"
+        },
+        "n_iter": {
+          "type": "integer"
+        },
+        "mass_sum": {
+          "type": "number"
+        },
+        "n_matched": {
+          "type": "integer"
+        },
+        "mass_assignment_policy": {
+          "type": "string"
+        },
+        "one_to_one_only": {
+          "type": "boolean"
+        },
+        "allows_many_to_one": {
+          "type": "boolean"
+        },
+        "allows_one_to_many": {
+          "type": "boolean"
+        },
+        "score_policy": {
+          "type": "string"
+        },
+        "no_transport_solver": {
+          "type": "boolean"
+        },
+        "n_sources_with_candidate": {
+          "type": "integer"
+        },
+        "same_cost_matrix": {
+          "type": "boolean"
+        },
+        "same_time_filter": {
+          "type": "boolean"
+        },
+        "transport_type": {
+          "type": "string"
+        },
+        "skipped": {
+          "type": "boolean"
+        },
+        "reason": {
+          "type": "string"
+        },
+        "runtime_sec": {
+          "type": "number"
+        }
+      }
+    }
+  },
+  "if": {
+    "properties": {
+      "skipped": {
+        "const": false
+      }
+    }
+  },
+  "then": {
+    "properties": {
+      "metrics": {
+        "required": [
+          "pair_precision_after_filter",
+          "pair_recall_after_filter",
+          "pair_f1_after_filter",
+          "abstention_rate"
+        ],
+        "properties": {
+          "pair_precision_after_filter": {
+            "type": "number"
+          },
+          "pair_recall_after_filter": {
+            "type": "number"
+          },
+          "pair_f1_after_filter": {
+            "type": "number"
+          },
+          "abstention_rate": {
+            "type": "number"
+          }
+        }
+      }
+    }
+  },
+  "else": {
+    "required": [
+      "skip_reason"
+    ],
+    "properties": {
+      "skip_reason": {
+        "type": "string",
+        "minLength": 1
+      }
+    }
+  }
+}

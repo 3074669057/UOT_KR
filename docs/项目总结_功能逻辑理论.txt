@@ -1,0 +1,582 @@
+在跨链 AML 场景中，首次将 ETH-BNB 跨链交易对应关系建模为一个带风险先验、时间约束、金额守恒松弛、地址图结构约束的非平衡最优传输问题。
+
+本文将跨链洗钱交易对应关系从一对一交易匹配问题重新定义为风险约束的非平衡资金流传输问题。通过构建融合金额误差、时间因果、桥接路径、地址新颖度、图结构上下文与 AML 风险一致性的代价矩阵，模型能够在资金拆分、聚合、延迟和部分缺失条件下推断 ETH 与 BNB 之间的软对应关系。
+
+我们将跨链反洗钱追踪从交易级硬匹配重新定义为流级软对应问题,提出 RC-UOT 求解框架,并构建配套的流级评估指标体系。
+
+《Risk-Constrained Unbalanced Optimal Transport for Cross-Chain Laundering Flow Correspondence》
+《面向跨链洗钱的风险约束非平衡最优传输资金流对应模型》
+
+我们提出 跨链反洗钱资金流对应问题(Cross-Chain Laundering Flow Correspondence, CCLFC)的形式化定义,并给出一个基于风险约束非平衡最优传输的求解框架 RC-UOT。
+具体贡献包括:
+(1) 将交易级跨链追踪重构为流级软对应问题,定义证据层、资金流片段、传输矩阵三层抽象;
+(2) 提出 RC-UOT 框架,通过风险加权边际与因果可行域两项 AML 特有约束扩展标准 UOT;
+(3) 构建首个跨链洗钱流级评估指标体系,涵盖 Flow-Mass Recall、Split/Merge Recovery、Unmatched-Mass Detection 等六项指标。
+
+一、项目定位与核心功能
+======================
+
+1.1 项目目标
+-----------
+本项目是一个面向 ETH/BNB 两条区块链的跨链洗钱交易对应关系追踪系统，
+核心目标是建立可疑资金流在两条链之间的对应关系，支撑反洗钱(AML)分析。
+
+1.2 核心功能模块
+----------------
+┌─────────────────────────────────────────────────────────────────────────────┐
+│                              核心功能架构                                      │
+├─────────────────────────────────────────────────────────────────────────────┤
+│  1. 链上数据获取          ETH/BNB 交易抓取、receipt解析、日志获取               │
+│  2. AML风险评分           Hou-Rule 规则引擎、ML模型、风险等级判定               │
+│  3. 证据层构建            统一 evidence event 表示、多源证据融合                 │
+│  4. 资金流片段构建        三种模式：time_bucket / address_cluster(RC) / hybrid │
+│  5. 路由注册表            Token路由映射、跨链资产路由、route_id追踪             │
+│  6. 跨链匹配引擎          主模型 RC-UOT（流级 UOT）；Hungarian/Greedy 为 baseline；支持 ablation │
+│  7. 在线数据获取          NodeReal RPC、BNB窗口抓取、Receipt验证              │
+│  8. Two-Stage流水线       AML预筛 → 标签路由 → 在线BNB获取 → 贪心/UOT匹配     │
+│  9. 图神经网络排序        GAT/TemporalGraphRanker (可选)                        │
+│  10. 置信度校准          Softmax 置信度、分段校准、不确定性分析                  │
+│  11. 结果评估与输出       多维度指标、可视化输出、Schema验证                    │
+└─────────────────────────────────────────────────────────────────────────────┘
+
+1.3 关键输出能力
+---------------
+- 识别跨链资金流对应关系（一对一、一对多、多对一、多对多）
+- 检测资金拆分、聚合、延迟等洗钱行为
+- 识别未解释资金（手续费、DEX滑点、隐藏路径）
+- 提供可解释的置信度和证据链
+- 支持 ablation 实验（no_risk / no_graph / no_time / balanced_ot / no_unmatched / no_risk_marginal / no_evidence）
+- 可选一键消融套件：--run-ablation-suite（标准 Path B 下多次 in-process 匹配，写出 ablation_results.csv）
+
+
+二、系统逻辑流程
+==============
+
+2.1 整体处理流程
+----------------
+原始数据 → AML预筛 → 证据层 → 资金流片段 → 代价矩阵 → UOT求解 → 解码输出
+    │           │           │            │            │          │         │
+    ▼           ▼           ▼            ▼            ▼          ▼         ▼
+  ETH/BNB    Risk Score  Evidence    Flow Segment   Cost      UOT      Soft
+  交易数据     过滤        Events       构建         Matrix    传输矩阵  Correspondence
+
+2.2 详细处理步骤
+----------------
+Stage 1: AML预筛（可选择关闭）
+  ├── AML模式：rules / model / off
+  ├── 风险等级过滤：low / medium / high
+  └── 阈值配置：aml_medium_threshold / aml_high_threshold
+
+Stage 2: 在线数据获取
+  ├── AML-high 交易识别
+  ├── NodeReal RPC BNB窗口抓取
+  ├── 多轮追踪（tracking_block_batch_size × tracking_max_rounds）
+  ├── Receipt验证（filter_candidates_with_receipt_verify）
+  └── 置信度动态阈值（confidence_floor + competition_gap调整）
+
+Stage 3: 证据层构建
+  ├── ETH证据：build_paper_eth_evidence_df
+  ├── BNB证据：build_paper_bnb_evidence_df（token_transfer_log / native_transfer）
+  └── 候选边：build_evidence_candidates_paper
+
+Stage 4: 路由注册表（RouteRegistry）
+  ├── ETH token → BSC token 路由映射
+  ├── route_id / route_type 追踪
+  └── 价格快照（price_snapshot_usd）
+
+Stage 5: 资金流片段构建（Flow Segment）
+  ├── time_bucket：按时间桶聚合（legacy模式）
+  ├── address_cluster：RC论文30分钟窗口 + 地址重叠 + 相同token/route
+  └── hybrid：混合模式
+  ├── 计算 amount_usd、mass、tx_count、address_count
+  └── 生成 flow_id 标识
+
+Stage 6: 代价矩阵构建（Cost Matrix，RC-UOT 可诊断因果列）
+  ├── amount_cost: 金额差异（归一化误差）
+  ├── time_cost: 时间延迟（归一化；负延迟与超窗计入代价）
+  ├── route_cost: 路由类型匹配（same_asset / cross_asset / swap）
+  ├── risk_cost: AML 风险一致性
+  ├── graph_cost: 图结构上下文（cosine distance）
+  ├── evidence_cost: 证据质量惩罚
+  ├── causal_violation_flag: dst 早于 src 结束时间（负延迟）标记
+  ├── causal_penalty: 负延迟主惩罚；超过 max_delay_sec 的软超窗惩罚
+  ├── feasible_flag / infeasible_reason: 可行域与原因码（如 negative_delay、delay_exceeds_max_window）
+  └── 导出列（uot_cost_matrix / uot_cost_components）: delay_sec, src_end_time, dst_start_time, max_delay_sec 等
+
+Stage 7: UOT 最优传输求解
+  ├── 输入: source_mass, target_mass, cost_matrix
+  ├── 源侧边际：风险加权（lambda_risk）
+  ├── 目标侧边际：证据质量加权
+  ├── 参数: reg(熵正则), reg_m(非平衡强度)
+  ├── 后端: POT sinkhorn_unbalanced / numpy fallback
+  └── 输出: 传输矩阵 P
+
+Stage 8: 结果解码与解释
+  ├── decode_correspondence: 软对应关系（论文主结果语义）
+  ├── derive_top1_tx_pairs: 仅用于从流级 argmax 解码出「每源 tx 一条」交易对（legacy 兼容下游）
+  ├── matching_pairs.csv: 标记为 legacy / decoded_top1；主结果仍以 uot_transport_plan.csv 与 JSON 软对应为准
+  ├── 识别 split/merge/unmatched 模式
+  └── 计算置信度、解释性指标与弱监督 proxy（无 split/merge 真值时 Split/Merge Recovery 显式标为不可用）
+
+2.3 匹配路径与主模型命名（与 run_report / 论文表述一致）
+--------------------------------------------------
+Path A (Baseline): 传统地址聚合匹配
+  └── 输出: 交易级硬匹配（pairs.csv / matching_pairs.csv 在仅 Path A 时）
+
+Path B (匹配层): 在在线 BNB 证据与 Path A 预结果之上执行「跨链匹配」子系统
+  ├── matching_method=uot（默认）: 调用 RC-UOT（流级 Sinkhorn UOT + 风险/证据加权边际）
+  ├── matching_method=hungarian / greedy: 交易级 baseline，用于对比实验
+  └── 输出: 由 matching_method 决定；主论文创新对应 uot_* 与 transport 矩阵产物
+
+RC-UOT（主模型）: Risk-Constrained Unbalanced Optimal Transport
+  ├── 证据层 → 流片段 → 分解代价矩阵 → UOT 求解 → uot_transport_plan.csv / uot_unmatched_mass.csv 等
+  ├── 支持 ablation: no_risk / no_graph / no_time / balanced_ot / no_unmatched / no_risk_marginal / no_evidence
+  │   （no_risk_marginal 仅关闭「风险加权源边际」，与 no_risk「关掉 risk 代价项」不同）
+  └── 与 Path B 关系: Path B 在 uot 模式下承载 RC-UOT；Hungarian/Greedy 仍为 baseline
+
+Two-Stage 流水线（工程形态）:
+  ├── Module 1: AML预筛
+  ├── Label Routing: 有标签的直接匹配
+  └── Module 2: 无标签则在线获取BNB + 匹配（可与 RC-UOT 或 baseline 组合；--run-ablation-suite 仅在非 two-stage 标准 Path B 下启用）
+
+
+三、核心理论创新
+==============
+
+3.1 理论核心：风险约束非平衡最优传输
+-----------------------------------
+论文创新点: Risk-Constrained Unbalanced Optimal Transport for Cross-Chain
+            Laundering Flow Correspondence
+
+核心思想: 不再假设 ETH 侧一笔交易必须对应 BNB 侧一笔交易，而是将 ETH 侧可疑
+         资金流与 BNB 侧可疑资金流之间的关系建模为一个软对应传输矩阵。
+
+原问题:    ETH transaction i -> BNB transaction j (一对一硬匹配)
+改造后:    ETH suspicious flow segment S_i -> BNB suspicious flow segment D_j
+
+输出从:    tx_i -> tx_j (硬匹配对)
+变为:      P_ij = ETH 侧资金流 i 对应到 BNB 侧资金流 j 的比例
+
+3.2 UOT (非平衡最优传输) 原理
+-----------------------------
+普通最优传输(OT)要求两侧质量完全守恒:
+  P 1 = a  (行和等于源分布)
+  P^T 1 = b (列和等于目标分布)
+
+但跨链洗钱中资金可能发生:
+  - 手续费损失
+  - DEX 兑换滑点
+  - 中间链隐藏
+  - 桥失败
+  - 混币、拆分、聚合
+  - 未观测地址跳转
+
+UOT 将硬约束变成软惩罚:
+  min_P <P, C>
+        + epsilon * H(P)           (熵正则项)
+        + tau_1 * KL(P1 || a)      (源侧非平衡惩罚)
+        + tau_2 * KL(P^T1 || b)    (目标侧非平衡惩罚)
+
+其中:
+  P: 跨链资金流传输矩阵
+  C: 匹配代价矩阵
+  H(P): 熵正则，使结果更平滑稳定
+  KL: 非平衡边际惩罚
+  epsilon: 熵正则系数 (uot_reg)
+  tau: 非平衡强度 (uot_reg_m)
+
+3.3 RC-UOT 扩展
+---------------
+在标准UOT基础上增加两项AML特有约束:
+
+(1) 风险加权源侧边际 (Risk-Weighted Source Mass)
+    a_rw[i] = a0[i] * (1 + lambda_risk * aml_score[i] / 100)
+    高风险资金流获得更高的传输权重
+
+(2) 因果可行域约束 (Causal Feasibility)
+    - 时间因果：BNB 流 start_time 相对 ETH 流 end_time 的 delay_sec；负延迟视为因果违反
+    - violation penalty: 负延迟施加主惩罚；超过 max_delay_sec 施加「软超窗」惩罚（仍可传输，但代价升高）
+    - feasible_flag / infeasible_reason: 与 delay、max_delay 联动的可诊断字段（导出至 uot_cost_matrix.csv）
+    - 汇总: causal_feasibility_summary.json（可行/软超窗/不可行对数、违反率、延迟分位数等）
+
+3.4 支持的洗钱模式
+------------------
+┌────────────┬─────────────────────────────────────────┐
+│ 模式类型    │ 说明                                   │
+├────────────┼─────────────────────────────────────────┤
+│ one-to-one │ 普通跨链交易                           │
+│ one-to-many│ 拆分洗钱：一笔资金拆分为多笔            │
+│ many-to-one│ 归集洗钱：多笔资金聚合为一笔            │
+│ many-to-many│ 复杂分层：多次拆分聚合                 │
+│ weak_match │ 弱匹配：传输质量低于阈值                │
+│ unmatched  │ 部分资金无法解释（手续费、隐藏路径）    │
+└────────────┴─────────────────────────────────────────┘
+
+3.5 代价矩阵设计
+----------------
+C_ij = w_amount * amount_error
+     + w_time   * time_delay_error
+     + w_route  * route_type_error
+     + w_risk   * risk_error
+     + w_graph  * graph_context_distance
+     + w_evidence * evidence_quality_penalty
+
+默认权重配置:
+  amount: 0.35, time: 0.25, route: 0.15, risk: 0.15,
+  graph: 0.05, evidence: 0.05
+
+3.6 资金流片段构建策略
+----------------------
+(1) time_bucket（Legacy）
+    - 按固定时间窗口（默认600秒）聚合
+    - 同一桥协议 + token 的交易归为一段
+
+(2) address_cluster（RC论文30分钟规则）
+    - 时间窗口：30分钟（1800秒）
+    - 约束条件：相同 token_contract + route_id
+    - 地址重叠：from/to/receiver 任一地址重叠
+    - 适用于：真实洗钱场景的时间局部性和地址关联性
+
+(3) hybrid
+    - 结合 time_bucket 和 address_cluster 特性
+
+3.7 与传统方法的理论包含关系
+---------------------------
+当满足以下条件时，UOT 模型退化为 Hungarian 匹配:
+  1. 资金完全守恒 (reg_m → ∞)
+  2. 每个源 flow 只能对应一个目标 flow
+  3. 每个目标 flow 只能对应一个源 flow
+  4. 非平衡惩罚趋于无穷大
+  5. 熵正则趋于零
+
+因此: Hungarian matching ⊂ Risk-Constrained UOT Flow Matching
+
+
+四、关键技术模块详解
+==================
+
+4.1 AML 反洗钱系统
+------------------
+- Hou-Rule 规则引擎: 动态 eval 执行规则条件，计算加权风险分数
+- ML模型模式: 支持加载AML checkpoint进行模型推理
+- 节点特征: 度相关、金额相关、交易频次、时间特征、图特征
+- 风险等级: Low(<40), Medium(40-70), High(>=70)
+- Three modes: rules / model / off
+
+4.2 路由注册表 (RouteRegistry)
+-------------------------------
+- 核心数据结构: resolved_routes 列表
+- 路由类型: same_asset_bridge, wrapped_asset, cross_asset, swap
+- 功能: ETH token → BSC token 映射，提供 route_id
+- 支持从文件或 priors JSON 加载
+
+4.3 图神经网络 (GAT) - 可选
+---------------------------
+- 架构: Input -> Linear -> MultiHeadAttention -> FFN -> Output
+- 特征维度: 15维（基础特征+增强特征）
+- 用途: 图结构上下文编码，提升复杂地址跳转场景性能
+- 集成方式: --graph-ranker-checkpoint + --uot-use-graph-embedding
+
+4.4 在线数据获取
+---------------
+- NodeReal API 集成（必需，BNB在线模式）
+- ERC20 Transfer 日志解析
+- 时间戳到区块映射（二分搜索+LRU缓存）
+- 多轮追踪策略: block_batch_size × max_rounds
+- Receipt验证: filter_candidates_with_receipt_verify
+- 置信度动态阈值: confidence_floor + competition_gap 调整
+
+4.5 Two-Stage 流水线
+--------------------
+Module 1 (AML预筛):
+  - rules模式: 风险等级过滤
+  - model模式: AML模型分数阈值过滤
+  - 输出: ml_txs + module1_artifact JSON
+
+Label Routing:
+  - 有标签 → 直接使用标签dst
+  - 无标签 → 进入Module 2
+
+Module 2 (在线获取+匹配):
+  - BNB窗口RPC获取（围绕label dst或时间预测）
+  - 匹配: UOT / Greedy / Hungarian
+
+4.6 置信度校准
+-------------
+- Softmax 置信度计算
+- 分段校准映射（非线性压缩）
+- 不确定性分析（高/中/低 uncertainty_band）
+- ECE (Expected Calibration Error) 评估
+
+
+五、评价指标体系
+==============
+
+5.1 传统指标（用于对比）
+------------------------
+- Pair-F1: 交易对级别匹配准确率
+- Pair-Precision / Pair-Recall
+
+5.2 资金流级指标（论文核心）
+----------------------------
+- Flow-Mass Recall: 正确追踪到的资金质量比例
+- Flow-Mass Precision: 被追踪资金中的正确对应比例
+- Top3 Flow Correspondence Accuracy: true dst在top-3中的比例
+- Split Recovery Rate / Merge Recovery Rate: 若无 one-to-many / many-to-one 监督标签，指标值为 null，
+  并附带 split_recovery_rate_status / merge_recovery_rate_status（如 not_available_no_split_ground_truth），
+  避免在论文中误读为已全量评测
+- 弱监督 proxy（无真值时仍报告）: predicted_split_rate、predicted_merge_rate、split_mass_concentration、
+  merge_mass_concentration、unmatched_mass_ratio 等，用于刻画传输矩阵形态
+- Unmatched-Mass Detection: 未解释资金识别能力（与 uot_unmatched_mass、summary 中 unmatched 统计一致）
+
+5.3 模型诊断指标
+----------------
+- ECE (Expected Calibration Error): 置信度校准误差
+- Risk-Lift: 高风险预测vs低风险预测的置信度差异
+- Row Entropy: 传输矩阵行熵（匹配确定性指标）
+- Causal Violation Rate: 因果违反比例
+
+5.4 Ablation 实验
+-----------------
+- no_risk: 代价中 risk 项置零，且 lambda_risk 对边际影响关闭（与 no_risk_marginal 区分）
+- no_risk_marginal: 仅关闭「风险加权源边际」，保留 risk 代价项与其它分量
+- no_evidence: 代价中 evidence 项置零，且目标侧证据质量加权边际退回均匀/原始边际
+- no_graph: 关闭图嵌入
+- no_time: 关闭时间成本
+- balanced_ot: 增强非平衡惩罚
+- no_unmatched: 减少未匹配容许度
+- 流水线结束后默认写出 ablation_results.csv（至少包含 full_rc_uot 一行）；--run-ablation-suite 时追加多组 baseline/消融行（标准 Path B）
+
+
+六、代码模块结构
+==============
+
+6.1 目录结构
+------------
+src/cross/
+├── application/
+│   ├── pipeline.py          # 主流水线入口
+│   ├── two_stage.py         # 两阶段流水线
+│   └── experiments/
+│       └── run_uot_matching.py  # UOT实验入口
+├── domain/
+│   ├── aml/                 # AML规则、模型、推理
+│   ├── amount/              # 金额标准化
+│   ├── analytics/            # 聚合分析
+│   ├── evaluation/           # 评估指标
+│   ├── evidence.py           # 证据层构建
+│   ├── flow/                 # Legacy流片段构建
+│   ├── flows/                # RC论文流片段构建
+│   ├── graph/                # 图神经网络
+│   ├── locator/              # 提现定位器
+│   ├── path_a/              # Baseline路径
+│   ├── path_b/              # 跨链匹配层（UOT / Hungarian / Greedy）
+│   │   ├── runner.py        # Path B核心编排
+│   │   ├── greedy.py        # 贪心匹配
+│   │   ├── uot_pairs.py     # UOT交易对构建
+│   │   ├── route_registry.py # 路由注册表
+│   │   ├── align.py         # 标签对齐
+│   │   └── unlabeled_io.py  # 无标签IO
+│   ├── ranker/              # 排序模型
+│   ├── token/               # 代币处理
+│   ├── validation/          # 论文产物校验与辅助导出（paper_artifact_validator、rc_uot_exports）
+│   └── uot/
+│       ├── cost_matrix.py   # 代价矩阵构建
+│       ├── decode_transport.py # 传输矩阵解码
+│       ├── uot_solver.py     # UOT求解器
+│       └── uot_solver_numpy.py # Numpy后备求解器
+├── experiments/             # ablation_suite、export_paper_tables（论文表 CSV）
+├── infrastructure/
+│   ├── config/              # 配置加载
+│   └── online/              # 在线RPC获取
+└── interfaces/
+    └── cli.py               # CLI入口
+
+6.2 关键类/函数
+--------------
+核心 RC-UOT 流程:
+  solve_uot() → build_cost_matrix_decomposed() → decode_correspondence()
+  → derive_top1_tx_pairs()（legacy CSV 解码）→ compute_all_flow_metrics()
+
+论文产物收尾:
+  write_paper_artifact_validation() → out/paper_artifact_validation.json
+  traceability_index.csv、uot_marginals.csv、causal_feasibility_summary.json、
+  token_route_validation.json、paper_tables/*.csv（由 pipeline 在 Path B 完成后触发）
+
+流片段构建:
+  build_rc_eth_flow_segments() / build_rc_bnb_flow_segments()
+  build_eth_flow_segments() / build_bnb_flow_segments()
+
+评估指标:
+  compute_all_flow_metrics() / flow_mass_recall() / topk_flow_accuracy()
+  expected_calibration_error() / risk_lift()
+
+
+七、配置文件说明
+==============
+
+7.1 默认配置 (config/defaults.json)
+-----------------------------------
+- pipeline.version: 流水线版本
+- pipeline.main_model: 文档化主模型标识（与 run_report 一致时为 RC-UOT）
+- pipeline.run_baselines: 是否运行baseline
+- uot.reg / uot.reg_m: UOT正则参数
+- uot.cost_weights: 代价矩阵权重
+- uot.flow_mode: segment / tx
+- uot.backend: pot / numpy
+- flow_segment.mode: time_bucket / address_cluster / hybrid
+- flow_segment.min_amount_usd / min_tx_count: 流片段过滤
+- nodereal.enabled: BNB在线获取开关
+
+7.2 路由配置 (config/token_routes.eth_bsc.json)
+----------------------------------------------
+- routes: 路由列表
+  - route_id: 路由标识
+  - src: ETH token地址
+  - dst: BSC token地址
+  - route_type: same_asset_bridge / cross_asset / swap / wrapped
+
+7.3 Priors配置 (config/unlabeled_priors.example.json)
+---------------------------------------------------
+- token_map_eth_to_bnb: 代币映射
+- ratio_by_eth_token: 金额比例
+- median_bridge_delay_sec: 桥延迟中位数
+- price_snapshot_usd: USD价格快照
+
+
+八、输出文件说明
+==============
+
+8.1 核心输出（主结果 vs 兼容输出）
+--------------------------------
+主结果（RC-UOT / UOT 模式，流级）:
+  - uot_transport_plan.csv: 非零传输边（src_flow_id, dst_flow_id, transport_mass, share, match_type, total_cost）
+  - uot_unmatched_mass.csv / uot_summary.json: 残差质量与汇总
+  - matching_transport_matrix.npz: 传输矩阵 P、代价 C、flow_ids（可选压缩存储）
+
+Legacy / 兼容（交易级 top-1 解码，非论文主结论）:
+  - matching_pairs.csv: 由 derive_top1_tx_pairs 从流级 argmax 解码；列中含 decoded_from_flow_match、
+    source_flow_id、target_flow_id、transport_mass、source_share、target_share、is_main_result=false 等说明字段
+  - 解释完整软对应应优先阅读 uot_transport_plan.csv、uot_flow_correspondence.csv、matching_flow_correspondence.json
+
+其它 Path B 统一命名:
+  - matching_flow_correspondence.json: 流级软对应关系
+  - matching_evidence.json: 证据详情
+  - matching_case_report.json: 分析师审查报告
+  - matching_metrics.json: 匹配指标（mode 标明 rc_uot 与 legacy CSV 关系）
+
+8.2 UOT / RC-UOT 专用输出
+-------------------------
+- uot_flow_segments_eth.csv / uot_flow_segments_bnb.csv: 流片段（与 flow_segments_*.csv 镜像）
+- uot_transport_plan.csv: 传输计划（主表格）
+- uot_cost_matrix.csv / uot_cost_components.csv: 全细胞代价与分量（含因果诊断列）
+- uot_flow_correspondence.csv: 流对应关系（阈值以上 decode）
+- uot_unmatched_mass.csv: 未匹配资金
+- uot_marginals.csv: 源/目标边际诊断（base_mass、risk_weighted_mass、evidence_quality、lambda_risk 等）
+- uot_summary.json: UOT摘要（含 risk_weighted_marginal_enabled、风险加权前后质量、证据等级直方图等）
+- uot_diagnostics.json: 诊断信息
+- uot_split_merge_summary.json: 拆分聚合统计
+- uot_evaluation_metrics.json: 评估指标（含 proxy 与 split/merge 状态字段）
+- traceability_index.csv: 流级边 → 证据 id / tx 哈希 / 分量代价的追溯索引
+- causal_feasibility_summary.json: 因果可行域汇总统计
+- token_route_validation.json: 路由与 priors 防错（如 default_ratio=1.0、WETH→WBNB 静态 1:1 等严重项）
+- paper_artifact_validation.json: 论文核心文件完整性检查（paper_ready、missing_files、warnings）
+- ablation_results.csv: 消融与 baseline 指标汇总（默认至少 full_rc_uot 一行）
+- paper_tables/: table_main_results.csv、table_ablation.csv、table_cost_component_effect.csv、
+  table_split_merge_unmatched.csv、table_runtime.csv（便于论文制表）
+
+8.3 证据层输出
+--------------
+- evidence_eth.csv / evidence_bnb.csv: 证据事件
+- evidence_candidates.csv / evidence_candidates.json: 候选边
+- evidence_validation.json: 证据验证报告
+
+8.4 AML输出
+-----------
+- aml_suspect_txs.csv: 可疑交易列表
+- aml_summary.json: AML汇总
+- aml_rule_hits.csv: 规则命中详情
+
+
+九、命令行使用
+==============
+
+9.1 基础用法
+-----------
+# 运行完整UOT流水线（默认）
+python run.py --eth <eth_csv> --label <label_csv> --out <output_dir>
+
+# Two-Stage模式
+python run.py --eth <eth_csv> --label <label_csv> --out <out> --two-stage
+
+# 无标签模式
+python run.py --eth <eth_csv> --out <out> --path-b-unlabeled --unlabeled-priors <priors_json>
+
+9.2 匹配方法选择
+---------------
+# UOT（默认）
+python run.py ... --matching-method uot
+
+# Hungarian baseline
+python run.py ... --matching-method hungarian
+
+# Greedy baseline
+python run.py ... --matching-method greedy
+
+9.3 UOT参数调优
+--------------
+# 正则参数
+python run.py ... --uot-reg 0.1 --uot-reg-m 0.8
+
+# 代价权重
+python run.py ... --uot-cost-weights '{"amount":0.4,"time":0.2,"risk":0.2,"route":0.1,"graph":0.05,"evidence":0.05}'
+
+# 流片段模式
+python run.py ... --flow-segment-mode address_cluster
+
+# Ablation实验
+python run.py ... --uot-ablation no_risk
+python run.py ... --uot-ablation no_risk_marginal
+python run.py ... --uot-ablation no_evidence
+python run.py ... --uot-ablation no_graph
+python run.py ... --uot-ablation balanced_ot
+
+# 消融套件（标准 Path B；会多次执行匹配，耗时较长）
+python run.py ... --run-ablation-suite
+
+9.4 AML配置
+-----------
+# 规则模式（默认）
+python run.py ... --aml-mode rules --aml-high-threshold 70.0
+
+# 模型模式
+python run.py ... --aml-mode model --aml-checkpoint <ckpt> --aml-threshold 0.5
+
+# 关闭AML
+python run.py ... --aml-mode off
+
+
+十、总结
+=======
+
+本项目实现了从"交易对匹配工具"到"风险约束非平衡最优传输资金流对应模型"的升级，
+核心价值在于：
+
+1. 理论创新：将跨链洗钱追踪从一对一交易匹配升级为资金流软对应建模
+2. 表达能力：支持拆分、聚合、延迟、部分缺失等真实洗钱行为
+3. 可解释性：提供传输矩阵、置信度、证据链等多维度解释
+4. 工程完备：Path A / Hungarian / Greedy 为 baseline；RC-UOT 为默认主模型；run_report 明示 main_model=RC-UOT；
+   支持单开关 ablation 与 --run-ablation-suite；paper_artifact_validation 用于一键核对论文产物完整性
+5. 灵活部署：支持有标签/无标签、在线/离线、UOT/贪心等多种模式
+
+最终系统能够回答以下关键问题:
+  - ETH 侧哪些可疑资金流对应 BNB 侧哪些资金流？
+  - 是否存在一对多拆分或多对一归集？
+  - 是否存在未解释资金？
+  - 对应关系的金额、时间、风险、图结构证据分别是什么？
+  - 因果约束是否被违反？违反比例是多少？
+  - 各代价分量对最终匹配的贡献如何（ablation）？
+
+================================================================================
+文档更新时间: 2026-05-06（对齐 RC-UOT 主模型命名、legacy matching_pairs、论文产物与消融说明）
+================================================================================

@@ -1,0 +1,4176 @@
+{
+  "experiment_id": "r7_confirmatory_kernel_ranking_20260917",
+  "generated_at_utc": "2026-09-17T12:36:11Z",
+  "git_head": "d5cd14d8051263b49b01b10ad36e6033b2ec3219",
+  "git_branch": "master",
+  "n_files": 510,
+  "key_hashes": {
+    "degree_histogram_pooled_split": {
+      "path": "selection/degree_calibration/pooled_degree_hist_truncated.csv",
+      "sha256": "bb928b5e2e21f1547e83500e80723511765a1d513a3bd59b1a3c79526dc5953b"
+    },
+    "degree_histogram_pooled_merge": {
+      "path": "selection/degree_calibration/pooled_fanin_hist_truncated.csv",
+      "sha256": "8930b93d29fc544fc49c9633fcc3113390294c873b2f9275005df65796e31cfe"
+    },
+    "generator_source": {
+      "path": "src/cross/domain/evaluation/semi_synthetic_flows.py",
+      "sha256": "efe435471ddad437d95265b132dfb29f7f29616ef562c47587e0d60a37c433dd"
+    },
+    "generator_family_manifest": {
+      "path": "selection/generator/family_manifest.csv",
+      "sha256": "a11c7ca53d12757975799eee40fa6a774492f706130417de0f91695bbfe92e8d"
+    },
+    "selection_winner": {
+      "path": "selection/rule_search/selected_rule.json",
+      "sha256": "37f13ba3563cdec54e13e18cbf2c68545b74ad93da4eec3e55e3db5391ac5900"
+    },
+    "locked_spec": {
+      "path": "config/locked_spec.json",
+      "sha256": "9775479b742833d02beeffb469569b0d885002749b84e996844dcce9b845e11d"
+    },
+    "executor": {
+      "path": "scripts/run_r7_confirmatory_kernel_ranking.py",
+      "sha256": "5a125184154213c736a41bff8597237d01444372c0b805f35cb6ce4ca552f5bb"
+    },
+    "validator": {
+      "path": "scripts/validate_r7_confirmatory_results.py",
+      "sha256": "979ded622183a5dc7209a35bcaee40761ed85526f9654ba5186e51f0830fd205"
+    },
+    "confirmatory_raw_index": {
+      "path": "confirmatory/raw/INDEX.json",
+      "sha256": "54d2241ec3f53a5f3938d4eee6322152127125fd1d3bc535a0e69dbb385d7d03"
+    },
+    "gate_d": {
+      "path": "confirmatory/VALIDITY_GATE_D.json",
+      "sha256": "93bb61451afa0be5c91198ca91f31cc176c0bf893435abe966ddb67c03721cdc"
+    },
+    "gate_e": {
+      "path": "confirmatory/VALIDITY_GATE_E.json",
+      "sha256": "9e3783aad6ec4f333d25191810aed1c71f102a6b0a0105d91b25e13577046c96"
+    },
+    "decision": {
+      "path": "analysis/DECISION.json",
+      "sha256": "66085e1cd65500a6c653800a3440de0f0832efe4c71988830689a26ec2fa7b51"
+    }
+  },
+  "confirmatory_raw_package_sha256": "8b774defe7eedd48dfdcde588a364c93ebc9cb0631acb8851e24010fe8765e9c",
+  "confirmatory_raw_unit_count": 30,
+  "files": [
+    {
+      "path": "00_preflight/git_branch.txt",
+      "bytes": 7,
+      "sha256": "9b3162498c21d7f960877099174ecea13410bd21d12440b2ea8868117fc08ae0",
+      "role": "preflight / task state",
+      "stage": "0",
+      "immutable_frozen_status": "mutable"
+    },
+    {
+      "path": "00_preflight/git_diff_cached_stat_before.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "role": "preflight / task state",
+      "stage": "0",
+      "immutable_frozen_status": "mutable"
+    },
+    {
+      "path": "00_preflight/git_diff_stat_before.txt",
+      "bytes": 185231,
+      "sha256": "5073a281d3c6e96db56b72b89bb7c8cc9a7f9cac0e3896d660248c0d9a176f24",
+      "role": "preflight / task state",
+      "stage": "0",
+      "immutable_frozen_status": "mutable"
+    },
+    {
+      "path": "00_preflight/git_head.txt",
+      "bytes": 41,
+      "sha256": "ea0743a61469471017df8ae7a9782433463f3f3683076e9ecec484c6b31da88f",
+      "role": "preflight / task state",
+      "stage": "0",
+      "immutable_frozen_status": "mutable"
+    },
+    {
+      "path": "00_preflight/git_status_before.txt",
+      "bytes": 286027,
+      "sha256": "416890c6c61925cd2a522fccce7fc0d431ea3e397ac894bdb04f6d3cea784397",
+      "role": "preflight / task state",
+      "stage": "0",
+      "immutable_frozen_status": "mutable"
+    },
+    {
+      "path": "00_preflight/relevant_diff_before.patch",
+      "bytes": 9948,
+      "sha256": "92f7ef96c408ca5b86f286451d320ceea4770e83c99584230d1c227114220848",
+      "role": "preflight / task state",
+      "stage": "0",
+      "immutable_frozen_status": "mutable"
+    },
+    {
+      "path": "00_preflight/seed_freshness_audit.json",
+      "bytes": 6318,
+      "sha256": "e35c997b0c966cb9cfaa96e24ddaaba0328dbff4de3fdc5229c7b015fbc428e3",
+      "role": "preflight / task state",
+      "stage": "0",
+      "immutable_frozen_status": "mutable"
+    },
+    {
+      "path": "00_preflight/seed_freshness_evidence.csv",
+      "bytes": 171121,
+      "sha256": "ab669c2faffccabf01f65e5279710f0c6ef3de1a913a0f3d67a9d465155f4378",
+      "role": "preflight / task state",
+      "stage": "0",
+      "immutable_frozen_status": "mutable"
+    },
+    {
+      "path": "00_preflight/software_check.json",
+      "bytes": 666,
+      "sha256": "df69b5907c083f37694d75cf0d34eda9f35719a3083ddd6aae55e86e5af27683",
+      "role": "preflight / task state",
+      "stage": "0",
+      "immutable_frozen_status": "mutable"
+    },
+    {
+      "path": "analysis/base_anchor_cluster_sensitivity.json",
+      "bytes": 1699,
+      "sha256": "5c330dfb3579f5e2dddcce5ef78d4c9b8c52c3e3d4407e703af2cf2da4997739",
+      "role": "confirmatory statistics",
+      "stage": "2",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "analysis/confirmatory_bridge_summary.csv",
+      "bytes": 2943,
+      "sha256": "43a49c79a56656b741e0e6b3f24785afceb4195fc71d1f647502e63ab3656cd3",
+      "role": "confirmatory statistics",
+      "stage": "2",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "analysis/confirmatory_cell_level.csv",
+      "bytes": 22380,
+      "sha256": "97b28f0f8d412bd7943e09678a143dad81e879ae33969113af3979e6c833165a",
+      "role": "confirmatory statistics",
+      "stage": "2",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "analysis/confirmatory_overall_summary.csv",
+      "bytes": 1576,
+      "sha256": "7915013cb55bc602229cb6083fc18e7aa16ac6efb005d0aa635f10e9ad8eebb6",
+      "role": "confirmatory statistics",
+      "stage": "2",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "analysis/DECISION.json",
+      "bytes": 9763,
+      "sha256": "66085e1cd65500a6c653800a3440de0f0832efe4c71988830689a26ec2fa7b51",
+      "role": "confirmatory statistics",
+      "stage": "2",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "analysis/per_bridge_tests.json",
+      "bytes": 14227,
+      "sha256": "e55a3bd69539135086bbd24dc447829d008a389df1e5a4d97044171a53779d73",
+      "role": "confirmatory statistics",
+      "stage": "2",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "analysis/primary_bootstrap.json",
+      "bytes": 1855,
+      "sha256": "88784e886fb2179d97e5fc002fcd40b55a15aef32003b0c1972c0c461998c3dd",
+      "role": "confirmatory statistics",
+      "stage": "2",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "analysis/primary_holm_tests.json",
+      "bytes": 2240,
+      "sha256": "50fac2d7195037d472663f0a82c9af0f53e9b14f05cb1961d58577e3d1df0fa9",
+      "role": "confirmatory statistics",
+      "stage": "2",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "analysis/uot_representation_diagnostics.csv",
+      "bytes": 5660,
+      "sha256": "62cc47ed8bb3056c3e2e86ab3542006fae28a1aee274972321ebbbcba4ffbe1a",
+      "role": "confirmatory statistics",
+      "stage": "2",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "BLOCKER_REPORT.md",
+      "bytes": 8948,
+      "sha256": "5974566476ee3d0dfa6c14d0f809f875808efdc1ffb50d192e78fda79c3604bc",
+      "role": "seed freshness blocker report",
+      "stage": "0",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "config/author_proposed_spec.md",
+      "bytes": 3028,
+      "sha256": "1383ceaa7840a17f7f1a0ae667d471efbfa28cc274ccdafa48e543e785b52b0d",
+      "role": "frozen protocol",
+      "stage": "freeze",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "config/FROZEN_PROTOCOL_MANIFEST.json",
+      "bytes": 7307,
+      "sha256": "822a56a2321cf97c47928b28f0f12fdca141d1dc851b09245d4713f9d193ed03",
+      "role": "frozen protocol",
+      "stage": "freeze",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "config/locked_spec.json",
+      "bytes": 24794,
+      "sha256": "9775479b742833d02beeffb469569b0d885002749b84e996844dcce9b845e11d",
+      "role": "frozen protocol",
+      "stage": "freeze",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "config/locked_spec.sha256",
+      "bytes": 90,
+      "sha256": "1f970e9830470e88a05760ec116695c6ed03aa111d4214d3122c02d8685ec8a3",
+      "role": "frozen protocol",
+      "stage": "freeze",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "config/operational_protocol_preselection.json",
+      "bytes": 14246,
+      "sha256": "e35c5a5f76f6bc44611435b59a794c7ceff4c2e856b74b8fed0f25f9a7a85049",
+      "role": "frozen protocol",
+      "stage": "freeze",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "confirmatory/CONFIRMATORY_TOUCH_ONCE.json",
+      "bytes": 1385,
+      "sha256": "29b0327b828c6e0a62e9c735aff409bde93850577890981d78886023067c211d",
+      "role": "one-shot confirmatory execution",
+      "stage": "1",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "confirmatory/CONFIRMATORY_TOUCH_ONCE__411_420.json",
+      "bytes": 1998,
+      "sha256": "1f3d11d190fec9494e0104ef7ad91b47e1668bad42f06a2a56eb86c008af3e85",
+      "role": "one-shot confirmatory execution",
+      "stage": "1",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "confirmatory/EXECUTION_REFUSED.md",
+      "bytes": 165,
+      "sha256": "1c160b5e5bb4ffc8c9637e7112dd0450820c53a2b7f3e1dcd0649e4a58c200d7",
+      "role": "unchanged artefact",
+      "stage": "?",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "confirmatory/execution_summary.json",
+      "bytes": 2293,
+      "sha256": "2479ebcb4a4b3be4d9ca5147a278349724b4db3c003264370ec73c06cd88c74a",
+      "role": "one-shot confirmatory execution",
+      "stage": "1",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "confirmatory/first_touch_audit.md",
+      "bytes": 931,
+      "sha256": "72e2dfd863c4ae4545e90f428926baaac5ac0703b74b87c0d97063634d0ba460",
+      "role": "one-shot confirmatory execution",
+      "stage": "1",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "confirmatory/gate_pre_execution.json",
+      "bytes": 3295,
+      "sha256": "486422eb134a3bf17b74edfb2b4fa8c6014f5bffdba79c6a6f531c20146da152",
+      "role": "one-shot confirmatory execution",
+      "stage": "1",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "confirmatory/gate_pre_execution_posthoc_refusal.json",
+      "bytes": 3295,
+      "sha256": "486422eb134a3bf17b74edfb2b4fa8c6014f5bffdba79c6a6f531c20146da152",
+      "role": "unchanged artefact",
+      "stage": "?",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "confirmatory/INCOMPLETE_FIRST_CONFIRMATORY_EXECUTION.md",
+      "bytes": 5846,
+      "sha256": "3823eda9661eca69256e2d958e517319703be441962b6d2571408162d5c40636",
+      "role": "one-shot confirmatory execution",
+      "stage": "1",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "confirmatory/PROVENANCE_NOTE.md",
+      "bytes": 3195,
+      "sha256": "1954cbaaa3f2b7e57bef91bde4c43dbc95499bafcebb3bdd27d7a04b7d3bfb5c",
+      "role": "unchanged artefact",
+      "stage": "?",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "confirmatory/raw/executor_cell_metrics.csv",
+      "bytes": 21960,
+      "sha256": "39fd7d13d30b8e0a7f27ef0b9686ce371c6a993374bb47c89b76315eaa2657d7",
+      "role": "one-shot confirmatory execution",
+      "stage": "1",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "confirmatory/raw/executor_oracle_ceiling.csv",
+      "bytes": 2076,
+      "sha256": "a6fd3eeb92b5d820556fef82906549003c5317ff8532fbf14db4bf31e7ff887f",
+      "role": "one-shot confirmatory execution",
+      "stage": "1",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "confirmatory/raw/executor_solver_diagnostics.csv",
+      "bytes": 35113,
+      "sha256": "b62be49f3e31714234db121e370df79a8381557ccf47298cd181f35b4d95ceb3",
+      "role": "one-shot confirmatory execution",
+      "stage": "1",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "confirmatory/raw/executor_uot_mass_diagnostics.csv",
+      "bytes": 5833,
+      "sha256": "b4f4e8ce85a385b92ada00b826a66b076da0588829d0262de757021c2821731d",
+      "role": "one-shot confirmatory execution",
+      "stage": "1",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "confirmatory/raw/INDEX.json",
+      "bytes": 13856,
+      "sha256": "54d2241ec3f53a5f3938d4eee6322152127125fd1d3bc535a0e69dbb385d7d03",
+      "role": "one-shot confirmatory execution",
+      "stage": "1",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "confirmatory/raw/units/unit__Celer__s411.json",
+      "bytes": 532416,
+      "sha256": "9910a67db55f07182c2b4d26c116e00f3b5842c736859f1c278613e8c01fb4fd",
+      "role": "one-shot confirmatory execution",
+      "stage": "1",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "confirmatory/raw/units/unit__Celer__s412.json",
+      "bytes": 515848,
+      "sha256": "64597a5c7f95991f9e7432974b5e2f50fe1d0028a9e1a5721138bb3953b87378",
+      "role": "one-shot confirmatory execution",
+      "stage": "1",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "confirmatory/raw/units/unit__Celer__s413.json",
+      "bytes": 514607,
+      "sha256": "ef3d8fbe087dfa0b65d21cac8978bd384e702a2127ab378446eaedd767efbf90",
+      "role": "one-shot confirmatory execution",
+      "stage": "1",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "confirmatory/raw/units/unit__Celer__s414.json",
+      "bytes": 525308,
+      "sha256": "54e31f9abe16b43b5bc4bfff766a80424d95b8cf106d9f8ff171f079ee2680ec",
+      "role": "one-shot confirmatory execution",
+      "stage": "1",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "confirmatory/raw/units/unit__Celer__s415.json",
+      "bytes": 540928,
+      "sha256": "ec3a0c7c45439343a29409b1ac7694bc1c1106a4e5da3d7de191678e96a74f45",
+      "role": "one-shot confirmatory execution",
+      "stage": "1",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "confirmatory/raw/units/unit__Celer__s416.json",
+      "bytes": 521883,
+      "sha256": "b590ef5a13d4d74d2804ca35e645f11ab5be33104a7d1b8b53087ad31709c11f",
+      "role": "one-shot confirmatory execution",
+      "stage": "1",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "confirmatory/raw/units/unit__Celer__s417.json",
+      "bytes": 512989,
+      "sha256": "eb2e39cb91878c368c2aeffcf8332f229888313d583b4fd56a050ceea4c95634",
+      "role": "one-shot confirmatory execution",
+      "stage": "1",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "confirmatory/raw/units/unit__Celer__s418.json",
+      "bytes": 498236,
+      "sha256": "89e8c92b250279d70e5b42718ef35a91fccd208910af983ee5c5d18f7e8d2f29",
+      "role": "one-shot confirmatory execution",
+      "stage": "1",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "confirmatory/raw/units/unit__Celer__s419.json",
+      "bytes": 529287,
+      "sha256": "7fcb91189e4c63e23ef022d62311e677db8c8f91cc0ed2a72d2fcb86aac23035",
+      "role": "one-shot confirmatory execution",
+      "stage": "1",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "confirmatory/raw/units/unit__Celer__s420.json",
+      "bytes": 533142,
+      "sha256": "e323d8ddcf7c33672d7758619f9341bf9c2e9edfee88bf8b1ec848a0802e97e6",
+      "role": "one-shot confirmatory execution",
+      "stage": "1",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "confirmatory/raw/units/unit__Multi__s411.json",
+      "bytes": 463857,
+      "sha256": "d3ba042204fc3613250b2ccb7ed4841e2ba4747c9029d95f130f9fa079d486a0",
+      "role": "one-shot confirmatory execution",
+      "stage": "1",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "confirmatory/raw/units/unit__Multi__s412.json",
+      "bytes": 469046,
+      "sha256": "e8eb13e64fd5ea81b557414c32b51b293edda0d836d4d75fb23f0a9925866fc7",
+      "role": "one-shot confirmatory execution",
+      "stage": "1",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "confirmatory/raw/units/unit__Multi__s413.json",
+      "bytes": 464158,
+      "sha256": "9a62b667e28508b459fdc73dd4d95e3f7ebe1f0f3b6a49be003660f131d429f5",
+      "role": "one-shot confirmatory execution",
+      "stage": "1",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "confirmatory/raw/units/unit__Multi__s414.json",
+      "bytes": 484645,
+      "sha256": "1590d021124300b276e80035e430f14c145fcc53e84aa5034e513edaf374cb0d",
+      "role": "one-shot confirmatory execution",
+      "stage": "1",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "confirmatory/raw/units/unit__Multi__s415.json",
+      "bytes": 479219,
+      "sha256": "63190cd7582e6cc75b6fdbd54f4910e9750d0f9aa61fd0e3fb90566a2f9bebb2",
+      "role": "one-shot confirmatory execution",
+      "stage": "1",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "confirmatory/raw/units/unit__Multi__s416.json",
+      "bytes": 480628,
+      "sha256": "d2389c4566d91b8c8c7f9a05a1567ff56f71daea223fc8b42e796fb4b76298cc",
+      "role": "one-shot confirmatory execution",
+      "stage": "1",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "confirmatory/raw/units/unit__Multi__s417.json",
+      "bytes": 485247,
+      "sha256": "6d704fc0acd814f1fe5e58691cf2891431765c0d8a873258b7a6a3551a162d5d",
+      "role": "one-shot confirmatory execution",
+      "stage": "1",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "confirmatory/raw/units/unit__Multi__s418.json",
+      "bytes": 479356,
+      "sha256": "9654a275664e7e2fbf9ebdd98f6421fcfc7adf3cb16fa971d04b0e5c850d4c2e",
+      "role": "one-shot confirmatory execution",
+      "stage": "1",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "confirmatory/raw/units/unit__Multi__s419.json",
+      "bytes": 483421,
+      "sha256": "85aa976b3a9ad2c7a67c099991ead539692c616bcaa60af4ebe7edffb84cf3eb",
+      "role": "one-shot confirmatory execution",
+      "stage": "1",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "confirmatory/raw/units/unit__Multi__s420.json",
+      "bytes": 462643,
+      "sha256": "d30989119df1ba3ee3c30fd2b7def59d67dbabf36d3569cfe86ee87bb9eb5611",
+      "role": "one-shot confirmatory execution",
+      "stage": "1",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "confirmatory/raw/units/unit__Poly__s411.json",
+      "bytes": 556583,
+      "sha256": "60d4f3b1c4f6303d783ef87436a73ee569bdd272c66f034a0aade24341bd9688",
+      "role": "one-shot confirmatory execution",
+      "stage": "1",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "confirmatory/raw/units/unit__Poly__s412.json",
+      "bytes": 528269,
+      "sha256": "e35e7219084e26e8225242f10f48d704260b6b0061cd2ece1d0cb405ae8ff25e",
+      "role": "one-shot confirmatory execution",
+      "stage": "1",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "confirmatory/raw/units/unit__Poly__s413.json",
+      "bytes": 546546,
+      "sha256": "a3b830dc6a4af39f0067c6a1f0821086fa0180c532a25c90d62ac4f22518f918",
+      "role": "one-shot confirmatory execution",
+      "stage": "1",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "confirmatory/raw/units/unit__Poly__s414.json",
+      "bytes": 560239,
+      "sha256": "667719800d1620fac9bfef5d87ca1cde47cf732f11edd5f0aca44eceeb7bd5f3",
+      "role": "one-shot confirmatory execution",
+      "stage": "1",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "confirmatory/raw/units/unit__Poly__s415.json",
+      "bytes": 537501,
+      "sha256": "de04a95e47cfae5da781c7c79f7d90b5258c18161bf3a7285e809e35c96f7a38",
+      "role": "one-shot confirmatory execution",
+      "stage": "1",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "confirmatory/raw/units/unit__Poly__s416.json",
+      "bytes": 540819,
+      "sha256": "e22742824502818fedabd09691fded8f3edd22a5a116b7049feae14ec44ed176",
+      "role": "one-shot confirmatory execution",
+      "stage": "1",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "confirmatory/raw/units/unit__Poly__s417.json",
+      "bytes": 546559,
+      "sha256": "155fab1f7187aac9d339372cd8307400ca83365dc44b203792600b17adeaa563",
+      "role": "one-shot confirmatory execution",
+      "stage": "1",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "confirmatory/raw/units/unit__Poly__s418.json",
+      "bytes": 548255,
+      "sha256": "6a83f7e35a1af2ddd63483f826b713b99f4b0b5e580721776df0ea987fecc521",
+      "role": "one-shot confirmatory execution",
+      "stage": "1",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "confirmatory/raw/units/unit__Poly__s419.json",
+      "bytes": 543857,
+      "sha256": "ed72e51ee65ef802accdacd461a20e09b6da396729df702c47291ab688db9e09",
+      "role": "one-shot confirmatory execution",
+      "stage": "1",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "confirmatory/raw/units/unit__Poly__s420.json",
+      "bytes": 553847,
+      "sha256": "c16d86c2b915f1c8e159eb585af6802a9fb0690bd79d7aa7348c8811bd35abe5",
+      "role": "one-shot confirmatory execution",
+      "stage": "1",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "confirmatory/retired_401_410/gate_pre_execution.json",
+      "bytes": 2371,
+      "sha256": "bd18881dcd44d861aee308d95503abcb1495b1db9d7b7de425d03e7f2afedc8a",
+      "role": "one-shot confirmatory execution",
+      "stage": "1",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "confirmatory/retired_401_410/partial_raw_units_scratch/Celer/seed_401/cost.npz",
+      "bytes": 5957774,
+      "sha256": "66b34f5b1a0c6e2dded6aad81ad58a59a4086d5f7755d78bbef1f50cc39accf0",
+      "role": "one-shot confirmatory execution",
+      "stage": "1",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "confirmatory/retired_401_410/partial_raw_units_scratch/Celer/seed_401/flow_label_stats.json",
+      "bytes": 56,
+      "sha256": "1de09d9d5e626963ada883a6fe992be939c76ee7bbfd89701dc7b9b592475bb3",
+      "role": "one-shot confirmatory execution",
+      "stage": "1",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "confirmatory/retired_401_410/partial_raw_units_scratch/Celer/seed_401/flow_segments_bnb_synth.csv",
+      "bytes": 189465,
+      "sha256": "5f35c8f573d32ce3ef4b5f7c3d62b2f7c88794bf4a4847825dfac7b407374649",
+      "role": "one-shot confirmatory execution",
+      "stage": "1",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "confirmatory/retired_401_410/partial_raw_units_scratch/Celer/seed_401/flow_segments_eth_synth.csv",
+      "bytes": 167203,
+      "sha256": "3191a8493d7a6d4000f44a753bd6bd2aadaea49445f23ffdd56893e227bd767b",
+      "role": "one-shot confirmatory execution",
+      "stage": "1",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "confirmatory/retired_401_410/partial_raw_units_scratch/Celer/seed_401/ids.npz",
+      "bytes": 35290,
+      "sha256": "0498021c8526f81dcbfe510bc1d85954543e61e951b2bb4fe296b4ff07542960",
+      "role": "one-shot confirmatory execution",
+      "stage": "1",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "confirmatory/retired_401_410/partial_raw_units_scratch/Celer/seed_401/labels/synthetic_flow_labels.csv",
+      "bytes": 79092,
+      "sha256": "974294924c4a361027140977f8b12d18048a66620fea74041977a40f1ff8a4c1",
+      "role": "one-shot confirmatory execution",
+      "stage": "1",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "confirmatory/retired_401_410/partial_raw_units_scratch/Celer/seed_401/labels/synthetic_uot_eval_metrics.json",
+      "bytes": 215838,
+      "sha256": "8b4d74d3faea7b472205e923fccf1e71fe275ef271127b03c8d87060b6a4e178",
+      "role": "one-shot confirmatory execution",
+      "stage": "1",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "confirmatory/retired_401_410/partial_raw_units_scratch/Celer/seed_401/labels.csv",
+      "bytes": 79464,
+      "sha256": "76ae1b5582e64bc3516a4a86126bd820162ae698114a581a13d335c1ea742fe7",
+      "role": "one-shot confirmatory execution",
+      "stage": "1",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "confirmatory/retired_401_410/partial_raw_units_scratch/Celer/seed_401/solver.json",
+      "bytes": 1500,
+      "sha256": "1965acffe26e9245d21d103a6ad0854edaf67b54d2d85a00bf2da6590e1ef005",
+      "role": "one-shot confirmatory execution",
+      "stage": "1",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "confirmatory/retired_401_410/partial_raw_units_scratch/Celer/seed_401/synthetic_seed_stratification.json",
+      "bytes": 8779,
+      "sha256": "92aadc0e7954b3012c697d8ec448ac396b45fbae3c03bcb54f91e63628690f4e",
+      "role": "one-shot confirmatory execution",
+      "stage": "1",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "confirmatory/retired_401_410/partial_raw_units_scratch/Celer/seed_401/transport_uot.npz",
+      "bytes": 755448,
+      "sha256": "63baa5228a50b4c63ee472e0205096e8d9b7b38d606e5bcf993ad19cf01edf27",
+      "role": "one-shot confirmatory execution",
+      "stage": "1",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "confirmatory/retired_401_410/README.md",
+      "bytes": 852,
+      "sha256": "0f24d843acac043b4c903e36abc653d9358a340dc34fecda2fcc0ffec0308a1d",
+      "role": "one-shot confirmatory execution",
+      "stage": "1",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "confirmatory/VALIDATOR_PACKAGING_CORRECTION.md",
+      "bytes": 4499,
+      "sha256": "c495b9d5c75c5462c124a119453eef538a64fd701fec609ba40b8890ea6eac33",
+      "role": "one-shot confirmatory execution",
+      "stage": "1",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "confirmatory/VALIDITY_GATE_D.json",
+      "bytes": 2615,
+      "sha256": "93bb61451afa0be5c91198ca91f31cc176c0bf893435abe966ddb67c03721cdc",
+      "role": "one-shot confirmatory execution",
+      "stage": "1",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "confirmatory/VALIDITY_GATE_E.json",
+      "bytes": 103740,
+      "sha256": "9e3783aad6ec4f333d25191810aed1c71f102a6b0a0105d91b25e13577046c96",
+      "role": "one-shot confirmatory execution",
+      "stage": "1",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "confirmatory/VALIDITY_GATE_E_frozen_validator_precorrection.json",
+      "bytes": 104616,
+      "sha256": "68b5e5c73c5d4dd141b9bf7ff12fe45ef9ed45504477805bade924fe13737c94",
+      "role": "one-shot confirmatory execution",
+      "stage": "1",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "diagnostics/oracle_1to1_ceiling.csv",
+      "bytes": 2879,
+      "sha256": "324bb64a1c0404041cb9a8241c204d81bd4cd14e2d128878ff844b15437a9ae2",
+      "role": "label-informed diagnostics",
+      "stage": "2",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "figures/fig1_degree_calibration.pdf",
+      "bytes": 27331,
+      "sha256": "4abaca702d11630a5910b79bd51fbf04443e31510e9f20c42cbed7b1d116eeb3",
+      "role": "figures",
+      "stage": "3",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "figures/fig1_degree_calibration.png",
+      "bytes": 195247,
+      "sha256": "94dfd7aa2c5b5d971502b7bcb814733b759882bf3b67f1816e9d551c37f761be",
+      "role": "figures",
+      "stage": "3",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "figures/fig1_degree_calibration_pre_layout_fix.pdf",
+      "bytes": 27346,
+      "sha256": "6e4922bf9c8a7b9a1da439803a5f6aef155e2bb36c6f47cd29e41fd3552d55cd",
+      "role": "figures",
+      "stage": "3",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "figures/fig1_degree_calibration_pre_layout_fix.png",
+      "bytes": 194872,
+      "sha256": "9bf541b30a7c7a439e51d7e66b1e0f23119272424ff8f3324a0319ea803c9ccb",
+      "role": "figures",
+      "stage": "3",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "figures/fig1_layout_verification.json",
+      "bytes": 7385,
+      "sha256": "d39bdacdba0868dd000649bd5b9150f59f7e7364af2f902fc77edff15a7ede9c",
+      "role": "figures",
+      "stage": "3",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "figures/fig2_selection_rule_comparison.pdf",
+      "bytes": 23922,
+      "sha256": "061f19a94b5d31a2ece39b05ad8dc69446dd53e95aa74807ffc58547ad29c299",
+      "role": "figures",
+      "stage": "3",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "figures/fig2_selection_rule_comparison.png",
+      "bytes": 320384,
+      "sha256": "08e80627f1eb8abe033d70d4e5480c6f364aa954d6a34435e6f27de4ec89d2ff",
+      "role": "figures",
+      "stage": "3",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "figures/fig3_confirmatory_method_comparison.pdf",
+      "bytes": 23307,
+      "sha256": "bb6c25655fc557a7078fb82ef23001371d8ffdd7259e0057613cd6a030be35bf",
+      "role": "figures",
+      "stage": "3",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "figures/fig3_confirmatory_method_comparison.png",
+      "bytes": 184566,
+      "sha256": "c75b7dc51e2a3a7d8554991b941a069fb4205741bf3e3a896fdcf3bfaac32862",
+      "role": "figures",
+      "stage": "3",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "figures/fig4_paired_primary_effects.pdf",
+      "bytes": 24432,
+      "sha256": "190cacb5d0ce81f2cbe7fcbb3237ab922fc0291205ac1a813af44489629b8c19",
+      "role": "figures",
+      "stage": "3",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "figures/fig4_paired_primary_effects.png",
+      "bytes": 256423,
+      "sha256": "3125376d5a24371866f03dbe0fdc5092d11e0a729a9be4df9bafa1786b8431f8",
+      "role": "figures",
+      "stage": "3",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "figures/fig5_uot_representation_diagnostics.pdf",
+      "bytes": 32007,
+      "sha256": "feeb6e366f86d95b6aef9771c344bc72c296a78c515deeca090a153b3b5fc555",
+      "role": "figures",
+      "stage": "3",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "figures/fig5_uot_representation_diagnostics.png",
+      "bytes": 267341,
+      "sha256": "37ba32f8a792acce6f28c462798dd3d4b890990ce0998eaa3628138ca60b4e26",
+      "role": "figures",
+      "stage": "3",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "figures/figures_index.json",
+      "bytes": 1653,
+      "sha256": "68bbc4b620b50357aebcea7c149956ab32fd671cb517730212d0786d1f100e22",
+      "role": "figures",
+      "stage": "3",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "FINAL_EXPERIMENT_REPORT.md",
+      "bytes": 18499,
+      "sha256": "a9588ecc0820ed515263dc97b881674b9f5e6a0baf67eb874e1fa75ce4a6b1f9",
+      "role": "final report",
+      "stage": "4",
+      "immutable_frozen_status": "mutable"
+    },
+    {
+      "path": "GIT_CHANGE_REPORT.json",
+      "bytes": 302,
+      "sha256": "a75d55208613031bfcef5ee8492a66e66be64669ae4276f35da0ce0d02709735",
+      "role": "misc",
+      "stage": "?",
+      "immutable_frozen_status": "mutable"
+    },
+    {
+      "path": "GIT_CHANGE_REPORT.md",
+      "bytes": 12840,
+      "sha256": "1791c1d0b5fbe0a62c39901f42ceeda8869ceee031fb72d7caca3c613bc7ac0a",
+      "role": "misc",
+      "stage": "?",
+      "immutable_frozen_status": "mutable"
+    },
+    {
+      "path": "logs/r7.log",
+      "bytes": 21515,
+      "sha256": "eaf6d04c57b617ad7f780a56b76ee049464eb7690701d0d045a373e220902c37",
+      "role": "misc",
+      "stage": "?",
+      "immutable_frozen_status": "mutable"
+    },
+    {
+      "path": "paper/ABSTRACT_PATCH_CN.md",
+      "bytes": 1468,
+      "sha256": "e5575e00f1c9c8af6795e7207439341be4b19d5c05c6e547b9e72fa32342df0b",
+      "role": "manuscript patches",
+      "stage": "3",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "paper/ABSTRACT_PATCH_EN.tex",
+      "bytes": 1550,
+      "sha256": "0f1668fdabad26a435cadf6b599a4d90c6bef0dbd9d95c5041ddf523c20eafac",
+      "role": "manuscript patches",
+      "stage": "3",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "paper/CONCLUSION_PATCH_CN.md",
+      "bytes": 998,
+      "sha256": "b8887f3220a2f28860e4044e08c3f4f342bb87fe29266ea13a427e5f2be82348",
+      "role": "manuscript patches",
+      "stage": "3",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "paper/CONCLUSION_PATCH_EN.tex",
+      "bytes": 1016,
+      "sha256": "689dba3ec54e28036b9799a36d9027a8339eff4e1aed8a69f933c96f141aa881",
+      "role": "manuscript patches",
+      "stage": "3",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "paper/CONTRIBUTIONS_PATCH_CN.md",
+      "bytes": 1425,
+      "sha256": "89ac706c3bdbf7a9a81aa12783a0c9f6e1bb46e917843b39aa86c7244132e2f8",
+      "role": "manuscript patches",
+      "stage": "3",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "paper/CONTRIBUTIONS_PATCH_EN.tex",
+      "bytes": 1603,
+      "sha256": "9bcfb8935bdecef87e5737e9500a9b53032cbd03d921723e7db95a08b5e963b2",
+      "role": "manuscript patches",
+      "stage": "3",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "paper/DISCUSSION_LIMITATIONS_PATCH_CN.md",
+      "bytes": 2865,
+      "sha256": "880a847d49975397e5ac929bca53720f1227910f6fa468dc0985e7737e84e694",
+      "role": "manuscript patches",
+      "stage": "3",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "paper/DISCUSSION_LIMITATIONS_PATCH_EN.tex",
+      "bytes": 2527,
+      "sha256": "e4d72e564e836a7706c4cfb4b7d3e86eab89d4c296a622d84cf70e2ede02fc2a",
+      "role": "manuscript patches",
+      "stage": "3",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "paper/patch_index.json",
+      "bytes": 2003,
+      "sha256": "97004dca88a0aca7ce8b132222b9ece05aaef5a25cc4960d6643cb791313b5ea",
+      "role": "manuscript patches",
+      "stage": "3",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "paper/SECTION_3_UOT_KR_CN.md",
+      "bytes": 2661,
+      "sha256": "837ef1a930eb866b551cd5f0b82a59722065409716599eaf85164d399221e862",
+      "role": "manuscript patches",
+      "stage": "3",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "paper/SECTION_3_UOT_KR_EN.tex",
+      "bytes": 1966,
+      "sha256": "8cd4acc49bfaf996cf87adbc526192e94460176db49cb682564e9952bcf89e47",
+      "role": "manuscript patches",
+      "stage": "3",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "paper/SECTION_4_R7_CONFIRMATORY_CN.md",
+      "bytes": 5142,
+      "sha256": "fd0e636c44655216e3fc1ebc419b3e2b32a1e5768716321d483be68f1a445127",
+      "role": "manuscript patches",
+      "stage": "3",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "paper/SECTION_4_R7_CONFIRMATORY_EN.tex",
+      "bytes": 2493,
+      "sha256": "e257b56ad2bfa9934f96aeefc4a702519a73d6472c1517d0b84906f11f3f10ef",
+      "role": "manuscript patches",
+      "stage": "3",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "PRE_CONFIRMATORY_AUDIT.md",
+      "bytes": 2525,
+      "sha256": "497662a48cb27b71d8389e6c2615a266d146fe9614c7c3bc12bd9db5a927060f",
+      "role": "pre-confirmatory audit",
+      "stage": "freeze",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/data_manifest.json",
+      "bytes": 87877,
+      "sha256": "e3f04604f20c85504e5de862dfb5329fbe750224b2bff4a67455d9a3f57e3e87",
+      "role": "misc",
+      "stage": "?",
+      "immutable_frozen_status": "mutable"
+    },
+    {
+      "path": "selection/degree_calibration/degree_definition.json",
+      "bytes": 1325,
+      "sha256": "f653b35a27872fd22d70dcad1b87d5e7926b4409550635304379387edfb153cb",
+      "role": "Stage 0A real degree calibration",
+      "stage": "0A",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/degree_calibration/degree_sampling_spec.json",
+      "bytes": 1841,
+      "sha256": "3768846c1da6a0059c27e7f03de9e74962d05600d12acf2a18684ac37e803206",
+      "role": "Stage 0A real degree calibration",
+      "stage": "0A",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/degree_calibration/duplicate_units.json",
+      "bytes": 733,
+      "sha256": "a3814eee6cde422a6da9b892d9abf0259f1b47ee04be8efa63ffb3ab1bb5ee93",
+      "role": "Stage 0A real degree calibration",
+      "stage": "0A",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/degree_calibration/pooled_degree_hist_raw.csv",
+      "bytes": 2867,
+      "sha256": "2f35dbf6c839ac1f322869714feefe86092564df85e1d6ad26dc1302feb0cfe0",
+      "role": "Stage 0A real degree calibration",
+      "stage": "0A",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/degree_calibration/pooled_degree_hist_truncated.csv",
+      "bytes": 410,
+      "sha256": "bb928b5e2e21f1547e83500e80723511765a1d513a3bd59b1a3c79526dc5953b",
+      "role": "Stage 0A real degree calibration",
+      "stage": "0A",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/degree_calibration/pooled_fanin_hist_raw.csv",
+      "bytes": 133,
+      "sha256": "a1b3e2f78617d9a9138feba7d458416d7bcf72532d279314502dacdbb59f62ef",
+      "role": "Stage 0A real degree calibration",
+      "stage": "0A",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/degree_calibration/pooled_fanin_hist_truncated.csv",
+      "bytes": 141,
+      "sha256": "8930b93d29fc544fc49c9633fcc3113390294c873b2f9275005df65796e31cfe",
+      "role": "Stage 0A real degree calibration",
+      "stage": "0A",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/degree_calibration/source_provenance.json",
+      "bytes": 7797,
+      "sha256": "d08214cd48c5d64b0c29de6c1f507015b168cc47b81b6ae9f4261c1e3fc54cb8",
+      "role": "Stage 0A real degree calibration",
+      "stage": "0A",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/degree_calibration/tail_report.json",
+      "bytes": 3034,
+      "sha256": "c4ef06998b60826c95e96432ee908261085b96886ffbcf2aa4a480b4288d46de",
+      "role": "Stage 0A real degree calibration",
+      "stage": "0A",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/degree_calibration/v4_degree_hist.csv",
+      "bytes": 659,
+      "sha256": "0725e6715cca0b581d6465986ae5ba270a90c544daba959014e9da09b55af6e7",
+      "role": "Stage 0A real degree calibration",
+      "stage": "0A",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/degree_calibration/v4_fanin_hist.csv",
+      "bytes": 116,
+      "sha256": "83769b46f070d97a7d1c82a56da748e477e978cb5dbd77906f3b4e1e7642c946",
+      "role": "Stage 0A real degree calibration",
+      "stage": "0A",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/degree_calibration/v5_degree_hist.csv",
+      "bytes": 2460,
+      "sha256": "03d6e2a491241cbbbdc0ae3ad0ab7cb7f8b2151fd9a0540dbceac560a9dfcb4a",
+      "role": "Stage 0A real degree calibration",
+      "stage": "0A",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/degree_calibration/v5_fanin_hist.csv",
+      "bytes": 116,
+      "sha256": "01e11823ac5e1bf550afc5313ee5cde56b2016f3578d565e28e858e9d722c450",
+      "role": "Stage 0A real degree calibration",
+      "stage": "0A",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/EXECUTOR_DRYRUN.json",
+      "bytes": 4170,
+      "sha256": "cf6c56a5a9a37b62917cb517baa9601c688ea02a7b14ca3153041f2709000cc4",
+      "role": "pre-freeze executor dry run",
+      "stage": "0",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Celer/seed_112/cost.npz",
+      "bytes": 6166606,
+      "sha256": "6ac16dbfa0ceadf3c908ecbec69aba6f7ab9d656c86edbc18ba048975539a029",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Celer/seed_112/flow_label_stats.json",
+      "bytes": 56,
+      "sha256": "1de09d9d5e626963ada883a6fe992be939c76ee7bbfd89701dc7b9b592475bb3",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Celer/seed_112/flow_segments_bnb_synth.csv",
+      "bytes": 193847,
+      "sha256": "c9daed8257478da414baf0dd9f95f03ff2b176533372367b89a876542c7f399d",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Celer/seed_112/flow_segments_eth_synth.csv",
+      "bytes": 167215,
+      "sha256": "91cb2fc658bed2ae409f6ee7f51b4c3b17561f1e283c7cac5f245e0356304538",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Celer/seed_112/ids.npz",
+      "bytes": 35858,
+      "sha256": "36233a708ee9fa6ceeff8c032df27909c38fc73b70056630a4d63bd9bd100ab5",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Celer/seed_112/labels/synthetic_flow_labels.csv",
+      "bytes": 82726,
+      "sha256": "f1de86650c9b908592b2cc28e77dd51d2371a13e8d7c1aa278fb437a717fb1f3",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Celer/seed_112/labels/synthetic_uot_eval_metrics.json",
+      "bytes": 220189,
+      "sha256": "40b436b0cb03c048feb4138ba22920213a23d7e4005cf823a6b8a44401871bb0",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Celer/seed_112/labels.csv",
+      "bytes": 83109,
+      "sha256": "8c989a416a003e2d4cfba353ab9d7a2758c78a1ddb1d33764c5cda5979b3f4cc",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Celer/seed_112/solver.json",
+      "bytes": 1504,
+      "sha256": "4466babb560c8068a2e1afe41427a20864a91613256a00d14bd831673a3d4214",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Celer/seed_112/synthetic_seed_stratification.json",
+      "bytes": 8779,
+      "sha256": "0bf28826252422646d78a3d9233e955aa6eae5be677af6997b0a35a97d37f15c",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Celer/seed_112/transport_uot.npz",
+      "bytes": 781728,
+      "sha256": "e24f1d57f906fb5cf4e1bd08a160e4765c68d5eb635664c273c068c7d915b170",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Celer/seed_113/cost.npz",
+      "bytes": 5902286,
+      "sha256": "38914776fc1686698049d2f58c306368a56cc54e078f8e3d3a2ecffd07ad4230",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Celer/seed_113/flow_label_stats.json",
+      "bytes": 56,
+      "sha256": "1de09d9d5e626963ada883a6fe992be939c76ee7bbfd89701dc7b9b592475bb3",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Celer/seed_113/flow_segments_bnb_synth.csv",
+      "bytes": 188213,
+      "sha256": "90fe6eb77acf891225c72142f230f25b1ce3bd09714595f68d67f334266d2ec7",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Celer/seed_113/flow_segments_eth_synth.csv",
+      "bytes": 168012,
+      "sha256": "9b77ac9344976caac2ff263873a481803abc90746a5f28cd283a0145691dc7ab",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Celer/seed_113/ids.npz",
+      "bytes": 35146,
+      "sha256": "fd7a1378ecb1e7c3dc9fcdeea75abdbe6b2b6bdb5ada01ff7c23dfbc4f6e64b6",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Celer/seed_113/labels/synthetic_flow_labels.csv",
+      "bytes": 78171,
+      "sha256": "9e5d44b275623cb02bf10ae3ff89e6f957816d185861058381b00c9c3cc2abf8",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Celer/seed_113/labels/synthetic_uot_eval_metrics.json",
+      "bytes": 214711,
+      "sha256": "c151ff291a98668bd9d6a8c7fa7ba7a01699e95b63abe061d389c55b6e7b9cb9",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Celer/seed_113/labels.csv",
+      "bytes": 78540,
+      "sha256": "2d441dde99c63a121c8e8b622ff5ef14832c1dc4320a2e9abb392a11178c42af",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Celer/seed_113/solver.json",
+      "bytes": 1504,
+      "sha256": "f11f7d0b2ed5dfab7602a5669089384578327e8b62e0f980593cc82618e118c1",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Celer/seed_113/synthetic_seed_stratification.json",
+      "bytes": 8779,
+      "sha256": "bca30c06dea93b06f7b713faaf8ac54714a018f1851056c9ef07d312b37091f5",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Celer/seed_113/transport_uot.npz",
+      "bytes": 748464,
+      "sha256": "7cc5a6db2b3a9a689737162461467df21a38dca1547f1193bc6a675cbdca6bd7",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Celer/seed_114/cost.npz",
+      "bytes": 6161230,
+      "sha256": "6a06c05b1b4f7cdf41c300dd54e65f800e75c9d9705c63568ae8d71a8e8c2692",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Celer/seed_114/flow_label_stats.json",
+      "bytes": 56,
+      "sha256": "1de09d9d5e626963ada883a6fe992be939c76ee7bbfd89701dc7b9b592475bb3",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Celer/seed_114/flow_segments_bnb_synth.csv",
+      "bytes": 195436,
+      "sha256": "9a5dfaf1c3bb10efc27f8fa4085626da565116a48a66e35dcd284235bb246ad9",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Celer/seed_114/flow_segments_eth_synth.csv",
+      "bytes": 166476,
+      "sha256": "801191ba4482e011064682c605b95a9f0186eb87b64aab61df8a36c737d316d8",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Celer/seed_114/ids.npz",
+      "bytes": 35818,
+      "sha256": "cb6b8be65d02bd5c1fb0fca29e7279a7389d86e1d3a40fe634fc2ceaf26d1af6",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Celer/seed_114/labels/synthetic_flow_labels.csv",
+      "bytes": 81353,
+      "sha256": "61796cc16f93360c01c349e7be0c73f8b67d311b4eb5364694cac3760f7262a9",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Celer/seed_114/labels/synthetic_uot_eval_metrics.json",
+      "bytes": 220112,
+      "sha256": "59ef5dda14bff1f436d0fd6af6976662d1ff7e52585b5cac3bdd09d19928fad5",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Celer/seed_114/labels.csv",
+      "bytes": 81736,
+      "sha256": "c80068ab1554c4a0753baee72271d2ea2ac6a0bea65ce19251e8676309c44b66",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Celer/seed_114/solver.json",
+      "bytes": 1504,
+      "sha256": "c92a333d0cfc420fb6d9fcd4b9548b3a5157d41c9fb4cf5963d9140ec9b586ae",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Celer/seed_114/synthetic_seed_stratification.json",
+      "bytes": 8779,
+      "sha256": "dbdf8168ebee8419c40e8df592f474c0c86c5b273601b9c643ee1126abe6fb09",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Celer/seed_114/transport_uot.npz",
+      "bytes": 781056,
+      "sha256": "fb832fadefa8c7cc57793540417997027e87d032ea7ae2b1e4069317c44a1cd1",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Celer/seed_115/cost.npz",
+      "bytes": 6066190,
+      "sha256": "f6ae2ee67c7e352ef6f41e11d815c2a075afb7949e4fb7185dcf14b0d8a82330",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Celer/seed_115/flow_label_stats.json",
+      "bytes": 56,
+      "sha256": "1de09d9d5e626963ada883a6fe992be939c76ee7bbfd89701dc7b9b592475bb3",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Celer/seed_115/flow_segments_bnb_synth.csv",
+      "bytes": 192889,
+      "sha256": "3e4e8aa91a40a4849507f88970812aeea80d36dfac1877491c27588bac2623c0",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Celer/seed_115/flow_segments_eth_synth.csv",
+      "bytes": 166203,
+      "sha256": "1bfe1d10ccdc60d1cf3ccd3313a578fcbddc1386b361b23ba17f20116ed20a43",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Celer/seed_115/ids.npz",
+      "bytes": 35558,
+      "sha256": "b6ca13d23553bfc2df36e28694422d49352b6c89ba753a9a721b313b0285c66a",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Celer/seed_115/labels/synthetic_flow_labels.csv",
+      "bytes": 80483,
+      "sha256": "bddea1151b5fa312843078c98bed440b785921bffac0dc729c512ed697859f00",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Celer/seed_115/labels/synthetic_uot_eval_metrics.json",
+      "bytes": 217986,
+      "sha256": "3a4f6fba3187ed17a3f08837eebe0105642432e9cbfe5f7126d66c40c4d2ff87",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Celer/seed_115/labels.csv",
+      "bytes": 80861,
+      "sha256": "5b0f35502a76f7fa38eff36c0d5e4575ab9d00a891fa0a23bb6a0439f0d88858",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Celer/seed_115/solver.json",
+      "bytes": 1499,
+      "sha256": "e9506041c5da07a03a37f3d8b118426b8128205319c2ffd25fd976909f96d08d",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Celer/seed_115/synthetic_seed_stratification.json",
+      "bytes": 8779,
+      "sha256": "659ee2f3160cdbec5f76e9868a5e9ceec509a52adf730209d709957e2e49636a",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Celer/seed_115/transport_uot.npz",
+      "bytes": 769096,
+      "sha256": "1d265c84ab89e21903ab12b90faeaf163592b4844a60281129e81c035518b7d8",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Celer/seed_206/cost.npz",
+      "bytes": 6124238,
+      "sha256": "2a0a21e1520e7068707035cab26a99b19ff4b2d0a795cf264952170d5b7155f8",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Celer/seed_206/flow_label_stats.json",
+      "bytes": 56,
+      "sha256": "1de09d9d5e626963ada883a6fe992be939c76ee7bbfd89701dc7b9b592475bb3",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Celer/seed_206/flow_segments_bnb_synth.csv",
+      "bytes": 193929,
+      "sha256": "c23eda4c5a51fb52160e40524f65b0c5a99188c01a4cf83b5ab247d56e137387",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Celer/seed_206/flow_segments_eth_synth.csv",
+      "bytes": 168069,
+      "sha256": "985a996463c5747762d5ce7a53d730b1ef24568a8ae0b0826b3acba929095c34",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Celer/seed_206/ids.npz",
+      "bytes": 35722,
+      "sha256": "e4c6b2bff3eba665d8751d8552dec88e97633e4d0b937346aefcbf8890ea5924",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Celer/seed_206/labels/synthetic_flow_labels.csv",
+      "bytes": 83463,
+      "sha256": "6a1c2380cf067169c7cf05fd56b70b4ee28e06bcff16867169c8cb203f7e8520",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Celer/seed_206/labels/synthetic_uot_eval_metrics.json",
+      "bytes": 219052,
+      "sha256": "c2dbee72e3290e015103d5a02f8ef940eb2c9f41ad666b576a998b68f9f2c038",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Celer/seed_206/labels.csv",
+      "bytes": 83844,
+      "sha256": "d7fa99fc7305693ed2a30f4b25f26e785c5d19b2d5edcef3e1d02f05ee0a8c9f",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Celer/seed_206/solver.json",
+      "bytes": 1504,
+      "sha256": "4b0f66a1ce488f4ef844873243d75fe2aa46b9aa59d1006b433218c1f5947c2f",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Celer/seed_206/synthetic_seed_stratification.json",
+      "bytes": 8779,
+      "sha256": "11ddd04d46078409685b4333eaffa9f385c3ce06a53eb0e9bed139d3f095940b",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Celer/seed_206/transport_uot.npz",
+      "bytes": 776400,
+      "sha256": "52fa74f791788ce2fbb6d2573110662898c44c119f67f25cc2f620e2f8158000",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Celer/seed_207/cost.npz",
+      "bytes": 6401678,
+      "sha256": "9e97287ad590ed07d33a8d16cab5ef07b9b2655a2c9d30b0dd7581f94b13a14d",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Celer/seed_207/flow_label_stats.json",
+      "bytes": 56,
+      "sha256": "1de09d9d5e626963ada883a6fe992be939c76ee7bbfd89701dc7b9b592475bb3",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Celer/seed_207/flow_segments_bnb_synth.csv",
+      "bytes": 202866,
+      "sha256": "9a769a9caf43487c429f0ff45c509bf122f93c2a689e2e0ad08726f341111346",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Celer/seed_207/flow_segments_eth_synth.csv",
+      "bytes": 166586,
+      "sha256": "d4c45be92849c3e4dea4a413f694739dcdf50b44232ac793f35644394d263e5e",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Celer/seed_207/ids.npz",
+      "bytes": 36442,
+      "sha256": "70fc3efc2c6331a204d92f866932314f5ba87fbfd977bd7e956bc49c4e3ff3de",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Celer/seed_207/labels/synthetic_flow_labels.csv",
+      "bytes": 84792,
+      "sha256": "0363f176b22ba785fca7f3f98094d0d700fb2fabff27cc6f7061dd8b50661050",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Celer/seed_207/labels/synthetic_uot_eval_metrics.json",
+      "bytes": 224491,
+      "sha256": "02c59864571c8edcbb6111be469f0c649f930d0aa34ce0afad62f84a14c31d68",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Celer/seed_207/labels.csv",
+      "bytes": 85188,
+      "sha256": "72bc8320402e14dcbddc14d8a5ae8b6eb52cfc60a83f2d342467c41bf88eee84",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Celer/seed_207/solver.json",
+      "bytes": 1503,
+      "sha256": "15ccb9aafa11b9a13d8cc9b319e09e4bb1e6a58f1a4c787f20975808b0c4b988",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Celer/seed_207/synthetic_seed_stratification.json",
+      "bytes": 8779,
+      "sha256": "d8fb22a9169a3468e88ca025a47ac8096709b49ca14a3c4f345a9ab0a7d36216",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Celer/seed_207/transport_uot.npz",
+      "bytes": 811320,
+      "sha256": "27651a1e79b1361ad0d83ee94edcb3f7b640603d46e0b129b5fb069ecf3575ed",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Celer/seed_208/cost.npz",
+      "bytes": 5881870,
+      "sha256": "59bec677dade53ed94aa470a5856a8de206d51fb1bfd06e78eb0ae1b82cbcfee",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Celer/seed_208/flow_label_stats.json",
+      "bytes": 56,
+      "sha256": "1de09d9d5e626963ada883a6fe992be939c76ee7bbfd89701dc7b9b592475bb3",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Celer/seed_208/flow_segments_bnb_synth.csv",
+      "bytes": 187818,
+      "sha256": "23195f4f6b3934189887266ceff6c54423874f0aa85830adaaa7405fb2a6c9e7",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Celer/seed_208/flow_segments_eth_synth.csv",
+      "bytes": 167265,
+      "sha256": "7c81a4585447b980e861d3d81b891d80ad73fa36284623c6dc16ff62a147f97c",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Celer/seed_208/ids.npz",
+      "bytes": 35078,
+      "sha256": "5ef41b64c6b4f094de13844859a2deaffd0a3d001c973a90a7435010b68ce9a9",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Celer/seed_208/labels/synthetic_flow_labels.csv",
+      "bytes": 77967,
+      "sha256": "0e7a3eff33183bcdf638d74cf350a8b4afc1e800488180ce10a85f103b3428ed",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Celer/seed_208/labels/synthetic_uot_eval_metrics.json",
+      "bytes": 214273,
+      "sha256": "f6ef7e97f5025c6118c00f4a120b7e378aa265c048ca1fd32a12c26bfa1a2be8",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Celer/seed_208/labels.csv",
+      "bytes": 78335,
+      "sha256": "4819f62b6054040f070e0a51e98696676c82428330ee0e163539c9d8376669a3",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Celer/seed_208/solver.json",
+      "bytes": 1502,
+      "sha256": "50d17696f358b9ac2e56373d4eaa99fd8dfbe78d3e979de6c0773db5ad1ec0e5",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Celer/seed_208/synthetic_seed_stratification.json",
+      "bytes": 8779,
+      "sha256": "03d841ed02874788aacbf9367174ac258dd7fff3d2dd942b0a15fb657a241166",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Celer/seed_208/transport_uot.npz",
+      "bytes": 745896,
+      "sha256": "c344a30636e9a90549c7f685a658fb30293f9379eaa4a93da73534a3214032c6",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Celer/seed_209/cost.npz",
+      "bytes": 6423822,
+      "sha256": "0bd48cc50aa539dd08410a21507720aeaff6339d0117ad25f8fe19000dbb82f1",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Celer/seed_209/flow_label_stats.json",
+      "bytes": 56,
+      "sha256": "1de09d9d5e626963ada883a6fe992be939c76ee7bbfd89701dc7b9b592475bb3",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Celer/seed_209/flow_segments_bnb_synth.csv",
+      "bytes": 202507,
+      "sha256": "b4eee31c9a78ef2b4466bcb987a9e12a56e4f0ec630aed608757517c3867c5f9",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Celer/seed_209/flow_segments_eth_synth.csv",
+      "bytes": 167761,
+      "sha256": "055a12ca6140f2e2c0c2f982c09d229a7099a5b66f330f214e9434c8f33ece53",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Celer/seed_209/ids.npz",
+      "bytes": 36510,
+      "sha256": "06f140258653a506697a927ffc2152e0acc52052630373e0d9f1e2a30e96fcfd",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Celer/seed_209/labels/synthetic_flow_labels.csv",
+      "bytes": 86114,
+      "sha256": "747bbef24eff3a53d23c48cdb536f55f0d0b33a8cd7d82e5a7384b3d32ec07bd",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Celer/seed_209/labels/synthetic_uot_eval_metrics.json",
+      "bytes": 224928,
+      "sha256": "ad85789ec9bf286aea381d88fefa6a1500bc724520cc5d57a2b72ef9207f9ea8",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Celer/seed_209/labels.csv",
+      "bytes": 86511,
+      "sha256": "f8c719740fdcc31ce816b5c1338c3ab7ea534248dbdd22df3e765c0da43a6e09",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Celer/seed_209/solver.json",
+      "bytes": 1500,
+      "sha256": "20aea32e5748d64c46d129508045031269d21f6c219c3b84a91957c57cdbe4af",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Celer/seed_209/synthetic_seed_stratification.json",
+      "bytes": 8779,
+      "sha256": "031dfd0f5256bed49b88d2c14861f5441b2713aeedea4fbc7cdbd33548614ba6",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Celer/seed_209/transport_uot.npz",
+      "bytes": 814104,
+      "sha256": "b471321e0cffef318c33b95e12b734d68d5ff41400f5de66bd2b84b8c3d7d131",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Celer/seed_210/cost.npz",
+      "bytes": 6163982,
+      "sha256": "72372aafc7daee23e8e707bfa54e4be9e665e2960e8c1c9fc2265b7d978efcb9",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Celer/seed_210/flow_label_stats.json",
+      "bytes": 56,
+      "sha256": "1de09d9d5e626963ada883a6fe992be939c76ee7bbfd89701dc7b9b592475bb3",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Celer/seed_210/flow_segments_bnb_synth.csv",
+      "bytes": 195032,
+      "sha256": "bf2ccbc9421216e58b238cebcf30bd3576518893c99497151735660fd150bc08",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Celer/seed_210/flow_segments_eth_synth.csv",
+      "bytes": 164867,
+      "sha256": "fd8c5f83653bb0b899e4c524b29fb60419a62b9aa04fa522fbece91c9fe8dfe2",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Celer/seed_210/ids.npz",
+      "bytes": 35838,
+      "sha256": "28a98692c72acf25f18abf243d1320e3ff6870b4b0bdf37c804c0beb0f4e9d53",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Celer/seed_210/labels/synthetic_flow_labels.csv",
+      "bytes": 80821,
+      "sha256": "a5f49a9e5b472ce48ed7b181e137badff3523e703417563d1b9c1ac189ac8643",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Celer/seed_210/labels/synthetic_uot_eval_metrics.json",
+      "bytes": 220078,
+      "sha256": "086a21d534efd43b3d2025f3291fecd0c9e9afeaa6f03e023a6695a4cc47e7ab",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Celer/seed_210/labels.csv",
+      "bytes": 81204,
+      "sha256": "877547dff6be443695fc9a6d565a9719370a07fdc5e82cdb309925724ff67745",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Celer/seed_210/solver.json",
+      "bytes": 1501,
+      "sha256": "a8d9e5e40e5f16639bc650c17eff75c1f6b8997e0c1221b5627533b8774dcbb8",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Celer/seed_210/synthetic_seed_stratification.json",
+      "bytes": 8779,
+      "sha256": "695a4d102dd6404f9d702b0c298da8acef88f5a6f1e0dc0472a8297ee2c31ba8",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Celer/seed_210/transport_uot.npz",
+      "bytes": 781400,
+      "sha256": "57e8be9c2d42cc2c4ccfd782a0a236934bada2a41b436cf1ebae8cb4956ddb97",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Celer/seed_211/cost.npz",
+      "bytes": 6734606,
+      "sha256": "3af976b756ced3fd592841f9187f5f7f2da0386a3506a4cbfa8129007c99a7ec",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Celer/seed_211/flow_label_stats.json",
+      "bytes": 56,
+      "sha256": "1de09d9d5e626963ada883a6fe992be939c76ee7bbfd89701dc7b9b592475bb3",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Celer/seed_211/flow_segments_bnb_synth.csv",
+      "bytes": 213413,
+      "sha256": "3c51c3ec076232ce10e8eace797e0c7052d9c5879c446f10af911a4c47c938b9",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Celer/seed_211/flow_segments_eth_synth.csv",
+      "bytes": 165888,
+      "sha256": "7bb9ba08473df7da9407099b4f7c574d683b2eec0a5f3973b261e8c3e3cad378",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Celer/seed_211/ids.npz",
+      "bytes": 37306,
+      "sha256": "bbc477bf4b27f81f403dae59d4e205fac793511d511122e1d73d1e873a8efe2a",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Celer/seed_211/labels/synthetic_flow_labels.csv",
+      "bytes": 87876,
+      "sha256": "c6fdc3f416dce212b448a7c669e4fd3a3ae23b3119255bdbc1c0768a398aa763",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Celer/seed_211/labels/synthetic_uot_eval_metrics.json",
+      "bytes": 231273,
+      "sha256": "5c7c166215d9d8deb669b8ea8cb87f07098e904b19c04eb7907f8ad388c84d55",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Celer/seed_211/labels.csv",
+      "bytes": 88290,
+      "sha256": "05f0b8fd8b5bb51f590ad401eb8d1622a14da8c41a0c3e3442500e14ae82f922",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Celer/seed_211/solver.json",
+      "bytes": 1498,
+      "sha256": "e54dff003d2ef36a87d62059902aacb2bb3cb0507860c9111b6434787599ae86",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Celer/seed_211/synthetic_seed_stratification.json",
+      "bytes": 8779,
+      "sha256": "188efa201ff2ca1d7edf0fe589b710100b0f9d24d88141ecf50a9680eb46a2a0",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Celer/seed_211/transport_uot.npz",
+      "bytes": 853224,
+      "sha256": "9a067388aaeb31ef9f2c6f98929200b4eafe64018665dd0412e6b7e0298c42cd",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Multi/seed_112/cost.npz",
+      "bytes": 6882574,
+      "sha256": "f0b896b449fab0053de6dfcacf508ab3a2fcd9874141420cccb62980d847a529",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Multi/seed_112/flow_label_stats.json",
+      "bytes": 56,
+      "sha256": "00b9ba7f0493eba14a71504415c58d47ce61d8bbab19360ad2914ca7ec1be305",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Multi/seed_112/flow_segments_bnb_synth.csv",
+      "bytes": 192201,
+      "sha256": "8ad85a16aafe641c3276affbfe4cdeea17e1ff9ac58d01457072821b10d1a754",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Multi/seed_112/flow_segments_eth_synth.csv",
+      "bytes": 146740,
+      "sha256": "83fe2a0d9494e13e60b334bbe667bc41bf11d995857542a00f3ea3df4f4a487f",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Multi/seed_112/ids.npz",
+      "bytes": 37690,
+      "sha256": "5b762d6128e741d4bb54b89777232fccdcc62cbf42e07d4b754f1322434e77f8",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Multi/seed_112/labels/synthetic_flow_labels.csv",
+      "bytes": 131906,
+      "sha256": "1ce0ef5d51b4d343124fe770bae80c7fe23ba1aab7a60c4f5d10da06a7765d13",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Multi/seed_112/labels/synthetic_uot_eval_metrics.json",
+      "bytes": 234231,
+      "sha256": "f34bf95f5747aff861fe8016eec00c8fb135c47088d8413b42eaf26c16c13556",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Multi/seed_112/labels.csv",
+      "bytes": 132328,
+      "sha256": "2e5a66baf75c5f49fdd9a12326bdda0269bd39ad0f5d5e8e91da18b56424436c",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Multi/seed_112/solver.json",
+      "bytes": 1504,
+      "sha256": "175dc6d6f7b9b24d0493a5a0819565fbfc71d3f00149ab0ddebb09ddcf714da9",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Multi/seed_112/synthetic_seed_stratification.json",
+      "bytes": 8779,
+      "sha256": "6050fc7ce46c0939d1875363e9bd039e7a8d75d8f1553a3a4f5c7b12751ededb",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Multi/seed_112/transport_uot.npz",
+      "bytes": 871848,
+      "sha256": "dcc84658688fb2e8d482cd667f7188e9c6c0f9f762de25d6d0dc431b88ddbd58",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Multi/seed_113/cost.npz",
+      "bytes": 5996942,
+      "sha256": "a8bd6d30970644121258c3ac39a3bbbb73533963a3de4b22c103b6debe444c05",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Multi/seed_113/flow_label_stats.json",
+      "bytes": 56,
+      "sha256": "00b9ba7f0493eba14a71504415c58d47ce61d8bbab19360ad2914ca7ec1be305",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Multi/seed_113/flow_segments_bnb_synth.csv",
+      "bytes": 165898,
+      "sha256": "f1122981193c014694c182f8b7b0f769788706c399208ca93a7705901c3dd520",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Multi/seed_113/flow_segments_eth_synth.csv",
+      "bytes": 146955,
+      "sha256": "0df72eccd756e73d85d60fdf8c22524209f8cad792df2381706619ecb3e0efd1",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Multi/seed_113/ids.npz",
+      "bytes": 35406,
+      "sha256": "2c034a61f0117a94a2a8f11db27789e9522a04236d203a94523da9c5d06d5faf",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Multi/seed_113/labels/synthetic_flow_labels.csv",
+      "bytes": 115522,
+      "sha256": "2cc82f56676e24754490cba29fb135b3822e2361481b28467efb4bacaf27360f",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Multi/seed_113/labels/synthetic_uot_eval_metrics.json",
+      "bytes": 216770,
+      "sha256": "5a5728e6e4a3c62ad0db15929fc45f9d776e922cd480f3b7d107575bb8f0238a",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Multi/seed_113/labels.csv",
+      "bytes": 115896,
+      "sha256": "24216bfb424d2921aed0752e9c812736c01f114a384f13fa0134f66133fcedea",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Multi/seed_113/solver.json",
+      "bytes": 1500,
+      "sha256": "db28f0fbb6cb48baf718e918cb499f73d87a5d3849f501409ebc49d834fe23b2",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Multi/seed_113/synthetic_seed_stratification.json",
+      "bytes": 8779,
+      "sha256": "13857a18b2c979540e68f43ce5257b243b7e15bcfbe37c1e08c404fada8e70c9",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Multi/seed_113/transport_uot.npz",
+      "bytes": 760376,
+      "sha256": "20684fdbcdb3e52d861c6483a7098228d1a73cafb6be74dbe579dee0d40a8742",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Multi/seed_114/cost.npz",
+      "bytes": 6235214,
+      "sha256": "099c315b61b6c8d0da212e16bb100a69c9afde70388ed8775b9b5003ef361c26",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Multi/seed_114/flow_label_stats.json",
+      "bytes": 56,
+      "sha256": "00b9ba7f0493eba14a71504415c58d47ce61d8bbab19360ad2914ca7ec1be305",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Multi/seed_114/flow_segments_bnb_synth.csv",
+      "bytes": 173895,
+      "sha256": "e3255dd604d546fd803d50e1dac2295788e561e99744e986ad20fd5dfa19b932",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Multi/seed_114/flow_segments_eth_synth.csv",
+      "bytes": 144986,
+      "sha256": "8b1714f5a0fb4daf60bddbdae0affcd53ec55aea19d4fddc82756d16eb38b6ed",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Multi/seed_114/ids.npz",
+      "bytes": 36010,
+      "sha256": "055a7c59eea9645140d5917419560b1cd9771522c977d6a04564402d3a943454",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Multi/seed_114/labels/synthetic_flow_labels.csv",
+      "bytes": 119035,
+      "sha256": "fe209de976bbcfd8840abafb1574fad42abea42261f033f6f3e2a6be9ac956be",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Multi/seed_114/labels/synthetic_uot_eval_metrics.json",
+      "bytes": 221425,
+      "sha256": "8fcc7da0df97b1be8fec232ff59a6a3e45552498ef7fa2b6d8367ba7a4600781",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Multi/seed_114/labels.csv",
+      "bytes": 119422,
+      "sha256": "0fb221f57bc88f2ecc44e578fa17826cc79fd70ab344470705fca04d07526513",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Multi/seed_114/solver.json",
+      "bytes": 1501,
+      "sha256": "a680b7b257b703ee1c226023745ffbcf4f613a08a45db74ac79f84b76d11897b",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Multi/seed_114/synthetic_seed_stratification.json",
+      "bytes": 8779,
+      "sha256": "b6b184a66642476040a52dae7bd38d146260003895d706f219168e3c83ed6889",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Multi/seed_114/transport_uot.npz",
+      "bytes": 790368,
+      "sha256": "e553c8011b4198b54ec074d95bba0442162c713ae43409d476d79ee803cfec94",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Multi/seed_115/cost.npz",
+      "bytes": 6068750,
+      "sha256": "19facec21031e7d14ff52deb6171c68632391da8d99388cf9fe377cbedc01b89",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Multi/seed_115/flow_label_stats.json",
+      "bytes": 56,
+      "sha256": "00b9ba7f0493eba14a71504415c58d47ce61d8bbab19360ad2914ca7ec1be305",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Multi/seed_115/flow_segments_bnb_synth.csv",
+      "bytes": 168269,
+      "sha256": "a8657ec14c465d219c69f91489fcd6b74329aa48bfe4c46709e937a50f675344",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Multi/seed_115/flow_segments_eth_synth.csv",
+      "bytes": 145125,
+      "sha256": "f0300c283f9f6fcc53346c5191c6ffb54e75a0dbfef73caad7548c9ea197942e",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Multi/seed_115/ids.npz",
+      "bytes": 35578,
+      "sha256": "7aa4ae97225bd6a3ddb6069ac207e7bc489b52fa86b8a617fe9548e5e612443a",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Multi/seed_115/labels/synthetic_flow_labels.csv",
+      "bytes": 116104,
+      "sha256": "62ca3d02ee0fcc46580336a7ae1ecb66386e40ba93cd7af01bb1068698579226",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Multi/seed_115/labels/synthetic_uot_eval_metrics.json",
+      "bytes": 218054,
+      "sha256": "1182bae29b58ea868ecdfd44f47bfe182d3d4bd3e30130243675e350bb7d2bc7",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Multi/seed_115/labels.csv",
+      "bytes": 116482,
+      "sha256": "ceb7e54ecb39ac7a53bf22fdf01cee7e4fffa8176c962c79379a266b3b8a8147",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Multi/seed_115/solver.json",
+      "bytes": 1497,
+      "sha256": "f04f6291bbaf0dcfbdf0fe0e08e3bea3436020061b2c4b250282cd0a26d999c8",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Multi/seed_115/synthetic_seed_stratification.json",
+      "bytes": 8779,
+      "sha256": "7fa4618aaf88fceffb876230658caa845abb685eec5ea5996ab21f2e87c7677d",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Multi/seed_115/transport_uot.npz",
+      "bytes": 769416,
+      "sha256": "c8850d71496bbe4d20d89d3bbf915fbd72e7eda4bca01312ae0496f22fb1fba3",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Multi/seed_206/cost.npz",
+      "bytes": 6029326,
+      "sha256": "7cb53c25dc38ccbb9dabb5b5885cd2f6bc307b97475301c617f37e35346df933",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Multi/seed_206/flow_label_stats.json",
+      "bytes": 56,
+      "sha256": "00b9ba7f0493eba14a71504415c58d47ce61d8bbab19360ad2914ca7ec1be305",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Multi/seed_206/flow_segments_bnb_synth.csv",
+      "bytes": 167261,
+      "sha256": "7e6e364626c09b5ba9702eec34ceea0914cbc777299c1b045763d469dccf2eb4",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Multi/seed_206/flow_segments_eth_synth.csv",
+      "bytes": 143591,
+      "sha256": "859fe144e3f94d05f14a996b9f177a39a5362534a4925a8b47c1bf144bb6e58c",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Multi/seed_206/ids.npz",
+      "bytes": 35462,
+      "sha256": "64a5628b029c0c730c6c0eeba88ee2f990e8f6988caed391019ad95ca31249b7",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Multi/seed_206/labels/synthetic_flow_labels.csv",
+      "bytes": 114766,
+      "sha256": "19697024df84b7ecfed5c005fdc007726378cd66e7a45ff1211c4182b0bf1fdc",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Multi/seed_206/labels/synthetic_uot_eval_metrics.json",
+      "bytes": 217139,
+      "sha256": "ba229efc86ca0dd71fb6c3ebe80f5fe280bdcafe496e49db520bf6cd97222858",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Multi/seed_206/labels.csv",
+      "bytes": 115142,
+      "sha256": "2ce097d5d27239c7da0852c2df98fab79ecf53cc96c7ce63fcecf3178857fe87",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Multi/seed_206/solver.json",
+      "bytes": 1504,
+      "sha256": "546a03d4fe120cdf6ea1a9da81fa74d5feca74b5d32a87da9b573b7f8475a67f",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Multi/seed_206/synthetic_seed_stratification.json",
+      "bytes": 8779,
+      "sha256": "26a22a4e9cde78b12ccb35eec3be42d4a85d5bb46be0ad8e406f7a9e1b1df31a",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Multi/seed_206/transport_uot.npz",
+      "bytes": 764456,
+      "sha256": "73d4a533f8794d715f5fa3e33887871558377e5077f468d6821e948dd7100a91",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Multi/seed_207/cost.npz",
+      "bytes": 6010894,
+      "sha256": "b34d7f593c6dab84355ab9481ff0827e82a365afc49abd0d62653196ddfc9e7b",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Multi/seed_207/flow_label_stats.json",
+      "bytes": 56,
+      "sha256": "00b9ba7f0493eba14a71504415c58d47ce61d8bbab19360ad2914ca7ec1be305",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Multi/seed_207/flow_segments_bnb_synth.csv",
+      "bytes": 167968,
+      "sha256": "083779a9fca535da40373fadb86b5c97433f4ef8dedb76265cae2d4b941e8d68",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Multi/seed_207/flow_segments_eth_synth.csv",
+      "bytes": 144989,
+      "sha256": "96e1dfef8bf794bf4567a87ea25b6b473c62cfe74378260578ef3ee1c8dfacd0",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Multi/seed_207/ids.npz",
+      "bytes": 35414,
+      "sha256": "1671a39cafe7f75a64026875aab01085c721ebfad6b1a7237de5d20c102b83e9",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Multi/seed_207/labels/synthetic_flow_labels.csv",
+      "bytes": 116078,
+      "sha256": "729df2212b5c599193ac762ad5651333e8df07abae449986abf81f68810c53c1",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Multi/seed_207/labels/synthetic_uot_eval_metrics.json",
+      "bytes": 216961,
+      "sha256": "4ec088eb13941da0c3752b7f0da985a716ce132045ade66fe1bd98b254ad6622",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Multi/seed_207/labels.csv",
+      "bytes": 116453,
+      "sha256": "efc489df0aafe87c4bc1da0af66f9bfc6f0ad9a8711cd37b00d86b3adb680edc",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Multi/seed_207/solver.json",
+      "bytes": 1502,
+      "sha256": "d43649536dbf31dbb3653ea897fe0163ac2553e3e189fcc45b9ffe7fa2193b85",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Multi/seed_207/synthetic_seed_stratification.json",
+      "bytes": 8779,
+      "sha256": "03108f484ff3ac66813419d7e5ff92a91f082b492dec59b01643b3d1779da3ef",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Multi/seed_207/transport_uot.npz",
+      "bytes": 762136,
+      "sha256": "a0cfb49d5c24428fe28cc42a8f51d02bf7d11e83aba93deeb5c851307c4d865f",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Multi/seed_208/cost.npz",
+      "bytes": 6047758,
+      "sha256": "70e25d531415c168a6da1fa6f1002965370584f3f838c25c6adc17e2c3c539e4",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Multi/seed_208/flow_label_stats.json",
+      "bytes": 56,
+      "sha256": "00b9ba7f0493eba14a71504415c58d47ce61d8bbab19360ad2914ca7ec1be305",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Multi/seed_208/flow_segments_bnb_synth.csv",
+      "bytes": 169028,
+      "sha256": "beec90f892730c0941f7e6f04be0e654aa8565d8690cb5608aea6d60d511d76c",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Multi/seed_208/flow_segments_eth_synth.csv",
+      "bytes": 145463,
+      "sha256": "b751aadebd2ef6a21b7a9929f84580ba58f29a791416c422e3e3594c70f0ba5f",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Multi/seed_208/ids.npz",
+      "bytes": 35510,
+      "sha256": "cb5b777c0fa3da9c4beff90685c725fcd7aed28cfe2e6586815c614d94306cc3",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Multi/seed_208/labels/synthetic_flow_labels.csv",
+      "bytes": 116226,
+      "sha256": "6750f9ba6e7667957c0e5d3a84f6f198a3adb9028e0b44ea74cb3a72ff050ad9",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Multi/seed_208/labels/synthetic_uot_eval_metrics.json",
+      "bytes": 217759,
+      "sha256": "3ff95aa6b728eb6c1e82f3d25de3914f748d2c954c7ac50c5cd73d6afb753eda",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Multi/seed_208/labels.csv",
+      "bytes": 116603,
+      "sha256": "23242d90991ddc16504d8cea9dade63c46995635a4c95ccc1de1b74e437c6775",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Multi/seed_208/solver.json",
+      "bytes": 1501,
+      "sha256": "de259f572ef33e0057ed6962c68140b3a106262e33589565442cf34a8e27fed4",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Multi/seed_208/synthetic_seed_stratification.json",
+      "bytes": 8779,
+      "sha256": "75eb99ec4d6e7531a06d15190d303d8048038140b8cf5761101189284d5025eb",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Multi/seed_208/transport_uot.npz",
+      "bytes": 766776,
+      "sha256": "fd73acdde1a014331b74a7660f4fe34bfaf161fda4333c275958045bfe3f970f",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Multi/seed_209/cost.npz",
+      "bytes": 6324238,
+      "sha256": "36d8a0f92f6b9ec709cad4960942a32396d5eb886553d6dbfca8603fd2703918",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Multi/seed_209/flow_label_stats.json",
+      "bytes": 56,
+      "sha256": "00b9ba7f0493eba14a71504415c58d47ce61d8bbab19360ad2914ca7ec1be305",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Multi/seed_209/flow_segments_bnb_synth.csv",
+      "bytes": 176171,
+      "sha256": "8eb14744ce78681a4466865fc64fa1d170e42a5e8a69515b498bbfe9e723b4ba",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Multi/seed_209/flow_segments_eth_synth.csv",
+      "bytes": 144041,
+      "sha256": "2f6b9a92bd160756a9c79338994192d98250a1b1b496e826dace17b6c307c230",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Multi/seed_209/ids.npz",
+      "bytes": 36230,
+      "sha256": "1325f420d03e31279f6a086a8ea6bb67697fb6663cdcf7f655b0200231af6741",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Multi/seed_209/labels/synthetic_flow_labels.csv",
+      "bytes": 119791,
+      "sha256": "4d72c8dcd547c0e7ab095ae0f6ebd0ac3ef5e10c07937586c2f94bc67d2bbb54",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Multi/seed_209/labels/synthetic_uot_eval_metrics.json",
+      "bytes": 223035,
+      "sha256": "aa3b7da4932a09db279615e8a0cba25f1117b6b38dc2d34cef5c720a48b29af3",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Multi/seed_209/labels.csv",
+      "bytes": 120183,
+      "sha256": "d21b8383944c309308cb67e2f8014d64c3133761055c3b39f4eab969e0eba2ad",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Multi/seed_209/solver.json",
+      "bytes": 1502,
+      "sha256": "ef10b5dd9f8d3ebc5239e6025e30b32338b479e7b0a1ab1034217c0b3d2edb00",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Multi/seed_209/synthetic_seed_stratification.json",
+      "bytes": 8779,
+      "sha256": "bc87cbebb581cd5729e4a994b25a0104fb4e1fbfee15001e1c3953f411922907",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Multi/seed_209/transport_uot.npz",
+      "bytes": 801576,
+      "sha256": "bcb7feb69a1860c7edad7b4911a1c12f2e521406b714bac2593d67e595410e65",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Multi/seed_210/cost.npz",
+      "bytes": 6253710,
+      "sha256": "bfe233ac1ff5a20080bb14da758d1d1b3daa427bd256a68ddc3bba0d0039f2b7",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Multi/seed_210/flow_label_stats.json",
+      "bytes": 56,
+      "sha256": "00b9ba7f0493eba14a71504415c58d47ce61d8bbab19360ad2914ca7ec1be305",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Multi/seed_210/flow_segments_bnb_synth.csv",
+      "bytes": 173716,
+      "sha256": "4d098a7ddc56836ea82e19d47a3b6add1c7380bf14c0f781356cd030e0884d20",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Multi/seed_210/flow_segments_eth_synth.csv",
+      "bytes": 145047,
+      "sha256": "53fb91e67fead17c19691ac1953a07ceb8e0542793506587bd0b5dede294394c",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Multi/seed_210/ids.npz",
+      "bytes": 36058,
+      "sha256": "7608e0e5b7ed7492508857998985017615e02fd8222c234d1b67a91cbd3a1d53",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Multi/seed_210/labels/synthetic_flow_labels.csv",
+      "bytes": 118897,
+      "sha256": "89e728b17278a071578fd723d8a36e722f18031f5354e417edf13e0db59f1280",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Multi/seed_210/labels/synthetic_uot_eval_metrics.json",
+      "bytes": 221605,
+      "sha256": "de16b2abe58a168519282e695ee1d664084a5d4529a9d1bc9056f9a01353f634",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Multi/seed_210/labels.csv",
+      "bytes": 119285,
+      "sha256": "659f6ddeadbcbedf7a48d8147e57b46f77614db494f19cb5372abd6c035b3f14",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Multi/seed_210/solver.json",
+      "bytes": 1499,
+      "sha256": "d4fee60ca27f12ab59b048c9296c41ead9a1dddeb9a1a0a061f916493381d548",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Multi/seed_210/synthetic_seed_stratification.json",
+      "bytes": 8779,
+      "sha256": "0a5cd84faad21e6be878400ceedb8e884afebcd3c40a94f5381383af8a3ad3e4",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Multi/seed_210/transport_uot.npz",
+      "bytes": 792696,
+      "sha256": "93f6b30504e75b72b23215202708f118cde4bb4e5672ae5d7fb03ba1ee22858c",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Multi/seed_211/cost.npz",
+      "bytes": 6066190,
+      "sha256": "e04e83378efc5a5963bc75a47b7d7c5df8dae007eca4083cec2c91ba95206ded",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Multi/seed_211/flow_label_stats.json",
+      "bytes": 56,
+      "sha256": "00b9ba7f0493eba14a71504415c58d47ce61d8bbab19360ad2914ca7ec1be305",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Multi/seed_211/flow_segments_bnb_synth.csv",
+      "bytes": 169491,
+      "sha256": "b664a88b7b3fd7243142d815a4c4e8393b6ca2f67b10f40bb9dd0ce7cf0f8892",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Multi/seed_211/flow_segments_eth_synth.csv",
+      "bytes": 145111,
+      "sha256": "5cbdced0f33b1199e94e05f7f1061402efd77e51e187510dfb14f257626d2c1b",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Multi/seed_211/ids.npz",
+      "bytes": 35558,
+      "sha256": "065d937de23415c53144572665f8b900398c3491b86b0f156bc1ad78032f939b",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Multi/seed_211/labels/synthetic_flow_labels.csv",
+      "bytes": 116431,
+      "sha256": "920afbfd24aaabe9a04c80c54f74f0c62ac15bab4cba1453d2f38c848e938d72",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Multi/seed_211/labels/synthetic_uot_eval_metrics.json",
+      "bytes": 218369,
+      "sha256": "9a3a40122c56a081a429ae1257ddede45cad97cdb9101f7e777a775856c72919",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Multi/seed_211/labels.csv",
+      "bytes": 116809,
+      "sha256": "47b3781b8dd629b1f3747a9f01e1f36fc7aae0e00a27cdb11e003bd4e8721dca",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Multi/seed_211/solver.json",
+      "bytes": 1499,
+      "sha256": "5f5d474d66accb4d4bcce646cad4bb8eb0cbe720f1505fbab81e160e1cbb774c",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Multi/seed_211/synthetic_seed_stratification.json",
+      "bytes": 8779,
+      "sha256": "de495a5c222ee7fe07128c2909125af46ecfb1af89441a216986fe0159b6411c",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Multi/seed_211/transport_uot.npz",
+      "bytes": 769096,
+      "sha256": "923aa172e2c00b1b79ad7e2956f751ee7a0731be77aefbdb7b061a8d3a34b83e",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Poly/seed_112/cost.npz",
+      "bytes": 6047758,
+      "sha256": "02c3038fac01fa611d1067341311e7c82b1d346b339680ac78c6e6a52cae7ef3",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Poly/seed_112/flow_label_stats.json",
+      "bytes": 56,
+      "sha256": "498565a16767a12a2263fee107ebb8a0be4853e492c3ff4705ed932b500bc280",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Poly/seed_112/flow_segments_bnb_synth.csv",
+      "bytes": 175728,
+      "sha256": "a8768ffd4d48519e4030080b90d38f9af90d4fadfb2d55266ea9ebc4211771e4",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Poly/seed_112/flow_segments_eth_synth.csv",
+      "bytes": 162075,
+      "sha256": "cdc721b66adfcee0913040dbfb0770f1ed419ee4311b80ea57884042ab56ed75",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Poly/seed_112/ids.npz",
+      "bytes": 35510,
+      "sha256": "a40be2cf56a03ae748199b46059948627c5336f3f0620e2d7d3042b86ca8dd49",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Poly/seed_112/labels/synthetic_flow_labels.csv",
+      "bytes": 124942,
+      "sha256": "4391efd16d35a290614e77ae90a5a0d9b7ef48de2c4b5eecf2cf12a64ce4f176",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Poly/seed_112/labels/synthetic_uot_eval_metrics.json",
+      "bytes": 217645,
+      "sha256": "1bad7c520d28cf5fd4f29289a53b7c71bc171940aca7be362f159bdffbede30c",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Poly/seed_112/labels.csv",
+      "bytes": 125319,
+      "sha256": "606a7b21c3b08260d7e44ddaeffbf9c0fc70144b9bdd1ffb5ef89740c42d747e",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Poly/seed_112/solver.json",
+      "bytes": 1495,
+      "sha256": "90246301093aa32638f84fe021588e780a7d161fc8303e79ff90fa647295599e",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Poly/seed_112/synthetic_seed_stratification.json",
+      "bytes": 8757,
+      "sha256": "694fd636bc187601e494735a3f1570269263b5e127d8cc203f5e59a013e276cf",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Poly/seed_112/transport_uot.npz",
+      "bytes": 766776,
+      "sha256": "7a1243f0f53c48e1a15f8405c30642f6a683b38d618ed817e824ef830c24ec4a",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Poly/seed_113/cost.npz",
+      "bytes": 6179726,
+      "sha256": "8e575d27872180a63a524b89d19279e6e790669833531068c95d9e3dc91183fd",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Poly/seed_113/flow_label_stats.json",
+      "bytes": 56,
+      "sha256": "498565a16767a12a2263fee107ebb8a0be4853e492c3ff4705ed932b500bc280",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Poly/seed_113/flow_segments_bnb_synth.csv",
+      "bytes": 177964,
+      "sha256": "a79dc0f709d8531f9119f2d72f2e4a23cf99b5f81e871f6f5a0338af65ef28b2",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Poly/seed_113/flow_segments_eth_synth.csv",
+      "bytes": 161590,
+      "sha256": "bd0b43977711adab7f130c4623a109a4fa8d20ab8048cdd15dcb46d6802cddbb",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Poly/seed_113/ids.npz",
+      "bytes": 35866,
+      "sha256": "4f3ade6a07c631c8090175db92b21323c9fbc2fed643d126c6416f25d5d95e7e",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Poly/seed_113/labels/synthetic_flow_labels.csv",
+      "bytes": 127369,
+      "sha256": "7161d2a9b3b7a7c425150ec3ceba243675888139a6340263a3e13d52f3bdc15e",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Poly/seed_113/labels/synthetic_uot_eval_metrics.json",
+      "bytes": 220115,
+      "sha256": "f201729f1adf1130e012b17716f5ff206b42949d7e4027a958ddfd78f087cf11",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Poly/seed_113/labels.csv",
+      "bytes": 127753,
+      "sha256": "0e26f5b57e2c43cb184a7e3503051bb589d7fb53903ff4afbcd0507834a020ee",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Poly/seed_113/solver.json",
+      "bytes": 1497,
+      "sha256": "5327254450fcfcd0ae4e029ac8a0a2b9772996d7727bff395356daec2bff3e16",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Poly/seed_113/synthetic_seed_stratification.json",
+      "bytes": 8757,
+      "sha256": "716aa45225de4b254a2d4b2fe6cee2536f8756fdba491f04c2cd1cf7ddf3ec80",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Poly/seed_113/transport_uot.npz",
+      "bytes": 783384,
+      "sha256": "90a88ab26ec1673fc1150a488a5562b4a4f1cbb980028f18cd964ee35f4c070f",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Poly/seed_114/cost.npz",
+      "bytes": 6401678,
+      "sha256": "565809195a5f9a9a968cc4438229b89e0cef8823d1a4f7574fe5ae6d6fbc0fcd",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Poly/seed_114/flow_label_stats.json",
+      "bytes": 56,
+      "sha256": "498565a16767a12a2263fee107ebb8a0be4853e492c3ff4705ed932b500bc280",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Poly/seed_114/flow_segments_bnb_synth.csv",
+      "bytes": 184279,
+      "sha256": "c57f9a8c7bcd944c631618bbff0a8a49f62e0ae10d139a5e768d10ab2cabb5aa",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Poly/seed_114/flow_segments_eth_synth.csv",
+      "bytes": 161638,
+      "sha256": "7d53fad596873283086d69c71b7a2b5dddce8fd86197164c737cd3625f4a67d2",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Poly/seed_114/ids.npz",
+      "bytes": 36442,
+      "sha256": "193908ec46b3e974232f04b56d64c6b3d6d4289acd392a973695427ed6a1ecad",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Poly/seed_114/labels/synthetic_flow_labels.csv",
+      "bytes": 131341,
+      "sha256": "f7e62d5533de1b6e603967380f81359683deaf429482295b00b1724d7eb7c205",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Poly/seed_114/labels/synthetic_uot_eval_metrics.json",
+      "bytes": 224789,
+      "sha256": "7404823341bfef316154fb6eaeb2e6073fd7e199e47aace6f00e1ac3137bd24e",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Poly/seed_114/labels.csv",
+      "bytes": 131737,
+      "sha256": "cbaa4518f82b68b9b5d37f83e7ae9b970f02d652d7e8e030fd6e5e0cc0387f94",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Poly/seed_114/solver.json",
+      "bytes": 1500,
+      "sha256": "ded792e1bf807a8dd016672c7e665cbaae6c997f513a13b913f1e3c19d05d1c3",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Poly/seed_114/synthetic_seed_stratification.json",
+      "bytes": 8757,
+      "sha256": "55792cd1b69cdfe22ce684affa1504a53c9c4b687d0fc3bb8255842978006bb3",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Poly/seed_114/transport_uot.npz",
+      "bytes": 811320,
+      "sha256": "ca240eee3de888164201d3601d740afc98808f56fcd903052d2e8c2aa78ba76c",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Poly/seed_115/cost.npz",
+      "bytes": 6216718,
+      "sha256": "1f2cee3b214ebfd98bf2e88f2b361d3c53e621b85cca66014e1e42471d6aa182",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Poly/seed_115/flow_label_stats.json",
+      "bytes": 56,
+      "sha256": "498565a16767a12a2263fee107ebb8a0be4853e492c3ff4705ed932b500bc280",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Poly/seed_115/flow_segments_bnb_synth.csv",
+      "bytes": 180064,
+      "sha256": "8c8e713b82955440e16f14727adc83c8d08ad4b2f619ad2f82ce12dd4738c2d9",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Poly/seed_115/flow_segments_eth_synth.csv",
+      "bytes": 162756,
+      "sha256": "2975e1a786345b0b05fac339792a348d79c59a2cbb6003cee239782b388d747c",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Poly/seed_115/ids.npz",
+      "bytes": 35962,
+      "sha256": "33eda55c9e2bd91f5d7e2fe2c00aadc3992dc3b9606ed774c0c519fd19307f97",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Poly/seed_115/labels/synthetic_flow_labels.csv",
+      "bytes": 128052,
+      "sha256": "a29b95f1f65112898b1f3f93255f85733bb3ad7f65d5a25da6bf7a65aca1b065",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Poly/seed_115/labels/synthetic_uot_eval_metrics.json",
+      "bytes": 220943,
+      "sha256": "253c86cac5153de7e806eface27c8846613edeccb0823f57cd27c51ea3aa4083",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Poly/seed_115/labels.csv",
+      "bytes": 128438,
+      "sha256": "6e167b8b78167dde6f52d6351c5a407bf69443a84c08c8abed6a743a1ba9c932",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Poly/seed_115/solver.json",
+      "bytes": 1498,
+      "sha256": "62cdd07ab914e9c9681c1c08037a121b42e61202114fb64678914256e191b670",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Poly/seed_115/synthetic_seed_stratification.json",
+      "bytes": 8757,
+      "sha256": "df8164d56ee8c1cf4049071436f11381c95a0e30481afa20aefe53610db91fd5",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Poly/seed_115/transport_uot.npz",
+      "bytes": 788040,
+      "sha256": "8e879040b1d01549f83f65cb69101d8b43fca0791ca9a319027a717f13a3b062",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Poly/seed_206/cost.npz",
+      "bytes": 6268942,
+      "sha256": "cc4909a4899edcc56f99fdee4595533a9898641585ececb24c26e3c2f82ded4f",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Poly/seed_206/flow_label_stats.json",
+      "bytes": 56,
+      "sha256": "498565a16767a12a2263fee107ebb8a0be4853e492c3ff4705ed932b500bc280",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Poly/seed_206/flow_segments_bnb_synth.csv",
+      "bytes": 180828,
+      "sha256": "535a629b8ef9d2be13fb166cc31ea80c7c742cf504263cfa855b8a584fd88be0",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Poly/seed_206/flow_segments_eth_synth.csv",
+      "bytes": 160989,
+      "sha256": "37cf7535e97f79e7e265733175fe9e50fcb199521c3b9e9d0795b27299fffd9d",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Poly/seed_206/ids.npz",
+      "bytes": 36086,
+      "sha256": "648c72e3b692d11a10b03d7d27442f6696e39930c27002ad351d3ef89b1091a7",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Poly/seed_206/labels/synthetic_flow_labels.csv",
+      "bytes": 128994,
+      "sha256": "2d01046bdd261b0fb382910e82ce7e7404adcb8ad32b5432c74360b886a0042f",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Poly/seed_206/labels/synthetic_uot_eval_metrics.json",
+      "bytes": 222008,
+      "sha256": "2563a8c57f340a1ae4e6ea73896345ccb37d9875e2b2eb67f428158e925649b2",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Poly/seed_206/labels.csv",
+      "bytes": 129383,
+      "sha256": "76be8c89fe33fd1e6adcd818968306708702a25c10682497a87343141b0183f4",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Poly/seed_206/solver.json",
+      "bytes": 1501,
+      "sha256": "5ac128e815e2d902ab496c904dfea51215b8cfae169f038efad85ccea1962578",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Poly/seed_206/synthetic_seed_stratification.json",
+      "bytes": 8757,
+      "sha256": "0f39d7f2f62c6278a3b0ef757d5c5cf200fd8fbd072e3076df93f4422045892f",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Poly/seed_206/transport_uot.npz",
+      "bytes": 794616,
+      "sha256": "f51f1d45522432216207119ac6d3c6e9afed1370e9c77c9623c373c2d5966456",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Poly/seed_207/cost.npz",
+      "bytes": 5754318,
+      "sha256": "6c95368ae1e4b89e5fe32bff4ee2526ff54b752c5ff29fbafe1513e01b2283ad",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Poly/seed_207/flow_label_stats.json",
+      "bytes": 56,
+      "sha256": "498565a16767a12a2263fee107ebb8a0be4853e492c3ff4705ed932b500bc280",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Poly/seed_207/flow_segments_bnb_synth.csv",
+      "bytes": 166170,
+      "sha256": "1c06d9a52c05d48b03a4d05bb48b42015877caabebca72d47285e151f23ff53c",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Poly/seed_207/flow_segments_eth_synth.csv",
+      "bytes": 162344,
+      "sha256": "494c6ac5f7575d2667d645ca5ef17ccf4edc15ed2c7a4c1d3ac55f023b97413d",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Poly/seed_207/ids.npz",
+      "bytes": 34762,
+      "sha256": "981e93a3f52d13a4aaf75a2239d28670775eec9d7b73fe993fa97cd0fdec012f",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Poly/seed_207/labels/synthetic_flow_labels.csv",
+      "bytes": 119406,
+      "sha256": "8b5c02a8761ffcd147d8af21c0f0f7567809d066e53e0269ed9d56ca3b84486d",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Poly/seed_207/labels/synthetic_uot_eval_metrics.json",
+      "bytes": 211875,
+      "sha256": "de9eea7d6ca292e4dca76e6f46820baaefe62d832eb5c9a044835e3f54047cee",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Poly/seed_207/labels.csv",
+      "bytes": 119767,
+      "sha256": "11e7b740820f13dd944fa89c89d2a99bedcb3baeb024f5b81ae32f0eda97ef77",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Poly/seed_207/solver.json",
+      "bytes": 1502,
+      "sha256": "c266b63bb12105633836aaa3ce979a84a8701d1d790aaf349c41067071499182",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Poly/seed_207/synthetic_seed_stratification.json",
+      "bytes": 8757,
+      "sha256": "8146433479801629982f6ee12c402e997c992c3eb39e30a44e2e037816147459",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Poly/seed_207/transport_uot.npz",
+      "bytes": 729840,
+      "sha256": "67415d9adcdae11bdbf580f94f564dc7d37e83e8d2a66e92e2bba46c455ad021",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Poly/seed_208/cost.npz",
+      "bytes": 5976270,
+      "sha256": "790955aa00e2cb41051c97bd723e3975c958a6937591ecd7f129cb4ec723ce94",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Poly/seed_208/flow_label_stats.json",
+      "bytes": 56,
+      "sha256": "498565a16767a12a2263fee107ebb8a0be4853e492c3ff4705ed932b500bc280",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Poly/seed_208/flow_segments_bnb_synth.csv",
+      "bytes": 172419,
+      "sha256": "91282f9ddc15914c6621b5538fef0454d7f1817bbe50c01754388d2d1f2995ec",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Poly/seed_208/flow_segments_eth_synth.csv",
+      "bytes": 162104,
+      "sha256": "a2c841d498769f8701949dcac1de3f2549422946205369741eff6a9eec63720d",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Poly/seed_208/ids.npz",
+      "bytes": 35338,
+      "sha256": "56bab68c999c6aa9143a3e59fea75d9df532c034eacd6198467c0d8526a9c168",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Poly/seed_208/labels/synthetic_flow_labels.csv",
+      "bytes": 123457,
+      "sha256": "062d86a9b9a6c8adcd2d56f978fc7f4e70700910958ddbe75e8b5e606a323ace",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Poly/seed_208/labels/synthetic_uot_eval_metrics.json",
+      "bytes": 216163,
+      "sha256": "ed4559bab6343185e139af52800efa5427b6f48d38ce1059ebb35f0d5b7e0d98",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Poly/seed_208/labels.csv",
+      "bytes": 123830,
+      "sha256": "b0f0391542a5e73b6d4c3351ed45f7cdcb46eecebf07d34631d25993d70cea7b",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Poly/seed_208/solver.json",
+      "bytes": 1498,
+      "sha256": "6c8b2053499f16b3083aec17f53d3e429f7e6e751efa92d1f12abf34123ba014",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Poly/seed_208/synthetic_seed_stratification.json",
+      "bytes": 8757,
+      "sha256": "cf7fe46a030c531ecc510ba107c1237fd1f62a42dfd50cc0cafc09b8256920ff",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Poly/seed_208/transport_uot.npz",
+      "bytes": 757776,
+      "sha256": "906a6dd97ca8eeedbcafe849c0bdebd993f40f1b903ddd2cff6acc6407fb93ba",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Poly/seed_209/cost.npz",
+      "bytes": 6201102,
+      "sha256": "7f3bd2b285f24f9d005b3d75df0302c2dd199ee0278ce404b7589df5763c5443",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Poly/seed_209/flow_label_stats.json",
+      "bytes": 56,
+      "sha256": "498565a16767a12a2263fee107ebb8a0be4853e492c3ff4705ed932b500bc280",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Poly/seed_209/flow_segments_bnb_synth.csv",
+      "bytes": 178016,
+      "sha256": "9c237dcb90863e92fa901e6b8fc6685a15cdda1c4576ed1632562b1cf002a778",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Poly/seed_209/flow_segments_eth_synth.csv",
+      "bytes": 162365,
+      "sha256": "5c68162a7b212f7d5ae74834106d222fc1abacd4eb894e9891f27247a689ccca",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Poly/seed_209/ids.npz",
+      "bytes": 35934,
+      "sha256": "2e58af72267f0f919dab9f4ad99791e2165d64a8ef7e695fd2b0e00d93204bbd",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Poly/seed_209/labels/synthetic_flow_labels.csv",
+      "bytes": 127721,
+      "sha256": "5a800d11e0bf7db2b01ae7da967f019daf3640e4050f7e30c9934ecf7a3ac6f3",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Poly/seed_209/labels/synthetic_uot_eval_metrics.json",
+      "bytes": 220754,
+      "sha256": "8e9cf8bf50bc3f65d306b30a4f0c35d74d5b1889d7fe5dc367879aecf6ad081f",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Poly/seed_209/labels.csv",
+      "bytes": 128106,
+      "sha256": "576d9a6e3ccf2400703bc3b0df2d07db815e8f19c3e2a23383d6eceeb472d844",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Poly/seed_209/solver.json",
+      "bytes": 1499,
+      "sha256": "de533c17364ddeb7a9fa0631107b957485503ab6ee2bd93f382e47122745a555",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Poly/seed_209/synthetic_seed_stratification.json",
+      "bytes": 8757,
+      "sha256": "3f8408537a408c131e8947ab61e606c0db13ffbfa34f0b441fea54524e8281e9",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Poly/seed_209/transport_uot.npz",
+      "bytes": 786072,
+      "sha256": "05d2c087e080be33093cbbcbe6977101a522804585a3955607e81e57aed04550",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Poly/seed_210/cost.npz",
+      "bytes": 6163982,
+      "sha256": "2757663f036801421395b4d9d16ae70f39bcfbd9551e3aecf3e9d9e6e4eae834",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Poly/seed_210/flow_label_stats.json",
+      "bytes": 56,
+      "sha256": "498565a16767a12a2263fee107ebb8a0be4853e492c3ff4705ed932b500bc280",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Poly/seed_210/flow_segments_bnb_synth.csv",
+      "bytes": 176907,
+      "sha256": "9e0bd933ccf70e8504cb231f3aad81ed1af2d377f239cb21853a191e2d32bff3",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Poly/seed_210/flow_segments_eth_synth.csv",
+      "bytes": 162465,
+      "sha256": "d502b3de2d85998ce4bae10c7a4d0e840d178980fa93d4951dcc8dc4b0389c75",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Poly/seed_210/ids.npz",
+      "bytes": 35838,
+      "sha256": "368ce07bff997403cc7b440e4fa5b1c3197aa97c07dda83efa4e43f89a0ea5a1",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Poly/seed_210/labels/synthetic_flow_labels.csv",
+      "bytes": 126963,
+      "sha256": "afd98f69f4e90807e242e07c1f6540c06a63144be86f309cfce9abaefedfaadc",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Poly/seed_210/labels/synthetic_uot_eval_metrics.json",
+      "bytes": 219794,
+      "sha256": "1406439f9621615ac83fa582aa0bc4115cfbb4d48872dcbd4a595f9fe51324bb",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Poly/seed_210/labels.csv",
+      "bytes": 127346,
+      "sha256": "5d7679fad924e13f09640989f841de9972d91bd868094d316fece4f21a470882",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Poly/seed_210/solver.json",
+      "bytes": 1502,
+      "sha256": "8aa532ca492eb63170def662939e21ec0d1cf2990e683c4d9de3796e368eaf2d",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Poly/seed_210/synthetic_seed_stratification.json",
+      "bytes": 8757,
+      "sha256": "95b43e4e37331d664f001e88ffc67f9b5254746994337665e5ad732dcdb9c7d2",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Poly/seed_210/transport_uot.npz",
+      "bytes": 781400,
+      "sha256": "499bbab4549f6384b0546d6ca50278f85fa6f58e672beda2822315c464ee927d",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Poly/seed_211/cost.npz",
+      "bytes": 6572302,
+      "sha256": "071cfbe4ca2533b97cde0df762dc6c29aec83b126bed59b6ed462171fcd5382a",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Poly/seed_211/flow_label_stats.json",
+      "bytes": 56,
+      "sha256": "498565a16767a12a2263fee107ebb8a0be4853e492c3ff4705ed932b500bc280",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Poly/seed_211/flow_segments_bnb_synth.csv",
+      "bytes": 189022,
+      "sha256": "9fc638759f1471fa4d31744a22e78484ccc0fcc1a62ed32ce1e8f4366294b2e8",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Poly/seed_211/flow_segments_eth_synth.csv",
+      "bytes": 162670,
+      "sha256": "366ede399ee595e2b80c395cee8ee13b6121c96ba1a0ed2e38fd61eec693f7b0",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Poly/seed_211/ids.npz",
+      "bytes": 36894,
+      "sha256": "e9dc3b07f562c3cd57b3e73c33c7517761c0dde178c71117f86c3b25dab1c910",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Poly/seed_211/labels/synthetic_flow_labels.csv",
+      "bytes": 134590,
+      "sha256": "b9738867e2dfa4ac854e53b51b7263fb48463328c247bfc0d64dcade6eff4c86",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Poly/seed_211/labels/synthetic_uot_eval_metrics.json",
+      "bytes": 227742,
+      "sha256": "f8777792abc530c1a2fa3972c9da53d9b03176980b1201120601957e6779bead",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Poly/seed_211/labels.csv",
+      "bytes": 134995,
+      "sha256": "5c192b6fe05719e670cfc0136d006e53bb788ef7b9bd06bbae15e39ab7a66918",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Poly/seed_211/solver.json",
+      "bytes": 1502,
+      "sha256": "cea2c085c55be71c13e54b914d6e84b2d0ba10043156e4e542cabde4d83a4028",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Poly/seed_211/synthetic_seed_stratification.json",
+      "bytes": 8757,
+      "sha256": "be3114b80156a76092b4c080811812055e8e2a56c659c4936ba94c84b5c269ba",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/_cells/Poly/seed_211/transport_uot.npz",
+      "bytes": 832792,
+      "sha256": "b8c7fcc0c82268e571c5602ae75661e3a7b66045e58b50b4575287ead0e1045e",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/family_manifest.csv",
+      "bytes": 713923,
+      "sha256": "a11c7ca53d12757975799eee40fa6a774492f706130417de0f91695bbfe92e8d",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/generator_equivalence.json",
+      "bytes": 1735,
+      "sha256": "531057425a9cb4885af41f7221f9ac08447e2499ac7d496af7c6ecb4c17e5ed4",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/generator_structural_qa.json",
+      "bytes": 26287,
+      "sha256": "495bbbdb51087c073f974b6f3da8c87474a80ea5848504516b12f87f7a8f80e0",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/generator/GENERATOR_VALIDATION.md",
+      "bytes": 4389,
+      "sha256": "c197bb39ca93f2dbad8a54d5807fdd48e7c4328fcaf54de94c76430f6023f1b3",
+      "role": "Stage 0B generator + structural QA",
+      "stage": "0B",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/preflight.json",
+      "bytes": 2886,
+      "sha256": "d156a22422b62c0eedb35bf5a99afc5a5af38b4987262417adf90760b0a5bf18",
+      "role": "selection preflight",
+      "stage": "0",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/raw_probe/executor_cell_metrics.csv",
+      "bytes": 20226,
+      "sha256": "20d1f570236740332f23ea50ec2133478d674bd64c639fc0dec110f4475533a3",
+      "role": "misc",
+      "stage": "?",
+      "immutable_frozen_status": "mutable"
+    },
+    {
+      "path": "selection/raw_probe/INDEX.json",
+      "bytes": 6693,
+      "sha256": "2abcc29f6cbceef656f52d7499409acf247c62ae9da52a6a7798d00c849aeeac",
+      "role": "misc",
+      "stage": "?",
+      "immutable_frozen_status": "mutable"
+    },
+    {
+      "path": "selection/raw_probe/units/unit__Celer__s112.json",
+      "bytes": 456342,
+      "sha256": "d3fd2ef33041f60a7923c6c13b8ce4612f729563aa24070c0f0d06b1d2aa1b49",
+      "role": "misc",
+      "stage": "?",
+      "immutable_frozen_status": "mutable"
+    },
+    {
+      "path": "selection/raw_probe/units/unit__Celer__s113.json",
+      "bytes": 453119,
+      "sha256": "1ea4c31aecc0cd0ac3647aab599fffa54d97256e48427b4e596b274c6d7214cc",
+      "role": "misc",
+      "stage": "?",
+      "immutable_frozen_status": "mutable"
+    },
+    {
+      "path": "selection/raw_probe/units/unit__Celer__s114.json",
+      "bytes": 457293,
+      "sha256": "e73b4f48247a62797b67c1484d6bb04c4e5135606841879e85f70fd383a2d7d8",
+      "role": "misc",
+      "stage": "?",
+      "immutable_frozen_status": "mutable"
+    },
+    {
+      "path": "selection/raw_probe/units/unit__Celer__s115.json",
+      "bytes": 471603,
+      "sha256": "152fb938f7eb0dcc98c517115615ef3e84d139475cb1c480f744858c6c1f7901",
+      "role": "misc",
+      "stage": "?",
+      "immutable_frozen_status": "mutable"
+    },
+    {
+      "path": "selection/raw_probe/units/unit__Celer__s206.json",
+      "bytes": 472406,
+      "sha256": "976144f2a92db4850b723c376d4460c5980509a3d09762d7fa6f26d9d181afb7",
+      "role": "misc",
+      "stage": "?",
+      "immutable_frozen_status": "mutable"
+    },
+    {
+      "path": "selection/raw_probe/units/unit__Celer__s207.json",
+      "bytes": 468328,
+      "sha256": "c7eaa3b3d596ed9a00087d63c6f74dbcff0b8566c16994f344a2d82e58363499",
+      "role": "misc",
+      "stage": "?",
+      "immutable_frozen_status": "mutable"
+    },
+    {
+      "path": "selection/raw_probe/units/unit__Celer__s208.json",
+      "bytes": 472511,
+      "sha256": "7ce88ef32dfb3e00a3d327fdb6d53398b379385830cf4b6fb070edeb3b7526cf",
+      "role": "misc",
+      "stage": "?",
+      "immutable_frozen_status": "mutable"
+    },
+    {
+      "path": "selection/raw_probe/units/unit__Celer__s209.json",
+      "bytes": 514003,
+      "sha256": "ea0b6947c54efa0bf914b60b75a12a9499797f41b319d2b95a9c2421b1a86059",
+      "role": "misc",
+      "stage": "?",
+      "immutable_frozen_status": "mutable"
+    },
+    {
+      "path": "selection/raw_probe/units/unit__Celer__s210.json",
+      "bytes": 443284,
+      "sha256": "ffa2f73a9f2c7417164317776b9e26c79036dbaee00977f048e01f26617d57a2",
+      "role": "misc",
+      "stage": "?",
+      "immutable_frozen_status": "mutable"
+    },
+    {
+      "path": "selection/raw_probe/units/unit__Celer__s211.json",
+      "bytes": 456906,
+      "sha256": "d9c10ab10ffd7d949898ab55d6453201ed2821603cd5aa6b12e8ad05f7dd6cf9",
+      "role": "misc",
+      "stage": "?",
+      "immutable_frozen_status": "mutable"
+    },
+    {
+      "path": "selection/raw_probe/units/unit__Multi__s112.json",
+      "bytes": 422454,
+      "sha256": "93bb250b272aefe811357d6c1e0c3c6020ba5d58c6146593c78d64a566c76318",
+      "role": "misc",
+      "stage": "?",
+      "immutable_frozen_status": "mutable"
+    },
+    {
+      "path": "selection/raw_probe/units/unit__Multi__s113.json",
+      "bytes": 432684,
+      "sha256": "e92f1a5343add43bafc8d0b5533e3f400f224988c9502a3a19d943670bbe1d13",
+      "role": "misc",
+      "stage": "?",
+      "immutable_frozen_status": "mutable"
+    },
+    {
+      "path": "selection/raw_probe/units/unit__Multi__s114.json",
+      "bytes": 415227,
+      "sha256": "9590b8612a158ae49a6e6ee4217b9f54527d5572bf13eadb7c03d4c83c84cea1",
+      "role": "misc",
+      "stage": "?",
+      "immutable_frozen_status": "mutable"
+    },
+    {
+      "path": "selection/raw_probe/units/unit__Multi__s115.json",
+      "bytes": 423931,
+      "sha256": "0357e17fd3025ffb70495126625364b0d26f881e0dab480fc22e0dfb0ca291e6",
+      "role": "misc",
+      "stage": "?",
+      "immutable_frozen_status": "mutable"
+    },
+    {
+      "path": "selection/raw_probe/units/unit__Multi__s206.json",
+      "bytes": 408646,
+      "sha256": "4c14f44d6d0724a3133e1aef31c817631f8b2b7b225406c48c7ca1f7d8e93077",
+      "role": "misc",
+      "stage": "?",
+      "immutable_frozen_status": "mutable"
+    },
+    {
+      "path": "selection/raw_probe/units/unit__Multi__s207.json",
+      "bytes": 416485,
+      "sha256": "a7102ef92f01d7a6b395d5006e42621303301d54b1bb6683291818c99e1ede50",
+      "role": "misc",
+      "stage": "?",
+      "immutable_frozen_status": "mutable"
+    },
+    {
+      "path": "selection/raw_probe/units/unit__Multi__s208.json",
+      "bytes": 418128,
+      "sha256": "5f2727aaabf800162dfde458f64e1f4f0a2aece618bd3de343671cbafee6e87d",
+      "role": "misc",
+      "stage": "?",
+      "immutable_frozen_status": "mutable"
+    },
+    {
+      "path": "selection/raw_probe/units/unit__Multi__s209.json",
+      "bytes": 432475,
+      "sha256": "924c0af7e03e32e18c53b8084da4a8a5c20cc3507426d93dca299ea425af9546",
+      "role": "misc",
+      "stage": "?",
+      "immutable_frozen_status": "mutable"
+    },
+    {
+      "path": "selection/raw_probe/units/unit__Multi__s210.json",
+      "bytes": 421430,
+      "sha256": "6c7309c385052717125a3cde282aabe1030ca2e98cbacef2c38c4abf7bb03d39",
+      "role": "misc",
+      "stage": "?",
+      "immutable_frozen_status": "mutable"
+    },
+    {
+      "path": "selection/raw_probe/units/unit__Multi__s211.json",
+      "bytes": 430616,
+      "sha256": "5bf9215adcd9f498d59966dc48f6073fdcf1bfa374324ce1484842391d3a6d4e",
+      "role": "misc",
+      "stage": "?",
+      "immutable_frozen_status": "mutable"
+    },
+    {
+      "path": "selection/raw_probe/units/unit__Poly__s112.json",
+      "bytes": 487036,
+      "sha256": "5d6469dc7608df67d51732f86da81d004db0baaa1606902b5a25daadddfc309d",
+      "role": "misc",
+      "stage": "?",
+      "immutable_frozen_status": "mutable"
+    },
+    {
+      "path": "selection/raw_probe/units/unit__Poly__s113.json",
+      "bytes": 486956,
+      "sha256": "4a59f9b414087702a5bc891b964303f50ee9cd122abab5498f74bcddc7d4b212",
+      "role": "misc",
+      "stage": "?",
+      "immutable_frozen_status": "mutable"
+    },
+    {
+      "path": "selection/raw_probe/units/unit__Poly__s114.json",
+      "bytes": 481834,
+      "sha256": "c2fea2c13ffce9086fb5aa834d4d517579aea578f03327c93b90fa1c171f2f09",
+      "role": "misc",
+      "stage": "?",
+      "immutable_frozen_status": "mutable"
+    },
+    {
+      "path": "selection/raw_probe/units/unit__Poly__s115.json",
+      "bytes": 494775,
+      "sha256": "9cb57fff806d42ff2eb72817ec46f856f4836c9f5a3c9af455151abb3f373c4f",
+      "role": "misc",
+      "stage": "?",
+      "immutable_frozen_status": "mutable"
+    },
+    {
+      "path": "selection/raw_probe/units/unit__Poly__s206.json",
+      "bytes": 486860,
+      "sha256": "5cf16db7890ce9af8a7d4a39d7f25269a3c4c5d90c00269b30fe4cb9c6b77c52",
+      "role": "misc",
+      "stage": "?",
+      "immutable_frozen_status": "mutable"
+    },
+    {
+      "path": "selection/raw_probe/units/unit__Poly__s207.json",
+      "bytes": 465936,
+      "sha256": "077383e67a23dc183f8845513f02cbc5605fddfbefcc08febf0674774dade0dc",
+      "role": "misc",
+      "stage": "?",
+      "immutable_frozen_status": "mutable"
+    },
+    {
+      "path": "selection/raw_probe/units/unit__Poly__s208.json",
+      "bytes": 474356,
+      "sha256": "836b3748b3d681c36e33538298dd6ed14b0e9afe509aee25fce285ec218423de",
+      "role": "misc",
+      "stage": "?",
+      "immutable_frozen_status": "mutable"
+    },
+    {
+      "path": "selection/raw_probe/units/unit__Poly__s209.json",
+      "bytes": 484463,
+      "sha256": "e8ad28cdeecee4b0d76fe84880c12410130db07570a3a4ec7a8bce70c668ddb9",
+      "role": "misc",
+      "stage": "?",
+      "immutable_frozen_status": "mutable"
+    },
+    {
+      "path": "selection/raw_probe/units/unit__Poly__s210.json",
+      "bytes": 497323,
+      "sha256": "cfb0ef042cf422a0c06fb22d18bd6c5a778afeebcaaa1b4ab3941fd347ff9234",
+      "role": "misc",
+      "stage": "?",
+      "immutable_frozen_status": "mutable"
+    },
+    {
+      "path": "selection/raw_probe/units/unit__Poly__s211.json",
+      "bytes": 501218,
+      "sha256": "406918138f1b0bd65110efb6ea94462f477d2ec874c24d3ff128e012805545d7",
+      "role": "misc",
+      "stage": "?",
+      "immutable_frozen_status": "mutable"
+    },
+    {
+      "path": "selection/rule_search/all_candidates.csv",
+      "bytes": 122130,
+      "sha256": "1105291926ce0cb7ba8b88464209d393dc3acdbab9ea80193d6ca65bbf3daa46",
+      "role": "Stage 0 rule selection",
+      "stage": "0",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/rule_search/all_candidates.json",
+      "bytes": 48189,
+      "sha256": "2ee002f502a14dbc512f1ede69bb0a9267ffe68b84a23cd904cc38efa00f7939",
+      "role": "Stage 0 rule selection",
+      "stage": "0",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/rule_search/candidate_space.json",
+      "bytes": 7074,
+      "sha256": "f8c0cf5a3dd700387ac8a8d66896a5c44c3e9b9850207a43354e45d8a0c44363",
+      "role": "Stage 0 rule selection",
+      "stage": "0",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/rule_search/dual_softmax_calibration.json",
+      "bytes": 2787,
+      "sha256": "7ff58c569e0351c5f215b8f64aa3fe555df3218aec2bc274c35551eb65eef1cc",
+      "role": "Stage 0 rule selection",
+      "stage": "0",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/rule_search/r_adaptive_correlations.json",
+      "bytes": 3130,
+      "sha256": "06cf81669d802f2f955e55dbac09acc409ef568cf20e862d5aa864363d3de143",
+      "role": "Stage 0 rule selection",
+      "stage": "0",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/rule_search/selected_rule.json",
+      "bytes": 1102,
+      "sha256": "37f13ba3563cdec54e13e18cbf2c68545b74ad93da4eec3e55e3db5391ac5900",
+      "role": "Stage 0 rule selection",
+      "stage": "0",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/rule_search/threshold_mm_calibration.json",
+      "bytes": 19633,
+      "sha256": "9b84f51b56c2d4bd06512f43649ba46f0a8ab64fd942dde25d64b4de1829769e",
+      "role": "Stage 0 rule selection",
+      "stage": "0",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/SELECTION_REPORT.md",
+      "bytes": 12225,
+      "sha256": "3701fa15a5070c66d97e832292e297ebea35232f3614f4c75d4ef4b8e6445818",
+      "role": "selection report",
+      "stage": "0",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "selection/VALIDATOR_SELFTEST_ON_SELECTION.json",
+      "bytes": 100106,
+      "sha256": "bd2607413896ac8a2f7f7e2297a30c9f145dda9ea4afaa477e0780a6544f80b8",
+      "role": "pre-freeze validator self-test",
+      "stage": "0",
+      "immutable_frozen_status": "frozen"
+    },
+    {
+      "path": "VALIDATION_CHECKLIST.md",
+      "bytes": 5299,
+      "sha256": "eb29b36942a4bbb4189dfd265aa6a8da9d8672af20710d8136c0d2cc54d98733",
+      "role": "validation checklist",
+      "stage": "4",
+      "immutable_frozen_status": "mutable"
+    }
+  ],
+  "presentation_changes": [
+    {
+      "scope": "presentation-only layout correction; no data or scientific result changed",
+      "artifact": "figures/fig1_degree_calibration.pdf, figures/fig1_degree_calibration.png",
+      "panel": "Figure 1 panel (c) 'Truncation and tail'",
+      "reason": "annotation text and the legend occupied the same region as the split curve, the x = 8 marker and the dashed cap line",
+      "what_changed": [
+        "truncation note moved to the top-right data-free strip (axes xy=(0.665, 0.965), ha=left, va=top)",
+        "legend moved to loc='lower right', bbox_to_anchor=(1.0, 0.03)",
+        "tail summary moved below the axes (axes xy=(0.0, -0.26), ha=left, va=top)"
+      ],
+      "what_did_not_change": [
+        "v4/v5 empirical histogram",
+        "pooled split/merge distribution",
+        "split/merge tail probabilities",
+        "truncation cap",
+        "max observed degree",
+        "any coordinate value",
+        "panel (a) and (b) data and meaning",
+        "xlim (1.8, 12.0)",
+        "log y-axis",
+        "panel titles",
+        "figure title",
+        "curve colours / markers / legend labels"
+      ],
+      "audit_copy": [
+        "figures/fig1_degree_calibration_pre_layout_fix.pdf",
+        "figures/fig1_degree_calibration_pre_layout_fix.png"
+      ],
+      "verification": "figures/fig1_layout_verification.json",
+      "verification_result": "29/29 PASS",
+      "locked_experimental_hashes_modified": false,
+      "holdout_reexecuted": false
+    }
+  ]
+}

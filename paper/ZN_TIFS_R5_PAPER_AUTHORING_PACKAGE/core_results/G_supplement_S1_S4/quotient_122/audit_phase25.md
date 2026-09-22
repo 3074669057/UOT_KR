@@ -1,0 +1,32 @@
+# Phase 25 audit
+- audit_pass: True
+- exists_train_pairs: pass=True observed=True expected=True
+- exists_dev_pairs: pass=True observed=True expected=True
+- exists_holdout_pairs: pass=True observed=True expected=True
+- exists_abstention: pass=True observed=True expected=True
+- exists_selected: pass=True observed=True expected=True
+- exists_holdout_gate: pass=True observed=True expected=True
+- exists_run_summary: pass=True observed=True expected=True
+- coverage_qualified_training_gate_pass: pass=True observed=True expected=True
+- full_scope_claim_gate_fail: pass=True observed={'p24': False, 'summary': False} expected=False
+- holdout_evaluated_once: pass=True observed=True expected=True
+- high_pr_covered_scope_gate_pass: pass=True observed=True expected=True
+- covered_holdout_prf1: pass=True observed=(1.0, 1.0, 1.0) expected=(1.0, 1.0, 1.0)
+- holdout_pair_counts: pass=True observed={'total': 122, 'pos': 44, 'neg': 78} expected={'total': 122, 'pos': 44, 'neg': 78}
+- summary_holdout_not_skipped: pass=True observed={'holdout_skipped': False, 'holdout.skipped': None, 'holdout_evaluated_once': True} expected={'holdout_skipped': False, 'holdout_evaluated_once': True}
+- coverage_adjusted_metrics: pass=True observed={'projection': 0.792, 'upper': 0.792, 'effective': 0.792} expected=~0.792 with effective <= upper <= projection
+- uncovered_abstention_manifest: pass=True observed={'manifest_count': 14595, 'summary_flag': True} expected={'manifest_count': 14595, 'uncovered_edges_abstained': True}
+- selected_model_dev_frozen: pass=True observed={'model': 'Q-rule-bridge-key', 'threshold': 1.0, 'holdout_not_used_for_selection': True} expected={'model': 'Q-rule-bridge-key', 'threshold': 1.0, 'source': 'dev'}
+- ablation_dev_frozen_holdout: pass=True observed=True expected=True
+- ablation_oracle_diagnostic_separate: pass=True observed=True expected=True
+- no_gt_leakage_features: pass=True observed={'inference_feature_cols': ['amount_bucket_match', 'bridge_transfer_key_exact_match', 'calibrated_bridge_key_score', 'chain_direction_consistency', 'corrected_quotient_decision_score', 'event_role_compatible', 'receiver_match', 'token_normalized_match', 'transfer_id_exact_match', 'two_stage_bridge_key_score'], 'quotient_label_in_pair_csv': 'supervised label column only (excluded from FEATURE_COLS)'} expected=no forbidden columns as inference features
+- no_training_on_holdout: pass=True observed=[] expected=[]
+- documentation_claim_boundary: pass=True observed={'missing_required_limitations': [], 'unqualified_forbidden_phrases': []} expected=required limitations present; no unqualified forbidden claims
+- no_secrets_in_phase25_artifacts: pass=True observed=none expected=no RPC URLs / API keys
+- env_not_committed: pass=True observed=False expected=False
+- canonical_rebuilt: pass=True observed=False expected=False
+- label_layer_refrozen: pass=True observed=False expected=False
+- label_layer_v1_preserved: pass=True observed=True expected=True
+- label_layer_v2_quotient_is_overlay: pass=True observed=True expected=True
+- credentials_committed: pass=True observed=False expected=False
+- full_rpc_url_logged: pass=True observed=False expected=False

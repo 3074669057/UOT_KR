@@ -1,0 +1,116 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "real_celer_ablation_summary.schema.json",
+  "title": "Real Celer Transport Solver Ablation - summary row schema",
+  "type": "object",
+  "required": [
+    "run_id",
+    "solver",
+    "pair_precision_after_filter",
+    "pair_recall_after_filter",
+    "pair_f1_after_filter",
+    "abstention_rate"
+  ],
+  "properties": {
+    "run_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "solver": {
+      "type": "string",
+      "enum": [
+        "rc_uot_full",
+        "rc_uot_numpy",
+        "balanced_sinkhorn",
+        "balanced_emd",
+        "hungarian",
+        "greedy_nn",
+        "cost_ranking"
+      ]
+    },
+    "skipped": {
+      "type": "boolean"
+    },
+    "skip_reason": {
+      "type": "string"
+    },
+    "pair_precision_before_filter": {
+      "type": [
+        "number",
+        "null"
+      ]
+    },
+    "pair_recall_before_filter": {
+      "type": [
+        "number",
+        "null"
+      ]
+    },
+    "pair_f1_before_filter": {
+      "type": [
+        "number",
+        "null"
+      ]
+    },
+    "pair_precision_after_filter": {
+      "type": [
+        "number",
+        "null"
+      ]
+    },
+    "pair_recall_after_filter": {
+      "type": [
+        "number",
+        "null"
+      ]
+    },
+    "pair_f1_after_filter": {
+      "type": [
+        "number",
+        "null"
+      ]
+    },
+    "delta_f1_vs_rc_uot_full": {
+      "type": [
+        "number",
+        "null"
+      ]
+    },
+    "delta_precision_vs_rc_uot_full": {
+      "type": [
+        "number",
+        "null"
+      ]
+    },
+    "delta_recall_vs_rc_uot_full": {
+      "type": [
+        "number",
+        "null"
+      ]
+    },
+    "top3_recall": {
+      "type": [
+        "number",
+        "null"
+      ]
+    },
+    "causal_violation_rate_after_filter": {
+      "type": [
+        "number",
+        "null"
+      ]
+    },
+    "abstention_rate": {
+      "type": [
+        "number",
+        "null"
+      ]
+    },
+    "runtime_sec": {
+      "type": [
+        "number",
+        "null"
+      ]
+    }
+  }
+}

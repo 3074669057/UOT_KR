@@ -1,0 +1,7 @@
+{
+  "strict_forbidden_features_remaining_zero": true,
+  "fake_probe_invariant": true,
+  "permuted_collapsed": true,
+  "top3_gte_top1_all_rows": true,
+  "leakage_claim_supported": true
+}

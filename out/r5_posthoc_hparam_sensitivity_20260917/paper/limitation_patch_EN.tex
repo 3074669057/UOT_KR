@@ -1,0 +1,11 @@
+% Limitation patch (EN). Does not overwrite any frozen manuscript file.
+% Intended replacement for the sentence fragment
+%   "... and the decoder is fixed at $k = 5$ with observational ..."
+% in the Limitations paragraph of the confirmatory section.
+
+\begin{quote}
+The decoder is fixed at $k=5$. As a supplementary post-hoc analysis (development seeds 201--205 only; not preregistered; not used to select any main-experiment hyper-parameter; the frozen holdout seeds 301--305 were not re-run) the conditional decoder varies by at most 0.0014 in macro edge F1 over $\varepsilon\in\{0.01,\dots,0.2\}$ and $\lambda\in\{0.1,\dots,2\}$, so the paper's defaults sit inside a flat region for those two knobs. The rank cutoff is \emph{not} flat: the default $k=5$ is not the optimum of that grid ($k=3$ reaches 0.4797 versus 0.3129 at the default). The grid was executed after the defaults had already been frozen; no main-experiment default was changed and the holdout was not touched. Because the analysis is post-hoc, unregistered, and limited to three bridges and the development seeds, it is \emph{not} an independent hyper-parameter validation, and the choice of $k$ remains an open question for this work.
+\end{quote}
+
+% Optional short form for the experimental section's Limitations sentence:
+% "... the decoder is fixed at $k=5$, for which a post-hoc development-seed sensitivity analysis is reported in Section~\ref{sec:posthoc-sensitivity}."

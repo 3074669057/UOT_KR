@@ -1,0 +1,32 @@
+{
+  "window": [
+    1760140800,
+    1762732800
+  ],
+  "blocks": {
+    "eth": [
+      {
+        "num": 23550763,
+        "ts": 1760140799
+      },
+      {
+        "num": 23765143,
+        "ts": 1762732799
+      }
+    ],
+    "bsc": [
+      {
+        "num": 64188464,
+        "ts": 1760140800
+      },
+      {
+        "num": 67642409,
+        "ts": 1762732801
+      }
+    ]
+  },
+  "contract_eth_start": "dd55eeab28281acaedeec8a3",
+  "contract_eth_end": "dd55eeab28281acaedeec8a3",
+  "contract_bsc_start": "dd55eeab28281acaedeec8a3",
+  "contract_bsc_end": "dd55eeab28281acaedeec8a3"
+}

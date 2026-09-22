@@ -1,0 +1,469 @@
+﻿### COUNTS
+  e1                         files= 259 bytes=73344323
+  manuscript_authority       files=  23 bytes=8053140
+  pending1_cost_weights      files=  29 bytes=244899
+  pending2_coverage_tiers    files=  33 bytes=425605
+  pending3_baselines         files= 157 bytes=8313975
+  pending4_generator         files=  30 bytes=2485283
+  pending5_holdout_d4        files= 424 bytes=68242545
+  pending5_repository_link   files=   6 bytes=2218372
+  pending6_references        files=  21 bytes=286561
+  TOTAL copied=982 skipped=38
+
+### SKIPPED
+  NOT_FOUND          tools/cross_aml/cross_aml/test_coverage.py
+  EXCLUDED_BY_PLAN   out\multi_bridge_expansion\conditional_plan_holdout_results\cells\Celer\seed_301\cell_inputs.npz
+  EXCLUDED_BY_PLAN   out\multi_bridge_expansion\conditional_plan_holdout_results\cells\Celer\seed_301\grid.npz
+  EXCLUDED_BY_PLAN   out\multi_bridge_expansion\conditional_plan_holdout_results\cells\Celer\seed_302\cell_inputs.npz
+  EXCLUDED_BY_PLAN   out\multi_bridge_expansion\conditional_plan_holdout_results\cells\Celer\seed_302\grid.npz
+  EXCLUDED_BY_PLAN   out\multi_bridge_expansion\conditional_plan_holdout_results\cells\Celer\seed_303\cell_inputs.npz
+  EXCLUDED_BY_PLAN   out\multi_bridge_expansion\conditional_plan_holdout_results\cells\Celer\seed_303\grid.npz
+  EXCLUDED_BY_PLAN   out\multi_bridge_expansion\conditional_plan_holdout_results\cells\Celer\seed_304\cell_inputs.npz
+  EXCLUDED_BY_PLAN   out\multi_bridge_expansion\conditional_plan_holdout_results\cells\Celer\seed_304\grid.npz
+  EXCLUDED_BY_PLAN   out\multi_bridge_expansion\conditional_plan_holdout_results\cells\Celer\seed_305\cell_inputs.npz
+  EXCLUDED_BY_PLAN   out\multi_bridge_expansion\conditional_plan_holdout_results\cells\Celer\seed_305\grid.npz
+  EXCLUDED_BY_PLAN   out\multi_bridge_expansion\conditional_plan_holdout_results\cells\Multi\seed_301\cell_inputs.npz
+  EXCLUDED_BY_PLAN   out\multi_bridge_expansion\conditional_plan_holdout_results\cells\Multi\seed_301\grid.npz
+  EXCLUDED_BY_PLAN   out\multi_bridge_expansion\conditional_plan_holdout_results\cells\Multi\seed_302\cell_inputs.npz
+  EXCLUDED_BY_PLAN   out\multi_bridge_expansion\conditional_plan_holdout_results\cells\Multi\seed_302\grid.npz
+  EXCLUDED_BY_PLAN   out\multi_bridge_expansion\conditional_plan_holdout_results\cells\Multi\seed_303\cell_inputs.npz
+  EXCLUDED_BY_PLAN   out\multi_bridge_expansion\conditional_plan_holdout_results\cells\Multi\seed_303\grid.npz
+  EXCLUDED_BY_PLAN   out\multi_bridge_expansion\conditional_plan_holdout_results\cells\Multi\seed_304\cell_inputs.npz
+  EXCLUDED_BY_PLAN   out\multi_bridge_expansion\conditional_plan_holdout_results\cells\Multi\seed_304\grid.npz
+  EXCLUDED_BY_PLAN   out\multi_bridge_expansion\conditional_plan_holdout_results\cells\Multi\seed_305\cell_inputs.npz
+  EXCLUDED_BY_PLAN   out\multi_bridge_expansion\conditional_plan_holdout_results\cells\Multi\seed_305\grid.npz
+  EXCLUDED_BY_PLAN   out\multi_bridge_expansion\conditional_plan_holdout_results\cells\Poly\seed_301\cell_inputs.npz
+  EXCLUDED_BY_PLAN   out\multi_bridge_expansion\conditional_plan_holdout_results\cells\Poly\seed_301\grid.npz
+  EXCLUDED_BY_PLAN   out\multi_bridge_expansion\conditional_plan_holdout_results\cells\Poly\seed_302\cell_inputs.npz
+  EXCLUDED_BY_PLAN   out\multi_bridge_expansion\conditional_plan_holdout_results\cells\Poly\seed_302\grid.npz
+  EXCLUDED_BY_PLAN   out\multi_bridge_expansion\conditional_plan_holdout_results\cells\Poly\seed_303\cell_inputs.npz
+  EXCLUDED_BY_PLAN   out\multi_bridge_expansion\conditional_plan_holdout_results\cells\Poly\seed_303\grid.npz
+  EXCLUDED_BY_PLAN   out\multi_bridge_expansion\conditional_plan_holdout_results\cells\Poly\seed_304\cell_inputs.npz
+  EXCLUDED_BY_PLAN   out\multi_bridge_expansion\conditional_plan_holdout_results\cells\Poly\seed_304\grid.npz
+  EXCLUDED_BY_PLAN   out\multi_bridge_expansion\conditional_plan_holdout_results\cells\Poly\seed_305\cell_inputs.npz
+  EXCLUDED_BY_PLAN   out\multi_bridge_expansion\conditional_plan_holdout_results\cells\Poly\seed_305\grid.npz
+  NOT_FOUND          setup.py
+  NOT_FOUND          setup.cfg
+  NOT_FOUND          poetry.lock
+  NOT_FOUND          pdm.lock
+  NOT_FOUND          uv.lock
+  NOT_FOUND          environment.yml
+  NOT_FOUND          environment.yaml
+
+### PENDING-1 FILES
+  979e5931ced5e070  core/pending1_cost_weights/NEXT_CANDIDATE_SPEC.md
+  aac65d831cc73710  core/pending1_cost_weights/_run_rc_uot_independent.py
+  a09c386722cacc8a  core/pending1_cost_weights/af_common.py
+  dc0fe7a23d54411d  core/pending1_cost_weights/audit_compare_cost_components.py
+  1e2ee4ea69373b62  core/pending1_cost_weights/audit_compare_frozen_plan.py
+  debd06c3585d5e6e  core/pending1_cost_weights/audit_freeze_checksums.py
+  b7fe34de2bb81400  core/pending1_cost_weights/audit_frozen_inputs_current_code.py
+  68b0beda9a6c2f29  core/pending1_cost_weights/common.py
+  189dcddc157ac474  core/pending1_cost_weights/cost_matrix.py
+  5686f55499bcf132  core/pending1_cost_weights/ctd_common.py
+  fff26071d54e813c  core/pending1_cost_weights/da_common.py
+  73a9493bbff35432  core/pending1_cost_weights/decode_transport.py
+  2f3b4a28c5e828cc  core/pending1_cost_weights/defaults.json
+  e8cd179606861582  core/pending1_cost_weights/delay_policy.py
+  1239107e5af61064  core/pending1_cost_weights/real_celer_ablation_io.py
+  e98f73c882af500e  core/pending1_cost_weights/run_af_analysis.py
+  e7a1bd4f0143de7e  core/pending1_cost_weights/run_amount_free_dev.py
+  dcf9e24c1634b0f8  core/pending1_cost_weights/run_conditional_plan_dev.py
+  37b5649144f0f3a6  core/pending1_cost_weights/run_cost_forensic_audit.py
+  35baf597db8fa45d  core/pending1_cost_weights/run_dev_stress_candidates.py
+  0c5928bdd80397de  core/pending1_cost_weights/run_faithful_flow_structural.py
+  d2a52eb0899bda1b  core/pending1_cost_weights/standalone_flow_uot.py
+  6bcfa3122dda2935  core/pending1_cost_weights/uot_solver.py
+  b8117f66db0eee1f  core/pending1_cost_weights/uot_solver_numpy.py
+  20e8d2fb278966e2  core/pending1_cost_weights/verify_amount_free_dev.py
+  e9f844a2a58ede07  core/pending1_cost_weights/verify_conditional_plan_dev.py
+  89c0f32c6f348c87  core/pending1_cost_weights/verify_cost_transport_diagnosis.py
+  201db79b8e0e2f47  core/pending1_cost_weights/verify_decoder_attribution_audit.py
+  f36501837f885232  core/pending1_cost_weights/verify_transport_diagnosis.py
+
+### PENDING-2 FILES
+  13037db7c7876f30  core/pending2_coverage_tiers/R5C_repro_bundle_cross_aml_coverage.py
+  c0acc1d08c3ea461  core/pending2_coverage_tiers/R5C_repro_bundle_cross_aml_feature_builder.py
+  9f112e7262ccc315  core/pending2_coverage_tiers/R5C_repro_bundle_cross_aml_quotient_builder.py
+  6455d0659a444952  core/pending2_coverage_tiers/README.md
+  136aba4235e3c31b  core/pending2_coverage_tiers/TEMPORAL_EXTERNAL_PROVENANCE_TIERS.md
+  6e63929a07a87712  core/pending2_coverage_tiers/V4_PROVENANCE_TIERS.md
+  112ef5dc27ace740  core/pending2_coverage_tiers/abstention.py
+  38bc5b75ed010861  core/pending2_coverage_tiers/audit_phase20_quotient_integrity_repair.py
+  34614ab2134300b2  core/pending2_coverage_tiers/bridge_parser.py
+  dd274ef70955e01f  core/pending2_coverage_tiers/cli.py
+  a82700afa6ac43e9  core/pending2_coverage_tiers/config.py
+  13037db7c7876f30  core/pending2_coverage_tiers/coverage.py
+  5e8ec3a34b11bc68  core/pending2_coverage_tiers/coverage_qualified_summary.json
+  afb8c8f17b08b8ff  core/pending2_coverage_tiers/coverage_tier_report.csv
+  13037db7c7876f30  core/pending2_coverage_tiers/cross_aml_coverage.py
+  c0acc1d08c3ea461  core/pending2_coverage_tiers/cross_aml_feature_builder.py
+  9f112e7262ccc315  core/pending2_coverage_tiers/cross_aml_quotient_builder.py
+  cdd23e78bb3a88b0  core/pending2_coverage_tiers/explanation.py
+  c0acc1d08c3ea461  core/pending2_coverage_tiers/feature_builder.py
+  3a69729d7cdea2d5  core/pending2_coverage_tiers/full_scope_claim_gate.json
+  3e3b341718c0528a  core/pending2_coverage_tiers/insert_tables_figures.py
+  9f112e7262ccc315  core/pending2_coverage_tiers/quotient_builder.py
+  c48b6c7928954d80  core/pending2_coverage_tiers/rcuotq_matcher.py
+  0b516f9f0cb35106  core/pending2_coverage_tiers/run_phase19_event_incidence_quotient_layer.py
+  089f9d2c97341bca  core/pending2_coverage_tiers/run_phase20_quotient_integrity_repair.py
+  cb09495b86f51d89  core/pending2_coverage_tiers/run_phase21_quotient_oracle_score_repair.py
+  41a52d9d1368a440  core/pending2_coverage_tiers/run_phase22_event_coverage_repair.py
+  ae345603b6b6f495  core/pending2_coverage_tiers/run_phase23_source_event_coverage_expansion.py
+  d3fdec0d2b06c7b0  core/pending2_coverage_tiers/run_phase24_coverage_qualified_training_gate.py
+  d3da8de02f3968f1  core/pending2_coverage_tiers/run_phase25_coverage_qualified_training.py
+  0b533a87b9e8310a  core/pending2_coverage_tiers/run_phase27_precision_repair_coverage_expansion.py
+  a66fbdc8109f5344  core/pending2_coverage_tiers/run_phase29_robust_rcuot_superiority.py
+  4dd0dde17bffd061  core/pending2_coverage_tiers/schemas.py
+
+### PENDING-3 FILES
+  fb733ebb01e15cea  core/pending3_baselines/Connector Enhancing the Traceability of Decentralized Bridge Applications via Automatic Cross-Chain Transaction Association.pdf
+  8c4aef36562ee67a  core/pending3_baselines/Coverage_precision_curve.csv
+  8700dbfeacae1756  core/pending3_baselines/Decoder_comparison_locked_test.md
+  d535ce73e1fa59a9  core/pending3_baselines/Decoder_comparison_main_table.json
+  8d5a85987fb34d3b  core/pending3_baselines/Decoder_comparison_table.md
+  51d7fe2f2c6c7db3  core/pending3_baselines/Decoder_comparison_tradeoff.csv
+  50bbdc595e308be0  core/pending3_baselines/FIGURE_INDEX.md
+  8195b2236401b9b9  core/pending3_baselines/FIGURE_PROVENANCE_AUDIT.md
+  ace27858468ec26e  core/pending3_baselines/FINAL_TABLE4_BASELINE_FAIRNESS_AUDIT.md
+  25358ae3b6a8e65d  core/pending3_baselines/R4_FIGURE_DATA_PROVENANCE.md
+  79a6c772bef8a098  core/pending3_baselines/TABLE_FIGURE_PROVENANCE_audit.md
+  9f45690775b61c8e  core/pending3_baselines/TABLE_PROVENANCE_AUDIT.md
+  9ede3a2a1688a7fc  core/pending3_baselines/TABLE_SOURCE_INDEX.md
+  b530c7c880c67942  core/pending3_baselines/Table2_baseline_comparison.csv
+  71f74fa08c7a2274  core/pending3_baselines/Table2_per_seed.csv
+  194faae19ca13618  core/pending3_baselines/Table2_structural_aggregated.csv
+  43d98964046ed8c5  core/pending3_baselines/Table3_confirmatory_statistics.json
+  7602a0bcfe0fb6a4  core/pending3_baselines/Table4_baseline_dev.csv
+  8bcbbe787718c718  core/pending3_baselines/Table4_baseline_fresh_holdout.csv
+  dda87a7874373e4c  core/pending3_baselines/Table4_baseline_normalized_metric_table.csv
+  dfb9a74593c95c5f  core/pending3_baselines/Table4_candidate_dev.csv
+  6e2af4247fec0f81  core/pending3_baselines/Table4_candidate_fresh_holdout.csv
+  952afed267cb4c58  core/pending3_baselines/Table4_metric_win_loss.csv
+  afb8c8f17b08b8ff  core/pending3_baselines/Table5_coverage_tier_report.csv
+  9c0e66a2c588b1df  core/pending3_baselines/Table5_main_table_fixed_delay.json
+  c2716bc6edc714d1  core/pending3_baselines/Table5_main_table_fixed_delay.md
+  b793411d84b90bcd  core/pending3_baselines/Table6_connector_degradation_curve.json
+  0d47f820d9b9e198  core/pending3_baselines/Table7_multi_bridge_paper_comparison.csv
+  80b1214e7bdba0d7  core/pending3_baselines/Table7_multi_bridge_summary.csv
+  ede473b68984b4b7  core/pending3_baselines/Table8_audit_v4_final_report.json
+  7772b71337426294  core/pending3_baselines/Table8_audit_v5_cluster_summary.csv
+  4389ffc8790b67b8  core/pending3_baselines/Table8_audit_v5_data_manifest.json
+  eafabd3bffbcc243  core/pending3_baselines/Table8_v4_cumulative_adequacy.json
+  1d28addebe8379c6  core/pending3_baselines/Table8_v5_cumulative_adequacy.json
+  c47bb3f2f4504b96  core/pending3_baselines/TableS1_quotient_122.csv
+  1c11f59844ba027c  core/pending3_baselines/TableS4_scalability_results.csv
+  194faae19ca13618  core/pending3_baselines/Table_CN3_threebridge_edgeinclusion.csv
+  783be0603f0b72b3  core/pending3_baselines/Table_CN6_EN2e_confirmatory_methods.md
+  b7cb01fa56573b93  core/pending3_baselines/Table_CN8_EN4_statistical_tests.csv
+  5401874bf42f7de4  core/pending3_baselines/Table_CN8_EN4_statistical_tests.json
+  5661493971022124  core/pending3_baselines/Table_CN9_EN5_fixed_delay_main_table.txt
+  1842e1c7b78d9f73  core/pending3_baselines/Table_CN9_EN5_fixed_delay_main_table_rows.txt
+  a4d95290435f7069  core/pending3_baselines/_patch.py
+  30f9518678f242f7  core/pending3_baselines/adapter.py
+  cdb5d7dc4d307b1a  core/pending3_baselines/audit_phase29_robust_rcuot_superiority.json
+  65af597362d804e6  core/pending3_baselines/balanced_relative_gate.json
+  70fa2ebdcd848f38  core/pending3_baselines/baseline_table4_phase29_config.json
+  c0f0485a3202dc9f  core/pending3_baselines/candidate_pool_audit.json
+  a23448695daa3ec3  core/pending3_baselines/claim_boundary_update.md
+  68b0beda9a6c2f29  core/pending3_baselines/common.py
+  577440550193508e  core/pending3_baselines/connector_decimals.py
+  257e259969a7ff82  core/pending3_baselines/connector_id_anchor_vs_full_native_diff.json
+  dd20bf49ae4aa17f  core/pending3_baselines/connector_preflight.py
+  5e8ec3a34b11bc68  core/pending3_baselines/coverage_qualified_summary.json
+  afb8c8f17b08b8ff  core/pending3_baselines/coverage_tier_report.csv
+  32f756aa14c4cf30  core/pending3_baselines/decimals_bootstrap_audit.json
+  0afe2e96d70394a9  core/pending3_baselines/decode_eval.json
+  b793411d84b90bcd  core/pending3_baselines/degradation_curve_v2.json
+  83d0861241aa2894  core/pending3_baselines/degradation_curve_v2.md
+  7602a0bcfe0fb6a4  core/pending3_baselines/dev_baseline_table.csv
+  dfb9a74593c95c5f  core/pending3_baselines/dev_candidate_table.csv
+  e11bff21316af0e8  core/pending3_baselines/dev_selection_summary.json
+  553cf76f0d5489fb  core/pending3_baselines/env.py
+  750b34b71e807450  core/pending3_baselines/failure_bottleneck_report.md
+  8bcbbe787718c718  core/pending3_baselines/fresh_holdout_baseline_table.csv
+  6e2af4247fec0f81  core/pending3_baselines/fresh_holdout_candidate_table.csv
+  3a69729d7cdea2d5  core/pending3_baselines/full_scope_claim_gate.json
+  2f9b0fd753e2b133  core/pending3_baselines/id_anchor_masked_decode_eval.json
+  4a0b0ff46d08f026  core/pending3_baselines/id_anchor_masked_masking_audit.json
+  58264567ef563912  core/pending3_baselines/id_anchor_masked_no_match_src_txs.csv
+  3f9bccfe42e65d35  core/pending3_baselines/id_anchor_masked_predictions_raw_top1.csv
+  cfb8a93e45fff670  core/pending3_baselines/id_anchor_masked_raw_eval.json
+  447a0ab21f57017c  core/pending3_baselines/id_anchor_masked_top1_admissible_eval.json
+  cdda6d96cbcd87f6  core/pending3_baselines/key_metric_superiority_gate.json
+  eb372449d6d4c40b  core/pending3_baselines/legacy_connector.py
+  3c7e0ef1713c788f  core/pending3_baselines/make_audit_figures.py
+  73e1599605800d9a  core/pending3_baselines/make_final_figure.py
+  9ca17f8c8f5095f8  core/pending3_baselines/make_study_diagnostics.py
+  791a06538137fc33  core/pending3_baselines/make_study_figures.py
+  7578e389a896d388  core/pending3_baselines/make_study_report.py
+  f0d6e42bde11f522  core/pending3_baselines/masking_audit.json
+  952afed267cb4c58  core/pending3_baselines/metric_win_loss_table.csv
+  dd06af73b689bf14  core/pending3_baselines/no_amount_decode_eval.json
+  419b70cd1fbd7ce8  core/pending3_baselines/no_amount_masking_audit.json
+  7254591f3c089bec  core/pending3_baselines/no_amount_no_match_src_txs.csv
+  c5459fcc36e5cf2b  core/pending3_baselines/no_amount_raw_eval.json
+  5ba7688281aad0d0  core/pending3_baselines/no_amount_top1_admissible_eval.json
+  58264567ef563912  core/pending3_baselines/no_match_src_txs.csv
+  158403d2aba42b41  core/pending3_baselines/no_receiver_decode_eval.json
+  c7c09d25fd32ac0c  core/pending3_baselines/no_receiver_masking_audit.json
+  913c529c2725cef7  core/pending3_baselines/no_receiver_no_amount_decode_eval.json
+  4dcd15dca3df18cc  core/pending3_baselines/no_receiver_no_amount_masking_audit.json
+  7254591f3c089bec  core/pending3_baselines/no_receiver_no_amount_no_match_src_txs.csv
+  8dd39d4205342670  core/pending3_baselines/no_receiver_no_amount_raw_eval.json
+  fee007b0685a2832  core/pending3_baselines/no_receiver_no_amount_top1_admissible_eval.json
+  7254591f3c089bec  core/pending3_baselines/no_receiver_no_match_src_txs.csv
+  384ad49ff70849d8  core/pending3_baselines/no_receiver_raw_eval.json
+  2795752ab824a593  core/pending3_baselines/no_receiver_top1_admissible_eval.json
+  dda87a7874373e4c  core/pending3_baselines/normalized_metric_table.csv
+  4b09ab2028b49c57  core/pending3_baselines/open_pool.py
+  41cb81afba066bb3  core/pending3_baselines/pareto_frontier_table.csv
+  27c485124bd8e627  core/pending3_baselines/phase1_vs_v2_prediction_equality_audit.json
+  70fa2ebdcd848f38  core/pending3_baselines/phase29_config.json
+  ee2993614938bcad  core/pending3_baselines/precision_f1_pareto_gate.json
+  3f9bccfe42e65d35  core/pending3_baselines/predictions_raw_top1.csv
+  8b9b2c9a3aa26895  core/pending3_baselines/raw_eval.json
+  768a77dc2d677d89  core/pending3_baselines/rc_uot_q_id_anchor_masked_masking_audit.json
+  a2640b0eee21d300  core/pending3_baselines/rc_uot_q_no_amount_masking_audit.json
+  6d81f8f8e29f400a  core/pending3_baselines/rc_uot_q_no_receiver_masking_audit.json
+  6d335ff40ae4fb91  core/pending3_baselines/rc_uot_q_no_receiver_no_amount_masking_audit.json
+  191cc84dd7f7f10e  core/pending3_baselines/rejected_v1_vs_v2_full_native_diff.json
+  48e79daf365ca05a  core/pending3_baselines/routeA_v2_consistency_audit.md
+  c7cbedb2d47ff148  core/pending3_baselines/routeA_v2_manifest.json
+  99a4a8244ccd74c7  core/pending3_baselines/routeA_v2_run_report.md
+  dcc220028fbab0f9  core/pending3_baselines/run_baseline_compare_phase0.py
+  c511c3b562194c16  core/pending3_baselines/run_baseline_compare_phase0_2.py
+  266061cc3e1957a8  core/pending3_baselines/run_baseline_compare_phase1_5_audit.py
+  08f14b6d1163d620  core/pending3_baselines/run_baseline_compare_phase1_6_package.py
+  51252b7ecc954b66  core/pending3_baselines/run_baseline_compare_phase1_7_qa.py
+  953d1c24f571c11a  core/pending3_baselines/run_baseline_compare_phase1_connector.py
+  4109adf525e9ee3b  core/pending3_baselines/run_baseline_compare_phase2_2_package.py
+  84eb1255901aa3cb  core/pending3_baselines/run_baseline_compare_phase2_connector_anchor_masked.py
+  5a3fcfe5e1d6d505  core/pending3_baselines/run_baseline_compare_phase2_fair_package.py
+  1fd5cd6220c22336  core/pending3_baselines/run_capability_tests.py
+  b3d9925a867d0b83  core/pending3_baselines/run_coverage_precision_curve.py
+  fa63cddc65fe8abc  core/pending3_baselines/run_locked_test.py
+  56618bf385efdd19  core/pending3_baselines/run_main_baseline_study.py
+  43303b32e0cb7c63  core/pending3_baselines/run_one_to_one_flow_baselines.py
+  6731126b95afabb5  core/pending3_baselines/run_open_pool_baseline.py
+  d8445b6c70d8766e  core/pending3_baselines/run_phase10s_same_scope_baseline_superiority.py
+  5e1c79c3f227f63d  core/pending3_baselines/run_phase10t_rcuot_arch_optimization.py
+  0846bec2d45e7fc7  core/pending3_baselines/run_phase10u_balanced_tradeoff_profile.py
+  f807f9afe945aa9b  core/pending3_baselines/run_phase10v_pair_f1_precision_rcuot.py
+  025162bb5e285b3b  core/pending3_baselines/run_phase26_balanced_superiority.py
+  263ab04994d9be4a  core/pending3_baselines/run_phase28_multiobjective_rcuot_superiority.py
+  a66fbdc8109f5344  core/pending3_baselines/run_phase29_robust_rcuot_superiority.py
+  fc4c1b766eab6e37  core/pending3_baselines/run_phase7_5_external_baselines.py
+  7dbc5dbb1fe68f23  core/pending3_baselines/run_rc_uot_q_multi_bridge.py
+  a4097dc9b1b141a5  core/pending3_baselines/run_routeA_1_consistency_audit.py
+  5e3c543e9681b210  core/pending3_baselines/run_routeA_bridge_semantic_ablation_v3.py
+  5f4b9b93d32cc72c  core/pending3_baselines/run_routeA_symmetric_masking.py
+  5ff367643171d2f5  core/pending3_baselines/run_routeA_symmetric_masking_v2.py
+  ff255ca7a607b2c1  core/pending3_baselines/run_structural_baselines.py
+  deb0e72490d1820a  core/pending3_baselines/run_structural_three_bridges.py
+  a66fbdc8109f5344  core/pending3_baselines/scripts_run_phase29_robust_rcuot_superiority.py
+  cdda6d96cbcd87f6  core/pending3_baselines/strict_superiority_gate.json
+  76cdf7dcac403fca  core/pending3_baselines/symmetric_masking_protocol_v2.md
+  ad406d837fc85815  core/pending3_baselines/symmetric_masking_spec_v2.json
+  ace27858468ec26e  core/pending3_baselines/tables_FINAL_TABLE4_BASELINE_FAIRNESS_AUDIT.md
+  b793411d84b90bcd  core/pending3_baselines/tables_Table6_connector_degradation_curve.json
+  ace27858468ec26e  core/pending3_baselines/tifs_final_consolidation_FINAL_TABLE4_BASELINE_FAIRNESS_AUDIT.md
+  e6d5ad7774775756  core/pending3_baselines/top1_admissible_eval.json
+  c412de68b608c854  core/pending3_baselines/unlabeled_io.py
+  2e436609d452ddfb  core/pending3_baselines/verify_baseline_mechanism_study.py
+  8195b2236401b9b9  core/pending3_baselines/version_audit_FIGURE_PROVENANCE_AUDIT.md
+  9f45690775b61c8e  core/pending3_baselines/version_audit_TABLE_PROVENANCE_AUDIT.md
+  d8d28db47d755cdc  core/pending3_baselines/withdraw_locator.py
+
+### MANUSCRIPT AUTHORITY
+  fdfa0f24e5e467d5  core/manuscript_authority/04_experiments.md
+  796a29566e0877f8  core/manuscript_authority/AUTHOR_FINAL_ACTION_LIST.md
+  b1490129a1ae3533  core/manuscript_authority/FINAL_AUTHOR_BLOCKERS.md
+  95ecbf98b1a0c497  core/manuscript_authority/FINAL_AUTHOR_BLOCKERS_V2.md
+  8a7989464c8cacbb  core/manuscript_authority/FINAL_AUTHOR_DECISION_REPORT.md
+  ee8c8baa8c062740  core/manuscript_authority/FINAL_CHINESE_MOTHER_MANUSCRIPT_LOCK.json
+  9879155264dd5be0  core/manuscript_authority/FINAL_CN_MANUSCRIPT_MANIFEST.json
+  641ed3144d1f3364  core/manuscript_authority/R5C_AUTHOR_VISUAL_QA_CHECKLIST.md
+  deb7d8b0a84bde54  core/manuscript_authority/R5C_FINAL_RETURN.md
+  a6d37fa1ca228258  core/manuscript_authority/ZN_TIFS_CN_R10.docx
+  e8fcd6481a0766c8  core/manuscript_authority/ZN_TIFS_CN_R11_SUBMISSION_READY.docx
+  d3f5a063e2651201  core/manuscript_authority/ZN_TIFS_CN_R5_DRAFT.docx
+  d7510bef05c1b764  core/manuscript_authority/ZN_TIFS_CN_R8_WITH_FIGURES.docx
+  d3c2044e800bad8a  core/manuscript_authority/ZN_TIFS_CN_R9_CONDENSED.docx
+  291f0286d809695e  core/manuscript_authority/ZN_TIFS_FINAL_CHANGELOG.md
+  536199089e5388ab  core/manuscript_authority/ZN_TIFS_FINAL_REVISION_REPORT.md
+  a69f45fb13b69bcc  core/manuscript_authority/appendix_B_connector_native_diagnostic.md
+  b5c385d879a6acaa  core/manuscript_authority/full_manuscript_final.md
+  17b8dd703fc1fd23  core/manuscript_authority/supplement_CN_S1_covered_quotient.md
+  da55de2be219b28f  core/manuscript_authority/supplement_EN_S1_covered_quotient.md
+  0ad20c5a2efae17f  core/manuscript_authority/supplement_EN_S2_ci_sensitivity.md
+  51a86b8d4e7d7d3f  core/manuscript_authority/supplement_EN_S3_provenance_adequacy.md
+  159b5e1fa8d2db32  core/manuscript_authority/supplement_EN_S4_scalability.md
+
+### PENDING-6 REFERENCES
+  8ed26ae2ebe9c92b  core/pending6_references/1_table_reference_references.bib
+  2c7f25528815a9eb  core/pending6_references/R4_REFERENCE_GAP_MAP.md
+  69b63cf744bedb86  core/pending6_references/R4_REFERENCE_VERIFICATION_MATRIX.md
+  4c462d67baeeb01b  core/pending6_references/R5C_CN_EN_CLAIM_PARITY_AUDIT.md
+  950e6ce076eea39e  core/pending6_references/R5_REFERENCE_FIX_REPORT.md
+  f86ebce98322526c  core/pending6_references/R5_REFERENCE_MASTER_AUDIT.csv
+  0990c84f0f0b163f  core/pending6_references/REFERENCE_AUTHOR_ACTIONS.md
+  8ba5658bced891ab  core/pending6_references/TIFS_INITIAL_SUBMISSION_PACKAGE_references.bib
+  8ba5658bced891ab  core/pending6_references/TIFS_SUBMISSION_PACKAGE_references.bib
+  bad4812feafff387  core/pending6_references/TIFS_references.bib
+  8ba5658bced891ab  core/pending6_references/latex_references.bib
+  5131a177ae1d7d13  core/pending6_references/manuscript_final_references.bib
+  77a81342de0176c4  core/pending6_references/paper_readiness_checklist.md
+  815e3f16c4bd277e  core/pending6_references/references.bib
+  5d7067df98142103  core/pending6_references/references_index.md
+  29d0c5313e4a4a50  core/pending6_references/references_phase3.bib
+  815e3f16c4bd277e  core/pending6_references/references_raw.bib
+  8ba5658bced891ab  core/pending6_references/references_references.bib
+  bad4812feafff387  core/pending6_references/table_reference_references.bib
+  8ba5658bced891ab  core/pending6_references/tifs_reference_rebuild_r3_latex_references.bib
+  8ba5658bced891ab  core/pending6_references/tifs_reference_rebuild_r3_references_references.bib
+
+### TRACE EDGES — cost weights (af_common / da_common / cost_matrix)
+  [E1] scripts\multi_bridge\diag\ctd_common.py -> baseline_mechanism.common -> scripts\multi_bridge\baseline_mechanism\common.py  68b0beda9a6c
+  [E1] src\cross\domain\uot\uot_solver.py -> cost_matrix -> src\cross\domain\uot\cost_matrix.py  189dcddc157a
+  [E1] scripts\multi_bridge\dev_candidate\af_common.py -> baseline_mechanism.common -> scripts\multi_bridge\baseline_mechanism\common.py  68b0beda9a6c
+  [E1] scripts\multi_bridge\decoder_audit\da_common.py -> baseline_mechanism.common -> scripts\multi_bridge\baseline_mechanism\common.py  68b0beda9a6c
+  [E1] scripts\multi_bridge\decoder_audit\da_common.py -> baseline_mechanism.common -> scripts\multi_bridge\baseline_mechanism\common.py  68b0beda9a6c
+  [E1] scripts\multi_bridge\decoder_audit\da_common.py -> baseline_mechanism.common -> scripts\multi_bridge\baseline_mechanism\common.py  68b0beda9a6c
+  [E1] scripts\multi_bridge\decoder_audit\da_common.py -> baseline_mechanism.common -> scripts\multi_bridge\baseline_mechanism\common.py  68b0beda9a6c
+  [E1] scripts\multi_bridge\decoder_audit\da_common.py -> baseline_mechanism.common -> scripts\multi_bridge\baseline_mechanism\common.py  68b0beda9a6c
+  [E1] scripts\multi_bridge\decoder_audit\da_common.py -> baseline_mechanism.common -> scripts\multi_bridge\baseline_mechanism\common.py  68b0beda9a6c
+  [E1] scripts\multi_bridge\decoder_audit\da_common.py -> baseline_mechanism.common -> scripts\multi_bridge\baseline_mechanism\common.py  68b0beda9a6c
+  [E1] scripts\multi_bridge\run_threshold_many_match.py -> baseline_mechanism.common -> scripts\multi_bridge\baseline_mechanism\common.py  68b0beda9a6c
+  [E1] scripts\multi_bridge\run_faithful_flow_structural.py -> cross.domain.uot.cost_matrix -> src\cross\domain\uot\cost_matrix.py  189dcddc157a
+  [E1] src\cross\application\standalone_flow_uot.py -> cross.domain.uot.cost_matrix -> src\cross\domain\uot\cost_matrix.py  189dcddc157a
+  [E1] src\cross\domain\path_b\runner.py -> uot.cost_matrix -> src\cross\domain\uot\cost_matrix.py  189dcddc157a
+  [E1] src\cross\domain\path_b\runner.py -> uot.cost_matrix -> src\cross\domain\uot\cost_matrix.py  189dcddc157a
+  [E1] scripts\multi_bridge\holdout\verify_locked_holdout.py -> decoder_audit.da_common -> scripts\multi_bridge\decoder_audit\da_common.py  fff26071d54e
+  [E1] scripts\multi_bridge\holdout\verify_locked_holdout.py -> baseline_mechanism.common -> scripts\multi_bridge\baseline_mechanism\common.py  68b0beda9a6c
+  [E1] scripts\multi_bridge\holdout\verify_locked_holdout.py -> baseline_mechanism.common -> scripts\multi_bridge\baseline_mechanism\common.py  68b0beda9a6c
+  [E1] scripts\multi_bridge\holdout\holdout_common.py -> dev_candidate.af_common -> scripts\multi_bridge\dev_candidate\af_common.py  a09c386722ca
+  [E1] scripts\multi_bridge\holdout\holdout_common.py -> decoder_audit.da_common -> scripts\multi_bridge\decoder_audit\da_common.py  fff26071d54e
+  [E1] scripts\multi_bridge\holdout\run_locked_holdout.py -> decoder_audit.da_common -> scripts\multi_bridge\decoder_audit\da_common.py  fff26071d54e
+  [E1] scripts\multi_bridge\holdout\run_locked_holdout.py -> baseline_mechanism.common -> scripts\multi_bridge\baseline_mechanism\common.py  68b0beda9a6c
+  [E1] scripts\multi_bridge\holdout\run_locked_holdout.py -> dev_candidate.af_common -> scripts\multi_bridge\dev_candidate\af_common.py  a09c386722ca
+  [E1] scripts\multi_bridge\holdout\run_locked_holdout.py -> baseline_mechanism.common -> scripts\multi_bridge\baseline_mechanism\common.py  68b0beda9a6c
+  [E1] scripts\multi_bridge\holdout\run_locked_holdout.py -> cross.domain.uot.cost_matrix -> src\cross\domain\uot\cost_matrix.py  189dcddc157a
+  [E1] scripts\multi_bridge\holdout\run_locked_holdout.py -> dev_candidate.af_common -> scripts\multi_bridge\dev_candidate\af_common.py  a09c386722ca
+  [BASE] scripts\multi_bridge\verify_baseline_mechanism_study.py -> baseline_mechanism.common -> scripts\multi_bridge\baseline_mechanism\common.py  68b0beda9a6c
+  [BASE] src\cross\domain\uot\uot_solver.py -> cost_matrix -> src\cross\domain\uot\cost_matrix.py  189dcddc157a
+  [BASE] scripts\multi_bridge\run_capability_tests.py -> baseline_mechanism.common -> scripts\multi_bridge\baseline_mechanism\common.py  68b0beda9a6c
+  [BASE] scripts\multi_bridge\run_main_baseline_study.py -> baseline_mechanism.common -> scripts\multi_bridge\baseline_mechanism\common.py  68b0beda9a6c
+  [BASE] src\cross\application\experiments\uot_cache_utils.py -> cross.domain.uot.cost_matrix -> src\cross\domain\uot\cost_matrix.py  189dcddc157a
+  [BASE] src\cross\application\standalone_flow_uot.py -> cross.domain.uot.cost_matrix -> src\cross\domain\uot\cost_matrix.py  189dcddc157a
+  [BASE] src\cross\domain\path_b\runner.py -> uot.cost_matrix -> src\cross\domain\uot\cost_matrix.py  189dcddc157a
+  [BASE] src\cross\domain\path_b\runner.py -> uot.cost_matrix -> src\cross\domain\uot\cost_matrix.py  189dcddc157a
+
+### TRACE EDGES — holdout / closure roots
+  68b0beda9a6c2f29  depth=1  scripts\multi_bridge\baseline_mechanism\common.py
+  fff26071d54e813c  depth=0  scripts\multi_bridge\decoder_audit\da_common.py
+  a09c386722cacc8a  depth=0  scripts\multi_bridge\dev_candidate\af_common.py
+  5686f55499bcf132  depth=0  scripts\multi_bridge\diag\ctd_common.py
+  388614745e458dc8  depth=0  scripts\multi_bridge\faithful_flow_features.py
+  d1a76737e321d4bc  depth=1  scripts\multi_bridge\holdout\holdout_common.py
+  eb48c35e78e30443  depth=0  scripts\multi_bridge\holdout\run_locked_holdout.py
+  8d19c2eff86bf65a  depth=0  scripts\multi_bridge\holdout\verify_locked_holdout.py
+  0c5928bdd80397de  depth=0  scripts\multi_bridge\run_faithful_flow_structural.py
+  7dbc5dbb1fe68f23  depth=1  scripts\multi_bridge\run_rc_uot_q_multi_bridge.py
+  90958508b9f4a1a2  depth=0  scripts\multi_bridge\run_threshold_many_match.py
+  d2a52eb0899bda1b  depth=1  src\cross\application\standalone_flow_uot.py
+  0924711efbc3418a  depth=3  src\cross\config\output_layout.py
+  d3eba23f15970635  depth=4  src\cross\config\paths.py
+  c64a2d386507ac8d  depth=4  src\cross\domain\aml\features.py
+  48ea7116bbd5d161  depth=3  src\cross\domain\aml\inference.py
+  1496365b5ba68a38  depth=4  src\cross\domain\aml\model.py
+  8f0d828e5a7e49ce  depth=1  src\cross\domain\aml\rules.py
+  50f5335b8d3e78b5  depth=4  src\cross\domain\amount\normalizer.py
+  385d91b434e3525c  depth=3  src\cross\domain\evaluation\__init__.py
+  4565e45984be45ad  depth=3  src\cross\domain\evaluation\compare.py
+  c2e92af04ccd5ca2  depth=2  src\cross\domain\evaluation\flow_eval.py
+  34fac900706f2632  depth=4  src\cross\domain\evaluation\flow_metrics.py
+  f44a01a0fcd03228  depth=1  src\cross\domain\evaluation\semi_synthetic_flows.py
+  3413dbf3f272ee42  depth=3  src\cross\domain\evaluation\synthetic_scenario_eval.py
+  a32ab584bb9cc450  depth=1  src\cross\domain\evaluation\synthetic_segment_subgraph.py
+  5624e2c6c4320313  depth=3  src\cross\domain\evidence.py
+  b03901a1c9492e03  depth=3  src\cross\domain\flow\segment_builder.py
+  c75672ffe4f58224  depth=3  src\cross\domain\flows\flow_features.py
+  459974641a721050  depth=3  src\cross\domain\flows\segment_builder.py
+  b09138748939e009  depth=4  src\cross\domain\graph\features.py
+  620c62d3239e3cc4  depth=3  src\cross\domain\graph\inference.py
+  d0b00ab5d843fec9  depth=4  src\cross\domain\graph\model.py
+  e943c8d7db1ae2e6  depth=3  src\cross\domain\labels\anchor_masking.py
+  795274d6c943bdea  depth=4  src\cross\domain\labels\feature_provenance.py
+  0b30c30537adc00d  depth=2  src\cross\domain\labels\uot_flow_loader.py
+  d8d28db47d755cdc  depth=4  src\cross\domain\locator\withdraw_locator.py
+  92254fbadfd19b32  depth=4  src\cross\domain\path_a\pairing.py
+  cef6cd6a9b18b5d4  depth=3  src\cross\domain\path_b\address_aggregate.py
+  f5361e4c0465ba68  depth=3  src\cross\domain\path_b\align.py
+  7c5301db6ad9284d  depth=4  src\cross\domain\path_b\constants.py
+  553cf76f0d5489fb  depth=3  src\cross\domain\path_b\env.py
+  a1b2a576abca2466  depth=5  src\cross\domain\path_b\greedy.py
+  eb372449d6d4c40b  depth=3  src\cross\domain\path_b\legacy_connector.py
+  562dde0dc0074518  depth=4  src\cross\domain\path_b\route_registry.py
+  1bfdfc5ca6bd5232  depth=2  src\cross\domain\path_b\runner.py
+  c412de68b608c854  depth=3  src\cross\domain\path_b\unlabeled_io.py
+  0768af1a269a1011  depth=3  src\cross\domain\path_b\uot_pairs.py
+  8e7e09315af6d3c4  depth=4  src\cross\domain\ranker\features.py
+  33cb8e651c7c134c  depth=3  src\cross\domain\ranker\inference.py
+  da2669d8ad00b605  depth=4  src\cross\domain\ranker\model.py
+  e0f9a4ee5950b824  depth=4  src\cross\domain\token\decimals_registry.py
+  189dcddc157ac474  depth=3  src\cross\domain\uot\cost_matrix.py
+  73a9493bbff35432  depth=2  src\cross\domain\uot\decode_transport.py
+  e8cd179606861582  depth=4  src\cross\domain\uot\delay_policy.py
+  4e22812ad47c370b  depth=2  src\cross\domain\uot\flow_uot_candidate_subgraph.py
+  c50a0d811c94e2dc  depth=3  src\cross\domain\uot\tx_decode_policy.py
+  6bcfa3122dda2935  depth=2  src\cross\domain\uot\uot_solver.py
+  b8117f66db0eee1f  depth=3  src\cross\domain\uot\uot_solver_numpy.py
+  3a06142aa7015df0  depth=3  src\cross\domain\validation\rc_uot_exports.py
+  065e556401c8cc77  depth=3  src\cross\infrastructure\evidence_validate.py
+  ea7deff8726e6c1f  depth=5  src\cross\shared\__init__.py
+  7229f8513fe2d0c0  depth=3  src\cross\shared\amount_hints.py
+  86478c6fff63035f  depth=5  src\cross\shared\amount_normalizer.py
+  cfad699f1fc014d3  depth=5  src\cross\shared\bnb_pick.py
+  577440550193508e  depth=4  src\cross\shared\connector_decimals.py
+  1e9d180a60ce4c96  depth=5  src\cross\shared\decimals_registry.py
+  7dc9234762c1665e  depth=3  src\cross\shared\label_split.py
+  139cfaab767f294d  depth=3  src\cross\shared\load_csv.py
+  bbad17966cecf525  depth=3  src\cross\shared\normalize.py
+  57698577fb45a114  depth=3  src\cross\shared\token_map.py
+  f716bfe4575c31be  depth=2  src\cross\shared\transfers.py
+  b6382b37d0f44187  depth=4  src\cross\utils\safe_cast.py
+
+### SHA256 of the two required top-level reports' inputs
+  a09c386722cacc8ae1df2a175f08de17be2209fbed1a63f024f0e396b007dcf4  core/pending1_cost_weights/af_common.py
+  fff26071d54e813cf087122399b8dee4ad4c92c7652b4d3d6a7ba1e2f8bfd77c  core/pending1_cost_weights/da_common.py
+  979e5931ced5e070c1d071a9c0199de85fc41d9e22cdbd54b4e00347119b72ec  core/pending1_cost_weights/NEXT_CANDIDATE_SPEC.md
+  13037db7c7876f302a6bebc92ec19b972c5198151030fbcf849c29e12d694b57  core/pending2_coverage_tiers/coverage.py
+  9f112e7262ccc3158f344ffbe6e56cd5a1cb142c76842c9db20e2868dd6ceaa2  core/pending2_coverage_tiers/quotient_builder.py
+  c0acc1d08c3ea461f952e79d3fcd00a347831cfec8560593de5d436ee1b0b389  core/pending2_coverage_tiers/feature_builder.py
+  13037db7c7876f302a6bebc92ec19b972c5198151030fbcf849c29e12d694b57  core/pending2_coverage_tiers/cross_aml_coverage.py
+  9f112e7262ccc3158f344ffbe6e56cd5a1cb142c76842c9db20e2868dd6ceaa2  core/pending2_coverage_tiers/cross_aml_quotient_builder.py
+  c0acc1d08c3ea461f952e79d3fcd00a347831cfec8560593de5d436ee1b0b389  core/pending2_coverage_tiers/cross_aml_feature_builder.py
+  13037db7c7876f302a6bebc92ec19b972c5198151030fbcf849c29e12d694b57  core/pending2_coverage_tiers/R5C_repro_bundle_cross_aml_coverage.py
+  9f112e7262ccc3158f344ffbe6e56cd5a1cb142c76842c9db20e2868dd6ceaa2  core/pending2_coverage_tiers/R5C_repro_bundle_cross_aml_quotient_builder.py
+  c0acc1d08c3ea461f952e79d3fcd00a347831cfec8560593de5d436ee1b0b389  core/pending2_coverage_tiers/R5C_repro_bundle_cross_aml_feature_builder.py
+  ace27858468ec26e7e10bd7247dea0fd0e607686bbbf7b2f29d9cde4eda95cea  core/pending3_baselines/FINAL_TABLE4_BASELINE_FAIRNESS_AUDIT.md
+  ace27858468ec26e7e10bd7247dea0fd0e607686bbbf7b2f29d9cde4eda95cea  core/pending3_baselines/tifs_final_consolidation_FINAL_TABLE4_BASELINE_FAIRNESS_AUDIT.md
+  ace27858468ec26e7e10bd7247dea0fd0e607686bbbf7b2f29d9cde4eda95cea  core/pending3_baselines/tables_FINAL_TABLE4_BASELINE_FAIRNESS_AUDIT.md
+  d1a76737e321d4bc6f1610db643b60a98117f556e06598c5a849699519121ca7  core/pending5_holdout_d4/holdout_common.py
+  eb48c35e78e30443ac4ec4d44434b1d9e060121fcee5d6cec270d71a10f6abee  core/pending5_holdout_d4/run_locked_holdout.py
+  96fa7f8688b89fc2773c8a53b195b655c6f59e16f1db1e69e53e24a27c001e88  core/pending5_holdout_d4/FINAL_CONFIRMATORY_HOLDOUT_REPORT.md
+  979e5931ced5e070c1d071a9c0199de85fc41d9e22cdbd54b4e00347119b72ec  core/pending5_holdout_d4/NEXT_CANDIDATE_SPEC.md
+  96fa7f8688b89fc2773c8a53b195b655c6f59e16f1db1e69e53e24a27c001e88  core/pending5_holdout_d4/conditional_plan_holdout_results_FINAL_CONFIRMATORY_HOLDOUT_REPORT.md
+  eb48c35e78e30443ac4ec4d44434b1d9e060121fcee5d6cec270d71a10f6abee  core/pending5_holdout_d4/confirmatory_artifacts_run_locked_holdout.py
+  9743470f5c526ed1ca85b190c3f2f34e9d8bea041382d359ebc26c9d5c593eaa  core/pending4_generator/RUN_MANIFEST_structural_benchmark.md
+  9743470f5c526ed1ca85b190c3f2f34e9d8bea041382d359ebc26c9d5c593eaa  core/pending4_generator/A_structural_RUN_MANIFEST_structural_benchmark.md
+  f44a01a0fcd032289f0a3a69b85baa06bfbb4aba7ec95f1f39844c638be4bf5a  core/pending4_generator/semi_synthetic_flows.py
+  d1a76737e321d4bc6f1610db643b60a98117f556e06598c5a849699519121ca7  core/pending4_generator/holdout_common.py
+  eb48c35e78e30443ac4ec4d44434b1d9e060121fcee5d6cec270d71a10f6abee  core/pending4_generator/run_locked_holdout.py
+  979e5931ced5e070c1d071a9c0199de85fc41d9e22cdbd54b4e00347119b72ec  core/pending4_generator/NEXT_CANDIDATE_SPEC.md
+  fff26071d54e813cf087122399b8dee4ad4c92c7652b4d3d6a7ba1e2f8bfd77c  e1/code_closure/scripts/multi_bridge/decoder_audit/da_common.py
+  a09c386722cacc8ae1df2a175f08de17be2209fbed1a63f024f0e396b007dcf4  e1/code_closure/scripts/multi_bridge/dev_candidate/af_common.py
+  d1a76737e321d4bc6f1610db643b60a98117f556e06598c5a849699519121ca7  e1/code_closure/scripts/multi_bridge/holdout/holdout_common.py
+  eb48c35e78e30443ac4ec4d44434b1d9e060121fcee5d6cec270d71a10f6abee  e1/code_closure/scripts/multi_bridge/holdout/run_locked_holdout.py
+  f44a01a0fcd032289f0a3a69b85baa06bfbb4aba7ec95f1f39844c638be4bf5a  e1/code_closure/src/cross/domain/evaluation/semi_synthetic_flows.py

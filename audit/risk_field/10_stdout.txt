@@ -1,0 +1,171 @@
+﻿====================================================================================================
+DIRS WITH VARYING, NON-ZERO `aml_risk_score`  (non-archive only)
+====================================================================================================
+total dirs (all): 237   non-archive: 79
+   out\multi_bridge_expansion\faithful_flow_structural_three_bridges\per_seed\Celer\seed_<N>\uot
+   out\multi_bridge_expansion\faithful_flow_structural_three_bridges\per_seed\Multi\seed_<N>\uot
+   out\multi_bridge_expansion\faithful_flow_structural_three_bridges\per_seed\Poly\seed_<N>\uot
+   out\multi_bridge_expansion\faithful_flow_structural_three_bridges\smoke\Celer\seed_<N>\uot
+   out\multi_bridge_expansion\faithful_flow_structural_three_bridges\smoke\Multi\seed_<N>\uot
+   out\multi_bridge_expansion\faithful_flow_structural_three_bridges\smoke\Poly\seed_<N>\uot
+   out\multi_bridge_expansion\faithful_flow_structural_three_bridges_audit\variants\celer_counter_decoy_off\Celer\seed_<N>\uot
+   out\multi_bridge_expansion\faithful_flow_structural_three_bridges_audit\variants\celer_counter_evidence_const\Celer\seed_<N>\uot
+   out\multi_bridge_expansion\faithful_flow_structural_three_bridges_audit\variants\loo_amount\Celer\seed_<N>\uot
+   out\multi_bridge_expansion\faithful_flow_structural_three_bridges_audit\variants\loo_amount\Multi\seed_<N>\uot
+   out\multi_bridge_expansion\faithful_flow_structural_three_bridges_audit\variants\loo_amount\Poly\seed_<N>\uot
+   out\multi_bridge_expansion\faithful_flow_structural_three_bridges_audit\variants\loo_evidence\Celer\seed_<N>\uot
+   out\multi_bridge_expansion\faithful_flow_structural_three_bridges_audit\variants\loo_evidence\Multi\seed_<N>\uot
+   out\multi_bridge_expansion\faithful_flow_structural_three_bridges_audit\variants\loo_evidence\Poly\seed_<N>\uot
+   out\multi_bridge_expansion\faithful_flow_structural_three_bridges_audit\variants\loo_novelty\Celer\seed_<N>\uot
+   out\multi_bridge_expansion\faithful_flow_structural_three_bridges_audit\variants\loo_novelty\Multi\seed_<N>\uot
+   out\multi_bridge_expansion\faithful_flow_structural_three_bridges_audit\variants\loo_novelty\Poly\seed_<N>\uot
+   out\multi_bridge_expansion\faithful_flow_structural_three_bridges_audit\variants\loo_risk\Celer\seed_<N>\uot
+   out\multi_bridge_expansion\faithful_flow_structural_three_bridges_audit\variants\loo_risk\Multi\seed_<N>\uot
+   out\multi_bridge_expansion\faithful_flow_structural_three_bridges_audit\variants\loo_risk\Poly\seed_<N>\uot
+   out\multi_bridge_expansion\faithful_flow_structural_three_bridges_audit\variants\loo_route\Celer\seed_<N>\uot
+   out\multi_bridge_expansion\faithful_flow_structural_three_bridges_audit\variants\loo_route\Multi\seed_<N>\uot
+   out\multi_bridge_expansion\faithful_flow_structural_three_bridges_audit\variants\loo_route\Poly\seed_<N>\uot
+   out\multi_bridge_expansion\faithful_flow_structural_three_bridges_audit\variants\loo_time\Celer\seed_<N>\uot
+   out\multi_bridge_expansion\faithful_flow_structural_three_bridges_audit\variants\loo_time\Multi\seed_<N>\uot
+   out\multi_bridge_expansion\faithful_flow_structural_three_bridges_audit\variants\loo_time\Poly\seed_<N>\uot
+   out\multi_bridge_expansion\faithful_flow_structural_three_bridges_audit\variants\minimum_defensible_amount_time_route\Celer\seed_<N>\uot
+   out\multi_bridge_expansion\faithful_flow_structural_three_bridges_audit\variants\minimum_defensible_amount_time_route\Multi\seed_<N>\uot
+   out\multi_bridge_expansion\faithful_flow_structural_three_bridges_audit\variants\minimum_defensible_amount_time_route\Poly\seed_<N>\uot
+   out\multi_bridge_expansion\faithful_flow_structural_three_bridges_audit\variants\poly_amtnoise_10pct\Poly\seed_<N>\uot
+   out\multi_bridge_expansion\faithful_flow_structural_three_bridges_audit\variants\poly_amtnoise_20pct\Poly\seed_<N>\uot
+   out\multi_bridge_expansion\faithful_flow_structural_three_bridges_audit\variants\poly_amtnoise_5pct\Poly\seed_<N>\uot
+   out\multi_bridge_expansion\faithful_flow_structural_three_bridges_audit\variants\poly_decoy_2x\Poly\seed_<N>\uot
+   out\multi_bridge_expansion\faithful_flow_structural_three_bridges_audit\variants\poly_decoy_4x\Poly\seed_<N>\uot
+   out\multi_bridge_expansion\faithful_flow_structural_three_bridges_audit\variants\poly_only_amount\Poly\seed_<N>\uot
+   out\multi_bridge_expansion\faithful_flow_structural_three_bridges_audit\variants\poly_only_evidence\Poly\seed_<N>\uot
+   out\multi_bridge_expansion\faithful_flow_structural_three_bridges_audit\variants\poly_only_novelty\Poly\seed_<N>\uot
+   out\multi_bridge_expansion\faithful_flow_structural_three_bridges_audit\variants\poly_only_risk\Poly\seed_<N>\uot
+   out\multi_bridge_expansion\faithful_flow_structural_three_bridges_audit\variants\poly_only_route\Poly\seed_<N>\uot
+   out\multi_bridge_expansion\faithful_flow_structural_three_bridges_audit\variants\poly_only_time\Poly\seed_<N>\uot
+   out\multi_bridge_expansion\faithful_flow_structural_three_bridges_audit\variants\poly_tsnoise_120\Poly\seed_<N>\uot
+   out\multi_bridge_expansion\faithful_flow_structural_three_bridges_audit\variants\poly_tsnoise_240\Poly\seed_<N>\uot
+   out\multi_bridge_expansion\faithful_flow_structural_three_bridges_audit\variants\poly_tsnoise_60\Poly\seed_<N>\uot
+   out\multi_bridge_expansion\faithful_flow_structural_three_bridges_audit\variants\poly_unmatched_2x\Poly\seed_<N>\uot
+   out\multi_bridge_expansion\faithful_flow_structural_three_bridges_audit\variants\poly_unmatched_3x\Poly\seed_<N>\uot
+   out\multi_bridge_expansion\faithful_flow_structural_three_bridges_audit\variants\price_per_token_rand1\Celer\seed_<N>\uot
+   out\multi_bridge_expansion\faithful_flow_structural_three_bridges_audit\variants\price_per_token_rand1\Multi\seed_<N>\uot
+   out\multi_bridge_expansion\faithful_flow_structural_three_bridges_audit\variants\price_per_token_rand1\Poly\seed_<N>\uot
+   out\multi_bridge_expansion\faithful_flow_structural_three_bridges_audit\variants\price_per_token_rand2\Celer\seed_<N>\uot
+   out\multi_bridge_expansion\faithful_flow_structural_three_bridges_audit\variants\price_per_token_rand2\Multi\seed_<N>\uot
+   out\multi_bridge_expansion\faithful_flow_structural_three_bridges_audit\variants\price_per_token_rand2\Poly\seed_<N>\uot
+   out\multi_bridge_expansion\faithful_flow_structural_three_bridges_audit\variants\price_per_token_rand3\Celer\seed_<N>\uot
+   out\multi_bridge_expansion\faithful_flow_structural_three_bridges_audit\variants\price_per_token_rand3\Multi\seed_<N>\uot
+   out\multi_bridge_expansion\faithful_flow_structural_three_bridges_audit\variants\price_per_token_rand3\Poly\seed_<N>\uot
+   out\multi_bridge_expansion\faithful_flow_structural_three_bridges_audit\variants\price_uniform_0.8\Celer\seed_<N>\uot
+   out\multi_bridge_expansion\faithful_flow_structural_three_bridges_audit\variants\price_uniform_0.8\Multi\seed_<N>\uot
+   out\multi_bridge_expansion\faithful_flow_structural_three_bridges_audit\variants\price_uniform_0.8\Poly\seed_<N>\uot
+   out\multi_bridge_expansion\faithful_flow_structural_three_bridges_audit\variants\price_uniform_0.9\Celer\seed_<N>\uot
+   out\multi_bridge_expansion\faithful_flow_structural_three_bridges_audit\variants\price_uniform_0.9\Multi\seed_<N>\uot
+   out\multi_bridge_expansion\faithful_flow_structural_three_bridges_audit\variants\price_uniform_0.9\Poly\seed_<N>\uot
+   out\multi_bridge_expansion\faithful_flow_structural_three_bridges_audit\variants\price_uniform_1.1\Celer\seed_<N>\uot
+   out\multi_bridge_expansion\faithful_flow_structural_three_bridges_audit\variants\price_uniform_1.1\Multi\seed_<N>\uot
+   out\multi_bridge_expansion\faithful_flow_structural_three_bridges_audit\variants\price_uniform_1.1\Poly\seed_<N>\uot
+   out\multi_bridge_expansion\faithful_flow_structural_three_bridges_audit\variants\price_uniform_1.2\Celer\seed_<N>\uot
+   out\multi_bridge_expansion\faithful_flow_structural_three_bridges_audit\variants\price_uniform_1.2\Multi\seed_<N>\uot
+   out\multi_bridge_expansion\faithful_flow_structural_three_bridges_audit\variants\price_uniform_1.2\Poly\seed_<N>\uot
+   out\multi_bridge_expansion\faithful_flow_structural_three_bridges_audit\variants\repro_check\Celer\seed_<N>\uot
+   out\multi_bridge_expansion\faithful_flow_structural_three_bridges_audit\variants\sens_reg_0.025\Celer\seed_<N>\uot
+   out\multi_bridge_expansion\faithful_flow_structural_three_bridges_audit\variants\sens_reg_0.025\Multi\seed_<N>\uot
+   out\multi_bridge_expansion\faithful_flow_structural_three_bridges_audit\variants\sens_reg_0.025\Poly\seed_<N>\uot
+   out\multi_bridge_expansion\faithful_flow_structural_three_bridges_audit\variants\sens_reg_0.10\Celer\seed_<N>\uot
+   out\multi_bridge_expansion\faithful_flow_structural_three_bridges_audit\variants\sens_reg_0.10\Multi\seed_<N>\uot
+   out\multi_bridge_expansion\faithful_flow_structural_three_bridges_audit\variants\sens_reg_0.10\Poly\seed_<N>\uot
+   out\multi_bridge_expansion\faithful_flow_structural_three_bridges_audit\variants\sens_regm_0.25\Celer\seed_<N>\uot
+   out\multi_bridge_expansion\faithful_flow_structural_three_bridges_audit\variants\sens_regm_0.25\Multi\seed_<N>\uot
+   out\multi_bridge_expansion\faithful_flow_structural_three_bridges_audit\variants\sens_regm_0.25\Poly\seed_<N>\uot
+   out\multi_bridge_expansion\faithful_flow_structural_three_bridges_audit\variants\sens_regm_1.0\Celer\seed_<N>\uot
+   out\multi_bridge_expansion\faithful_flow_structural_three_bridges_audit\variants\sens_regm_1.0\Multi\seed_<N>\uot
+   out\multi_bridge_expansion\faithful_flow_structural_three_bridges_audit\variants\sens_regm_1.0\Poly\seed_<N>\uot
+
+====================================================================================================
+DIRS WITH VARYING, NON-ZERO `aml_score_mean`  (non-archive only)
+====================================================================================================
+total dirs (all): 538   non-archive: 190
+   out\handoff_r11_remaining6\core\pending5_holdout_d4
+   out\multi_bridge_expansion\conditional_plan_holdout_results\cells\Celer\seed_<N>
+   out\multi_bridge_expansion\conditional_plan_holdout_results\cells\Multi\seed_<N>
+   out\multi_bridge_expansion\conditional_plan_holdout_results\cells\Poly\seed_<N>
+   out\multi_bridge_expansion\cost_transport_diagnosis\plans\dev\Celer\seed_<N>
+   out\multi_bridge_expansion\cost_transport_diagnosis\plans\dev\Multi\seed_<N>
+   out\multi_bridge_expansion\cost_transport_diagnosis\plans\dev\Poly\seed_<N>
+   out\multi_bridge_expansion\decoder_plan_quality_audit\plans\calibration\Celer\seed_<N>
+   out\multi_bridge_expansion\decoder_plan_quality_audit\plans\calibration\Multi\seed_<N>
+   out\multi_bridge_expansion\decoder_plan_quality_audit\plans\calibration\Poly\seed_<N>
+   out\multi_bridge_expansion\faithful_flow_structural_three_bridges\feature_stats\Celer
+   out\multi_bridge_expansion\faithful_flow_structural_three_bridges\feature_stats\Multi
+   out\multi_bridge_expansion\faithful_flow_structural_three_bridges\feature_stats\Poly
+   out\multi_bridge_expansion\faithful_flow_structural_three_bridges\per_seed\Celer\seed_<N>
+   out\multi_bridge_expansion\faithful_flow_structural_three_bridges\per_seed\Celer\seed_<N>\uot
+   out\multi_bridge_expansion\faithful_flow_structural_three_bridges\per_seed\Multi\seed_<N>
+   out\multi_bridge_expansion\faithful_flow_structural_three_bridges\per_seed\Multi\seed_<N>\uot
+   out\multi_bridge_expansion\faithful_flow_structural_three_bridges\per_seed\Poly\seed_<N>
+   out\multi_bridge_expansion\faithful_flow_structural_three_bridges\per_seed\Poly\seed_<N>\uot
+   out\multi_bridge_expansion\faithful_flow_structural_three_bridges\smoke\Celer\seed_<N>
+   out\multi_bridge_expansion\faithful_flow_structural_three_bridges\smoke\Celer\seed_<N>\uot
+   out\multi_bridge_expansion\faithful_flow_structural_three_bridges\smoke\Multi\seed_<N>
+   out\multi_bridge_expansion\faithful_flow_structural_three_bridges\smoke\Multi\seed_<N>\uot
+   out\multi_bridge_expansion\faithful_flow_structural_three_bridges\smoke\Poly\seed_<N>
+   out\multi_bridge_expansion\faithful_flow_structural_three_bridges\smoke\Poly\seed_<N>\uot
+   out\multi_bridge_expansion\faithful_flow_structural_three_bridges_audit\synthetic_inputs\Celer\seed_<N>
+   out\multi_bridge_expansion\faithful_flow_structural_three_bridges_audit\synthetic_inputs\Multi\seed_<N>
+   out\multi_bridge_expansion\faithful_flow_structural_three_bridges_audit\synthetic_inputs\Poly\seed_<N>
+   out\multi_bridge_expansion\faithful_flow_structural_three_bridges_audit\variants\celer_counter_decoy_off\Celer\seed_<N>
+   out\multi_bridge_expansion\faithful_flow_structural_three_bridges_audit\variants\celer_counter_decoy_off\Celer\seed_<N>\uot
+   out\multi_bridge_expansion\faithful_flow_structural_three_bridges_audit\variants\celer_counter_evidence_const\Celer\seed_<N>
+   out\multi_bridge_expansion\faithful_flow_structural_three_bridges_audit\variants\celer_counter_evidence_const\Celer\seed_<N>\uot
+   out\multi_bridge_expansion\faithful_flow_structural_three_bridges_audit\variants\loo_amount\Celer\seed_<N>
+   out\multi_bridge_expansion\faithful_flow_structural_three_bridges_audit\variants\loo_amount\Celer\seed_<N>\uot
+   out\multi_bridge_expansion\faithful_flow_structural_three_bridges_audit\variants\loo_amount\Multi\seed_<N>
+   out\multi_bridge_expansion\faithful_flow_structural_three_bridges_audit\variants\loo_amount\Multi\seed_<N>\uot
+   out\multi_bridge_expansion\faithful_flow_structural_three_bridges_audit\variants\loo_amount\Poly\seed_<N>
+   out\multi_bridge_expansion\faithful_flow_structural_three_bridges_audit\variants\loo_amount\Poly\seed_<N>\uot
+   out\multi_bridge_expansion\faithful_flow_structural_three_bridges_audit\variants\loo_evidence\Celer\seed_<N>
+   out\multi_bridge_expansion\faithful_flow_structural_three_bridges_audit\variants\loo_evidence\Celer\seed_<N>\uot
+   out\multi_bridge_expansion\faithful_flow_structural_three_bridges_audit\variants\loo_evidence\Multi\seed_<N>
+   out\multi_bridge_expansion\faithful_flow_structural_three_bridges_audit\variants\loo_evidence\Multi\seed_<N>\uot
+   out\multi_bridge_expansion\faithful_flow_structural_three_bridges_audit\variants\loo_evidence\Poly\seed_<N>
+   out\multi_bridge_expansion\faithful_flow_structural_three_bridges_audit\variants\loo_evidence\Poly\seed_<N>\uot
+   out\multi_bridge_expansion\faithful_flow_structural_three_bridges_audit\variants\loo_novelty\Celer\seed_<N>
+   out\multi_bridge_expansion\faithful_flow_structural_three_bridges_audit\variants\loo_novelty\Celer\seed_<N>\uot
+   out\multi_bridge_expansion\faithful_flow_structural_three_bridges_audit\variants\loo_novelty\Multi\seed_<N>
+   out\multi_bridge_expansion\faithful_flow_structural_three_bridges_audit\variants\loo_novelty\Multi\seed_<N>\uot
+   out\multi_bridge_expansion\faithful_flow_structural_three_bridges_audit\variants\loo_novelty\Poly\seed_<N>
+   out\multi_bridge_expansion\faithful_flow_structural_three_bridges_audit\variants\loo_novelty\Poly\seed_<N>\uot
+   out\multi_bridge_expansion\faithful_flow_structural_three_bridges_audit\variants\loo_risk\Celer\seed_<N>
+   out\multi_bridge_expansion\faithful_flow_structural_three_bridges_audit\variants\loo_risk\Celer\seed_<N>\uot
+   out\multi_bridge_expansion\faithful_flow_structural_three_bridges_audit\variants\loo_risk\Multi\seed_<N>
+   out\multi_bridge_expansion\faithful_flow_structural_three_bridges_audit\variants\loo_risk\Multi\seed_<N>\uot
+   out\multi_bridge_expansion\faithful_flow_structural_three_bridges_audit\variants\loo_risk\Poly\seed_<N>
+   out\multi_bridge_expansion\faithful_flow_structural_three_bridges_audit\variants\loo_risk\Poly\seed_<N>\uot
+   out\multi_bridge_expansion\faithful_flow_structural_three_bridges_audit\variants\loo_route\Celer\seed_<N>
+   out\multi_bridge_expansion\faithful_flow_structural_three_bridges_audit\variants\loo_route\Celer\seed_<N>\uot
+   out\multi_bridge_expansion\faithful_flow_structural_three_bridges_audit\variants\loo_route\Multi\seed_<N>
+   out\multi_bridge_expansion\faithful_flow_structural_three_bridges_audit\variants\loo_route\Multi\seed_<N>\uot
+   ... (130 more)
+
+====================================================================================================
+R7 CONFIRMATORY POPULATION: out\r7_confirmatory_kernel_ranking_20260917\selection\cells
+====================================================================================================
+
+### Celer  files=10  pooled_rows=2892
+    aml_score_mean         min=0.000000 max=20.930233 mean=4.093892 median=0.000000 std=6.459056 ndistinct=5 q05=0.0000 q25=0.0000 q75=4.6512 q95=16.2791
+    aml_score_max          min=0.000000 max=20.930233 mean=4.093892 median=0.000000 std=6.459056 ndistinct=5 q05=0.0000 q25=0.0000 q75=4.6512 q95=16.2791
+    evidence_quality_mean  min=0.750000 max=0.800000 mean=0.785088 median=0.775000 std=0.016107 ndistinct=3 q05=0.7500 q25=0.7750 q75=0.8000 q95=0.8000
+    aml_score_mean value_counts: {0.0: 1830, 4.651163: 435, 11.627907: 186, 16.27907: 339, 20.930233: 102}
+
+### Multi  files=10  pooled_rows=2886
+    aml_score_mean         min=0.000000 max=18.604651 mean=1.924286 median=0.000000 std=4.589504 ndistinct=6 q05=0.0000 q25=0.0000 q75=0.0000 q95=16.2791
+    aml_score_max          min=0.000000 max=18.604651 mean=1.924286 median=0.000000 std=4.589504 ndistinct=6 q05=0.0000 q25=0.0000 q75=0.0000 q95=16.2791
+    evidence_quality_mean  min=0.750000 max=0.800000 mean=0.776247 median=0.775000 std=0.012531 ndistinct=3 q05=0.7500 q25=0.7750 q75=0.7750 q95=0.8000
+    aml_score_mean value_counts: {0.0: 2310, 4.651163: 312, 9.302326: 6, 11.627907: 36, 16.27907: 216, 18.604651: 6}
+
+### Poly  files=10  pooled_rows=2891
+    aml_score_mean         min=0.000000 max=20.930233 mean=14.961428 median=16.279070 std=4.052096 ndistinct=4 q05=0.0000 q25=16.2791 q75=16.2791 q95=16.2791
+    aml_score_max          min=0.000000 max=20.930233 mean=14.961428 median=16.279070 std=4.052096 ndistinct=4 q05=0.0000 q25=16.2791 q75=16.2791 q95=16.2791
+    evidence_quality_mean  min=0.775000 max=0.800000 mean=0.790488 median=0.800000 std=0.012140 ndistinct=2 q05=0.7750 q25=0.7750 q75=0.8000 q95=0.8000
+    aml_score_mean value_counts: {0.0: 174, 11.627907: 252, 16.27907: 2423, 20.930233: 42}

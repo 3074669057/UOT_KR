@@ -1,0 +1,815 @@
+{
+  "provenance_type": "read-only extraction of pre-existing frozen holdout results",
+  "generated_utc": "2026-09-17T03:14:51Z",
+  "holdout_re_executed": false,
+  "holdout_re_execution_statement": "Seeds 301-305 were NOT re-run, re-solved, re-decoded, re-matched or re-evaluated by this experiment. No solver, matcher, decoder, UOT/RC-UOT/Q variant or evaluator was invoked on them. Every value below is copied from a pre-existing frozen artifact, identified by path, SHA256 and source field.",
+  "git_head_at_extraction": "d5cd14d8051263b49b01b10ad36e6033b2ec3219",
+  "paper_default_setting": {
+    "k": 5,
+    "epsilon": 0.05,
+    "lambda": 0.5
+  },
+  "why_the_default_setting_applies": "The one-shot confirmatory holdout run used the frozen parameters verbatim (holdout_common.identity_check enforces k=5, reg=0.05, reg_m=0.5). Its results are therefore already the default-configuration holdout points.",
+  "frozen_pipeline_hashes_reported_by_the_holdout_report": {
+    "run_locked_holdout.py": "eb48c35e78e30443ac4ec4d44434b1d9e060121fcee5d6cec270d71a10f6abee",
+    "verify_locked_holdout.py": "8d19c2eff86bf65ae1d8f84983191bdfd04a522c6980c3579461dbe9a60b67eb",
+    "CONDITIONAL_PLAN_CANDIDATE_SPEC.md": "0f360addc1f2a220299d75b4aa9cad1ee1e504e8097ae5bacfc0da40542cc401",
+    "HOLDOUT_DECISION_RULES.md": "f2d37630557c32ea0e2475ecb8a407db9bc14cc683c4c6edfb14d88b9becdb84",
+    "note": "transcribed from FINAL_CONFIRMATORY_HOLDOUT_REPORT.md section A"
+  },
+  "source_files": {
+    "statistics.json": {
+      "path": "3/chinese_rewrite_r5/final/paper_experiments_results/confirmatory_holdout/statistics.json",
+      "sha256": "43d98964046ed8c51dfee50327e1dbdeb65aaa894a3809fa44932737e49b4517",
+      "size_bytes": 4706,
+      "mtime_utc": "2026-09-14T00:12:22Z"
+    },
+    "FINAL_CONFIRMATORY_HOLDOUT_REPORT.md": {
+      "path": "out/multi_bridge_expansion/conditional_plan_holdout_results/FINAL_CONFIRMATORY_HOLDOUT_REPORT.md",
+      "sha256": "96fa7f8688b89fc2773c8a53b195b655c6f59e16f1db1e69e53e24a27c001e88",
+      "size_bytes": 11171,
+      "mtime_utc": "2026-09-02T13:55:47Z"
+    },
+    "verification.json": {
+      "path": "3/chinese_rewrite_r5/final/paper_experiments_results/confirmatory_holdout/verification.json",
+      "sha256": "96931e28982c84b0c14872bd33542191bc043ea9362586afeafb4eb681040063",
+      "size_bytes": 747,
+      "mtime_utc": "2026-09-14T00:12:22Z"
+    },
+    "Table3_confirmatory_statistics.json": {
+      "path": "ZN_TIFS_R5_PAPER_AUTHORING_PACKAGE/tables/Table3_confirmatory_statistics.json",
+      "sha256": "43d98964046ed8c51dfee50327e1dbdeb65aaa894a3809fa44932737e49b4517",
+      "size_bytes": 4706,
+      "mtime_utc": "2026-09-14T00:12:22Z"
+    }
+  },
+  "frozen_holdout_cell_inventory": {
+    "n_cells": 15,
+    "n_cells_with_per_template": 15,
+    "bridges": [
+      "Celer",
+      "Multi",
+      "Poly"
+    ],
+    "seeds": [
+      301,
+      302,
+      303,
+      304,
+      305
+    ],
+    "cells": [
+      {
+        "bridge": "Celer",
+        "seed": 301,
+        "dir": "out/multi_bridge_expansion/conditional_plan_holdout_results/cells/Celer/seed_301",
+        "files_present": [
+          "edges_AMOUNT_FREE_COST_D4.csv",
+          "edges_CONDITIONAL_BOT_D4.csv",
+          "edges_CONDITIONAL_UOT_D4.csv",
+          "edges_RAW_UOT_PLAN_D4.csv",
+          "edges_SUPPORT_PLUS_K_D4.csv",
+          "flow_labels_pool.csv",
+          "flow_segments_bnb_synth.csv",
+          "flow_segments_eth_synth.csv",
+          "labels.csv",
+          "mechanism.csv",
+          "per_template.csv"
+        ],
+        "per_template_sha256": "1ce2dbb46341dabafc9835ed71c7d67a0a03c7b47bbc7f09d0f63f580d684418",
+        "read_mode": "hash-only (contents were NOT re-evaluated)"
+      },
+      {
+        "bridge": "Celer",
+        "seed": 302,
+        "dir": "out/multi_bridge_expansion/conditional_plan_holdout_results/cells/Celer/seed_302",
+        "files_present": [
+          "edges_AMOUNT_FREE_COST_D4.csv",
+          "edges_CONDITIONAL_BOT_D4.csv",
+          "edges_CONDITIONAL_UOT_D4.csv",
+          "edges_RAW_UOT_PLAN_D4.csv",
+          "edges_SUPPORT_PLUS_K_D4.csv",
+          "flow_labels_pool.csv",
+          "flow_segments_bnb_synth.csv",
+          "flow_segments_eth_synth.csv",
+          "labels.csv",
+          "mechanism.csv",
+          "per_template.csv"
+        ],
+        "per_template_sha256": "44612f8a545a6c2d490fedfc6a02135fd79136f0f47b8c65040f5d381e038ac9",
+        "read_mode": "hash-only (contents were NOT re-evaluated)"
+      },
+      {
+        "bridge": "Celer",
+        "seed": 303,
+        "dir": "out/multi_bridge_expansion/conditional_plan_holdout_results/cells/Celer/seed_303",
+        "files_present": [
+          "edges_AMOUNT_FREE_COST_D4.csv",
+          "edges_CONDITIONAL_BOT_D4.csv",
+          "edges_CONDITIONAL_UOT_D4.csv",
+          "edges_RAW_UOT_PLAN_D4.csv",
+          "edges_SUPPORT_PLUS_K_D4.csv",
+          "flow_labels_pool.csv",
+          "flow_segments_bnb_synth.csv",
+          "flow_segments_eth_synth.csv",
+          "labels.csv",
+          "mechanism.csv",
+          "per_template.csv"
+        ],
+        "per_template_sha256": "ca4d29ac9a7b35ff2ce3a144a4d767ea286bd326ca8f0eb9fc1b9c604aa6b401",
+        "read_mode": "hash-only (contents were NOT re-evaluated)"
+      },
+      {
+        "bridge": "Celer",
+        "seed": 304,
+        "dir": "out/multi_bridge_expansion/conditional_plan_holdout_results/cells/Celer/seed_304",
+        "files_present": [
+          "edges_AMOUNT_FREE_COST_D4.csv",
+          "edges_CONDITIONAL_BOT_D4.csv",
+          "edges_CONDITIONAL_UOT_D4.csv",
+          "edges_RAW_UOT_PLAN_D4.csv",
+          "edges_SUPPORT_PLUS_K_D4.csv",
+          "flow_labels_pool.csv",
+          "flow_segments_bnb_synth.csv",
+          "flow_segments_eth_synth.csv",
+          "labels.csv",
+          "mechanism.csv",
+          "per_template.csv"
+        ],
+        "per_template_sha256": "d9a3c3bc09f38b0d6d31dbe0d520c38df24c8d8b6beddc799b6b275c815012d5",
+        "read_mode": "hash-only (contents were NOT re-evaluated)"
+      },
+      {
+        "bridge": "Celer",
+        "seed": 305,
+        "dir": "out/multi_bridge_expansion/conditional_plan_holdout_results/cells/Celer/seed_305",
+        "files_present": [
+          "edges_AMOUNT_FREE_COST_D4.csv",
+          "edges_CONDITIONAL_BOT_D4.csv",
+          "edges_CONDITIONAL_UOT_D4.csv",
+          "edges_RAW_UOT_PLAN_D4.csv",
+          "edges_SUPPORT_PLUS_K_D4.csv",
+          "flow_labels_pool.csv",
+          "flow_segments_bnb_synth.csv",
+          "flow_segments_eth_synth.csv",
+          "labels.csv",
+          "mechanism.csv",
+          "per_template.csv"
+        ],
+        "per_template_sha256": "891839d07eba11c88e2ce101df7cbe9047529003652dcd4cfddf63a01707602d",
+        "read_mode": "hash-only (contents were NOT re-evaluated)"
+      },
+      {
+        "bridge": "Multi",
+        "seed": 301,
+        "dir": "out/multi_bridge_expansion/conditional_plan_holdout_results/cells/Multi/seed_301",
+        "files_present": [
+          "edges_AMOUNT_FREE_COST_D4.csv",
+          "edges_CONDITIONAL_BOT_D4.csv",
+          "edges_CONDITIONAL_UOT_D4.csv",
+          "edges_RAW_UOT_PLAN_D4.csv",
+          "edges_SUPPORT_PLUS_K_D4.csv",
+          "flow_labels_pool.csv",
+          "flow_segments_bnb_synth.csv",
+          "flow_segments_eth_synth.csv",
+          "labels.csv",
+          "mechanism.csv",
+          "per_template.csv"
+        ],
+        "per_template_sha256": "f1c852f64aac152dc5f0d1082b0efe1fbdc1190ce49aa9be7ed90a9baa7736c3",
+        "read_mode": "hash-only (contents were NOT re-evaluated)"
+      },
+      {
+        "bridge": "Multi",
+        "seed": 302,
+        "dir": "out/multi_bridge_expansion/conditional_plan_holdout_results/cells/Multi/seed_302",
+        "files_present": [
+          "edges_AMOUNT_FREE_COST_D4.csv",
+          "edges_CONDITIONAL_BOT_D4.csv",
+          "edges_CONDITIONAL_UOT_D4.csv",
+          "edges_RAW_UOT_PLAN_D4.csv",
+          "edges_SUPPORT_PLUS_K_D4.csv",
+          "flow_labels_pool.csv",
+          "flow_segments_bnb_synth.csv",
+          "flow_segments_eth_synth.csv",
+          "labels.csv",
+          "mechanism.csv",
+          "per_template.csv"
+        ],
+        "per_template_sha256": "c7533d26fd42fd058564e7c222ce883704790c9915e16bd565102112c274574c",
+        "read_mode": "hash-only (contents were NOT re-evaluated)"
+      },
+      {
+        "bridge": "Multi",
+        "seed": 303,
+        "dir": "out/multi_bridge_expansion/conditional_plan_holdout_results/cells/Multi/seed_303",
+        "files_present": [
+          "edges_AMOUNT_FREE_COST_D4.csv",
+          "edges_CONDITIONAL_BOT_D4.csv",
+          "edges_CONDITIONAL_UOT_D4.csv",
+          "edges_RAW_UOT_PLAN_D4.csv",
+          "edges_SUPPORT_PLUS_K_D4.csv",
+          "flow_labels_pool.csv",
+          "flow_segments_bnb_synth.csv",
+          "flow_segments_eth_synth.csv",
+          "labels.csv",
+          "mechanism.csv",
+          "per_template.csv"
+        ],
+        "per_template_sha256": "252977e0df6ef7643ecedc9cf88af059349bc5cd0bac47f93f9425a2ee435b9d",
+        "read_mode": "hash-only (contents were NOT re-evaluated)"
+      },
+      {
+        "bridge": "Multi",
+        "seed": 304,
+        "dir": "out/multi_bridge_expansion/conditional_plan_holdout_results/cells/Multi/seed_304",
+        "files_present": [
+          "edges_AMOUNT_FREE_COST_D4.csv",
+          "edges_CONDITIONAL_BOT_D4.csv",
+          "edges_CONDITIONAL_UOT_D4.csv",
+          "edges_RAW_UOT_PLAN_D4.csv",
+          "edges_SUPPORT_PLUS_K_D4.csv",
+          "flow_labels_pool.csv",
+          "flow_segments_bnb_synth.csv",
+          "flow_segments_eth_synth.csv",
+          "labels.csv",
+          "mechanism.csv",
+          "per_template.csv"
+        ],
+        "per_template_sha256": "17eff99d55f8bac640409747a79c1fb65027171c65d25d4f6160f266b1e3404c",
+        "read_mode": "hash-only (contents were NOT re-evaluated)"
+      },
+      {
+        "bridge": "Multi",
+        "seed": 305,
+        "dir": "out/multi_bridge_expansion/conditional_plan_holdout_results/cells/Multi/seed_305",
+        "files_present": [
+          "edges_AMOUNT_FREE_COST_D4.csv",
+          "edges_CONDITIONAL_BOT_D4.csv",
+          "edges_CONDITIONAL_UOT_D4.csv",
+          "edges_RAW_UOT_PLAN_D4.csv",
+          "edges_SUPPORT_PLUS_K_D4.csv",
+          "flow_labels_pool.csv",
+          "flow_segments_bnb_synth.csv",
+          "flow_segments_eth_synth.csv",
+          "labels.csv",
+          "mechanism.csv",
+          "per_template.csv"
+        ],
+        "per_template_sha256": "b82da6889d38faca9f62e530039e56528f64585ae1f3a3c5c64df2c3e55b66ee",
+        "read_mode": "hash-only (contents were NOT re-evaluated)"
+      },
+      {
+        "bridge": "Poly",
+        "seed": 301,
+        "dir": "out/multi_bridge_expansion/conditional_plan_holdout_results/cells/Poly/seed_301",
+        "files_present": [
+          "edges_AMOUNT_FREE_COST_D4.csv",
+          "edges_CONDITIONAL_BOT_D4.csv",
+          "edges_CONDITIONAL_UOT_D4.csv",
+          "edges_RAW_UOT_PLAN_D4.csv",
+          "edges_SUPPORT_PLUS_K_D4.csv",
+          "flow_labels_pool.csv",
+          "flow_segments_bnb_synth.csv",
+          "flow_segments_eth_synth.csv",
+          "labels.csv",
+          "mechanism.csv",
+          "per_template.csv"
+        ],
+        "per_template_sha256": "64771b2ee726861cc727c13ed0fe765b7aef2eb6b4742b98a4e4c42da4898277",
+        "read_mode": "hash-only (contents were NOT re-evaluated)"
+      },
+      {
+        "bridge": "Poly",
+        "seed": 302,
+        "dir": "out/multi_bridge_expansion/conditional_plan_holdout_results/cells/Poly/seed_302",
+        "files_present": [
+          "edges_AMOUNT_FREE_COST_D4.csv",
+          "edges_CONDITIONAL_BOT_D4.csv",
+          "edges_CONDITIONAL_UOT_D4.csv",
+          "edges_RAW_UOT_PLAN_D4.csv",
+          "edges_SUPPORT_PLUS_K_D4.csv",
+          "flow_labels_pool.csv",
+          "flow_segments_bnb_synth.csv",
+          "flow_segments_eth_synth.csv",
+          "labels.csv",
+          "mechanism.csv",
+          "per_template.csv"
+        ],
+        "per_template_sha256": "c788f16c9241734752d6bf96f316ce0c22c2ffa6be0d24330a8330664dbb4964",
+        "read_mode": "hash-only (contents were NOT re-evaluated)"
+      },
+      {
+        "bridge": "Poly",
+        "seed": 303,
+        "dir": "out/multi_bridge_expansion/conditional_plan_holdout_results/cells/Poly/seed_303",
+        "files_present": [
+          "edges_AMOUNT_FREE_COST_D4.csv",
+          "edges_CONDITIONAL_BOT_D4.csv",
+          "edges_CONDITIONAL_UOT_D4.csv",
+          "edges_RAW_UOT_PLAN_D4.csv",
+          "edges_SUPPORT_PLUS_K_D4.csv",
+          "flow_labels_pool.csv",
+          "flow_segments_bnb_synth.csv",
+          "flow_segments_eth_synth.csv",
+          "labels.csv",
+          "mechanism.csv",
+          "per_template.csv"
+        ],
+        "per_template_sha256": "72626227c78ae08c744465f71b72f5197f39118028cf12c4d4056272e72ba2ea",
+        "read_mode": "hash-only (contents were NOT re-evaluated)"
+      },
+      {
+        "bridge": "Poly",
+        "seed": 304,
+        "dir": "out/multi_bridge_expansion/conditional_plan_holdout_results/cells/Poly/seed_304",
+        "files_present": [
+          "edges_AMOUNT_FREE_COST_D4.csv",
+          "edges_CONDITIONAL_BOT_D4.csv",
+          "edges_CONDITIONAL_UOT_D4.csv",
+          "edges_RAW_UOT_PLAN_D4.csv",
+          "edges_SUPPORT_PLUS_K_D4.csv",
+          "flow_labels_pool.csv",
+          "flow_segments_bnb_synth.csv",
+          "flow_segments_eth_synth.csv",
+          "labels.csv",
+          "mechanism.csv",
+          "per_template.csv"
+        ],
+        "per_template_sha256": "bd30b0f341189bcde38e3bc6ec637898bbdb557bc55972c63940ee898ecc1f3c",
+        "read_mode": "hash-only (contents were NOT re-evaluated)"
+      },
+      {
+        "bridge": "Poly",
+        "seed": 305,
+        "dir": "out/multi_bridge_expansion/conditional_plan_holdout_results/cells/Poly/seed_305",
+        "files_present": [
+          "edges_AMOUNT_FREE_COST_D4.csv",
+          "edges_CONDITIONAL_BOT_D4.csv",
+          "edges_CONDITIONAL_UOT_D4.csv",
+          "edges_RAW_UOT_PLAN_D4.csv",
+          "edges_SUPPORT_PLUS_K_D4.csv",
+          "flow_labels_pool.csv",
+          "flow_segments_bnb_synth.csv",
+          "flow_segments_eth_synth.csv",
+          "labels.csv",
+          "mechanism.csv",
+          "per_template.csv"
+        ],
+        "per_template_sha256": "396971eb3857a57978479c8099d198a10c57acaec899401a3630cd603bbd2773",
+        "read_mode": "hash-only (contents were NOT re-evaluated)"
+      }
+    ]
+  },
+  "points": [
+    {
+      "id": "holdout_macro_RAW_UOT_PLAN_D4",
+      "setting": {
+        "k": 5,
+        "epsilon": 0.05,
+        "lambda": 0.5
+      },
+      "bridge": "ALL (macro over Celer / Multi / Poly)",
+      "bridge_paper_name": "macro over the three bridges",
+      "method": "RAW_UOT_PLAN_D4",
+      "metric": "macro_edge_f1",
+      "value": 0.23495845717707567,
+      "value_rounded_4dp": 0.235,
+      "is_five_seed_aggregate": true,
+      "aggregate_over_seeds": [
+        301,
+        302,
+        303,
+        304,
+        305
+      ],
+      "source": {
+        "path": "out/multi_bridge_expansion/conditional_plan_holdout_results/statistics.json",
+        "sha256": "43d98964046ed8c51dfee50327e1dbdeb65aaa894a3809fa44932737e49b4517",
+        "field": "macro_f1.RAW_UOT_PLAN_D4",
+        "row": null
+      },
+      "available": true,
+      "label": "pre-existing frozen holdout result; not re-run"
+    },
+    {
+      "id": "holdout_macro_CONDITIONAL_UOT_D4",
+      "setting": {
+        "k": 5,
+        "epsilon": 0.05,
+        "lambda": 0.5
+      },
+      "bridge": "ALL (macro over Celer / Multi / Poly)",
+      "bridge_paper_name": "macro over the three bridges",
+      "method": "CONDITIONAL_UOT_D4",
+      "metric": "macro_edge_f1",
+      "value": 0.3103718637992831,
+      "value_rounded_4dp": 0.3104,
+      "is_five_seed_aggregate": true,
+      "aggregate_over_seeds": [
+        301,
+        302,
+        303,
+        304,
+        305
+      ],
+      "source": {
+        "path": "out/multi_bridge_expansion/conditional_plan_holdout_results/statistics.json",
+        "sha256": "43d98964046ed8c51dfee50327e1dbdeb65aaa894a3809fa44932737e49b4517",
+        "field": "macro_f1.CONDITIONAL_UOT_D4",
+        "row": null
+      },
+      "available": true,
+      "label": "pre-existing frozen holdout result; not re-run"
+    },
+    {
+      "id": "holdout_macro_precision_RAW_UOT_PLAN_D4",
+      "setting": {
+        "k": 5,
+        "epsilon": 0.05,
+        "lambda": 0.5
+      },
+      "bridge": "ALL (macro over Celer / Multi / Poly)",
+      "bridge_paper_name": "macro over the three bridges",
+      "method": "RAW_UOT_PLAN_D4",
+      "metric": "edge_precision",
+      "value": 0.147622,
+      "is_five_seed_aggregate": true,
+      "aggregate_over_seeds": [
+        301,
+        302,
+        303,
+        304,
+        305
+      ],
+      "source": {
+        "path": "out/multi_bridge_expansion/conditional_plan_holdout_results/FINAL_CONFIRMATORY_HOLDOUT_REPORT.md",
+        "sha256": "96fa7f8688b89fc2773c8a53b195b655c6f59e16f1db1e69e53e24a27c001e88",
+        "field": null,
+        "row": "section C, five-method table, row RAW_UOT_PLAN_D4, column 'edge P (macro)'"
+      },
+      "available": true,
+      "label": "pre-existing frozen holdout result; not re-run"
+    },
+    {
+      "id": "holdout_macro_recall_RAW_UOT_PLAN_D4",
+      "setting": {
+        "k": 5,
+        "epsilon": 0.05,
+        "lambda": 0.5
+      },
+      "bridge": "ALL (macro over Celer / Multi / Poly)",
+      "bridge_paper_name": "macro over the three bridges",
+      "method": "RAW_UOT_PLAN_D4",
+      "metric": "edge_recall",
+      "value": 0.597454,
+      "is_five_seed_aggregate": true,
+      "aggregate_over_seeds": [
+        301,
+        302,
+        303,
+        304,
+        305
+      ],
+      "source": {
+        "path": "out/multi_bridge_expansion/conditional_plan_holdout_results/FINAL_CONFIRMATORY_HOLDOUT_REPORT.md",
+        "sha256": "96fa7f8688b89fc2773c8a53b195b655c6f59e16f1db1e69e53e24a27c001e88",
+        "field": null,
+        "row": "section C, five-method table, row RAW_UOT_PLAN_D4, column 'edge R (macro)'"
+      },
+      "available": true,
+      "label": "pre-existing frozen holdout result; not re-run"
+    },
+    {
+      "id": "holdout_macro_precision_CONDITIONAL_UOT_D4",
+      "setting": {
+        "k": 5,
+        "epsilon": 0.05,
+        "lambda": 0.5
+      },
+      "bridge": "ALL (macro over Celer / Multi / Poly)",
+      "bridge_paper_name": "macro over the three bridges",
+      "method": "CONDITIONAL_UOT_D4",
+      "metric": "edge_precision",
+      "value": 0.192556,
+      "is_five_seed_aggregate": true,
+      "aggregate_over_seeds": [
+        301,
+        302,
+        303,
+        304,
+        305
+      ],
+      "source": {
+        "path": "out/multi_bridge_expansion/conditional_plan_holdout_results/FINAL_CONFIRMATORY_HOLDOUT_REPORT.md",
+        "sha256": "96fa7f8688b89fc2773c8a53b195b655c6f59e16f1db1e69e53e24a27c001e88",
+        "field": null,
+        "row": "section C, five-method table, row CONDITIONAL_UOT_D4, column 'edge P (macro)'"
+      },
+      "available": true,
+      "label": "pre-existing frozen holdout result; not re-run"
+    },
+    {
+      "id": "holdout_macro_recall_CONDITIONAL_UOT_D4",
+      "setting": {
+        "k": 5,
+        "epsilon": 0.05,
+        "lambda": 0.5
+      },
+      "bridge": "ALL (macro over Celer / Multi / Poly)",
+      "bridge_paper_name": "macro over the three bridges",
+      "method": "CONDITIONAL_UOT_D4",
+      "metric": "edge_recall",
+      "value": 0.800926,
+      "is_five_seed_aggregate": true,
+      "aggregate_over_seeds": [
+        301,
+        302,
+        303,
+        304,
+        305
+      ],
+      "source": {
+        "path": "out/multi_bridge_expansion/conditional_plan_holdout_results/FINAL_CONFIRMATORY_HOLDOUT_REPORT.md",
+        "sha256": "96fa7f8688b89fc2773c8a53b195b655c6f59e16f1db1e69e53e24a27c001e88",
+        "field": null,
+        "row": "section C, five-method table, row CONDITIONAL_UOT_D4, column 'edge R (macro)'"
+      },
+      "available": true,
+      "label": "pre-existing frozen holdout result; not re-run"
+    },
+    {
+      "id": "holdout_bridge_Celer_RAW_UOT_PLAN_D4",
+      "setting": {
+        "k": 5,
+        "epsilon": 0.05,
+        "lambda": 0.5
+      },
+      "bridge": "Celer",
+      "bridge_paper_name": "Celer cBridge",
+      "method": "RAW_UOT_PLAN_D4",
+      "metric": "macro_edge_f1",
+      "value": 0.236772,
+      "is_five_seed_aggregate": true,
+      "aggregate_over_seeds": [
+        301,
+        302,
+        303,
+        304,
+        305
+      ],
+      "aggregation": "mean over the 5 holdout seeds of the per-cell macro edge F1 each",
+      "source": {
+        "path": "out/multi_bridge_expansion/conditional_plan_holdout_results/FINAL_CONFIRMATORY_HOLDOUT_REPORT.md",
+        "sha256": "96fa7f8688b89fc2773c8a53b195b655c6f59e16f1db1e69e53e24a27c001e88",
+        "field": null,
+        "row": "section C, 'Per-bridge edge F1' table, row RAW_UOT_PLAN_D4, column Celer"
+      },
+      "available": true,
+      "label": "pre-existing frozen holdout result; not re-run"
+    },
+    {
+      "id": "holdout_bridge_Multi_RAW_UOT_PLAN_D4",
+      "setting": {
+        "k": 5,
+        "epsilon": 0.05,
+        "lambda": 0.5
+      },
+      "bridge": "Multi",
+      "bridge_paper_name": "Multichain",
+      "method": "RAW_UOT_PLAN_D4",
+      "metric": "macro_edge_f1",
+      "value": 0.211432,
+      "is_five_seed_aggregate": true,
+      "aggregate_over_seeds": [
+        301,
+        302,
+        303,
+        304,
+        305
+      ],
+      "aggregation": "mean over the 5 holdout seeds of the per-cell macro edge F1 each",
+      "source": {
+        "path": "out/multi_bridge_expansion/conditional_plan_holdout_results/FINAL_CONFIRMATORY_HOLDOUT_REPORT.md",
+        "sha256": "96fa7f8688b89fc2773c8a53b195b655c6f59e16f1db1e69e53e24a27c001e88",
+        "field": null,
+        "row": "section C, 'Per-bridge edge F1' table, row RAW_UOT_PLAN_D4, column Multi"
+      },
+      "available": true,
+      "label": "pre-existing frozen holdout result; not re-run"
+    },
+    {
+      "id": "holdout_bridge_Poly_RAW_UOT_PLAN_D4",
+      "setting": {
+        "k": 5,
+        "epsilon": 0.05,
+        "lambda": 0.5
+      },
+      "bridge": "Poly",
+      "bridge_paper_name": "PolyNetwork",
+      "method": "RAW_UOT_PLAN_D4",
+      "metric": "macro_edge_f1",
+      "value": 0.256672,
+      "is_five_seed_aggregate": true,
+      "aggregate_over_seeds": [
+        301,
+        302,
+        303,
+        304,
+        305
+      ],
+      "aggregation": "mean over the 5 holdout seeds of the per-cell macro edge F1 each",
+      "source": {
+        "path": "out/multi_bridge_expansion/conditional_plan_holdout_results/FINAL_CONFIRMATORY_HOLDOUT_REPORT.md",
+        "sha256": "96fa7f8688b89fc2773c8a53b195b655c6f59e16f1db1e69e53e24a27c001e88",
+        "field": null,
+        "row": "section C, 'Per-bridge edge F1' table, row RAW_UOT_PLAN_D4, column Poly"
+      },
+      "available": true,
+      "label": "pre-existing frozen holdout result; not re-run"
+    },
+    {
+      "id": "holdout_bridge_Celer_CONDITIONAL_UOT_D4",
+      "setting": {
+        "k": 5,
+        "epsilon": 0.05,
+        "lambda": 0.5
+      },
+      "bridge": "Celer",
+      "bridge_paper_name": "Celer cBridge",
+      "method": "CONDITIONAL_UOT_D4",
+      "metric": "macro_edge_f1",
+      "value": 0.319355,
+      "is_five_seed_aggregate": true,
+      "aggregate_over_seeds": [
+        301,
+        302,
+        303,
+        304,
+        305
+      ],
+      "aggregation": "mean over the 5 holdout seeds of the per-cell macro edge F1 each",
+      "source": {
+        "path": "out/multi_bridge_expansion/conditional_plan_holdout_results/FINAL_CONFIRMATORY_HOLDOUT_REPORT.md",
+        "sha256": "96fa7f8688b89fc2773c8a53b195b655c6f59e16f1db1e69e53e24a27c001e88",
+        "field": null,
+        "row": "section C, 'Per-bridge edge F1' table, row CONDITIONAL_UOT_D4, column Celer"
+      },
+      "available": true,
+      "label": "pre-existing frozen holdout result; not re-run"
+    },
+    {
+      "id": "holdout_bridge_Multi_CONDITIONAL_UOT_D4",
+      "setting": {
+        "k": 5,
+        "epsilon": 0.05,
+        "lambda": 0.5
+      },
+      "bridge": "Multi",
+      "bridge_paper_name": "Multichain",
+      "method": "CONDITIONAL_UOT_D4",
+      "metric": "macro_edge_f1",
+      "value": 0.293481,
+      "is_five_seed_aggregate": true,
+      "aggregate_over_seeds": [
+        301,
+        302,
+        303,
+        304,
+        305
+      ],
+      "aggregation": "mean over the 5 holdout seeds of the per-cell macro edge F1 each",
+      "source": {
+        "path": "out/multi_bridge_expansion/conditional_plan_holdout_results/FINAL_CONFIRMATORY_HOLDOUT_REPORT.md",
+        "sha256": "96fa7f8688b89fc2773c8a53b195b655c6f59e16f1db1e69e53e24a27c001e88",
+        "field": null,
+        "row": "section C, 'Per-bridge edge F1' table, row CONDITIONAL_UOT_D4, column Multi"
+      },
+      "available": true,
+      "label": "pre-existing frozen holdout result; not re-run"
+    },
+    {
+      "id": "holdout_bridge_Poly_CONDITIONAL_UOT_D4",
+      "setting": {
+        "k": 5,
+        "epsilon": 0.05,
+        "lambda": 0.5
+      },
+      "bridge": "Poly",
+      "bridge_paper_name": "PolyNetwork",
+      "method": "CONDITIONAL_UOT_D4",
+      "metric": "macro_edge_f1",
+      "value": 0.31828,
+      "is_five_seed_aggregate": true,
+      "aggregate_over_seeds": [
+        301,
+        302,
+        303,
+        304,
+        305
+      ],
+      "aggregation": "mean over the 5 holdout seeds of the per-cell macro edge F1 each",
+      "source": {
+        "path": "out/multi_bridge_expansion/conditional_plan_holdout_results/FINAL_CONFIRMATORY_HOLDOUT_REPORT.md",
+        "sha256": "96fa7f8688b89fc2773c8a53b195b655c6f59e16f1db1e69e53e24a27c001e88",
+        "field": null,
+        "row": "section C, 'Per-bridge edge F1' table, row CONDITIONAL_UOT_D4, column Poly"
+      },
+      "available": true,
+      "label": "pre-existing frozen holdout result; not re-run"
+    }
+  ],
+  "paired_primary_contrast": {
+    "metric": "paired delta macro-edge F1 (CONDITIONAL_UOT_D4 - RAW_UOT_PLAN_D4)",
+    "macro_mean": 0.07541340662220748,
+    "macro_ci95_lo": 0.07055749054591975,
+    "macro_ci95_hi": 0.0803125005363676,
+    "n_boot": 4000,
+    "rng_seed": 20240101,
+    "per_bridge_mean": {
+      "Celer": 0.08258327693811568,
+      "Multi": 0.08204892728823306,
+      "Poly": 0.06160801564027375
+    },
+    "source": {
+      "path": "out/multi_bridge_expansion/conditional_plan_holdout_results/statistics.json",
+      "sha256": "43d98964046ed8c51dfee50327e1dbdeb65aaa894a3809fa44932737e49b4517",
+      "field": "d_primary"
+    }
+  },
+  "unavailable_points": [
+    {
+      "id": "holdout_bridge_Celer_RAW_UOT_PLAN_D4_precision_recall",
+      "metric": [
+        "edge_precision",
+        "edge_recall"
+      ],
+      "bridge": "Celer",
+      "method": "RAW_UOT_PLAN_D4",
+      "available": false,
+      "reason": "The frozen holdout pipeline reported edge precision/recall only as a macro over the three bridges (FINAL_CONFIRMATORY_HOLDOUT_REPORT.md section C); no per-bridge precision/recall aggregate exists in any trusted frozen artifact. The raw per-cell artifacts contain per_template.csv but were deliberately NOT re-evaluated by this post-hoc experiment.",
+      "action_taken": "not recomputed; the figures only place per-bridge macro edge F1 holdout markers"
+    },
+    {
+      "id": "holdout_bridge_Multi_RAW_UOT_PLAN_D4_precision_recall",
+      "metric": [
+        "edge_precision",
+        "edge_recall"
+      ],
+      "bridge": "Multi",
+      "method": "RAW_UOT_PLAN_D4",
+      "available": false,
+      "reason": "The frozen holdout pipeline reported edge precision/recall only as a macro over the three bridges (FINAL_CONFIRMATORY_HOLDOUT_REPORT.md section C); no per-bridge precision/recall aggregate exists in any trusted frozen artifact. The raw per-cell artifacts contain per_template.csv but were deliberately NOT re-evaluated by this post-hoc experiment.",
+      "action_taken": "not recomputed; the figures only place per-bridge macro edge F1 holdout markers"
+    },
+    {
+      "id": "holdout_bridge_Poly_RAW_UOT_PLAN_D4_precision_recall",
+      "metric": [
+        "edge_precision",
+        "edge_recall"
+      ],
+      "bridge": "Poly",
+      "method": "RAW_UOT_PLAN_D4",
+      "available": false,
+      "reason": "The frozen holdout pipeline reported edge precision/recall only as a macro over the three bridges (FINAL_CONFIRMATORY_HOLDOUT_REPORT.md section C); no per-bridge precision/recall aggregate exists in any trusted frozen artifact. The raw per-cell artifacts contain per_template.csv but were deliberately NOT re-evaluated by this post-hoc experiment.",
+      "action_taken": "not recomputed; the figures only place per-bridge macro edge F1 holdout markers"
+    },
+    {
+      "id": "holdout_bridge_Celer_CONDITIONAL_UOT_D4_precision_recall",
+      "metric": [
+        "edge_precision",
+        "edge_recall"
+      ],
+      "bridge": "Celer",
+      "method": "CONDITIONAL_UOT_D4",
+      "available": false,
+      "reason": "The frozen holdout pipeline reported edge precision/recall only as a macro over the three bridges (FINAL_CONFIRMATORY_HOLDOUT_REPORT.md section C); no per-bridge precision/recall aggregate exists in any trusted frozen artifact. The raw per-cell artifacts contain per_template.csv but were deliberately NOT re-evaluated by this post-hoc experiment.",
+      "action_taken": "not recomputed; the figures only place per-bridge macro edge F1 holdout markers"
+    },
+    {
+      "id": "holdout_bridge_Multi_CONDITIONAL_UOT_D4_precision_recall",
+      "metric": [
+        "edge_precision",
+        "edge_recall"
+      ],
+      "bridge": "Multi",
+      "method": "CONDITIONAL_UOT_D4",
+      "available": false,
+      "reason": "The frozen holdout pipeline reported edge precision/recall only as a macro over the three bridges (FINAL_CONFIRMATORY_HOLDOUT_REPORT.md section C); no per-bridge precision/recall aggregate exists in any trusted frozen artifact. The raw per-cell artifacts contain per_template.csv but were deliberately NOT re-evaluated by this post-hoc experiment.",
+      "action_taken": "not recomputed; the figures only place per-bridge macro edge F1 holdout markers"
+    },
+    {
+      "id": "holdout_bridge_Poly_CONDITIONAL_UOT_D4_precision_recall",
+      "metric": [
+        "edge_precision",
+        "edge_recall"
+      ],
+      "bridge": "Poly",
+      "method": "CONDITIONAL_UOT_D4",
+      "available": false,
+      "reason": "The frozen holdout pipeline reported edge precision/recall only as a macro over the three bridges (FINAL_CONFIRMATORY_HOLDOUT_REPORT.md section C); no per-bridge precision/recall aggregate exists in any trusted frozen artifact. The raw per-cell artifacts contain per_template.csv but were deliberately NOT re-evaluated by this post-hoc experiment.",
+      "action_taken": "not recomputed; the figures only place per-bridge macro edge F1 holdout markers"
+    }
+  ],
+  "usage_in_this_experiment": "Figures k_sensitivity / epsilon_sensitivity / lambda_sensitivity place these values as independent markers at the DEFAULT x position only. They are never connected to the development-seed curves and were never used to choose any hyper-parameter."
+}

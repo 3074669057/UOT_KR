@@ -1,0 +1,4 @@
+﻿Raw tx projection (compatibility) | precision 0.5886787280701754 | f1 0.5886787280701754 | coverage 1.0 | cvr 0.3334703947368421
+RC-UOT-Q top-3 admissible rescue (high coverage) | precision 0.5900851414446581 | f1 0.5895184524626149 | coverage 0.996316758747698 | cvr 0.0
+Joint time-admissible filter (high-confidence fore | precision 0.8894180989852971 | f1 0.7084536082474227 | coverage 0.8453038674033149 | cvr 0.0
+Permuted-label control | precision 0.00013706140350877192 | f1 0.00013706140350877192 | coverage �� | cvr ��

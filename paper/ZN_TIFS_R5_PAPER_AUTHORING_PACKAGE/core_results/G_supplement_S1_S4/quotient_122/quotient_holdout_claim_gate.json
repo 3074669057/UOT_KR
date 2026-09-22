@@ -1,0 +1,27 @@
+{
+  "precision": 1.0,
+  "recall": 1.0,
+  "f1": 1.0,
+  "ece": 0.0,
+  "calibration_score": 1.0,
+  "bridge_key_consistency": 1.0,
+  "bridge_transfer_key_precision": 1.0,
+  "bridge_transfer_key_recall": 1.0,
+  "covered_auroc": 1.0,
+  "covered_auprc": 1.0,
+  "threshold": 1.0,
+  "abstention_rate": 0.0,
+  "high_pr_covered_scope_gate_pass": true,
+  "full_scope_claim_gate_pass": false,
+  "holdout_evaluated_once": true,
+  "selected_model": "Q-rule-bridge-key",
+  "credentials_committed": false,
+  "full_rpc_url_logged": false,
+  "allowed_claim": "On the event-backed CSFFC-v2 quotient covered subset, RC-UOT-Q achieves high precision and high recall under a coverage-qualified evaluation protocol.",
+  "required_limitation": "Coverage-qualified result; does not imply high-P/R on original canonical flow-pair task. Uncovered canonical edges abstained. Full-scope recall bounded by event-backed projection coverage.",
+  "forbidden_claims": [
+    "Full-scope CSFFC-v2 high P/R",
+    "original canonical v1 exact high P/R",
+    "universal superiority"
+  ]
+}

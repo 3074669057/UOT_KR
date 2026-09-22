@@ -1,0 +1,32 @@
+{
+  "solver_call_id": "UOT|Celer|401|eps0.05|lam0.5",
+  "reg": 0.05,
+  "reg_m": 0.5,
+  "numItermax": 20000,
+  "stopThr": 1e-11,
+  "iterations": 131,
+  "final_err": 9.291128200837263e-12,
+  "converged": true,
+  "hit_max_iter": false,
+  "runtime_sec": 0.03256869316101074,
+  "marginal_violation_row_l1": 0.2928242125544683,
+  "marginal_violation_col_l1": 0.2928242125544681,
+  "marginal_violation_row_max": 0.014381873218898361,
+  "marginal_violation_col_max": 0.014359983663438707,
+  "kkt": {
+    "definition": "KKT marginal residual of the entropic UNBALANCED OT optimum: max|P1 - a*exp(-f/reg_m)| and max|P^T1 - b*exp(-g/reg_m)|, with (f,g) the recovered dual potentials",
+    "marginal_kkt_row_max": 0.01347558544017221,
+    "marginal_kkt_col_max": 0.013056785285835482,
+    "marginal_kkt_max": 0.01347558544017221,
+    "plan_reconstruction_rel_err": 0.12903780382677602,
+    "plan_reconstruction_scale": 0.672945954680563,
+    "n_iter": 135,
+    "balanced_marginal_row_max": 0.014381873218898361,
+    "balanced_marginal_col_max": 0.014359983663438707,
+    "note": "the 'balanced' figures are reported only to document that a raw |P1-a| check is not the right diagnostic for an unbalanced solve"
+  },
+  "transport_mass_total": 0.7071757874455319,
+  "plan_sha256": "50523d14b0ae5ea8b9aeae962cd49c43577d05ea188826711c38c9e76b8ba768",
+  "cost_matrix_sha256": "85c0a0c16f581ca2c3dfb3145410eabda12bfff19cebac3156b46a1bfd7ec857",
+  "solver_invocations_for_this_cell": 1
+}

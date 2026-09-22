@@ -1,0 +1,24 @@
+{
+  "readme": "无标签 Path B / 在线 AML 追踪用先验。ratio_by_eth_token 的 key 为 ETH 上 ERC20 合约地址（小写）；值为 BNB 侧 raw / ETH 侧 raw（bnb_raw/eth_raw），不是人类可读金额比。USDT/USDC 在 ETH 多为 6 位小数、在 BSC 多为 18 位时，静态比约为 10^12。不要将 default_ratio 设为 1.0 去“盲填”未知代币。可选 token_routes 见 config/token_routes.eth_bsc.json；程序默认加载该文件并与本文件合并。",
+  "median_bridge_delay_sec": 3600,
+  "default_ratio": null,
+  "ratio_by_eth_token": {
+    "0xdac17f958d2ee523a2206206994597c13d831ec7": 1000000000000,
+    "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48": 1000000000000,
+    "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2": 1
+  },
+  "token_map_eth_to_bnb": {
+    "0xdac17f958d2ee523a2206206994597c13d831ec7": "0x55d398326f99059ff775485246999027b3197955",
+    "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48": "0x8ac76a51cc950d9822d68b83fe1ad97b32cd580d",
+    "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2": "0x2170ed0880ac9a755fd29b2688956bd959f933f8"
+  },
+  "price_snapshot_usd": {},
+  "_field_reference": {
+    "median_bridge_delay_sec": "典型跨链到账延迟（秒），用于时间窗与打分；无标签时覆盖由标签估计的中位数。",
+    "default_ratio": "对未覆盖的 ERC20 统一使用该 BNB_raw/ETH_raw；设为 null 则不自动填充未知代币（推荐）。",
+    "ratio_by_eth_token": "按 ETH 代币地址指定 bnb_raw/eth_raw；与 data/Token 中 decimals 及人工 route 一致。",
+    "token_map_eth_to_bnb": "ETH 代币 → BSC 代币，写入 args.asset_d；WETH→WBNB 等跨资产应走 dynamic_price route + price_snapshot_usd，勿在此写静态 1:1。",
+    "price_snapshot_usd": "可选，合约小写地址 → 美元价（每 1 human token），用于 token_routes 中 dynamic_price 路线。"
+  },
+  "_calibration_hint": "decimals 来自 data/Token/ERC20.csv 与 BERC20.csv；跨链映射维护在 config/token_routes.eth_bsc.json。亦可使用 config/token_priors_v2_from_csv.json 内的 legacy_compat_export 与本字段对齐。"
+}

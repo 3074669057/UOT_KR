@@ -1,0 +1,31 @@
+% R7 Section 3 -- UOT-KR (frozen definition)
+\subsection{UOT-KR}
+All methods inside a cell share exactly the same cost matrix $C$ and the same transport
+plan $P$. The cost family is the amount-free renormalised five-component cost
+($\{$time $0.25$, route $0.15$, risk $0.15$, evidence $0.05$, novelty $0.05\}$, divided by
+$0.65$); the amount component is removed from the pairwise cost only, and the
+amount-derived marginals are preserved. The plan is obtained once per cell with POT
+\texttt{sinkhorn\_unbalanced} ($\mathrm{reg}=0.05$, $\mathrm{reg\_m}=0.5$) and
+reused by every decoder and every rule candidate. Ranking uses
+$\log K = -C/\epsilon$, which is exactly rank-equivalent to $K=\exp(-C/\epsilon)$.
+
+A rule is a triple (ranking signal, budget rule, acceptance test). The four candidate
+families are \texttt{R-const} (bilateral mutual top-$k$), \texttt{R-quantile}
+($k=\mathrm{clip}(\lceil Q_q\rceil,2,8)$ from the frozen empirical degree distribution,
+one $k$ shared by all bridges), \texttt{R-adaptive}
+($k_i^S=\mathrm{clip}(\lceil\alpha r_i/\mathrm{median}(r_{>0})\rceil,1,8)$ and
+$k_j^T=\mathrm{clip}(\lceil\alpha c_j/\mathrm{median}(c_{>0})\rceil,1,8)$, symmetric on
+both sides), and \texttt{R-threshold} (no $k$; bilateral relative-maximum rule in the log
+domain).
+
+On the selection block the unique winner is \texttt{R-const@k3} with parameters
+\texttt{{"family": "R-const", "k": 3}} and selection score
+0.432151. It ties exactly with \texttt{R-quantile@q0.75}, which derives the
+same $k$ from the frozen degree distribution; the pre-registered complexity tie-break
+selects the simpler \texttt{R-const} form.
+
+\texttt{ORACLE\_1TO1\_CEILING} is a \emph{label-informed diagnostic}: a maximum-cardinality
+matching on the ground-truth positive bipartite graph, giving precision $=1$,
+recall $=M/T$ and $F1 = 2M/(T+M)$. It is not deployable, is not part of H1/H2 or Holm, and
+is never used to build a UOT-KR prediction. Its holdout macro value is
+0.7364.

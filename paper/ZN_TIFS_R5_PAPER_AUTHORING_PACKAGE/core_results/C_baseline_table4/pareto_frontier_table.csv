@@ -1,0 +1,4 @@
+model,pareto_frontier,harmonic_mean_score,geometric_mean_score,worst_dimension_score,win_count_vs_connector,win_count_vs_abctracer
+connector_style_adapted,True,0.00015994410394100695,0.001864772416309463,0.0001,8,2
+abctracer_style_adapted,True,0.0003998704423139404,0.09521967853153052,0.0001,6,8
+rcuot_q_precision_rerank,True,0.000799348934943126,0.2800528857501978,0.0001,7,3

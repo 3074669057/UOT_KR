@@ -1,0 +1,6 @@
+ablation,split,model,evaluation_mode,precision,recall,f1,ece,calibration_score,bridge_key_consistency,bridge_transfer_key_precision,bridge_transfer_key_recall,covered_auroc,covered_auprc,threshold,abstention_rate
+bridge_key_rule_only,holdout,Q-rule-bridge-key,dev_frozen_holdout_ablation,1.0,1.0,1.0,0.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,0.0
+corrected_score_only,holdout,Q-RC-UOT,dev_frozen_holdout_ablation,1.0,0.20454545454545456,0.339622641509434,0.03228688524590169,0.9677131147540983,1.0,1.0,1.0,1.0,1.0,0.9675,0.0
+logistic_verifier,holdout,Q-logistic,dev_frozen_holdout_ablation,1.0,1.0,1.0,0.09372336036051851,0.9062766396394815,1.0,1.0,1.0,1.0,1.0,0.7644709110116553,0.0
+gbdt_verifier,holdout,Q-GBDT,dev_frozen_holdout_ablation,1.0,1.0,1.0,0.06908253167322856,0.9309174683267715,1.0,1.0,1.0,1.0,1.0,0.7499874491636889,0.0
+ensemble,holdout,Q-ensemble,dev_frozen_holdout_ablation,1.0,1.0,1.0,0.08140294601687365,0.9185970539831263,1.0,1.0,1.0,1.0,1.0,0.757229180087672,0.0

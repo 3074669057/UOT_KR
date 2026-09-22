@@ -1,0 +1,16 @@
+{
+  "join_key_definition": [
+    "bridge",
+    "seed",
+    "template_id"
+  ],
+  "truth_rows": 1440,
+  "representation_rows": 1440,
+  "matched_rows": 1440,
+  "duplicate_keys": 0,
+  "unmatched_truth": 0,
+  "unmatched_representation_records": 0,
+  "join_cardinality": "1:1",
+  "expected_templates": 1440,
+  "observed_templates": 1440
+}

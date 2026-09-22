@@ -1,0 +1,307 @@
+{
+  "audit_pass": true,
+  "checks": {
+    "exists_phase29_config_json": {
+      "pass": true,
+      "observed": true,
+      "expected": true,
+      "source_file": "D:\\trae\\tool\\a\\cross\\out\\paper_full_pipeline_run\\phase29_robust_rcuot_superiority\\phase29_config.json"
+    },
+    "exists_dev_baseline_table_csv": {
+      "pass": true,
+      "observed": true,
+      "expected": true,
+      "source_file": "D:\\trae\\tool\\a\\cross\\out\\paper_full_pipeline_run\\phase29_robust_rcuot_superiority\\dev_baseline_table.csv"
+    },
+    "exists_dev_candidate_table_csv": {
+      "pass": true,
+      "observed": true,
+      "expected": true,
+      "source_file": "D:\\trae\\tool\\a\\cross\\out\\paper_full_pipeline_run\\phase29_robust_rcuot_superiority\\dev_candidate_table.csv"
+    },
+    "exists_dev_selection_summary_json": {
+      "pass": true,
+      "observed": true,
+      "expected": true,
+      "source_file": "D:\\trae\\tool\\a\\cross\\out\\paper_full_pipeline_run\\phase29_robust_rcuot_superiority\\dev_selection_summary.json"
+    },
+    "exists_fresh_holdout_baseline_table_csv": {
+      "pass": true,
+      "observed": true,
+      "expected": true,
+      "source_file": "D:\\trae\\tool\\a\\cross\\out\\paper_full_pipeline_run\\phase29_robust_rcuot_superiority\\fresh_holdout_baseline_table.csv"
+    },
+    "exists_fresh_holdout_candidate_table_csv": {
+      "pass": true,
+      "observed": true,
+      "expected": true,
+      "source_file": "D:\\trae\\tool\\a\\cross\\out\\paper_full_pipeline_run\\phase29_robust_rcuot_superiority\\fresh_holdout_candidate_table.csv"
+    },
+    "exists_strict_superiority_gate_json": {
+      "pass": true,
+      "observed": true,
+      "expected": true,
+      "source_file": "D:\\trae\\tool\\a\\cross\\out\\paper_full_pipeline_run\\phase29_robust_rcuot_superiority\\strict_superiority_gate.json"
+    },
+    "exists_key_metric_superiority_gate_json": {
+      "pass": true,
+      "observed": true,
+      "expected": true,
+      "source_file": "D:\\trae\\tool\\a\\cross\\out\\paper_full_pipeline_run\\phase29_robust_rcuot_superiority\\key_metric_superiority_gate.json"
+    },
+    "exists_balanced_relative_gate_json": {
+      "pass": true,
+      "observed": true,
+      "expected": true,
+      "source_file": "D:\\trae\\tool\\a\\cross\\out\\paper_full_pipeline_run\\phase29_robust_rcuot_superiority\\balanced_relative_gate.json"
+    },
+    "exists_precision_f1_pareto_gate_json": {
+      "pass": true,
+      "observed": true,
+      "expected": true,
+      "source_file": "D:\\trae\\tool\\a\\cross\\out\\paper_full_pipeline_run\\phase29_robust_rcuot_superiority\\precision_f1_pareto_gate.json"
+    },
+    "exists_normalized_metric_table_csv": {
+      "pass": true,
+      "observed": true,
+      "expected": true,
+      "source_file": "D:\\trae\\tool\\a\\cross\\out\\paper_full_pipeline_run\\phase29_robust_rcuot_superiority\\normalized_metric_table.csv"
+    },
+    "exists_pareto_frontier_table_csv": {
+      "pass": true,
+      "observed": true,
+      "expected": true,
+      "source_file": "D:\\trae\\tool\\a\\cross\\out\\paper_full_pipeline_run\\phase29_robust_rcuot_superiority\\pareto_frontier_table.csv"
+    },
+    "exists_metric_win_loss_table_csv": {
+      "pass": true,
+      "observed": true,
+      "expected": true,
+      "source_file": "D:\\trae\\tool\\a\\cross\\out\\paper_full_pipeline_run\\phase29_robust_rcuot_superiority\\metric_win_loss_table.csv"
+    },
+    "exists_coverage_tier_report_csv": {
+      "pass": true,
+      "observed": true,
+      "expected": true,
+      "source_file": "D:\\trae\\tool\\a\\cross\\out\\paper_full_pipeline_run\\phase29_robust_rcuot_superiority\\coverage_tier_report.csv"
+    },
+    "exists_coverage_qualified_summary_json": {
+      "pass": true,
+      "observed": true,
+      "expected": true,
+      "source_file": "D:\\trae\\tool\\a\\cross\\out\\paper_full_pipeline_run\\phase29_robust_rcuot_superiority\\coverage_qualified_summary.json"
+    },
+    "exists_failure_bottleneck_report_md": {
+      "pass": true,
+      "observed": true,
+      "expected": true,
+      "source_file": "D:\\trae\\tool\\a\\cross\\out\\paper_full_pipeline_run\\phase29_robust_rcuot_superiority\\failure_bottleneck_report.md"
+    },
+    "exists_claim_boundary_update_md": {
+      "pass": true,
+      "observed": true,
+      "expected": true,
+      "source_file": "D:\\trae\\tool\\a\\cross\\out\\paper_full_pipeline_run\\phase29_robust_rcuot_superiority\\claim_boundary_update.md"
+    },
+    "both_baselines_dev": {
+      "pass": true,
+      "observed": [
+        "connector_style_adapted",
+        "abctracer_style_adapted"
+      ],
+      "expected": [
+        "abctracer_style_adapted",
+        "connector_style_adapted"
+      ],
+      "source_file": "D:\\trae\\tool\\a\\cross\\out\\paper_full_pipeline_run\\phase29_robust_rcuot_superiority\\dev_baseline_table.csv"
+    },
+    "both_baselines_holdout": {
+      "pass": true,
+      "observed": [
+        "connector_style_adapted",
+        "abctracer_style_adapted"
+      ],
+      "expected": [
+        "abctracer_style_adapted",
+        "connector_style_adapted"
+      ],
+      "source_file": "D:\\trae\\tool\\a\\cross\\out\\paper_full_pipeline_run\\phase29_robust_rcuot_superiority\\fresh_holdout_baseline_table.csv"
+    },
+    "fresh_disjoint_burned": {
+      "pass": true,
+      "observed": [
+        292,
+        293,
+        294,
+        295,
+        296,
+        297,
+        298,
+        299,
+        300,
+        301,
+        302,
+        303,
+        304,
+        305,
+        306,
+        307,
+        308,
+        309,
+        310,
+        311
+      ],
+      "expected": "disjoint from 232-291",
+      "source_file": "D:\\trae\\tool\\a\\cross\\out\\paper_full_pipeline_run\\phase29_robust_rcuot_superiority\\phase29_config.json"
+    },
+    "selected_source_dev": {
+      "pass": true,
+      "observed": {
+        "strict_superiority_objective": "dev",
+        "key_metric_superiority_objective": "dev",
+        "balanced_relative_objective": "dev",
+        "precision_f1_pareto_objective": "dev"
+      },
+      "expected": "dev",
+      "source_file": "D:\\trae\\tool\\a\\cross\\out\\paper_full_pipeline_run\\phase29_robust_rcuot_superiority\\dev_selection_summary.json"
+    },
+    "full_scope_independent_fail": {
+      "pass": true,
+      "observed": false,
+      "expected": false,
+      "source_file": "D:\\trae\\tool\\a\\cross\\out\\paper_full_pipeline_run\\phase29_robust_rcuot_superiority\\full_scope_claim_gate.json"
+    },
+    "pf1_gate_present": {
+      "pass": true,
+      "observed": [
+        "gate_pass",
+        "conditions",
+        "holdout_metrics",
+        "selected_candidate"
+      ],
+      "expected": "precision_f1_pareto_gate fields",
+      "source_file": "D:\\trae\\tool\\a\\cross\\out\\paper_full_pipeline_run\\phase29_robust_rcuot_superiority\\precision_f1_pareto_gate.json"
+    },
+    "precision_f1_pareto_gate_pass": {
+      "pass": true,
+      "observed": true,
+      "expected": true,
+      "source_file": "D:\\trae\\tool\\a\\cross\\out\\paper_full_pipeline_run\\phase29_robust_rcuot_superiority\\precision_f1_pareto_gate.json"
+    },
+    "strict_superiority_gate_fail_preserved": {
+      "pass": true,
+      "observed": false,
+      "expected": false,
+      "source_file": "D:\\trae\\tool\\a\\cross\\out\\paper_full_pipeline_run\\phase29_robust_rcuot_superiority\\strict_superiority_gate.json"
+    },
+    "key_metric_superiority_gate_fail_preserved": {
+      "pass": true,
+      "observed": false,
+      "expected": false,
+      "source_file": "D:\\trae\\tool\\a\\cross\\out\\paper_full_pipeline_run\\phase29_robust_rcuot_superiority\\key_metric_superiority_gate.json"
+    },
+    "balanced_relative_gate_fail_preserved": {
+      "pass": true,
+      "observed": false,
+      "expected": false,
+      "source_file": "D:\\trae\\tool\\a\\cross\\out\\paper_full_pipeline_run\\phase29_robust_rcuot_superiority\\balanced_relative_gate.json"
+    },
+    "full_scope_claim_gate_fail_preserved": {
+      "pass": true,
+      "observed": false,
+      "expected": false,
+      "source_file": "D:\\trae\\tool\\a\\cross\\out\\paper_full_pipeline_run\\phase29_robust_rcuot_superiority\\full_scope_claim_gate.json"
+    },
+    "no_false_lead_claim_over_abctracer_merge": {
+      "pass": true,
+      "observed": [],
+      "expected": [],
+      "source_file": "phase29 docs"
+    },
+    "no_false_lead_claim_over_abctracer_coverage_adjusted_recall": {
+      "pass": true,
+      "observed": [],
+      "expected": [],
+      "source_file": "phase29 docs"
+    },
+    "allowed_claim_mentions_precision_f1_pareto_only": {
+      "pass": true,
+      "observed": {
+        "precision_f1_pareto": true,
+        "no_strict_claim": true,
+        "abctracer_limitation": true,
+        "pf1_gate_pass": true
+      },
+      "expected": "precision/F1 Pareto allowed claim only",
+      "source_file": "phase29 docs"
+    },
+    "abctracer_high_recall_calibration_limitation_present": {
+      "pass": true,
+      "observed": [
+        "abctracer remains stronger",
+        "remains below abctracer",
+        "abctracer still dominates"
+      ],
+      "expected": "at least one limitation marker",
+      "source_file": "phase29 docs"
+    },
+    "connector_and_abctracer_both_reported": {
+      "pass": true,
+      "observed": {
+        "connector_in_docs": true,
+        "abctracer_in_docs": true,
+        "holdout_table_both": true,
+        "rcuot_in_holdout": true
+      },
+      "expected": "Connector and ABCTracer both in docs and holdout table",
+      "source_file": "docs + fresh_holdout_baseline_table.csv"
+    },
+    "claim_boundary_docs": {
+      "pass": true,
+      "observed": {
+        "has_p29": true,
+        "forbidden_hits": [],
+        "false_abctracer_leads": []
+      },
+      "expected": true,
+      "source_file": "docs"
+    },
+    "phase25_preserved": {
+      "pass": true,
+      "observed": true,
+      "expected": true,
+      "source_file": "D:\\trae\\tool\\a\\cross\\out\\paper_full_pipeline_run\\phase25_coverage_qualified_training"
+    },
+    "phase26_1_preserved": {
+      "pass": true,
+      "observed": [
+        true,
+        false
+      ],
+      "expected": [
+        true,
+        false
+      ],
+      "source_file": "D:\\trae\\tool\\a\\cross\\out\\paper_full_pipeline_run\\phase26_scope_separated_diagnostic"
+    },
+    "phase27_diagnostic": {
+      "pass": true,
+      "observed": false,
+      "expected": false,
+      "source_file": "D:\\trae\\tool\\a\\cross\\out\\paper_full_pipeline_run\\phase27_precision_repair_coverage_expansion"
+    },
+    "phase28_diagnostic": {
+      "pass": true,
+      "observed": false,
+      "expected": false,
+      "source_file": "D:\\trae\\tool\\a\\cross\\out\\paper_full_pipeline_run\\phase28_multiobjective_rcuot_superiority"
+    }
+  },
+  "gates": {
+    "strict_superiority_gate": false,
+    "key_metric_superiority_gate": false,
+    "balanced_relative_gate": false,
+    "precision_f1_pareto_gate": true,
+    "full_scope_claim_gate": false
+  }
+}

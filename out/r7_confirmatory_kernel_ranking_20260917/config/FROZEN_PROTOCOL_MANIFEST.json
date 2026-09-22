@@ -1,0 +1,128 @@
+{
+  "experiment_id": "r7_confirmatory_kernel_ranking_20260917",
+  "generated_at_utc": "2026-09-17T07:51:46Z",
+  "freeze_type": "hash-locked protocol freeze",
+  "locked_spec_sha256": "9775479b742833d02beeffb469569b0d885002749b84e996844dcce9b845e11d",
+  "confirmatory_seed_block": [
+    411,
+    412,
+    413,
+    414,
+    415,
+    416,
+    417,
+    418,
+    419,
+    420
+  ],
+  "retired_confirmatory_blocks": [
+    {
+      "block": [
+        401,
+        410
+      ],
+      "reason": "INCOMPLETE_FIRST_CONFIRMATORY_EXECUTION (plumbing defect, no result produced)",
+      "ledger": "confirmatory/CONFIRMATORY_TOUCH_ONCE.json",
+      "reused": false
+    }
+  ],
+  "active_ledger": "confirmatory/CONFIRMATORY_TOUCH_ONCE__411_420.json",
+  "selection_seed_block": [
+    206,
+    207,
+    208,
+    209,
+    210,
+    211,
+    112,
+    113,
+    114,
+    115
+  ],
+  "frozen_hashes": {
+    "scripts/run_r7_selection.py": "d6738e102dc8e5294691a6904e3af46103a73c9adb6fc6dcf792381259937657",
+    "scripts/run_r7_preflight.py": "a68ff9db90c17c7b543eba5a5aa0da9e5f55688f3bce6a768bd79a321f41d36b",
+    "scripts/run_r7_confirmatory_kernel_ranking.py": "5a125184154213c736a41bff8597237d01444372c0b805f35cb6ce4ca552f5bb",
+    "scripts/validate_r7_confirmatory_results.py": "59dbe87b636b4c0e4d5568b4d5549de2db51a86507d7a63c1cc9dcdbdf83dad0",
+    "scripts/r7/__init__.py": "0b4b0701e492382646990c11bf44dcbb66cfd4301c1c2d4492c1f47569b3d3ef",
+    "scripts/r7/r7_common.py": "131f575f900baa1fa45725f634dd2ad78409f701bc0b926d92164df3f8500c97",
+    "scripts/r7/r7_degree.py": "940a3702594039cec2073692ed187cf68047bb706a209d43b78e83a7c1bb706c",
+    "scripts/r7/r7_generator.py": "9994fe2df397479df3b750b1e8996cd9192d7a3ed80a295ae5fec7b15a50d8f0",
+    "scripts/r7/r7_methods.py": "fa68a5489ca42c23b12f1cda9d38e3d6e06645e590b1f1ee78d94d504fb86ce4",
+    "scripts/r7/r7_pipeline.py": "9e749e0d48dc8ad3da081e4d0dd61541f890f81e01821b512e701e321daf1d58",
+    "scripts/r7/r7_qa.py": "f6db5f559b9fe026c6b49a9a53371d6e4515eed25ea2f50c88d4c8f4e78946f2",
+    "scripts/r7/selftest_generator_equivalence.py": "eab6c1d964b8b1a1cfba2469ac9260b2f5197673b83b40a39704c716114b72d6",
+    "src/cross/domain/evaluation/semi_synthetic_flows.py": "efe435471ddad437d95265b132dfb29f7f29616ef562c47587e0d60a37c433dd",
+    "scripts/multi_bridge/baseline_mechanism/common.py": "68b0beda9a6c2f29cd96cb569958f817e222093f0f80f2f79c75c13739aa0781",
+    "scripts/multi_bridge/decoder_audit/da_common.py": "fff26071d54e813cf087122399b8dee4ad4c92c7652b4d3d6a7ba1e2f8bfd77c",
+    "scripts/multi_bridge/dev_candidate/af_common.py": "a09c386722cacc8ae1df2a175f08de17be2209fbed1a63f024f0e396b007dcf4",
+    "scripts/multi_bridge/dev_candidate2/cp_common.py": "ea57afad214d6d9c615a76db7325ab84d17ff8dedea26727527e28fece327070",
+    "scripts/multi_bridge/diag/ctd_common.py": "5686f55499bcf132631177288e8654f3229eab99d6f8faa8b9b042224dd19447",
+    "scripts/multi_bridge/run_threshold_many_match.py": "90958508b9f4a1a23813fae9f658cad9323738cf7431c5e486a42cc763d32535",
+    "config/operational_protocol_preselection.json": "e35c5a5f76f6bc44611435b59a794c7ceff4c2e856b74b8fed0f25f9a7a85049",
+    "config/author_proposed_spec.md": "1383ceaa7840a17f7f1a0ae667d471efbfa28cc274ccdafa48e543e785b52b0d",
+    "selection/degree_calibration/degree_sampling_spec.json": "3768846c1da6a0059c27e7f03de9e74962d05600d12acf2a18684ac37e803206",
+    "selection/degree_calibration/tail_report.json": "c4ef06998b60826c95e96432ee908261085b96886ffbcf2aa4a480b4288d46de",
+    "selection/degree_calibration/degree_definition.json": "f653b35a27872fd22d70dcad1b87d5e7926b4409550635304379387edfb153cb",
+    "selection/degree_calibration/source_provenance.json": "d08214cd48c5d64b0c29de6c1f507015b168cc47b81b6ae9f4261c1e3fc54cb8",
+    "selection/degree_calibration/pooled_degree_hist_truncated.csv": "bb928b5e2e21f1547e83500e80723511765a1d513a3bd59b1a3c79526dc5953b",
+    "selection/degree_calibration/pooled_fanin_hist_truncated.csv": "8930b93d29fc544fc49c9633fcc3113390294c873b2f9275005df65796e31cfe",
+    "selection/generator/family_manifest.csv": "a11c7ca53d12757975799eee40fa6a774492f706130417de0f91695bbfe92e8d",
+    "selection/generator/generator_structural_qa.json": "495bbbdb51087c073f974b6f3da8c87474a80ea5848504516b12f87f7a8f80e0",
+    "selection/generator/generator_equivalence.json": "531057425a9cb4885af41f7221f9ac08447e2499ac7d496af7c6ecb4c17e5ed4",
+    "selection/rule_search/candidate_space.json": "f8c0cf5a3dd700387ac8a8d66896a5c44c3e9b9850207a43354e45d8a0c44363",
+    "selection/rule_search/all_candidates.csv": "1105291926ce0cb7ba8b88464209d393dc3acdbab9ea80193d6ca65bbf3daa46",
+    "selection/rule_search/selected_rule.json": "37f13ba3563cdec54e13e18cbf2c68545b74ad93da4eec3e55e3db5391ac5900",
+    "selection/rule_search/threshold_mm_calibration.json": "9b84f51b56c2d4bd06512f43649ba46f0a8ab64fd942dde25d64b4de1829769e",
+    "selection/rule_search/dual_softmax_calibration.json": "7ff58c569e0351c5f215b8f64aa3fe555df3218aec2bc274c35551eb65eef1cc",
+    "selection/preflight.json": "d156a22422b62c0eedb35bf5a99afc5a5af38b4987262417adf90760b0a5bf18",
+    "selection/VALIDATOR_SELFTEST_ON_SELECTION.json": "bd2607413896ac8a2f7f7e2297a30c9f145dda9ea4afaa477e0780a6544f80b8",
+    "selection/EXECUTOR_DRYRUN.json": "cf6c56a5a9a37b62917cb517baa9601c688ea02a7b14ca3153041f2709000cc4",
+    "confirmatory/INCOMPLETE_FIRST_CONFIRMATORY_EXECUTION.md": "3823eda9661eca69256e2d958e517319703be441962b6d2571408162d5c40636",
+    "confirmatory/CONFIRMATORY_TOUCH_ONCE.json": "29b0327b828c6e0a62e9c735aff409bde93850577890981d78886023067c211d",
+    "confirmatory/retired_401_410/README.md": "0f24d843acac043b4c903e36abc653d9358a340dc34fecda2fcc0ffec0308a1d",
+    "selection/SELECTION_REPORT.md": "3701fa15a5070c66d97e832292e297ebea35232f3614f4c75d4ef4b8e6445818"
+  },
+  "roles": {
+    "scripts/r7/r7_generator.py": "solver wrapper + cell builder",
+    "scripts/r7/r7_methods.py": "decoder catalogue (relevant decoder code)",
+    "scripts/r7/r7_pipeline.py": "metric definitions + aggregation",
+    "scripts/r7/r7_common.py": "frozen constants and guards",
+    "src/cross/domain/evaluation/semi_synthetic_flows.py": "generator source",
+    "scripts/run_r7_confirmatory_kernel_ranking.py": "confirmatory executor",
+    "scripts/validate_r7_confirmatory_results.py": "independent validator",
+    "selection/rule_search/selected_rule.json": "selection winner file",
+    "selection/degree_calibration/pooled_degree_hist_truncated.csv": "degree histogram",
+    "selection/degree_calibration/pooled_fanin_hist_truncated.csv": "fan-in histogram",
+    "selection/generator/family_manifest.csv": "family manifest"
+  },
+  "holdout_status_at_freeze": {
+    "active_block": [
+      411,
+      412,
+      413,
+      414,
+      415,
+      416,
+      417,
+      418,
+      419,
+      420
+    ],
+    "generated": false,
+    "read": false,
+    "active_ledger_exists": false,
+    "raw_dir_exists": false,
+    "retired_blocks": [
+      {
+        "block": [
+          401,
+          410
+        ],
+        "reason": "INCOMPLETE_FIRST_CONFIRMATORY_EXECUTION (plumbing defect, no result produced)",
+        "ledger": "confirmatory/CONFIRMATORY_TOUCH_ONCE.json",
+        "reused": false
+      }
+    ]
+  }
+}

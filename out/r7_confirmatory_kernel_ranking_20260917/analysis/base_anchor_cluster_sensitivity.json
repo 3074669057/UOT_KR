@@ -1,0 +1,64 @@
+{
+  "generated_at_utc": "2026-09-17T08:12:02Z",
+  "role": "sensitivity analysis only; does NOT replace the primary seed-level protocol",
+  "resampling_unit": "base-anchor cluster",
+  "n_clusters_per_cell": 24,
+  "B": 4000,
+  "rng_seed": 20240101,
+  "contrasts": {
+    "H1": {
+      "observed_effect": 0.02553167467947527,
+      "ci_lower_2.5": 0.015806047996240868,
+      "ci_upper_97.5": 0.03508581814570593,
+      "n_clusters_total": 720
+    },
+    "H2": {
+      "observed_effect": 0.36703971518526995,
+      "ci_lower_2.5": 0.35688128097655075,
+      "ci_upper_97.5": 0.3771487811466744,
+      "n_clusters_total": 720
+    },
+    "S1": {
+      "observed_effect": 0.014211157489311515,
+      "ci_lower_2.5": 0.008712685440282352,
+      "ci_upper_97.5": 0.019728187639578246,
+      "n_clusters_total": 720
+    },
+    "S2": {
+      "observed_effect": 0.30509195291722385,
+      "ci_lower_2.5": 0.29766764084379455,
+      "ci_upper_97.5": 0.31245873768504223,
+      "n_clusters_total": 720
+    }
+  },
+  "primary_comparison": {
+    "H1": {
+      "primary_effect": 0.025531674679475275,
+      "primary_ci": [
+        0.01340454739556185,
+        0.03709975394032736
+      ]
+    },
+    "H2": {
+      "primary_effect": 0.36703971518526995,
+      "primary_ci": [
+        0.36034177338502377,
+        0.37342362898025416
+      ]
+    },
+    "S1": {
+      "primary_effect": 0.014211157489311515,
+      "primary_ci": [
+        0.007749444779739394,
+        0.020294877337509086
+      ]
+    },
+    "S2": {
+      "primary_effect": 0.3050919529172238,
+      "primary_ci": [
+        0.2959806224553943,
+        0.3146507833200058
+      ]
+    }
+  }
+}

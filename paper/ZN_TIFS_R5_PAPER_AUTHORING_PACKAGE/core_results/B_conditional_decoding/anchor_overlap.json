@@ -1,0 +1,81 @@
+{
+  "bridges": {
+    "Celer": {
+      "n_seeds": 5,
+      "n_anchors_per_seed": 48,
+      "n_distinct_anchors_across_seeds": 236,
+      "occurrence_counts": {
+        "1": 232,
+        "2": 4
+      },
+      "anchor_repeat_examples": {
+        "301_304": [
+          "eth_flow_b7314762d7994c"
+        ],
+        "301_305": [
+          "eth_flow_0acc29d7eaff49"
+        ],
+        "303_304": [
+          "eth_flow_b7f1976e671144"
+        ]
+      },
+      "n_seed_pairs_with_overlap": 4,
+      "n_shared_anchor_instances": 4
+    },
+    "Multi": {
+      "n_seeds": 5,
+      "n_anchors_per_seed": 48,
+      "n_distinct_anchors_across_seeds": 235,
+      "occurrence_counts": {
+        "1": 230,
+        "2": 5
+      },
+      "anchor_repeat_examples": {
+        "302_303": [
+          "eth_flow_0xdaffe6bb63c2"
+        ],
+        "302_304": [
+          "eth_flow_0xa06219f6ff28"
+        ],
+        "302_305": [
+          "eth_flow_0x0c89be50d0e8",
+          "eth_flow_0x79255fc4f596"
+        ],
+        "303_304": [
+          "eth_flow_0xf4371a24f044"
+        ]
+      },
+      "n_seed_pairs_with_overlap": 4,
+      "n_shared_anchor_instances": 5
+    },
+    "Poly": {
+      "n_seeds": 5,
+      "n_anchors_per_seed": 48,
+      "n_distinct_anchors_across_seeds": 229,
+      "occurrence_counts": {
+        "1": 218,
+        "2": 11
+      },
+      "anchor_repeat_examples": {
+        "301_303": [
+          "eth_flow_0x4128c2300dca"
+        ],
+        "301_304": [
+          "eth_flow_0x84a97db308b0",
+          "eth_flow_0xaefdd198c4f6",
+          "eth_flow_0xbb4b2af99736"
+        ],
+        "301_305": [
+          "eth_flow_0x1e53f0dea951",
+          "eth_flow_0x79d42f8d1c6c"
+        ],
+        "302_303": [
+          "eth_flow_0x09def58a4911",
+          "eth_flow_0x44327d80c151"
+        ]
+      },
+      "n_seed_pairs_with_overlap": 6,
+      "n_shared_anchor_instances": 11
+    }
+  }
+}

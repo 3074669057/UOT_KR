@@ -1,0 +1,2 @@
+method,precision,recall,f1,ece,calibration_score,bridge_key_consistency,bridge_transfer_key_precision,bridge_transfer_key_recall,covered_auroc,covered_auprc,threshold,abstention_rate
+RC-UOT-Q-Covered,1.0,1.0,1.0,0.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,0.0

@@ -1,0 +1,114 @@
+{
+  "checks": [
+    {
+      "check": "locked_spec_sha256",
+      "status": "PASS",
+      "detail": {
+        "computed": "9775479b742833d02beeffb469569b0d885002749b84e996844dcce9b845e11d",
+        "recorded": "9775479b742833d02beeffb469569b0d885002749b84e996844dcce9b845e11d"
+      }
+    },
+    {
+      "check": "locked_spec_matches_manifest",
+      "status": "PASS",
+      "detail": {
+        "computed": "9775479b742833d02beeffb469569b0d885002749b84e996844dcce9b845e11d",
+        "manifest": "9775479b742833d02beeffb469569b0d885002749b84e996844dcce9b845e11d"
+      }
+    },
+    {
+      "check": "frozen_artifact_hashes",
+      "status": "FAIL",
+      "detail": {
+        "scripts/run_r7_selection.py": {
+          "expected": "d6738e102dc8e5294691a6904e3af46103a73c9adb6fc6dcf792381259937657",
+          "got": "626c432cec9134da3a7f5a450636a055cbb5e062600f5f334a2e335aab3059af"
+        },
+        "scripts/validate_r7_confirmatory_results.py": {
+          "expected": "59dbe87b636b4c0e4d5568b4d5549de2db51a86507d7a63c1cc9dcdbdf83dad0",
+          "got": "979ded622183a5dc7209a35bcaee40761ed85526f9654ba5186e51f0830fd205"
+        }
+      }
+    },
+    {
+      "check": "executor_self_sha256",
+      "status": "PASS",
+      "detail": {
+        "computed": "5a125184154213c736a41bff8597237d01444372c0b805f35cb6ce4ca552f5bb",
+        "frozen": "5a125184154213c736a41bff8597237d01444372c0b805f35cb6ce4ca552f5bb",
+        "key": "scripts/run_r7_confirmatory_kernel_ranking.py"
+      }
+    },
+    {
+      "check": "confirmatory_seed_block_only",
+      "status": "PASS",
+      "detail": {
+        "manifest": [
+          411,
+          412,
+          413,
+          414,
+          415,
+          416,
+          417,
+          418,
+          419,
+          420
+        ],
+        "runtime": [
+          411,
+          412,
+          413,
+          414,
+          415,
+          416,
+          417,
+          418,
+          419,
+          420
+        ]
+      }
+    },
+    {
+      "check": "non_confirmatory_seeds_rejected",
+      "status": "PASS",
+      "detail": 412
+    },
+    {
+      "check": "one_shot_ledger_absent",
+      "status": "FAIL",
+      "detail": {
+        "path": "out\\r7_confirmatory_kernel_ranking_20260917\\confirmatory\\CONFIRMATORY_TOUCH_ONCE__411_420.json",
+        "exists": true
+      }
+    },
+    {
+      "check": "confirmatory_raw_absent",
+      "status": "FAIL",
+      "detail": {
+        "path": "out\\r7_confirmatory_kernel_ranking_20260917\\confirmatory\\raw",
+        "exists": true
+      }
+    },
+    {
+      "check": "retired_block_ledger_preserved",
+      "status": "PASS",
+      "detail": {
+        "retired": [
+          [
+            401,
+            410
+          ]
+        ],
+        "ledger_present": {
+          "confirmatory/CONFIRMATORY_TOUCH_ONCE.json": true
+        }
+      }
+    }
+  ],
+  "checked_at_utc": "2026-09-17T08:12:19Z",
+  "spec_sha256": "9775479b742833d02beeffb469569b0d885002749b84e996844dcce9b845e11d",
+  "executor_sha256": "5a125184154213c736a41bff8597237d01444372c0b805f35cb6ce4ca552f5bb",
+  "ledger_path": "out\\r7_confirmatory_kernel_ranking_20260917\\confirmatory\\CONFIRMATORY_TOUCH_ONCE__411_420.json",
+  "ALL_PASS": false
+}

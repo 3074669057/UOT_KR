@@ -1,0 +1,294 @@
+跨链资金流对应的运输表示：排序失真诊断与半合成边界评估
+摘要
+跨链洗钱把可疑资金拆散到多条链、多种代币与多笔延迟到账中，调查者需要判断源链上的一组活动与目标链上的哪组活动构成同一次资金运动。现有跨链关联工具以交易对为输出单元，其一对一输出语义无法表达分流、合流与未匹配质量。本文将该任务形式化为跨链可疑资金流对应（cross-chain suspicious fund-flow correspondence, CSFFC），在资金流单元上求解非负质量分配计划，并以非平衡最优传输（UOT）作为表示载体。本文所有方法层结果均来自半合成评估：非一对一拓扑以合成方式注入 Celer、Multichain、PolyNetwork 三桥的真实流特征。评估中首先发现，按原始 Sinkhorn 计划排序会把与候选无关的对偶缩放混入评分；在平衡情形下，沿源流排序等价于给每个候选目标乘上其质量。方向条件化解码按对侧实现质量归一后取互选前 k，可消去这一缩放。在预先冻结的三桥保留集上，条件解码把宏平均边 F1 从 0.2350 提升到 0.3104（Δ = +0.0754，基锚点簇重采样 95% CI [0.0708, 0.0803]），三桥均为正；但它相对直接核解码仅高 0.0048，即修复把排序带回核评分水平，而没有超越核评分。解码边精度约 0.19，提升主要来自召回。结构压力测试中，所有方法的严格精确拓扑恢复均为 0，全局阈值规则的边 F1 高于运输解码。两个预测盲的真实数据审计确认流级扇出存在于开发语料之外，但均未通过预先冻结的充分性标准，因此本文不作外部方法性能声明。上述结果表明：若以运输计划作为对应输出，必须条件化解码；运输表示相对直接核排序与简单规则的实际收益仍有待外部评估确立。
+关键词： 跨链取证；反洗钱；资金流对应；非平衡最优传输；Sinkhorn 解码；半合成评估
+1 引言
+跨链桥与去中心化交易所使资金可以在源链拆分、兑换为其他代币、延迟释放，再在目标链的新地址上归集。行业报告估计了经跨链渠道转移的非法资金规模 [1,2]，金融行动特别工作组（FATF）在虚拟资产标准执行更新中也关注到跨链工具给资金追踪带来的困难 [3]〔待核实：[3] 原文是否使用“链跳/跨链桥”相关表述〕。调查者因此需要判断源链上的一组活动与目标链上的哪组活动构成同一次资金运动。分流与合流本身并不构成非法性证据，它们也常见于正常路由与流动性管理；本文处理的是证据限定的取证对应，而不是自动判定非法性。
+现有工作留下三处空白。第一是输出单元：单链取证以地址聚类、启发式规则与图学习为手段 [6,7,8,14,15]，输出单元是链内地址或账户；近期工作虽已推进到资金流级 [20]，对应问题仍限于单链。第二是输出语义：CONNECTOR [4] 与 ABCTracer [5] 能从桥合约轨迹关联存取款交易对，但输出固定为一对一的交易关联。当一个源级资金流对应多个目标流时，这种输出形式在结构上无法表示正确结果。第三是证据不足时的行为：延迟释放、手续费漂移与事件缺失使证据经常不完整，而强制的单一输出会把不确定性表述为确定结论。
+本文把分析单元从交易对提升为资金流，即按主地址、链、资产上下文与时间窗口聚合、可回溯到交易、事件日志与桥事件的观测单元。CSFFC 在此单元上寻求非负计划 P，P_ij 表示源流 s_i 与目标流 t_j 之间的对应质量，允许 1→N 分流、N→1 合流与未匹配质量（图 1）。这一形式化把跨链对应从“哪一笔对哪一笔”的检索问题转为“质量如何分配”的分配问题。本文的重点是这一形式化本身，以及在当前证据下它能被求解到什么程度。
+
+图 1 从交易对一对一输出到流级软对应的问题重构。(a) 交易对输出强制一对一匹配，无法表达分流与合流；(b) 交易、事件日志与桥事件经可审计聚合形成资金流，每个流保留证据引用 E；(c) 同一个非负计划 P 承载 1→1、1→N、N→1 与进入 δ^S / δ^T 的未匹配质量，计划元素表示质量分配而非概率。
+用运输计划承载 CSFFC 时，第一个障碍是表示：载体须同时容纳非一对一结构与带取证语义的代价。本文采用熵正则非平衡最优传输，把五项取证子代价与松弛边际写入目标函数（第 3.1 节）。第二个障碍是解码：能表示不等于能排序。熵 OT 计划具有分解结构 P = diag(u) K diag(v)，按原始计划排序会把对偶缩放混入核评分。以 SuperGlue 为代表的匹配流程正是从 Sinkhorn 输出的指派矩阵上以互选检查提取匹配 [13]，在视觉匹配中两侧边际近乎均匀，这种混入不明显；取证场景的边际由可观测金额构造，各流质量差异可能很大，混入也可能随之放大。本文把这一现象显式化为可诊断的排序失真，给出方向条件化解码及其代数解释（第 3.2 节）。
+一个自然的问题是：既然修复的是缩放，为什么不直接按核 K 排序？本文在保留集上报告了这一对照。结果显示，条件解码只把排序带回直接核解码的水平，增量很小（第 4.3 节）。因此本文把条件解码定位为对“为什么不能直接按原始计划排序”的诊断与解释，而不是一个优于核排序的新匹配器。输出层另设覆盖分层与弃权（第 3.3 节），但本文没有对其做预测性评估，故不将其列为贡献。
+本文贡献如下，每项附证据边界。
+（1）问题形式化。 提出 CSFFC，以流级非负质量分配计划统一表达 1→1、1→N、N→1 与未匹配质量。一对一输出语义在构造上无法表示分流与合流边集，这是输出空间的性质。经验上，本文在结构压力测试中报告运输计划的支撑包含率与 Recall@3，并同时报告严格精确恢复为 0、全局阈值规则的边 F1 高于运输解码这两项不利结果（第 4.2 节）。
+（2）排序失真的诊断与解释。 本文给出原始计划排序受对偶缩放污染的机制、双重消除恒等式及其平衡情形推论，并在预先冻结的三桥半合成保留集上确认条件解码的修复效应；修复幅度以直接核解码为上界参照（第 3.2、4.3 节）。
+（3）边界结果与冻结协议。 本文报告生成器族、三桥数据来源、两个真实数据审计及其未通过充分性标准的结果，并公开冻结的评估协议，供后续外部评估复用（第 4.1、4.5 节，附录 A）。
+2 相关工作
+区块链追踪与跨链关联。 单链取证以地址聚类与启发式规则识别资产归属 [6,14,15]；计量研究估计了非法使用规模 [16,17]，综述梳理了欺诈与检测手段 [18,19]。污点分析中的 haircut 策略按比例把可疑价值分摊到下游输出 [49]，这是链内资金追踪中最早的“质量分配”思路，但其分配规则由交易结构决定，而非由跨链对应求解。图学习方法在账户图上做分类与追踪 [7,8,21,22,23,24]，近期扩展到非法交易检测、洗钱子图识别与联邦监测 [25,26,27]。ETTracker [20] 在以太坊上以资金流为单元做追踪。这些工作的对应关系是链内的“地址—标签”或“账户—账户”，而非跨链资金流之间的质量分配。跨链方面，已有研究刻画了桥的攻击面 [28,29,30,31]，早期分析依赖中心化接口 [32]，行业报告量化了跨链洗钱规模但未提供流级标签 [1,2]，洗钱方案分类研究整理了跨链渠道的滥用模式 [33]。与本文最接近的是 CONNECTOR [4] 与 ABCTracer [5]，二者输出一对一交易关联；本文基准之一锚定于 Celer/cBridge 类桥流量 [34]。在一对一结算占主导的区间，这两类工具仍是首选；本文关注的是它们的输出语义无法覆盖的分流与合流。
+结构化对应与最优传输。 最优传输把一对一指派推广为保持质量的软分配 [11,35]，非平衡最优传输进一步以边际松弛刻画部分与未匹配质量 [10]。Sinkhorn 迭代缩放提供了可扩展求解 [9,36,37]，OT 损失被广泛用于分布匹配 [38,39]。在记录与实体对齐中，OT 被用于跨知识图谱的实体对齐 [50]，也有工作把实体对齐直接改写为指派问题并以 Sinkhorn 求解 [51]；这些工作与本文同属“以运输计划产出对应”的范式，但对齐对象是一对一的实体，未涉及分流、合流与未匹配质量的取证语义。稠密匹配研究表明，证据不完整时硬性一对一输出迫使系统在丢弃与错误归因之间二选一 [13]。互近邻、dual-softmax [12,40] 与 SuperGlue [13] 以两侧一致性约束匹配输出，熵计划的分解结构是教科书结果 [35]，OT 也仍在推动稠密对应研究 [41]。本文不主张归一化本身的新颖性；本文的增量在于指出原始计划排序在非均匀边际下的失真、给出其平衡情形的质量先验解释，并在取证语境下以冻结协议检验修复效应及其上界。
+3 方法
+图 2 给出整体管线：区域 (a)(b) 对应表示与运输求解（第 3.1 节），区域 (c) 对应条件解码（第 3.2 节）与输出层设计（第 3.3 节）。复现所需的全部规格集中列于附录 A。
+
+图 2 整体框架。(a) 跨链证据组织为可回溯的源流与目标流；(b) 五项取证子代价组成复合代价 C，KL 松弛边际与未匹配汇 δ^S、δ^T 允许部分质量不被运输，Sinkhorn 求解得到 P = diag(u) K diag(v)；(c) 行向分数 S^row_ij = P_ij / c_j 与列向分数 S^col_ij = P_ij / r_i 经互选前 k（k = 5）得到候选对应，再按覆盖层级输出 Tier A/B 结果、Tier C 诊断结果，未覆盖部分弃权。橙色标注为第 3.2 节讨论的原始计划排序失真。图内“RC-UOT”为代码标识，其中 R 不表示风险硬约束，与正文的 UOT-Q 指同一管线。〔待补：重绘，图内统一改为 UOT-Q，最小字号不低于 6 pt〕
+3.1 表示、代价与边际
+记源流集合 S = {s_1, …, s_n}、目标流集合 T = {t_1, …, t_m}。资金流是按主地址、链、资产上下文与 1800 秒滚动窗口聚合的 AML 观测单元 [7]，其元组为
+si=Ai, κi, gi, τi, xi, Ei
+其中 A_i 为主地址，κ_i 为资产上下文，g_i 为金额组，τ_i 为时间区间，x_i 为辅助特征，E_i 为证据引用。E_i 保证任何流级输出都能下钻回证据。主地址的确定、金额组的划分与窗口的滑动方式见附录 A.1。由于候选空间受证据可观测范围限制，候选不完备是常态，因此未匹配质量是一等设计要素。
+本文求解熵正则非平衡最优传输
+minP≥0 ⟨C, P⟩ + ε ΩP + λs KLP1m ∥ μ + λt KLP⊤1n ∥ ν
+其中 Ω(P) 为熵正则 [9]，两项 KL 罚放松源侧与目标侧边际，允许未匹配质量 δ^S、δ^T [10,36]。采用非平衡形式的动机是边际不可靠：硬性满足边际会把误差分配给错误候选。非平衡形式对排序是否有益是独立的经验问题，第 4.3 节显示其效应置信区间包含零。代价分解为
+Cij=wamt camti,j+wtime ctimei,j+wroute croutei,j+wrisk criski,j+wevid cevidi,j
+五项分别编码：容忍手续费与汇率漂移的金额失配、目标须落在源之后且满足跨链延迟窗的时间因果、桥协议与路由一致性、AML 风险画像对齐，以及证据质量惩罚。风险项与证据项仅作为代价特征纳入，不是硬约束，其独立贡献未单独量化。各子代价的函数形式与权重 w 见附录 A.2（表 A1），边际 μ、ν 的构造与求解参数 ε、λ_s、λ_t 见附录 A.3。
+候选裁剪。 求解前，候选对按附录 A.4 的规则裁剪，被裁剪候选的核值置零，因此计划只在保留候选上为正。熵正则计划在保留候选上处处为正，这一点直接影响第 4.2 节支撑包含率的解读。〔待补：裁剪规则（时间因果掩码、延迟窗、桥协议过滤）及保留候选占全部候选对的比例〕
+3.2 排序失真与方向条件化解码
+熵正则计划满足
+P=diagu K diagv,  Kij=exp−Cij/ε
+其中 u、v 为行、列对偶缩放。按 P 沿行 i 排序时，u_i 是该行的公共因子，不影响次序；目标侧缩放 v_j 则乘性地进入每个候选，而 v 来自边际约束的对偶，与候选是否成立无关。因此计划数值是核评分与对偶缩放的混合体：核评分较优的候选可能因目标侧缩放小而排不进前 k。图 3 以 2×2 算例展示了这一翻转及其修复。
+
+图 3 排序失真机制的 2×2 示意（数值为教学性示意，非实验数据）。(a) 核评分偏向示意真对应 s1→t2、s2→t1；(b) 目标侧缩放 v = (4, 1) 放大 t1 整列，列质量 c = (6.0, 0.9)；(c) 原始计划中 s1 行因 P_11 = 2.40 > P_12 = 0.80 发生翻转；(d) 行向分数（除以列质量 c_j）与列向分数（除以行质量 r_i）经互选还原示意真对应。
+记列实现质量 c_j = Σ_i P_ij、行实现质量 r_i = Σ_j P_ij。定义行向条件分数 S^row_ij = P_ij / c_j，用于沿源流 i 比较候选目标；列向条件分数 S^col_ij = P_ij / r_i，用于沿目标流 j 比较候选源。上标表示排序方向，分母为对侧质量。仅当候选在两侧分数中均进入前 k（k = 5）时才输出为对应边。
+命题 1（双重消除）。 设 P = diag(u) K diag(v) 且 u_i, v_j, K_ij > 0，则
+Sijrow=ui Kijl​ul Klj,  Sijcol=Kij vjl​Kil vl
+证明. c_j = v_j Σ_l u_l K_lj，代入 S^row_ij = P_ij / c_j 即得；列向对称。∎
+命题 1 的含义需要精确表述。行向分数精确消去 v，列向分数精确消去 u。但沿行 i 排序时，分母 Σ_l u_l K_lj 仍依赖所有源流的缩放 u，即第 j 列内的竞争项；因此行向排序并不等价于按 K_ij 排序，条件解码也不是“与缩放完全无关”。该恒等式对平衡与非平衡熵 OT 同样成立，是标准 Sinkhorn 结构的直接推论 [12,13,40]。
+推论 1（平衡情形的质量先验）。 在平衡熵 OT 的不动点上，v_j = ν_j / Σ_l u_l K_lj，因此 c_j = ν_j，且 P_ij = ν_j · S^row_ij。也就是说，沿行按原始计划排序，等价于按行向条件分数排序后再乘以目标流质量 ν_j：质量大的目标流被系统性前移。非平衡情形下 c_j 不再等于 ν_j，但同样携带与候选是否成立无关的实现质量。条件解码去掉的正是这一质量先验，保留的是核评分与列内竞争。这一解释也预示了第 4.3 节的经验结果：条件解码应接近而非显著超越直接核排序。它给出修复的代数通道，而修复在经验上是否有效由第 4.3 节回答。
+3.3 输出层设计：覆盖分层与弃权
+当逐对归属被证据欠定时，解码器把共享同一事件键的候选归并为商空间分组 q = ([S_q], [T_q], E_q)，并按覆盖层级限定输出：A/B 层输出结果，C 层仅作诊断，未覆盖候选弃权。层级判定规则见附录 A.5。输出包括对应假设、层级、所用与缺失证据及弃权原因，以便满足风险为本的 AML 调查对可审计输出的要求 [3,42,43]。带该输出层的完整管线称为 UOT-Q，它是 UOT 的输出层，不是第二个独立方法。本文只对该层做了定义一致性核对（第 4.4 节），未评估其对精度或调查代价的影响，因此它是设计说明，不是经验贡献。
+复杂度与规模。 对数域 Sinkhorn 的存储与单轮迭代均为 O(nm)，T 轮合计 O(Tnm)，解码排序为 O(nm)。在 ≤ 288×288 的候选规模上，求解加解码约 3 秒〔待补：硬件与软件环境〕。该刻画只适用于所测规模。真实语料的候选空间远大于此，需要先按时间窗、桥协议与资产上下文分块生成候选〔待补：候选生成与分块方案〕；本文未在语料级规模上运行方法。
+4 实验
+4.1 实验设置
+数据。 Celer 监督基准只覆盖 ETH→BNB 方向，含 7,296 个锚定交易对，聚合为 5,735 条 ETH 源流、7,122 条 BNB 目标流与 7,128 条监督流边（一对一 72.32%、分流 27.51%、合流 0.17%）；改用 600 或 3600 秒窗口时，流标签数变化不超过 ±1.1%。监督锚定本身是一对一的协议原生结算对，非一对一拓扑来自聚合与合成注入；真实合流仅占 0.17%，合流结论主要依赖半合成测试。确认性保留集另含 Multichain 与 PolyNetwork，三桥的链对、时间范围、锚点数、资产定价覆盖率与协议特性列于表 1。其中两项特性直接影响结果解读：Multichain 与 PolyNetwork 的资产定价覆盖率分别约为 79% 与 46%，未定价资产的金额子代价按附录 A.2 的缺省规则处理；PolyNetwork 的锁定金额与释放金额按协议相等，金额子代价在该桥上几乎失去区分力。
+表 1 三桥数据来源（确认性保留集）
+桥
+链对与方向
+时间范围
+协议锚点数
+资产定价覆盖
+已知协议特性
+Celer
+ETH→BNB
+〔待补〕
+7,296
+〔待补〕
+一对一协议原生结算对
+Multichain
+〔待补〕
+〔待补〕
+〔待补〕
+约 79%
+〔待补〕
+PolyNetwork
+〔待补〕
+〔待补〕
+〔待补〕
+约 46%
+锁定与释放金额按协议相等，金额子代价近乎失效
+注：PolyNetwork 数字须与数据清单最终版一致〔待核实：历史裁决事项 AD-1 是否已闭合〕。
+合成注入与保留集。 结构压力测试含 48 个模板，每个模板以种子 42–46 生成 5 组实例，在真实流特征上施加 1→2 分流、2→1 合流、未匹配与诱饵结构。每个模板的注入构成固定为一个分流对、一个合流对、一个未匹配源与两个噪声对；拆分比例、延迟分布与诱饵的构造规则见附录 A.7。确认性保留集由 48 个模板 × 5 个种子 × 3 个桥构成，共 720 个配对模板实例。所有模板共享同一注入构成，因此保留集刻画的是该生成器网格，而不是真实拓扑分布。划分、解码器与分析计划在评估前冻结并经独立重算〔待补：冻结记录的时间戳与 SHA-256 哈希，见附录 A.8〕。
+对照方法。 表示与结构评估的对照包括 UOT-Q、Connector 风格与 ABCTracer 风格两个一对一基线、全局校准的阈值规则 Threshold-MM，以及严格平衡的 Balanced-OT。两个风格基线是输出语义对照，不是原系统的可比复现：它们按原系统的一对一输出语义实现为逐源 top-1〔待核实：与代码一致；若代码实为逐源归一的软质量解码，须按 top-1 重跑表 2 与图 4 的基线行〕，使用固定常量，调参预算不对称且有利于所提管线。解码评估的对照为五种冻结解码器（定义见附录 A.6），并补充三项对照：直接在核 K 上取互选前 k、在计划上做 dual-softmax 式双向归一后互选 [12,40]，以及 Threshold-MM。Threshold-MM 的全局阈值在 25% 的单元上校准，比较只在其余 75% 未参与校准的单元上进行。〔待补实验 E1：上述三项补充对照的保留集结果〕
+指标。 主指标为宏平均边精度、边召回与边 F1。支撑包含率统计真值边落在计划支撑内（保留候选且 P_ij ≥ 1e-9）的比例；由于熵计划在保留候选上处处为正，它主要反映候选裁剪是否保留了真值边，是输出空间口径而非排序口径。Recall@3 统计真值目标是否落入源流排序前 3。严格精确恢复要求预测边集与结构真值完全一致。
+统计分析。 主估计量是保留集上条件解码与原始计划解码的宏平均边 F1 配对差。720 个模板实例共享基锚点与模板，不是独立单元；本文以基锚点簇为独立重采样单元计算主 95% 置信区间〔待补：簇数〕，以模板实例重采样的区间作为补充报告。另以“种子→模板”两阶段重采样与金额×时延分层重采样作为稳健性检查；后两种方案分层单元偏少，不作名义覆盖率声明。所有重采样 B = 4,000，随机种子 RandomState(20240101)，区间类型为〔待补：百分位 / BCa〕。预先指定的主对比只有一项；二级对比（相对直接核解码、支撑解码，以及平衡与非平衡之差）与五项机制指标按描述性结果报告，未做多重比较校正。完整定义见附录 A.8。
+4.2 非一对一结构：输出空间与严格评估
+在结构压力测试上，运输计划的支撑包含率为：分流 0.946 [0.907, 0.985]，合流 0.967 [0.913, 1.000]，三桥分别为 0.950–1.000；两个一对一基线按 top-1 语义在分流上为 0（图 4）。这一数值应按其口径解读：它说明裁剪后的运输计划仍把真值边保留在支撑内，而不说明运输计划能把真值边排在前面。在此口径下，把支撑内全部候选都当作预测边时，边精度仅约 0.02。更能反映排序的指标是 Recall@3，其值为 0.481 [0.418, 0.544]。〔待补实验 E2：在相同每源边数或相同边密度下，比较 UOT-Q、Balanced-OT、Threshold-MM 与一对一基线的包含召回，并报告保留候选的非零元比例〕
+
+图 4 非一对一结构下的表示证据（半合成结构压力测试）。(a) 1→N 分流与 N→1 合流压力模式，一对一输出规则无法完整输出任一边集（48 模板 × 5 实例）；(b) 计划支撑包含率及 95% CI。该口径主要反映候选裁剪是否保留真值边，不反映排序能力；Recall@3 为排序口径，二者含义不同。严格精确拓扑恢复对所有方法均为 0（表 2）。〔待补：重绘，把 Recall@3 与支撑包含率分面，并加入实验 E2 的等密度结果〕
+严格口径给出的结论不利于所提管线，本文正面报告。表 2 显示，五种方法在三桥上的严格精确恢复均为 0。在边级指标上，Threshold-MM 的边 F1（0.120–0.168）高于两种运输解码（≤ 0.040）：阈值规则每源输出的边更少，精度 0.065–0.094；运输解码在接近满召回处精度只有 0.015–0.022。UOT-Q 的边精度略高于 Balanced-OT。一对一基线的分流零值是结构性的（源侧出度 ≤ 1），合流零值是经验性的。因此，本节确立的是运输计划的输出空间能容纳分流与合流边，而不是可操作的重建精度；在这一结构测试上，运输解码没有优于简单的全局阈值规则。
+表 2 严格结构评估（半合成结构压力测试；三桥范围；48 模板 × 种子 42–46）
+方法
+边精度
+边召回
+边 F1
+Connector 风格
+0.000–0.026
+0.000–0.026
+0.000–0.026
+ABCTracer 风格
+0.000–0.034
+0.000–0.034
+0.000–0.034
+Threshold-MM
+0.065–0.094
+0.844–0.997
+0.120–0.168
+Balanced-OT
+0.009–0.016
+0.968–1.000
+0.018–0.030
+UOT-Q
+0.015–0.022
+0.961–1.000
+0.027–0.040
+注：区间为三桥逐桥均值的范围。所有方法的分流与合流严格精确恢复均为 0，故未单列。逐桥均值 ± 标准差见补充材料 S.6。
+4.3 条件解码的确认性评估（半合成保留集）
+开发期诊断与冻结。 开发期，直接核解码的宏边 F1 为 0.3172，原始计划互选前 5 解码仅为 0.2374，说明原始计划排序劣于核评分本身。据此，条件解码器、主对比与五项机制指标的预期方向在确认性评估前被冻结。开发期与保留集不是同一数据集，二者数值不直接比较；保留集上与之对应的直接核解码为 0.3055（表 3）。
+主结果。 在保留集上，条件解码把宏平均边 F1 从 0.2350 提升到 0.3104，Δ = +0.0754，基锚点簇重采样 95% CI [0.0708, 0.0803]；模板实例重采样的补充区间为 [0.0706, 0.0803]，“种子→模板”两阶段与金额×时延分层重采样的区间分别为 [0.0677, 0.0831] 与 [0.0676, 0.0849]，均不含零（表 3，图 5a）。Celer、Multichain、PolyNetwork 的效应分别为 +0.0826 [0.0743, 0.0918]、+0.0820 [0.0709, 0.0933] 与 +0.0616 [0.0587, 0.0649]（模板实例重采样〔待补：逐桥簇级区间〕），三桥均为正（图 5b）。提升主要来自召回：边召回从 0.5975 升至 0.8009（+0.2034），边精度从 0.1476 升至 0.1926（+0.0450）。五项机制指标均指向预期方向：行向、列向、分流、合流目标四项有害翻转率分别下降 0.2595、0.2303、0.5360 与 0.5095，真值互选前 5 保留率上升 0.2035（图 5c）。机制指标是观测性的，不构成因果分解。
+表 3 确认性保留集上的解码方法比较（半合成生成器网格；三桥，720 个配对模板实例；宏平均）
+解码方法
+代码标识
+边精度
+边召回
+边 F1
+原始计划互选
+RAW_UOT_PLAN_D4
+0.1476
+0.5975
+0.2350
+条件解码（UOT）
+CONDITIONAL_UOT_D4
+0.1926
+0.8009
+0.3104
+条件解码（平衡 OT）
+CONDITIONAL_BOT_D4
+0.1927
+0.8016
+0.3106
+直接核解码
+AMOUNT_FREE_COST_D4
+0.1896
+0.7882
+0.3055
+支撑加 k 解码
+SUPPORT_PLUS_K_D4
+0.1862
+0.7734
+0.2999
+补充对照（实验 E1）
+核矩阵互选前 k
+—
+〔待补〕
+〔待补〕
+〔待补〕
+计划 dual-softmax 互选
+—
+〔待补〕
+〔待补〕
+〔待补〕
+Threshold-MM（75% 未校准单元）
+—
+〔待补〕
+〔待补〕
+〔待补〕
+注：各解码器定义与后缀 D4 的含义见附录 A.6。边精度与边召回的 95% CI 〔待补：按主分析的簇重采样方案重算〕。
+
+图 5 确认性保留集主结果（半合成生成器网格）。(a) 五种冻结解码方法的宏平均边 F1，主对比为 CONDITIONAL_UOT 相对 RAW_UOT_PLAN；横轴自 0.22 起截断，棒长不代表绝对量。(b) 逐桥配对效应及 95% CI（模板实例重采样）。(c) 五项预先冻结的机制指标变化（条件减原始）。图中方法名省略后缀 _D4，与表 3 一一对应；图中 AMOUNT_FREE_COST 即表 3 的直接核解码。CONDITIONAL_BOT 与 CONDITIONAL_UOT 之差的 CI 含零，本图不比较二者优劣。〔待补：重绘，(a) 改用相对 RAW 的差值图或标注轴截断〕
+与直接核解码的比较：修复的上界。 相对直接核解码与支撑解码，条件解码的增量为正但很小：Δ_cost = +0.0048 [0.0013, 0.0089]，Δ_support = +0.0104 [0.0062, 0.0152]；PolyNetwork 上的一项二级对照为负（−0.0043 [−0.0065, −0.0024]）〔待核实：该值对应 Δ_cost 还是 Δ_support〕。这与推论 1 一致：条件解码去掉的是质量先验，保留的是核评分与列内竞争，因此它把排序带回核评分的水平，而没有显著超越核评分。PolyNetwork 上效应最小、二级对照为负，可能与该桥金额子代价失去区分力有关；这一解释尚未经逐桥去除金额项的消融检验〔待补实验 E4〕。平衡与非平衡条件解码之差为 −0.0003 [−0.0018, +0.0012]，未观测到非平衡松弛的排序收益。
+解读边界。 第一，结果刻画的是共享注入构成的生成器网格上的修复效应。第二，边精度约 0.19，即条件解码输出的边中约五分之四为假阳性；这是方法内排序修复的证据，不是调查分诊操作点。第三，条件解码是否优于现成的核互选与双向归一方案，取决于实验 E1；在其结果报告之前，本文不把条件解码表述为优于这些方案的匹配方法。
+4.4 组件诊断与输出层的证据状态
+组件压力阶梯显示，时间因果与未匹配质量是被隔离项中最敏感的两项；平衡与非平衡解码在各压力级上只呈现水平差异，没有斜率差异。对称掩码诊断中，移除接收方或金额字段会使一对一风格工具阻塞或零预测，运输管线仍可评估，且交易级时间因果违例率保持为 0（补充材料 S.7）。解码常数 k、熵正则强度 ε、松弛强度 λ 与聚合窗口的性能敏感性尚未评估，只有窗口对流标签数的影响（±1.1%）已知〔待补实验 E5〕。覆盖分层目前只通过一项检查：分组规则与桥事件 transferId 键在 122 个覆盖保留对上逐行一致。由于标签与键规则同源，这是定义一致性的构造性结果，不是预测验证（补充材料 S.1）。本文未报告覆盖率与精度随层级阈值变化的关系，因此不对输出层的调查收益作任何声明。
+4.5 独立真实数据中的问题存在性
+本节只回答流级扇出是否存在于开发语料之外，不涉及方法性能。两个后开发期 Celer 窗口以协议原生规则（Send.transferId == Relay.srcTransferId）组装流级真值边，仅做数据组装，未运行任何方法（补充图 S1）。v4 窗口含 32,905 个协议锚定、2,451 个 Tier-A 源级扇出单元与 85 个合流单元；v5 窗口分别为 42,114、5,516 与 76。两个窗口都存在大量协议支撑的流级扇出，这支持问题存在性。二者均未通过预先冻结的联合充分性标准：v4 的独立主地址簇数 G = 7 < 8；v5 的 G 达到 8，但最大簇占比 0.6200 > 0.5，且按冻结的 OVERLAP_FAMILIAR 规则保守计数仅为 2。两个语料均归档为问题有效性资产，不作为评估总体。此外，度 > 5 的扇出单元（v4 中 26 个）对 k = 5 的互选解码器在结构上不可精确恢复（补充材料 S.3）。
+5 讨论
+结果说明了什么。 以资金流为单元后，分流与合流从错误类型变为可输出的对象。本文最稳健的发现是一个负面诊断：若以运输计划作为对应输出，按原始计划排序会引入质量先验，其排序劣于核评分本身；条件解码消除这一先验，把排序带回核评分水平。由此得到一个实际的推论：在当前证据下，如果目标只是给候选排序，直接在核上取互选前 k 是更简单、效果相当的选择；运输计划可能的价值在于质量分配与未匹配质量的显式输出，但平衡与非平衡解码在排序上无差异，本文的实验尚未单独验证这部分价值。
+竞争性解释。 保留集上的绝对 F1 可能受生成器与代价函数共享假设的影响。例如，若注入的分流按金额比例拆分，金额子代价恰好能“看见”这一结构，从而抬高所有运输类解码器的绝对分数。条件解码与原始计划解码使用同一代价 C，二者的配对差对这一偏差不如绝对分数敏感，但本文未对其做直接检验。另一种解释是：条件解码的增益大部分来自召回，可能只反映它在每源输出了更多合格候选，而非更准确的排序；边精度仅从 0.1476 升至 0.1926，与这一解释相容。
+与现有工具的关系。 在一对一交易对区间，CONNECTOR 与 ABCTracer 仍是更合适的工具，本文不主张在该区间的优越性。运输表示最可能的用途是召回导向的候选生成，与交易级追踪器互补部署；但在结构测试中全局阈值规则的边 F1 更高，因此即使是这一互补定位，也需要实验 E1 与 E2 的公平比较来支撑。
+局限。 第一，外部方法性能尚未建立。此前一次外部执行因实现缺陷在取得有效结果前终止；两个数据审计均未达充分性标准。熟悉地址规则在结构上排除了长期活跃的聚合器与中继地址，使两个窗口的保守 G 都塌缩到 2；多样性门槛未满足不等于扇出结构不存在，但当前冻结标准下无法支持外部性能推断。第二，证据以半合成为主：真实合流单元仅 85 与 76 个，保留集是共享注入构成的生成器网格，Celer 基准只含 ETH→BNB 一个方向，候选规模不超过 288×288。第三，比较不充分：不存在公平预算下的外部基线比较，核互选与双向归一对照尚待补齐，阈值规则在结构测试上占优，机制指标是观测性的，风险与证据项的独立贡献未量化。第四，超参数敏感性未评估，k = 5 使度 > 5 的扇出不可精确恢复。第五，输出层缺少保留集上的收益评估，半合成配比也与真实合流比例不匹配。未来工作包括在充分多样的独立语料上评估方法、拓扑感知解码、跨协议证据融合，以及调查者在环的分诊研究。
+6 伦理与双重用途
+本文只使用公开链上数据与公开的桥合约事件，不涉及链下个人身份信息。地址聚类与跨链对应技术可能被用于去匿名化普通用户，因此本文不公开地址级实体标注或归属结论，发布的流级标签只保留评估所需的匿名化标识〔待补：匿名化方案〕。分流与合流不构成非法性证据，任何输出都应作为调查者复核的线索，而不应直接用于冻结资产或认定责任。〔待补：所在机构是否需要伦理审查或豁免说明〕
+7 结论
+本文把跨链取证对应从交易对提升到资金流，形式化 CSFFC，以运输计划统一表达一对一、分流、合流与未匹配质量。在这一表示下，本文诊断了原始运输计划的排序失真，给出双重消除恒等式及其平衡情形的质量先验解释，并在预先冻结的三桥半合成保留集上确认条件解码的修复效应；该修复把排序带回直接核解码的水平，而没有超越它。结构测试中，所有方法的严格精确恢复均为 0，全局阈值规则的边 F1 高于运输解码；真实数据审计确认问题存在，但未达到外部评估所需的充分性。在完成公平的外部比较与独立语料评估之前，运输表示在取证任务上的实际收益仍未建立。
+代码与数据可用性
+审稿期间，代码、冻结配置、保留集划分、重采样脚本与冻结记录哈希通过匿名仓库提供〔待补：匿名仓库链接〕。原始链上交易与桥事件可从公开节点获取〔待补：数据源与区块范围〕。派生的流级标签与合成注入实例将在接收后存入〔待补：存储库名称〕并赋予持久标识符〔待补：DOI〕，许可为〔待补〕。地址级实体标注出于第 6 节所述原因不公开。
+附录 A 可复现规格
+本附录集中列出复现正文结果所需的规格。常数的完整取值表见补充材料 S.8；本附录给出定义与规则，保证不依赖补充材料也能理解方法。
+A.1 资金流构建
+主地址 A_i：〔待补：确定规则，例如按交易发起方、桥事件 sender 或聚类代表地址〕。金额组 g_i：〔待补：划分规则与分组边界〕。时间窗口：1800 秒〔待核实：滚动窗口还是固定分桶；窗口起点如何对齐〕。窗口改为 600 或 3600 秒时，流标签数变化不超过 ±1.1%。
+A.2 代价函数
+表 A1 五项取证子代价
+子代价
+编码内容
+函数形式
+权重
+c_amt
+容忍手续费与汇率漂移的金额失配；未定价资产的缺省处理
+〔待补〕
+〔待补〕
+c_time
+目标晚于源且落在跨链延迟窗内的时间因果
+〔待补〕
+〔待补〕
+c_route
+桥协议与路由一致性
+〔待补〕
+〔待补〕
+c_risk
+AML 风险画像对齐（非硬约束）
+〔待补〕
+〔待补〕
+c_evid
+证据质量惩罚
+〔待补〕
+〔待补〕
+注：须说明权重的选择方式，以及是否用到开发集标签〔待补〕。
+A.3 边际与求解参数
+源侧边际 μ 与目标侧边际 ν 由可观测质量构造，并预留未匹配质量〔待补：构造公式与归一化方式〕。熵正则强度 ε = 〔待补〕〔待核实：直接核解码使用 K = exp(−C/0.05)，其温度须与 ε 一致或另作说明〕；KL 松弛强度 λ_s = 〔待补〕、λ_t = 〔待补〕；Sinkhorn 在对数域迭代，最大迭代次数 T = 〔待补〕，收敛容差〔待补〕。平衡 OT 对照对应 λ_s、λ_t → ∞ 的严格边际约束。
+A.4 候选裁剪与支撑
+〔待补：候选裁剪规则，包括时间因果掩码、延迟窗上限、桥协议与资产上下文过滤；报告结构压力测试与保留集上保留候选占全部候选对的比例，以及裁剪导致真值边被排除的比例〕。
+A.5 覆盖层级
+候选按共享的桥事件键（transferId）归并为商空间分组。Tier A：〔待补：判定规则〕；Tier B：〔待补〕；Tier C：〔待补〕；未落入任何层级的候选弃权，并记录弃权原因。
+A.6 解码器定义
+表 A2 冻结解码器（k = 5）
+代码标识
+定义
+RAW_UOT_PLAN_D4
+在原始 UOT 计划 P 上，沿行与沿列分别取前 k，两侧均入选的候选输出为边
+CONDITIONAL_UOT_D4
+在 UOT 计划上计算 S^row_ij = P_ij / c_j 与 S^col_ij = P_ij / r_i，两侧均进入前 k 的候选输出为边
+CONDITIONAL_BOT_D4
+同上，但计划由严格平衡 OT 求得
+AMOUNT_FREE_COST_D4
+直接核解码：以 K = exp(−C/0.05) 为分数取互选前 k〔待核实：标识中的“AMOUNT_FREE”是否表示代价去掉了金额项；若是，须更正正文“直接核解码”的表述〕
+SUPPORT_PLUS_K_D4
+〔待补：定义〕
+后缀 D4
+〔待补：含义，例如第 4 版冻结解码配置〕
+A.7 合成注入生成器
+每个模板在真实流特征上注入一个 1→2 分流对、一个 2→1 合流对、一个未匹配源与两个噪声对，种子 42–46。分流的拆分比例：〔待补〕；合流的归集规则：〔待补〕；注入延迟的分布：〔待补〕；诱饵的构造（例如金额相近但时间或路由不一致的候选）：〔待补〕。须说明生成器与代价函数是否共享假设，例如拆分是否按金额比例进行。
+A.8 统计分析与冻结记录
+主对比：保留集上 CONDITIONAL_UOT_D4 与 RAW_UOT_PLAN_D4 的宏平均边 F1 配对差，按模板、种子、桥分层后宏平均。主区间：以基锚点簇为重采样单元〔待补：簇的定义与簇数〕；补充区间：以桥内模板实例为重采样单元。B = 4,000，RandomState(20240101)，区间类型〔待补〕。冻结记录：〔待补：冻结时间戳、冻结文件的 SHA-256 哈希、冻结与独立重算的执行人及时间点；若无公开登记处，注明已提交编辑的冻结记录〕。
+A.9 补充材料索引
+S.1 覆盖分层的定义一致性核对；S.2 重采样稳健性检查；S.3 真实数据审计与度分布；S.4 运行时间刻画；S.5 指标完整定义；S.6 表 2 逐桥均值 ± 标准差；S.7 组件压力阶梯与对称掩码诊断；S.8 常数取值表；补充图 S1 后开发期数据审计（原图 6）。〔待补：投稿前确认 S.1–S.8 全部存在且有中文或英文定稿〕
+参考文献
+[1] Chainalysis. 2024 Crypto Money Laundering Report. Industry report, 2024. https://www.chainalysis.com/blog/2024-crypto-money-laundering/.
+[2] Elliptic. The State of Cross-Chain Crime. Industry report, 2023. https://www.elliptic.co/resources/state-of-cross-chain-crime-2023.
+[3] Financial Action Task Force (FATF). Targeted Update on Implementation of the FATF Standards on Virtual Assets and Virtual Asset Service Providers. FATF, 2023. https://www.fatf-gafi.org/en/publications/Fatfrecommendations/Targeted-update-virtual-assets-vasps.html.
+[4] Lin, Dan, Wu, Jiajing, Su, Yuxin, Zheng, Ziye, Nan, Yuhong, Zhang, Qinnan, Song, Bowen, Zheng, Zibin. CONNECTOR: Enhancing the Traceability of Decentralized Bridge Applications via Automatic Cross-Chain Transaction Association. IEEE Transactions on Information Forensics and Security, 2025, 20: 7588–7601. DOI: 10.1109/TIFS.2025.3588249.
+[5] Lin, Dan, Zheng, Ziye, Wu, Jiajing, Yang, Jingjing, Lin, Kaixin, Xiao, Huan, Song, Bowen, Zheng, Zibin. Track and Trace: Automatically Uncovering Cross-Chain Transactions in the Multi-Blockchain Ecosystems. IEEE Transactions on Services Computing, 2025, 18(6): 4291–4303. DOI: 10.1109/TSC.2025.3618729.
+[6] Meiklejohn, Sarah, Pomarole, Marjori, Jordan, Grant, Levchenko, Kirill, McCoy, Damon, Voelker, Geoffrey M., Savage, Stefan. A Fistful of Bitcoins: Characterizing Payments Among Men with No Names. Proceedings of the 2013 Internet Measurement Conference (IMC), 2013, pp. 127–140. DOI: 10.1145/2504730.2504747.
+[7] Weber, Mark, Domeniconi, Giacomo, Chen, Jie, Weidele, Daniel Karl I., Bellei, Claudio, Robinson, Tom, Leiserson, Charles E.. Anti-Money Laundering in Bitcoin: Experimenting with Graph Convolutional Networks for Financial Forensics. Proceedings of the ACM SIGKDD Workshop on Anomaly Detection in Finance, 2019. arXiv: 1908.02591.
+[8] Weber, Mark, et al.. The Shape of Money Laundering: Subgraph Representation Learning on the Blockchain with the Elliptic2 Dataset. arXiv preprint arXiv:2404.19109, 2024. https://arxiv.org/abs/2404.19109.
+[9] Cuturi, Marco. Sinkhorn Distances: Lightspeed Computation of Optimal Transport. Advances in Neural Information Processing Systems (NeurIPS), 2013, pp. 2292–2300.
+[10] Chizat, Lénaïc, Peyré, Gabriel, Schmitzer, Bernhard, Vialard, François-Xavier. Unbalanced Optimal Transport: Dynamic and Kantorovich Formulations. Journal of Functional Analysis, 2018, 274(11): 3090–3123. DOI: 10.1016/j.jfa.2018.03.008.
+[11] Villani, Cédric. Optimal Transport: Old and New. Springer, 2009.
+[12] Rocco, Ignacio, Cimpoi, Mircea, Arandjelović, Relja, Torii, Akihiko, Pajdla, Tomáš, Sivic, Josef. Neighbourhood Consensus Networks. Advances in Neural Information Processing Systems (NeurIPS), 2018, pp. 1651–1662. arXiv: 1810.10510.
+[13] Sarlin, Paul-Edouard, DeTone, Daniel, Malisiewicz, Tomasz, Rabinovich, Andrew. SuperGlue: Learning Feature Matching with Graph Neural Networks. IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR), 2020, pp. 4937–4946. DOI: 10.1109/CVPR42600.2020.00499.
+[14] Reid, Fergal, Harrigan, Martin. An Analysis of Anonymity in the Bitcoin System. Security and Privacy in Social Networks, 2013, pp. 197–223.
+[15] Androulaki, Elli, Karame, Ghassan O., Roeschlin, Marc, Scherer, Tobias, Capkun, Srdjan. Evaluating User Privacy in Bitcoin. Financial Cryptography and Data Security (FC), 2013, pp. 34–51.
+[16] Foley, Sean, Karlsen, Jonathan R., Putniņš, Tālis J. Sex, Drugs, and Bitcoin: How Much Illegal Activity Is Financed through Cryptocurrencies?. The Review of Financial Studies, 2019, 32(5): 1798–1853. DOI: 10.1093/rfs/hhz015.
+[17] Huang, Danny Yuxing, Aliapoulios, Maxwell Matthaios, Li, Vector Guo, Invernizzi, Luca, Bursztein, Elie, McRoberts, Kylie, Levin, Jonathan, Levchenko, Kirill, Snoeren, Alex C., McCoy, Damon. Tracking Ransomware End-to-end. IEEE Symposium on Security and Privacy (S&P), 2018, pp. 618–631. DOI: 10.1109/SP.2018.00047.
+[18] Monamo, Patrick, Marivate, Vukosi, Twala, Bheki. Unsupervised Learning for Robust Bitcoin Fraud Detection. 2016 Information Security for South Africa (ISSA), 2016, pp. 129–134. DOI: 10.1109/ISSA.2016.7802939.
+[19] Jourdan, Marc, Blandin, Sebastien, Wynter, Laura, Deshpande, Pralhad. Characterizing Entities in the Bitcoin Blockchain. arXiv preprint arXiv:1810.11956, 2018. arXiv: 1810.11956.
+[20] Wu, Changhao, Xu, Junwei, Wang, Kai, Han, Weili, Chai, Hongfeng. ETTracker: A Fund Tracking Framework for Anti-Money Laundering on Ethereum. Expert Systems with Applications, 2026, vol. 296, Art. no. 128900. DOI: 10.1016/j.eswa.2025.128900.
+[21] Pareja, Aldo, Domeniconi, Giacomo, Chen, Jie, Ma, Tengfei, Suzumura, Toyotaro, Kanezashi, Tim, Kaler, Tim, Schardl, Tao B., Leiserson, Charles E.. EvolveGCN: Evolving Graph Convolutional Networks for Dynamic Graphs. AAAI Conference on Artificial Intelligence, 2020, pp. 5363–5370. DOI: 10.1609/aaai.v34i04.5984.
+[22] Hamilton, Will, Ying, Zhitao, Leskovec, Jure. Inductive Representation Learning on Large Graphs. NeurIPS, 2017, pp. 1024–1034.
+[23] Wu, Zhiying, Liu, Jieli, Wu, Jiajing, Zheng, Zibin, Chen, Ting. TRacer: Scalable Graph-Based Transaction Tracing for Account-Based Blockchain Trading Systems. IEEE Transactions on Information Forensics and Security, 2023, 18: 2609–2621. DOI: 10.1109/TIFS.2023.3266162.
+[24] Chen, Weili, Guo, Xiongfeng, Chen, Zhiguang, Zheng, Zibin, Lu, Yutong. Phishing Scam Detection on Ethereum: Towards Financial Security for Blockchain Ecosystem. IJCAI, 2020, pp. 4506–4512. DOI: 10.24963/ijcai.2020/621.
+[25] Lin, Ziqian, Luo, Qining, Wu, Dongze, Shen, Jie, Li, Lingying, Nong, Xunyi, Qin, Zhenkai. Detecting Illicit Transactions in Bitcoin: A Wavelet-Temporal Graph Transformer Approach for Anti-Money Laundering. Scientific Reports, 2026, vol. 16, Art. no. 1548. DOI: 10.1038/s41598-025-23901-3.
+[26] Song, Kiwhan, Dhraief, Mohamed Ali, Xu, Muhua, Cai, Locke, Chen, Xuhao, Mithal, Arvind, Chen, Jie. Identifying Money Laundering Subgraphs on the Blockchain. Proceedings of the 5th ACM International Conference on AI in Finance (ICAIF), 2024, pp. 195–203. DOI: 10.1145/3677052.3698635.
+[27] Li, Mengyuan, Zhang, Fan, Guo, Shaoyong, Wang, Chenyu, Qi, Feng. Federated Graph Neural Network for Real-Time Distributed Monitoring System Against Illicit Blockchain Transaction Accounts. IEEE Internet of Things Journal, 2026, 13(2): 2848–2863. DOI: 10.1109/JIOT.2025.3631547.
+[28] Zhang, Mengya, Zhang, Xiaokuan, Zhang, Yinqian, Lin, Zhiqiang. Security of Cross-chain Bridges: Attack Surfaces, Defenses, and Open Problems. Proceedings of the 27th International Symposium on Research in Attacks, Intrusions and Defenses (RAID), 2024, pp. 298–316. DOI: 10.1145/3678890.3678894. (arXiv: 2312.12573)
+[29] Zhou, Liyi, Xiong, Xihan, Ernstberger, Jens, Chaliasos, Stefanos, Wang, Zhipeng, Wang, Ye, Qin, Kaihua, Wattenhofer, Roger, Song, Dawn, Gervais, Arthur. SoK: Decentralized Finance (DeFi) Attacks. IEEE Symposium on Security and Privacy (S&P), 2023, pp. 2444–2461. DOI: 10.1109/SP46215.2023.10179435.
+[30] Qin, Kaihua, Zhou, Liyi, Gervais, Arthur. Quantifying Blockchain Extractable Value: How Dark Is the Forest?. IEEE Symposium on Security and Privacy (S&P), 2022, pp. 198–214. DOI: 10.1109/SP46214.2022.9833734.
+[31] Apostolaki, Maria, Zohar, Aviv, Vanbever, Laurent. Hijacking Bitcoin: Routing Attacks on Cryptocurrencies. IEEE Symposium on Security and Privacy (S&P), 2017, pp. 375–392. DOI: 10.1109/SP.2017.29.
+[32] Yousaf, Hamza, Kappos, George, Meiklejohn, Sarah. Tracing Transactions Across Cryptocurrency Ledgers. USENIX Security Symposium, 2019, pp. 837–850.
+[33] Sarkhosh, Hesam, Maroof, Uzma, Barradas, Diogo. The Dark Art of Financial Disguise in Web3: Money Laundering Schemes and Countermeasures. APWG Symposium on Electronic Crime Research (eCrime), 2025, pp. 1–18. DOI: 10.1109/eCrime66972.2025.11327832.
+[34] Celer Network. cBridge: Multi-Chain Asset Bridge Documentation and Protocol Design. Technical documentation, 2022. https://cbridge-docs.celer.network/.
+[35] Peyré, Gabriel, Cuturi, Marco. Computational Optimal Transport: With Applications to Data Sciences. Foundations and Trends in Machine Learning, 2019, 11(5–6): 355–607. DOI: 10.1561/2200000073.
+[36] Chizat, Lénaïc, Peyré, Gabriel, Schmitzer, Bernhard, Vialard, François-Xavier. Scaling Algorithms for Unbalanced Optimal Transport Problems. Mathematics of Computation, 2018, 87(314): 2563–2609. DOI: 10.1090/mcom/3303.
+[37] Benamou, Jean-David, Carlier, Guillaume, Cuturi, Marco, Nenna, Luca, Peyré, Gabriel. Iterative Bregman Projections for Regularized Transportation Problems. SIAM Journal on Scientific Computing, 2015, 37(2): A1111–A1138. DOI: 10.1137/141000439.
+[38] Frogner, Charlie, Zhang, Chiyuan, Mobahi, Hossein, Araya, Mauricio, Poggio, Tomaso. Learning with a Wasserstein Loss. NeurIPS, 2015.
+[39] Séjourné, Thibault, Vialard, François-Xavier, Peyré, Gabriel. The Unbalanced Gromov-Wasserstein Distance: Conic Formulation and Relaxation. NeurIPS, 2021.
+[40] Sun, Jiaming, Shen, Zehong, Wang, Yuang, Bao, Hujun, Zhou, Xiaowei. LoFTR: Detector-Free Local Feature Matching with Transformers. IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR), 2021, pp. 8918–8927. DOI: 10.1109/CVPR46437.2021.00881.
+[41] Snelgar, Francis, Gould, Stephen, Xu, Ming, Zheng, Liang, Asthana, Akshay. Gromov Wasserstein Optimal Transport for Semantic Correspondences. British Machine Vision Conference (BMVC), 2025. https://bmva-archive.org.uk/bmvc/2025/assets/papers/Paper_721/paper.pdf.
+[42] Financial Action Task Force (FATF). Updated Guidance for a Risk-Based Approach to Virtual Assets and Virtual Asset Service Providers. FATF, 2021. https://www.fatf-gafi.org/en/publications/Fatfrecommendations/Guidance-rba-virtual-assets-2021.html.
+[43] Rudin, Cynthia. Stop Explaining Black Box Machine Learning Models for High Stakes Decisions and Use Interpretable Models Instead. Nature Machine Intelligence, 2019, 1(5): 206–215. DOI: 10.1038/s42256-019-0048-x.
+[44] Arrieta, Alejandro Barrio, et al.. Explainable Artificial Intelligence (XAI): Concepts, Taxonomies, Opportunities and Challenges toward Responsible AI. Information Fusion, 2020, 58: 82–115. DOI: 10.1016/j.inffus.2019.12.012.
+[45] Adadi, Amina, Berrada, Mohammed. Peeking Inside the Black-Box: A Survey on Explainable Artificial Intelligence (XAI). IEEE Access, 2018, 6: 52138–52160. DOI: 10.1109/ACCESS.2018.2870052.
+[46] Liu, Zihan, Wang, Xiaohu, Lin, Chao, Xu, Minghui, He, Debiao, Huang, Xinyi. SilentLedger: Privacy-Preserving Auditing for Blockchains With Complete Non-Interactivity. IEEE Transactions on Information Forensics and Security, 2026, 21: 7346–7360. DOI: 10.1109/TIFS.2026.3716229.
+[47] Pineau, Joelle, et al.. Improving Reproducibility in Machine Learning Research (A Report from the NeurIPS 2019 Reproducibility Program). Journal of Machine Learning Research, 2021, 22: 1–20.
+[48] Lamprecht, Anna-Lena, et al.. Towards FAIR Principles for Research Software. Data Science, 2020, 3(1): 37–59. DOI: 10.3233/DS-190026.
+[49] Möser, Malte, Böhme, Rainer, Breuker, Dominic. Towards Risk Scoring of Bitcoin Transactions. Financial Cryptography and Data Security: FC 2014 Workshops (BITCOIN), Lecture Notes in Computer Science, vol. 8438, Springer, 2014, pp. 16–32. DOI: 10.1007/978-3-662-44774-1_2.
+[50] Pei, Shichao, Yu, Lu, Zhang, Xiangliang. Improving Cross-lingual Entity Alignment via Optimal Transport. Proceedings of the 28th International Joint Conference on Artificial Intelligence (IJCAI), 2019, pp. 3231–3237.
+[51] Mao, Xin, Wang, Wenting, Wu, Yuanbin, Lan, Man. From Alignment to Assignment: Frustratingly Simple Unsupervised Entity Alignment. Proceedings of the 2021 Conference on Empirical Methods in Natural Language Processing (EMNLP), 2021, pp. 2843–2853. DOI: 10.18653/v1/2021.emnlp-main.226.
+〔待补：终稿按首次引用顺序重排文献编号〕

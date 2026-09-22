@@ -1,0 +1,29 @@
+{
+  "provenance_mode": "A_ARCHIVED_CONFIRMATORY_REPRESENTATION_ANALYSIS",
+  "prediction_methods_executed": false,
+  "uot_solver_calls": 0,
+  "sinkhorn_calls": 0,
+  "cost_builder_calls": 0,
+  "decoder_calls": 0,
+  "method_runner_calls": 0,
+  "confirmatory_rerun": false,
+  "development_rerun": false,
+  "allowed_operations_used": [
+    "read archived frozen delta_S / delta_T vectors",
+    "read archived frozen plan P (verification only)",
+    "read archived truth labels",
+    "delta algebra, aggregation, statistics, plotting"
+  ],
+  "runtime_guards": [
+    {
+      "stage": "s10_stage1",
+      "ok": true,
+      "checked": [
+        "r7.r7_pipeline",
+        "r7.r7_methods"
+      ],
+      "present": []
+    }
+  ],
+  "block_401_410_touched": false
+}

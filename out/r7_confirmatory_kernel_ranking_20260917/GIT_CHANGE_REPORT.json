@@ -1,0 +1,12 @@
+{
+  "head": "d5cd14d8051263b49b01b10ad36e6033b2ec3219",
+  "branch": "master",
+  "predirty_entries": 3148,
+  "current_entries": 3153,
+  "new_entries": 5,
+  "r7_output_files": 1225,
+  "r7_code_files": 18,
+  "r7_modified_files": [
+    "src/cross/domain/evaluation/semi_synthetic_flows.py"
+  ]
+}

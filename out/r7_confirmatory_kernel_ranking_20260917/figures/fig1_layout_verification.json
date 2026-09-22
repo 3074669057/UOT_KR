@@ -1,0 +1,367 @@
+{
+  "generated_at_utc": "2026-09-17T12:34:59Z",
+  "figure": "fig1_degree_calibration",
+  "panel": "(c) Truncation and tail",
+  "change_scope": "presentation-only layout correction; no data or scientific result changed",
+  "panel_c_layout": {
+    "truncation_note": {
+      "xy_axes": [
+        0.665,
+        0.965
+      ],
+      "ha": "left",
+      "va": "top",
+      "fontsize": 7.5,
+      "text": "truncation cap = 8 / $d_{used}=\\min(d,8)$"
+    },
+    "legend": {
+      "loc": "lower right",
+      "bbox_to_anchor": [
+        1.0,
+        0.03
+      ]
+    },
+    "tail_summary": {
+      "xy_axes": [
+        0.0,
+        -0.26
+      ],
+      "ha": "left",
+      "va": "top",
+      "fontsize": 7.0,
+      "placement": "below the axes (outside the data area)",
+      "added_after_tight_layout": true
+    }
+  },
+  "bboxes_px": {
+    "axes": [
+      968.5,
+      59.7,
+      1340.4,
+      301.4
+    ],
+    "split_finite": [
+      975.8,
+      70.6,
+      1194.6,
+      262.4
+    ],
+    "merge_finite": [
+      975.8,
+      92.5,
+      1012.2,
+      290.4
+    ],
+    "dashed_cap": [
+      1194.6,
+      59.7,
+      1194.6,
+      301.4
+    ],
+    "x8_marker": [
+      1188.6,
+      131.8,
+      1200.6,
+      143.8
+    ],
+    "truncation_note": [
+      1215.8,
+      265.9,
+      1323.8,
+      292.9
+    ],
+    "tail_summary": [
+      968.5,
+      -40.5,
+      1193.0,
+      -3.2
+    ],
+    "legend": [
+      1261.7,
+      66.9,
+      1340.4,
+      107.0
+    ],
+    "saved_canvas": [
+      14.9,
+      -40.5,
+      1349.1,
+      388.1
+    ]
+  },
+  "checks": [
+    {
+      "check": "split_data_bit_identical_to_source",
+      "status": "PASS",
+      "detail": {
+        "x": [
+          2.0,
+          3.0,
+          4.0,
+          5.0,
+          6.0,
+          7.0,
+          8.0
+        ],
+        "y": [
+          0.58014309024727,
+          0.19417597590058994,
+          0.08120999121375674,
+          0.04606501820007531,
+          0.02422492782728756,
+          0.016568344420735535,
+          0.05761265219028493
+        ]
+      }
+    },
+    {
+      "check": "merge_data_bit_identical_to_source",
+      "status": "PASS",
+      "detail": {
+        "y": [
+          0.9751552795031055,
+          0.024844720496894408,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      }
+    },
+    {
+      "check": "xlim_unchanged",
+      "status": "PASS",
+      "detail": [
+        1.8,
+        12.0
+      ]
+    },
+    {
+      "check": "yscale_still_log",
+      "status": "PASS",
+      "detail": "log"
+    },
+    {
+      "check": "vline_still_at_degree_8",
+      "status": "PASS",
+      "detail": {
+        "x": [
+          8.0,
+          8.0
+        ],
+        "color": "k",
+        "ls": "--"
+      }
+    },
+    {
+      "check": "styles_unchanged",
+      "status": "PASS",
+      "detail": {
+        "split": [
+          "#2ca02c",
+          "o",
+          "split"
+        ],
+        "merge": [
+          "#9467bd",
+          "s",
+          "merge"
+        ]
+      }
+    },
+    {
+      "check": "titles_unchanged",
+      "status": "PASS",
+      "detail": [
+        "(a) Per-window empirical fan-out",
+        "(b) Pooled frozen generator input",
+        "(c) Truncation and tail"
+      ]
+    },
+    {
+      "check": "axis_labels_unchanged",
+      "status": "PASS",
+      "detail": [
+        "Degree",
+        "Probability"
+      ]
+    },
+    {
+      "check": "panel_a_b_untouched_structure",
+      "status": "PASS",
+      "detail": {
+        "a_bars": 14,
+        "b_bars": 14,
+        "b_scale": "log"
+      }
+    },
+    {
+      "check": "split_finite_points_and_markers_inside_axes",
+      "status": "PASS",
+      "detail": {
+        "line": [
+          975.8,
+          70.6,
+          1194.6,
+          262.4
+        ],
+        "axes": [
+          968.5,
+          59.7,
+          1340.4,
+          301.4
+        ]
+      }
+    },
+    {
+      "check": "merge_finite_points_and_markers_inside_axes",
+      "status": "PASS",
+      "detail": {
+        "line": [
+          975.8,
+          92.5,
+          1012.2,
+          290.4
+        ],
+        "note": "merge pmf is exactly 0 at degrees 4-8; undefined on a log axis and correctly not drawn (unchanged original behaviour)"
+      }
+    },
+    {
+      "check": "truncation_note_vs_dashed_line_no_overlap",
+      "status": "PASS",
+      "detail": {
+        "overlap_px2": 0.0,
+        "gap_px": 21.3
+      }
+    },
+    {
+      "check": "truncation_note_vs_x8_marker_no_overlap",
+      "status": "PASS",
+      "detail": {
+        "overlap_px2": 0.0,
+        "gap_px": 15.3
+      }
+    },
+    {
+      "check": "truncation_note_vs_curves_no_overlap",
+      "status": "PASS",
+      "detail": {
+        "vs_split": 0.0,
+        "vs_merge": 0.0
+      }
+    },
+    {
+      "check": "tail_summary_vs_curves_no_overlap",
+      "status": "PASS",
+      "detail": {
+        "vs_split": 0.0,
+        "vs_merge": 0.0
+      }
+    },
+    {
+      "check": "tail_summary_vs_dashed_line_no_overlap",
+      "status": "PASS",
+      "detail": 0.0
+    },
+    {
+      "check": "tail_summary_vs_x8_marker_no_overlap",
+      "status": "PASS",
+      "detail": 0.0
+    },
+    {
+      "check": "tail_summary_below_axes",
+      "status": "PASS",
+      "detail": {
+        "tail_top_px": -3.2,
+        "axes_bottom_px": 59.7
+      }
+    },
+    {
+      "check": "legend_vs_truncation_note_no_overlap",
+      "status": "PASS",
+      "detail": 0.0
+    },
+    {
+      "check": "legend_vs_tail_summary_no_overlap",
+      "status": "PASS",
+      "detail": 0.0
+    },
+    {
+      "check": "legend_vs_curves_no_overlap",
+      "status": "PASS",
+      "detail": {
+        "vs_split": 0.0,
+        "vs_merge": 0.0
+      }
+    },
+    {
+      "check": "legend_vs_dashed_line_no_overlap",
+      "status": "PASS",
+      "detail": 0.0
+    },
+    {
+      "check": "legend_inside_axes",
+      "status": "PASS",
+      "detail": [
+        1261.7,
+        66.9,
+        1340.4,
+        107.0
+      ]
+    },
+    {
+      "check": "no_text_clipped_by_saved_canvas",
+      "status": "PASS",
+      "detail": []
+    },
+    {
+      "check": "panel_geometry_identical_to_pre_fix",
+      "status": "PASS",
+      "detail": {
+        "axes_height_in": 2.1974,
+        "pre_fix_in": 2.1974
+      }
+    },
+    {
+      "check": "png_saved_at_300_dpi",
+      "status": "PASS",
+      "detail": {
+        "on_disk_px": [
+          3696,
+          1229
+        ],
+        "reference_300dpi_px": [
+          3696,
+          1229
+        ],
+        "nominal_dpi_over_tight_canvas": 304.7
+      }
+    },
+    {
+      "check": "pdf_present_and_nonempty",
+      "status": "PASS",
+      "detail": {
+        "bytes": 27331
+      }
+    },
+    {
+      "check": "pdf_and_png_same_aspect",
+      "status": "PASS",
+      "detail": {
+        "pdf_page_pt": [
+          887.3,
+          295.3
+        ],
+        "pdf_aspect": 3.0053,
+        "png_aspect": 3.0073
+      }
+    },
+    {
+      "check": "panel_c_title_unchanged",
+      "status": "PASS",
+      "detail": "(c) Truncation and tail"
+    }
+  ],
+  "ALL_PASS": true
+}

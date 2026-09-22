@@ -1,0 +1,30 @@
+{
+  "generated_at_utc": "2026-09-17T08:12:07Z",
+  "dpi": 300,
+  "formats": [
+    "pdf",
+    "png"
+  ],
+  "figures": {
+    "figure_1_degree_calibration": [
+      "D:\\trae\\tool\\a\\cross\\out\\r7_confirmatory_kernel_ranking_20260917\\figures\\fig1_degree_calibration.pdf",
+      "D:\\trae\\tool\\a\\cross\\out\\r7_confirmatory_kernel_ranking_20260917\\figures\\fig1_degree_calibration.png"
+    ],
+    "figure_2_selection_rule_comparison": [
+      "D:\\trae\\tool\\a\\cross\\out\\r7_confirmatory_kernel_ranking_20260917\\figures\\fig2_selection_rule_comparison.pdf",
+      "D:\\trae\\tool\\a\\cross\\out\\r7_confirmatory_kernel_ranking_20260917\\figures\\fig2_selection_rule_comparison.png"
+    ],
+    "figure_3_confirmatory_method_comparison": [
+      "D:\\trae\\tool\\a\\cross\\out\\r7_confirmatory_kernel_ranking_20260917\\figures\\fig3_confirmatory_method_comparison.pdf",
+      "D:\\trae\\tool\\a\\cross\\out\\r7_confirmatory_kernel_ranking_20260917\\figures\\fig3_confirmatory_method_comparison.png"
+    ],
+    "figure_4_paired_primary_effects": [
+      "D:\\trae\\tool\\a\\cross\\out\\r7_confirmatory_kernel_ranking_20260917\\figures\\fig4_paired_primary_effects.pdf",
+      "D:\\trae\\tool\\a\\cross\\out\\r7_confirmatory_kernel_ranking_20260917\\figures\\fig4_paired_primary_effects.png"
+    ],
+    "figure_5_uot_representation_diagnostics": [
+      "D:\\trae\\tool\\a\\cross\\out\\r7_confirmatory_kernel_ranking_20260917\\figures\\fig5_uot_representation_diagnostics.pdf",
+      "D:\\trae\\tool\\a\\cross\\out\\r7_confirmatory_kernel_ranking_20260917\\figures\\fig5_uot_representation_diagnostics.png"
+    ]
+  }
+}

@@ -1,0 +1,40 @@
+% R7 discussion / limitations patch
+\begin{enumerate}
+  \item \textbf{Style baselines are not system-level reproductions.} The Connector-style
+        and ABCTracer-style baselines are output-semantics baselines, not end-to-end
+        reproductions; no real-system implementation was completed, so this limitation
+        stands and is not removed by the H1/H2 results.
+  \item \textbf{Synthetic confirmatory evaluation.} The evaluation uses a generator
+        calibrated on real degree distributions; results must not be described as
+        real-world deployment validation.
+  \item \textbf{No output-space ceiling claim.} UOT-KR never exceeds the label-informed
+        one-to-one ceiling (0.7364) in any of the 30 holdout cells.
+        H1 licenses only that the selected many-to-many decoding outperformed the
+        cost-optimal one-to-one assignment baseline at equal cost; H1 confounds the output
+        constraint with the decoder, so no claim is made that UOT itself causes the gain.
+  \item \textbf{Threshold-MM comparison.} Its threshold was fixed on the selection block by
+        equal predicted-edge budget and was never re-calibrated on the holdout
+        (holdout edges per family: UOT-KR
+        17.45,
+        Threshold-MM
+        16.89).
+        At a matched budget, thresholding has substantially lower recall, so part of the H2
+        effect reflects the intrinsic disadvantage of budget-matched thresholding.
+  \item \textbf{Dual-Softmax semantics.} Bidirectional (mutual nearest neighbour) acceptance
+        makes this arm one-to-one in output semantics, and its confidence gate calibrates
+        to off (tau $=0$); it is an output-semantics control, not a many-to-many method.
+  \item \textbf{Cross-bridge heterogeneity.} Multi's H1 effect is only
+        $+0.0030$ (per-bridge exact two-sided $p=0.8438$); the overall
+        result must not conceal it.
+  \item \textbf{Truncation.}
+        \texttt{TRUNCATION\_BOUNDARY\_DEPENDENCE} $=$
+        False;
+        the selected rule does not reach the frozen degree cap.
+  \item \textbf{Strict exact recovery is zero} for every method under the variable-degree
+        truth topology, and is reported as measured.
+  \item \textbf{Wording.} The freeze is a \emph{hash-locked protocol freeze} (local SHA256,
+        freeze time, code manifest, one-shot ledger), not an externally timestamped
+        preregistration.
+  \item \textbf{Evidence chain.} R5/R6 are design-development evidence; only the R7 holdout
+        is confirmatory.
+\end{enumerate}

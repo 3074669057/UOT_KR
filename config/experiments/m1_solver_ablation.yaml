@@ -1,0 +1,52 @@
+# M1 Solver Ablation Experiment Configuration
+
+seed: 42
+
+bootstrap:
+  n: 100
+  ci: 0.95
+
+data:
+  root: data
+  auto_discover: true
+  ground_truth_path: null
+  source_transactions_path: null
+  target_transactions_path: null
+  cost_matrix_path: null
+  feasible_mask_path: null
+  split_seed: 2026
+  val_fraction: 0.2
+  test_fraction: 0.2
+
+solvers:
+  - thresholded_cost
+  - greedy_nn
+  - hungarian
+  - balanced_ot
+  - rc_uot
+  - rc_uot_production_loaded
+
+operation_point:
+  mode: coverage
+  target: 0.589
+
+decoder:
+  strategy: joint_time_admissible_filter
+  delay_policy: tx_if_available_else_flow_representative
+  tx_decode_policy: legacy
+
+transport:
+  temperature: 1.0
+
+evaluation:
+  stratify_by_structure: true
+  compute_precision_coverage_curve: false
+  bootstrap_ci: true
+
+
+transport:
+  temperature: 1.0
+  max_iter: 100
+  epsilon: 0.05
+  lambda_min: 0.05
+  lambda_max: 2.0

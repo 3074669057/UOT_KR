@@ -1,0 +1,18 @@
+{
+  "timestamp_utc": "2026-09-17T05:25:51Z",
+  "unit": "Celer__s201",
+  "n_method_level_rows": 24,
+  "n_template_level_rows": 1152,
+  "expected_rows": 24,
+  "solver_invocations": 1,
+  "distinct_plan_hashes_across_rows": 1,
+  "distinct_solver_run_ids_across_rows": 1,
+  "solver_plan_sha256": "2cb6b6592e438ca82845aa95e25c186df240ef86b2db262f52f3805c5498bf90",
+  "solver_final_residual": 8.959816442786158e-12,
+  "solver_converged": true,
+  "claim": "one Sinkhorn solve per (bridge, seed) serves all six k and all four decoders",
+  "spec_sha256": "2733d2f5b24d685ca7eba667932a32a2eb96b43459c7d2e49b30c8af70b6f031",
+  "runner_sha256": "e61ff403c92eac4454fa23bac3b928a990a5b58e2a3584e8c28dc6424fdcafd4",
+  "holdout_seeds_executed": [],
+  "pass": true
+}

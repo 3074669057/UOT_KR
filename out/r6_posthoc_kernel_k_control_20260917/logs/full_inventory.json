@@ -1,0 +1,12 @@
+{
+  "timestamp_utc": "2026-09-17T05:25:51Z",
+  "units_ok": 0,
+  "units_skipped": 15,
+  "units_failed": 0,
+  "solver_invocations_this_process": 0,
+  "units_completed_per_solver_invocation": null,
+  "theoretical_reusable_solve_groups": 15,
+  "planned_method_level_rows": 360,
+  "holdout_seeds_executed": [],
+  "spec_sha256": "2733d2f5b24d685ca7eba667932a32a2eb96b43459c7d2e49b30c8af70b6f031"
+}

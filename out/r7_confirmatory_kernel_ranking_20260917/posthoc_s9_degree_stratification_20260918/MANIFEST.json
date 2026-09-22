@@ -1,0 +1,1053 @@
+{
+  "experiment_id": "r7_posthoc_degree_stratification_20260918",
+  "classification": "POST-HOC / NON-PREREGISTERED / ARCHIVED-PREDICTION RE-STRATIFICATION ANALYSIS",
+  "scope": "owns ONLY posthoc_s9_degree_stratification_20260918/; the R7 frozen manifest is NOT modified and no frozen artifact is overwritten",
+  "r7_frozen_manifest_modified": false,
+  "n_files": 149,
+  "locked_posthoc_spec_sha256": "38b4bbbd1e6d3101a9aa6ed8b1a8fbe3751e4a9fbd0db9e64f56270f5b5518cb",
+  "files": [
+    {
+      "path": "00_feasibility/feasibility.json",
+      "sha256": "efe81709abd21690049838bab43906e7935f1596ea80e4554928929c1f3b4e5e",
+      "size": 23867,
+      "role": "s9 feasibility / join / reproduction evidence",
+      "source_frozen_or_posthoc": "posthoc"
+    },
+    {
+      "path": "00_feasibility/FEASIBILITY_REPORT.md",
+      "sha256": "aa47ad1c911012fd315eac997cd557067c0de480903e4cb8339924a4baf9907b",
+      "size": 3178,
+      "role": "s9 feasibility / join / reproduction evidence",
+      "source_frozen_or_posthoc": "posthoc"
+    },
+    {
+      "path": "00_feasibility/join_audit.csv",
+      "sha256": "3c8cbc0e893a71a553b320fbbdf7f1bdc784b987a4c23abea6461537fc112d14",
+      "size": 171929,
+      "role": "s9 feasibility / join / reproduction evidence",
+      "source_frozen_or_posthoc": "posthoc"
+    },
+    {
+      "path": "00_feasibility/join_summary.json",
+      "sha256": "2453b463a2d142dedbb38a8dba2a52f39aa202b1e8df9e57a18ef18370eb2fc8",
+      "size": 579,
+      "role": "s9 feasibility / join / reproduction evidence",
+      "source_frozen_or_posthoc": "posthoc"
+    },
+    {
+      "path": "00_feasibility/truth_replay_audit.json",
+      "sha256": "79e0e3357a1e2879e37016874692ae925580a9c47373554c8470f846b544005c",
+      "size": 23154,
+      "role": "s9 feasibility / join / reproduction evidence",
+      "source_frozen_or_posthoc": "posthoc"
+    },
+    {
+      "path": "00_feasibility/unstratified_reproduction.json",
+      "sha256": "ff18661892bb951b4c5e121f3696f503e275e3894787a4048458ba1e7e8c1491",
+      "size": 6426,
+      "role": "s9 feasibility / join / reproduction evidence",
+      "source_frozen_or_posthoc": "posthoc"
+    },
+    {
+      "path": "_replay/Celer/seed_411/flow_label_stats.json",
+      "sha256": "814eddf0683312c4ddb1268820c696fb20df2a20d052bc0a47260179f313c472",
+      "size": 34,
+      "role": "truth-only replay scratch (regenerable, not a result)",
+      "source_frozen_or_posthoc": "posthoc"
+    },
+    {
+      "path": "_replay/Celer/seed_411/labels/synthetic_flow_labels.csv",
+      "sha256": "177a3b318ada0ebd14b47e2da12895b3f7a968ca10798a0873456c66493605bf",
+      "size": 79576,
+      "role": "truth-only replay scratch (regenerable, not a result)",
+      "source_frozen_or_posthoc": "posthoc"
+    },
+    {
+      "path": "_replay/Celer/seed_411/labels/synthetic_uot_eval_metrics.json",
+      "sha256": "805bcdcb7ee6a9301223b6692d2f891981bbd60f1ed17bfc44da4b8c70192347",
+      "size": 216142,
+      "role": "truth-only replay scratch (regenerable, not a result)",
+      "source_frozen_or_posthoc": "posthoc"
+    },
+    {
+      "path": "_replay/Celer/seed_411/synthetic_seed_stratification.json",
+      "sha256": "4a52bb09825b09e3c11a1f3bd79d16fc17049cd8caa262b52be96018e2e37c96",
+      "size": 8779,
+      "role": "truth-only replay scratch (regenerable, not a result)",
+      "source_frozen_or_posthoc": "posthoc"
+    },
+    {
+      "path": "_replay/Celer/seed_412/flow_label_stats.json",
+      "sha256": "814eddf0683312c4ddb1268820c696fb20df2a20d052bc0a47260179f313c472",
+      "size": 34,
+      "role": "truth-only replay scratch (regenerable, not a result)",
+      "source_frozen_or_posthoc": "posthoc"
+    },
+    {
+      "path": "_replay/Celer/seed_412/labels/synthetic_flow_labels.csv",
+      "sha256": "121ae9de92164347ccb701c3667a4c3815dfc3f287ea1883583e8186cd24db29",
+      "size": 85979,
+      "role": "truth-only replay scratch (regenerable, not a result)",
+      "source_frozen_or_posthoc": "posthoc"
+    },
+    {
+      "path": "_replay/Celer/seed_412/labels/synthetic_uot_eval_metrics.json",
+      "sha256": "3f01bf4665c41fba35d57d11245894ac22dbd632b1f02e10e879e1da2aed538d",
+      "size": 228630,
+      "role": "truth-only replay scratch (regenerable, not a result)",
+      "source_frozen_or_posthoc": "posthoc"
+    },
+    {
+      "path": "_replay/Celer/seed_412/synthetic_seed_stratification.json",
+      "sha256": "32bacffd415d942e1bd112b8530e78b355e371002ca7456403310547931220d6",
+      "size": 8779,
+      "role": "truth-only replay scratch (regenerable, not a result)",
+      "source_frozen_or_posthoc": "posthoc"
+    },
+    {
+      "path": "_replay/Celer/seed_413/flow_label_stats.json",
+      "sha256": "814eddf0683312c4ddb1268820c696fb20df2a20d052bc0a47260179f313c472",
+      "size": 34,
+      "role": "truth-only replay scratch (regenerable, not a result)",
+      "source_frozen_or_posthoc": "posthoc"
+    },
+    {
+      "path": "_replay/Celer/seed_413/labels/synthetic_flow_labels.csv",
+      "sha256": "990e5327fb028b05788bca8b77c5cd97a25f6509cc6e5acbd0ba9bc4d0431f37",
+      "size": 83611,
+      "role": "truth-only replay scratch (regenerable, not a result)",
+      "source_frozen_or_posthoc": "posthoc"
+    },
+    {
+      "path": "_replay/Celer/seed_413/labels/synthetic_uot_eval_metrics.json",
+      "sha256": "ec114fd9487c653662f8168ef6399a7df2670ff7b53eb733e522527dddc063d8",
+      "size": 222556,
+      "role": "truth-only replay scratch (regenerable, not a result)",
+      "source_frozen_or_posthoc": "posthoc"
+    },
+    {
+      "path": "_replay/Celer/seed_413/synthetic_seed_stratification.json",
+      "sha256": "015c696fc3fa0a10f1459429339e882e0144bae98d71a3811c670c1cf882c8a2",
+      "size": 8779,
+      "role": "truth-only replay scratch (regenerable, not a result)",
+      "source_frozen_or_posthoc": "posthoc"
+    },
+    {
+      "path": "_replay/Celer/seed_414/flow_label_stats.json",
+      "sha256": "814eddf0683312c4ddb1268820c696fb20df2a20d052bc0a47260179f313c472",
+      "size": 34,
+      "role": "truth-only replay scratch (regenerable, not a result)",
+      "source_frozen_or_posthoc": "posthoc"
+    },
+    {
+      "path": "_replay/Celer/seed_414/labels/synthetic_flow_labels.csv",
+      "sha256": "208381fec0263b87b84ba92f03a6fef3b6550a3d6a93fbaed080e6d3bb7d03f1",
+      "size": 83466,
+      "role": "truth-only replay scratch (regenerable, not a result)",
+      "source_frozen_or_posthoc": "posthoc"
+    },
+    {
+      "path": "_replay/Celer/seed_414/labels/synthetic_uot_eval_metrics.json",
+      "sha256": "d08ade543a36a7e963bfccca468a88a7f5196e4a62e86bbceb640745d4a1b828",
+      "size": 223698,
+      "role": "truth-only replay scratch (regenerable, not a result)",
+      "source_frozen_or_posthoc": "posthoc"
+    },
+    {
+      "path": "_replay/Celer/seed_414/synthetic_seed_stratification.json",
+      "sha256": "55897b21d36a72c175357ab0ef276a19ac0b70b1d9d032873b0e4741d45ba24c",
+      "size": 8779,
+      "role": "truth-only replay scratch (regenerable, not a result)",
+      "source_frozen_or_posthoc": "posthoc"
+    },
+    {
+      "path": "_replay/Celer/seed_415/flow_label_stats.json",
+      "sha256": "814eddf0683312c4ddb1268820c696fb20df2a20d052bc0a47260179f313c472",
+      "size": 34,
+      "role": "truth-only replay scratch (regenerable, not a result)",
+      "source_frozen_or_posthoc": "posthoc"
+    },
+    {
+      "path": "_replay/Celer/seed_415/labels/synthetic_flow_labels.csv",
+      "sha256": "3e342e11a1cd6ff8a4680f2b9d75730cce2cb53bae868f9f4ad1899c4093bd68",
+      "size": 85968,
+      "role": "truth-only replay scratch (regenerable, not a result)",
+      "source_frozen_or_posthoc": "posthoc"
+    },
+    {
+      "path": "_replay/Celer/seed_415/labels/synthetic_uot_eval_metrics.json",
+      "sha256": "486b929ac4d7bcab6d5b33e66012381737effb24e995886576f02bdb47db8fdb",
+      "size": 228182,
+      "role": "truth-only replay scratch (regenerable, not a result)",
+      "source_frozen_or_posthoc": "posthoc"
+    },
+    {
+      "path": "_replay/Celer/seed_415/synthetic_seed_stratification.json",
+      "sha256": "7b9c7853e35b650a02453c2624fc41c93bad2e96f14d1eee303363a067eabe1b",
+      "size": 8779,
+      "role": "truth-only replay scratch (regenerable, not a result)",
+      "source_frozen_or_posthoc": "posthoc"
+    },
+    {
+      "path": "_replay/Celer/seed_416/flow_label_stats.json",
+      "sha256": "814eddf0683312c4ddb1268820c696fb20df2a20d052bc0a47260179f313c472",
+      "size": 34,
+      "role": "truth-only replay scratch (regenerable, not a result)",
+      "source_frozen_or_posthoc": "posthoc"
+    },
+    {
+      "path": "_replay/Celer/seed_416/labels/synthetic_flow_labels.csv",
+      "sha256": "9953572377da72ece9e73e04fced8ed134627541a42a662e52e1f320687beaad",
+      "size": 82970,
+      "role": "truth-only replay scratch (regenerable, not a result)",
+      "source_frozen_or_posthoc": "posthoc"
+    },
+    {
+      "path": "_replay/Celer/seed_416/labels/synthetic_uot_eval_metrics.json",
+      "sha256": "38b113704ed1f3fcf61056f96a89b98ad3a859ef8da60fa24d45476e5dc7c575",
+      "size": 221944,
+      "role": "truth-only replay scratch (regenerable, not a result)",
+      "source_frozen_or_posthoc": "posthoc"
+    },
+    {
+      "path": "_replay/Celer/seed_416/synthetic_seed_stratification.json",
+      "sha256": "4cc3e277aaef2ea297ae49927923319c7c420c38559f64db69db2faa0d278698",
+      "size": 8779,
+      "role": "truth-only replay scratch (regenerable, not a result)",
+      "source_frozen_or_posthoc": "posthoc"
+    },
+    {
+      "path": "_replay/Celer/seed_417/flow_label_stats.json",
+      "sha256": "814eddf0683312c4ddb1268820c696fb20df2a20d052bc0a47260179f313c472",
+      "size": 34,
+      "role": "truth-only replay scratch (regenerable, not a result)",
+      "source_frozen_or_posthoc": "posthoc"
+    },
+    {
+      "path": "_replay/Celer/seed_417/labels/synthetic_flow_labels.csv",
+      "sha256": "7c9c34c6293cadb72b1c5e087f6bc07e6a711b15de991b8639dfae4d7507a3b4",
+      "size": 85886,
+      "role": "truth-only replay scratch (regenerable, not a result)",
+      "source_frozen_or_posthoc": "posthoc"
+    },
+    {
+      "path": "_replay/Celer/seed_417/labels/synthetic_uot_eval_metrics.json",
+      "sha256": "87e7b279b8d49b888966fd425711ca4abd97cdaafa2a054046599fe8dfbfcd5e",
+      "size": 226397,
+      "role": "truth-only replay scratch (regenerable, not a result)",
+      "source_frozen_or_posthoc": "posthoc"
+    },
+    {
+      "path": "_replay/Celer/seed_417/synthetic_seed_stratification.json",
+      "sha256": "70d4c516b5c218c778c0df14f4923f6550376c564578acfefac2c59b8e955849",
+      "size": 8779,
+      "role": "truth-only replay scratch (regenerable, not a result)",
+      "source_frozen_or_posthoc": "posthoc"
+    },
+    {
+      "path": "_replay/Celer/seed_418/flow_label_stats.json",
+      "sha256": "814eddf0683312c4ddb1268820c696fb20df2a20d052bc0a47260179f313c472",
+      "size": 34,
+      "role": "truth-only replay scratch (regenerable, not a result)",
+      "source_frozen_or_posthoc": "posthoc"
+    },
+    {
+      "path": "_replay/Celer/seed_418/labels/synthetic_flow_labels.csv",
+      "sha256": "998f4a927d8eb840a32039d4771cca5027dc970f4dedd67c37659c3bed5ffd21",
+      "size": 81108,
+      "role": "truth-only replay scratch (regenerable, not a result)",
+      "source_frozen_or_posthoc": "posthoc"
+    },
+    {
+      "path": "_replay/Celer/seed_418/labels/synthetic_uot_eval_metrics.json",
+      "sha256": "2f98606e3a3419ab463bdca8a53c04976a507241066663777bc0fc4a1bfa7f90",
+      "size": 218861,
+      "role": "truth-only replay scratch (regenerable, not a result)",
+      "source_frozen_or_posthoc": "posthoc"
+    },
+    {
+      "path": "_replay/Celer/seed_418/synthetic_seed_stratification.json",
+      "sha256": "1ed6d244b1a9efca60547a5a90c8102925e9f298c7b6e59f3755687d14149986",
+      "size": 8779,
+      "role": "truth-only replay scratch (regenerable, not a result)",
+      "source_frozen_or_posthoc": "posthoc"
+    },
+    {
+      "path": "_replay/Celer/seed_419/flow_label_stats.json",
+      "sha256": "814eddf0683312c4ddb1268820c696fb20df2a20d052bc0a47260179f313c472",
+      "size": 34,
+      "role": "truth-only replay scratch (regenerable, not a result)",
+      "source_frozen_or_posthoc": "posthoc"
+    },
+    {
+      "path": "_replay/Celer/seed_419/labels/synthetic_flow_labels.csv",
+      "sha256": "f466b4bb20fb9d4e523ceb9cf02d29a289d183db80f934528ad72e4802f95bea",
+      "size": 81800,
+      "role": "truth-only replay scratch (regenerable, not a result)",
+      "source_frozen_or_posthoc": "posthoc"
+    },
+    {
+      "path": "_replay/Celer/seed_419/labels/synthetic_uot_eval_metrics.json",
+      "sha256": "686f5c050844217b71a634135692fb6b08386c6d4e31c7dc91b1e40465e99a4f",
+      "size": 219944,
+      "role": "truth-only replay scratch (regenerable, not a result)",
+      "source_frozen_or_posthoc": "posthoc"
+    },
+    {
+      "path": "_replay/Celer/seed_419/synthetic_seed_stratification.json",
+      "sha256": "41130c6b6686b7f5e9e8ec382c91d55a463a1a8448463d7fad93070d8c90cb86",
+      "size": 8779,
+      "role": "truth-only replay scratch (regenerable, not a result)",
+      "source_frozen_or_posthoc": "posthoc"
+    },
+    {
+      "path": "_replay/Celer/seed_420/flow_label_stats.json",
+      "sha256": "814eddf0683312c4ddb1268820c696fb20df2a20d052bc0a47260179f313c472",
+      "size": 34,
+      "role": "truth-only replay scratch (regenerable, not a result)",
+      "source_frozen_or_posthoc": "posthoc"
+    },
+    {
+      "path": "_replay/Celer/seed_420/labels/synthetic_flow_labels.csv",
+      "sha256": "8dca13993cead2963db0ed4905cfb862d10efb20e39ff3c203d46a8283ec370e",
+      "size": 87031,
+      "role": "truth-only replay scratch (regenerable, not a result)",
+      "source_frozen_or_posthoc": "posthoc"
+    },
+    {
+      "path": "_replay/Celer/seed_420/labels/synthetic_uot_eval_metrics.json",
+      "sha256": "b27e253753312fd4188ed7ac42c5ba712a1ed49a5639c911d137fd7d54a27043",
+      "size": 230460,
+      "role": "truth-only replay scratch (regenerable, not a result)",
+      "source_frozen_or_posthoc": "posthoc"
+    },
+    {
+      "path": "_replay/Celer/seed_420/synthetic_seed_stratification.json",
+      "sha256": "48f6a4828b40a5430911f7d7f1206310a660ec21431298278d7fe20e10d9e037",
+      "size": 8779,
+      "role": "truth-only replay scratch (regenerable, not a result)",
+      "source_frozen_or_posthoc": "posthoc"
+    },
+    {
+      "path": "_replay/Multi/seed_411/flow_label_stats.json",
+      "sha256": "814eddf0683312c4ddb1268820c696fb20df2a20d052bc0a47260179f313c472",
+      "size": 34,
+      "role": "truth-only replay scratch (regenerable, not a result)",
+      "source_frozen_or_posthoc": "posthoc"
+    },
+    {
+      "path": "_replay/Multi/seed_411/labels/synthetic_flow_labels.csv",
+      "sha256": "bf8879390236b0c58ec016793e75b37c9e04cbcd489178548619c34d4e298962",
+      "size": 113746,
+      "role": "truth-only replay scratch (regenerable, not a result)",
+      "source_frozen_or_posthoc": "posthoc"
+    },
+    {
+      "path": "_replay/Multi/seed_411/labels/synthetic_uot_eval_metrics.json",
+      "sha256": "fcefb5799b5ae8332a7b5cb3d05e32c7ddaf617058368ec10899865810442639",
+      "size": 215754,
+      "role": "truth-only replay scratch (regenerable, not a result)",
+      "source_frozen_or_posthoc": "posthoc"
+    },
+    {
+      "path": "_replay/Multi/seed_411/synthetic_seed_stratification.json",
+      "sha256": "1610cb7ac29a34881b63cd8e0f2ba5ab0d7da2214e11697cc50ab8aaec5630cf",
+      "size": 8779,
+      "role": "truth-only replay scratch (regenerable, not a result)",
+      "source_frozen_or_posthoc": "posthoc"
+    },
+    {
+      "path": "_replay/Multi/seed_412/flow_label_stats.json",
+      "sha256": "814eddf0683312c4ddb1268820c696fb20df2a20d052bc0a47260179f313c472",
+      "size": 34,
+      "role": "truth-only replay scratch (regenerable, not a result)",
+      "source_frozen_or_posthoc": "posthoc"
+    },
+    {
+      "path": "_replay/Multi/seed_412/labels/synthetic_flow_labels.csv",
+      "sha256": "43db6387fae095d606f8ad805151ebaa25fbd2d0d85109472868d6dd64917494",
+      "size": 121631,
+      "role": "truth-only replay scratch (regenerable, not a result)",
+      "source_frozen_or_posthoc": "posthoc"
+    },
+    {
+      "path": "_replay/Multi/seed_412/labels/synthetic_uot_eval_metrics.json",
+      "sha256": "ab46b2d96247f0f89361a30986f5c5fc35941af070df778e7e57ef2d7ef88fa3",
+      "size": 223519,
+      "role": "truth-only replay scratch (regenerable, not a result)",
+      "source_frozen_or_posthoc": "posthoc"
+    },
+    {
+      "path": "_replay/Multi/seed_412/synthetic_seed_stratification.json",
+      "sha256": "8b6c9abdae442af76fd233a4389b8bd381afd0a36027673631c76d756d1da8ec",
+      "size": 8779,
+      "role": "truth-only replay scratch (regenerable, not a result)",
+      "source_frozen_or_posthoc": "posthoc"
+    },
+    {
+      "path": "_replay/Multi/seed_413/flow_label_stats.json",
+      "sha256": "814eddf0683312c4ddb1268820c696fb20df2a20d052bc0a47260179f313c472",
+      "size": 34,
+      "role": "truth-only replay scratch (regenerable, not a result)",
+      "source_frozen_or_posthoc": "posthoc"
+    },
+    {
+      "path": "_replay/Multi/seed_413/labels/synthetic_flow_labels.csv",
+      "sha256": "d8b76604dec044a542cd8ebbe939c2a5b74dc372f9666c3c5a2342acf09e54b7",
+      "size": 117057,
+      "role": "truth-only replay scratch (regenerable, not a result)",
+      "source_frozen_or_posthoc": "posthoc"
+    },
+    {
+      "path": "_replay/Multi/seed_413/labels/synthetic_uot_eval_metrics.json",
+      "sha256": "5778ed6c70918b5aca6c04c0d3d04e95f919e56d5091c9717685a694ec687910",
+      "size": 218810,
+      "role": "truth-only replay scratch (regenerable, not a result)",
+      "source_frozen_or_posthoc": "posthoc"
+    },
+    {
+      "path": "_replay/Multi/seed_413/synthetic_seed_stratification.json",
+      "sha256": "132c9525c9c40df3c0b0ea59bc1cc1b97a8f83b169083ba4a18575a634a07f28",
+      "size": 8779,
+      "role": "truth-only replay scratch (regenerable, not a result)",
+      "source_frozen_or_posthoc": "posthoc"
+    },
+    {
+      "path": "_replay/Multi/seed_414/flow_label_stats.json",
+      "sha256": "814eddf0683312c4ddb1268820c696fb20df2a20d052bc0a47260179f313c472",
+      "size": 34,
+      "role": "truth-only replay scratch (regenerable, not a result)",
+      "source_frozen_or_posthoc": "posthoc"
+    },
+    {
+      "path": "_replay/Multi/seed_414/labels/synthetic_flow_labels.csv",
+      "sha256": "61aef6d9243ea4b4d2ef0fb773b067bfe46eded03340f6df23e86e63e9425b34",
+      "size": 118274,
+      "role": "truth-only replay scratch (regenerable, not a result)",
+      "source_frozen_or_posthoc": "posthoc"
+    },
+    {
+      "path": "_replay/Multi/seed_414/labels/synthetic_uot_eval_metrics.json",
+      "sha256": "2e706fed72ba8fa3919a0c216357311dced12aed41f243771a3bb4ae5bf21261",
+      "size": 220829,
+      "role": "truth-only replay scratch (regenerable, not a result)",
+      "source_frozen_or_posthoc": "posthoc"
+    },
+    {
+      "path": "_replay/Multi/seed_414/synthetic_seed_stratification.json",
+      "sha256": "beb9e62275622d92e5a9f6a8285d18016c5cd19a6966b2e5f66eb01c1e6c8aae",
+      "size": 8779,
+      "role": "truth-only replay scratch (regenerable, not a result)",
+      "source_frozen_or_posthoc": "posthoc"
+    },
+    {
+      "path": "_replay/Multi/seed_415/flow_label_stats.json",
+      "sha256": "814eddf0683312c4ddb1268820c696fb20df2a20d052bc0a47260179f313c472",
+      "size": 34,
+      "role": "truth-only replay scratch (regenerable, not a result)",
+      "source_frozen_or_posthoc": "posthoc"
+    },
+    {
+      "path": "_replay/Multi/seed_415/labels/synthetic_flow_labels.csv",
+      "sha256": "cc82fdde1501a2e8acba5873be95afab2b69e84aa9a35c4ce0f065819710f28e",
+      "size": 122911,
+      "role": "truth-only replay scratch (regenerable, not a result)",
+      "source_frozen_or_posthoc": "posthoc"
+    },
+    {
+      "path": "_replay/Multi/seed_415/labels/synthetic_uot_eval_metrics.json",
+      "sha256": "f9645241f328a64d69fa76526137add596d4db3455ff218aed940785a3592239",
+      "size": 225982,
+      "role": "truth-only replay scratch (regenerable, not a result)",
+      "source_frozen_or_posthoc": "posthoc"
+    },
+    {
+      "path": "_replay/Multi/seed_415/synthetic_seed_stratification.json",
+      "sha256": "7199616a4e4808689a3abbb226eaea621d6c90b9edb77979089f0b38a413fe7e",
+      "size": 8779,
+      "role": "truth-only replay scratch (regenerable, not a result)",
+      "source_frozen_or_posthoc": "posthoc"
+    },
+    {
+      "path": "_replay/Multi/seed_416/flow_label_stats.json",
+      "sha256": "814eddf0683312c4ddb1268820c696fb20df2a20d052bc0a47260179f313c472",
+      "size": 34,
+      "role": "truth-only replay scratch (regenerable, not a result)",
+      "source_frozen_or_posthoc": "posthoc"
+    },
+    {
+      "path": "_replay/Multi/seed_416/labels/synthetic_flow_labels.csv",
+      "sha256": "fdb61ca42e90033d1c565ad0e04caa4398cfcf5e0707e91f5569b6e8e0e0b773",
+      "size": 121622,
+      "role": "truth-only replay scratch (regenerable, not a result)",
+      "source_frozen_or_posthoc": "posthoc"
+    },
+    {
+      "path": "_replay/Multi/seed_416/labels/synthetic_uot_eval_metrics.json",
+      "sha256": "92e0b0334b43462c9ff5d5637c3a2eb53cf24f9521a9e989ea65c3fae1712ad7",
+      "size": 223467,
+      "role": "truth-only replay scratch (regenerable, not a result)",
+      "source_frozen_or_posthoc": "posthoc"
+    },
+    {
+      "path": "_replay/Multi/seed_416/synthetic_seed_stratification.json",
+      "sha256": "90eddb282beaabb9b119a50140b2dce8dedcb6000ae6bb197cb0be52fb107ea8",
+      "size": 8779,
+      "role": "truth-only replay scratch (regenerable, not a result)",
+      "source_frozen_or_posthoc": "posthoc"
+    },
+    {
+      "path": "_replay/Multi/seed_417/flow_label_stats.json",
+      "sha256": "814eddf0683312c4ddb1268820c696fb20df2a20d052bc0a47260179f313c472",
+      "size": 34,
+      "role": "truth-only replay scratch (regenerable, not a result)",
+      "source_frozen_or_posthoc": "posthoc"
+    },
+    {
+      "path": "_replay/Multi/seed_417/labels/synthetic_flow_labels.csv",
+      "sha256": "d1e87d99f11f38ae565bedc56f45ebd1efab40da85dc25f70023e9b5a7fdbb7a",
+      "size": 118747,
+      "role": "truth-only replay scratch (regenerable, not a result)",
+      "source_frozen_or_posthoc": "posthoc"
+    },
+    {
+      "path": "_replay/Multi/seed_417/labels/synthetic_uot_eval_metrics.json",
+      "sha256": "ec52e4e2c61b7837126d8a990782227513a3f8b08d86f3ff92170fc76b931aa3",
+      "size": 218537,
+      "role": "truth-only replay scratch (regenerable, not a result)",
+      "source_frozen_or_posthoc": "posthoc"
+    },
+    {
+      "path": "_replay/Multi/seed_417/synthetic_seed_stratification.json",
+      "sha256": "ca212973ba5bb1115d770fb6a9392c2ad4d18323a6656070caa4e95c8c3d72fd",
+      "size": 8779,
+      "role": "truth-only replay scratch (regenerable, not a result)",
+      "source_frozen_or_posthoc": "posthoc"
+    },
+    {
+      "path": "_replay/Multi/seed_418/flow_label_stats.json",
+      "sha256": "814eddf0683312c4ddb1268820c696fb20df2a20d052bc0a47260179f313c472",
+      "size": 34,
+      "role": "truth-only replay scratch (regenerable, not a result)",
+      "source_frozen_or_posthoc": "posthoc"
+    },
+    {
+      "path": "_replay/Multi/seed_418/labels/synthetic_flow_labels.csv",
+      "sha256": "c8f18255f11a86af2315d187f81e53e684a740af77aebb595d00f01859d42897",
+      "size": 117700,
+      "role": "truth-only replay scratch (regenerable, not a result)",
+      "source_frozen_or_posthoc": "posthoc"
+    },
+    {
+      "path": "_replay/Multi/seed_418/labels/synthetic_uot_eval_metrics.json",
+      "sha256": "b6ea691418194b4527d2577ddac18a83289705282440698494ccc1430fddddf3",
+      "size": 219068,
+      "role": "truth-only replay scratch (regenerable, not a result)",
+      "source_frozen_or_posthoc": "posthoc"
+    },
+    {
+      "path": "_replay/Multi/seed_418/synthetic_seed_stratification.json",
+      "sha256": "3462b92aa03cf9cc2b54e3387ba6b8ba972bfab482b3694a642baef055fd6c17",
+      "size": 8779,
+      "role": "truth-only replay scratch (regenerable, not a result)",
+      "source_frozen_or_posthoc": "posthoc"
+    },
+    {
+      "path": "_replay/Multi/seed_419/flow_label_stats.json",
+      "sha256": "814eddf0683312c4ddb1268820c696fb20df2a20d052bc0a47260179f313c472",
+      "size": 34,
+      "role": "truth-only replay scratch (regenerable, not a result)",
+      "source_frozen_or_posthoc": "posthoc"
+    },
+    {
+      "path": "_replay/Multi/seed_419/labels/synthetic_flow_labels.csv",
+      "sha256": "cd5b97dc06748a5205ad25e2d854bc4ce1df179d1f2bfa4b690b0703d406e8db",
+      "size": 123106,
+      "role": "truth-only replay scratch (regenerable, not a result)",
+      "source_frozen_or_posthoc": "posthoc"
+    },
+    {
+      "path": "_replay/Multi/seed_419/labels/synthetic_uot_eval_metrics.json",
+      "sha256": "5963f386b2fa229aa304c2f9b30335260d6be9a77e61c0c6aea198e0f7891573",
+      "size": 223922,
+      "role": "truth-only replay scratch (regenerable, not a result)",
+      "source_frozen_or_posthoc": "posthoc"
+    },
+    {
+      "path": "_replay/Multi/seed_419/synthetic_seed_stratification.json",
+      "sha256": "ef90df86933082dd328a308c8282d34a79042a5be15682abe751cb8ec0f9b2ea",
+      "size": 8779,
+      "role": "truth-only replay scratch (regenerable, not a result)",
+      "source_frozen_or_posthoc": "posthoc"
+    },
+    {
+      "path": "_replay/Multi/seed_420/flow_label_stats.json",
+      "sha256": "814eddf0683312c4ddb1268820c696fb20df2a20d052bc0a47260179f313c472",
+      "size": 34,
+      "role": "truth-only replay scratch (regenerable, not a result)",
+      "source_frozen_or_posthoc": "posthoc"
+    },
+    {
+      "path": "_replay/Multi/seed_420/labels/synthetic_flow_labels.csv",
+      "sha256": "5d964ef375c973df970c8fc349ac5802b177999b8f10c4da0828ebf0fe9e8968",
+      "size": 115730,
+      "role": "truth-only replay scratch (regenerable, not a result)",
+      "source_frozen_or_posthoc": "posthoc"
+    },
+    {
+      "path": "_replay/Multi/seed_420/labels/synthetic_uot_eval_metrics.json",
+      "sha256": "769c96b0c3a8b93ad88922cdb399084c33156edd51572d1a49dfa9d307d5fd70",
+      "size": 219570,
+      "role": "truth-only replay scratch (regenerable, not a result)",
+      "source_frozen_or_posthoc": "posthoc"
+    },
+    {
+      "path": "_replay/Multi/seed_420/synthetic_seed_stratification.json",
+      "sha256": "73acd41ea2f8deb79ba74e0868831a31599610071c5ad4a7e34b24ad5cc5aff8",
+      "size": 8779,
+      "role": "truth-only replay scratch (regenerable, not a result)",
+      "source_frozen_or_posthoc": "posthoc"
+    },
+    {
+      "path": "_replay/Poly/seed_411/flow_label_stats.json",
+      "sha256": "814eddf0683312c4ddb1268820c696fb20df2a20d052bc0a47260179f313c472",
+      "size": 34,
+      "role": "truth-only replay scratch (regenerable, not a result)",
+      "source_frozen_or_posthoc": "posthoc"
+    },
+    {
+      "path": "_replay/Poly/seed_411/labels/synthetic_flow_labels.csv",
+      "sha256": "891a7e804fbf19e8df13963f3ffc8d41a783e724934ef32c847d59e798c175ad",
+      "size": 124752,
+      "role": "truth-only replay scratch (regenerable, not a result)",
+      "source_frozen_or_posthoc": "posthoc"
+    },
+    {
+      "path": "_replay/Poly/seed_411/labels/synthetic_uot_eval_metrics.json",
+      "sha256": "50465d208b2565eda5fb35cbbddd253a76aaff90f3abaf4901407ac63afba2d9",
+      "size": 217549,
+      "role": "truth-only replay scratch (regenerable, not a result)",
+      "source_frozen_or_posthoc": "posthoc"
+    },
+    {
+      "path": "_replay/Poly/seed_411/synthetic_seed_stratification.json",
+      "sha256": "9bd707c2d9d30795c13cc9a1e0ef67c4012ebe84506b12aa2fe7b3df8ca8cac8",
+      "size": 8757,
+      "role": "truth-only replay scratch (regenerable, not a result)",
+      "source_frozen_or_posthoc": "posthoc"
+    },
+    {
+      "path": "_replay/Poly/seed_412/flow_label_stats.json",
+      "sha256": "814eddf0683312c4ddb1268820c696fb20df2a20d052bc0a47260179f313c472",
+      "size": 34,
+      "role": "truth-only replay scratch (regenerable, not a result)",
+      "source_frozen_or_posthoc": "posthoc"
+    },
+    {
+      "path": "_replay/Poly/seed_412/labels/synthetic_flow_labels.csv",
+      "sha256": "e6684a0235a8de1b0e6958b7bf95586bca09853db20cb03430a69ddae121edeb",
+      "size": 119593,
+      "role": "truth-only replay scratch (regenerable, not a result)",
+      "source_frozen_or_posthoc": "posthoc"
+    },
+    {
+      "path": "_replay/Poly/seed_412/labels/synthetic_uot_eval_metrics.json",
+      "sha256": "1e22a75e428830b31558545365c551ff1ddbc0ad18bfee56db3b519f45abb048",
+      "size": 212167,
+      "role": "truth-only replay scratch (regenerable, not a result)",
+      "source_frozen_or_posthoc": "posthoc"
+    },
+    {
+      "path": "_replay/Poly/seed_412/synthetic_seed_stratification.json",
+      "sha256": "7415a404bffc3dd2337bcfa53d7d4872e98dc239e6d5c196873b4da4f7180535",
+      "size": 8757,
+      "role": "truth-only replay scratch (regenerable, not a result)",
+      "source_frozen_or_posthoc": "posthoc"
+    },
+    {
+      "path": "_replay/Poly/seed_413/flow_label_stats.json",
+      "sha256": "814eddf0683312c4ddb1268820c696fb20df2a20d052bc0a47260179f313c472",
+      "size": 34,
+      "role": "truth-only replay scratch (regenerable, not a result)",
+      "source_frozen_or_posthoc": "posthoc"
+    },
+    {
+      "path": "_replay/Poly/seed_413/labels/synthetic_flow_labels.csv",
+      "sha256": "a7f9236401bd64470fd90dbe1c85ad587260d26567de36e9ff03ca7b6e4f5742",
+      "size": 128536,
+      "role": "truth-only replay scratch (regenerable, not a result)",
+      "source_frozen_or_posthoc": "posthoc"
+    },
+    {
+      "path": "_replay/Poly/seed_413/labels/synthetic_uot_eval_metrics.json",
+      "sha256": "13b47bbbc6cb95572616938aff29041f9549b8d06e24a2cb47f44439c5874e25",
+      "size": 221474,
+      "role": "truth-only replay scratch (regenerable, not a result)",
+      "source_frozen_or_posthoc": "posthoc"
+    },
+    {
+      "path": "_replay/Poly/seed_413/synthetic_seed_stratification.json",
+      "sha256": "6ff746e84d451db172b5d8d7dba39bb1ef37017a07ddcc4a798ff78841da51f0",
+      "size": 8757,
+      "role": "truth-only replay scratch (regenerable, not a result)",
+      "source_frozen_or_posthoc": "posthoc"
+    },
+    {
+      "path": "_replay/Poly/seed_414/flow_label_stats.json",
+      "sha256": "814eddf0683312c4ddb1268820c696fb20df2a20d052bc0a47260179f313c472",
+      "size": 34,
+      "role": "truth-only replay scratch (regenerable, not a result)",
+      "source_frozen_or_posthoc": "posthoc"
+    },
+    {
+      "path": "_replay/Poly/seed_414/labels/synthetic_flow_labels.csv",
+      "sha256": "26d726812fb052e806ae5ee93fb3c005eeea7b145ab3fb8529bafa56fa5ad3a1",
+      "size": 132147,
+      "role": "truth-only replay scratch (regenerable, not a result)",
+      "source_frozen_or_posthoc": "posthoc"
+    },
+    {
+      "path": "_replay/Poly/seed_414/labels/synthetic_uot_eval_metrics.json",
+      "sha256": "ae3cb9869bc6c47c35a0e3d94525547b0c82a05ad2f016b1c5c84babc42a30c2",
+      "size": 225475,
+      "role": "truth-only replay scratch (regenerable, not a result)",
+      "source_frozen_or_posthoc": "posthoc"
+    },
+    {
+      "path": "_replay/Poly/seed_414/synthetic_seed_stratification.json",
+      "sha256": "87bd963b7cd6bb743a4d055e48d1f0bcfba1e706a25518172c7bda3e9696b456",
+      "size": 8757,
+      "role": "truth-only replay scratch (regenerable, not a result)",
+      "source_frozen_or_posthoc": "posthoc"
+    },
+    {
+      "path": "_replay/Poly/seed_415/flow_label_stats.json",
+      "sha256": "814eddf0683312c4ddb1268820c696fb20df2a20d052bc0a47260179f313c472",
+      "size": 34,
+      "role": "truth-only replay scratch (regenerable, not a result)",
+      "source_frozen_or_posthoc": "posthoc"
+    },
+    {
+      "path": "_replay/Poly/seed_415/labels/synthetic_flow_labels.csv",
+      "sha256": "659ee2d5d3eb014eb513c88cfef3d55233eb1d4226cddf281033e80deb73c25b",
+      "size": 121714,
+      "role": "truth-only replay scratch (regenerable, not a result)",
+      "source_frozen_or_posthoc": "posthoc"
+    },
+    {
+      "path": "_replay/Poly/seed_415/labels/synthetic_uot_eval_metrics.json",
+      "sha256": "9b8a710f6eaadca158255f5215dcf594b2f3838baa59196643ef8e1c256a38ba",
+      "size": 214257,
+      "role": "truth-only replay scratch (regenerable, not a result)",
+      "source_frozen_or_posthoc": "posthoc"
+    },
+    {
+      "path": "_replay/Poly/seed_415/synthetic_seed_stratification.json",
+      "sha256": "dc6054378e52f1a8bd7b309fa2d07fc6754895a48ec721ba984b35ba11b2ab1d",
+      "size": 8757,
+      "role": "truth-only replay scratch (regenerable, not a result)",
+      "source_frozen_or_posthoc": "posthoc"
+    },
+    {
+      "path": "_replay/Poly/seed_416/flow_label_stats.json",
+      "sha256": "814eddf0683312c4ddb1268820c696fb20df2a20d052bc0a47260179f313c472",
+      "size": 34,
+      "role": "truth-only replay scratch (regenerable, not a result)",
+      "source_frozen_or_posthoc": "posthoc"
+    },
+    {
+      "path": "_replay/Poly/seed_416/labels/synthetic_flow_labels.csv",
+      "sha256": "e9acb23fc46ae5270c3acb52df7f961ce989aaed74453e1ee677677dee1974d0",
+      "size": 129154,
+      "role": "truth-only replay scratch (regenerable, not a result)",
+      "source_frozen_or_posthoc": "posthoc"
+    },
+    {
+      "path": "_replay/Poly/seed_416/labels/synthetic_uot_eval_metrics.json",
+      "sha256": "0d48ffdfb61079012ac5f36a48c7f636260ea3df68d0ff7047849d9da4e6c01d",
+      "size": 222066,
+      "role": "truth-only replay scratch (regenerable, not a result)",
+      "source_frozen_or_posthoc": "posthoc"
+    },
+    {
+      "path": "_replay/Poly/seed_416/synthetic_seed_stratification.json",
+      "sha256": "9d5c1ac2f8ba14d4dbeb30ac00d435852cf9dc404d4c60380abfd60de4d6f509",
+      "size": 8757,
+      "role": "truth-only replay scratch (regenerable, not a result)",
+      "source_frozen_or_posthoc": "posthoc"
+    },
+    {
+      "path": "_replay/Poly/seed_417/flow_label_stats.json",
+      "sha256": "814eddf0683312c4ddb1268820c696fb20df2a20d052bc0a47260179f313c472",
+      "size": 34,
+      "role": "truth-only replay scratch (regenerable, not a result)",
+      "source_frozen_or_posthoc": "posthoc"
+    },
+    {
+      "path": "_replay/Poly/seed_417/labels/synthetic_flow_labels.csv",
+      "sha256": "14764492fb52c1d35542d4c9ae5c6dfc633d0dd8dfd85c57095929a2c34f9d3b",
+      "size": 131497,
+      "role": "truth-only replay scratch (regenerable, not a result)",
+      "source_frozen_or_posthoc": "posthoc"
+    },
+    {
+      "path": "_replay/Poly/seed_417/labels/synthetic_uot_eval_metrics.json",
+      "sha256": "3111e9b294d295dd112d1f97baba8a3395b0f5ba0e3abbba535a93f60daa2db6",
+      "size": 224994,
+      "role": "truth-only replay scratch (regenerable, not a result)",
+      "source_frozen_or_posthoc": "posthoc"
+    },
+    {
+      "path": "_replay/Poly/seed_417/synthetic_seed_stratification.json",
+      "sha256": "ff6cb047e7c1413b3d5a61788c896a2d1b23c29611349a56bac7297acb89b1e0",
+      "size": 8757,
+      "role": "truth-only replay scratch (regenerable, not a result)",
+      "source_frozen_or_posthoc": "posthoc"
+    },
+    {
+      "path": "_replay/Poly/seed_418/flow_label_stats.json",
+      "sha256": "814eddf0683312c4ddb1268820c696fb20df2a20d052bc0a47260179f313c472",
+      "size": 34,
+      "role": "truth-only replay scratch (regenerable, not a result)",
+      "source_frozen_or_posthoc": "posthoc"
+    },
+    {
+      "path": "_replay/Poly/seed_418/labels/synthetic_flow_labels.csv",
+      "sha256": "e3bdd3dd8d7073f320b08166fa618ad74fb51b898e9d4a7b1ac6b62f42a36325",
+      "size": 126135,
+      "role": "truth-only replay scratch (regenerable, not a result)",
+      "source_frozen_or_posthoc": "posthoc"
+    },
+    {
+      "path": "_replay/Poly/seed_418/labels/synthetic_uot_eval_metrics.json",
+      "sha256": "91aa40c1a1100f773d804a103612377cf9d28c6a7300f82ab53bfe2758485e3e",
+      "size": 219077,
+      "role": "truth-only replay scratch (regenerable, not a result)",
+      "source_frozen_or_posthoc": "posthoc"
+    },
+    {
+      "path": "_replay/Poly/seed_418/synthetic_seed_stratification.json",
+      "sha256": "2185ed7f4f5690bfcf5c5f00fea590dcdcc082fd62797518953b40512809771c",
+      "size": 8757,
+      "role": "truth-only replay scratch (regenerable, not a result)",
+      "source_frozen_or_posthoc": "posthoc"
+    },
+    {
+      "path": "_replay/Poly/seed_419/flow_label_stats.json",
+      "sha256": "814eddf0683312c4ddb1268820c696fb20df2a20d052bc0a47260179f313c472",
+      "size": 34,
+      "role": "truth-only replay scratch (regenerable, not a result)",
+      "source_frozen_or_posthoc": "posthoc"
+    },
+    {
+      "path": "_replay/Poly/seed_419/labels/synthetic_flow_labels.csv",
+      "sha256": "100860572a2d20d26a24208bd857072531cbf2ade7e30fad9ed60e2102dd7c61",
+      "size": 128960,
+      "role": "truth-only replay scratch (regenerable, not a result)",
+      "source_frozen_or_posthoc": "posthoc"
+    },
+    {
+      "path": "_replay/Poly/seed_419/labels/synthetic_uot_eval_metrics.json",
+      "sha256": "7296a451010412c4e1b4496a0d20c151c056872ff9fe4055ce29e5a22d6f91b6",
+      "size": 222315,
+      "role": "truth-only replay scratch (regenerable, not a result)",
+      "source_frozen_or_posthoc": "posthoc"
+    },
+    {
+      "path": "_replay/Poly/seed_419/synthetic_seed_stratification.json",
+      "sha256": "865eb18e9451e85b0751a74de9cd6c882d3263d90cde7cfffc0b05820ef363b5",
+      "size": 8757,
+      "role": "truth-only replay scratch (regenerable, not a result)",
+      "source_frozen_or_posthoc": "posthoc"
+    },
+    {
+      "path": "_replay/Poly/seed_420/flow_label_stats.json",
+      "sha256": "814eddf0683312c4ddb1268820c696fb20df2a20d052bc0a47260179f313c472",
+      "size": 34,
+      "role": "truth-only replay scratch (regenerable, not a result)",
+      "source_frozen_or_posthoc": "posthoc"
+    },
+    {
+      "path": "_replay/Poly/seed_420/labels/synthetic_flow_labels.csv",
+      "sha256": "cd8e8acf4f7f5d0fb8336bad5c79ce450ac2406e039424791455113215e3597d",
+      "size": 132342,
+      "role": "truth-only replay scratch (regenerable, not a result)",
+      "source_frozen_or_posthoc": "posthoc"
+    },
+    {
+      "path": "_replay/Poly/seed_420/labels/synthetic_uot_eval_metrics.json",
+      "sha256": "0f143037df32ca45e17b6cb72e6d509dcc7f25efaff0fc99cf54cddb748d7eef",
+      "size": 225288,
+      "role": "truth-only replay scratch (regenerable, not a result)",
+      "source_frozen_or_posthoc": "posthoc"
+    },
+    {
+      "path": "_replay/Poly/seed_420/synthetic_seed_stratification.json",
+      "sha256": "34d4cda61cf5f0afb4ddde1c7c513a8a954f9bb1af9beb5d751d076ceb1d908d",
+      "size": 8757,
+      "role": "truth-only replay scratch (regenerable, not a result)",
+      "source_frozen_or_posthoc": "posthoc"
+    },
+    {
+      "path": "config/locked_posthoc_spec.json",
+      "sha256": "38b4bbbd1e6d3101a9aa6ed8b1a8fbe3751e4a9fbd0db9e64f56270f5b5518cb",
+      "size": 8603,
+      "role": "s9 locked post-hoc spec",
+      "source_frozen_or_posthoc": "posthoc"
+    },
+    {
+      "path": "config/locked_posthoc_spec.sha256",
+      "sha256": "d7fdd63bfea6257205d63c7a08919360a71c47bbea800b846fcbefc058603bb8",
+      "size": 98,
+      "role": "s9 locked post-hoc spec",
+      "source_frozen_or_posthoc": "posthoc"
+    },
+    {
+      "path": "figures/figures_index.json",
+      "sha256": "b85800c541ab85addb5271db60252ce8588de5b14b8aa1a15ed34d7367fe3176",
+      "size": 746,
+      "role": "s9 figure",
+      "source_frozen_or_posthoc": "posthoc"
+    },
+    {
+      "path": "figures/s9_binary_threebin_h1.pdf",
+      "sha256": "fb1f9bb22d08704563cd3337fc742dbb23098d4fc68ace1f65a56d85f9fe8149",
+      "size": 19945,
+      "role": "s9 figure",
+      "source_frozen_or_posthoc": "posthoc"
+    },
+    {
+      "path": "figures/s9_binary_threebin_h1.png",
+      "sha256": "55d504ec5f85fc8e6493387826fb0e21c6f6544183d9932c3a57740757ac12d2",
+      "size": 112875,
+      "role": "s9 figure",
+      "source_frozen_or_posthoc": "posthoc"
+    },
+    {
+      "path": "figures/s9_degree_stratified_h1_and_oracle.pdf",
+      "sha256": "00dd9ed90dd498cdc7682677213cb0a1d7183895ba5492abca3fea21a037652c",
+      "size": 25895,
+      "role": "s9 figure",
+      "source_frozen_or_posthoc": "posthoc"
+    },
+    {
+      "path": "figures/s9_degree_stratified_h1_and_oracle.png",
+      "sha256": "35c6eb91d424afc6b5070c1b2a4e2d8d362a758b914bc6974163fb053832c0e1",
+      "size": 246508,
+      "role": "s9 figure",
+      "source_frozen_or_posthoc": "posthoc"
+    },
+    {
+      "path": "FINAL_POSTHOC_REPORT.md",
+      "sha256": "0e889f95a55c2d6f00442bc87b0e80e79c9f2c97518a30fa6bd537077ea38a81",
+      "size": 8547,
+      "role": "s9 report",
+      "source_frozen_or_posthoc": "posthoc"
+    },
+    {
+      "path": "paper/patch_index.json",
+      "sha256": "c4c2b7f1eafdc791cce4d5933dc998e34529a8a6a96a8e21208547e7c0f0eccc",
+      "size": 800,
+      "role": "s9 manuscript patch",
+      "source_frozen_or_posthoc": "posthoc"
+    },
+    {
+      "path": "paper/S9_DEGREE_STRATIFIED_POSTHOC_CN.md",
+      "sha256": "bb3c717c51f4665604c6826e4ffd91ca3ebc087270437190d23a229633d602e7",
+      "size": 7573,
+      "role": "s9 manuscript patch",
+      "source_frozen_or_posthoc": "posthoc"
+    },
+    {
+      "path": "paper/S9_DEGREE_STRATIFIED_POSTHOC_EN.tex",
+      "sha256": "064a9f360f4d2b37a4e831da873f809719469d3c007242450ad34d47a9f6220e",
+      "size": 4750,
+      "role": "s9 manuscript patch",
+      "source_frozen_or_posthoc": "posthoc"
+    },
+    {
+      "path": "paper/SECTION_4_3_CROSSREF_PATCH_CN.md",
+      "sha256": "e1f211079f275ee3c31a5ccaa8b93a47bb35794c2c7ad300aac484fbc057cd14",
+      "size": 638,
+      "role": "s9 manuscript patch",
+      "source_frozen_or_posthoc": "posthoc"
+    },
+    {
+      "path": "paper/SECTION_4_3_CROSSREF_PATCH_EN.tex",
+      "sha256": "5f4e5b1fd577418bfc0da6c57353fbeebe21c938d79a66150b60c99bc4720ad6",
+      "size": 575,
+      "role": "s9 manuscript patch",
+      "source_frozen_or_posthoc": "posthoc"
+    },
+    {
+      "path": "PROVENANCE.md",
+      "sha256": "01a9d34f45dc64c2e77de4e001c763f842cd3c315153c449b7bf1650a7f01e0e",
+      "size": 1911,
+      "role": "s9 report",
+      "source_frozen_or_posthoc": "posthoc"
+    },
+    {
+      "path": "results/degree_trend_test.json",
+      "sha256": "eb7554378403c71f93f4f9dad3314f8150cfc350d3e495c7d2b1438a072aed1b",
+      "size": 1478,
+      "role": "s9 analysis result",
+      "source_frozen_or_posthoc": "posthoc"
+    },
+    {
+      "path": "results/h1_effect_binary_strata.csv",
+      "sha256": "feeb46ce852069a8a22e50e9202a379d823f92af0c12a335607773981a381a3a",
+      "size": 1114,
+      "role": "s9 analysis result",
+      "source_frozen_or_posthoc": "posthoc"
+    },
+    {
+      "path": "results/h1_effect_by_exact_degree.csv",
+      "sha256": "0eeec49944e1e8057ed0e3220e0b3aa7bdeb17eb87056a8810bfc8ed2b1aea39",
+      "size": 4188,
+      "role": "s9 analysis result",
+      "source_frozen_or_posthoc": "posthoc"
+    },
+    {
+      "path": "results/h1_effect_three_bin_strata.csv",
+      "sha256": "223916d67351ce8839d87cdd6592eb45519ce4be48b73d3f6d644d2f5e1c0d74",
+      "size": 987,
+      "role": "s9 analysis result",
+      "source_frozen_or_posthoc": "posthoc"
+    },
+    {
+      "path": "results/oracle_ceiling_by_degree.csv",
+      "sha256": "3349992c4e8a45b5b6af2bb7f1c7c96bfed699b8a48be96d38fdfad9604344ba",
+      "size": 1825,
+      "role": "s9 analysis result",
+      "source_frozen_or_posthoc": "posthoc"
+    },
+    {
+      "path": "results/s9_analysis.json",
+      "sha256": "c2ad9d7826d633e461392962a1be546ba2901db082dad732ca83abeeec6515ef",
+      "size": 23784,
+      "role": "s9 analysis result",
+      "source_frozen_or_posthoc": "posthoc"
+    },
+    {
+      "path": "results/template_degree_joined.csv",
+      "sha256": "f8ea654d09c97e0499c10cbfccc9e8c5724608fa49448f893b269e376dc9b6de",
+      "size": 951915,
+      "role": "s9 analysis result",
+      "source_frozen_or_posthoc": "posthoc"
+    },
+    {
+      "path": "sensitivity/seed_cluster_bootstrap.csv",
+      "sha256": "a61cfcb318496ba80a8fcbf16af90afd78caad5af702206f0488b5369a647819",
+      "size": 1077,
+      "role": "s9 dependence sensitivity",
+      "source_frozen_or_posthoc": "posthoc"
+    },
+    {
+      "path": "VALIDATION_CHECKLIST.md",
+      "sha256": "8d9d514f6f21dba8aa50c8f48f358a1237eb336dddd84147691d5e086fa4d7e4",
+      "size": 3013,
+      "role": "s9 report",
+      "source_frozen_or_posthoc": "posthoc"
+    }
+  ]
+}

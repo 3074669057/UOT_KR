@@ -1,0 +1,8 @@
+{
+  "candidate_pool_path": "out/baseline_compare/labels/candidate_bnb_universe_all_txs.csv",
+  "n_candidate_txs": 7296,
+  "n_gt_dst_txs": 7296,
+  "candidate_is_closed_gt_dst_set": true,
+  "closed_set_warning": true,
+  "candidate_pool_sha256": "cb764dac4492b542004a063cb196cd662ad0eb1917f4576500932fd3a7e722cf"
+}

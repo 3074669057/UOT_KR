@@ -1,0 +1,204 @@
+{
+  "reconstruction_exact": true,
+  "c_to_k_flips": 0,
+  "ladder": [
+    {
+      "plan": "BOT",
+      "name": "ACTUAL_PLAN",
+      "gt_row_rank_mean": 8.054629629629629,
+      "gt_col_rank_mean": 7.918287037037037,
+      "mutual_top5_retention": 0.6025462962962963,
+      "d4_edge_f1": 0.2363855110578321,
+      "d4_precision": 0.14785728663446054,
+      "d4_recall": 0.6025462962962962,
+      "fp_per_template": 18.995833333333334,
+      "seed": 203.0
+    },
+    {
+      "plan": "BOT",
+      "name": "FULL_RECONSTRUCTED",
+      "gt_row_rank_mean": 8.054629629629629,
+      "gt_col_rank_mean": 7.912268518518519,
+      "mutual_top5_retention": 0.6025462962962963,
+      "d4_edge_f1": 0.2363855110578321,
+      "d4_precision": 0.14785728663446054,
+      "d4_recall": 0.6025462962962962,
+      "fp_per_template": 18.995833333333334,
+      "seed": 203.0
+    },
+    {
+      "plan": "BOT",
+      "name": "K",
+      "gt_row_rank_mean": 3.3708333333333327,
+      "gt_col_rank_mean": 3.066666666666667,
+      "mutual_top5_retention": 0.8189814814814815,
+      "d4_edge_f1": 0.3171931003584229,
+      "d4_precision": 0.19672222222222213,
+      "d4_recall": 0.8189814814814815,
+      "fp_per_template": 19.738888888888887,
+      "seed": 203.0
+    },
+    {
+      "plan": "BOT",
+      "name": "U_ONLY",
+      "gt_row_rank_mean": 3.3708333333333327,
+      "gt_col_rank_mean": 7.914351851851852,
+      "mutual_top5_retention": 0.6113425925925926,
+      "d4_edge_f1": 0.24123242953675886,
+      "d4_precision": 0.15205377492877492,
+      "d4_recall": 0.6113425925925925,
+      "fp_per_template": 19.176388888888887,
+      "seed": 203.0
+    },
+    {
+      "plan": "BOT",
+      "name": "V_ONLY",
+      "gt_row_rank_mean": 8.054629629629629,
+      "gt_col_rank_mean": 3.066666666666667,
+      "mutual_top5_retention": 0.6032407407407407,
+      "d4_edge_f1": 0.236454495325463,
+      "d4_precision": 0.1479444444444444,
+      "d4_recall": 0.6032407407407407,
+      "fp_per_template": 19.061111111111114,
+      "seed": 203.0
+    },
+    {
+      "plan": "UOT",
+      "name": "ACTUAL_PLAN",
+      "gt_row_rank_mean": 8.099305555555555,
+      "gt_col_rank_mean": 8.263194444444444,
+      "mutual_top5_retention": 0.6050925925925926,
+      "d4_edge_f1": 0.23742822838252942,
+      "d4_precision": 0.14851157407407406,
+      "d4_recall": 0.6050925925925925,
+      "fp_per_template": 19.0875,
+      "seed": 203.0
+    },
+    {
+      "plan": "UOT",
+      "name": "FULL_RECONSTRUCTED",
+      "gt_row_rank_mean": 8.099305555555555,
+      "gt_col_rank_mean": 8.254398148148148,
+      "mutual_top5_retention": 0.6050925925925926,
+      "d4_edge_f1": 0.23742822838252942,
+      "d4_precision": 0.14851157407407406,
+      "d4_recall": 0.6050925925925925,
+      "fp_per_template": 19.0875,
+      "seed": 203.0
+    },
+    {
+      "plan": "UOT",
+      "name": "K",
+      "gt_row_rank_mean": 3.3708333333333327,
+      "gt_col_rank_mean": 3.066666666666667,
+      "mutual_top5_retention": 0.8189814814814815,
+      "d4_edge_f1": 0.3171931003584229,
+      "d4_precision": 0.19672222222222213,
+      "d4_recall": 0.8189814814814815,
+      "fp_per_template": 19.738888888888887,
+      "seed": 203.0
+    },
+    {
+      "plan": "UOT",
+      "name": "U_ONLY",
+      "gt_row_rank_mean": 3.3708333333333327,
+      "gt_col_rank_mean": 8.25300925925926,
+      "mutual_top5_retention": 0.6152777777777777,
+      "d4_edge_f1": 0.24327347690038686,
+      "d4_precision": 0.15359081196581195,
+      "d4_recall": 0.6152777777777777,
+      "fp_per_template": 19.288888888888888,
+      "seed": 203.0
+    },
+    {
+      "plan": "UOT",
+      "name": "V_ONLY",
+      "gt_row_rank_mean": 8.099305555555555,
+      "gt_col_rank_mean": 3.066666666666667,
+      "mutual_top5_retention": 0.606712962962963,
+      "d4_edge_f1": 0.23850195503421304,
+      "d4_precision": 0.14970833333333333,
+      "d4_recall": 0.6067129629629628,
+      "fp_per_template": 19.15138888888889,
+      "seed": 203.0
+    }
+  ],
+  "row_vs_col_destruction": [
+    {
+      "plan": "BOT",
+      "row_harmful": 0.5997685185185185,
+      "col_harmful": 0.3090277777777778
+    },
+    {
+      "plan": "UOT",
+      "row_harmful": 0.6025462962962963,
+      "col_harmful": 0.3111111111111111
+    }
+  ],
+  "support_vs_ranking": {
+    "BOT": {
+      "COST_D4": 0.3171931003584229,
+      "FULL_PLAN_D4": 0.2363855110578321,
+      "PLAN_RANK_ONLY_D4": 0.2363855110578321,
+      "SUPPORT_ONLY_D4": 0.3118167562724014
+    },
+    "UOT": {
+      "COST_D4": 0.3171931003584229,
+      "FULL_PLAN_D4": 0.23742822838252942,
+      "PLAN_RANK_ONLY_D4": 0.23742822838252942,
+      "SUPPORT_ONLY_D4": 0.31162125285109155
+    }
+  },
+  "marginal_pressure": {
+    "M0_orig": {
+      "seed": 203.0,
+      "gt_row_rank_mean": 8.099305555555556,
+      "gt_col_rank_mean": 8.263194444444444,
+      "mutual_top5_retention": 0.6050925925925926,
+      "d4_f1": 0.23742822838252944,
+      "edge_precision": 0.1485115740740741,
+      "edge_recall": 0.6050925925925925
+    },
+    "M1_uniform_a": {
+      "seed": 203.0,
+      "gt_row_rank_mean": 26.325,
+      "gt_col_rank_mean": 3.846064814814815,
+      "mutual_top5_retention": 0.2787037037037037,
+      "d4_f1": 0.1247119759720566,
+      "edge_precision": 0.08823611111111113,
+      "edge_recall": 0.2787037037037037
+    },
+    "M2_uniform_b": {
+      "seed": 203.0,
+      "gt_row_rank_mean": 3.370833333333333,
+      "gt_col_rank_mean": 26.12986111111111,
+      "mutual_top5_retention": 0.2787037037037037,
+      "d4_f1": 0.12656906772421275,
+      "edge_precision": 0.0907805639349757,
+      "edge_recall": 0.2787037037037037
+    },
+    "M3_uniform_ab": {
+      "seed": 203.0,
+      "gt_row_rank_mean": 3.5097222222222224,
+      "gt_col_rank_mean": 3.660416666666667,
+      "mutual_top5_retention": 0.8037037037037037,
+      "d4_f1": 0.31228718637992825,
+      "edge_precision": 0.19405555555555554,
+      "edge_recall": 0.8037037037037037
+    }
+  },
+  "classification": {
+    "primary": "MARGINAL-COMPETITION-DOMINANT",
+    "secondary": "DESTINATION-DUAL-SCALING (row/v channel carries ~2x the harmful flips)",
+    "row_harmful_rate": 0.6025462962962963,
+    "col_harmful_rate": 0.3111111111111111,
+    "support_contribution_macro_f1": -0.005571847507331362,
+    "ranking_contribution_macro_f1": -0.07976487197589349,
+    "marginal_pressure": {
+      "M0": 0.23742822838252944,
+      "M1_uniform_a": 0.1247119759720566,
+      "M2_uniform_b": 0.12656906772421275,
+      "M3_uniform_ab": 0.31228718637992825
+    }
+  }
+}

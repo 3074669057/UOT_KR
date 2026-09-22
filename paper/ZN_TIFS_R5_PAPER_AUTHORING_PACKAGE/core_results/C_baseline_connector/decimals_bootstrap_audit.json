@@ -1,0 +1,147 @@
+{
+  "bootstrap_semantics": "phase1_unique_asset_s_over_all_gt_src",
+  "n_gt_src": 7296,
+  "n_unique_assets": 27,
+  "n_bootstrap_rows": 27,
+  "forbidden_gt_src_slice": false,
+  "asset_sources": [
+    {
+      "asset_s": "0x298d492e8c1d909d3f63bc4a36c66c64acb3d695",
+      "bootstrap_src_tx": "0xf9ff957ecca80188d271f10c263078417cace8e184125150de8bedea81a69225",
+      "srcChain": "ETH"
+    },
+    {
+      "asset_s": "0x6810e776880c02933d47db1b9fc05908e5386b96",
+      "bootstrap_src_tx": "0xaa5269b4418ed5023ae1092b993ebb5d0ac50d338fab0d840c9ada95693dd2b4",
+      "srcChain": "ETH"
+    },
+    {
+      "asset_s": "0xfb5c6815ca3ac72ce9f5006869ae67f18bf77006",
+      "bootstrap_src_tx": "0x2eb4d02b1b1f6a14c8eabcde2cbd47113207e4a9a0f760c2a4ac1cf2f630ad1d",
+      "srcChain": "ETH"
+    },
+    {
+      "asset_s": "0x525a8f6f3ba4752868cde25164382bfbae3990e1",
+      "bootstrap_src_tx": "0xcdf8244478007a5f778ada027fd774165eac0ae5bd089603c5ac78a5752e8e2f",
+      "srcChain": "ETH"
+    },
+    {
+      "asset_s": "0x53263d9ef74db583b15fbc6d5d4e8b83833fa134",
+      "bootstrap_src_tx": "0x694a921f058e800eea018901890d2c8b429e1a219c226d9a18f9e5e243c16a9a",
+      "srcChain": "ETH"
+    },
+    {
+      "asset_s": "0x19062190b1925b5b6689d7073fdfc8c2976ef8cb",
+      "bootstrap_src_tx": "0xb6616975aa29dabf0b2c87f56ceea80649c2dc10a1e498a641cbc16dc411b304",
+      "srcChain": "ETH"
+    },
+    {
+      "asset_s": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+      "bootstrap_src_tx": "0x5319f81fa441c0428523984480c1f10eebc8d3aed14651d960e666f14898f2bc",
+      "srcChain": "ETH"
+    },
+    {
+      "asset_s": "0xdac17f958d2ee523a2206206994597c13d831ec7",
+      "bootstrap_src_tx": "0x9d4ed8df27b6108359141be529b7905d5308e949cd3b3896b08d784033afbaa7",
+      "srcChain": "ETH"
+    },
+    {
+      "asset_s": "0x4fabb145d64652a948d72533023f6e7a623c7c53",
+      "bootstrap_src_tx": "0xc0dd96198a60288af22f46ec19891f32d549c3eb6aa0c1ca71bf86d1c50539ce",
+      "srcChain": "ETH"
+    },
+    {
+      "asset_s": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+      "bootstrap_src_tx": "0x55fd9163fa5a8f6037f27b3a055bcfe4cf8b35f70088c956228494e674b501d3",
+      "srcChain": "ETH"
+    },
+    {
+      "asset_s": "0x4e352cf164e64adcbad318c3a1e222e9eba4ce42",
+      "bootstrap_src_tx": "0x8389befba026aa6bd8b3af8614e9aa53a97cc8a2c9bb28602b8a5c166a044547",
+      "srcChain": "ETH"
+    },
+    {
+      "asset_s": "0x43dfc4159d86f3a37a5a4b3d4580b888ad7d4ddd",
+      "bootstrap_src_tx": "0x06920b010d936866b793cc6adcfb8628e94fd6ef596cb93a46c87a01f95992c1",
+      "srcChain": "ETH"
+    },
+    {
+      "asset_s": "0x45c2f8c9b4c0bdc76200448cc26c48ab6ffef83f",
+      "bootstrap_src_tx": "0x19432edd49e9071e8c917f9a11dd8372820a2ce68049420a5bb52fc284b75162",
+      "srcChain": "ETH"
+    },
+    {
+      "asset_s": "0xca37530e7c5968627be470081d1c993eb1deaf90",
+      "bootstrap_src_tx": "0x217a077d18d25652a8b5c361fa50977bcf54ea7d330ba3908c771aa28c16e72b",
+      "srcChain": "ETH"
+    },
+    {
+      "asset_s": "0x853d955acef822db058eb8505911ed77f175b99e",
+      "bootstrap_src_tx": "0xf5ceec0643e995f5ad2280bca69ff269a5f84d35f43712474c139cc675543543",
+      "srcChain": "ETH"
+    },
+    {
+      "asset_s": "0xcafe001067cdef266afb7eb5a286dcfd277f3de5",
+      "bootstrap_src_tx": "0xf88ef7e000a9a2904f50af7ab6c1316f5573fcd8157e584414a34e80ef1816c5",
+      "srcChain": "ETH"
+    },
+    {
+      "asset_s": "0x7a58c0be72be218b41c608b7fe7c5bb630736c71",
+      "bootstrap_src_tx": "0xd207c7fa9f905911804b0297d94f1f613961f074579bbba798839606cf96ae57",
+      "srcChain": "ETH"
+    },
+    {
+      "asset_s": "0x3b484b82567a09e2588a13d54d032153f0c0aee0",
+      "bootstrap_src_tx": "0x68862552ff63843df7f0dd9d2f376105b1bed4d0bb20d533d746b0571d06af8a",
+      "srcChain": "ETH"
+    },
+    {
+      "asset_s": "0x728f30fa2f100742c7949d1961804fa8e0b1387d",
+      "bootstrap_src_tx": "0xaf1bc42c9d38d476efb93faa0142a7be7ae542225d3b260e4b680cd5c625f439",
+      "srcChain": "ETH"
+    },
+    {
+      "asset_s": "0x3432b6a60d23ca0dfca7761b7ab56459d9c964d0",
+      "bootstrap_src_tx": "0x1520e5315bc1226b2c256a42b3665046f209b3cdf0ce24ef49a7cfcb07efffda",
+      "srcChain": "ETH"
+    },
+    {
+      "asset_s": "0xa41f142b6eb2b164f8164cae0716892ce02f311f",
+      "bootstrap_src_tx": "0x53ada71942159e9ff4dfc9cac8baa2847fb34125c3d778c7005860d3fb358283",
+      "srcChain": "ETH"
+    },
+    {
+      "asset_s": "0x5f98805a4e8be255a32880fdec7f6728c6568ba0",
+      "bootstrap_src_tx": "0xc9fe66c4df46615773ffb029bdd29d3686b7f408fb4211731fdd8f323f00727f",
+      "srcChain": "ETH"
+    },
+    {
+      "asset_s": "0x1afb69dbc9f54d08dab1bd3436f8da1af819e647",
+      "bootstrap_src_tx": "0xba0da5667457f8410cbf97f49b2b8589b616b848d89102ac0281e960c19641a7",
+      "srcChain": "ETH"
+    },
+    {
+      "asset_s": "0x7d92a06808b4c4833623f809218ed403e4a85fe1",
+      "bootstrap_src_tx": "0xd0b67af2fc4ec5110db372d0e6f48a5fb5f62db7384257bd5876c3882e64e870",
+      "srcChain": "ETH"
+    },
+    {
+      "asset_s": "0x8765b1a0eb57ca49be7eacd35b24a574d0203656",
+      "bootstrap_src_tx": "0xae6c572c3cd24d1028c7d1f59116c041c2b2bb750c57908ac5a4154b4e182dbe",
+      "srcChain": "ETH"
+    },
+    {
+      "asset_s": "0xdfd8d604951ebf1b2297285f1b68de140c43992b",
+      "bootstrap_src_tx": "0x7af32a91069a4f722ff51499cd957f9d7afa3cc899986833d4945012438c542a",
+      "srcChain": "ETH"
+    },
+    {
+      "asset_s": "0x38b0e3a59183814957d83df2a97492aed1f003e2",
+      "bootstrap_src_tx": "0xc73a2d79c95d90a59e95b1d90e6a40830dfe350b0dc13f398451b1da8dd4c198",
+      "srcChain": "ETH"
+    }
+  ],
+  "missing_decimals": [],
+  "decimal_bootstrap_status": "PASS",
+  "warnings": []
+}

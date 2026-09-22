@@ -1,0 +1,60 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "PathBCaseReport",
+  "type": "object",
+  "required": ["summary", "queues"],
+  "properties": {
+    "summary": {
+      "type": "object",
+      "required": ["total", "high", "medium", "low"],
+      "properties": {
+        "total": { "type": "integer", "minimum": 0 },
+        "high": { "type": "integer", "minimum": 0 },
+        "medium": { "type": "integer", "minimum": 0 },
+        "low": { "type": "integer", "minimum": 0 }
+      },
+      "additionalProperties": true
+    },
+    "queues": {
+      "type": "object",
+      "required": ["high", "medium", "low"],
+      "properties": {
+        "high": { "$ref": "#/definitions/queueItems" },
+        "medium": { "$ref": "#/definitions/queueItems" },
+        "low": { "$ref": "#/definitions/queueItems" }
+      },
+      "additionalProperties": false
+    }
+  },
+  "definitions": {
+    "queueItems": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "srcTxHash",
+          "dstTxHash",
+          "priority_score",
+          "confidence_calibrated",
+          "candidate_count",
+          "counter_evidence",
+          "review_next",
+          "what_happened"
+        ],
+        "properties": {
+          "srcTxHash": { "type": "string" },
+          "dstTxHash": { "type": "string" },
+          "priority_score": { "type": "number", "minimum": 0, "maximum": 1 },
+          "confidence_calibrated": { "type": "number", "minimum": 0, "maximum": 1 },
+          "candidate_count": { "type": "integer", "minimum": 0 },
+          "risk_level": { "type": "string" },
+          "counter_evidence": { "type": "array", "items": { "type": "string" } },
+          "review_next": { "type": "string" },
+          "what_happened": { "type": "string" }
+        },
+        "additionalProperties": true
+      }
+    }
+  },
+  "additionalProperties": true
+}

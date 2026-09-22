@@ -1,0 +1,23 @@
+{
+ "core_zip": {
+  "size": 21946671,
+  "entries": 745,
+  "testzip": null,
+  "sha256": "c90316acdd1c6378b5a7abd2a634e494b63b8f3279d4827fe1bc63dfb33f6f3b",
+  "path": "out/handoff_r11_remaining6/R11_REMAINING6_CORE.zip"
+ },
+ "e1_zip": {
+  "size": 9185914,
+  "entries": 263,
+  "testzip": null,
+  "sha256": "eed28633a95b807443396ef092c7f45d3c4d0fa55309c69253d8df46f6699896",
+  "path": "out/handoff_r11_remaining6/R11_E1_INPUTS_AND_CODE.zip"
+ },
+ "reports_zip": {
+  "size": 77866,
+  "entries": 7,
+  "testzip": null,
+  "sha256": "cbdff35f35d5472a4754bf6e2a5119f4b8bffb28164c5916916866b452a9f204",
+  "path": "out/handoff_r11_remaining6/R11_REPORTS_AND_INDEX.zip"
+ }
+}

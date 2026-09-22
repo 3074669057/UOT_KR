@@ -1,0 +1,242 @@
+{
+  "experiment_id": "r7_posthoc_unmatched_mass_localization_20260919",
+  "classification": "POST-HOC / NON-PREREGISTERED / MECHANISM-CAPABILITY ANALYSIS",
+  "scope": "owns ONLY posthoc_s10_unmatched_mass_localization_20260919/; the R7 frozen MANIFEST is NOT modified and no frozen artifact is overwritten",
+  "r7_frozen_manifest_modified": false,
+  "s9_modified": false,
+  "n_files": 33,
+  "locked_posthoc_spec_sha256": "b65ce71527534d811fce2dbd84878d6c2cb0407365577ef1ca7cd7f94bfdb6b9",
+  "files": [
+    {
+      "path": "00_feasibility/delta_definition_audit.md",
+      "sha256": "1dbd8b13f6410e54879af18e521b69011c4e6fc4d25b727824ce202d8f9cc384",
+      "bytes": 2538,
+      "role": "s10 feasibility / delta audit / join",
+      "source_frozen_or_derived_or_posthoc": "posthoc"
+    },
+    {
+      "path": "00_feasibility/delta_definition_check.json",
+      "sha256": "132dd43b477a688e6cb8dbba4d2fa50abf98ab05d2a6b1216b7f0b244080280e",
+      "bytes": 17179,
+      "role": "s10 feasibility / delta audit / join",
+      "source_frozen_or_derived_or_posthoc": "posthoc"
+    },
+    {
+      "path": "00_feasibility/feasibility.json",
+      "sha256": "a863014cc72ef456dd3398f13b29940c87fc454c323effa7592b42b9659ff5d4",
+      "bytes": 17946,
+      "role": "s10 feasibility / delta audit / join",
+      "source_frozen_or_derived_or_posthoc": "posthoc"
+    },
+    {
+      "path": "00_feasibility/FEASIBILITY_REPORT.md",
+      "sha256": "3cd3231eab4aac6be46a6651780880e6ea55274656e85de9c2c04473c2ac17c1",
+      "bytes": 4202,
+      "role": "s10 feasibility / delta audit / join",
+      "source_frozen_or_derived_or_posthoc": "posthoc"
+    },
+    {
+      "path": "00_feasibility/join_audit.csv",
+      "sha256": "969514d60c44b8a13bfc14b2ddc0af3e96571dd2e5482b5692ebb268f42ca301",
+      "bytes": 80216,
+      "role": "s10 feasibility / delta audit / join",
+      "source_frozen_or_derived_or_posthoc": "posthoc"
+    },
+    {
+      "path": "00_feasibility/join_summary.json",
+      "sha256": "d2a7d4ed759d7d78c46de861c637fd422438db32d074482ae47e3f737a094a73",
+      "bytes": 349,
+      "role": "s10 feasibility / delta audit / join",
+      "source_frozen_or_derived_or_posthoc": "posthoc"
+    },
+    {
+      "path": "00_feasibility/truth_label_qa.csv",
+      "sha256": "ad973092a1afee6ae2462db540ae1e5e5a2661e8c89f0ecfbd1804531d478820",
+      "bytes": 107859,
+      "role": "s10 feasibility / delta audit / join",
+      "source_frozen_or_derived_or_posthoc": "posthoc"
+    },
+    {
+      "path": "config/locked_posthoc_spec.json",
+      "sha256": "b65ce71527534d811fce2dbd84878d6c2cb0407365577ef1ca7cd7f94bfdb6b9",
+      "bytes": 7045,
+      "role": "s10 locked post-hoc spec",
+      "source_frozen_or_derived_or_posthoc": "posthoc"
+    },
+    {
+      "path": "config/locked_posthoc_spec.sha256",
+      "sha256": "d3b0aeed7d8ae71445a38a7634ac03cc15d64fe20df0f2822fcdef2682b6a6de",
+      "bytes": 98,
+      "role": "s10 locked post-hoc spec",
+      "source_frozen_or_derived_or_posthoc": "posthoc"
+    },
+    {
+      "path": "figures/figures_index.json",
+      "sha256": "d3ef9351548327acc10314cb1cfe50a0e0afdd23ed35e6d87a37c13309b1ab69",
+      "bytes": 1214,
+      "role": "s10 figure",
+      "source_frozen_or_derived_or_posthoc": "posthoc"
+    },
+    {
+      "path": "figures/s10_source_unmatched_localization.pdf",
+      "sha256": "b04b70911e6df3ca82d94c6524100c52b3e2653862326fba5928e1a9d657cecd",
+      "bytes": 25763,
+      "role": "s10 figure",
+      "source_frozen_or_derived_or_posthoc": "posthoc"
+    },
+    {
+      "path": "figures/s10_source_unmatched_localization.png",
+      "sha256": "9c1325fcefc26011c02f6cc186b725128d5461f50653604ac0eebe7251a70ae7",
+      "bytes": 273003,
+      "role": "s10 figure",
+      "source_frozen_or_derived_or_posthoc": "posthoc"
+    },
+    {
+      "path": "figures/s10_target_decoy_localization.pdf",
+      "sha256": "f3b9b409c9d4d74365c2d37d3fdcbfbad7e540952a0873e8d08c742b81c9f592",
+      "bytes": 21367,
+      "role": "s10 figure",
+      "source_frozen_or_derived_or_posthoc": "posthoc"
+    },
+    {
+      "path": "figures/s10_target_decoy_localization.png",
+      "sha256": "44b0112bbd036a63b4316dac4a99703f4aada6c85e0d3e4451cb376d54b8bf80",
+      "bytes": 162083,
+      "role": "s10 figure",
+      "source_frozen_or_derived_or_posthoc": "posthoc"
+    },
+    {
+      "path": "figures/s10_unmatched_mass_attribution_overview.pdf",
+      "sha256": "d9d7474e6ff2aa4c4b830ce20b497930df6d2e964e3ce642883860284cfbdc96",
+      "bytes": 24536,
+      "role": "s10 figure",
+      "source_frozen_or_derived_or_posthoc": "posthoc"
+    },
+    {
+      "path": "figures/s10_unmatched_mass_attribution_overview.png",
+      "sha256": "5b8733afd61480bef53deb2f315495a1067405a1e3419f97ab4ef136ba91f7b5",
+      "bytes": 151210,
+      "role": "s10 figure",
+      "source_frozen_or_derived_or_posthoc": "posthoc"
+    },
+    {
+      "path": "FINAL_POSTHOC_REPORT.md",
+      "sha256": "8b69760f3b7d4c93f71a6c7029ae2a5a30076c356577d6efcb4fbe859fc374bf",
+      "bytes": 9076,
+      "role": "s10 report",
+      "source_frozen_or_derived_or_posthoc": "posthoc"
+    },
+    {
+      "path": "paper/CONTRIBUTION_1_LOCALIZATION_LIMITATION_CN.md",
+      "sha256": "374a876d660e653dac844f62e6641ef314721cd29242ec90d5c6255b7607a2a4",
+      "bytes": 934,
+      "role": "s10 manuscript patch",
+      "source_frozen_or_derived_or_posthoc": "posthoc"
+    },
+    {
+      "path": "paper/CONTRIBUTION_1_LOCALIZATION_LIMITATION_EN.tex",
+      "sha256": "e055e288075af89c16b767ac3679b6dfee05564f186c4ef78500a0b0655eec21",
+      "bytes": 800,
+      "role": "s10 manuscript patch",
+      "source_frozen_or_derived_or_posthoc": "posthoc"
+    },
+    {
+      "path": "paper/MAIN_TEXT_LOCALIZATION_CROSSREF_CN.md",
+      "sha256": "df88d5edd084058a40f37dfcb4aa8578ae2219e8b68a96d1921dafbb8dadb325",
+      "bytes": 479,
+      "role": "s10 manuscript patch",
+      "source_frozen_or_derived_or_posthoc": "posthoc"
+    },
+    {
+      "path": "paper/MAIN_TEXT_LOCALIZATION_CROSSREF_EN.tex",
+      "sha256": "986e9d7e004af22d1de0ac463472ed20c743ea2f8f745ac9ccf127c63abd6cf9",
+      "bytes": 498,
+      "role": "s10 manuscript patch",
+      "source_frozen_or_derived_or_posthoc": "posthoc"
+    },
+    {
+      "path": "paper/patch_index.json",
+      "sha256": "70df809a9316db46e7234c9b2b7ec511d26a474330b319bc498def993a4a3d4e",
+      "bytes": 1229,
+      "role": "s10 manuscript patch",
+      "source_frozen_or_derived_or_posthoc": "posthoc"
+    },
+    {
+      "path": "paper/S10_UNMATCHED_MASS_LOCALIZATION_CN.md",
+      "sha256": "0c2dc79e1ea689fa218f510430746cd081bb32b9e183c37f7b0b855d6dd5888a",
+      "bytes": 6288,
+      "role": "s10 manuscript patch",
+      "source_frozen_or_derived_or_posthoc": "posthoc"
+    },
+    {
+      "path": "paper/S10_UNMATCHED_MASS_LOCALIZATION_EN.tex",
+      "sha256": "88474c51b04ef12d72b44fb5c0215de1bf0b52144e0c108fcdacc87772237e76",
+      "bytes": 3208,
+      "role": "s10 manuscript patch",
+      "source_frozen_or_derived_or_posthoc": "posthoc"
+    },
+    {
+      "path": "PROVENANCE.md",
+      "sha256": "4428749e949eea6c83bffaccbeed583f3effd23da5f12f749f172b9436479e11",
+      "bytes": 1603,
+      "role": "s10 report",
+      "source_frozen_or_derived_or_posthoc": "posthoc"
+    },
+    {
+      "path": "results/marginal_null_diagnostic.csv",
+      "sha256": "d328262ee0a5c664014ab0d3ee13df9edce8abfeaf7dd36083106a56a0548f24",
+      "bytes": 110501,
+      "role": "s10 localization result",
+      "source_frozen_or_derived_or_posthoc": "derived"
+    },
+    {
+      "path": "results/s10_analysis.json",
+      "sha256": "c015a76f11f6bc78679f8cb3d9475a59e964e291b2ad0fd3b8fb03ce8763175f",
+      "bytes": 8395,
+      "role": "s10 localization result",
+      "source_frozen_or_derived_or_posthoc": "derived"
+    },
+    {
+      "path": "results/source_localization_long.csv",
+      "sha256": "c393e52d27124deb08489b54f51679b12427550e22da106dbe92d87107f6ebc1",
+      "bytes": 1910864,
+      "role": "s10 localization result",
+      "source_frozen_or_derived_or_posthoc": "derived"
+    },
+    {
+      "path": "results/target_localization_long.csv",
+      "sha256": "febc92d1cac6d42aac00c4de60168b461f30e488569e8c5eeddd0c96d7bfb78c",
+      "bytes": 2090223,
+      "role": "s10 localization result",
+      "source_frozen_or_derived_or_posthoc": "derived"
+    },
+    {
+      "path": "results/template_localization_summary.csv",
+      "sha256": "04525bbecef323297d3dd1f1431c2d36a69853c35e3a1f66c87d7ec42b87a991",
+      "bytes": 482775,
+      "role": "s10 localization result",
+      "source_frozen_or_derived_or_posthoc": "derived"
+    },
+    {
+      "path": "VALIDATION/frozen_asset_integrity.json",
+      "sha256": "e013bae44c0698b0d9fb0e9c85273b78cef56588ccd6e69c4c0f30d7b7dd457f",
+      "bytes": 4025,
+      "role": "s10 validation evidence",
+      "source_frozen_or_derived_or_posthoc": "posthoc"
+    },
+    {
+      "path": "VALIDATION/no_method_rerun_audit.json",
+      "sha256": "77a31e0ec767d8af520c9ff53182bfd87945d1d99a474da23dd60ab22b506ce2",
+      "bytes": 782,
+      "role": "s10 validation evidence",
+      "source_frozen_or_derived_or_posthoc": "posthoc"
+    },
+    {
+      "path": "VALIDATION_CHECKLIST.md",
+      "sha256": "f4ce7d084b26faf841be7c0fb44c6c5cf2f3557ebaa9a74a2ab3c4b31789cd22",
+      "bytes": 3097,
+      "role": "s10 report",
+      "source_frozen_or_derived_or_posthoc": "posthoc"
+    }
+  ]
+}

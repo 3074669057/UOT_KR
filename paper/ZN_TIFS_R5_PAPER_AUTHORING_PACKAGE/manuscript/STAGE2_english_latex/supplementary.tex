@@ -1,0 +1,151 @@
+% supplementary.tex — Supplementary Material for the TIFS submission
+% Scientific authority: 3/final/ZN_TIFS_FINAL_CN_AUTHOR_REVIEW.docx (frozen).
+% Compile: pdflatex supplementary; bibtex supplementary; pdflatex supplementary; pdflatex supplementary
+\documentclass[journal]{IEEEtran}
+
+\usepackage{amsmath,amssymb}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{cite}
+\usepackage[hidelinks]{hyperref}
+\usepackage{url}
+\usepackage{xurl}
+
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
+
+\begin{document}
+
+\title{Supplementary Material:\\ Non-One-to-One Cross-Chain Forensic Fund-Flow Correspondence: Transport Representation and Conditional Decoding}
+
+\author{Author~Names~\IEEEmembership{Member,~IEEE}}
+
+\maketitle
+
+\section*{Supplement S1: Coverage-Qualified Quotient Diagnostic (Table S1)}
+
+\begin{table}[!t]
+\caption{Coverage-qualified quotient inference on the event-backed subset (Table S1 of the main text's Supplement reference).}
+\label{tab:S1}
+\centering
+\begin{tabular}{L{0.62\columnwidth}c}
+\toprule
+Metric & Value \\
+\midrule
+Covered holdout pairs & \textbf{122} (44 positive / 78 negative) \\
+Covered precision / recall / F1 & \textbf{1.000 / 1.000 / 1.000} \\
+Covered AUROC / AUPRC & 1.000 / 1.000 \\
+ECE & 0.000 \\
+Event-backed projection coverage & \textbf{$\approx$0.792} \\
+Uncovered edges & Withheld under coverage protocol \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\emph{Source: frozen paper artifact. Metrics apply to the covered subset only. This result is based on the same protocol-native transferId association rule: the covered-pair label and the frozen bridge-transfer-key rule are both keyed on the bridge-event transferId incidence, so P/R/F1 $=$ 1.000 is a definitional consistency check on the covered quotient projection. It is not independent-accuracy evidence and not external-performance evidence. Event-backed projection coverage $\approx$ 0.792 is computed on the gate-reference seeds 52--57; uncovered edges are withheld under the coverage protocol.}
+
+\section*{Appendix A: Fixed-Delay Anchor Audit}
+
+\begin{table*}[!t]
+\caption{Fixed-delay anchor audit (all experiments $\times$ decodings).}
+\label{tab:A1}
+\centering
+\footnotesize
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{p{0.16\columnwidth}p{0.17\columnwidth}cccccccccc}
+\toprule
+Experiment & Decoding & Pair prec. & Pair rec. & Pair F1 & Top-3 rec. & tx-CVR & Cov. & Abst. & TP & FP & Forbidden remaining \\
+\midrule
+baseline & raw\_argmax & 0.589 & 0.589 & 0.589 & 0.658 & 0.338 & 1.000 & 0.000 & 4295 & 3001 & 0 \\
+baseline & top3\_rescue & 0.590 & 0.589 & 0.590 & 0.658 & 0.005 & 0.996 & 0.002 & 4297 & 2985 & 0 \\
+baseline & joint\_filter & 0.889 & 0.589 & 0.708 & 0.658 & 0.000 & 0.845 & 0.338 & 4295 & 534 & 0 \\
+leave\_key\_out & raw\_argmax & 0.589 & 0.589 & 0.589 & 0.658 & 0.338 & 1.000 & 0.000 & 4295 & 3001 & 0 \\
+leave\_key\_out & top3\_rescue & 0.590 & 0.589 & 0.590 & 0.658 & 0.005 & 0.996 & 0.002 & 4297 & 2985 & 0 \\
+leave\_key\_out & joint\_filter & 0.889 & 0.589 & 0.708 & 0.658 & 0.000 & 0.845 & 0.338 & 4295 & 534 & 0 \\
+leave\_anchor\_out\_strict & raw\_argmax & 0.589 & 0.589 & 0.589 & 0.658 & 0.338 & 1.000 & 0.000 & 4295 & 3001 & 0 \\
+leave\_anchor\_out\_strict & top3\_rescue & 0.590 & 0.589 & 0.590 & 0.658 & 0.005 & 0.996 & 0.002 & 4297 & 2985 & 0 \\
+leave\_anchor\_out\_strict & joint\_filter & 0.889 & 0.589 & 0.708 & 0.658 & 0.000 & 0.845 & 0.338 & 4295 & 534 & 0 \\
+fake\_anchor\_probe & raw\_argmax & 0.589 & 0.589 & 0.589 & 0.658 & 0.338 & 1.000 & 0.000 & 4295 & 3001 & 0 \\
+fake\_anchor\_probe & top3\_rescue & 0.590 & 0.589 & 0.590 & 0.658 & 0.005 & 0.996 & 0.002 & 4297 & 2985 & 0 \\
+fake\_anchor\_probe & joint\_filter & 0.889 & 0.589 & 0.708 & 0.658 & 0.000 & 0.845 & 0.338 & 4295 & 534 & 0 \\
+permuted\_gt & raw\_argmax & 0.000 & 0.000 & 0.000 & 0.002 & 0.338 & 1.000 & 0.000 & 1 & 7295 & 0 \\
+permuted\_gt & top3\_rescue & 0.000 & 0.000 & 0.000 & 0.002 & 0.338 & 1.000 & 0.000 & 1 & 7295 & 0 \\
+permuted\_gt & joint\_filter & 0.000 & 0.000 & 0.000 & 0.002 & 0.338 & 1.000 & 0.000 & 1 & 7295 & 0 \\
+\bottomrule
+\end{tabular}
+\end{table*}
+
+\emph{For permuted-label control rows, CVR, delay, coverage, and abstention columns reflect the unchanged decoded output under label permutation and are not interpreted as method performance. \texttt{forbidden\_features\_remaining} $= 0$ under strict masking; fake-oracle anchor injection fully neutralized. Source: frozen fixed-delay anchor audit artifact.}
+
+\section*{Appendix B: Connector Native Closed-Set Diagnostic and Route A Consistency Audit}
+
+\begin{table}[!t]
+\caption{Phase 1 canonical native diagnostic and Route A v2 consistency.}
+\label{tab:B1}
+\centering
+\begin{tabular}{L{0.55\columnwidth}L{0.37\columnwidth}}
+\toprule
+Item & Value \\
+\midrule
+Designation & Connector closed-set native-feature diagnostic (Phase 1 canonical) \\
+Native tx-pair F1 & \textbf{0.9736} \\
+Pair precision / recall & \textbf{0.9976 / 0.9508} \\
+Predicted pairs & \textbf{6{,}954} \\
+Correct pairs & \textbf{6{,}937} \\
+No-match source txs & \textbf{342} \\
+Evaluation unit & tx-pair exact match on \textbf{7{,}296} Celer anchor pairs \\
+Matcher & Original \texttt{WithdrawLocator} core (unmodified); raw top-1 only \\
+Route A v2 vs.\ Phase 1 full\_native prediction diff & \textbf{0} (6{,}954 / 6{,}954 identical) \\
+Route A v1 & \textbf{Rejected} (decimal bootstrap inconsistency; inflated F1 $=$ 0.9953) \\
+ABCTracer status & Blocked (no official checkpoint) \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\emph{The original Connector matcher runs successfully in its native bridge-semantics setting. The unique candidate BNB destination transaction hashes equal the labeled ground-truth destination hash set (7{,}296 $=$ 7{,}296), so the full\_native score is an upper-bound native-feature diagnostic, not an open-world retrieval result. Original \texttt{WithdrawLocator.search\_withdraw()} exposes raw top-1 only; Connector top-3 parity is unavailable without modifying Connector core logic. Route A v1 (F1 $=$ 0.9953, 7{,}290 predictions) was rejected due to decimal bootstrap inconsistency (\texttt{gt\_src[:20]} slice) and must not appear in manuscript tables or headlines. Source: frozen Route A v2 package (\texttt{routeA\_v2\_manifest.json}, \texttt{routeA\_v2\_consistency\_audit.md}); Phase 1 canonical package (\texttt{connector\_phase1/}).}
+
+\section*{Appendix C: Baseline Parameter Provenance Summary}
+
+The provenance of every baseline's parameters, audited from the frozen scripts and config catalogs, is summarized as follows (full record: \texttt{FINAL\_BASELINE\_CONSTANT\_PROVENANCE.md} in the manuscript working area). Source types: A $=$ original paper/public implementation; B $=$ pre-evaluation frozen adapter defaults; C $=$ author-defined fixed constants or author-defined calibration protocol; D $=$ unknown.
+
+\begin{itemize}
+\item \textbf{Connector-style} (Table IV of the main text): C---weights $0.35\cdot$amount $+ 0.30\cdot$time $+ 0.25\cdot$route $+ 0.10\cdot$address\_overlap, fee\_ratio $= 0.03$, hard-coded in \url{scripts/run_phase10s_same_scope_baseline_superiority.py}; config catalog \texttt{calibration="none"}, threshold 0.0, top-k $=$ 50. No author statement that the constants were never implicitly adjusted across the experiment sequence exists in the repository; the manuscript states this at its most conservative level.
+\item \textbf{ABCTracer-style} (Table IV): C---weights $0.30\cdot$asset $+ 0.30\cdot$amount $+ 0.20\cdot$time $+ 0.10\cdot$address\_overlap $+ 0.10\cdot$risk, same file and catalog.
+\item \textbf{Threshold-MM} (structural study): C (author-defined calibration protocol)---$\tau$ grid $\{0.05,\dots,0.95\}$, cutoff $=$ $\tau$-quantile of the cost ECDF, selected on disjoint calibration seeds 101--103 by edge F1, frozen at 0.478; never re-tuned on test seeds 42--46.
+\item \textbf{BOT} (structural study / holdout controls): B---reg $= 0.05$ (equal to the frozen UOT reg), unit-normalized marginals, same 1e-9 decode; no labels, no calibration step.
+\item \textbf{RC-UOT-Q Table IV operating point} (proposed): C (author-defined calibration protocol)---logistic reranker trained on dev seeds 52--71, threshold $\tau = 0.7796$ selected on dev over a 301-point grid, decoder selected on dev; frozen before holdout 292--311 was touched.
+\end{itemize}
+
+Calibration-budget asymmetry (proposed method has a development tuning budget; the Table IV adapted baselines have none) is disclosed in Section IV-F of the main text; the comparisons are diagnostic / structural / native-semantic controls, not a perfectly budget-matched leaderboard.
+
+\section*{Appendix D: Metric Definitions}
+
+\begin{itemize}
+\item \textbf{Edge-inclusion recall (Tables II/III).} A ground-truth edge counts as recovered iff the decoded transport plan assigns it positive mass ($\ge$1e-9). This is inclusion over the dense decoded plan, not exact topology recovery.
+\item \textbf{Per-source Recall@3 (Table II).} Macro-averaged fraction of source flows---among those with at least one ground-truth destination and at least one decoded edge with transport mass $>$1e-9---for which at least one ground-truth destination appears among the top-3 destinations ranked by descending decoded transport mass, averaged over seeds 42--46. Rank-based inclusion; not strict recovery; per-source macro; tie-break is implementation-dependent (unstable sort).
+\item \textbf{Strict exact recovery (Table V).} A template is recovered iff the predicted edge set equals its structural ground truth exactly; one extra edge forfeits the template.
+\item \textbf{tx-CVR.} Temporal-causality violation rate: fraction of accepted decoded pairs whose per-transaction delay is negative.
+\item \textbf{Coverage / abstention (Table VIII).} Coverage: fraction of source flows with at least one non-abstained tx projection (denominator: source flows in the transport plan). Abstention rate: fraction of labeled anchor pairs for which decoding abstains (denominator: 7{,}296). Denominators differ by design.
+\item \textbf{Paired hierarchical CI (Table VI).} Within-bridge template-level paired resample ($B=4{,}000$, \texttt{RandomState(20240101)}); replicate statistic is the unweighted mean of per-bridge paired means; the seed level enters the point estimate but not the resampling.
+\end{itemize}
+
+\section*{Appendix E: Confirmatory Protocol (Frozen)}
+
+The confirmatory holdout (seeds 301--305; Celer, Multichain, PolyNetwork; 48 templates per seed; 720 paired template instances) was executed once by a hash-locked one-shot runner over the frozen candidate (sha256 \texttt{0f360add\-c1f2a220\-299d75b4\-aa9cad1e\-1ee1e504\-e8097ae5\-bacfc0da\-40542cc401}), frozen decoder ($k=5$), frozen reg $=0.05$ / reg\_m $=0.5$, frozen cost weights and marginals, frozen $\tau = 0.478$ (structural protocol), and the preregistered five-gate decision tree. An independently maintained verifier recomputes every statistic from the raw per-cell artifacts and matches the runner within 1e-9. Integrity: FP/template 1.0511, FN/template 0.4945 (within the preregistered 3$\times$ bound); UOT max final error 9.9e-12; BOT max residual 4.4e-12; zero convergence failures; zero missing/duplicate templates; zero NaNs.
+
+\section*{Appendix F: External-Validation History (v3/v4)}
+
+\textbf{v3 (permanent execution failure).} A preregistered Level-I external execution entered the prediction path and failed before valid performance: (a) missing \texttt{import itertools} in \texttt{execution\_support.py}; (b) zero-marginal solver-domain defect (unpriceable tokens $\to$ zero USD marginals $\to$ POT divide-by-zero $\to$ NaN plans). Execution count $= 1$, permanently closed: \textbf{no rerun, no valid performance}. The support-aware solver-interface repair (reduce to the positive-marginal support; all-zero side $\to$ all-zero plan) is mathematically equivalent (KL-UOT objective is $+\infty$ for positive mass on a zero-reference row/column) and was validated only on non-test data (15/15 dev cells, 0.0 plan diff, 0 decoder discrepancies; 8/8 zero-support tests). It was never applied to the v3 corpus and never needed on v4.
+
+\textbf{v4 (data adequacy fail; data-only).} A new disjoint, prediction-blind Level-I corpus (window 2024-05-20T00:00:00Z--2025-05-19T00:00:00Z; protocol-native linkage \texttt{Send.transferId == Relay.srcTransferId}; disjointness verified against 359{,}256 historical transaction identities, zero intersections) was assembled data-only. Dataset statistics: 32{,}905 anchors; 25{,}621 unique GT edges (0 duplicates); 2{,}451 Tier-A fan-out units; 85 merge units; $G = 7$ [910, 587, 452, 432, 60, 8, 2]; max cluster share 0.371277; span 359.98 days. DATA ADEQUACY FAIL ($G = 7 < 8$); statistical branch NOT\_EVALUABLE; \textbf{no method executed; no external-performance claim}. The corpus is archived for provenance only. The adequacy gate is a prespecified conservative diversity criterion (not a universal statistical threshold): four jointly prespecified criteria ($G \ge 8$; max cluster share $< 0.5$; Tier-A fan-out units $\ge 30$; temporal span $\ge$ 2 calendar months); relaxing $G$ to 7 after observing the data would be a post-data change to a confirmatory adequacy rule, and no method prediction existed when adequacy failed. The external-validation experiment line is closed for this submission (no v5).
+
+\section*{Appendix G: Reproducibility Hashes (Frozen)}
+
+\begin{itemize}
+\item Frozen candidate: sha256 \texttt{0f360add\-c1f2a220\-299d75b4\-aa9cad1e\-1ee1e504\-e8097ae5\-bacfc0da\-40542cc401}
+\item Confirmatory statistics/verification artifacts: hashes recorded in the preregistration package hash manifest (all entries LOCKED; timestamps 2026-09-02, read-only)
+\item v4 dataset hash manifest: included in the v4 preregistration package
+\item Seeds 301--305: untouched; not accessed, not rerun
+\end{itemize}
+
+\end{document}

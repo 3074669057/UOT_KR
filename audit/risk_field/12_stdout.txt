@@ -1,0 +1,9 @@
+﻿files with an `aml_risk_level` column : 5993
+unique (basename,size) groups        : 1291
+groups with >1 distinct RAW value    : 0
+
+global distribution of the (up to 12) distinct RAW values per group:
+   'nan'                                    appears in 1291 groups
+
+NEGATIVE RESULT: no file anywhere has a non-constant `aml_risk_level`.
+In every one of the 1291 groups the column is either all-NaN or a single repeated value.

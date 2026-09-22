@@ -1,0 +1,27 @@
+{
+  "generated_at_utc": "2026-06-10T03:09:35.713071+00:00",
+  "paper_branch": "case_b_topk_rescue",
+  "paper_ready": true,
+  "random_control_removed_from_paper_tables": true,
+  "tp_fp_fn_semantics_fixed": true,
+  "coverage_definition_documented": true,
+  "coverage_definition": "Fraction of source flows with at least one non-abstained tx projection among evaluated labeled pairs. Denominator: n_source_flows (all ETH flow segments in the transport plan).",
+  "abstention_rate_definition": "Fraction of labeled ground-truth pairs for which the decoding strategy abstains. Denominator: n_ground_truth_pairs (7296).",
+  "recommended_decoding": "positive_delay_top3_rescue",
+  "high_confidence_decoding": "joint_time_admissible_filter",
+  "primary_evaluation_object": "flow_correspondence_topk_and_admissible_abstention",
+  "tx_pair_f1_role": "compatibility_metric_only",
+  "leave_anchor_out_audit_unchanged": true,
+  "methods_paper_facing": [
+    "raw_argmax_fixed_delay",
+    "flow_time_admissible_filter",
+    "tx_time_admissible_filter",
+    "joint_time_admissible_filter",
+    "positive_delay_top3_rescue",
+    "positive_delay_top5_rescue",
+    "positive_delay_top10_rescue",
+    "permuted_gt_control"
+  ],
+  "n_source_flows": 3258,
+  "n_ground_truth_pairs": 7296
+}

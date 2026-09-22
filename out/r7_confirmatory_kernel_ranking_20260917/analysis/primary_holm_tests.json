@@ -1,0 +1,84 @@
+{
+  "generated_at_utc": "2026-09-17T08:12:01Z",
+  "family": "H1, H2 (primary)",
+  "holm": {
+    "family": [
+      "H2",
+      "H1"
+    ],
+    "alpha": 0.05,
+    "method": "Holm step-down",
+    "steps": [
+      {
+        "hypothesis": "H2",
+        "raw_p": 4.999750012499375e-05,
+        "rank": 1,
+        "threshold": 0.025,
+        "rejected": true
+      },
+      {
+        "hypothesis": "H1",
+        "raw_p": 0.0005499725013749313,
+        "rank": 2,
+        "threshold": 0.05,
+        "rejected": true
+      }
+    ],
+    "adjusted_p": {
+      "H2": 9.99950002499875e-05,
+      "H1": 0.0005499725013749313
+    },
+    "rejection_order": [
+      "H2",
+      "H1"
+    ],
+    "any_rejected": true
+  },
+  "raw_permutation": {
+    "H1": {
+      "observed_effect": 0.025531674679475275,
+      "n_perm": 20000,
+      "rng_seed": 20240102,
+      "alternative": "effect > 0",
+      "extreme_count": 10,
+      "raw_p": 0.0005499725013749313,
+      "resolution": 4.999750012499375e-05,
+      "permutation_distribution_sha256": "4864d5303675e6596a0afa0b7efe29e07e82e2f3867f0a1dc43d4ab33c06ec13"
+    },
+    "H2": {
+      "observed_effect": 0.36703971518526995,
+      "n_perm": 20000,
+      "rng_seed": 20240102,
+      "alternative": "effect > 0",
+      "extreme_count": 0,
+      "raw_p": 4.999750012499375e-05,
+      "resolution": 4.999750012499375e-05,
+      "permutation_distribution_sha256": "e985cf06728a6a0b7c126a71824c658019bfe700b6685c96096483ffc062dcec"
+    }
+  },
+  "gate_A": {
+    "effect_gt_zero": true,
+    "ci_lower_gt_zero": true,
+    "holm_adjusted_p_lt_alpha": true,
+    "effect": 0.025531674679475275,
+    "ci": [
+      0.01340454739556185,
+      0.03709975394032736
+    ],
+    "holm_adjusted_p": 0.0005499725013749313,
+    "PASS": true
+  },
+  "gate_B": {
+    "effect_gt_zero": true,
+    "ci_lower_gt_zero": true,
+    "holm_adjusted_p_lt_alpha": true,
+    "effect": 0.36703971518526995,
+    "ci": [
+      0.36034177338502377,
+      0.37342362898025416
+    ],
+    "holm_adjusted_p": 9.99950002499875e-05,
+    "PASS": true
+  },
+  "resolution_note": "Monte-Carlo resolution 1/20001; no p below the resolution is reported, and 1.9e-9 is NOT claimed"
+}
